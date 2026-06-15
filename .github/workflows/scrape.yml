@@ -1,0 +1,72 @@
+name: Scrape pool & update data
+
+# ---------------------------------------------------------------------------
+# Scrapes the leaderboard + every player's prediction page, then commits the
+# refreshed JSON into data/ (only when the scrape succeeds AND something changed).
+#
+# Cron is ALWAYS in UTC. The times below are PLACEHOLDERS — replace them with
+# your match-based trigger times (converted to UTC). You can list several lines;
+# each is one trigger. Examples are commented out underneath.
+#
+# Cron format:  minute hour day-of-month month day-of-week
+# ---------------------------------------------------------------------------
+on:
+  workflow_dispatch:        # lets you trigger a run by hand from the Actions tab
+  schedule:
+    # ----- PLACEHOLDER schedule: runs every 6 hours until you customize -----
+    - cron: "0 */6 * * *"
+
+    # ----- EXAMPLES — match-day triggers (edit/uncomment, all in UTC) --------
+    # A typical pattern: run ~10 min after each kickoff and ~2.5 h later (full-time).
+    # - cron: "10 19 11 6 *"   # 2026-06-11 19:10 UTC  (just after a 19:00 kickoff)
+    # - cron: "40 21 11 6 *"   # 2026-06-11 21:40 UTC  (around full-time)
+    # - cron: "10 16 12 6 *"   # 2026-06-12 16:10 UTC
+    # - cron: "0 20 28 6 *"    # 2026-06-28 20:00 UTC  (Round of 32)
+
+# Allow the workflow to push commits back to the repo.
+permissions:
+  contents: write
+
+# Never let two runs fight over a push.
+concurrency:
+  group: scrape
+  cancel-in-progress: false
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    # Headroom for the in-script retry backoff (up to 3 retries x 30 min).
+    timeout-minutes: 130
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Scrape (with retry/backoff)
+        env:
+          MAX_ATTEMPTS: "4"            # 1 try + 3 retries
+          RETRY_GAP_SECONDS: "1800"    # 30 minutes between attempts
+        run: python scraper.py --out data
+
+      # If the scrape step above fails (no data / network error after all
+      # retries), the job stops here and NOTHING is committed.
+
+      - name: Commit & push if data changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if [ -n "$(git status --porcelain data)" ]; then
+            git add data/*.json
+            git commit -m "data: refresh $(date -u +'%Y-%m-%dT%H:%MZ')"
+            git push
+            echo "Committed updated data."
+          else
+            echo "No changes in data/ — skipping commit (avoids empty/duplicate commits)."
+          fi

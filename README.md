@@ -1,0 +1,154 @@
+# ⚽ Bobby & Friends — Fantasy World Cup 2026 Tracker
+
+A free, fully-automated tracker for a [tournamentsoccer.us](https://www.tournamentsoccer.us)
+fantasy soccer pool. A GitHub Action scrapes the leaderboard and every player's
+prediction sheet on a schedule, commits the data as JSON, and a single-file
+website (hosted on GitHub Pages) turns it into a live, ESPN-style standings board
+with per-player charts and a full prediction breakdown.
+
+**No servers, no database, no cost** — just GitHub Actions (free & unlimited on
+public repos) + GitHub Pages.
+
+---
+
+## What's in here
+
+| File | Purpose |
+|------|---------|
+| `scraper.py` | Scrapes the leaderboard + per-player pages → writes `data/*.json` |
+| `requirements.txt` | Python deps (`requests`, `beautifulsoup4`) |
+| `.github/workflows/scrape.yml` | The scheduled Action (cron in UTC, retry/backoff, change-only commits) |
+| `index.html` | The whole website (embedded CSS/JS, Chart.js from CDN) |
+| `data/rankings.json` | Current leaderboard snapshot |
+| `data/history.json` | Append-only log of every snapshot (for trends & rank-change) |
+| `data/predictions.json` | Per-player fixture/bonus breakdown, keyed by `team_id` |
+| `sample-*.html` | The ground-truth HTML samples the parser was built/tested against |
+
+The `data/` files are pre-seeded from the samples so the site shows content the
+moment Pages goes live; the first real Action run overwrites them with live data.
+
+---
+
+## How it works
+
+1. **`scraper.py`** fetches the pool page, parses `<div id="table-rounds">` for the
+   standings (skipping ad rows), then visits each player's
+   `…/team/{id}/{slug}/stage/1196-grand-total` page and parses every fixture,
+   matchday subtotal, and bonus question.
+   - Player names/rows are **never hardcoded** — they're extracted each run, so the
+     pool can gain/lose players freely.
+   - Kickoff times are converted to **UTC** in the JSON, so the website can display
+     them in each viewer's local timezone.
+   - **Retry/backoff:** if the leaderboard returns zero rows or errors, the whole
+     run retries up to 3 times with a 30-minute gap (configurable via
+     `MAX_ATTEMPTS` / `RETRY_GAP_SECONDS`). A single failing player page doesn't
+     abort the run — that player keeps their previous data.
+   - Files are written **only when valid data is present**. `history.json` only gets
+     a new entry when the standings actually changed (no duplicate snapshots).
+
+2. **The workflow** runs on a cron schedule, installs deps, runs the scraper, and
+   commits `data/*.json` **only if something changed** (no empty/duplicate commits).
+   A failed scrape commits nothing.
+
+3. **`index.html`** fetches the three JSON files and renders:
+   - **Layer 1 — Standings:** ranked cards with flags, points, exact-score count,
+     ▲▼ rank-movement vs the previous snapshot, green highlight for climbers, a
+     "top climber / biggest drop / leader" strip, and gold/silver/bronze podium.
+   - **Layer 2 — Player view** (tap any row): points-over-time, rank-over-time, and
+     exact-predictions-over-time charts, plus the full prediction sheet grouped by
+     matchday — completed *and* upcoming matches — with a "🎯 perfect call" badge on
+     exact scores, matchday subtotals, the bonus questions, and
+     **Completed / Upcoming / Today-only** filters that combine.
+
+---
+
+## One-time setup
+
+### 1. Create the repo (public)
+
+```bash
+cd /path/to/this/folder            # the folder containing index.html, scraper.py, …
+git init
+git add .
+git commit -m "Initial commit: fantasy WC tracker"
+gh repo create wc-fantasy-tracker --public --source=. --push
+```
+
+No `gh` CLI? Create an empty **public** repo on github.com, then:
+
+```bash
+git init && git add . && git commit -m "Initial commit"
+git branch -M main
+git remote add origin https://github.com/<YOUR-USERNAME>/wc-fantasy-tracker.git
+git push -u origin main
+```
+
+### 2. Allow the Action to commit
+
+GitHub → your repo → **Settings → Actions → General → Workflow permissions** →
+select **“Read and write permissions”** → **Save**.
+(The workflow also requests this via `permissions: contents: write`, but this repo
+setting must not be more restrictive.)
+
+### 3. Enable GitHub Pages
+
+GitHub → **Settings → Pages** →
+**Source: “Deploy from a branch”** → **Branch: `main`**, **Folder: `/ (root)`** → **Save**.
+
+After ~1 minute your site is live at:
+`https://<YOUR-USERNAME>.github.io/wc-fantasy-tracker/`
+
+### 4. Trigger the first scrape
+
+GitHub → **Actions** tab → **“Scrape pool & update data”** → **Run workflow**
+(green button on the right). Watch it run; on success it commits fresh
+`data/*.json` and the site updates automatically.
+
+---
+
+## Setting your match-based cron times
+
+Open `.github/workflows/scrape.yml`. Cron is **always UTC**. Replace the
+placeholder line with your own triggers (one `- cron:` line per trigger):
+
+```yaml
+schedule:
+  - cron: "10 19 11 6 *"   # 2026-06-11 19:10 UTC
+  - cron: "40 21 11 6 *"   # 2026-06-11 21:40 UTC
+```
+
+Format is `minute hour day month day-of-week`. A common pattern is one run shortly
+after each kickoff and one ~2.5 h later (full-time) so points update promptly.
+Until you customize, it runs every 6 hours. You can always hit **Run workflow**
+manually too.
+
+> Tip: GitHub's scheduled runs can be delayed a few minutes under load, and only
+> run on the default branch.
+
+---
+
+## Run it locally
+
+```bash
+pip install -r requirements.txt
+
+python scraper.py --samples --out data   # parse the bundled sample HTML (offline)
+python scraper.py --out data             # real live scrape
+
+# preview the site (fetch() needs http://, not file://)
+python -m http.server 8000               # then open http://localhost:8000
+```
+
+`--samples` mode only has full prediction data for the sample player (JJ); other
+players show an empty prediction sheet until a real run fills them in.
+
+---
+
+## Customizing
+
+- **Different pool:** edit `POOL_ID` / `POOL_SLUG` at the top of `scraper.py`.
+- **Retry behavior:** `MAX_ATTEMPTS` / `RETRY_GAP_SECONDS` env vars (set in the workflow).
+- **Colors/branding:** the CSS variables at the top of `index.html` (`:root { … }`).
+- **If the site ever switches to client-side rendering** (the scraper returns 0 rows
+  even though the page looks fine in a browser), swap the `fetch()` function in
+  `scraper.py` for a headless-browser fetch (e.g. Playwright). Nothing else changes.
