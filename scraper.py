@@ -778,6 +778,16 @@ def parse_player_page(html: str) -> dict:
     }
 
 
+def prediction_has_data(prediction: dict | None) -> bool:
+    if not isinstance(prediction, dict):
+        return False
+    return any(
+        md.get("fixtures")
+        for md in prediction.get("matchdays", [])
+        if isinstance(md, dict)
+    )
+
+
 # --------------------------------------------------------------------------- #
 # Orchestration
 # --------------------------------------------------------------------------- #
@@ -797,6 +807,8 @@ def scrape_once(get_leaderboard_html, get_player_html, prev_predictions: dict) -
                 raise RuntimeError("missing player URL in leaderboard row")
             html = get_player_html(p)
             parsed = parse_player_page(html)
+            if not prediction_has_data(parsed):
+                raise RuntimeError("player page produced 0 parsed fixtures")
             predictions[tid] = {
                 "team_id": tid,
                 "name": p["name"],
@@ -815,7 +827,7 @@ def scrape_once(get_leaderboard_html, get_player_html, prev_predictions: dict) -
             stats["failed"] += 1
             print(f"  ! player {tid} ({p['name']}) failed: {exc}", file=sys.stderr)
             # Keep previous data for this player rather than wiping it.
-            if tid in prev_predictions:
+            if tid in prev_predictions and prediction_has_data(prev_predictions[tid]):
                 kept = dict(prev_predictions[tid])
                 kept.update(
                     {
