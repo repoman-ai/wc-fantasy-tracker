@@ -68,6 +68,7 @@ RETRY_GAP_SECONDS = int(os.environ.get("RETRY_GAP_SECONDS", "1800"))  # 30 minut
 REQUEST_TIMEOUT = int(os.environ.get("REQUEST_TIMEOUT", "30"))
 CF_CHALLENGE_TIMEOUT = int(os.environ.get("CF_CHALLENGE_TIMEOUT", "25"))
 FETCH_BACKEND = os.environ.get("FETCH_BACKEND", "auto").lower()  # auto, requests, browser
+BROWSER_HEADLESS = os.environ.get("BROWSER_HEADLESS", "1").lower() not in {"0", "false", "no"}
 HTTP_HEADERS = {
     "User-Agent": (
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
@@ -88,6 +89,7 @@ HTTP_HEADERS = {
 
 FLAG_RE = re.compile(r"flags/4x3/([A-Za-z0-9]+)\.svg")
 TEAM_HREF_RE = re.compile(r"/team/(\d+)/([^/]+)/")
+TEAM_PAGE_RE = re.compile(r"/team/(\d+)/")
 STAGE_RE = re.compile(r"/stage/([^/?#\"']+)")
 
 
@@ -174,20 +176,25 @@ class BrowserFetcher:
 
         self._pw = sync_playwright().start()
         self._browser = self._pw.chromium.launch(
-            headless=True,
+            headless=BROWSER_HEADLESS,
             args=["--disable-blink-features=AutomationControlled"],
         )
         self._context = self._browser.new_context(
-            user_agent=HTTP_HEADERS["User-Agent"],
             locale="en-US",
             extra_http_headers={
                 "Accept-Language": HTTP_HEADERS["Accept-Language"],
-                "Referer": HTTP_HEADERS["Referer"],
             },
         )
         self._page = self._context.new_page()
+        self._leaderboard_url = None
 
     def fetch_page(self, url: str) -> tuple[str, str]:
+        if "/team/" in url and self._leaderboard_url:
+            try:
+                return self._fetch_team_page_from_leaderboard(url)
+            except Exception as exc:
+                print(f"  http: leaderboard-click fetch failed, trying direct URL: {exc}", file=sys.stderr)
+
         response = self._page.goto(
             url,
             wait_until="domcontentloaded",
@@ -210,11 +217,61 @@ class BrowserFetcher:
                 f"body starts: {_response_excerpt(html)}"
             )
         if status and status >= 400 and _looks_like_scrape_page(html):
+            if "id=\"table-rounds\"" in html:
+                self._leaderboard_url = final_url
             return html, final_url
         if status and status >= 400:
             raise RuntimeError(
                 f"Browser fetch got HTTP {status} for {final_url}; body starts: {_response_excerpt(html)}"
             )
+        if "id=\"table-rounds\"" in html:
+            self._leaderboard_url = final_url
+        return html, final_url
+
+    def _fetch_team_page_from_leaderboard(self, url: str) -> tuple[str, str]:
+        team_match = TEAM_PAGE_RE.search(url)
+        if not team_match:
+            raise RuntimeError("could not extract team id from URL")
+
+        team_id = team_match.group(1)
+        if "id=\"table-rounds\"" not in self._page.content():
+            self._page.goto(
+                self._leaderboard_url,
+                wait_until="domcontentloaded",
+                timeout=REQUEST_TIMEOUT * 1000,
+            )
+            self._wait_for_page_or_challenge()
+
+        locator = self._page.locator(f'a[href*="/team/{team_id}/"]').first
+        if locator.count() == 0:
+            raise RuntimeError(f"team link {team_id} not found on leaderboard")
+
+        locator.click(no_wait_after=True)
+        try:
+            self._page.wait_for_url(
+                re.compile(rf"/team/{re.escape(team_id)}/"),
+                wait_until="domcontentloaded",
+                timeout=min(REQUEST_TIMEOUT, 10) * 1000,
+            )
+        except Exception as exc:
+            raise RuntimeError(f"click did not navigate to team {team_id}") from exc
+
+        self._wait_for_page_or_challenge()
+        html = self._page.content()
+        final_url = self._page.url
+        if _looks_like_cloudflare_challenge(html):
+            print(f"  http: waiting for Cloudflare challenge at {final_url}", file=sys.stderr)
+            self._wait_for_cloudflare_clearance()
+            html = self._page.content()
+            final_url = self._page.url
+
+        if _looks_like_cloudflare_challenge(html):
+            raise RuntimeError(
+                f"Browser click could not clear Cloudflare challenge for {final_url}; "
+                f"body starts: {_response_excerpt(html)}"
+            )
+        if not _looks_like_scrape_page(html):
+            raise RuntimeError(f"player page did not contain prediction rows; body starts: {_response_excerpt(html)}")
         return html, final_url
 
     def _wait_for_page_or_challenge(self):

@@ -57,7 +57,8 @@ jobs:
           MAX_ATTEMPTS: "4"            # 1 try + 3 retries
           RETRY_GAP_SECONDS: "1800"    # 30 minutes between attempts
           FETCH_BACKEND: "auto"        # requests first; Chromium fallback on 403/503
-        run: python scraper.py --out data
+          BROWSER_HEADLESS: "0"        # run fallback Chromium under xvfb like a real browser
+        run: xvfb-run -a python scraper.py --out data
 
       # If the scrape step above fails (no data / network error after all
       # retries), the job stops here and NOTHING is committed.
