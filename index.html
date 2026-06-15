@@ -54,6 +54,14 @@
   .mover .chg{font-weight:800;font-size:15px}
   .mover.up .chg{color:#6ee7a8}.mover.down .chg{color:#fca5a5}
 
+  /* ---------- Live ticker (hero) ---------- */
+  .livestrip{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
+  .liveitem{background:rgba(226,59,59,.18);border:1px solid rgba(255,255,255,.22);border-radius:12px;
+    padding:8px 13px;display:flex;flex-direction:column;gap:3px;min-width:0}
+  .liveitem .lv{font-size:10px;text-transform:uppercase;letter-spacing:.6px;color:#ffdada;display:flex;align-items:center;gap:5px;font-weight:800}
+  .liveitem .mt{font-weight:700;font-size:13px;white-space:nowrap;display:flex;align-items:center;gap:8px}
+  .liveitem .sc{font-family:'Barlow Condensed';font-weight:800;font-size:16px}
+
   /* ---------- Board ---------- */
   .board{margin-top:-60px;position:relative;z-index:2}
   .board-head{display:flex;align-items:center;justify-content:space-between;margin:0 4px 10px;color:#fff}
@@ -163,6 +171,17 @@
   .fx .when{font-size:12px;color:var(--muted);font-weight:600}
   .fx .when .st{display:inline-block;font-size:10px;font-weight:800;padding:2px 6px;border-radius:6px;margin-bottom:4px;letter-spacing:.4px}
   .st.ft{background:#e7f7ee;color:#16794a}.st.ns{background:#eef1f7;color:#67738c}
+  .st.live{background:#fdecec;color:#c01d1d;display:inline-flex;align-items:center;gap:5px}
+  .livedot{width:7px;height:7px;border-radius:50%;background:#e23b3b;display:inline-block;
+    box-shadow:0 0 0 0 rgba(226,59,59,.6);animation:livepulse 1.4s infinite}
+  @keyframes livepulse{0%{box-shadow:0 0 0 0 rgba(226,59,59,.55)}70%{box-shadow:0 0 0 7px rgba(226,59,59,0)}100%{box-shadow:0 0 0 0 rgba(226,59,59,0)}}
+  .scoreline.live{color:#e23b3b}
+  .pp.live{color:#e23b3b;font-weight:800}
+  .fx.live{border:1.5px solid #f6b8b8;background:linear-gradient(90deg,#fff5f5,#fff 30%)}
+  .livecap{grid-column:1 / -1;margin-top:8px;font-size:12.5px;font-weight:700;color:#c01d1d;
+    display:flex;align-items:center;gap:8px;border-top:1px dashed #f3c4c4;padding-top:8px;flex-wrap:wrap}
+  .livecap .lvscore{font-family:'Barlow Condensed';font-size:16px;font-weight:800}
+  .livecap .lvpts{color:var(--muted);font-weight:700}
   .match{display:flex;flex-direction:column;gap:5px;min-width:0}
   .teamline{display:flex;align-items:center;gap:8px;min-width:0}
   .teamline .tn{font-weight:600;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -211,6 +230,7 @@
         </div>
       </div>
       <div class="updated"><span class="dot"></span><span id="updated">Loading…</span></div>
+      <div class="livestrip" id="livestrip"></div>
       <div class="movers" id="movers"></div>
     </div>
   </header>
@@ -289,6 +309,7 @@ async function init(){
   document.title = `${$('#poolName').textContent} — Fantasy World Cup 2026`;
   $('#updated').textContent = 'Updated '+fmtUpdated(RANKINGS.updated);
   MOVE = computeMovement();
+  renderLiveStrip();
   renderMovers();
   renderBoard();
   $('#foot').textContent = `${RANKINGS.players.length} players · ${HISTORY.length} snapshot${HISTORY.length===1?'':'s'} tracked · times shown in your local timezone`;
@@ -322,6 +343,52 @@ function renderMovers(){
   const leader=RANKINGS.players.find(p=>p.rank===1);
   if(leader) cards.push(`<div class="mover"><div><div class="lbl">👑 Leader</div><div class="nm">${esc(leader.name)}</div></div><div class="chg num">${leader.points}</div></div>`);
   box.innerHTML=cards.join('');
+}
+
+/* A fixture is "live" when its status badge reads LIVE / a minute / HT etc.
+   (the scraper passes the badge text straight through, e.g. "· LIVE"). */
+function isLive(fx){
+  const s=(fx&&fx.status||'').toUpperCase();
+  if(!s) return false;
+  if(s.includes('FT')) return false;
+  return s.includes('LIVE')||s.includes('HT')||/\d+'/.test(s);
+}
+function teamName(t){ return (t&&(t.name||t.code))||'TBD'; }
+
+/* Collect the set of matches that are in progress right now, deduped by
+   fixture number across every player's prediction page. */
+function liveMatches(){
+  const seen=new Map();
+  Object.values(PRED).forEach(p=>{
+    (p.matchdays||[]).forEach(md=>(md.fixtures||[]).forEach(fx=>{
+      if(!isLive(fx)) return;
+      const key=fx.fixture_number??(teamName(fx.match?.home)+teamName(fx.match?.away));
+      if(!seen.has(key)){
+        seen.set(key,{
+          home:teamName(fx.match?.home), homeCode:fx.match?.home?.code,
+          away:teamName(fx.match?.away), awayCode:fx.match?.away?.code,
+          score:fx.actual_score||'0 - 0', status:clean(fx.status)||'LIVE',
+        });
+      }
+    }));
+  });
+  return [...seen.values()];
+}
+function clean(s){ return (s==null?'':String(s)).replace(/^[\s·•\-–]+|[\s·•\-–]+$/g,'').trim(); }
+
+function renderLiveStrip(){
+  const box=$('#livestrip'); if(!box) return;
+  const live=liveMatches();
+  if(!live.length){ box.innerHTML=''; return; }
+  box.innerHTML=live.map(m=>`
+    <div class="liveitem">
+      <div class="lv"><span class="livedot"></span>Live now</div>
+      <div class="mt">
+        ${flagImg(m.homeCode,'flag sm')}<span>${esc(m.home)}</span>
+        <span class="sc">${esc(m.score)}</span>
+        <span>${esc(m.away)}</span>${flagImg(m.awayCode,'flag sm')}
+      </div>
+    </div>`).join('');
 }
 
 function moveHtml(mv){
@@ -464,6 +531,7 @@ function renderSheet(teamId){
   let html=''; let shown=0;
   pdata.matchdays.forEach(md=>{
     const fixtures=md.fixtures.filter(fx=>{
+      if(isLive(fx)) return true;       // always surface an in-progress match
       const done=isCompleted(fx);
       if(done && !FILTERS.completed) return false;
       if(!done && !FILTERS.upcoming) return false;
@@ -488,9 +556,12 @@ function teamLine(t){
 }
 
 function fixtureHtml(fx){
+  const live=isLive(fx);
   const done=isCompleted(fx);
   const when=fmtFixture(fx.kickoff_utc);
-  const st=done?'<span class="st ft">FT</span>':'<span class="st ns">'+esc(fx.status||'NS')+'</span>';
+  const st=live
+    ? '<span class="st live"><span class="livedot"></span>LIVE</span>'
+    : (done?'<span class="st ft">FT</span>':'<span class="st ns">'+esc(fx.status||'NS')+'</span>');
 
   // Predicted column
   let predHtml='';
@@ -507,27 +578,36 @@ function fixtureHtml(fx){
     predHtml=`<div class="scoreline pred">${esc(fx.predicted?.score||'—')}</div>`;
   }
 
-  // Actual column
-  let actHtml = done
-    ? `<div class="scoreline">${esc(fx.actual_score||'')}</div>`
-    : `<div class="scoreline pend">${esc(fx.actual_score||'NS')} · TBD</div>`;
-
   // Points column
   let ptsHtml;
-  if(done){
+  if(live){
+    ptsHtml=`<div class="pv num">${fx.points??0}</div><div class="pp live">live pts</div>`;
+  }else if(done){
     ptsHtml=`<div class="pv num">${fx.points??0}</div>`+(fx.is_exact?`<div class="perfect">🎯 perfect call</div>`:'');
   }else{
     ptsHtml=`<div class="pp">pending</div>`;
   }
 
-  return `<div class="fx ${fx.is_exact&&done?'exact':''}">
+  // "Read as if it is live" caption under the prediction while a match is in play.
+  let liveCap='';
+  if(live){
+    const home=esc(teamName(fx.match?.home)), away=esc(teamName(fx.match?.away));
+    liveCap=`<div class="livecap">
+      <span class="livedot"></span>LIVE NOW
+      <span class="lvscore">${home} ${esc(fx.actual_score||'0 - 0')} ${away}</span>
+      <span class="lvpts">— you're on ${fx.points??0} pts so far${fx.is_exact?' · on for a 🎯':''}</span>
+    </div>`;
+  }
+
+  return `<div class="fx ${live?'live':''} ${fx.is_exact&&done?'exact':''}">
     <div class="when">${st}<div>${esc(when.date)}</div><div>${esc(when.time)}</div></div>
     <div class="match">
       ${teamLine(fx.match?.home)}
       ${teamLine(fx.match?.away)}
     </div>
     <div class="pcol"><div class="lab">Predicted</div>${predHtml}</div>
-    <div class="ptsbox"><div class="lab">${done?'Points':'Status'}</div>${ptsHtml}</div>
+    <div class="ptsbox"><div class="lab">${live?'Live':(done?'Points':'Status')}</div>${ptsHtml}</div>
+    ${liveCap}
   </div>`;
 }
 

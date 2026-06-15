@@ -4,24 +4,367 @@ name: Scrape pool & update data
 # Scrapes the leaderboard + every player's prediction page, then commits the
 # refreshed JSON into data/ (only when the scrape succeeds AND something changed).
 #
-# Cron is ALWAYS in UTC. The times below are PLACEHOLDERS — replace them with
-# your match-based trigger times (converted to UTC). You can list several lines;
-# each is one trigger. Examples are commented out underneath.
+# SCHEDULE (auto-generated from the FIFA World Cup 2026 match schedule):
+#   For every kickoff we trigger a scrape at +1h55, +2h05 and +2h30 after the
+#   start, so results land as soon as a match wraps up (the +1h55 run usually
+#   catches the closing live minutes; +2h05/+2h30 lock in the final score).
+#   Knockout matches get an extra run at +3h20 to cover extra time + penalties.
+#
+#   Match kickoff times in the schedule are Eastern (EDT = UTC-4); the cron
+#   lines below are in UTC (GitHub Actions cron is ALWAYS UTC).
 #
 # Cron format:  minute hour day-of-month month day-of-week
 # ---------------------------------------------------------------------------
 on:
   workflow_dispatch:        # lets you trigger a run by hand from the Actions tab
   schedule:
-    # ----- PLACEHOLDER schedule: runs every 6 hours until you customize -----
-    - cron: "0 */6 * * *"
+    # Daily safety-net run (08:00 UTC) so data still refreshes off match days.
+    - cron: "0 8 * * *"
 
-    # ----- EXAMPLES — match-day triggers (edit/uncomment, all in UTC) --------
-    # A typical pattern: run ~10 min after each kickoff and ~2.5 h later (full-time).
-    # - cron: "10 19 11 6 *"   # 2026-06-11 19:10 UTC  (just after a 19:00 kickoff)
-    # - cron: "40 21 11 6 *"   # 2026-06-11 21:40 UTC  (around full-time)
-    # - cron: "10 16 12 6 *"   # 2026-06-12 16:10 UTC
-    # - cron: "0 20 28 6 *"    # 2026-06-28 20:00 UTC  (Round of 32)
+    # ----- Match-based triggers (UTC) ---------------------------------------
+    # ---- Jun 11 (UTC) ----
+    - cron: "55 20 11 6 *"   # 20:55 UTC
+    - cron: "5 21 11 6 *"   # 21:05 UTC
+    - cron: "30 21 11 6 *"   # 21:30 UTC
+    # ---- Jun 12 (UTC) ----
+    - cron: "55 3 12 6 *"   # 03:55 UTC
+    - cron: "5 4 12 6 *"   # 04:05 UTC
+    - cron: "30 4 12 6 *"   # 04:30 UTC
+    - cron: "55 20 12 6 *"   # 20:55 UTC
+    - cron: "5 21 12 6 *"   # 21:05 UTC
+    - cron: "30 21 12 6 *"   # 21:30 UTC
+    # ---- Jun 13 (UTC) ----
+    - cron: "55 2 13 6 *"   # 02:55 UTC
+    - cron: "5 3 13 6 *"   # 03:05 UTC
+    - cron: "30 3 13 6 *"   # 03:30 UTC
+    - cron: "55 20 13 6 *"   # 20:55 UTC
+    - cron: "5 21 13 6 *"   # 21:05 UTC
+    - cron: "30 21 13 6 *"   # 21:30 UTC
+    - cron: "55 23 13 6 *"   # 23:55 UTC
+    # ---- Jun 14 (UTC) ----
+    - cron: "5 0 14 6 *"   # 00:05 UTC
+    - cron: "30 0 14 6 *"   # 00:30 UTC
+    - cron: "55 2 14 6 *"   # 02:55 UTC
+    - cron: "5 3 14 6 *"   # 03:05 UTC
+    - cron: "30 3 14 6 *"   # 03:30 UTC
+    - cron: "55 5 14 6 *"   # 05:55 UTC
+    - cron: "5 6 14 6 *"   # 06:05 UTC
+    - cron: "30 6 14 6 *"   # 06:30 UTC
+    - cron: "55 18 14 6 *"   # 18:55 UTC
+    - cron: "5 19 14 6 *"   # 19:05 UTC
+    - cron: "30 19 14 6 *"   # 19:30 UTC
+    - cron: "55 21 14 6 *"   # 21:55 UTC
+    - cron: "5 22 14 6 *"   # 22:05 UTC
+    - cron: "30 22 14 6 *"   # 22:30 UTC
+    # ---- Jun 15 (UTC) ----
+    - cron: "55 0 15 6 *"   # 00:55 UTC
+    - cron: "5 1 15 6 *"   # 01:05 UTC
+    - cron: "30 1 15 6 *"   # 01:30 UTC
+    - cron: "55 3 15 6 *"   # 03:55 UTC
+    - cron: "5 4 15 6 *"   # 04:05 UTC
+    - cron: "30 4 15 6 *"   # 04:30 UTC
+    - cron: "55 17 15 6 *"   # 17:55 UTC
+    - cron: "5 18 15 6 *"   # 18:05 UTC
+    - cron: "30 18 15 6 *"   # 18:30 UTC
+    - cron: "55 20 15 6 *"   # 20:55 UTC
+    - cron: "5 21 15 6 *"   # 21:05 UTC
+    - cron: "30 21 15 6 *"   # 21:30 UTC
+    - cron: "55 23 15 6 *"   # 23:55 UTC
+    # ---- Jun 16 (UTC) ----
+    - cron: "5 0 16 6 *"   # 00:05 UTC
+    - cron: "30 0 16 6 *"   # 00:30 UTC
+    - cron: "55 2 16 6 *"   # 02:55 UTC
+    - cron: "5 3 16 6 *"   # 03:05 UTC
+    - cron: "30 3 16 6 *"   # 03:30 UTC
+    - cron: "55 20 16 6 *"   # 20:55 UTC
+    - cron: "5 21 16 6 *"   # 21:05 UTC
+    - cron: "30 21 16 6 *"   # 21:30 UTC
+    - cron: "55 23 16 6 *"   # 23:55 UTC
+    # ---- Jun 17 (UTC) ----
+    - cron: "5 0 17 6 *"   # 00:05 UTC
+    - cron: "30 0 17 6 *"   # 00:30 UTC
+    - cron: "55 2 17 6 *"   # 02:55 UTC
+    - cron: "5 3 17 6 *"   # 03:05 UTC
+    - cron: "30 3 17 6 *"   # 03:30 UTC
+    - cron: "55 5 17 6 *"   # 05:55 UTC
+    - cron: "5 6 17 6 *"   # 06:05 UTC
+    - cron: "30 6 17 6 *"   # 06:30 UTC
+    - cron: "55 18 17 6 *"   # 18:55 UTC
+    - cron: "5 19 17 6 *"   # 19:05 UTC
+    - cron: "30 19 17 6 *"   # 19:30 UTC
+    - cron: "55 21 17 6 *"   # 21:55 UTC
+    - cron: "5 22 17 6 *"   # 22:05 UTC
+    - cron: "30 22 17 6 *"   # 22:30 UTC
+    # ---- Jun 18 (UTC) ----
+    - cron: "55 0 18 6 *"   # 00:55 UTC
+    - cron: "5 1 18 6 *"   # 01:05 UTC
+    - cron: "30 1 18 6 *"   # 01:30 UTC
+    - cron: "55 3 18 6 *"   # 03:55 UTC
+    - cron: "5 4 18 6 *"   # 04:05 UTC
+    - cron: "30 4 18 6 *"   # 04:30 UTC
+    - cron: "55 17 18 6 *"   # 17:55 UTC
+    - cron: "5 18 18 6 *"   # 18:05 UTC
+    - cron: "30 18 18 6 *"   # 18:30 UTC
+    - cron: "55 20 18 6 *"   # 20:55 UTC
+    - cron: "5 21 18 6 *"   # 21:05 UTC
+    - cron: "30 21 18 6 *"   # 21:30 UTC
+    - cron: "55 23 18 6 *"   # 23:55 UTC
+    # ---- Jun 19 (UTC) ----
+    - cron: "5 0 19 6 *"   # 00:05 UTC
+    - cron: "30 0 19 6 *"   # 00:30 UTC
+    - cron: "55 2 19 6 *"   # 02:55 UTC
+    - cron: "5 3 19 6 *"   # 03:05 UTC
+    - cron: "30 3 19 6 *"   # 03:30 UTC
+    - cron: "55 20 19 6 *"   # 20:55 UTC
+    - cron: "5 21 19 6 *"   # 21:05 UTC
+    - cron: "30 21 19 6 *"   # 21:30 UTC
+    - cron: "55 23 19 6 *"   # 23:55 UTC
+    # ---- Jun 20 (UTC) ----
+    - cron: "5 0 20 6 *"   # 00:05 UTC
+    - cron: "25 0 20 6 *"   # 00:25 UTC
+    - cron: "30 0 20 6 *"   # 00:30 UTC
+    - cron: "35 0 20 6 *"   # 00:35 UTC
+    - cron: "0 1 20 6 *"   # 01:00 UTC
+    - cron: "55 4 20 6 *"   # 04:55 UTC
+    - cron: "5 5 20 6 *"   # 05:05 UTC
+    - cron: "30 5 20 6 *"   # 05:30 UTC
+    - cron: "55 18 20 6 *"   # 18:55 UTC
+    - cron: "5 19 20 6 *"   # 19:05 UTC
+    - cron: "30 19 20 6 *"   # 19:30 UTC
+    - cron: "55 21 20 6 *"   # 21:55 UTC
+    - cron: "5 22 20 6 *"   # 22:05 UTC
+    - cron: "30 22 20 6 *"   # 22:30 UTC
+    # ---- Jun 21 (UTC) ----
+    - cron: "55 1 21 6 *"   # 01:55 UTC
+    - cron: "5 2 21 6 *"   # 02:05 UTC
+    - cron: "30 2 21 6 *"   # 02:30 UTC
+    - cron: "55 5 21 6 *"   # 05:55 UTC
+    - cron: "5 6 21 6 *"   # 06:05 UTC
+    - cron: "30 6 21 6 *"   # 06:30 UTC
+    - cron: "55 17 21 6 *"   # 17:55 UTC
+    - cron: "5 18 21 6 *"   # 18:05 UTC
+    - cron: "30 18 21 6 *"   # 18:30 UTC
+    - cron: "55 20 21 6 *"   # 20:55 UTC
+    - cron: "5 21 21 6 *"   # 21:05 UTC
+    - cron: "30 21 21 6 *"   # 21:30 UTC
+    - cron: "55 23 21 6 *"   # 23:55 UTC
+    # ---- Jun 22 (UTC) ----
+    - cron: "5 0 22 6 *"   # 00:05 UTC
+    - cron: "30 0 22 6 *"   # 00:30 UTC
+    - cron: "55 2 22 6 *"   # 02:55 UTC
+    - cron: "5 3 22 6 *"   # 03:05 UTC
+    - cron: "30 3 22 6 *"   # 03:30 UTC
+    - cron: "55 18 22 6 *"   # 18:55 UTC
+    - cron: "5 19 22 6 *"   # 19:05 UTC
+    - cron: "30 19 22 6 *"   # 19:30 UTC
+    - cron: "55 22 22 6 *"   # 22:55 UTC
+    - cron: "5 23 22 6 *"   # 23:05 UTC
+    - cron: "30 23 22 6 *"   # 23:30 UTC
+    # ---- Jun 23 (UTC) ----
+    - cron: "55 1 23 6 *"   # 01:55 UTC
+    - cron: "5 2 23 6 *"   # 02:05 UTC
+    - cron: "30 2 23 6 *"   # 02:30 UTC
+    - cron: "55 4 23 6 *"   # 04:55 UTC
+    - cron: "5 5 23 6 *"   # 05:05 UTC
+    - cron: "30 5 23 6 *"   # 05:30 UTC
+    - cron: "55 18 23 6 *"   # 18:55 UTC
+    - cron: "5 19 23 6 *"   # 19:05 UTC
+    - cron: "30 19 23 6 *"   # 19:30 UTC
+    - cron: "55 21 23 6 *"   # 21:55 UTC
+    - cron: "5 22 23 6 *"   # 22:05 UTC
+    - cron: "30 22 23 6 *"   # 22:30 UTC
+    # ---- Jun 24 (UTC) ----
+    - cron: "55 0 24 6 *"   # 00:55 UTC
+    - cron: "5 1 24 6 *"   # 01:05 UTC
+    - cron: "30 1 24 6 *"   # 01:30 UTC
+    - cron: "55 3 24 6 *"   # 03:55 UTC
+    - cron: "5 4 24 6 *"   # 04:05 UTC
+    - cron: "30 4 24 6 *"   # 04:30 UTC
+    - cron: "55 20 24 6 *"   # 20:55 UTC
+    - cron: "5 21 24 6 *"   # 21:05 UTC
+    - cron: "30 21 24 6 *"   # 21:30 UTC
+    - cron: "55 23 24 6 *"   # 23:55 UTC
+    # ---- Jun 25 (UTC) ----
+    - cron: "5 0 25 6 *"   # 00:05 UTC
+    - cron: "30 0 25 6 *"   # 00:30 UTC
+    - cron: "55 2 25 6 *"   # 02:55 UTC
+    - cron: "5 3 25 6 *"   # 03:05 UTC
+    - cron: "30 3 25 6 *"   # 03:30 UTC
+    - cron: "55 21 25 6 *"   # 21:55 UTC
+    - cron: "5 22 25 6 *"   # 22:05 UTC
+    - cron: "30 22 25 6 *"   # 22:30 UTC
+    # ---- Jun 26 (UTC) ----
+    - cron: "55 0 26 6 *"   # 00:55 UTC
+    - cron: "5 1 26 6 *"   # 01:05 UTC
+    - cron: "30 1 26 6 *"   # 01:30 UTC
+    - cron: "55 3 26 6 *"   # 03:55 UTC
+    - cron: "5 4 26 6 *"   # 04:05 UTC
+    - cron: "30 4 26 6 *"   # 04:30 UTC
+    - cron: "55 20 26 6 *"   # 20:55 UTC
+    - cron: "5 21 26 6 *"   # 21:05 UTC
+    - cron: "30 21 26 6 *"   # 21:30 UTC
+    # ---- Jun 27 (UTC) ----
+    - cron: "55 1 27 6 *"   # 01:55 UTC
+    - cron: "5 2 27 6 *"   # 02:05 UTC
+    - cron: "30 2 27 6 *"   # 02:30 UTC
+    - cron: "55 4 27 6 *"   # 04:55 UTC
+    - cron: "5 5 27 6 *"   # 05:05 UTC
+    - cron: "30 5 27 6 *"   # 05:30 UTC
+    - cron: "55 22 27 6 *"   # 22:55 UTC
+    - cron: "5 23 27 6 *"   # 23:05 UTC
+    - cron: "30 23 27 6 *"   # 23:30 UTC
+    # ---- Jun 28 (UTC) ----
+    - cron: "25 1 28 6 *"   # 01:25 UTC
+    - cron: "35 1 28 6 *"   # 01:35 UTC
+    - cron: "0 2 28 6 *"   # 02:00 UTC
+    - cron: "55 3 28 6 *"   # 03:55 UTC
+    - cron: "5 4 28 6 *"   # 04:05 UTC
+    - cron: "30 4 28 6 *"   # 04:30 UTC
+    - cron: "55 20 28 6 *"   # 20:55 UTC
+    - cron: "5 21 28 6 *"   # 21:05 UTC
+    - cron: "30 21 28 6 *"   # 21:30 UTC
+    - cron: "20 22 28 6 *"   # 22:20 UTC
+    # ---- Jun 29 (UTC) ----
+    - cron: "55 18 29 6 *"   # 18:55 UTC
+    - cron: "5 19 29 6 *"   # 19:05 UTC
+    - cron: "30 19 29 6 *"   # 19:30 UTC
+    - cron: "20 20 29 6 *"   # 20:20 UTC
+    - cron: "25 22 29 6 *"   # 22:25 UTC
+    - cron: "35 22 29 6 *"   # 22:35 UTC
+    - cron: "0 23 29 6 *"   # 23:00 UTC
+    - cron: "50 23 29 6 *"   # 23:50 UTC
+    # ---- Jun 30 (UTC) ----
+    - cron: "55 2 30 6 *"   # 02:55 UTC
+    - cron: "5 3 30 6 *"   # 03:05 UTC
+    - cron: "30 3 30 6 *"   # 03:30 UTC
+    - cron: "20 4 30 6 *"   # 04:20 UTC
+    - cron: "55 18 30 6 *"   # 18:55 UTC
+    - cron: "5 19 30 6 *"   # 19:05 UTC
+    - cron: "30 19 30 6 *"   # 19:30 UTC
+    - cron: "20 20 30 6 *"   # 20:20 UTC
+    - cron: "55 22 30 6 *"   # 22:55 UTC
+    - cron: "5 23 30 6 *"   # 23:05 UTC
+    - cron: "30 23 30 6 *"   # 23:30 UTC
+    # ---- Jul 1 (UTC) ----
+    - cron: "20 0 1 7 *"   # 00:20 UTC
+    - cron: "55 2 1 7 *"   # 02:55 UTC
+    - cron: "5 3 1 7 *"   # 03:05 UTC
+    - cron: "30 3 1 7 *"   # 03:30 UTC
+    - cron: "20 4 1 7 *"   # 04:20 UTC
+    - cron: "55 17 1 7 *"   # 17:55 UTC
+    - cron: "5 18 1 7 *"   # 18:05 UTC
+    - cron: "30 18 1 7 *"   # 18:30 UTC
+    - cron: "20 19 1 7 *"   # 19:20 UTC
+    - cron: "55 21 1 7 *"   # 21:55 UTC
+    - cron: "5 22 1 7 *"   # 22:05 UTC
+    - cron: "30 22 1 7 *"   # 22:30 UTC
+    - cron: "20 23 1 7 *"   # 23:20 UTC
+    # ---- Jul 2 (UTC) ----
+    - cron: "55 1 2 7 *"   # 01:55 UTC
+    - cron: "5 2 2 7 *"   # 02:05 UTC
+    - cron: "30 2 2 7 *"   # 02:30 UTC
+    - cron: "20 3 2 7 *"   # 03:20 UTC
+    - cron: "55 20 2 7 *"   # 20:55 UTC
+    - cron: "5 21 2 7 *"   # 21:05 UTC
+    - cron: "30 21 2 7 *"   # 21:30 UTC
+    - cron: "20 22 2 7 *"   # 22:20 UTC
+    # ---- Jul 3 (UTC) ----
+    - cron: "55 0 3 7 *"   # 00:55 UTC
+    - cron: "5 1 3 7 *"   # 01:05 UTC
+    - cron: "30 1 3 7 *"   # 01:30 UTC
+    - cron: "20 2 3 7 *"   # 02:20 UTC
+    - cron: "55 4 3 7 *"   # 04:55 UTC
+    - cron: "5 5 3 7 *"   # 05:05 UTC
+    - cron: "30 5 3 7 *"   # 05:30 UTC
+    - cron: "20 6 3 7 *"   # 06:20 UTC
+    - cron: "55 19 3 7 *"   # 19:55 UTC
+    - cron: "5 20 3 7 *"   # 20:05 UTC
+    - cron: "30 20 3 7 *"   # 20:30 UTC
+    - cron: "20 21 3 7 *"   # 21:20 UTC
+    - cron: "55 23 3 7 *"   # 23:55 UTC
+    # ---- Jul 4 (UTC) ----
+    - cron: "5 0 4 7 *"   # 00:05 UTC
+    - cron: "30 0 4 7 *"   # 00:30 UTC
+    - cron: "20 1 4 7 *"   # 01:20 UTC
+    - cron: "25 3 4 7 *"   # 03:25 UTC
+    - cron: "35 3 4 7 *"   # 03:35 UTC
+    - cron: "0 4 4 7 *"   # 04:00 UTC
+    - cron: "50 4 4 7 *"   # 04:50 UTC
+    - cron: "55 18 4 7 *"   # 18:55 UTC
+    - cron: "5 19 4 7 *"   # 19:05 UTC
+    - cron: "30 19 4 7 *"   # 19:30 UTC
+    - cron: "20 20 4 7 *"   # 20:20 UTC
+    - cron: "55 22 4 7 *"   # 22:55 UTC
+    - cron: "5 23 4 7 *"   # 23:05 UTC
+    - cron: "30 23 4 7 *"   # 23:30 UTC
+    # ---- Jul 5 (UTC) ----
+    - cron: "20 0 5 7 *"   # 00:20 UTC
+    - cron: "55 21 5 7 *"   # 21:55 UTC
+    - cron: "5 22 5 7 *"   # 22:05 UTC
+    - cron: "30 22 5 7 *"   # 22:30 UTC
+    - cron: "20 23 5 7 *"   # 23:20 UTC
+    # ---- Jul 6 (UTC) ----
+    - cron: "55 1 6 7 *"   # 01:55 UTC
+    - cron: "5 2 6 7 *"   # 02:05 UTC
+    - cron: "30 2 6 7 *"   # 02:30 UTC
+    - cron: "20 3 6 7 *"   # 03:20 UTC
+    - cron: "55 20 6 7 *"   # 20:55 UTC
+    - cron: "5 21 6 7 *"   # 21:05 UTC
+    - cron: "30 21 6 7 *"   # 21:30 UTC
+    - cron: "20 22 6 7 *"   # 22:20 UTC
+    # ---- Jul 7 (UTC) ----
+    - cron: "55 1 7 7 *"   # 01:55 UTC
+    - cron: "5 2 7 7 *"   # 02:05 UTC
+    - cron: "30 2 7 7 *"   # 02:30 UTC
+    - cron: "20 3 7 7 *"   # 03:20 UTC
+    - cron: "55 17 7 7 *"   # 17:55 UTC
+    - cron: "5 18 7 7 *"   # 18:05 UTC
+    - cron: "30 18 7 7 *"   # 18:30 UTC
+    - cron: "20 19 7 7 *"   # 19:20 UTC
+    - cron: "55 21 7 7 *"   # 21:55 UTC
+    - cron: "5 22 7 7 *"   # 22:05 UTC
+    - cron: "30 22 7 7 *"   # 22:30 UTC
+    - cron: "20 23 7 7 *"   # 23:20 UTC
+    # ---- Jul 9 (UTC) ----
+    - cron: "55 21 9 7 *"   # 21:55 UTC
+    - cron: "5 22 9 7 *"   # 22:05 UTC
+    - cron: "30 22 9 7 *"   # 22:30 UTC
+    - cron: "20 23 9 7 *"   # 23:20 UTC
+    # ---- Jul 10 (UTC) ----
+    - cron: "55 20 10 7 *"   # 20:55 UTC
+    - cron: "5 21 10 7 *"   # 21:05 UTC
+    - cron: "30 21 10 7 *"   # 21:30 UTC
+    - cron: "20 22 10 7 *"   # 22:20 UTC
+    # ---- Jul 11 (UTC) ----
+    - cron: "55 22 11 7 *"   # 22:55 UTC
+    - cron: "5 23 11 7 *"   # 23:05 UTC
+    - cron: "30 23 11 7 *"   # 23:30 UTC
+    # ---- Jul 12 (UTC) ----
+    - cron: "20 0 12 7 *"   # 00:20 UTC
+    - cron: "55 2 12 7 *"   # 02:55 UTC
+    - cron: "5 3 12 7 *"   # 03:05 UTC
+    - cron: "30 3 12 7 *"   # 03:30 UTC
+    - cron: "20 4 12 7 *"   # 04:20 UTC
+    # ---- Jul 14 (UTC) ----
+    - cron: "55 20 14 7 *"   # 20:55 UTC
+    - cron: "5 21 14 7 *"   # 21:05 UTC
+    - cron: "30 21 14 7 *"   # 21:30 UTC
+    - cron: "20 22 14 7 *"   # 22:20 UTC
+    # ---- Jul 15 (UTC) ----
+    - cron: "55 20 15 7 *"   # 20:55 UTC
+    - cron: "5 21 15 7 *"   # 21:05 UTC
+    - cron: "30 21 15 7 *"   # 21:30 UTC
+    - cron: "20 22 15 7 *"   # 22:20 UTC
+    # ---- Jul 18 (UTC) ----
+    - cron: "55 22 18 7 *"   # 22:55 UTC
+    - cron: "5 23 18 7 *"   # 23:05 UTC
+    - cron: "30 23 18 7 *"   # 23:30 UTC
+    # ---- Jul 19 (UTC) ----
+    - cron: "20 0 19 7 *"   # 00:20 UTC
+    - cron: "55 20 19 7 *"   # 20:55 UTC
+    - cron: "5 21 19 7 *"   # 21:05 UTC
+    - cron: "30 21 19 7 *"   # 21:30 UTC
+    - cron: "20 22 19 7 *"   # 22:20 UTC
 
 # Allow the workflow to push commits back to the repo.
 permissions:
