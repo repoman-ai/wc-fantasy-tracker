@@ -49,10 +49,14 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
+      - name: Install browser fallback
+        run: python -m playwright install --with-deps chromium
+
       - name: Scrape (with retry/backoff)
         env:
           MAX_ATTEMPTS: "4"            # 1 try + 3 retries
           RETRY_GAP_SECONDS: "1800"    # 30 minutes between attempts
+          FETCH_BACKEND: "auto"        # requests first; Chromium fallback on 403/503
         run: python scraper.py --out data
 
       # If the scrape step above fails (no data / network error after all

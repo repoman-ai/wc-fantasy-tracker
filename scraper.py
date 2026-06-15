@@ -4,7 +4,7 @@ Fantasy Soccer World Cup 2026 — pool scraper.
 
 Scrapes:
   1. The pool leaderboard table  (<div id="table-rounds">)
-  2. Each player's full prediction page (stage 1196 / grand-total)
+  2. Each player's full prediction page, using the stage-specific links from the leaderboard
 
 Outputs (written only when a scrape succeeds and has data):
   rankings.json     current leaderboard snapshot
@@ -16,10 +16,9 @@ Design notes
 * No hardcoded player names / row counts — everything is extracted per run.
 * Player set can grow/shrink between runs; history.json keys everything by team_id
   so the UI can chart a varying set of players over time.
-* Network is fetched with `requests`. The pages are server-rendered (the table data
-  is present in the initial HTML — see the samples), so no headless browser is needed.
-  If the site ever switches to client-side rendering, swap `fetch()` for a Playwright
-  call; nothing else changes.
+* Network is fetched with a persistent `requests` session by default. If the site
+  returns a bot-protection 403/503, the live scraper can automatically fall back to
+  Playwright/Chromium while leaving the parser unchanged.
 * Retries: the whole run is retried up to MAX_ATTEMPTS times with RETRY_GAP_SECONDS
   between attempts if the leaderboard yields zero rows or throws. A single player page
   failing does NOT abort the run — that player keeps their previously-scraped data.
@@ -35,6 +34,7 @@ Usage
 from __future__ import annotations
 
 import argparse
+import atexit
 import json
 import os
 import re
@@ -42,6 +42,7 @@ import sys
 import time
 from datetime import datetime, timezone
 from pathlib import Path
+from urllib.parse import urljoin, urlparse
 
 import requests
 from bs4 import BeautifulSoup
@@ -58,7 +59,6 @@ BASE = "https://www.tournamentsoccer.us"
 POOL_ID = "34193"
 POOL_SLUG = "bobby-and-friends"
 LEADERBOARD_URL = f"{BASE}/fantasy-soccer-world-cup/2026/pool/{POOL_ID}/{POOL_SLUG}/"
-PLAYER_URL_TMPL = f"{BASE}/fantasy-soccer-world-cup/2026/team/{{team_id}}/{{slug}}/stage/1196-grand-total"
 
 # Flag SVGs reuse the source CDN (the codes match exactly, e.g. FRA/ESP/RSA).
 FLAG_URL_TMPL = "https://assets.tournamentsoccer.us/flags/4x3/{code}.svg"
@@ -66,16 +66,28 @@ FLAG_URL_TMPL = "https://assets.tournamentsoccer.us/flags/4x3/{code}.svg"
 MAX_ATTEMPTS = int(os.environ.get("MAX_ATTEMPTS", "4"))          # 1 try + 3 retries
 RETRY_GAP_SECONDS = int(os.environ.get("RETRY_GAP_SECONDS", "1800"))  # 30 minutes
 REQUEST_TIMEOUT = int(os.environ.get("REQUEST_TIMEOUT", "30"))
+FETCH_BACKEND = os.environ.get("FETCH_BACKEND", "auto").lower()  # auto, requests, browser
 HTTP_HEADERS = {
     "User-Agent": (
-        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
-        "(KHTML, like Gecko) Chrome/124.0 Safari/537.36"
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+        "(KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36"
     ),
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8",
     "Accept-Language": "en-US,en;q=0.9",
+    "Cache-Control": "no-cache",
+    "Connection": "keep-alive",
+    "Pragma": "no-cache",
+    "Referer": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/",
+    "Sec-Fetch-Dest": "document",
+    "Sec-Fetch-Mode": "navigate",
+    "Sec-Fetch-Site": "same-origin",
+    "Sec-Fetch-User": "?1",
+    "Upgrade-Insecure-Requests": "1",
 }
 
 FLAG_RE = re.compile(r"flags/4x3/([A-Za-z0-9]+)\.svg")
 TEAM_HREF_RE = re.compile(r"/team/(\d+)/([^/]+)/")
+STAGE_RE = re.compile(r"/stage/([^/?#\"']+)")
 
 
 # --------------------------------------------------------------------------- #
@@ -130,10 +142,208 @@ def now_iso() -> str:
 # --------------------------------------------------------------------------- #
 # Networking
 # --------------------------------------------------------------------------- #
-def fetch(url: str) -> str:
-    resp = requests.get(url, headers=HTTP_HEADERS, timeout=REQUEST_TIMEOUT)
+REQUEST_SESSION = requests.Session()
+REQUEST_SESSION.headers.update(HTTP_HEADERS)
+_BROWSER_FETCHER = None
+_USING_BROWSER_FETCH = False
+
+
+def _response_excerpt(text: str) -> str:
+    return clean(text[:500])
+
+
+class BrowserFetcher:
+    def __init__(self):
+        try:
+            from playwright.sync_api import sync_playwright
+        except ImportError as exc:
+            raise RuntimeError(
+                "Playwright fallback is required after an HTTP block, but the "
+                "`playwright` package is not installed. Run `pip install -r requirements.txt`."
+            ) from exc
+
+        self._pw = sync_playwright().start()
+        self._browser = self._pw.chromium.launch(
+            headless=True,
+            args=["--disable-blink-features=AutomationControlled"],
+        )
+        self._context = self._browser.new_context(
+            user_agent=HTTP_HEADERS["User-Agent"],
+            locale="en-US",
+            extra_http_headers={
+                "Accept-Language": HTTP_HEADERS["Accept-Language"],
+                "Referer": HTTP_HEADERS["Referer"],
+            },
+        )
+        self._page = self._context.new_page()
+
+    def fetch_page(self, url: str) -> tuple[str, str]:
+        response = self._page.goto(
+            url,
+            wait_until="domcontentloaded",
+            timeout=REQUEST_TIMEOUT * 1000,
+        )
+        # The page is server-rendered, but analytics/ad requests can keep Chromium
+        # from ever reaching "networkidle". A short settle keeps fallback fast.
+        self._page.wait_for_timeout(1500)
+        status = response.status if response else None
+        html = self._page.content()
+        final_url = self._page.url
+        if status and status >= 400:
+            raise RuntimeError(
+                f"Browser fetch got HTTP {status} for {final_url}; body starts: {_response_excerpt(html)}"
+            )
+        return html, final_url
+
+    def close(self):
+        for obj in (self._context, self._browser):
+            try:
+                obj.close()
+            except Exception:
+                pass
+        try:
+            self._pw.stop()
+        except Exception:
+            pass
+
+
+def _get_browser_fetcher() -> BrowserFetcher:
+    global _BROWSER_FETCHER
+    if _BROWSER_FETCHER is None:
+        print("  http: starting Playwright browser fallback", file=sys.stderr)
+        _BROWSER_FETCHER = BrowserFetcher()
+        atexit.register(_BROWSER_FETCHER.close)
+    return _BROWSER_FETCHER
+
+
+def _fetch_page_with_requests(url: str) -> tuple[str, str]:
+    resp = REQUEST_SESSION.get(url, timeout=REQUEST_TIMEOUT, allow_redirects=True)
+    if resp.status_code in {403, 503}:
+        raise requests.HTTPError(
+            f"{resp.status_code} {resp.reason} for {resp.url}; body starts: {_response_excerpt(resp.text)}",
+            response=resp,
+        )
     resp.raise_for_status()
-    return resp.text
+    return resp.text, resp.url
+
+
+def fetch_page(url: str) -> tuple[str, str]:
+    global _USING_BROWSER_FETCH
+
+    if FETCH_BACKEND == "browser" or _USING_BROWSER_FETCH:
+        return _get_browser_fetcher().fetch_page(url)
+    if FETCH_BACKEND != "auto" and FETCH_BACKEND != "requests":
+        raise RuntimeError("FETCH_BACKEND must be one of: auto, requests, browser")
+
+    try:
+        return _fetch_page_with_requests(url)
+    except requests.HTTPError as exc:
+        status = exc.response.status_code if exc.response is not None else None
+        if FETCH_BACKEND == "auto" and status in {403, 503}:
+            print(f"  http: requests got {status}; switching to browser fetch", file=sys.stderr)
+            _USING_BROWSER_FETCH = True
+            return _get_browser_fetcher().fetch_page(url)
+        raise
+
+
+def fetch(url: str) -> str:
+    return fetch_page(url)[0]
+
+
+def extract_stage(url: str | None) -> str | None:
+    if not url:
+        return None
+    m = STAGE_RE.search(url)
+    return m.group(1) if m else None
+
+
+def _same_url(a: str, b: str) -> bool:
+    pa, pb = urlparse(a), urlparse(b)
+    return (
+        pa.scheme,
+        pa.netloc,
+        pa.path.rstrip("/"),
+        pa.query,
+    ) == (
+        pb.scheme,
+        pb.netloc,
+        pb.path.rstrip("/"),
+        pb.query,
+    )
+
+
+def _last_known_stage(rankings_path: Path, predictions_path: Path) -> str | None:
+    rankings = load_json(rankings_path, {})
+    stage = rankings.get("source", {}).get("stage") if isinstance(rankings, dict) else None
+    if stage:
+        return stage
+
+    urls = []
+    if isinstance(rankings, dict):
+        urls.extend(p.get("player_url") for p in rankings.get("players", []) if isinstance(p, dict))
+
+    predictions = load_json(predictions_path, {})
+    if isinstance(predictions, dict):
+        urls.extend(
+            p.get("player_url")
+            for p in predictions.get("players", {}).values()
+            if isinstance(p, dict)
+        )
+
+    for url in urls:
+        stage = extract_stage(url)
+        if stage:
+            return stage
+    return None
+
+
+def resolve_leaderboard(last_known_stage: str | None = None) -> tuple[str, dict]:
+    """Fetch the current leaderboard HTML, following redirects and stage changes."""
+    tried = []
+    seen = set()
+
+    def add(url: str | None):
+        if not url:
+            return
+        absolute = urljoin(LEADERBOARD_URL, url)
+        key = absolute.rstrip("/")
+        if key not in seen:
+            seen.add(key)
+            tried.append(absolute)
+
+    add(LEADERBOARD_URL)
+    add(f"{LEADERBOARD_URL}ranking")
+    if last_known_stage:
+        add(f"{LEADERBOARD_URL}ranking/stage/{last_known_stage}")
+
+    for candidate in tried:
+        html, final_url = fetch_page(candidate)
+        players = parse_leaderboard(html)
+        if players:
+            stage = extract_stage(final_url)
+            if not stage:
+                stage = next(
+                    (
+                        player_stage
+                        for p in players
+                        if (player_stage := extract_stage(p.get("player_url")))
+                    ),
+                    None,
+                )
+            source = {
+                "leaderboard_url": final_url,
+                "requested_url": candidate,
+                "stage": stage,
+            }
+            print(f"  leaderboard: resolved to {final_url}", file=sys.stderr)
+            if stage:
+                print(f"  stage: {stage}", file=sys.stderr)
+            return html, source
+
+        if not _same_url(candidate, final_url):
+            add(final_url)
+
+    raise RuntimeError("Leaderboard produced 0 rows from all resolved candidates")
 
 
 # --------------------------------------------------------------------------- #
@@ -168,6 +378,7 @@ def parse_leaderboard(html: str) -> list[dict]:
         if not m:
             continue
         team_id, slug = m.group(1), m.group(2)
+        player_url = urljoin(BASE, href)
 
         flag_span = tds[1].select_one("span.flag-icon")
         flag = flag_code_from_style(flag_span.get("style")) if flag_span else None
@@ -179,6 +390,7 @@ def parse_leaderboard(html: str) -> list[dict]:
             {
                 "team_id": team_id,
                 "slug": slug,
+                "player_url": player_url,
                 "name": name,
                 "flag": flag,
                 "rank": rank,
@@ -471,12 +683,15 @@ def scrape_once(get_leaderboard_html, get_player_html, prev_predictions: dict) -
     for p in players:
         tid = p["team_id"]
         try:
+            if not p.get("player_url"):
+                raise RuntimeError("missing player URL in leaderboard row")
             html = get_player_html(p)
             parsed = parse_player_page(html)
             predictions[tid] = {
                 "team_id": tid,
                 "name": p["name"],
                 "slug": p["slug"],
+                "player_url": p.get("player_url"),
                 "flag": p["flag"],
                 "rank": p["rank"],
                 "points": p["points"],
@@ -491,20 +706,30 @@ def scrape_once(get_leaderboard_html, get_player_html, prev_predictions: dict) -
             if tid in prev_predictions:
                 kept = dict(prev_predictions[tid])
                 kept.update(
-                    {"rank": p["rank"], "points": p["points"], "exact": p["exact"], "name": p["name"], "flag": p["flag"]}
+                    {
+                        "rank": p["rank"],
+                        "points": p["points"],
+                        "exact": p["exact"],
+                        "name": p["name"],
+                        "slug": p["slug"],
+                        "player_url": p.get("player_url"),
+                        "flag": p["flag"],
+                    }
                 )
                 predictions[tid] = kept
     return players, predictions
 
 
-def build_rankings(players: list[dict]) -> dict:
+def build_rankings(players: list[dict], source: dict | None = None) -> dict:
     return {
         "updated": now_iso(),
         "pool": {"id": POOL_ID, "slug": POOL_SLUG, "name": POOL_SLUG.replace("-", " ").title()},
+        "source": source or {},
         "players": [
             {
                 "team_id": p["team_id"],
                 "slug": p["slug"],
+                "player_url": p.get("player_url"),
                 "name": p["name"],
                 "flag": p["flag"],
                 "rank": p["rank"],
@@ -550,13 +775,25 @@ def run(out_dir: Path, samples: bool):
         here = Path(__file__).resolve().parent
         lb_html = (here / "sample-leaderboard.html").read_text()
         player_html = (here / "sample-player-page.html").read_text()
+        source_info = {
+            "leaderboard_url": "sample-leaderboard.html",
+            "requested_url": "sample-leaderboard.html",
+            "stage": extract_stage(lb_html),
+        }
         get_lb = lambda: lb_html
         # Only JJ (247528) has a sample page; others fall back gracefully.
         get_player = lambda p: player_html if p["team_id"] == "247528" else "<html></html>"
         attempts = 1
     else:
-        get_lb = lambda: fetch(LEADERBOARD_URL)
-        get_player = lambda p: fetch(PLAYER_URL_TMPL.format(team_id=p["team_id"], slug=p["slug"]))
+        source_info = {}
+
+        def get_lb():
+            html, source = resolve_leaderboard(_last_known_stage(rankings_path, predictions_path))
+            source_info.clear()
+            source_info.update(source)
+            return html
+
+        get_player = lambda p: fetch(p["player_url"])
         attempts = MAX_ATTEMPTS
 
     players, predictions = [], {}
@@ -579,7 +816,7 @@ def run(out_dir: Path, samples: bool):
         return 1
 
     # rankings.json
-    rankings = build_rankings(players)
+    rankings = build_rankings(players, source_info)
     write_json(rankings_path, rankings)
 
     # history.json — append only if the snapshot actually changed.
@@ -595,6 +832,7 @@ def run(out_dir: Path, samples: bool):
                         "team_id": p["team_id"],
                         "name": p["name"],
                         "slug": p["slug"],
+                        "player_url": p.get("player_url"),
                         "flag": p["flag"],
                         "rank": p["rank"],
                         "points": p["points"],
