@@ -271,10 +271,14 @@ const isSameLocalDay=(iso)=>{ if(!iso) return false; const a=new Date(iso),b=new
 
 async function init(){
   try{
+    // Cache-bust so a reload always picks up the latest scrape rather than a
+    // stale copy the browser/CDN cached from an earlier (possibly empty) run.
+    const bust=`?t=${Date.now()}`;
+    const opts={cache:'no-store'};
     const [r,h,p] = await Promise.all([
-      fetch(`${DATA_DIR}/rankings.json`).then(x=>x.json()),
-      fetch(`${DATA_DIR}/history.json`).then(x=>x.json()).catch(()=>[]),
-      fetch(`${DATA_DIR}/predictions.json`).then(x=>x.json()).catch(()=>({players:{}})),
+      fetch(`${DATA_DIR}/rankings.json${bust}`,opts).then(x=>x.json()),
+      fetch(`${DATA_DIR}/history.json${bust}`,opts).then(x=>x.json()).catch(()=>[]),
+      fetch(`${DATA_DIR}/predictions.json${bust}`,opts).then(x=>x.json()).catch(()=>({players:{}})),
     ]);
     RANKINGS=r; HISTORY=Array.isArray(h)?h:[]; PRED=p.players||{};
   }catch(e){
