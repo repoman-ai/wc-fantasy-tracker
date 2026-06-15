@@ -66,6 +66,7 @@ FLAG_URL_TMPL = "https://assets.tournamentsoccer.us/flags/4x3/{code}.svg"
 MAX_ATTEMPTS = int(os.environ.get("MAX_ATTEMPTS", "4"))          # 1 try + 3 retries
 RETRY_GAP_SECONDS = int(os.environ.get("RETRY_GAP_SECONDS", "1800"))  # 30 minutes
 REQUEST_TIMEOUT = int(os.environ.get("REQUEST_TIMEOUT", "30"))
+CF_CHALLENGE_TIMEOUT = int(os.environ.get("CF_CHALLENGE_TIMEOUT", "25"))
 FETCH_BACKEND = os.environ.get("FETCH_BACKEND", "auto").lower()  # auto, requests, browser
 HTTP_HEADERS = {
     "User-Agent": (
@@ -152,6 +153,15 @@ def _response_excerpt(text: str) -> str:
     return clean(text[:500])
 
 
+def _looks_like_cloudflare_challenge(html: str) -> bool:
+    sample = html[:2000].lower()
+    return "just a moment" in sample and "challenges.cloudflare.com" in sample
+
+
+def _looks_like_scrape_page(html: str) -> bool:
+    return "id=\"table-rounds\"" in html or "data-fixture-number=" in html
+
+
 class BrowserFetcher:
     def __init__(self):
         try:
@@ -183,17 +193,59 @@ class BrowserFetcher:
             wait_until="domcontentloaded",
             timeout=REQUEST_TIMEOUT * 1000,
         )
-        # The page is server-rendered, but analytics/ad requests can keep Chromium
-        # from ever reaching "networkidle". A short settle keeps fallback fast.
-        self._page.wait_for_timeout(1500)
+        self._wait_for_page_or_challenge()
         status = response.status if response else None
         html = self._page.content()
         final_url = self._page.url
+
+        if status in {403, 503} and _looks_like_cloudflare_challenge(html):
+            print(f"  http: waiting for Cloudflare challenge at {final_url}", file=sys.stderr)
+            self._wait_for_cloudflare_clearance()
+            html = self._page.content()
+            final_url = self._page.url
+
+        if status and status >= 400 and _looks_like_cloudflare_challenge(html):
+            raise RuntimeError(
+                f"Browser fetch could not clear Cloudflare challenge for {final_url}; "
+                f"body starts: {_response_excerpt(html)}"
+            )
+        if status and status >= 400 and _looks_like_scrape_page(html):
+            return html, final_url
         if status and status >= 400:
             raise RuntimeError(
                 f"Browser fetch got HTTP {status} for {final_url}; body starts: {_response_excerpt(html)}"
             )
         return html, final_url
+
+    def _wait_for_page_or_challenge(self):
+        # The page is server-rendered, but analytics/ad requests can keep Chromium
+        # from ever reaching "networkidle". Wait for either useful HTML or a known
+        # Cloudflare challenge, then let the caller decide what to do.
+        try:
+            self._page.wait_for_function(
+                """
+                () => document.querySelector('#table-rounds, tr[data-fixture-number]')
+                  || (document.title || '').match(/just a moment/i)
+                """,
+                timeout=REQUEST_TIMEOUT * 1000,
+            )
+        except Exception:
+            self._page.wait_for_timeout(1500)
+
+    def _wait_for_cloudflare_clearance(self):
+        try:
+            self._page.wait_for_function(
+                """
+                () => !(document.title || '').match(/just a moment/i)
+                  && !document.documentElement.innerText.match(/checking if the site connection is secure/i)
+                """,
+                timeout=CF_CHALLENGE_TIMEOUT * 1000,
+            )
+            self._page.wait_for_timeout(1500)
+        except Exception as exc:
+            raise RuntimeError(
+                f"Timed out after {CF_CHALLENGE_TIMEOUT}s waiting for Cloudflare challenge to clear"
+            ) from exc
 
     def close(self):
         for obj in (self._context, self._browser):
@@ -672,14 +724,15 @@ def parse_player_page(html: str) -> dict:
 # --------------------------------------------------------------------------- #
 # Orchestration
 # --------------------------------------------------------------------------- #
-def scrape_once(get_leaderboard_html, get_player_html, prev_predictions: dict) -> tuple[list[dict], dict]:
-    """Run a single scrape pass. Returns (players, predictions_by_team_id)."""
+def scrape_once(get_leaderboard_html, get_player_html, prev_predictions: dict) -> tuple[list[dict], dict, dict]:
+    """Run a single scrape pass. Returns (players, predictions_by_team_id, stats)."""
     leaderboard_html = get_leaderboard_html()
     players = parse_leaderboard(leaderboard_html)
     if not players:
         raise RuntimeError("Leaderboard produced 0 rows")
 
     predictions = {}
+    stats = {"fresh": 0, "kept": 0, "failed": 0}
     for p in players:
         tid = p["team_id"]
         try:
@@ -700,7 +753,9 @@ def scrape_once(get_leaderboard_html, get_player_html, prev_predictions: dict) -
                 "matchdays": parsed["matchdays"],
                 "bonus": parsed["bonus"],
             }
+            stats["fresh"] += 1
         except Exception as exc:
+            stats["failed"] += 1
             print(f"  ! player {tid} ({p['name']}) failed: {exc}", file=sys.stderr)
             # Keep previous data for this player rather than wiping it.
             if tid in prev_predictions:
@@ -717,7 +772,14 @@ def scrape_once(get_leaderboard_html, get_player_html, prev_predictions: dict) -
                     }
                 )
                 predictions[tid] = kept
-    return players, predictions
+                stats["kept"] += 1
+
+    if players and stats["fresh"] == 0:
+        raise RuntimeError(
+            f"All {len(players)} player prediction pages failed; kept {stats['kept']} previous records"
+        )
+
+    return players, predictions, stats
 
 
 def build_rankings(players: list[dict], source: dict | None = None) -> dict:
@@ -796,13 +858,19 @@ def run(out_dir: Path, samples: bool):
         get_player = lambda p: fetch(p["player_url"])
         attempts = MAX_ATTEMPTS
 
-    players, predictions = [], {}
+    players, predictions, stats = [], {}, {}
     last_err = None
     for attempt in range(1, attempts + 1):
         try:
             print(f"Attempt {attempt}/{attempts} …", file=sys.stderr)
-            players, predictions = scrape_once(get_lb, get_player, prev_predictions)
-            print(f"  ok: {len(players)} players, {len(predictions)} prediction pages", file=sys.stderr)
+            players, predictions, stats = scrape_once(get_lb, get_player, prev_predictions)
+            print(
+                "  ok: "
+                f"{len(players)} players, "
+                f"{stats['fresh']} fresh prediction pages, "
+                f"{stats['kept']} kept previous",
+                file=sys.stderr,
+            )
             break
         except Exception as exc:
             last_err = exc
