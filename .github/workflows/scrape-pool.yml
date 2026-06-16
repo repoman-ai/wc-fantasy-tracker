@@ -6,7 +6,7 @@ name: Scrape pool & update data
 # ---------------------------------------------------------------------------
 on:
   # ---------------------------------------------------------------------------
-  # SCHEDULE — slot-based recurring crons (Jun–Jul only, tournament months)
+  # SCHEDULE — slot-based recurring crons (tournament kickoff hours, UTC)
   #
   # Four triggers per on-the-hour kickoff slot:
   #   +5 min    shortly after kickoff
@@ -18,34 +18,37 @@ on:
   # Knockout ET/penalties: extra +3h 20m on evening slots (shares 23:20 w/ HT).
   #
   # Daily 08:07 UTC safety net (off the top of the hour for reliability).
+  # Month field uses * — scraper only commits when data changes.
   # ---------------------------------------------------------------------------
   schedule:
-    - cron: "7 8 * 6,7 *"
+    - cron: "17 * * * *"        # probe: hourly; remove once schedule confirmed
+
+    - cron: "7 8 * * *"         # daily safety net 08:07 UTC
 
     # +5 min after kickoff
-    - cron: "5 16,17,18,19,20,21,22,23 * 6,7 *"
-    - cron: "35 22 * 6,7 *"      # 22:30 kickoff
-    - cron: "5 0,1,2,3,4 * 6,7 *"
+    - cron: "5 16,17,18,19,20,21,22,23 * * *"
+    - cron: "35 22 * * *"       # 22:30 kickoff
+    - cron: "5 0,1,2,3,4 * * *"
 
     # +50 min half-time
-    - cron: "50 16,17,18,19,20,21,22,23 * 6,7 *"
-    - cron: "50 0,1,2,3,4 * 6,7 *"
+    - cron: "50 16,17,18,19,20,21,22,23 * * *"
+    - cron: "50 0,1,2,3,4 * * *"
 
     # +2h near end
-    - cron: "0 18,19,20,21,22,23 * 6,7 *"
-    - cron: "0 0,1 * 6,7 *"     # 22:00 & 23:00 kickoffs
-    - cron: "30 0 * 6,7 *"      # 22:30 kickoff → 00:30
-    - cron: "0 2,3,4,5,6 * 6,7 *"
+    - cron: "0 18,19,20,21,22,23 * * *"
+    - cron: "0 0,1 * * *"      # 22:00 & 23:00 kickoffs
+    - cron: "30 0 * * *"       # 22:30 kickoff → 00:30
+    - cron: "0 2,3,4,5,6 * * *"
 
     # +2h 30m full-time
-    - cron: "35 18,19,20,21,22,23 * 6,7 *"
-    - cron: "35 0,1,2,3,4,5,6 * 6,7 *"
-    - cron: "0 1 * 6,7 *"       # 22:30 kickoff FT (~01:00)
+    - cron: "35 18,19,20,21,22,23 * * *"
+    - cron: "35 0,1,2,3,4,5,6 * * *"
+    - cron: "0 1 * * *"        # 22:30 kickoff FT (~01:00)
 
     # +3h 20m knockout ET / penalties (23:20 also covers 22:30 half-time)
-    - cron: "20 19,22,23 * 6,7 *"
-    - cron: "20 0,1,2 * 6,7 *"
-    - cron: "50 1 * 6,7 *"      # 22:30 + 3h20 (~01:50)
+    - cron: "20 19,22,23 * * *"
+    - cron: "20 0,1,2 * * *"
+    - cron: "50 1 * * *"       # 22:30 + 3h20 (~01:50)
 
   workflow_dispatch:
 
