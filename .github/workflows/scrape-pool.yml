@@ -73,6 +73,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v6
@@ -95,5 +97,13 @@ jobs:
           git add data/rankings.json data/history.json data/predictions.json
           git diff --cached --quiet && echo "No changes to commit." && exit 0
           git commit -m "data: refresh $(date -u +'%Y-%m-%dT%H:%MZ')"
-          git push
-          echo "Committed updated data."
+          for attempt in 1 2 3 4 5; do
+            if git pull --rebase origin main && git push origin main; then
+              echo "Committed updated data."
+              exit 0
+            fi
+            echo "Push attempt ${attempt} failed; rebasing and retrying..."
+            sleep 3
+          done
+          echo "Failed to push after 5 attempts." >&2
+          exit 1
