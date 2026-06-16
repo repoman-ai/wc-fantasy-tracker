@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-16T20:46:49Z",
+  "updated": "2026-06-16T20:51:13Z",
   "pool": {
     "id": "34193",
     "slug": "bobby-and-friends",
@@ -18,7 +18,7 @@
       "name": "JJ",
       "flag": "FRA",
       "rank": 1,
-      "points": 702,
+      "points": 714,
       "exact": 4
     },
     {
@@ -38,7 +38,7 @@
       "name": "bobby",
       "flag": "FRA",
       "rank": 3,
-      "points": 588,
+      "points": 600,
       "exact": 1
     },
     {
@@ -52,33 +52,13 @@
       "exact": 1
     },
     {
-      "team_id": "252600",
-      "slug": "el-capitan",
-      "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/252600/el-capitan/stage/1196-grand-total?scroll=fixture",
-      "name": "El Capitan",
-      "flag": "FRA",
-      "rank": 5,
-      "points": 552,
-      "exact": 2
-    },
-    {
-      "team_id": "247524",
-      "slug": "alejandro",
-      "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247524/alejandro/stage/1196-grand-total?scroll=fixture",
-      "name": "Alejandro",
-      "flag": "BRA",
-      "rank": 6,
-      "points": 546,
-      "exact": 0
-    },
-    {
       "team_id": "247525",
       "slug": "karenwj",
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247525/karenwj/stage/1196-grand-total?scroll=fixture",
       "name": "Karenwj",
       "flag": "NED",
-      "rank": 7,
-      "points": 543,
+      "rank": 5,
+      "points": 555,
       "exact": 0
     },
     {
@@ -87,9 +67,29 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247729/maxs/stage/1196-grand-total?scroll=fixture",
       "name": "MaxS.",
       "flag": "ARG",
-      "rank": 8,
-      "points": 540,
+      "rank": 6,
+      "points": 552,
       "exact": 0
+    },
+    {
+      "team_id": "247524",
+      "slug": "alejandro",
+      "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247524/alejandro/stage/1196-grand-total?scroll=fixture",
+      "name": "Alejandro",
+      "flag": "BRA",
+      "rank": 7,
+      "points": 546,
+      "exact": 0
+    },
+    {
+      "team_id": "252600",
+      "slug": "el-capitan",
+      "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/252600/el-capitan/stage/1196-grand-total?scroll=fixture",
+      "name": "El Capitan",
+      "flag": "FRA",
+      "rank": 8,
+      "points": 537,
+      "exact": 2
     },
     {
       "team_id": "247535",
@@ -108,17 +108,7 @@
       "name": "Jazmin",
       "flag": "POR",
       "rank": 10,
-      "points": 525,
-      "exact": 1
-    },
-    {
-      "team_id": "247526",
-      "slug": "valewalle",
-      "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247526/valewalle/stage/1196-grand-total?scroll=fixture",
-      "name": "Valewalle",
-      "flag": "ESP",
-      "rank": 11,
-      "points": 507,
+      "points": 537,
       "exact": 1
     },
     {
@@ -127,7 +117,7 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247537/yo/stage/1196-grand-total?scroll=fixture",
       "name": "Yo",
       "flag": "MEX",
-      "rank": 12,
+      "rank": 11,
       "points": 504,
       "exact": 1
     },
@@ -136,6 +126,16 @@
       "slug": "alec",
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247930/alec/stage/1196-grand-total?scroll=fixture",
       "name": "Alec",
+      "flag": "ESP",
+      "rank": 12,
+      "points": 495,
+      "exact": 1
+    },
+    {
+      "team_id": "247526",
+      "slug": "valewalle",
+      "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247526/valewalle/stage/1196-grand-total?scroll=fixture",
+      "name": "Valewalle",
       "flag": "ESP",
       "rank": 13,
       "points": 492,
@@ -148,7 +148,7 @@
       "name": "Luisa",
       "flag": "POR",
       "rank": 14,
-      "points": 474,
+      "points": 486,
       "exact": 0
     },
     {
@@ -158,8 +158,8 @@
       "name": "Daniel",
       "flag": "FRA",
       "rank": 15,
-      "points": 447,
-      "exact": 2
+      "points": 474,
+      "exact": 3
     },
     {
       "team_id": "247533",
