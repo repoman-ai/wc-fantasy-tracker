@@ -3,9 +3,11 @@ name: Schedule probe
 # Minimal workflow to test whether GitHub's scheduler registers ANY cron
 # on this repo. If this never shows event=schedule, the issue is repo/account
 # level, not scrape-pool.yml's cron expressions.
+#
+# GitHub minimum schedule interval is 5 minutes (2 min is not supported).
 on:
   schedule:
-    - cron: "3,13,23,33,43,53 * * * *"
+    - cron: "*/5 * * * *"
   workflow_dispatch:
 
 jobs:
