@@ -202,6 +202,14 @@
   .scoreline{font-family:'Barlow Condensed';font-weight:800;font-size:20px;line-height:1}
   .scoreline.pred{color:#4f46e5}
   .scoreline.pend{color:var(--muted);font-size:13px;font-family:'Inter';font-weight:700}
+  /* Actual / final result shown beneath the prediction for completed games */
+  .actualrow{margin-top:7px;padding-top:6px;border-top:1px dashed var(--line)}
+  .actualrow .lab{font-size:9.5px;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);font-weight:700;margin-bottom:2px}
+  .scoreline.fin{font-size:18px;color:var(--ink)}
+  .scoreline.fin.hit{color:var(--up)}
+  .scoreline.fin.miss{color:var(--down)}
+  .scoreline.fin.live{color:#e23b3b}
+  .actualrow .lab.live{color:#c01d1d;display:inline-flex;align-items:center;gap:4px}
   .predteams{display:flex;flex-direction:column;gap:3px;align-items:center;font-size:12px;font-weight:600}
   .predteams .ph{color:var(--muted);font-style:italic}
   .ptsbox{text-align:right}
@@ -609,6 +617,21 @@ function fixtureHtml(fx){
     predHtml=`<div class="scoreline pred">${esc(fx.predicted?.score||'—')}</div>`;
   }
 
+  // Actual score, shown beneath the prediction. Live games get the red "live"
+  // treatment with the running score; finished games get a "Final" line that's
+  // green on an exact call and red on a miss.
+  let finalHtml='';
+  const act=clean(fx.actual_score||'');
+  const hasResult=act && act.toUpperCase()!=='NS' && /\d/.test(act);
+  if(live){
+    finalHtml=`<div class="actualrow"><div class="lab live"><span class="livedot"></span>Live</div>`+
+      `<div class="scoreline fin live">${esc(hasResult?act:'0 - 0')}</div></div>`;
+  }else if(hasResult){
+    const hit=fx.is_exact?'hit':((fx.points??0)>0?'':'miss');
+    finalHtml=`<div class="actualrow"><div class="lab">Final</div>`+
+      `<div class="scoreline fin ${hit}">${esc(act)}</div></div>`;
+  }
+
   // Points column
   let ptsHtml;
   if(live){
@@ -636,7 +659,7 @@ function fixtureHtml(fx){
       ${teamLine(fx.match?.home)}
       ${teamLine(fx.match?.away)}
     </div>
-    <div class="pcol"><div class="lab">Predicted</div>${predHtml}</div>
+    <div class="pcol"><div class="lab">Predicted</div>${predHtml}${finalHtml}</div>
     <div class="ptsbox"><div class="lab">${live?'Live':(done?'Points':'Status')}</div>${ptsHtml}</div>
     ${liveCap}
   </div>`;
