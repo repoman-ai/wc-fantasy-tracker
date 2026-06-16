@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4f46e5"/>
+      <stop offset="1" stop-color="#7c3aed"/>
+    </linearGradient>
+    <clipPath id="ball"><circle cx="32" cy="32" r="21"/></clipPath>
+  </defs>
+  <rect x="0" y="0" width="64" height="64" rx="14" fill="url(#bg)"/>
+  <g clip-path="url(#ball)">
+    <circle cx="32" cy="32" r="21" fill="#ffffff"/>
+    <g fill="#0e1726">
+      <polygon points="32,25 38.66,29.84 36.11,37.66 27.89,37.66 25.34,29.84"/>
+      <polygon points="32,8 36.76,11.45 34.94,17.05 29.06,17.05 27.24,11.45"/>
+      <polygon points="50.07,21.13 54.83,24.58 53.01,30.18 47.13,30.18 45.31,24.58"/>
+      <polygon points="43.17,42.37 47.93,45.82 46.11,51.42 40.23,51.42 38.41,45.82"/>
+      <polygon points="20.83,42.37 25.59,45.82 23.77,51.42 17.89,51.42 16.07,45.82"/>
+      <polygon points="13.93,21.13 18.69,24.58 16.87,30.18 10.99,30.18 9.17,24.58"/>
+    </g>
+    <g stroke="#0e1726" stroke-width="2.2" stroke-linecap="round">
+      <line x1="32" y1="25" x2="32" y2="13"/>
+      <line x1="38.66" y1="29.84" x2="50.07" y2="26.13"/>
+      <line x1="36.11" y1="37.66" x2="43.17" y2="47.37"/>
+      <line x1="27.89" y1="37.66" x2="20.83" y2="47.37"/>
+      <line x1="25.34" y1="29.84" x2="13.93" y2="26.13"/>
+    </g>
+  </g>
+</svg>
