@@ -138,6 +138,97 @@ def to_utc_iso(data_datetime: str | None, tz_name: str | None):
     return aware.astimezone(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
+# Authoritative group-stage kickoffs from the official FIFA 2026 schedule
+# (Eastern Time). The upstream pool site has published a few group kickoffs an
+# hour or two off (and occasionally with no time at all), which threw off the
+# clock-based "live" state. Keyed by the unordered pair of team codes — unique
+# in the group stage — so it overrides the scraped time regardless of which side
+# the source lists as home. Times below are stored as UTC (ET + 4h, EDT).
+# (homeCode, awayCode) order-independent -> (kickoff_utc, kickoff_local ET)
+OFFICIAL_GROUP_KICKOFFS = {
+    frozenset(("MEX", "RSA")): ("2026-06-11T18:00:00Z", "2026-06-11 14:00"),
+    frozenset(("CZE", "KOR")): ("2026-06-12T02:00:00Z", "2026-06-11 22:00"),
+    frozenset(("BIH", "CAN")): ("2026-06-12T19:00:00Z", "2026-06-12 15:00"),
+    frozenset(("PAR", "USA")): ("2026-06-13T01:00:00Z", "2026-06-12 21:00"),
+    frozenset(("QAT", "SUI")): ("2026-06-13T19:00:00Z", "2026-06-13 15:00"),
+    frozenset(("BRA", "MAR")): ("2026-06-13T22:00:00Z", "2026-06-13 18:00"),
+    frozenset(("HAI", "SCO")): ("2026-06-14T01:00:00Z", "2026-06-13 21:00"),
+    frozenset(("AUS", "TUR")): ("2026-06-14T04:00:00Z", "2026-06-14 00:00"),
+    frozenset(("CUW", "GER")): ("2026-06-14T16:00:00Z", "2026-06-14 12:00"),
+    frozenset(("JPN", "NED")): ("2026-06-14T19:00:00Z", "2026-06-14 15:00"),
+    frozenset(("CIV", "ECU")): ("2026-06-14T23:00:00Z", "2026-06-14 19:00"),
+    frozenset(("SWE", "TUN")): ("2026-06-15T02:00:00Z", "2026-06-14 22:00"),
+    frozenset(("CPV", "ESP")): ("2026-06-15T16:00:00Z", "2026-06-15 12:00"),
+    frozenset(("BEL", "EGY")): ("2026-06-15T19:00:00Z", "2026-06-15 15:00"),
+    frozenset(("KSA", "URU")): ("2026-06-15T22:00:00Z", "2026-06-15 18:00"),
+    frozenset(("IRN", "NZL")): ("2026-06-16T01:00:00Z", "2026-06-15 21:00"),
+    frozenset(("FRA", "SEN")): ("2026-06-16T19:00:00Z", "2026-06-16 15:00"),
+    frozenset(("IRQ", "NOR")): ("2026-06-16T22:00:00Z", "2026-06-16 18:00"),
+    frozenset(("ALG", "ARG")): ("2026-06-17T01:00:00Z", "2026-06-16 21:00"),
+    frozenset(("AUT", "JOR")): ("2026-06-17T04:00:00Z", "2026-06-17 00:00"),
+    frozenset(("COD", "POR")): ("2026-06-17T16:00:00Z", "2026-06-17 12:00"),
+    frozenset(("CRO", "ENG")): ("2026-06-17T19:00:00Z", "2026-06-17 15:00"),
+    frozenset(("GHA", "PAN")): ("2026-06-17T23:00:00Z", "2026-06-17 19:00"),
+    frozenset(("COL", "UZB")): ("2026-06-18T02:00:00Z", "2026-06-17 22:00"),
+    frozenset(("CZE", "RSA")): ("2026-06-18T16:00:00Z", "2026-06-18 12:00"),
+    frozenset(("BIH", "SUI")): ("2026-06-18T19:00:00Z", "2026-06-18 15:00"),
+    frozenset(("CAN", "QAT")): ("2026-06-18T22:00:00Z", "2026-06-18 18:00"),
+    frozenset(("KOR", "MEX")): ("2026-06-19T01:00:00Z", "2026-06-18 21:00"),
+    frozenset(("AUS", "USA")): ("2026-06-19T19:00:00Z", "2026-06-19 15:00"),
+    frozenset(("MAR", "SCO")): ("2026-06-19T22:00:00Z", "2026-06-19 18:00"),
+    frozenset(("BRA", "HAI")): ("2026-06-19T22:30:00Z", "2026-06-19 18:30"),
+    frozenset(("PAR", "TUR")): ("2026-06-20T03:00:00Z", "2026-06-19 23:00"),
+    frozenset(("NED", "SWE")): ("2026-06-20T17:00:00Z", "2026-06-20 13:00"),
+    frozenset(("CIV", "GER")): ("2026-06-20T20:00:00Z", "2026-06-20 16:00"),
+    frozenset(("CUW", "ECU")): ("2026-06-21T00:00:00Z", "2026-06-20 20:00"),
+    frozenset(("JPN", "TUN")): ("2026-06-21T04:00:00Z", "2026-06-21 00:00"),
+    frozenset(("ESP", "KSA")): ("2026-06-21T16:00:00Z", "2026-06-21 12:00"),
+    frozenset(("BEL", "IRN")): ("2026-06-21T19:00:00Z", "2026-06-21 15:00"),
+    frozenset(("CPV", "URU")): ("2026-06-21T22:00:00Z", "2026-06-21 18:00"),
+    frozenset(("EGY", "NZL")): ("2026-06-22T01:00:00Z", "2026-06-21 21:00"),
+    frozenset(("ARG", "AUT")): ("2026-06-22T17:00:00Z", "2026-06-22 13:00"),
+    frozenset(("FRA", "IRQ")): ("2026-06-22T21:00:00Z", "2026-06-22 17:00"),
+    frozenset(("NOR", "SEN")): ("2026-06-23T00:00:00Z", "2026-06-22 20:00"),
+    frozenset(("ALG", "JOR")): ("2026-06-23T03:00:00Z", "2026-06-22 23:00"),
+    frozenset(("POR", "UZB")): ("2026-06-23T17:00:00Z", "2026-06-23 13:00"),
+    frozenset(("ENG", "GHA")): ("2026-06-23T20:00:00Z", "2026-06-23 16:00"),
+    frozenset(("CRO", "PAN")): ("2026-06-23T23:00:00Z", "2026-06-23 19:00"),
+    frozenset(("COD", "COL")): ("2026-06-24T02:00:00Z", "2026-06-23 22:00"),
+    frozenset(("CAN", "SUI")): ("2026-06-24T19:00:00Z", "2026-06-24 15:00"),
+    frozenset(("BIH", "QAT")): ("2026-06-24T19:00:00Z", "2026-06-24 15:00"),
+    frozenset(("BRA", "SCO")): ("2026-06-24T22:00:00Z", "2026-06-24 18:00"),
+    frozenset(("HAI", "MAR")): ("2026-06-24T22:00:00Z", "2026-06-24 18:00"),
+    frozenset(("CZE", "MEX")): ("2026-06-25T01:00:00Z", "2026-06-24 21:00"),
+    frozenset(("KOR", "RSA")): ("2026-06-25T01:00:00Z", "2026-06-24 21:00"),
+    frozenset(("CIV", "CUW")): ("2026-06-25T20:00:00Z", "2026-06-25 16:00"),
+    frozenset(("ECU", "GER")): ("2026-06-25T20:00:00Z", "2026-06-25 16:00"),
+    frozenset(("NED", "TUN")): ("2026-06-25T23:00:00Z", "2026-06-25 19:00"),
+    frozenset(("JPN", "SWE")): ("2026-06-25T23:00:00Z", "2026-06-25 19:00"),
+    frozenset(("TUR", "USA")): ("2026-06-26T02:00:00Z", "2026-06-25 22:00"),
+    frozenset(("AUS", "PAR")): ("2026-06-26T02:00:00Z", "2026-06-25 22:00"),
+    frozenset(("FRA", "NOR")): ("2026-06-26T19:00:00Z", "2026-06-26 15:00"),
+    frozenset(("IRQ", "SEN")): ("2026-06-26T19:00:00Z", "2026-06-26 15:00"),
+    frozenset(("CPV", "KSA")): ("2026-06-27T00:00:00Z", "2026-06-26 20:00"),
+    frozenset(("ESP", "URU")): ("2026-06-27T00:00:00Z", "2026-06-26 20:00"),
+    frozenset(("EGY", "IRN")): ("2026-06-27T03:00:00Z", "2026-06-26 23:00"),
+    frozenset(("BEL", "NZL")): ("2026-06-27T03:00:00Z", "2026-06-26 23:00"),
+    frozenset(("ENG", "PAN")): ("2026-06-27T21:00:00Z", "2026-06-27 17:00"),
+    frozenset(("CRO", "GHA")): ("2026-06-27T21:00:00Z", "2026-06-27 17:00"),
+    frozenset(("COL", "POR")): ("2026-06-27T23:30:00Z", "2026-06-27 19:30"),
+    frozenset(("COD", "UZB")): ("2026-06-27T23:30:00Z", "2026-06-27 19:30"),
+    frozenset(("ALG", "AUT")): ("2026-06-28T02:00:00Z", "2026-06-27 22:00"),
+    frozenset(("ARG", "JOR")): ("2026-06-28T02:00:00Z", "2026-06-27 22:00"),
+}
+
+
+def official_group_kickoff(home_code, away_code):
+    """Return (kickoff_utc, kickoff_local_ET) from the authoritative FIFA
+    schedule for this matchup, or None if not a known group pairing."""
+    if not home_code or not away_code:
+        return None
+    return OFFICIAL_GROUP_KICKOFFS.get(frozenset((home_code, away_code)))
+
+
 def now_iso() -> str:
     return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
@@ -548,14 +639,22 @@ def _parse_group_fixture(tds, fixture_number, round_name) -> dict:
 
     status = clean(badge.get_text()) if badge else (actual_score or None)
 
+    # Prefer the authoritative FIFA kickoff for this matchup; fall back to the
+    # scraped time only for pairings we don't have on file.
+    official = official_group_kickoff(home.get("code"), away.get("code"))
+    if official:
+        kickoff_utc, kickoff_local, kickoff_tz = official[0], official[1], "America/New_York"
+    else:
+        kickoff_utc, kickoff_local, kickoff_tz = to_utc_iso(dt_raw, tz_name), dt_raw, tz_name
+
     return {
         "fixture_number": fixture_number,
         "round": round_name,
         "stage_type": "group",
         "status": status,
-        "kickoff_utc": to_utc_iso(dt_raw, tz_name),
-        "kickoff_local": dt_raw,
-        "kickoff_timezone": tz_name,
+        "kickoff_utc": kickoff_utc,
+        "kickoff_local": kickoff_local,
+        "kickoff_timezone": kickoff_tz,
         "hidden": False,
         "match": {"home": home, "away": away},
         "predicted": {"type": "score", "score": predicted_score or None, "hidden": False},
