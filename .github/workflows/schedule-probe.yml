@@ -1,0 +1,19 @@
+name: Schedule probe
+
+# Minimal workflow to test whether GitHub's scheduler registers ANY cron
+# on this repo. If this never shows event=schedule, the issue is repo/account
+# level, not scrape-pool.yml's cron expressions.
+on:
+  schedule:
+    - cron: "3,13,23,33,43,53 * * * *"
+  workflow_dispatch:
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo schedule context
+        run: |
+          echo "event=${{ github.event_name }}"
+          echo "schedule=${{ github.event.schedule }}"
+          echo "time=$(date -u +'%Y-%m-%dT%H:%M:%SZ')"
