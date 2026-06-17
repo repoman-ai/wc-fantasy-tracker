@@ -277,6 +277,9 @@
   .actualrow .lab.live{color:#c01d1d;display:inline-flex;align-items:center;gap:4px}
   .predteams{display:flex;flex-direction:column;gap:3px;align-items:center;font-size:12px;font-weight:600}
   .predteams .ph{color:var(--muted);font-style:italic}
+  .predteams.pending{gap:4px;cursor:help}
+  .predteams .qmark{display:inline-flex;align-items:center;justify-content:center;width:24px;height:22px;border-radius:7px;background:#eef1f7;color:#9aa3b5;font-weight:800;border:1px dashed #c2cadb}
+  .predteams .qhint{font-size:10px;font-weight:700;color:var(--muted);font-style:italic;margin-top:1px}
   .ptsbox{text-align:right}
   .ptsbox .pv{font-family:'Barlow Condensed';font-weight:800;font-size:22px}
   .ptsbox .pp{font-size:12px;color:var(--muted);font-weight:700}
@@ -873,7 +876,14 @@ function fixtureHtml(fx){
   let predHtml='';
   if(fx.predicted && fx.predicted.type==='teams'){
     if(fx.predicted.hidden){
-      predHtml=`<div class="predteams"><span class="ph">👁️ hidden</span></div>`;
+      // Pick is locked/blocked for now (deadline not passed, or not yet
+      // scrapeable). Show placeholders — these fill in automatically once the
+      // prediction becomes available, no code change needed.
+      predHtml=`<div class="predteams pending" title="Pick locked until the deadline — fills in automatically once it's revealed">
+        <span class="qmark">?</span>
+        <span class="qmark">?</span>
+        <span class="qhint">pending</span>
+      </div>`;
     }else{
       predHtml=`<div class="predteams">
         <span>${flagImg(fx.predicted.home?.code,'flag sm')} ${esc(fx.predicted.home?.name||fx.predicted.home?.code||'?')}</span>
