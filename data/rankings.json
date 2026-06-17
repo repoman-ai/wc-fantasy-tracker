@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-17T01:01:25Z",
+  "updated": "2026-06-17T02:01:32Z",
   "pool": {
     "id": "34193",
     "slug": "bobby-and-friends",
@@ -18,7 +18,7 @@
       "name": "JJ",
       "flag": "FRA",
       "rank": 1,
-      "points": 744,
+      "points": 792,
       "exact": 5
     },
     {
@@ -28,7 +28,7 @@
       "name": "bobby",
       "flag": "FRA",
       "rank": 2,
-      "points": 693,
+      "points": 756,
       "exact": 2
     },
     {
@@ -38,18 +38,8 @@
       "name": "Gabriela",
       "flag": "NED",
       "rank": 3,
-      "points": 654,
+      "points": 717,
       "exact": 2
-    },
-    {
-      "team_id": "247729",
-      "slug": "maxs",
-      "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247729/maxs/stage/1196-grand-total?scroll=fixture",
-      "name": "MaxS.",
-      "flag": "ARG",
-      "rank": 4,
-      "points": 630,
-      "exact": 1
     },
     {
       "team_id": "252600",
@@ -57,19 +47,19 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/252600/el-capitan/stage/1196-grand-total?scroll=fixture",
       "name": "El Capitan",
       "flag": "FRA",
-      "rank": 5,
-      "points": 615,
-      "exact": 2
+      "rank": 4,
+      "points": 705,
+      "exact": 3
     },
     {
-      "team_id": "253787",
-      "slug": "jazmin",
-      "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/253787/jazmin/stage/1196-grand-total?scroll=fixture",
-      "name": "Jazmin",
-      "flag": "POR",
-      "rank": 6,
-      "points": 615,
-      "exact": 2
+      "team_id": "247729",
+      "slug": "maxs",
+      "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247729/maxs/stage/1196-grand-total?scroll=fixture",
+      "name": "MaxS.",
+      "flag": "ARG",
+      "rank": 5,
+      "points": 693,
+      "exact": 1
     },
     {
       "team_id": "247524",
@@ -77,9 +67,19 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247524/alejandro/stage/1196-grand-total?scroll=fixture",
       "name": "Alejandro",
       "flag": "BRA",
-      "rank": 7,
-      "points": 606,
+      "rank": 6,
+      "points": 669,
       "exact": 0
+    },
+    {
+      "team_id": "253787",
+      "slug": "jazmin",
+      "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/253787/jazmin/stage/1196-grand-total?scroll=fixture",
+      "name": "Jazmin",
+      "flag": "POR",
+      "rank": 7,
+      "points": 663,
+      "exact": 2
     },
     {
       "team_id": "253790",
@@ -88,7 +88,7 @@
       "name": "remi",
       "flag": "FRA",
       "rank": 8,
-      "points": 600,
+      "points": 663,
       "exact": 1
     },
     {
@@ -98,7 +98,7 @@
       "name": "Baronmark",
       "flag": "FRA",
       "rank": 9,
-      "points": 585,
+      "points": 648,
       "exact": 1
     },
     {
@@ -108,7 +108,7 @@
       "name": "Karenwj",
       "flag": "NED",
       "rank": 10,
-      "points": 585,
+      "points": 648,
       "exact": 1
     },
     {
@@ -118,7 +118,7 @@
       "name": "Yo",
       "flag": "MEX",
       "rank": 11,
-      "points": 582,
+      "points": 630,
       "exact": 1
     },
     {
@@ -128,7 +128,7 @@
       "name": "Alec",
       "flag": "ESP",
       "rank": 12,
-      "points": 558,
+      "points": 621,
       "exact": 1
     },
     {
@@ -138,7 +138,7 @@
       "name": "Luisa",
       "flag": "POR",
       "rank": 13,
-      "points": 531,
+      "points": 594,
       "exact": 1
     },
     {
@@ -148,7 +148,7 @@
       "name": "Valewalle",
       "flag": "ESP",
       "rank": 14,
-      "points": 507,
+      "points": 570,
       "exact": 1
     },
     {
@@ -158,7 +158,7 @@
       "name": "Daniel",
       "flag": "FRA",
       "rank": 15,
-      "points": 504,
+      "points": 567,
       "exact": 2
     },
     {
@@ -168,7 +168,7 @@
       "name": "Beturompequinielas",
       "flag": "ARG",
       "rank": 16,
-      "points": 462,
+      "points": 510,
       "exact": 1
     }
   ]
