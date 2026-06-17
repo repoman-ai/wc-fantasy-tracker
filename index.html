@@ -231,7 +231,7 @@
   .grouphd .gsub b{color:var(--ink);font-family:'Barlow Condensed';font-size:16px}
 
   .fx{background:var(--card);border-radius:14px;box-shadow:var(--shadow);padding:12px 14px;margin-bottom:8px;
-    display:grid;grid-template-columns:120px 1fr 96px 70px;gap:12px;align-items:center}
+    display:grid;grid-template-columns:108px 1fr 132px 62px;gap:12px;align-items:center}
   .fx.exact{border:1.5px solid #f4c430;background:linear-gradient(90deg,#fffae8,#fff 30%)}
   .fx .when{font-size:12px;color:var(--muted);font-weight:600}
   .fx .when .st{display:inline-block;font-size:10px;font-weight:800;padding:2px 6px;border-radius:6px;margin-bottom:4px;letter-spacing:.4px}
@@ -275,11 +275,14 @@
   .scoreline.fin.miss{color:var(--down)}
   .scoreline.fin.live{color:#e23b3b}
   .actualrow .lab.live{color:#c01d1d;display:inline-flex;align-items:center;gap:4px}
-  .predteams{display:flex;flex-direction:column;gap:3px;align-items:center;font-size:12px;font-weight:600}
+  /* Predicted teams (knockout): flags share a fixed left column so the two rows
+     line up; the block itself is centered within the column via .pcol. */
+  .predteams{display:inline-flex;flex-direction:column;gap:6px;align-items:flex-start;text-align:left;font-size:13px;font-weight:600;max-width:100%}
+  .predteams .pt{display:flex;align-items:center;gap:7px;min-width:0;max-width:100%;cursor:default}
+  .predteams .pt .ptn{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .predteams .ph{color:var(--muted);font-style:italic}
-  .predteams.pending{gap:4px;cursor:help}
-  .predteams .qmark{display:inline-flex;align-items:center;justify-content:center;width:24px;height:22px;border-radius:7px;background:#eef1f7;color:#9aa3b5;font-weight:800;border:1px dashed #c2cadb}
-  .predteams .qhint{font-size:10px;font-weight:700;color:var(--muted);font-style:italic;margin-top:1px}
+  .predteams .qmark{display:inline-flex;align-items:center;justify-content:center;width:22px;height:16px;border-radius:3px;background:#eef1f7;color:#9aa3b5;font-weight:800;font-size:12px;border:1px dashed #c2cadb}
+  .predteams .pt.pend{cursor:help}
   .ptsbox{text-align:right}
   .ptsbox .pv{font-family:'Barlow Condensed';font-weight:800;font-size:22px}
   .ptsbox .pp{font-size:12px;color:var(--muted);font-weight:700}
@@ -864,6 +867,13 @@ function teamLine(t){
   return `<div class="teamline">${flagImg(t.code,'flag sm')}<span class="tn">${esc(t.name||t.code||'TBD')}</span></div>`;
 }
 
+// One predicted-team row: flag in a fixed left column, name beside it (so the
+// two rows of a knockout pick share a clean flag column and never look ragged).
+function predTeamLine(t){
+  const name=esc((t&&(t.name||t.code))||'?');
+  return `<span class="pt" title="${name}">${flagImg(t&&t.code,'flag sm')}<span class="ptn">${name}</span></span>`;
+}
+
 function fixtureHtml(fx){
   const live=isLive(fx);
   const done=isCompleted(fx);
@@ -877,18 +887,16 @@ function fixtureHtml(fx){
   if(fx.predicted && fx.predicted.type==='teams'){
     if(fx.predicted.hidden){
       // Pick is locked/blocked for now (deadline not passed, or not yet
-      // scrapeable). Show placeholders — these fill in automatically once the
-      // prediction becomes available, no code change needed.
-      predHtml=`<div class="predteams pending" title="Pick locked until the deadline — fills in automatically once it's revealed">
-        <span class="qmark">?</span>
-        <span class="qmark">?</span>
-        <span class="qhint">pending</span>
+      // scrapeable). Show "?" placeholders aligned to the same flag column as a
+      // revealed pick — they fill in automatically once the prediction becomes
+      // available, no code change needed. (The Status column already reads
+      // "pending", so no extra label here.)
+      predHtml=`<div class="predteams" title="Pick stays hidden until the deadline — it fills in automatically once it's revealed">
+        <span class="pt pend"><span class="qmark">?</span></span>
+        <span class="pt pend"><span class="qmark">?</span></span>
       </div>`;
     }else{
-      predHtml=`<div class="predteams">
-        <span>${flagImg(fx.predicted.home?.code,'flag sm')} ${esc(fx.predicted.home?.name||fx.predicted.home?.code||'?')}</span>
-        <span>${flagImg(fx.predicted.away?.code,'flag sm')} ${esc(fx.predicted.away?.name||fx.predicted.away?.code||'?')}</span>
-      </div>`;
+      predHtml=`<div class="predteams">${predTeamLine(fx.predicted.home)}${predTeamLine(fx.predicted.away)}</div>`;
     }
   }else{
     predHtml=`<div class="scoreline pred">${esc(fx.predicted?.score||'—')}</div>`;
