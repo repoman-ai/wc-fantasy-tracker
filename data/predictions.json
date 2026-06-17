@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-17T16:47:57Z",
+  "updated": "2026-06-17T16:52:19Z",
   "players": {
     "247528": {
       "team_id": "247528",
@@ -3394,7 +3394,7 @@
         },
         {
           "round": "3rd Place",
-          "subtotal": null,
+          "subtotal": 0,
           "fixtures": [
             {
               "fixture_number": 103,
@@ -3435,7 +3435,7 @@
         },
         {
           "round": "Final",
-          "subtotal": null,
+          "subtotal": 0,
           "fixtures": [
             {
               "fixture_number": 104,
@@ -6898,7 +6898,7 @@
         },
         {
           "round": "3rd Place",
-          "subtotal": null,
+          "subtotal": 0,
           "fixtures": [
             {
               "fixture_number": 103,
@@ -6939,7 +6939,7 @@
         },
         {
           "round": "Final",
-          "subtotal": null,
+          "subtotal": 0,
           "fixtures": [
             {
               "fixture_number": 104,
@@ -10402,7 +10402,7 @@
         },
         {
           "round": "3rd Place",
-          "subtotal": null,
+          "subtotal": 0,
           "fixtures": [
             {
               "fixture_number": 103,
@@ -10443,7 +10443,7 @@
         },
         {
           "round": "Final",
-          "subtotal": null,
+          "subtotal": 0,
           "fixtures": [
             {
               "fixture_number": 104,
@@ -13906,7 +13906,7 @@
         },
         {
           "round": "3rd Place",
-          "subtotal": null,
+          "subtotal": 0,
           "fixtures": [
             {
               "fixture_number": 103,
@@ -13947,7 +13947,7 @@
         },
         {
           "round": "Final",
-          "subtotal": null,
+          "subtotal": 0,
           "fixtures": [
             {
               "fixture_number": 104,
@@ -17410,7 +17410,7 @@
         },
         {
           "round": "3rd Place",
-          "subtotal": null,
+          "subtotal": 0,
           "fixtures": [
             {
               "fixture_number": 103,
@@ -17451,7 +17451,7 @@
         },
         {
           "round": "Final",
-          "subtotal": null,
+          "subtotal": 0,
           "fixtures": [
             {
               "fixture_number": 104,
@@ -20914,7 +20914,7 @@
         },
         {
           "round": "3rd Place",
-          "subtotal": null,
+          "subtotal": 0,
           "fixtures": [
             {
               "fixture_number": 103,
@@ -20955,7 +20955,7 @@
         },
         {
           "round": "Final",
-          "subtotal": null,
+          "subtotal": 0,
           "fixtures": [
             {
               "fixture_number": 104,
@@ -24418,7 +24418,7 @@
         },
         {
           "round": "3rd Place",
-          "subtotal": null,
+          "subtotal": 0,
           "fixtures": [
             {
               "fixture_number": 103,
@@ -24459,7 +24459,7 @@
         },
         {
           "round": "Final",
-          "subtotal": null,
+          "subtotal": 0,
           "fixtures": [
             {
               "fixture_number": 104,
@@ -27922,7 +27922,7 @@
         },
         {
           "round": "3rd Place",
-          "subtotal": null,
+          "subtotal": 0,
           "fixtures": [
             {
               "fixture_number": 103,
@@ -27963,7 +27963,7 @@
         },
         {
           "round": "Final",
-          "subtotal": null,
+          "subtotal": 0,
           "fixtures": [
             {
               "fixture_number": 104,
@@ -31426,7 +31426,7 @@
         },
         {
           "round": "3rd Place",
-          "subtotal": null,
+          "subtotal": 0,
           "fixtures": [
             {
               "fixture_number": 103,
@@ -31467,7 +31467,7 @@
         },
         {
           "round": "Final",
-          "subtotal": null,
+          "subtotal": 0,
           "fixtures": [
             {
               "fixture_number": 104,
@@ -34930,7 +34930,7 @@
         },
         {
           "round": "3rd Place",
-          "subtotal": null,
+          "subtotal": 0,
           "fixtures": [
             {
               "fixture_number": 103,
@@ -34971,7 +34971,7 @@
         },
         {
           "round": "Final",
-          "subtotal": null,
+          "subtotal": 0,
           "fixtures": [
             {
               "fixture_number": 104,
@@ -38434,7 +38434,7 @@
         },
         {
           "round": "3rd Place",
-          "subtotal": null,
+          "subtotal": 0,
           "fixtures": [
             {
               "fixture_number": 103,
@@ -38475,7 +38475,7 @@
         },
         {
           "round": "Final",
-          "subtotal": null,
+          "subtotal": 0,
           "fixtures": [
             {
               "fixture_number": 104,
@@ -41938,7 +41938,7 @@
         },
         {
           "round": "3rd Place",
-          "subtotal": null,
+          "subtotal": 0,
           "fixtures": [
             {
               "fixture_number": 103,
@@ -41979,7 +41979,7 @@
         },
         {
           "round": "Final",
-          "subtotal": null,
+          "subtotal": 0,
           "fixtures": [
             {
               "fixture_number": 104,
@@ -45442,7 +45442,7 @@
         },
         {
           "round": "3rd Place",
-          "subtotal": null,
+          "subtotal": 0,
           "fixtures": [
             {
               "fixture_number": 103,
@@ -45483,7 +45483,7 @@
         },
         {
           "round": "Final",
-          "subtotal": null,
+          "subtotal": 0,
           "fixtures": [
             {
               "fixture_number": 104,
@@ -48946,7 +48946,7 @@
         },
         {
           "round": "3rd Place",
-          "subtotal": null,
+          "subtotal": 0,
           "fixtures": [
             {
               "fixture_number": 103,
@@ -48987,7 +48987,7 @@
         },
         {
           "round": "Final",
-          "subtotal": null,
+          "subtotal": 0,
           "fixtures": [
             {
               "fixture_number": 104,
@@ -52450,7 +52450,7 @@
         },
         {
           "round": "3rd Place",
-          "subtotal": null,
+          "subtotal": 0,
           "fixtures": [
             {
               "fixture_number": 103,
@@ -52491,7 +52491,7 @@
         },
         {
           "round": "Final",
-          "subtotal": null,
+          "subtotal": 0,
           "fixtures": [
             {
               "fixture_number": 104,
@@ -55954,7 +55954,7 @@
         },
         {
           "round": "3rd Place",
-          "subtotal": null,
+          "subtotal": 0,
           "fixtures": [
             {
               "fixture_number": 103,
@@ -55995,7 +55995,7 @@
         },
         {
           "round": "Final",
-          "subtotal": null,
+          "subtotal": 0,
           "fixtures": [
             {
               "fixture_number": 104,
