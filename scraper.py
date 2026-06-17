@@ -258,11 +258,13 @@ def now_iso() -> str:
 # --------------------------------------------------------------------------- #
 LIVE_WINDOW_MINUTES = int(os.environ.get("LIVE_WINDOW_MINUTES", "135"))      # 90' + HT + stoppage
 LIVE_HARD_CAP_MINUTES = int(os.environ.get("LIVE_HARD_CAP_MINUTES", "180"))  # ET + pens ceiling
-# Historical snapshots predate fixture-level capture, so they can only be judged
-# from their timestamp against the published kickoff schedule. A slightly wider
-# window than LIVE_WINDOW_MINUTES keeps a late-settling total from sneaking in as
-# "settled"; losing a borderline-but-genuine reading is harmless (charts just
-# step once less often).
+# Historical snapshots store only rankings, not the fixture state at capture
+# time, so they can only be judged by their timestamp against the real fixture
+# schedule. That schedule comes from the scraped predictions.json itself (every
+# fixture's kickoff_utc, group and knockout alike) — no hand-maintained table.
+# A slightly wider window than LIVE_WINDOW_MINUTES keeps a late-settling total
+# from sneaking in as "settled"; losing a borderline-but-genuine reading is
+# harmless (charts just step once less often).
 SETTLE_BACKFILL_WINDOW_MINUTES = int(os.environ.get("SETTLE_BACKFILL_WINDOW_MINUTES", "150"))
 
 _FIXTURE_MINUTE_RE = re.compile(r"\d+'")
@@ -323,13 +325,30 @@ def any_match_in_progress(predictions: dict, now: datetime) -> bool:
     return False
 
 
-def _scheduled_kickoffs() -> list[datetime]:
-    out = []
-    for utc, _local in OFFICIAL_GROUP_KICKOFFS.values():
-        dt = _parse_utc(utc)
-        if dt:
-            out.append(dt)
-    return out
+def _all_fixture_kickoffs(predictions: dict) -> list[datetime]:
+    """Every distinct fixture kickoff in the scraped schedule (group + knockout).
+
+    Drives the backfill window check off real data rather than a hand-maintained
+    table, so newly added knockout rounds are covered automatically. Group
+    kickoffs in predictions.json are already corrected against the authoritative
+    table when fixtures are parsed (see ``official_group_kickoff``).
+    """
+    seen = set()
+    if not isinstance(predictions, dict):
+        return []
+    for p in predictions.values():
+        if not isinstance(p, dict):
+            continue
+        for md in p.get("matchdays", []):
+            if not isinstance(md, dict):
+                continue
+            for fx in md.get("fixtures", []):
+                if not isinstance(fx, dict):
+                    continue
+                ko = _parse_utc(fx.get("kickoff_utc"))
+                if ko is not None:
+                    seen.add(ko)
+    return sorted(seen)
 
 
 def _timestamp_settled(ts: str | None, kickoffs: list[datetime]) -> bool:
@@ -344,15 +363,20 @@ def _timestamp_settled(ts: str | None, kickoffs: list[datetime]) -> bool:
     return True
 
 
-def backfill_settled(history: list) -> bool:
-    """Tag any history entry lacking a `settled` flag from the kickoff schedule.
+def backfill_settled(history: list, predictions: dict) -> bool:
+    """Tag any history entry lacking a `settled` flag using the real schedule.
 
-    Returns True if any entry was updated, so the caller can persist the file
-    even on a run that appends no new snapshot.
+    Kickoffs come from the scraped ``predictions.json`` fixtures, so the check
+    covers whatever rounds have been published. Returns True if any entry was
+    updated, so the caller can persist the file even on a run that appends no new
+    snapshot. If the schedule is empty (e.g. a failed scrape) nothing is tagged
+    rather than guessing every untagged entry settled.
     """
     if not isinstance(history, list):
         return False
-    kickoffs = _scheduled_kickoffs()
+    kickoffs = _all_fixture_kickoffs(predictions)
+    if not kickoffs:
+        return False
     changed = False
     for entry in history:
         if isinstance(entry, dict) and "settled" not in entry:
@@ -1315,7 +1339,7 @@ def run(out_dir: Path, samples: bool):
     # tagged `settled` (no match in progress at capture time) so the front-end
     # can chart / rank movers off settled data and ignore mid-match wobble.
     history = load_json(history_path, [])
-    backfilled = backfill_settled(history)  # heal pre-existing untagged entries
+    backfilled = backfill_settled(history, predictions)  # heal untagged entries
 
     captured_at = _parse_utc(rankings["updated"]) or datetime.now(timezone.utc)
     in_progress = any_match_in_progress(predictions, captured_at)
