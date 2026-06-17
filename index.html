@@ -214,15 +214,49 @@
   .chartcard .cwrap{height:170px;position:relative}
   @media(max-width:680px){.charts{grid-template-columns:1fr}.stats{grid-template-columns:repeat(3,1fr)}}
 
+  /* Collapsible "Performance tracking" section — collapsed by default so the
+     prediction sheet is the first thing in view. */
+  .track{margin-bottom:16px;background:var(--card);border-radius:14px;box-shadow:var(--shadow);overflow:hidden}
+  .track>summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:10px;
+    padding:13px 16px;font-weight:800;font-size:13px;text-transform:uppercase;letter-spacing:.5px;color:var(--ink)}
+  .track>summary::-webkit-details-marker{display:none}
+  .track>summary:hover{background:#f7f9fd}
+  .track>summary .hint{margin-left:auto;font-weight:700;font-size:11.5px;text-transform:none;letter-spacing:0;
+    color:var(--muted);display:inline-flex;align-items:center;gap:8px}
+  .track>summary .chev{font-size:11px;color:var(--muted);transition:transform .25s}
+  .track[open]>summary .chev{transform:rotate(180deg)}
+  .track .track-body{padding:0 14px 12px}
+  .track .charts{margin-bottom:0}
+  @media(max-width:560px){.track>summary .hint .htxt{display:none}}
+
   /* ---------- Filters + sheet ---------- */
   .sheet-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:6px 2px 12px;flex-wrap:wrap}
   .sheet-head h4{margin:0;font-size:14px;font-weight:800;text-transform:uppercase;letter-spacing:.6px}
-  .filters{display:flex;gap:7px;flex-wrap:wrap}
+  .filters{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+  /* iOS-style segmented control: a pill container with a filled thumb that
+     slides + resizes between the three options (positioned in JS so the thumb
+     hugs each label's real width). */
+  .segmented{position:relative;display:inline-flex;background:#eef1f7;border:1px solid #d4dbea;
+    border-radius:999px;padding:3px;isolation:isolate}
+  .segmented .seg{position:relative;z-index:1;border:0;background:transparent;cursor:pointer;font:inherit;
+    font-weight:700;font-size:12.5px;color:var(--muted);padding:7px 14px;border-radius:999px;white-space:nowrap;
+    display:inline-flex;align-items:center;gap:6px;line-height:1;transition:color .2s}
+  .segmented .seg:hover:not(.active){color:var(--ink)}
+  .segmented .seg.active{color:#fff}
+  .segmented .seg .cnt{font-variant-numeric:tabular-nums;font-weight:800;font-size:11px;opacity:.6}
+  .segmented .seg.active .cnt{opacity:.85}
+  .segmented .seg:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+  .segmented .seg-thumb{position:absolute;top:3px;bottom:3px;left:0;z-index:0;border-radius:999px;
+    background:var(--accent);box-shadow:0 1px 4px rgba(79,70,229,.5);
+    transition:transform .28s cubic-bezier(.34,1.1,.64,1),width .28s cubic-bezier(.34,1.1,.64,1);
+    will-change:transform,width}
+  /* Standalone toggle (Today) sits beside the segmented control. */
   .tog{border:1px solid var(--line);background:var(--card);color:var(--muted);font-weight:700;font-size:12.5px;
-    padding:7px 12px;border-radius:999px;cursor:pointer;display:inline-flex;align-items:center;gap:6px;transition:all .12s}
-  .tog.on{background:#11182a;border-color:#11182a;color:#fff}
-  .tog.on.today{background:var(--accent);border-color:var(--accent)}
+    padding:8px 13px;border-radius:999px;cursor:pointer;display:inline-flex;align-items:center;gap:6px;transition:all .12s}
+  .tog:hover{border-color:#c9d2e3}
+  .tog.on{background:var(--accent);border-color:var(--accent);color:#fff}
   .tog .cnt{opacity:.7;font-weight:700}
+  @media(prefers-reduced-motion:reduce){.segmented .seg-thumb{transition:none}}
 
   .group{margin-bottom:18px}
   .grouphd{display:flex;align-items:center;justify-content:space-between;margin:0 2px 8px}
@@ -231,7 +265,7 @@
   .grouphd .gsub b{color:var(--ink);font-family:'Barlow Condensed';font-size:16px}
 
   .fx{background:var(--card);border-radius:14px;box-shadow:var(--shadow);padding:12px 14px;margin-bottom:8px;
-    display:grid;grid-template-columns:108px 1fr 132px 62px;gap:12px;align-items:center}
+    display:grid;grid-template-columns:104px 1fr 124px 84px;gap:12px;align-items:center}
   .fx.exact{border:1.5px solid #f4c430;background:linear-gradient(90deg,#fffae8,#fff 30%)}
   .fx .when{font-size:12px;color:var(--muted);font-weight:600}
   .fx .when .st{display:inline-block;font-size:10px;font-weight:800;padding:2px 6px;border-radius:6px;margin-bottom:4px;letter-spacing:.4px}
@@ -286,7 +320,8 @@
   .ptsbox{text-align:right}
   .ptsbox .pv{font-family:'Barlow Condensed';font-weight:800;font-size:22px}
   .ptsbox .pp{font-size:12px;color:var(--muted);font-weight:700}
-  .perfect{display:inline-block;background:#f4c430;color:#5a4300;font-size:10px;font-weight:800;padding:3px 7px;border-radius:999px;margin-top:3px;white-space:nowrap}
+  .perfect{display:inline-block;background:#f4c430;color:#5a4300;font-size:9.5px;font-weight:800;padding:3px 7px;
+    border-radius:999px;margin-top:4px;line-height:1.2;white-space:normal;max-width:100%;letter-spacing:.2px}
 
   .bonus .fx{grid-template-columns:120px 1fr 1fr 70px}
   .bonus .q{font-weight:800;font-size:14px}
@@ -743,33 +778,55 @@ function renderBoard(){
 
 /* ---------------- Player detail ---------------- */
 
-/* Snapshots where the standings actually moved — i.e. a game went final.
-   We start from settled snapshots only (those captured with no match in
-   progress), so mid-match live wobble never enters the per-player charts.
-   Points/exact are cumulative, so a scrape that changed no one's totals added
-   no final results; we collapse those flat repeats so the charts step only on
-   real scoring events rather than on every scrape. The first settled snapshot
-   is always kept as the baseline. */
-function finalScoreHistory(){
-  const out=[]; let prevSig=null;
-  settledHistory().forEach(s=>{
-    const sig=(s.players||[]).slice()
-      .sort((a,b)=>String(a.team_id).localeCompare(String(b.team_id)))
-      .map(p=>p.team_id+':'+p.points+':'+p.exact).join('|');
-    if(sig!==prevSig){ out.push(s); prevSig=sig; }
-  });
-  return out;
-}
+/* Build one player's points / rank / exact series for the charts.
 
-function seriesFor(teamId, hist){
-  const H = hist || finalScoreHistory();
-  const labels=[],pts=[],ranks=[],exact=[];
-  H.forEach(s=>{
+   The upstream site nudges a player's live total mid-match, and that
+   provisional value often settles to something different at full time — so we
+   can't just plot every scrape (that's the "wobble" we want to exclude). But
+   restricting to whole snapshots flagged `settled` is too blunt: during a busy
+   evening almost every hourly scrape lands inside SOME fixture's window, so the
+   series collapsed to just start → latest and hid every real intermediate step.
+
+   Instead we trust a reading per-player when EITHER:
+     • its snapshot is settled (no match in progress at capture), OR
+     • it is confirmed by the next scrape (the value held steady to the
+       following reading) — a genuine post-game total persists across scrapes,
+       while a one-scrape provisional blip never matches its neighbour.
+   We then collapse to step only on real changes, so each finished game shows as
+   its own step (e.g. fell 2 after one game, rose 1 after the next). Finally we
+   append the current live standing as a "now" point so the chart tip always
+   reflects where the player stands right now. Working per-player also filters
+   rank wobble caused by OTHER players' mid-match blips. */
+function playerSeries(teamId){
+  const H=(HISTORY||[]).filter(s=>s&&Array.isArray(s.players));
+  const sig=p=>p?`${p.points}|${p.rank}|${p.exact}`:null;
+  const raw=H.map(s=>{
     const p=s.players.find(x=>x.team_id===teamId);
-    labels.push(shortStamp(s.timestamp));
-    pts.push(p?p.points:null); ranks.push(p?p.rank:null); exact.push(p?p.exact:null);
+    return {ts:s.timestamp, settled:s.settled!==false, p:p?{points:p.points,rank:p.rank,exact:p.exact}:null};
   });
-  return {labels,pts,ranks,exact};
+  const trusted=[];
+  for(let i=0;i<raw.length;i++){
+    const r=raw[i]; if(!r.p) continue;
+    const nxt=raw[i+1];
+    if(r.settled || (nxt&&nxt.p&&sig(nxt.p)===sig(r.p))) trusted.push(r);
+  }
+  const steps=[]; let prev=null;
+  trusted.forEach(r=>{ const g=sig(r.p); if(g!==prev){ steps.push(r); prev=g; } });
+
+  const labels=[],pts=[],ranks=[],exact=[];
+  steps.forEach(r=>{ labels.push(shortStamp(r.ts)); pts.push(r.p.points); ranks.push(r.p.rank); exact.push(r.p.exact); });
+
+  // Append the live "now" standing when it diverges from the last settled step.
+  let live=false;
+  const cur=(RANKINGS.players||[]).find(p=>p.team_id===teamId);
+  if(cur){
+    const curp={points:cur.points,rank:cur.rank,exact:cur.exact};
+    const last=steps.length?steps[steps.length-1].p:null;
+    if(!last || sig(last)!==sig(curp)){
+      labels.push('now'); pts.push(cur.points); ranks.push(cur.rank); exact.push(cur.exact); live=true;
+    }
+  }
+  return {labels,pts,ranks,exact,steps:steps.length,live};
 }
 function trendTag(arr){
   const v=arr.filter(x=>x!=null);
@@ -788,17 +845,16 @@ function rankTrendTag(arr){
   return {cls:'same',txt:'holding'};
 }
 
-let FILTERS={completed:true,upcoming:true,today:false};
+let FILTERS={mode:'upcoming',today:false};
 
 function openPlayer(teamId){
   const pdata=PRED[teamId];
   const base=RANKINGS.players.find(p=>p.team_id===teamId)||{};
   const name=(pdata&&pdata.name)||base.name||'Player';
   const flag=(pdata&&pdata.flag)||base.flag;
-  const fh=finalScoreHistory();
-  const s=seriesFor(teamId, fh);
+  const s=playerSeries(teamId);
   const ptsT=trendTag(s.pts), rkT=rankTrendTag(s.ranks), exT=trendTag(s.exact);
-  FILTERS={completed:true,upcoming:true,today:false};
+  FILTERS={mode:'upcoming',today:false};
 
   const modal=$('#modal');
   modal.innerHTML=`
@@ -816,19 +872,27 @@ function openPlayer(teamId){
         <div class="stat"><div class="k">Rank</div><div class="v num">#${base.rank??'–'}</div><div class="t ${rkT.cls}">${rkT.txt}</div></div>
         <div class="stat"><div class="k">Exact 🎯</div><div class="v num">${base.exact??0}</div><div class="t ${exT.cls}">${exT.txt}</div></div>
       </div>
-      <div class="charts">
-        <div class="chartcard"><h4>Points over time</h4><div class="cwrap"><canvas id="cPts"></canvas></div></div>
-        <div class="chartcard"><h4>Rank over time</h4><div class="cwrap"><canvas id="cRank"></canvas></div></div>
-        <div class="chartcard"><h4>Exact predictions over time</h4><div class="cwrap"><canvas id="cExact"></canvas></div></div>
-        <div class="chartcard" style="display:flex;flex-direction:column;justify-content:center">
-          <h4>Snapshot</h4>
-          <div style="font-size:13px;color:var(--muted);line-height:1.7">
-            Grand total <b style="color:var(--ink)" class="num">${pdata?.grand_total??base.points??'–'}</b><br>
-            Scoring updates <b style="color:var(--ink)">${fh.length} reading${fh.length===1?'':'s'}</b><br>
-            ${fh.length<2?'Charts fill in as games finish and scores land.':'Charts step on each finished game, not every scrape.'}
+      <details class="track" id="trackPanel">
+        <summary>
+          <span>📈 Performance tracking</span>
+          <span class="hint"><span class="htxt">Points, rank &amp; exact over time</span><span class="chev">▾</span></span>
+        </summary>
+        <div class="track-body">
+          <div class="charts">
+            <div class="chartcard"><h4>Points over time</h4><div class="cwrap"><canvas id="cPts"></canvas></div></div>
+            <div class="chartcard"><h4>Rank over time</h4><div class="cwrap"><canvas id="cRank"></canvas></div></div>
+            <div class="chartcard"><h4>Exact predictions over time</h4><div class="cwrap"><canvas id="cExact"></canvas></div></div>
+            <div class="chartcard" style="display:flex;flex-direction:column;justify-content:center">
+              <h4>Snapshot</h4>
+              <div style="font-size:13px;color:var(--muted);line-height:1.7">
+                Grand total <b style="color:var(--ink)" class="num">${pdata?.grand_total??base.points??'–'}</b><br>
+                Scoring updates <b style="color:var(--ink)">${s.steps} reading${s.steps===1?'':'s'}</b><br>
+                ${s.steps<2?'Charts fill in as games finish and scores land.':'Charts step on each finished game, not every scrape.'}
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+      </details>
       <div class="sheet-head">
         <h4>Prediction sheet</h4>
         <div class="filters" id="filters"></div>
@@ -838,25 +902,79 @@ function openPlayer(teamId){
     </div>`;
 
   modal.querySelector('.close').addEventListener('click',closeModal);
-  buildFilters();
+  buildFilters(teamId);
   renderSheet(teamId);
-  drawCharts(s);
+  // Charts live in a collapsed panel; draw lazily on first expand (a hidden
+  // canvas would size to 0), then just resize on subsequent opens.
+  const track=modal.querySelector('#trackPanel');
+  let chartsDrawn=false;
+  track.addEventListener('toggle',()=>{
+    if(!track.open) return;
+    if(!chartsDrawn){ drawCharts(s); chartsDrawn=true; }
+    else charts.forEach(c=>c.resize());
+  });
   $('#overlay').classList.add('open');
   document.body.style.overflow='hidden';
+  requestAnimationFrame(positionSegThumb);
 }
 
-function buildFilters(){
+function fixtureCounts(teamId){
+  const c={all:0,upcoming:0,completed:0,today:0};
+  const pdata=PRED[teamId]; if(!pdata||!pdata.matchdays) return c;
+  pdata.matchdays.forEach(md=>(md.fixtures||[]).forEach(fx=>{
+    c.all++;
+    if(isCompleted(fx)) c.completed++; else c.upcoming++; // upcoming bucket also holds live
+    if(isSameLocalDay(fx.kickoff_utc)) c.today++;
+  }));
+  return c;
+}
+
+function buildFilters(teamId){
   const f=$('#filters');
+  const c=fixtureCounts(teamId);
+  const seg=(mode,label,n)=>{
+    const on=FILTERS.mode===mode;
+    return `<button class="seg ${on?'active':''}" role="tab" aria-selected="${on}" data-mode="${mode}">${label}<span class="cnt">${n}</span></button>`;
+  };
   f.innerHTML=`
-    <button class="tog ${FILTERS.completed?'on':''}" data-k="completed">✓ Completed</button>
-    <button class="tog ${FILTERS.upcoming?'on':''}" data-k="upcoming">◷ Upcoming</button>
-    <button class="tog today ${FILTERS.today?'on':''}" data-k="today">📅 Today only</button>`;
-  f.querySelectorAll('.tog').forEach(b=>b.addEventListener('click',()=>{
-    FILTERS[b.dataset.k]=!FILTERS[b.dataset.k];
-    b.classList.toggle('on');
+    <div class="segmented" role="tablist" aria-label="Filter matches">
+      <span class="seg-thumb" aria-hidden="true"></span>
+      ${seg('all','All',c.all)}
+      ${seg('upcoming','Upcoming & Live',c.upcoming)}
+      ${seg('completed','Completed',c.completed)}
+    </div>
+    <button class="tog ${FILTERS.today?'on':''}" data-k="today" aria-pressed="${FILTERS.today}">📅 Today${c.today?`<span class="cnt">${c.today}</span>`:''}</button>`;
+  f.querySelectorAll('.seg').forEach(b=>b.addEventListener('click',()=>{
+    if(FILTERS.mode===b.dataset.mode) return;
+    FILTERS.mode=b.dataset.mode;
+    f.querySelectorAll('.seg').forEach(x=>{
+      const on=x.dataset.mode===FILTERS.mode;
+      x.classList.toggle('active',on);
+      x.setAttribute('aria-selected',on);
+    });
+    positionSegThumb();
     renderSheetCurrent();
   }));
+  const tg=f.querySelector('.tog');
+  if(tg) tg.addEventListener('click',()=>{
+    FILTERS.today=!FILTERS.today;
+    tg.classList.toggle('on');
+    tg.setAttribute('aria-pressed',FILTERS.today);
+    renderSheetCurrent();
+  });
 }
+
+/* Slide + size the segmented-control thumb under the active option. Run after
+   the modal is visible (offsetWidth is 0 while the overlay is display:none). */
+function positionSegThumb(){
+  const seg=document.querySelector('#filters .segmented'); if(!seg) return;
+  const thumb=seg.querySelector('.seg-thumb');
+  const active=seg.querySelector('.seg.active');
+  if(!thumb||!active) return;
+  thumb.style.width=active.offsetWidth+'px';
+  thumb.style.transform=`translateX(${active.offsetLeft}px)`;
+}
+window.addEventListener('resize',positionSegThumb);
 let CURRENT_TEAM=null;
 function renderSheetCurrent(){ if(CURRENT_TEAM) renderSheet(CURRENT_TEAM); }
 
@@ -872,12 +990,11 @@ function renderSheet(teamId){
   let html=''; let shown=0;
   pdata.matchdays.forEach(md=>{
     const fixtures=md.fixtures.filter(fx=>{
-      if(isLive(fx)) return true;       // always surface an in-progress match
-      const done=isCompleted(fx);
-      if(done && !FILTERS.completed) return false;
-      if(!done && !FILTERS.upcoming) return false;
       if(FILTERS.today && !isSameLocalDay(fx.kickoff_utc)) return false;
-      return true;
+      const done=isCompleted(fx);
+      if(FILTERS.mode==='completed') return done;
+      if(FILTERS.mode==='upcoming') return !done;   // upcoming & live (a live game is never FT)
+      return true;                                   // 'all'
     });
     if(!fixtures.length) return;
     shown+=fixtures.length;
@@ -951,7 +1068,7 @@ function fixtureHtml(fx){
   if(live){
     ptsHtml=`<div class="pv num">${fx.points??0}</div><div class="pp live">live pts</div>`;
   }else if(done){
-    ptsHtml=`<div class="pv num">${fx.points??0}</div>`+(fx.is_exact?`<div class="perfect">🎯 perfect call</div>`:'');
+    ptsHtml=`<div class="pv num">${fx.points??0}</div>`+(fx.is_exact?`<div class="perfect">🎯 Perfect</div>`:'');
   }else{
     ptsHtml=`<div class="pp">pending</div>`;
   }
@@ -960,9 +1077,12 @@ function fixtureHtml(fx){
   let liveCap='';
   if(live){
     const home=esc(teamName(fx.match?.home)), away=esc(teamName(fx.match?.away));
+    // Before the feed posts a numeric score the raw value is a status code ("NS")
+    // — show "vs" rather than leaking the badge text into the matchup line.
+    const lvScore=hasResult?esc(act):'vs';
     liveCap=`<div class="livecap">
       <span class="livedot"></span>LIVE NOW
-      <span class="lvscore">${home} ${esc(fx.actual_score||'0 - 0')} ${away}</span>
+      <span class="lvscore">${home} ${lvScore} ${away}</span>
       <span class="lvpts">— you're on ${fx.points??0} pts so far${fx.is_exact?' · on for a 🎯':''}</span>
     </div>`;
   }
@@ -997,17 +1117,19 @@ function renderBonus(pdata){
 }
 
 /* ---------------- Charts ---------------- */
+let CHART_LEN=0;
 function destroyCharts(){ charts.forEach(c=>c.destroy()); charts=[]; }
 function baseOpts(extra={}){
   return Object.assign({
     responsive:true,maintainAspectRatio:false,
     plugins:{legend:{display:false},tooltip:{mode:'index',intersect:false}},
-    elements:{point:{radius:finalScoreHistory().length>20?0:3,hoverRadius:5}},
+    elements:{point:{radius:CHART_LEN>20?0:3,hoverRadius:5}},
     scales:{x:{grid:{display:false},ticks:{maxRotation:0,autoSkip:true,maxTicksLimit:5,font:{size:10}}}}
   },extra);
 }
 function drawCharts(s){
   destroyCharts();
+  CHART_LEN=s.labels.length;
   const acc='#4f46e5', grn='#16a34a', amb='#f4b400';
   const mk=(id,data,color,opts)=>{
     const el=document.getElementById(id); if(!el) return;
