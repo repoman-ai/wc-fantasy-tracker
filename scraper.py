@@ -702,8 +702,10 @@ def _parse_knockout_fixture(tds, fixture_number, round_name) -> dict:
     p_away = _team_from_col(pred_cols[1]) if len(pred_cols) > 1 else {"code": None, "name": None, "hidden": True}
     hidden = bool(p_home.get("hidden") or p_away.get("hidden"))
 
-    # The actual matchup identity (bracket slot labels like "2A"/"W73") lives under "Score".
-    slot_row = pick("Score")
+    # The actual matchup identity (bracket slot labels like "2A"/"W73") lives
+    # under the second section — labelled "Result" on the live site (older
+    # markup used "Score").
+    slot_row = pick("Result") or pick("Score")
     slot_cols = slot_row.find_all("div", class_="col") if slot_row else []
     m_home = {"code": None, "name": clean(slot_cols[0].get_text()) or None, "hidden": False} if len(slot_cols) > 0 else {"code": None, "name": None, "hidden": False}
     m_away = {"code": None, "name": clean(slot_cols[1].get_text()) or None, "hidden": False} if len(slot_cols) > 1 else {"code": None, "name": None, "hidden": False}
@@ -716,7 +718,7 @@ def _parse_knockout_fixture(tds, fixture_number, round_name) -> dict:
     du = pts_td.select_one(".dotted_underline")
     pts_countries = to_int(du.get_text()) if du else None
     # The score-component points are the trailing text after the second label.
-    pts_text_nodes = [clean(t) for t in pts_td.find_all(string=True) if clean(t) and clean(t) not in ("Countries", "Score")]
+    pts_text_nodes = [clean(t) for t in pts_td.find_all(string=True) if clean(t) and clean(t) not in ("Countries", "Score", "Result")]
     pts_score = None
     if pts_text_nodes:
         # last meaningful node is the score points ('-' or a number)
@@ -753,6 +755,12 @@ def _parse_knockout_fixture(tds, fixture_number, round_name) -> dict:
 def _parse_fixture(tr, round_name):
     fixture_number = to_int(tr.get("data-fixture-number"))
     tds = tr.find_all("td", recursive=False)
+    # Live rows carry a leading fixture-number column (a bare integer matching
+    # data-fixture-number). Drop it so the cell layout matches the group
+    # (date, match, predicted, actual, points) and knockout (date, composite,
+    # actual, points) parsers below. Pages without that column are unaffected.
+    if tds and fixture_number is not None and to_int(tds[0].get_text()) == fixture_number:
+        tds = tds[1:]
     try:
         if len(tds) >= 5:
             return _parse_group_fixture(tds, fixture_number, round_name)
@@ -819,72 +827,128 @@ def _parse_bonus(nested_table) -> dict:
     return out
 
 
-def parse_player_page(html: str) -> dict:
-    """Return {matchdays:[...], bonus:{...}, grand_total, totals}."""
-    soup = soup_of(html)
-    # The outer matches table is the first .table-sm (the bonus table is nested inside it).
-    outer = soup.find("table", class_="table-sm")
-    if not outer:
-        return {"matchdays": [], "bonus": {"questions": []}, "grand_total": None}
-    tbody = outer.find("tbody")
-    rows = tbody.find_all("tr", recursive=False) if tbody else []
+def _round_name_for(container) -> str | None:
+    """Round name from the heading that precedes a round's table container.
 
-    matchdays: list[dict] = []
-    current = None
-    bonus = {"questions": []}
-    grand_total = None
+    On the live site each round is a separate ``<div class="table-responsive">``
+    immediately preceded by an ``<h3>`` ("Matchday 1", "Round of 32", "Bonus
+    Questions", ...). Fall back to the closest preceding heading in document
+    order if it isn't a direct sibling.
+    """
+    headings = ("h1", "h2", "h3", "h4", "h5", "h6")
+    sib = container.find_previous_sibling(headings)
+    if sib is None:
+        sib = container.find_previous(headings)
+    return clean(sib.get_text()) if sib else None
 
-    for tr in rows:
-        cls = tr.get("class", [])
-        if "d-md-none" in cls:
-            continue  # mobile-only duplicate
 
-        # Round / matchday header row
-        th = tr.find("th", recursive=False)
-        if th is not None:
-            current = {"round": clean(th.get_text()), "subtotal": None, "fixtures": []}
-            matchdays.append(current)
-            continue
+def _parse_round_table(table, round_name) -> dict:
+    """Parse one round's fixtures table into {round, subtotal, fixtures}."""
+    md = {"round": round_name, "subtotal": None, "fixtures": []}
+    tbody = table.find("tbody") or table
+    for tr in tbody.find_all("tr", recursive=False):
+        if "d-md-none" in tr.get("class", []):
+            continue  # mobile-only duplicate of a desktop row
 
-        # Bonus block: a row whose cell contains a nested table
-        nested = tr.find("table")
-        if nested is not None:
-            bonus = _parse_bonus(nested)
-            grand_total = bonus.pop("grand_total", None)
-            continue
-
-        # Fixture row
         if tr.get("data-fixture-number") is not None:
-            fixture = _parse_fixture(tr, current["round"] if current else None)
+            fixture = _parse_fixture(tr, round_name)
             if fixture:
-                if current is None:
-                    current = {"round": None, "subtotal": None, "fixtures": []}
-                    matchdays.append(current)
-                current["fixtures"].append(fixture)
+                md["fixtures"].append(fixture)
             continue
 
-        # Subtotal row (outer table)
         tds = tr.find_all("td", recursive=False)
         if tds and clean(tds[0].get_text()).lower() == "subtotal":
-            if current is not None:
-                current["subtotal"] = to_int(tds[-1].get_text())
+            md["subtotal"] = to_int(tds[-1].get_text())
+    return md
+
+
+def parse_player_page(html: str) -> dict:
+    """Return {matchdays:[...], bonus:{...}}.
+
+    The live page renders one ``<table class="table-sm">`` per round, each in its
+    own ``<div class="table-responsive">`` with the round name in a preceding
+    ``<h3>``; a final table holds the bonus questions. (The grand total is taken
+    from the leaderboard, not parsed here.)
+    """
+    soup = soup_of(html)
+    matchdays: list[dict] = []
+    bonus = {"questions": []}
+
+    for container in soup.select("div.table-responsive"):
+        table = container.find("table", class_="table-sm")
+        if table is None:
             continue
+        round_name = _round_name_for(container)
+
+        if round_name and "bonus" in round_name.lower():
+            parsed = _parse_bonus(table)
+            parsed.pop("grand_total", None)
+            if parsed.get("questions"):
+                bonus = parsed
+            continue
+
+        # A round table is identified by having at least one fixture row.
+        if table.find("tr", attrs={"data-fixture-number": True}) is None:
+            continue
+        md = _parse_round_table(table, round_name)
+        if md["fixtures"]:
+            matchdays.append(md)
 
     return {
         "matchdays": matchdays,
         "bonus": bonus,
-        "grand_total": grand_total,
     }
 
 
-def prediction_has_data(prediction: dict | None) -> bool:
+def _fixture_count(prediction: dict | None) -> int:
     if not isinstance(prediction, dict):
-        return False
-    return any(
-        md.get("fixtures")
+        return 0
+    return sum(
+        len(md.get("fixtures") or [])
         for md in prediction.get("matchdays", [])
         if isinstance(md, dict)
     )
+
+
+def prediction_has_data(prediction: dict | None) -> bool:
+    return _fixture_count(prediction) > 0
+
+
+def _merge_rounds(fresh_matchdays, prev_matchdays) -> tuple[list[dict], bool]:
+    """Merge a fresh parse with previously-saved rounds, round by round.
+
+    The anonymous scraper sometimes can't see every fixture in a round (e.g.
+    knockout matchups are gated behind login/membership until their deadline),
+    so a fresh round can come back with fewer fixtures than we captured before.
+    For each round we keep the fresh version unless a previously-saved round of
+    the same name had MORE fixtures, in which case we retain the richer previous
+    round. Previous rounds missing entirely from the fresh parse are appended.
+
+    Returns (merged_matchdays, patched) where ``patched`` is True if any previous
+    round/fixtures were retained because the fresh scrape was thinner.
+    """
+    prev_by_round = {
+        md.get("round"): md
+        for md in (prev_matchdays or [])
+        if isinstance(md, dict)
+    }
+    merged: list[dict] = []
+    patched = False
+    seen = set()
+    for md in fresh_matchdays:
+        rnd = md.get("round")
+        seen.add(rnd)
+        prev = prev_by_round.get(rnd)
+        if prev and len(prev.get("fixtures") or []) > len(md.get("fixtures") or []):
+            merged.append(prev)
+            patched = True
+        else:
+            merged.append(md)
+    for md in (prev_matchdays or []):
+        if isinstance(md, dict) and md.get("round") not in seen:
+            merged.append(md)
+            patched = True
+    return merged, patched
 
 
 # --------------------------------------------------------------------------- #
@@ -898,16 +962,28 @@ def scrape_once(get_leaderboard_html, get_player_html, prev_predictions: dict) -
         raise RuntimeError("Leaderboard produced 0 rows")
 
     predictions = {}
-    stats = {"fresh": 0, "kept": 0, "failed": 0}
+    stats = {"fresh": 0, "patched": 0, "kept": 0, "failed": 0}
     for p in players:
         tid = p["team_id"]
+        prev = prev_predictions.get(tid)
         try:
             if not p.get("player_url"):
                 raise RuntimeError("missing player URL in leaderboard row")
             html = get_player_html(p)
             parsed = parse_player_page(html)
-            if not prediction_has_data(parsed):
+            if _fixture_count(parsed) == 0:
                 raise RuntimeError("player page produced 0 parsed fixtures")
+            # Fill any rounds the fresh scrape couldn't see (e.g. login-gated
+            # knockout fixtures) from the last known-good data, while keeping
+            # fresh group scores/subtotals. Bonus falls back the same way.
+            prev_dict = prev if isinstance(prev, dict) else None
+            matchdays, patched = _merge_rounds(
+                parsed["matchdays"], prev_dict.get("matchdays") if prev_dict else None
+            )
+            bonus = parsed["bonus"]
+            if not bonus.get("questions") and prev_dict and prev_dict.get("bonus", {}).get("questions"):
+                bonus = prev_dict["bonus"]
+                patched = True
             predictions[tid] = {
                 "team_id": tid,
                 "name": p["name"],
@@ -917,22 +993,28 @@ def scrape_once(get_leaderboard_html, get_player_html, prev_predictions: dict) -
                 "rank": p["rank"],
                 "points": p["points"],
                 "exact": p["exact"],
-                "grand_total": parsed["grand_total"],
-                "matchdays": parsed["matchdays"],
-                "bonus": parsed["bonus"],
+                # Grand total is the authoritative leaderboard points value.
+                "grand_total": p["points"],
+                "matchdays": matchdays,
+                "bonus": bonus,
             }
-            stats["fresh"] += 1
+            if patched:
+                stats["patched"] += 1
+                print(f"  ~ player {tid} ({p['name']}): partial scrape, retained previous rounds/fixtures", file=sys.stderr)
+            else:
+                stats["fresh"] += 1
         except Exception as exc:
             stats["failed"] += 1
             print(f"  ! player {tid} ({p['name']}) failed: {exc}", file=sys.stderr)
             # Keep previous data for this player rather than wiping it.
-            if tid in prev_predictions and prediction_has_data(prev_predictions[tid]):
-                kept = dict(prev_predictions[tid])
+            if prediction_has_data(prev):
+                kept = dict(prev)
                 kept.update(
                     {
                         "rank": p["rank"],
                         "points": p["points"],
                         "exact": p["exact"],
+                        "grand_total": p["points"],
                         "name": p["name"],
                         "slug": p["slug"],
                         "player_url": p.get("player_url"),
@@ -942,7 +1024,7 @@ def scrape_once(get_leaderboard_html, get_player_html, prev_predictions: dict) -
                 predictions[tid] = kept
                 stats["kept"] += 1
 
-    if players and stats["fresh"] == 0:
+    if players and (stats["fresh"] + stats["patched"]) == 0:
         raise RuntimeError(
             f"All {len(players)} player prediction pages failed; kept {stats['kept']} previous records"
         )
@@ -1036,6 +1118,7 @@ def run(out_dir: Path, samples: bool):
                 "  ok: "
                 f"{len(players)} players, "
                 f"{stats['fresh']} fresh prediction pages, "
+                f"{stats.get('patched', 0)} partially patched, "
                 f"{stats['kept']} kept previous",
                 file=sys.stderr,
             )
