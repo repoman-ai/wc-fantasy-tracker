@@ -146,7 +146,8 @@
         "points": 369,
         "exact": 1
       }
-    ]
+    ],
+    "settled": true
   },
   {
     "timestamp": "2026-06-15T23:00:20Z",
@@ -311,7 +312,8 @@
         "points": 384,
         "exact": 1
       }
-    ]
+    ],
+    "settled": false
   },
   {
     "timestamp": "2026-06-16T02:07:34Z",
@@ -476,7 +478,8 @@
         "points": 399,
         "exact": 1
       }
-    ]
+    ],
+    "settled": false
   },
   {
     "timestamp": "2026-06-16T03:19:02Z",
@@ -641,7 +644,8 @@
         "points": 384,
         "exact": 1
       }
-    ]
+    ],
+    "settled": false
   },
   {
     "timestamp": "2026-06-16T20:41:29Z",
@@ -806,7 +810,8 @@
         "points": 432,
         "exact": 1
       }
-    ]
+    ],
+    "settled": false
   },
   {
     "timestamp": "2026-06-16T20:51:13Z",
@@ -971,7 +976,8 @@
         "points": 432,
         "exact": 1
       }
-    ]
+    ],
+    "settled": false
   },
   {
     "timestamp": "2026-06-16T21:01:43Z",
@@ -1136,7 +1142,8 @@
         "points": 0,
         "exact": 1
       }
-    ]
+    ],
+    "settled": false
   },
   {
     "timestamp": "2026-06-16T22:01:43Z",
@@ -1301,7 +1308,8 @@
         "points": 444,
         "exact": 2
       }
-    ]
+    ],
+    "settled": false
   },
   {
     "timestamp": "2026-06-16T22:57:56Z",
@@ -1466,7 +1474,8 @@
         "points": 462,
         "exact": 1
       }
-    ]
+    ],
+    "settled": false
   },
   {
     "timestamp": "2026-06-16T23:58:25Z",
@@ -1631,7 +1640,8 @@
         "points": 462,
         "exact": 1
       }
-    ]
+    ],
+    "settled": false
   },
   {
     "timestamp": "2026-06-17T00:01:55Z",
@@ -1796,7 +1806,8 @@
         "points": 0,
         "exact": 1
       }
-    ]
+    ],
+    "settled": false
   },
   {
     "timestamp": "2026-06-17T00:06:27Z",
@@ -1961,7 +1972,8 @@
         "points": 462,
         "exact": 1
       }
-    ]
+    ],
+    "settled": false
   },
   {
     "timestamp": "2026-06-17T02:01:32Z",
@@ -2126,7 +2138,8 @@
         "points": 510,
         "exact": 1
       }
-    ]
+    ],
+    "settled": false
   },
   {
     "timestamp": "2026-06-17T03:01:32Z",
@@ -2291,7 +2304,8 @@
         "points": 0,
         "exact": 1
       }
-    ]
+    ],
+    "settled": false
   },
   {
     "timestamp": "2026-06-17T04:01:26Z",
@@ -2456,7 +2470,8 @@
         "points": 525,
         "exact": 1
       }
-    ]
+    ],
+    "settled": false
   },
   {
     "timestamp": "2026-06-17T05:01:23Z",
@@ -2621,7 +2636,8 @@
         "points": 615,
         "exact": 2
       }
-    ]
+    ],
+    "settled": false
   },
   {
     "timestamp": "2026-06-17T06:01:30Z",
@@ -2786,7 +2802,8 @@
         "points": 585,
         "exact": 1
       }
-    ]
+    ],
+    "settled": false
   },
   {
     "timestamp": "2026-06-17T07:01:27Z",
@@ -2951,7 +2968,8 @@
         "points": 573,
         "exact": 1
       }
-    ]
+    ],
+    "settled": true
   },
   {
     "timestamp": "2026-06-17T18:01:40Z",
@@ -3116,6 +3134,7 @@
         "points": 573,
         "exact": 1
       }
-    ]
+    ],
+    "settled": false
   }
 ]

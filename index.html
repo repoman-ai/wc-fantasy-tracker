@@ -473,6 +473,8 @@ function prevSnapshot(){
   if(HISTORY.length>=2) return HISTORY[HISTORY.length-2];
   return null;
 }
+// The live board's up/down arrows compare the current (live) rankings against
+// the previous raw snapshot, so they keep reacting in real time during a match.
 function computeMovement(){
   const prev=prevSnapshot(); const m={};
   RANKINGS.players.forEach(p=>{
@@ -485,15 +487,42 @@ function computeMovement(){
   return m;
 }
 
+// Snapshots captured when no match was in progress. The scraper tags each entry
+// with `settled`; treat a missing flag as settled for forward-compatibility.
+function settledHistory(){ return HISTORY.filter(s=>s && s.settled!==false); }
+
+// Top-climber / biggest-drop movers are built from settled snapshots only, so a
+// mid-match wobble in the live totals can't manufacture a fake rank swing. We
+// compare the two most recent settled snapshots.
+function computeSettledMovement(){
+  const sh=settledHistory();
+  const cur=sh[sh.length-1], prev=sh[sh.length-2];
+  const move={};
+  if(cur){
+    cur.players.forEach(p=>{
+      const was=prev?prev.players.find(x=>x.team_id===p.team_id):null;
+      if(!was){ move[p.team_id]={delta:0,status:'same'}; return; }
+      const delta=was.rank-p.rank;
+      move[p.team_id]={delta,status:delta>0?'up':delta<0?'down':'same'};
+    });
+  }
+  return {snapshot:cur,move};
+}
+
 function renderMovers(){
   const box=$('#movers'); box.innerHTML='';
-  const climbers=RANKINGS.players.filter(p=>MOVE[p.team_id].status==='up')
-    .sort((a,b)=>MOVE[b.team_id].delta-MOVE[a.team_id].delta);
-  const fallers=RANKINGS.players.filter(p=>MOVE[p.team_id].status==='down')
-    .sort((a,b)=>MOVE[a.team_id].delta-MOVE[b.team_id].delta);
+  const {snapshot,move}=computeSettledMovement();
   const cards=[];
-  if(climbers.length){const c=climbers[0];cards.push(`<div class="mover up"><div><div class="lbl">🔥 Top climber</div><div class="nm">${esc(c.name)}</div></div><div class="chg">▲${MOVE[c.team_id].delta}</div></div>`);}
-  if(fallers.length){const f=fallers[0];cards.push(`<div class="mover down"><div><div class="lbl">Biggest drop</div><div class="nm">${esc(f.name)}</div></div><div class="chg">▼${Math.abs(MOVE[f.team_id].delta)}</div></div>`);}
+  if(snapshot){
+    const climbers=snapshot.players.filter(p=>move[p.team_id]&&move[p.team_id].status==='up')
+      .sort((a,b)=>move[b.team_id].delta-move[a.team_id].delta);
+    const fallers=snapshot.players.filter(p=>move[p.team_id]&&move[p.team_id].status==='down')
+      .sort((a,b)=>move[a.team_id].delta-move[b.team_id].delta);
+    if(climbers.length){const c=climbers[0];cards.push(`<div class="mover up"><div><div class="lbl">🔥 Top climber</div><div class="nm">${esc(c.name)}</div></div><div class="chg">▲${move[c.team_id].delta}</div></div>`);}
+    if(fallers.length){const f=fallers[0];cards.push(`<div class="mover down"><div><div class="lbl">Biggest drop</div><div class="nm">${esc(f.name)}</div></div><div class="chg">▼${Math.abs(move[f.team_id].delta)}</div></div>`);}
+  }
+  // Leader is a current-standing fact (matches the live board's crown), so it
+  // stays sourced from the live rankings.
   const leader=RANKINGS.players.find(p=>p.rank===1);
   if(leader) cards.push(`<div class="mover"><div><div class="lbl">👑 Leader</div><div class="nm">${esc(leader.name)}</div></div><div class="chg num">${leader.points}</div></div>`);
   box.innerHTML=cards.join('');
@@ -715,15 +744,15 @@ function renderBoard(){
 /* ---------------- Player detail ---------------- */
 
 /* Snapshots where the standings actually moved — i.e. a game went final.
+   We start from settled snapshots only (those captured with no match in
+   progress), so mid-match live wobble never enters the per-player charts.
    Points/exact are cumulative, so a scrape that changed no one's totals added
-   no final results; we collapse those flat repeats (and any mid-match live
-   wobble) so the per-player charts step only on real scoring events rather
-   than on every scrape. The first snapshot is always kept as the baseline.
-   Note: the main-screen movers deliberately use the full HISTORY instead, so
-   rank nudges between scrapes are still surfaced there. */
+   no final results; we collapse those flat repeats so the charts step only on
+   real scoring events rather than on every scrape. The first settled snapshot
+   is always kept as the baseline. */
 function finalScoreHistory(){
   const out=[]; let prevSig=null;
-  HISTORY.forEach(s=>{
+  settledHistory().forEach(s=>{
     const sig=(s.players||[]).slice()
       .sort((a,b)=>String(a.team_id).localeCompare(String(b.team_id)))
       .map(p=>p.team_id+':'+p.points+':'+p.exact).join('|');
@@ -973,7 +1002,7 @@ function baseOpts(extra={}){
   return Object.assign({
     responsive:true,maintainAspectRatio:false,
     plugins:{legend:{display:false},tooltip:{mode:'index',intersect:false}},
-    elements:{point:{radius:HISTORY.length>20?0:3,hoverRadius:5}},
+    elements:{point:{radius:finalScoreHistory().length>20?0:3,hoverRadius:5}},
     scales:{x:{grid:{display:false},ticks:{maxRotation:0,autoSkip:true,maxTicksLimit:5,font:{size:10}}}}
   },extra);
 }

@@ -40,7 +40,7 @@ import os
 import re
 import sys
 import time
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from urllib.parse import urljoin, urlparse
 
@@ -240,6 +240,125 @@ def official_group_kickoff(home_code, away_code):
 
 def now_iso() -> str:
     return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+
+# --------------------------------------------------------------------------- #
+# "Match in progress" detection
+#
+# The upstream site updates a player's points live while a match is being
+# played, so a snapshot captured mid-match can hold a not-yet-final total that
+# later settles to a different (often lower) value. We tag every history
+# snapshot with `settled` — True only when no match was actually in progress at
+# capture time — so the front-end can build the per-player charts and the
+# top-climber / biggest-drop movers from settled data alone. The live
+# leaderboard keeps using the always-current rankings.json untouched.
+#
+# Constants mirror the front-end's clock-based live window so both ends agree on
+# when a match is "on".
+# --------------------------------------------------------------------------- #
+LIVE_WINDOW_MINUTES = int(os.environ.get("LIVE_WINDOW_MINUTES", "135"))      # 90' + HT + stoppage
+LIVE_HARD_CAP_MINUTES = int(os.environ.get("LIVE_HARD_CAP_MINUTES", "180"))  # ET + pens ceiling
+# Historical snapshots predate fixture-level capture, so they can only be judged
+# from their timestamp against the published kickoff schedule. A slightly wider
+# window than LIVE_WINDOW_MINUTES keeps a late-settling total from sneaking in as
+# "settled"; losing a borderline-but-genuine reading is harmless (charts just
+# step once less often).
+SETTLE_BACKFILL_WINDOW_MINUTES = int(os.environ.get("SETTLE_BACKFILL_WINDOW_MINUTES", "150"))
+
+_FIXTURE_MINUTE_RE = re.compile(r"\d+'")
+
+
+def _parse_utc(ts: str | None):
+    if not ts:
+        return None
+    try:
+        return datetime.strptime(ts, "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc)
+    except ValueError:
+        return None
+
+
+def _status_is_final(status: str | None) -> bool:
+    return "FT" in (status or "").upper()
+
+
+def _status_is_live(status: str | None) -> bool:
+    s = (status or "").upper()
+    return "LIVE" in s or "HT" in s or bool(_FIXTURE_MINUTE_RE.search(s))
+
+
+def fixture_is_live(fx: dict, now: datetime) -> bool:
+    """Whether a single fixture is in progress at `now`.
+
+    Mirrors the front-end ``isLive``: a final badge (FT) is never live; past the
+    hard cap a match is over regardless of a stuck badge; otherwise a LIVE/HT/
+    minute badge — or the clock sitting inside [kickoff, kickoff+window) — counts
+    as in progress.
+    """
+    if not isinstance(fx, dict):
+        return False
+    status = fx.get("status")
+    if _status_is_final(status):
+        return False
+    ko = _parse_utc(fx.get("kickoff_utc"))
+    if ko is not None and now >= ko + timedelta(minutes=LIVE_HARD_CAP_MINUTES):
+        return False
+    if _status_is_live(status):
+        return True
+    if ko is not None and ko <= now < ko + timedelta(minutes=LIVE_WINDOW_MINUTES):
+        return True
+    return False
+
+
+def any_match_in_progress(predictions: dict, now: datetime) -> bool:
+    """True if any fixture across all players' prediction pages is live at `now`."""
+    for p in predictions.values():
+        if not isinstance(p, dict):
+            continue
+        for md in p.get("matchdays", []):
+            if not isinstance(md, dict):
+                continue
+            for fx in md.get("fixtures", []):
+                if fixture_is_live(fx, now):
+                    return True
+    return False
+
+
+def _scheduled_kickoffs() -> list[datetime]:
+    out = []
+    for utc, _local in OFFICIAL_GROUP_KICKOFFS.values():
+        dt = _parse_utc(utc)
+        if dt:
+            out.append(dt)
+    return out
+
+
+def _timestamp_settled(ts: str | None, kickoffs: list[datetime]) -> bool:
+    """Whether a snapshot timestamp falls outside every scheduled match window."""
+    t = _parse_utc(ts)
+    if t is None:
+        return True  # unparseable -> assume settled rather than hide it
+    window = timedelta(minutes=SETTLE_BACKFILL_WINDOW_MINUTES)
+    for ko in kickoffs:
+        if ko <= t < ko + window:
+            return False
+    return True
+
+
+def backfill_settled(history: list) -> bool:
+    """Tag any history entry lacking a `settled` flag from the kickoff schedule.
+
+    Returns True if any entry was updated, so the caller can persist the file
+    even on a run that appends no new snapshot.
+    """
+    if not isinstance(history, list):
+        return False
+    kickoffs = _scheduled_kickoffs()
+    changed = False
+    for entry in history:
+        if isinstance(entry, dict) and "settled" not in entry:
+            entry["settled"] = _timestamp_settled(entry.get("timestamp"), kickoffs)
+            changed = True
+    return changed
 
 
 # --------------------------------------------------------------------------- #
@@ -1192,14 +1311,24 @@ def run(out_dir: Path, samples: bool):
     rankings = build_rankings(players, source_info)
     write_json(rankings_path, rankings)
 
-    # history.json — append only if the snapshot actually changed.
+    # history.json — append only if the snapshot actually changed. Each entry is
+    # tagged `settled` (no match in progress at capture time) so the front-end
+    # can chart / rank movers off settled data and ignore mid-match wobble.
     history = load_json(history_path, [])
+    backfilled = backfill_settled(history)  # heal pre-existing untagged entries
+
+    captured_at = _parse_utc(rankings["updated"]) or datetime.now(timezone.utc)
+    in_progress = any_match_in_progress(predictions, captured_at)
+    settled = not in_progress
+
     sig = snapshot_signature(players)
     last_sig = snapshot_signature(history[-1]["players"]) if history else None
+    appended = False
     if sig != last_sig:
         history.append(
             {
                 "timestamp": rankings["updated"],
+                "settled": settled,
                 "players": [
                     {
                         "team_id": p["team_id"],
@@ -1215,8 +1344,15 @@ def run(out_dir: Path, samples: bool):
                 ],
             }
         )
+        appended = True
+
+    if appended or backfilled:
         write_json(history_path, history)
-        print(f"  history: appended snapshot ({len(history)} total)", file=sys.stderr)
+        if appended:
+            state = "settled" if settled else "mid-match (live, excluded from charts)"
+            print(f"  history: appended {state} snapshot ({len(history)} total)", file=sys.stderr)
+        if backfilled:
+            print("  history: backfilled settled flags on existing snapshots", file=sys.stderr)
     else:
         print("  history: unchanged since last snapshot, not appending", file=sys.stderr)
 
