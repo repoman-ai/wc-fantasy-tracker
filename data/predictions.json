@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-17T06:01:30Z",
+  "updated": "2026-06-17T07:01:27Z",
   "players": {
     "247528": {
       "team_id": "247528",
@@ -8,13 +8,13 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247528/jj/stage/1196-grand-total?scroll=fixture",
       "flag": "FRA",
       "rank": 1,
-      "points": 894,
-      "exact": 6,
+      "points": 867,
+      "exact": 5,
       "grand_total": null,
       "matchdays": [
         {
           "round": null,
-          "subtotal": 894,
+          "subtotal": 867,
           "fixtures": [
             {
               "fixture_number": 1,
@@ -613,7 +613,7 @@
                 "hidden": false
               },
               "actual_score": "2 - 1",
-              "points": 2,
+              "points": 3,
               "is_exact": false
             },
             {
@@ -750,13 +750,13 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/246775/bobby/stage/1196-grand-total?scroll=fixture",
       "flag": "FRA",
       "rank": 2,
-      "points": 846,
+      "points": 843,
       "exact": 3,
       "grand_total": null,
       "matchdays": [
         {
           "round": null,
-          "subtotal": 846,
+          "subtotal": 843,
           "fixtures": [
             {
               "fixture_number": 1,
@@ -1355,7 +1355,7 @@
                 "hidden": false
               },
               "actual_score": "2 - 0",
-              "points": 2,
+              "points": 3,
               "is_exact": false
             },
             {
@@ -1485,13 +1485,755 @@
         "questions": []
       }
     },
+    "252600": {
+      "team_id": "252600",
+      "name": "El Capitan",
+      "slug": "el-capitan",
+      "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/252600/el-capitan/stage/1196-grand-total?scroll=fixture",
+      "flag": "FRA",
+      "rank": 3,
+      "points": 768,
+      "exact": 3,
+      "grand_total": null,
+      "matchdays": [
+        {
+          "round": null,
+          "subtotal": 768,
+          "fixtures": [
+            {
+              "fixture_number": 1,
+              "round": null,
+              "stage_type": "group",
+              "status": "2 - 0",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "MEX Mexico RSA South Africa",
+                "hidden": false
+              },
+              "actual_score": "2 - 0",
+              "points": 2,
+              "is_exact": false
+            },
+            {
+              "fixture_number": 2,
+              "round": null,
+              "stage_type": "group",
+              "status": "1 - 1",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "KOR Korea Republic CZE Czech Republic",
+                "hidden": false
+              },
+              "actual_score": "1 - 1",
+              "points": 2,
+              "is_exact": false
+            },
+            {
+              "fixture_number": 3,
+              "round": null,
+              "stage_type": "group",
+              "status": "1 - 1",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "CAN Canada BIH Bosnia-Herzegovina",
+                "hidden": false
+              },
+              "actual_score": "1 - 1",
+              "points": 1,
+              "is_exact": false
+            },
+            {
+              "fixture_number": 4,
+              "round": null,
+              "stage_type": "group",
+              "status": "2 - 1",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "USA USA PAR Paraguay",
+                "hidden": false
+              },
+              "actual_score": "2 - 1",
+              "points": 4,
+              "is_exact": false
+            },
+            {
+              "fixture_number": 8,
+              "round": null,
+              "stage_type": "group",
+              "status": "0 - 3",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "QAT Qatar SUI Switzerland",
+                "hidden": false
+              },
+              "actual_score": "0 - 3",
+              "points": 1,
+              "is_exact": false
+            },
+            {
+              "fixture_number": 7,
+              "round": null,
+              "stage_type": "group",
+              "status": "3 - 1",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "BRA Brazil MAR Morocco",
+                "hidden": false
+              },
+              "actual_score": "3 - 1",
+              "points": 1,
+              "is_exact": false
+            },
+            {
+              "fixture_number": 5,
+              "round": null,
+              "stage_type": "group",
+              "status": "0 - 2",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "HAI Haiti SCO Scotland",
+                "hidden": false
+              },
+              "actual_score": "0 - 2",
+              "points": 0,
+              "is_exact": false
+            },
+            {
+              "fixture_number": 6,
+              "round": null,
+              "stage_type": "group",
+              "status": "1 - 2",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "AUS Australia TUR Turkey",
+                "hidden": false
+              },
+              "actual_score": "1 - 2",
+              "points": 2,
+              "is_exact": false
+            },
+            {
+              "fixture_number": 10,
+              "round": null,
+              "stage_type": "group",
+              "status": "5 - 1",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "GER Germany CUW Curacao",
+                "hidden": false
+              },
+              "actual_score": "5 - 1",
+              "points": 7,
+              "is_exact": false
+            },
+            {
+              "fixture_number": 11,
+              "round": null,
+              "stage_type": "group",
+              "status": "2 - 1",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "NED Netherlands JPN Japan",
+                "hidden": false
+              },
+              "actual_score": "2 - 1",
+              "points": 2,
+              "is_exact": false
+            },
+            {
+              "fixture_number": 9,
+              "round": null,
+              "stage_type": "group",
+              "status": "0 - 0",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "CIV Côte d'Ivoire ECU Ecuador",
+                "hidden": false
+              },
+              "actual_score": "0 - 0",
+              "points": 1,
+              "is_exact": false
+            },
+            {
+              "fixture_number": 12,
+              "round": null,
+              "stage_type": "group",
+              "status": "3 - 1",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "SWE Sweden TUN Tunisia",
+                "hidden": false
+              },
+              "actual_score": "3 - 1",
+              "points": 5,
+              "is_exact": false
+            },
+            {
+              "fixture_number": 14,
+              "round": null,
+              "stage_type": "group",
+              "status": "6 - 0",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "ESP Spain CPV Cape Verde Islands",
+                "hidden": false
+              },
+              "actual_score": "6 - 0",
+              "points": 0,
+              "is_exact": false
+            },
+            {
+              "fixture_number": 16,
+              "round": null,
+              "stage_type": "group",
+              "status": "4 - 1",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "BEL Belgium EGY Egypt",
+                "hidden": false
+              },
+              "actual_score": "4 - 1",
+              "points": 1,
+              "is_exact": false
+            },
+            {
+              "fixture_number": 13,
+              "round": null,
+              "stage_type": "group",
+              "status": "1 - 2",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "KSA Saudi Arabia URU Uruguay",
+                "hidden": false
+              },
+              "actual_score": "1 - 2",
+              "points": 1,
+              "is_exact": false
+            },
+            {
+              "fixture_number": 15,
+              "round": null,
+              "stage_type": "group",
+              "status": "1 - 0",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "IRN Iran NZL New Zealand",
+                "hidden": false
+              },
+              "actual_score": "1 - 0",
+              "points": 2,
+              "is_exact": false
+            },
+            {
+              "fixture_number": 17,
+              "round": null,
+              "stage_type": "group",
+              "status": "1 - 1",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "FRA France SEN Senegal",
+                "hidden": false
+              },
+              "actual_score": "1 - 1",
+              "points": 3,
+              "is_exact": false
+            },
+            {
+              "fixture_number": 18,
+              "round": null,
+              "stage_type": "group",
+              "status": "0 - 4",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "IRQ Iraq NOR Norway",
+                "hidden": false
+              },
+              "actual_score": "0 - 4",
+              "points": 1,
+              "is_exact": false
+            },
+            {
+              "fixture_number": 19,
+              "round": null,
+              "stage_type": "group",
+              "status": "1 - 0",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "ARG Argentina ALG Algeria",
+                "hidden": false
+              },
+              "actual_score": "1 - 0",
+              "points": 3,
+              "is_exact": false
+            },
+            {
+              "fixture_number": 20,
+              "round": null,
+              "stage_type": "group",
+              "status": "3 - 1",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "AUT Austria JOR Jordan",
+                "hidden": false
+              },
+              "actual_score": "3 - 1",
+              "points": 3,
+              "is_exact": false
+            },
+            {
+              "fixture_number": 23,
+              "round": null,
+              "stage_type": "group",
+              "status": "2 - 0",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "POR Portugal COD DR Congo",
+                "hidden": false
+              },
+              "actual_score": "2 - 0",
+              "points": null,
+              "is_exact": false
+            },
+            {
+              "fixture_number": 22,
+              "round": null,
+              "stage_type": "group",
+              "status": "1 - 0",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "ENG England CRO Croatia",
+                "hidden": false
+              },
+              "actual_score": "1 - 0",
+              "points": null,
+              "is_exact": false
+            },
+            {
+              "fixture_number": 21,
+              "round": null,
+              "stage_type": "group",
+              "status": "2 - 0",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "GHA Ghana PAN Panama",
+                "hidden": false
+              },
+              "actual_score": "2 - 0",
+              "points": null,
+              "is_exact": false
+            },
+            {
+              "fixture_number": 24,
+              "round": null,
+              "stage_type": "group",
+              "status": "0 - 0",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "UZB Uzbekistan COL Colombia",
+                "hidden": false
+              },
+              "actual_score": "0 - 0",
+              "points": null,
+              "is_exact": false
+            }
+          ]
+        }
+      ],
+      "bonus": {
+        "questions": []
+      }
+    },
     "247532": {
       "team_id": "247532",
       "name": "Gabriela",
       "slug": "gabriela",
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247532/gabriela/stage/1196-grand-total?scroll=fixture",
       "flag": "NED",
-      "rank": 3,
+      "rank": 4,
       "points": 759,
       "exact": 3,
       "grand_total": null,
@@ -2097,7 +2839,7 @@
                 "hidden": false
               },
               "actual_score": "1 - 1",
-              "points": 2,
+              "points": 3,
               "is_exact": false
             },
             {
@@ -2233,14 +2975,14 @@
       "slug": "maxs",
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247729/maxs/stage/1196-grand-total?scroll=fixture",
       "flag": "ARG",
-      "rank": 4,
-      "points": 753,
+      "rank": 5,
+      "points": 741,
       "exact": 1,
       "grand_total": null,
       "matchdays": [
         {
           "round": null,
-          "subtotal": 753,
+          "subtotal": 741,
           "fixtures": [
             {
               "fixture_number": 1,
@@ -2839,7 +3581,7 @@
                 "hidden": false
               },
               "actual_score": "1 - 0",
-              "points": 2,
+              "points": 3,
               "is_exact": false
             },
             {
@@ -2969,748 +3711,6 @@
         "questions": []
       }
     },
-    "252600": {
-      "team_id": "252600",
-      "name": "El Capitan",
-      "slug": "el-capitan",
-      "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/252600/el-capitan/stage/1196-grand-total?scroll=fixture",
-      "flag": "FRA",
-      "rank": 5,
-      "points": 741,
-      "exact": 2,
-      "grand_total": null,
-      "matchdays": [
-        {
-          "round": null,
-          "subtotal": 741,
-          "fixtures": [
-            {
-              "fixture_number": 1,
-              "round": null,
-              "stage_type": "group",
-              "status": "2 - 0",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "MEX Mexico RSA South Africa",
-                "hidden": false
-              },
-              "actual_score": "2 - 0",
-              "points": 2,
-              "is_exact": false
-            },
-            {
-              "fixture_number": 2,
-              "round": null,
-              "stage_type": "group",
-              "status": "1 - 1",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "KOR Korea Republic CZE Czech Republic",
-                "hidden": false
-              },
-              "actual_score": "1 - 1",
-              "points": 2,
-              "is_exact": false
-            },
-            {
-              "fixture_number": 3,
-              "round": null,
-              "stage_type": "group",
-              "status": "1 - 1",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "CAN Canada BIH Bosnia-Herzegovina",
-                "hidden": false
-              },
-              "actual_score": "1 - 1",
-              "points": 1,
-              "is_exact": false
-            },
-            {
-              "fixture_number": 4,
-              "round": null,
-              "stage_type": "group",
-              "status": "2 - 1",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "USA USA PAR Paraguay",
-                "hidden": false
-              },
-              "actual_score": "2 - 1",
-              "points": 4,
-              "is_exact": false
-            },
-            {
-              "fixture_number": 8,
-              "round": null,
-              "stage_type": "group",
-              "status": "0 - 3",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "QAT Qatar SUI Switzerland",
-                "hidden": false
-              },
-              "actual_score": "0 - 3",
-              "points": 1,
-              "is_exact": false
-            },
-            {
-              "fixture_number": 7,
-              "round": null,
-              "stage_type": "group",
-              "status": "3 - 1",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "BRA Brazil MAR Morocco",
-                "hidden": false
-              },
-              "actual_score": "3 - 1",
-              "points": 1,
-              "is_exact": false
-            },
-            {
-              "fixture_number": 5,
-              "round": null,
-              "stage_type": "group",
-              "status": "0 - 2",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "HAI Haiti SCO Scotland",
-                "hidden": false
-              },
-              "actual_score": "0 - 2",
-              "points": 0,
-              "is_exact": false
-            },
-            {
-              "fixture_number": 6,
-              "round": null,
-              "stage_type": "group",
-              "status": "1 - 2",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "AUS Australia TUR Turkey",
-                "hidden": false
-              },
-              "actual_score": "1 - 2",
-              "points": 2,
-              "is_exact": false
-            },
-            {
-              "fixture_number": 10,
-              "round": null,
-              "stage_type": "group",
-              "status": "5 - 1",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "GER Germany CUW Curacao",
-                "hidden": false
-              },
-              "actual_score": "5 - 1",
-              "points": 7,
-              "is_exact": false
-            },
-            {
-              "fixture_number": 11,
-              "round": null,
-              "stage_type": "group",
-              "status": "2 - 1",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "NED Netherlands JPN Japan",
-                "hidden": false
-              },
-              "actual_score": "2 - 1",
-              "points": 2,
-              "is_exact": false
-            },
-            {
-              "fixture_number": 9,
-              "round": null,
-              "stage_type": "group",
-              "status": "0 - 0",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "CIV Côte d'Ivoire ECU Ecuador",
-                "hidden": false
-              },
-              "actual_score": "0 - 0",
-              "points": 1,
-              "is_exact": false
-            },
-            {
-              "fixture_number": 12,
-              "round": null,
-              "stage_type": "group",
-              "status": "3 - 1",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "SWE Sweden TUN Tunisia",
-                "hidden": false
-              },
-              "actual_score": "3 - 1",
-              "points": 5,
-              "is_exact": false
-            },
-            {
-              "fixture_number": 14,
-              "round": null,
-              "stage_type": "group",
-              "status": "6 - 0",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "ESP Spain CPV Cape Verde Islands",
-                "hidden": false
-              },
-              "actual_score": "6 - 0",
-              "points": 0,
-              "is_exact": false
-            },
-            {
-              "fixture_number": 16,
-              "round": null,
-              "stage_type": "group",
-              "status": "4 - 1",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "BEL Belgium EGY Egypt",
-                "hidden": false
-              },
-              "actual_score": "4 - 1",
-              "points": 1,
-              "is_exact": false
-            },
-            {
-              "fixture_number": 13,
-              "round": null,
-              "stage_type": "group",
-              "status": "1 - 2",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "KSA Saudi Arabia URU Uruguay",
-                "hidden": false
-              },
-              "actual_score": "1 - 2",
-              "points": 1,
-              "is_exact": false
-            },
-            {
-              "fixture_number": 15,
-              "round": null,
-              "stage_type": "group",
-              "status": "1 - 0",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "IRN Iran NZL New Zealand",
-                "hidden": false
-              },
-              "actual_score": "1 - 0",
-              "points": 2,
-              "is_exact": false
-            },
-            {
-              "fixture_number": 17,
-              "round": null,
-              "stage_type": "group",
-              "status": "1 - 1",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "FRA France SEN Senegal",
-                "hidden": false
-              },
-              "actual_score": "1 - 1",
-              "points": 3,
-              "is_exact": false
-            },
-            {
-              "fixture_number": 18,
-              "round": null,
-              "stage_type": "group",
-              "status": "0 - 4",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "IRQ Iraq NOR Norway",
-                "hidden": false
-              },
-              "actual_score": "0 - 4",
-              "points": 1,
-              "is_exact": false
-            },
-            {
-              "fixture_number": 19,
-              "round": null,
-              "stage_type": "group",
-              "status": "1 - 0",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "ARG Argentina ALG Algeria",
-                "hidden": false
-              },
-              "actual_score": "1 - 0",
-              "points": 3,
-              "is_exact": false
-            },
-            {
-              "fixture_number": 20,
-              "round": null,
-              "stage_type": "group",
-              "status": "3 - 1",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "AUT Austria JOR Jordan",
-                "hidden": false
-              },
-              "actual_score": "3 - 1",
-              "points": 2,
-              "is_exact": false
-            },
-            {
-              "fixture_number": 23,
-              "round": null,
-              "stage_type": "group",
-              "status": "2 - 0",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "POR Portugal COD DR Congo",
-                "hidden": false
-              },
-              "actual_score": "2 - 0",
-              "points": null,
-              "is_exact": false
-            },
-            {
-              "fixture_number": 22,
-              "round": null,
-              "stage_type": "group",
-              "status": "1 - 0",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "ENG England CRO Croatia",
-                "hidden": false
-              },
-              "actual_score": "1 - 0",
-              "points": null,
-              "is_exact": false
-            },
-            {
-              "fixture_number": 21,
-              "round": null,
-              "stage_type": "group",
-              "status": "2 - 0",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "GHA Ghana PAN Panama",
-                "hidden": false
-              },
-              "actual_score": "2 - 0",
-              "points": null,
-              "is_exact": false
-            },
-            {
-              "fixture_number": 24,
-              "round": null,
-              "stage_type": "group",
-              "status": "0 - 0",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "UZB Uzbekistan COL Colombia",
-                "hidden": false
-              },
-              "actual_score": "0 - 0",
-              "points": null,
-              "is_exact": false
-            }
-          ]
-        }
-      ],
-      "bonus": {
-        "questions": []
-      }
-    },
     "253787": {
       "team_id": "253787",
       "name": "Jazmin",
@@ -3718,13 +3718,13 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/253787/jazmin/stage/1196-grand-total?scroll=fixture",
       "flag": "POR",
       "rank": 6,
-      "points": 741,
+      "points": 738,
       "exact": 2,
       "grand_total": null,
       "matchdays": [
         {
           "round": null,
-          "subtotal": 741,
+          "subtotal": 738,
           "fixtures": [
             {
               "fixture_number": 1,
@@ -4323,7 +4323,7 @@
                 "hidden": false
               },
               "actual_score": "2 - 0",
-              "points": 2,
+              "points": 3,
               "is_exact": false
             },
             {
@@ -4443,1490 +4443,6 @@
                 "hidden": false
               },
               "actual_score": "0 - 2",
-              "points": null,
-              "is_exact": false
-            }
-          ]
-        }
-      ],
-      "bonus": {
-        "questions": []
-      }
-    },
-    "247535": {
-      "team_id": "247535",
-      "name": "Baronmark",
-      "slug": "baronmark",
-      "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247535/baronmark/stage/1196-grand-total?scroll=fixture",
-      "flag": "FRA",
-      "rank": 7,
-      "points": 735,
-      "exact": 2,
-      "grand_total": null,
-      "matchdays": [
-        {
-          "round": null,
-          "subtotal": 735,
-          "fixtures": [
-            {
-              "fixture_number": 1,
-              "round": null,
-              "stage_type": "group",
-              "status": "2 - 1",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "MEX Mexico RSA South Africa",
-                "hidden": false
-              },
-              "actual_score": "2 - 1",
-              "points": 2,
-              "is_exact": false
-            },
-            {
-              "fixture_number": 2,
-              "round": null,
-              "stage_type": "group",
-              "status": "1 - 1",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "KOR Korea Republic CZE Czech Republic",
-                "hidden": false
-              },
-              "actual_score": "1 - 1",
-              "points": 2,
-              "is_exact": false
-            },
-            {
-              "fixture_number": 3,
-              "round": null,
-              "stage_type": "group",
-              "status": "3 - 0",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "CAN Canada BIH Bosnia-Herzegovina",
-                "hidden": false
-              },
-              "actual_score": "3 - 0",
-              "points": 1,
-              "is_exact": false
-            },
-            {
-              "fixture_number": 4,
-              "round": null,
-              "stage_type": "group",
-              "status": "2 - 0",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "USA USA PAR Paraguay",
-                "hidden": false
-              },
-              "actual_score": "2 - 0",
-              "points": 4,
-              "is_exact": false
-            },
-            {
-              "fixture_number": 8,
-              "round": null,
-              "stage_type": "group",
-              "status": "0 - 1",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "QAT Qatar SUI Switzerland",
-                "hidden": false
-              },
-              "actual_score": "0 - 1",
-              "points": 1,
-              "is_exact": false
-            },
-            {
-              "fixture_number": 7,
-              "round": null,
-              "stage_type": "group",
-              "status": "3 - 0",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "BRA Brazil MAR Morocco",
-                "hidden": false
-              },
-              "actual_score": "3 - 0",
-              "points": 1,
-              "is_exact": false
-            },
-            {
-              "fixture_number": 5,
-              "round": null,
-              "stage_type": "group",
-              "status": "0 - 1",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "HAI Haiti SCO Scotland",
-                "hidden": false
-              },
-              "actual_score": "0 - 1",
-              "points": 0,
-              "is_exact": false
-            },
-            {
-              "fixture_number": 6,
-              "round": null,
-              "stage_type": "group",
-              "status": "1 - 1",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "AUS Australia TUR Turkey",
-                "hidden": false
-              },
-              "actual_score": "1 - 1",
-              "points": 2,
-              "is_exact": false
-            },
-            {
-              "fixture_number": 10,
-              "round": null,
-              "stage_type": "group",
-              "status": "2 - 0",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "GER Germany CUW Curacao",
-                "hidden": false
-              },
-              "actual_score": "2 - 0",
-              "points": 7,
-              "is_exact": false
-            },
-            {
-              "fixture_number": 11,
-              "round": null,
-              "stage_type": "group",
-              "status": "2 - 1",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "NED Netherlands JPN Japan",
-                "hidden": false
-              },
-              "actual_score": "2 - 1",
-              "points": 2,
-              "is_exact": false
-            },
-            {
-              "fixture_number": 9,
-              "round": null,
-              "stage_type": "group",
-              "status": "2 - 1",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "CIV Côte d'Ivoire ECU Ecuador",
-                "hidden": false
-              },
-              "actual_score": "2 - 1",
-              "points": 1,
-              "is_exact": false
-            },
-            {
-              "fixture_number": 12,
-              "round": null,
-              "stage_type": "group",
-              "status": "1 - 1",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "SWE Sweden TUN Tunisia",
-                "hidden": false
-              },
-              "actual_score": "1 - 1",
-              "points": 5,
-              "is_exact": false
-            },
-            {
-              "fixture_number": 14,
-              "round": null,
-              "stage_type": "group",
-              "status": "3 - 0",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "ESP Spain CPV Cape Verde Islands",
-                "hidden": false
-              },
-              "actual_score": "3 - 0",
-              "points": 0,
-              "is_exact": false
-            },
-            {
-              "fixture_number": 16,
-              "round": null,
-              "stage_type": "group",
-              "status": "2 - 1",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "BEL Belgium EGY Egypt",
-                "hidden": false
-              },
-              "actual_score": "2 - 1",
-              "points": 1,
-              "is_exact": false
-            },
-            {
-              "fixture_number": 13,
-              "round": null,
-              "stage_type": "group",
-              "status": "1 - 3",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "KSA Saudi Arabia URU Uruguay",
-                "hidden": false
-              },
-              "actual_score": "1 - 3",
-              "points": 1,
-              "is_exact": false
-            },
-            {
-              "fixture_number": 15,
-              "round": null,
-              "stage_type": "group",
-              "status": "0 - 0",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "IRN Iran NZL New Zealand",
-                "hidden": false
-              },
-              "actual_score": "0 - 0",
-              "points": 2,
-              "is_exact": false
-            },
-            {
-              "fixture_number": 17,
-              "round": null,
-              "stage_type": "group",
-              "status": "3 - 0",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "FRA France SEN Senegal",
-                "hidden": false
-              },
-              "actual_score": "3 - 0",
-              "points": 3,
-              "is_exact": false
-            },
-            {
-              "fixture_number": 18,
-              "round": null,
-              "stage_type": "group",
-              "status": "0 - 2",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "IRQ Iraq NOR Norway",
-                "hidden": false
-              },
-              "actual_score": "0 - 2",
-              "points": 1,
-              "is_exact": false
-            },
-            {
-              "fixture_number": 19,
-              "round": null,
-              "stage_type": "group",
-              "status": "3 - 0",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "ARG Argentina ALG Algeria",
-                "hidden": false
-              },
-              "actual_score": "3 - 0",
-              "points": 3,
-              "is_exact": false
-            },
-            {
-              "fixture_number": 20,
-              "round": null,
-              "stage_type": "group",
-              "status": "1 - 0",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "AUT Austria JOR Jordan",
-                "hidden": false
-              },
-              "actual_score": "1 - 0",
-              "points": 2,
-              "is_exact": false
-            },
-            {
-              "fixture_number": 23,
-              "round": null,
-              "stage_type": "group",
-              "status": "2 - 0",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "POR Portugal COD DR Congo",
-                "hidden": false
-              },
-              "actual_score": "2 - 0",
-              "points": null,
-              "is_exact": false
-            },
-            {
-              "fixture_number": 22,
-              "round": null,
-              "stage_type": "group",
-              "status": "2 - 3",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "ENG England CRO Croatia",
-                "hidden": false
-              },
-              "actual_score": "2 - 3",
-              "points": null,
-              "is_exact": false
-            },
-            {
-              "fixture_number": 21,
-              "round": null,
-              "stage_type": "group",
-              "status": "1 - 1",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "GHA Ghana PAN Panama",
-                "hidden": false
-              },
-              "actual_score": "1 - 1",
-              "points": null,
-              "is_exact": false
-            },
-            {
-              "fixture_number": 24,
-              "round": null,
-              "stage_type": "group",
-              "status": "0 - 0",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "UZB Uzbekistan COL Colombia",
-                "hidden": false
-              },
-              "actual_score": "0 - 0",
-              "points": null,
-              "is_exact": false
-            }
-          ]
-        }
-      ],
-      "bonus": {
-        "questions": []
-      }
-    },
-    "247524": {
-      "team_id": "247524",
-      "name": "Alejandro",
-      "slug": "alejandro",
-      "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247524/alejandro/stage/1196-grand-total?scroll=fixture",
-      "flag": "BRA",
-      "rank": 8,
-      "points": 717,
-      "exact": 0,
-      "grand_total": null,
-      "matchdays": [
-        {
-          "round": null,
-          "subtotal": 717,
-          "fixtures": [
-            {
-              "fixture_number": 1,
-              "round": null,
-              "stage_type": "group",
-              "status": "3 - 0",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "MEX Mexico RSA South Africa",
-                "hidden": false
-              },
-              "actual_score": "3 - 0",
-              "points": 2,
-              "is_exact": false
-            },
-            {
-              "fixture_number": 2,
-              "round": null,
-              "stage_type": "group",
-              "status": "2 - 2",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "KOR Korea Republic CZE Czech Republic",
-                "hidden": false
-              },
-              "actual_score": "2 - 2",
-              "points": 2,
-              "is_exact": false
-            },
-            {
-              "fixture_number": 3,
-              "round": null,
-              "stage_type": "group",
-              "status": "3 - 1",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "CAN Canada BIH Bosnia-Herzegovina",
-                "hidden": false
-              },
-              "actual_score": "3 - 1",
-              "points": 1,
-              "is_exact": false
-            },
-            {
-              "fixture_number": 4,
-              "round": null,
-              "stage_type": "group",
-              "status": "3 - 1",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "USA USA PAR Paraguay",
-                "hidden": false
-              },
-              "actual_score": "3 - 1",
-              "points": 4,
-              "is_exact": false
-            },
-            {
-              "fixture_number": 8,
-              "round": null,
-              "stage_type": "group",
-              "status": "1 - 3",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "QAT Qatar SUI Switzerland",
-                "hidden": false
-              },
-              "actual_score": "1 - 3",
-              "points": 1,
-              "is_exact": false
-            },
-            {
-              "fixture_number": 7,
-              "round": null,
-              "stage_type": "group",
-              "status": "2 - 1",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "BRA Brazil MAR Morocco",
-                "hidden": false
-              },
-              "actual_score": "2 - 1",
-              "points": 1,
-              "is_exact": false
-            },
-            {
-              "fixture_number": 5,
-              "round": null,
-              "stage_type": "group",
-              "status": "1 - 3",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "HAI Haiti SCO Scotland",
-                "hidden": false
-              },
-              "actual_score": "1 - 3",
-              "points": 0,
-              "is_exact": false
-            },
-            {
-              "fixture_number": 6,
-              "round": null,
-              "stage_type": "group",
-              "status": "2 - 1",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "AUS Australia TUR Turkey",
-                "hidden": false
-              },
-              "actual_score": "2 - 1",
-              "points": 2,
-              "is_exact": false
-            },
-            {
-              "fixture_number": 10,
-              "round": null,
-              "stage_type": "group",
-              "status": "4 - 0",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "GER Germany CUW Curacao",
-                "hidden": false
-              },
-              "actual_score": "4 - 0",
-              "points": 7,
-              "is_exact": false
-            },
-            {
-              "fixture_number": 11,
-              "round": null,
-              "stage_type": "group",
-              "status": "2 - 1",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "NED Netherlands JPN Japan",
-                "hidden": false
-              },
-              "actual_score": "2 - 1",
-              "points": 2,
-              "is_exact": false
-            },
-            {
-              "fixture_number": 9,
-              "round": null,
-              "stage_type": "group",
-              "status": "0 - 3",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "CIV Côte d'Ivoire ECU Ecuador",
-                "hidden": false
-              },
-              "actual_score": "0 - 3",
-              "points": 1,
-              "is_exact": false
-            },
-            {
-              "fixture_number": 12,
-              "round": null,
-              "stage_type": "group",
-              "status": "3 - 1",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "SWE Sweden TUN Tunisia",
-                "hidden": false
-              },
-              "actual_score": "3 - 1",
-              "points": 5,
-              "is_exact": false
-            },
-            {
-              "fixture_number": 14,
-              "round": null,
-              "stage_type": "group",
-              "status": "4 - 0",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "ESP Spain CPV Cape Verde Islands",
-                "hidden": false
-              },
-              "actual_score": "4 - 0",
-              "points": 0,
-              "is_exact": false
-            },
-            {
-              "fixture_number": 16,
-              "round": null,
-              "stage_type": "group",
-              "status": "3 - 1",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "BEL Belgium EGY Egypt",
-                "hidden": false
-              },
-              "actual_score": "3 - 1",
-              "points": 1,
-              "is_exact": false
-            },
-            {
-              "fixture_number": 13,
-              "round": null,
-              "stage_type": "group",
-              "status": "1 - 3",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "KSA Saudi Arabia URU Uruguay",
-                "hidden": false
-              },
-              "actual_score": "1 - 3",
-              "points": 1,
-              "is_exact": false
-            },
-            {
-              "fixture_number": 15,
-              "round": null,
-              "stage_type": "group",
-              "status": "0 - 2",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "IRN Iran NZL New Zealand",
-                "hidden": false
-              },
-              "actual_score": "0 - 2",
-              "points": 2,
-              "is_exact": false
-            },
-            {
-              "fixture_number": 17,
-              "round": null,
-              "stage_type": "group",
-              "status": "3 - 0",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "FRA France SEN Senegal",
-                "hidden": false
-              },
-              "actual_score": "3 - 0",
-              "points": 3,
-              "is_exact": false
-            },
-            {
-              "fixture_number": 18,
-              "round": null,
-              "stage_type": "group",
-              "status": "0 - 3",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "IRQ Iraq NOR Norway",
-                "hidden": false
-              },
-              "actual_score": "0 - 3",
-              "points": 1,
-              "is_exact": false
-            },
-            {
-              "fixture_number": 19,
-              "round": null,
-              "stage_type": "group",
-              "status": "4 - 0",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "ARG Argentina ALG Algeria",
-                "hidden": false
-              },
-              "actual_score": "4 - 0",
-              "points": 3,
-              "is_exact": false
-            },
-            {
-              "fixture_number": 20,
-              "round": null,
-              "stage_type": "group",
-              "status": "3 - 0",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "AUT Austria JOR Jordan",
-                "hidden": false
-              },
-              "actual_score": "3 - 0",
-              "points": 2,
-              "is_exact": false
-            },
-            {
-              "fixture_number": 23,
-              "round": null,
-              "stage_type": "group",
-              "status": "4 - 0",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "POR Portugal COD DR Congo",
-                "hidden": false
-              },
-              "actual_score": "4 - 0",
-              "points": null,
-              "is_exact": false
-            },
-            {
-              "fixture_number": 22,
-              "round": null,
-              "stage_type": "group",
-              "status": "2 - 1",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "ENG England CRO Croatia",
-                "hidden": false
-              },
-              "actual_score": "2 - 1",
-              "points": null,
-              "is_exact": false
-            },
-            {
-              "fixture_number": 21,
-              "round": null,
-              "stage_type": "group",
-              "status": "3 - 2",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "GHA Ghana PAN Panama",
-                "hidden": false
-              },
-              "actual_score": "3 - 2",
-              "points": null,
-              "is_exact": false
-            },
-            {
-              "fixture_number": 24,
-              "round": null,
-              "stage_type": "group",
-              "status": "1 - 3",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "UZB Uzbekistan COL Colombia",
-                "hidden": false
-              },
-              "actual_score": "1 - 3",
               "points": null,
               "is_exact": false
             }
@@ -5943,14 +4459,14 @@
       "slug": "karenwj",
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247525/karenwj/stage/1196-grand-total?scroll=fixture",
       "flag": "NED",
-      "rank": 9,
-      "points": 711,
-      "exact": 1,
+      "rank": 7,
+      "points": 738,
+      "exact": 2,
       "grand_total": null,
       "matchdays": [
         {
           "round": null,
-          "subtotal": 711,
+          "subtotal": 738,
           "fixtures": [
             {
               "fixture_number": 1,
@@ -6549,7 +5065,7 @@
                 "hidden": false
               },
               "actual_score": "3 - 1",
-              "points": 2,
+              "points": 3,
               "is_exact": false
             },
             {
@@ -6669,748 +5185,6 @@
                 "hidden": false
               },
               "actual_score": "3 - 0",
-              "points": null,
-              "is_exact": false
-            }
-          ]
-        }
-      ],
-      "bonus": {
-        "questions": []
-      }
-    },
-    "253790": {
-      "team_id": "253790",
-      "name": "remi",
-      "slug": "remi",
-      "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/253790/remi/stage/1196-grand-total?scroll=fixture",
-      "flag": "FRA",
-      "rank": 10,
-      "points": 705,
-      "exact": 2,
-      "grand_total": null,
-      "matchdays": [
-        {
-          "round": null,
-          "subtotal": 705,
-          "fixtures": [
-            {
-              "fixture_number": 1,
-              "round": null,
-              "stage_type": "group",
-              "status": "2 - 1",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "MEX Mexico RSA South Africa",
-                "hidden": false
-              },
-              "actual_score": "2 - 1",
-              "points": 2,
-              "is_exact": false
-            },
-            {
-              "fixture_number": 2,
-              "round": null,
-              "stage_type": "group",
-              "status": "1 - 0",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "KOR Korea Republic CZE Czech Republic",
-                "hidden": false
-              },
-              "actual_score": "1 - 0",
-              "points": 2,
-              "is_exact": false
-            },
-            {
-              "fixture_number": 3,
-              "round": null,
-              "stage_type": "group",
-              "status": "3 - 1",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "CAN Canada BIH Bosnia-Herzegovina",
-                "hidden": false
-              },
-              "actual_score": "3 - 1",
-              "points": 1,
-              "is_exact": false
-            },
-            {
-              "fixture_number": 4,
-              "round": null,
-              "stage_type": "group",
-              "status": "2 - 2",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "USA USA PAR Paraguay",
-                "hidden": false
-              },
-              "actual_score": "2 - 2",
-              "points": 4,
-              "is_exact": false
-            },
-            {
-              "fixture_number": 8,
-              "round": null,
-              "stage_type": "group",
-              "status": "2 - 1",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "QAT Qatar SUI Switzerland",
-                "hidden": false
-              },
-              "actual_score": "2 - 1",
-              "points": 1,
-              "is_exact": false
-            },
-            {
-              "fixture_number": 7,
-              "round": null,
-              "stage_type": "group",
-              "status": "3 - 0",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "BRA Brazil MAR Morocco",
-                "hidden": false
-              },
-              "actual_score": "3 - 0",
-              "points": 1,
-              "is_exact": false
-            },
-            {
-              "fixture_number": 5,
-              "round": null,
-              "stage_type": "group",
-              "status": "1 - 2",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "HAI Haiti SCO Scotland",
-                "hidden": false
-              },
-              "actual_score": "1 - 2",
-              "points": 0,
-              "is_exact": false
-            },
-            {
-              "fixture_number": 6,
-              "round": null,
-              "stage_type": "group",
-              "status": "2 - 0",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "AUS Australia TUR Turkey",
-                "hidden": false
-              },
-              "actual_score": "2 - 0",
-              "points": 2,
-              "is_exact": false
-            },
-            {
-              "fixture_number": 10,
-              "round": null,
-              "stage_type": "group",
-              "status": "3 - 0",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "GER Germany CUW Curacao",
-                "hidden": false
-              },
-              "actual_score": "3 - 0",
-              "points": 7,
-              "is_exact": false
-            },
-            {
-              "fixture_number": 11,
-              "round": null,
-              "stage_type": "group",
-              "status": "2 - 3",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "NED Netherlands JPN Japan",
-                "hidden": false
-              },
-              "actual_score": "2 - 3",
-              "points": 2,
-              "is_exact": false
-            },
-            {
-              "fixture_number": 9,
-              "round": null,
-              "stage_type": "group",
-              "status": "3 - 0",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "CIV Côte d'Ivoire ECU Ecuador",
-                "hidden": false
-              },
-              "actual_score": "3 - 0",
-              "points": 1,
-              "is_exact": false
-            },
-            {
-              "fixture_number": 12,
-              "round": null,
-              "stage_type": "group",
-              "status": "2 - 0",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "SWE Sweden TUN Tunisia",
-                "hidden": false
-              },
-              "actual_score": "2 - 0",
-              "points": 5,
-              "is_exact": false
-            },
-            {
-              "fixture_number": 14,
-              "round": null,
-              "stage_type": "group",
-              "status": "3 - 0",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "ESP Spain CPV Cape Verde Islands",
-                "hidden": false
-              },
-              "actual_score": "3 - 0",
-              "points": 0,
-              "is_exact": false
-            },
-            {
-              "fixture_number": 16,
-              "round": null,
-              "stage_type": "group",
-              "status": "2 - 1",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "BEL Belgium EGY Egypt",
-                "hidden": false
-              },
-              "actual_score": "2 - 1",
-              "points": 1,
-              "is_exact": false
-            },
-            {
-              "fixture_number": 13,
-              "round": null,
-              "stage_type": "group",
-              "status": "2 - 1",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "KSA Saudi Arabia URU Uruguay",
-                "hidden": false
-              },
-              "actual_score": "2 - 1",
-              "points": 1,
-              "is_exact": false
-            },
-            {
-              "fixture_number": 15,
-              "round": null,
-              "stage_type": "group",
-              "status": "3 - 1",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "IRN Iran NZL New Zealand",
-                "hidden": false
-              },
-              "actual_score": "3 - 1",
-              "points": 2,
-              "is_exact": false
-            },
-            {
-              "fixture_number": 17,
-              "round": null,
-              "stage_type": "group",
-              "status": "3 - 0",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "FRA France SEN Senegal",
-                "hidden": false
-              },
-              "actual_score": "3 - 0",
-              "points": 3,
-              "is_exact": false
-            },
-            {
-              "fixture_number": 18,
-              "round": null,
-              "stage_type": "group",
-              "status": "1 - 0",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "IRQ Iraq NOR Norway",
-                "hidden": false
-              },
-              "actual_score": "1 - 0",
-              "points": 1,
-              "is_exact": false
-            },
-            {
-              "fixture_number": 19,
-              "round": null,
-              "stage_type": "group",
-              "status": "3 - 0",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "ARG Argentina ALG Algeria",
-                "hidden": false
-              },
-              "actual_score": "3 - 0",
-              "points": 3,
-              "is_exact": false
-            },
-            {
-              "fixture_number": 20,
-              "round": null,
-              "stage_type": "group",
-              "status": "1 - 1",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "AUT Austria JOR Jordan",
-                "hidden": false
-              },
-              "actual_score": "1 - 1",
-              "points": 2,
-              "is_exact": false
-            },
-            {
-              "fixture_number": 23,
-              "round": null,
-              "stage_type": "group",
-              "status": "3 - 0",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "POR Portugal COD DR Congo",
-                "hidden": false
-              },
-              "actual_score": "3 - 0",
-              "points": null,
-              "is_exact": false
-            },
-            {
-              "fixture_number": 22,
-              "round": null,
-              "stage_type": "group",
-              "status": "3 - 0",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "ENG England CRO Croatia",
-                "hidden": false
-              },
-              "actual_score": "3 - 0",
-              "points": null,
-              "is_exact": false
-            },
-            {
-              "fixture_number": 21,
-              "round": null,
-              "stage_type": "group",
-              "status": "1 - 0",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "GHA Ghana PAN Panama",
-                "hidden": false
-              },
-              "actual_score": "1 - 0",
-              "points": null,
-              "is_exact": false
-            },
-            {
-              "fixture_number": 24,
-              "round": null,
-              "stage_type": "group",
-              "status": "1 - 2",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
-              "hidden": false,
-              "match": {
-                "home": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                },
-                "away": {
-                  "code": null,
-                  "name": null,
-                  "hidden": false
-                }
-              },
-              "predicted": {
-                "type": "score",
-                "score": "UZB Uzbekistan COL Colombia",
-                "hidden": false
-              },
-              "actual_score": "1 - 2",
               "points": null,
               "is_exact": false
             }
@@ -7427,14 +5201,14 @@
       "slug": "yo",
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247537/yo/stage/1196-grand-total?scroll=fixture",
       "flag": "MEX",
-      "rank": 11,
-      "points": 705,
-      "exact": 1,
+      "rank": 8,
+      "points": 732,
+      "exact": 2,
       "grand_total": null,
       "matchdays": [
         {
           "round": null,
-          "subtotal": 705,
+          "subtotal": 732,
           "fixtures": [
             {
               "fixture_number": 1,
@@ -8033,7 +5807,7 @@
                 "hidden": false
               },
               "actual_score": "3 - 1",
-              "points": 2,
+              "points": 3,
               "is_exact": false
             },
             {
@@ -8163,6 +5937,2232 @@
         "questions": []
       }
     },
+    "247524": {
+      "team_id": "247524",
+      "name": "Alejandro",
+      "slug": "alejandro",
+      "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247524/alejandro/stage/1196-grand-total?scroll=fixture",
+      "flag": "BRA",
+      "rank": 9,
+      "points": 732,
+      "exact": 0,
+      "grand_total": null,
+      "matchdays": [
+        {
+          "round": null,
+          "subtotal": 732,
+          "fixtures": [
+            {
+              "fixture_number": 1,
+              "round": null,
+              "stage_type": "group",
+              "status": "3 - 0",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "MEX Mexico RSA South Africa",
+                "hidden": false
+              },
+              "actual_score": "3 - 0",
+              "points": 2,
+              "is_exact": false
+            },
+            {
+              "fixture_number": 2,
+              "round": null,
+              "stage_type": "group",
+              "status": "2 - 2",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "KOR Korea Republic CZE Czech Republic",
+                "hidden": false
+              },
+              "actual_score": "2 - 2",
+              "points": 2,
+              "is_exact": false
+            },
+            {
+              "fixture_number": 3,
+              "round": null,
+              "stage_type": "group",
+              "status": "3 - 1",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "CAN Canada BIH Bosnia-Herzegovina",
+                "hidden": false
+              },
+              "actual_score": "3 - 1",
+              "points": 1,
+              "is_exact": false
+            },
+            {
+              "fixture_number": 4,
+              "round": null,
+              "stage_type": "group",
+              "status": "3 - 1",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "USA USA PAR Paraguay",
+                "hidden": false
+              },
+              "actual_score": "3 - 1",
+              "points": 4,
+              "is_exact": false
+            },
+            {
+              "fixture_number": 8,
+              "round": null,
+              "stage_type": "group",
+              "status": "1 - 3",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "QAT Qatar SUI Switzerland",
+                "hidden": false
+              },
+              "actual_score": "1 - 3",
+              "points": 1,
+              "is_exact": false
+            },
+            {
+              "fixture_number": 7,
+              "round": null,
+              "stage_type": "group",
+              "status": "2 - 1",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "BRA Brazil MAR Morocco",
+                "hidden": false
+              },
+              "actual_score": "2 - 1",
+              "points": 1,
+              "is_exact": false
+            },
+            {
+              "fixture_number": 5,
+              "round": null,
+              "stage_type": "group",
+              "status": "1 - 3",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "HAI Haiti SCO Scotland",
+                "hidden": false
+              },
+              "actual_score": "1 - 3",
+              "points": 0,
+              "is_exact": false
+            },
+            {
+              "fixture_number": 6,
+              "round": null,
+              "stage_type": "group",
+              "status": "2 - 1",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "AUS Australia TUR Turkey",
+                "hidden": false
+              },
+              "actual_score": "2 - 1",
+              "points": 2,
+              "is_exact": false
+            },
+            {
+              "fixture_number": 10,
+              "round": null,
+              "stage_type": "group",
+              "status": "4 - 0",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "GER Germany CUW Curacao",
+                "hidden": false
+              },
+              "actual_score": "4 - 0",
+              "points": 7,
+              "is_exact": false
+            },
+            {
+              "fixture_number": 11,
+              "round": null,
+              "stage_type": "group",
+              "status": "2 - 1",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "NED Netherlands JPN Japan",
+                "hidden": false
+              },
+              "actual_score": "2 - 1",
+              "points": 2,
+              "is_exact": false
+            },
+            {
+              "fixture_number": 9,
+              "round": null,
+              "stage_type": "group",
+              "status": "0 - 3",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "CIV Côte d'Ivoire ECU Ecuador",
+                "hidden": false
+              },
+              "actual_score": "0 - 3",
+              "points": 1,
+              "is_exact": false
+            },
+            {
+              "fixture_number": 12,
+              "round": null,
+              "stage_type": "group",
+              "status": "3 - 1",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "SWE Sweden TUN Tunisia",
+                "hidden": false
+              },
+              "actual_score": "3 - 1",
+              "points": 5,
+              "is_exact": false
+            },
+            {
+              "fixture_number": 14,
+              "round": null,
+              "stage_type": "group",
+              "status": "4 - 0",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "ESP Spain CPV Cape Verde Islands",
+                "hidden": false
+              },
+              "actual_score": "4 - 0",
+              "points": 0,
+              "is_exact": false
+            },
+            {
+              "fixture_number": 16,
+              "round": null,
+              "stage_type": "group",
+              "status": "3 - 1",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "BEL Belgium EGY Egypt",
+                "hidden": false
+              },
+              "actual_score": "3 - 1",
+              "points": 1,
+              "is_exact": false
+            },
+            {
+              "fixture_number": 13,
+              "round": null,
+              "stage_type": "group",
+              "status": "1 - 3",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "KSA Saudi Arabia URU Uruguay",
+                "hidden": false
+              },
+              "actual_score": "1 - 3",
+              "points": 1,
+              "is_exact": false
+            },
+            {
+              "fixture_number": 15,
+              "round": null,
+              "stage_type": "group",
+              "status": "0 - 2",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "IRN Iran NZL New Zealand",
+                "hidden": false
+              },
+              "actual_score": "0 - 2",
+              "points": 2,
+              "is_exact": false
+            },
+            {
+              "fixture_number": 17,
+              "round": null,
+              "stage_type": "group",
+              "status": "3 - 0",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "FRA France SEN Senegal",
+                "hidden": false
+              },
+              "actual_score": "3 - 0",
+              "points": 3,
+              "is_exact": false
+            },
+            {
+              "fixture_number": 18,
+              "round": null,
+              "stage_type": "group",
+              "status": "0 - 3",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "IRQ Iraq NOR Norway",
+                "hidden": false
+              },
+              "actual_score": "0 - 3",
+              "points": 1,
+              "is_exact": false
+            },
+            {
+              "fixture_number": 19,
+              "round": null,
+              "stage_type": "group",
+              "status": "4 - 0",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "ARG Argentina ALG Algeria",
+                "hidden": false
+              },
+              "actual_score": "4 - 0",
+              "points": 3,
+              "is_exact": false
+            },
+            {
+              "fixture_number": 20,
+              "round": null,
+              "stage_type": "group",
+              "status": "3 - 0",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "AUT Austria JOR Jordan",
+                "hidden": false
+              },
+              "actual_score": "3 - 0",
+              "points": 3,
+              "is_exact": false
+            },
+            {
+              "fixture_number": 23,
+              "round": null,
+              "stage_type": "group",
+              "status": "4 - 0",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "POR Portugal COD DR Congo",
+                "hidden": false
+              },
+              "actual_score": "4 - 0",
+              "points": null,
+              "is_exact": false
+            },
+            {
+              "fixture_number": 22,
+              "round": null,
+              "stage_type": "group",
+              "status": "2 - 1",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "ENG England CRO Croatia",
+                "hidden": false
+              },
+              "actual_score": "2 - 1",
+              "points": null,
+              "is_exact": false
+            },
+            {
+              "fixture_number": 21,
+              "round": null,
+              "stage_type": "group",
+              "status": "3 - 2",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "GHA Ghana PAN Panama",
+                "hidden": false
+              },
+              "actual_score": "3 - 2",
+              "points": null,
+              "is_exact": false
+            },
+            {
+              "fixture_number": 24,
+              "round": null,
+              "stage_type": "group",
+              "status": "1 - 3",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "UZB Uzbekistan COL Colombia",
+                "hidden": false
+              },
+              "actual_score": "1 - 3",
+              "points": null,
+              "is_exact": false
+            }
+          ]
+        }
+      ],
+      "bonus": {
+        "questions": []
+      }
+    },
+    "247535": {
+      "team_id": "247535",
+      "name": "Baronmark",
+      "slug": "baronmark",
+      "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247535/baronmark/stage/1196-grand-total?scroll=fixture",
+      "flag": "FRA",
+      "rank": 10,
+      "points": 723,
+      "exact": 2,
+      "grand_total": null,
+      "matchdays": [
+        {
+          "round": null,
+          "subtotal": 723,
+          "fixtures": [
+            {
+              "fixture_number": 1,
+              "round": null,
+              "stage_type": "group",
+              "status": "2 - 1",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "MEX Mexico RSA South Africa",
+                "hidden": false
+              },
+              "actual_score": "2 - 1",
+              "points": 2,
+              "is_exact": false
+            },
+            {
+              "fixture_number": 2,
+              "round": null,
+              "stage_type": "group",
+              "status": "1 - 1",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "KOR Korea Republic CZE Czech Republic",
+                "hidden": false
+              },
+              "actual_score": "1 - 1",
+              "points": 2,
+              "is_exact": false
+            },
+            {
+              "fixture_number": 3,
+              "round": null,
+              "stage_type": "group",
+              "status": "3 - 0",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "CAN Canada BIH Bosnia-Herzegovina",
+                "hidden": false
+              },
+              "actual_score": "3 - 0",
+              "points": 1,
+              "is_exact": false
+            },
+            {
+              "fixture_number": 4,
+              "round": null,
+              "stage_type": "group",
+              "status": "2 - 0",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "USA USA PAR Paraguay",
+                "hidden": false
+              },
+              "actual_score": "2 - 0",
+              "points": 4,
+              "is_exact": false
+            },
+            {
+              "fixture_number": 8,
+              "round": null,
+              "stage_type": "group",
+              "status": "0 - 1",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "QAT Qatar SUI Switzerland",
+                "hidden": false
+              },
+              "actual_score": "0 - 1",
+              "points": 1,
+              "is_exact": false
+            },
+            {
+              "fixture_number": 7,
+              "round": null,
+              "stage_type": "group",
+              "status": "3 - 0",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "BRA Brazil MAR Morocco",
+                "hidden": false
+              },
+              "actual_score": "3 - 0",
+              "points": 1,
+              "is_exact": false
+            },
+            {
+              "fixture_number": 5,
+              "round": null,
+              "stage_type": "group",
+              "status": "0 - 1",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "HAI Haiti SCO Scotland",
+                "hidden": false
+              },
+              "actual_score": "0 - 1",
+              "points": 0,
+              "is_exact": false
+            },
+            {
+              "fixture_number": 6,
+              "round": null,
+              "stage_type": "group",
+              "status": "1 - 1",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "AUS Australia TUR Turkey",
+                "hidden": false
+              },
+              "actual_score": "1 - 1",
+              "points": 2,
+              "is_exact": false
+            },
+            {
+              "fixture_number": 10,
+              "round": null,
+              "stage_type": "group",
+              "status": "2 - 0",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "GER Germany CUW Curacao",
+                "hidden": false
+              },
+              "actual_score": "2 - 0",
+              "points": 7,
+              "is_exact": false
+            },
+            {
+              "fixture_number": 11,
+              "round": null,
+              "stage_type": "group",
+              "status": "2 - 1",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "NED Netherlands JPN Japan",
+                "hidden": false
+              },
+              "actual_score": "2 - 1",
+              "points": 2,
+              "is_exact": false
+            },
+            {
+              "fixture_number": 9,
+              "round": null,
+              "stage_type": "group",
+              "status": "2 - 1",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "CIV Côte d'Ivoire ECU Ecuador",
+                "hidden": false
+              },
+              "actual_score": "2 - 1",
+              "points": 1,
+              "is_exact": false
+            },
+            {
+              "fixture_number": 12,
+              "round": null,
+              "stage_type": "group",
+              "status": "1 - 1",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "SWE Sweden TUN Tunisia",
+                "hidden": false
+              },
+              "actual_score": "1 - 1",
+              "points": 5,
+              "is_exact": false
+            },
+            {
+              "fixture_number": 14,
+              "round": null,
+              "stage_type": "group",
+              "status": "3 - 0",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "ESP Spain CPV Cape Verde Islands",
+                "hidden": false
+              },
+              "actual_score": "3 - 0",
+              "points": 0,
+              "is_exact": false
+            },
+            {
+              "fixture_number": 16,
+              "round": null,
+              "stage_type": "group",
+              "status": "2 - 1",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "BEL Belgium EGY Egypt",
+                "hidden": false
+              },
+              "actual_score": "2 - 1",
+              "points": 1,
+              "is_exact": false
+            },
+            {
+              "fixture_number": 13,
+              "round": null,
+              "stage_type": "group",
+              "status": "1 - 3",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "KSA Saudi Arabia URU Uruguay",
+                "hidden": false
+              },
+              "actual_score": "1 - 3",
+              "points": 1,
+              "is_exact": false
+            },
+            {
+              "fixture_number": 15,
+              "round": null,
+              "stage_type": "group",
+              "status": "0 - 0",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "IRN Iran NZL New Zealand",
+                "hidden": false
+              },
+              "actual_score": "0 - 0",
+              "points": 2,
+              "is_exact": false
+            },
+            {
+              "fixture_number": 17,
+              "round": null,
+              "stage_type": "group",
+              "status": "3 - 0",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "FRA France SEN Senegal",
+                "hidden": false
+              },
+              "actual_score": "3 - 0",
+              "points": 3,
+              "is_exact": false
+            },
+            {
+              "fixture_number": 18,
+              "round": null,
+              "stage_type": "group",
+              "status": "0 - 2",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "IRQ Iraq NOR Norway",
+                "hidden": false
+              },
+              "actual_score": "0 - 2",
+              "points": 1,
+              "is_exact": false
+            },
+            {
+              "fixture_number": 19,
+              "round": null,
+              "stage_type": "group",
+              "status": "3 - 0",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "ARG Argentina ALG Algeria",
+                "hidden": false
+              },
+              "actual_score": "3 - 0",
+              "points": 3,
+              "is_exact": false
+            },
+            {
+              "fixture_number": 20,
+              "round": null,
+              "stage_type": "group",
+              "status": "1 - 0",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "AUT Austria JOR Jordan",
+                "hidden": false
+              },
+              "actual_score": "1 - 0",
+              "points": 3,
+              "is_exact": false
+            },
+            {
+              "fixture_number": 23,
+              "round": null,
+              "stage_type": "group",
+              "status": "2 - 0",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "POR Portugal COD DR Congo",
+                "hidden": false
+              },
+              "actual_score": "2 - 0",
+              "points": null,
+              "is_exact": false
+            },
+            {
+              "fixture_number": 22,
+              "round": null,
+              "stage_type": "group",
+              "status": "2 - 3",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "ENG England CRO Croatia",
+                "hidden": false
+              },
+              "actual_score": "2 - 3",
+              "points": null,
+              "is_exact": false
+            },
+            {
+              "fixture_number": 21,
+              "round": null,
+              "stage_type": "group",
+              "status": "1 - 1",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "GHA Ghana PAN Panama",
+                "hidden": false
+              },
+              "actual_score": "1 - 1",
+              "points": null,
+              "is_exact": false
+            },
+            {
+              "fixture_number": 24,
+              "round": null,
+              "stage_type": "group",
+              "status": "0 - 0",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "UZB Uzbekistan COL Colombia",
+                "hidden": false
+              },
+              "actual_score": "0 - 0",
+              "points": null,
+              "is_exact": false
+            }
+          ]
+        }
+      ],
+      "bonus": {
+        "questions": []
+      }
+    },
+    "253790": {
+      "team_id": "253790",
+      "name": "remi",
+      "slug": "remi",
+      "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/253790/remi/stage/1196-grand-total?scroll=fixture",
+      "flag": "FRA",
+      "rank": 11,
+      "points": 705,
+      "exact": 2,
+      "grand_total": null,
+      "matchdays": [
+        {
+          "round": null,
+          "subtotal": 705,
+          "fixtures": [
+            {
+              "fixture_number": 1,
+              "round": null,
+              "stage_type": "group",
+              "status": "2 - 1",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "MEX Mexico RSA South Africa",
+                "hidden": false
+              },
+              "actual_score": "2 - 1",
+              "points": 2,
+              "is_exact": false
+            },
+            {
+              "fixture_number": 2,
+              "round": null,
+              "stage_type": "group",
+              "status": "1 - 0",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "KOR Korea Republic CZE Czech Republic",
+                "hidden": false
+              },
+              "actual_score": "1 - 0",
+              "points": 2,
+              "is_exact": false
+            },
+            {
+              "fixture_number": 3,
+              "round": null,
+              "stage_type": "group",
+              "status": "3 - 1",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "CAN Canada BIH Bosnia-Herzegovina",
+                "hidden": false
+              },
+              "actual_score": "3 - 1",
+              "points": 1,
+              "is_exact": false
+            },
+            {
+              "fixture_number": 4,
+              "round": null,
+              "stage_type": "group",
+              "status": "2 - 2",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "USA USA PAR Paraguay",
+                "hidden": false
+              },
+              "actual_score": "2 - 2",
+              "points": 4,
+              "is_exact": false
+            },
+            {
+              "fixture_number": 8,
+              "round": null,
+              "stage_type": "group",
+              "status": "2 - 1",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "QAT Qatar SUI Switzerland",
+                "hidden": false
+              },
+              "actual_score": "2 - 1",
+              "points": 1,
+              "is_exact": false
+            },
+            {
+              "fixture_number": 7,
+              "round": null,
+              "stage_type": "group",
+              "status": "3 - 0",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "BRA Brazil MAR Morocco",
+                "hidden": false
+              },
+              "actual_score": "3 - 0",
+              "points": 1,
+              "is_exact": false
+            },
+            {
+              "fixture_number": 5,
+              "round": null,
+              "stage_type": "group",
+              "status": "1 - 2",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "HAI Haiti SCO Scotland",
+                "hidden": false
+              },
+              "actual_score": "1 - 2",
+              "points": 0,
+              "is_exact": false
+            },
+            {
+              "fixture_number": 6,
+              "round": null,
+              "stage_type": "group",
+              "status": "2 - 0",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "AUS Australia TUR Turkey",
+                "hidden": false
+              },
+              "actual_score": "2 - 0",
+              "points": 2,
+              "is_exact": false
+            },
+            {
+              "fixture_number": 10,
+              "round": null,
+              "stage_type": "group",
+              "status": "3 - 0",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "GER Germany CUW Curacao",
+                "hidden": false
+              },
+              "actual_score": "3 - 0",
+              "points": 7,
+              "is_exact": false
+            },
+            {
+              "fixture_number": 11,
+              "round": null,
+              "stage_type": "group",
+              "status": "2 - 3",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "NED Netherlands JPN Japan",
+                "hidden": false
+              },
+              "actual_score": "2 - 3",
+              "points": 2,
+              "is_exact": false
+            },
+            {
+              "fixture_number": 9,
+              "round": null,
+              "stage_type": "group",
+              "status": "3 - 0",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "CIV Côte d'Ivoire ECU Ecuador",
+                "hidden": false
+              },
+              "actual_score": "3 - 0",
+              "points": 1,
+              "is_exact": false
+            },
+            {
+              "fixture_number": 12,
+              "round": null,
+              "stage_type": "group",
+              "status": "2 - 0",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "SWE Sweden TUN Tunisia",
+                "hidden": false
+              },
+              "actual_score": "2 - 0",
+              "points": 5,
+              "is_exact": false
+            },
+            {
+              "fixture_number": 14,
+              "round": null,
+              "stage_type": "group",
+              "status": "3 - 0",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "ESP Spain CPV Cape Verde Islands",
+                "hidden": false
+              },
+              "actual_score": "3 - 0",
+              "points": 0,
+              "is_exact": false
+            },
+            {
+              "fixture_number": 16,
+              "round": null,
+              "stage_type": "group",
+              "status": "2 - 1",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "BEL Belgium EGY Egypt",
+                "hidden": false
+              },
+              "actual_score": "2 - 1",
+              "points": 1,
+              "is_exact": false
+            },
+            {
+              "fixture_number": 13,
+              "round": null,
+              "stage_type": "group",
+              "status": "2 - 1",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "KSA Saudi Arabia URU Uruguay",
+                "hidden": false
+              },
+              "actual_score": "2 - 1",
+              "points": 1,
+              "is_exact": false
+            },
+            {
+              "fixture_number": 15,
+              "round": null,
+              "stage_type": "group",
+              "status": "3 - 1",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "IRN Iran NZL New Zealand",
+                "hidden": false
+              },
+              "actual_score": "3 - 1",
+              "points": 2,
+              "is_exact": false
+            },
+            {
+              "fixture_number": 17,
+              "round": null,
+              "stage_type": "group",
+              "status": "3 - 0",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "FRA France SEN Senegal",
+                "hidden": false
+              },
+              "actual_score": "3 - 0",
+              "points": 3,
+              "is_exact": false
+            },
+            {
+              "fixture_number": 18,
+              "round": null,
+              "stage_type": "group",
+              "status": "1 - 0",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "IRQ Iraq NOR Norway",
+                "hidden": false
+              },
+              "actual_score": "1 - 0",
+              "points": 1,
+              "is_exact": false
+            },
+            {
+              "fixture_number": 19,
+              "round": null,
+              "stage_type": "group",
+              "status": "3 - 0",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "ARG Argentina ALG Algeria",
+                "hidden": false
+              },
+              "actual_score": "3 - 0",
+              "points": 3,
+              "is_exact": false
+            },
+            {
+              "fixture_number": 20,
+              "round": null,
+              "stage_type": "group",
+              "status": "1 - 1",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "AUT Austria JOR Jordan",
+                "hidden": false
+              },
+              "actual_score": "1 - 1",
+              "points": 3,
+              "is_exact": false
+            },
+            {
+              "fixture_number": 23,
+              "round": null,
+              "stage_type": "group",
+              "status": "3 - 0",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "POR Portugal COD DR Congo",
+                "hidden": false
+              },
+              "actual_score": "3 - 0",
+              "points": null,
+              "is_exact": false
+            },
+            {
+              "fixture_number": 22,
+              "round": null,
+              "stage_type": "group",
+              "status": "3 - 0",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "ENG England CRO Croatia",
+                "hidden": false
+              },
+              "actual_score": "3 - 0",
+              "points": null,
+              "is_exact": false
+            },
+            {
+              "fixture_number": 21,
+              "round": null,
+              "stage_type": "group",
+              "status": "1 - 0",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "GHA Ghana PAN Panama",
+                "hidden": false
+              },
+              "actual_score": "1 - 0",
+              "points": null,
+              "is_exact": false
+            },
+            {
+              "fixture_number": 24,
+              "round": null,
+              "stage_type": "group",
+              "status": "1 - 2",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
+              "hidden": false,
+              "match": {
+                "home": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                },
+                "away": {
+                  "code": null,
+                  "name": null,
+                  "hidden": false
+                }
+              },
+              "predicted": {
+                "type": "score",
+                "score": "UZB Uzbekistan COL Colombia",
+                "hidden": false
+              },
+              "actual_score": "1 - 2",
+              "points": null,
+              "is_exact": false
+            }
+          ]
+        }
+      ],
+      "bonus": {
+        "questions": []
+      }
+    },
     "247930": {
       "team_id": "247930",
       "name": "Alec",
@@ -8170,13 +8170,13 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247930/alec/stage/1196-grand-total?scroll=fixture",
       "flag": "ESP",
       "rank": 12,
-      "points": 684,
+      "points": 681,
       "exact": 1,
       "grand_total": null,
       "matchdays": [
         {
           "round": null,
-          "subtotal": 684,
+          "subtotal": 681,
           "fixtures": [
             {
               "fixture_number": 1,
@@ -8775,7 +8775,7 @@
                 "hidden": false
               },
               "actual_score": "2 - 0",
-              "points": 2,
+              "points": 3,
               "is_exact": false
             },
             {
@@ -8912,13 +8912,13 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247526/valewalle/stage/1196-grand-total?scroll=fixture",
       "flag": "ESP",
       "rank": 13,
-      "points": 660,
+      "points": 657,
       "exact": 2,
       "grand_total": null,
       "matchdays": [
         {
           "round": null,
-          "subtotal": 660,
+          "subtotal": 657,
           "fixtures": [
             {
               "fixture_number": 1,
@@ -9517,7 +9517,7 @@
                 "hidden": false
               },
               "actual_score": "2 - 0",
-              "points": 2,
+              "points": 3,
               "is_exact": false
             },
             {
@@ -9654,13 +9654,13 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/252610/luisa/stage/1196-grand-total?scroll=fixture",
       "flag": "POR",
       "rank": 14,
-      "points": 654,
+      "points": 657,
       "exact": 1,
       "grand_total": null,
       "matchdays": [
         {
           "round": null,
-          "subtotal": 654,
+          "subtotal": 657,
           "fixtures": [
             {
               "fixture_number": 1,
@@ -10259,7 +10259,7 @@
                 "hidden": false
               },
               "actual_score": "3 - 2",
-              "points": 2,
+              "points": 3,
               "is_exact": false
             },
             {
@@ -10396,13 +10396,13 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/252653/daniel/stage/1196-grand-total?scroll=fixture",
       "flag": "FRA",
       "rank": 15,
-      "points": 630,
+      "points": 627,
       "exact": 2,
       "grand_total": null,
       "matchdays": [
         {
           "round": null,
-          "subtotal": 630,
+          "subtotal": 627,
           "fixtures": [
             {
               "fixture_number": 1,
@@ -11001,7 +11001,7 @@
                 "hidden": false
               },
               "actual_score": "2 - 0",
-              "points": 2,
+              "points": 3,
               "is_exact": false
             },
             {
@@ -11138,13 +11138,13 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247533/beturompequinielas/stage/1196-grand-total?scroll=fixture",
       "flag": "ARG",
       "rank": 16,
-      "points": 585,
+      "points": 573,
       "exact": 1,
       "grand_total": null,
       "matchdays": [
         {
           "round": null,
-          "subtotal": 585,
+          "subtotal": 573,
           "fixtures": [
             {
               "fixture_number": 1,
@@ -11743,7 +11743,7 @@
                 "hidden": false
               },
               "actual_score": "1 - 0",
-              "points": 2,
+              "points": 3,
               "is_exact": false
             },
             {
