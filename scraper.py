@@ -69,6 +69,11 @@ REQUEST_TIMEOUT = int(os.environ.get("REQUEST_TIMEOUT", "30"))
 CF_CHALLENGE_TIMEOUT = int(os.environ.get("CF_CHALLENGE_TIMEOUT", "25"))
 FETCH_BACKEND = os.environ.get("FETCH_BACKEND", "auto").lower()  # auto, requests, browser
 BROWSER_HEADLESS = os.environ.get("BROWSER_HEADLESS", "1").lower() not in {"0", "false", "no"}
+# Small pause between successive page fetches. Cloudflare rate-limits bursts
+# (especially from datacenter IPs like CI runners), and 16+ rapid player-page
+# hits is exactly the pattern that trips a 403. A short, configurable delay keeps
+# the fast requests path alive longer before the browser fallback is needed.
+REQUEST_DELAY_SECONDS = float(os.environ.get("REQUEST_DELAY_SECONDS", "0.7"))
 HTTP_HEADERS = {
     "User-Agent": (
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
@@ -77,9 +82,13 @@ HTTP_HEADERS = {
     "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8",
     "Accept-Language": "en-US,en;q=0.9",
     "Cache-Control": "no-cache",
-    "Connection": "keep-alive",
     "Pragma": "no-cache",
     "Referer": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/",
+    # Modern Chrome client hints — Cloudflare's bot heuristics expect these from a
+    # browser claiming to be Chrome 125, and their absence is a cheap tell.
+    "sec-ch-ua": '"Chromium";v="125", "Google Chrome";v="125", "Not.A/Brand";v="24"',
+    "sec-ch-ua-mobile": "?0",
+    "sec-ch-ua-platform": '"Windows"',
     "Sec-Fetch-Dest": "document",
     "Sec-Fetch-Mode": "navigate",
     "Sec-Fetch-Site": "same-origin",
@@ -416,8 +425,17 @@ def _get_browser_fetcher() -> BrowserFetcher:
     return _BROWSER_FETCHER
 
 
+_LAST_REQUEST_AT = 0.0
+
+
 def _fetch_page_with_requests(url: str) -> tuple[str, str]:
+    global _LAST_REQUEST_AT
+    if REQUEST_DELAY_SECONDS > 0 and _LAST_REQUEST_AT:
+        wait = REQUEST_DELAY_SECONDS - (time.monotonic() - _LAST_REQUEST_AT)
+        if wait > 0:
+            time.sleep(wait)
     resp = REQUEST_SESSION.get(url, timeout=REQUEST_TIMEOUT, allow_redirects=True)
+    _LAST_REQUEST_AT = time.monotonic()
     if resp.status_code in {403, 503}:
         raise requests.HTTPError(
             f"{resp.status_code} {resp.reason} for {resp.url}; body starts: {_response_excerpt(resp.text)}",
@@ -843,17 +861,29 @@ def _round_name_for(container) -> str | None:
 
 
 def _parse_round_table(table, round_name) -> dict:
-    """Parse one round's fixtures table into {round, subtotal, fixtures}."""
+    """Parse one round's fixtures table into {round, subtotal, fixtures}.
+
+    Fixtures are deduped by fixture number: the page sometimes renders the same
+    fixture more than once (mobile/desktop variants, JS-cloned rows) and only the
+    ``d-md-none`` ones are reliably class-marked, so a number-level guard keeps a
+    round from doubling up.
+    """
     md = {"round": round_name, "subtotal": None, "fixtures": []}
+    seen_numbers = set()
     tbody = table.find("tbody") or table
     for tr in tbody.find_all("tr", recursive=False):
         if "d-md-none" in tr.get("class", []):
             continue  # mobile-only duplicate of a desktop row
 
         if tr.get("data-fixture-number") is not None:
+            num = to_int(tr.get("data-fixture-number"))
+            if num is not None and num in seen_numbers:
+                continue
             fixture = _parse_fixture(tr, round_name)
             if fixture:
                 md["fixtures"].append(fixture)
+                if num is not None:
+                    seen_numbers.add(num)
             continue
 
         tds = tr.find_all("td", recursive=False)
@@ -869,9 +899,15 @@ def parse_player_page(html: str) -> dict:
     own ``<div class="table-responsive">`` with the round name in a preceding
     ``<h3>``; a final table holds the bonus questions. (The grand total is taken
     from the leaderboard, not parsed here.)
+
+    Defensive against unstable markup (the browser-rendered fallback can emit
+    extra JS-built fixture tables with no heading, or repeat a round): tables
+    without a round name are skipped, and rounds are coalesced by name keeping the
+    richest copy, so the result is always one clean entry per named round.
     """
     soup = soup_of(html)
-    matchdays: list[dict] = []
+    rounds: dict[str, dict] = {}
+    order: list[str] = []
     bonus = {"questions": []}
 
     for container in soup.select("div.table-responsive"):
@@ -890,9 +926,24 @@ def parse_player_page(html: str) -> dict:
         # A round table is identified by having at least one fixture row.
         if table.find("tr", attrs={"data-fixture-number": True}) is None:
             continue
+        if not round_name:
+            # No heading -> almost certainly a JS-generated duplicate table.
+            print("  ! skipping a fixtures table with no round heading", file=sys.stderr)
+            continue
+
         md = _parse_round_table(table, round_name)
-        if md["fixtures"]:
-            matchdays.append(md)
+        if not md["fixtures"]:
+            continue
+        existing = rounds.get(round_name)
+        if existing is None:
+            rounds[round_name] = md
+            order.append(round_name)
+        elif len(md["fixtures"]) > len(existing["fixtures"]):
+            # Keep the richer copy but don't lose an already-parsed subtotal.
+            md["subtotal"] = md["subtotal"] if md["subtotal"] is not None else existing["subtotal"]
+            rounds[round_name] = md
+
+    matchdays = [rounds[name] for name in order]
 
     return {
         "matchdays": matchdays,
@@ -928,15 +979,17 @@ def _merge_rounds(fresh_matchdays, prev_matchdays) -> tuple[list[dict], bool]:
     round/fixtures were retained because the fresh scrape was thinner.
     """
     prev_by_round = {
-        md.get("round"): md
+        md["round"]: md
         for md in (prev_matchdays or [])
-        if isinstance(md, dict)
+        if isinstance(md, dict) and md.get("round")
     }
     merged: list[dict] = []
     patched = False
     seen = set()
     for md in fresh_matchdays:
         rnd = md.get("round")
+        if not rnd:
+            continue  # never carry an unnamed (phantom) round forward
         seen.add(rnd)
         prev = prev_by_round.get(rnd)
         if prev and len(prev.get("fixtures") or []) > len(md.get("fixtures") or []):
@@ -945,7 +998,8 @@ def _merge_rounds(fresh_matchdays, prev_matchdays) -> tuple[list[dict], bool]:
         else:
             merged.append(md)
     for md in (prev_matchdays or []):
-        if isinstance(md, dict) and md.get("round") not in seen:
+        rnd = md.get("round") if isinstance(md, dict) else None
+        if rnd and rnd not in seen:
             merged.append(md)
             patched = True
     return merged, patched
