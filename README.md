@@ -59,6 +59,15 @@ moment Pages goes live; the first real Action run overwrites them with live data
      matchday — completed *and* upcoming matches — with a "🎯 perfect call" badge on
      exact scores, matchday subtotals, the bonus questions, and
      **Completed / Upcoming / Today-only** filters that combine.
+   - **Layer 3 — Match view** (tap any match — in the live strip, the recent-results
+     cards, the All Results list, or any row on a player's sheet): a popup showing
+     **every player's prediction for that one match** — their picked score (or, in
+     the knockout rounds, the two teams they expect) and, once the game is
+     live/finished, the points it earned them. Players sort by points for that game
+     (or rank / A–Z), with a consensus header (how many nailed the exact score, who
+     scored most, the crowd-favourite scoreline) and a pick-distribution chart that
+     highlights the actual result. Opened from inside another view, it shows a
+     **‹ Back** button that returns you exactly where you were.
 
 ---
 

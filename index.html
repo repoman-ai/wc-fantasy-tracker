@@ -355,6 +355,112 @@
   .empty{background:var(--card);border-radius:14px;padding:26px;text-align:center;color:var(--muted);box-shadow:var(--shadow)}
   .foot{text-align:center;color:var(--muted);font-size:12px;margin-top:26px}
   .loading{padding:80px 0;text-align:center;color:var(--muted)}
+
+  /* ---------- Clickable affordances ----------
+     Anything wired to open the match-predictions popup gets a pointer, a gentle
+     lift on hover, and a visible keyboard focus ring. */
+  [data-match-key]{cursor:pointer}
+  [data-match-key]:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+  .liveitem[data-match-key]{transition:transform .14s ease,background .14s ease}
+  .liveitem[data-match-key]:hover{transform:translateY(-2px);background:rgba(226,59,59,.28)}
+  .rescard[data-match-key]:hover{transform:translateY(-2px);box-shadow:0 6px 14px rgba(16,24,40,.10),0 18px 40px rgba(16,24,40,.10)}
+  .resrow[data-match-key]{transition:transform .14s ease,box-shadow .14s ease}
+  .resrow[data-match-key]:hover{transform:translateY(-1px);box-shadow:0 4px 10px rgba(16,24,40,.10),0 12px 28px rgba(16,24,40,.10)}
+  .fx.fxlink{transition:transform .14s ease,box-shadow .14s ease}
+  .fx.fxlink:hover{transform:translateY(-1px);box-shadow:0 4px 10px rgba(16,24,40,.10),0 12px 28px rgba(16,24,40,.10)}
+  /* Persistent, unobtrusive cue that prediction rows open the all-picks popup. */
+  .sheet-hint{font-size:11.5px;color:var(--muted);font-weight:600;margin-top:2px}
+
+  /* ---------- Modal: Back control ---------- */
+  .mback{position:absolute;top:16px;left:18px;display:inline-flex;align-items:center;gap:3px;
+    border:none;background:rgba(255,255,255,.18);color:#fff;font:inherit;font-size:13px;font-weight:700;
+    border-radius:999px;padding:6px 13px 6px 10px;cursor:pointer;line-height:1;transition:background .15s}
+  .mback:hover{background:rgba(255,255,255,.32)}
+  .mhead.hasback{padding-top:48px}
+
+  /* ---------- Match-predictions popup ---------- */
+  /* Scoreboard hero at the top of the popup. */
+  .mp-board{display:flex;align-items:center;justify-content:center;gap:clamp(12px,5vw,34px);
+    padding:6px 4px 2px;text-align:center}
+  .mp-board .mp-side{display:flex;flex-direction:column;align-items:center;gap:7px;min-width:0;flex:1}
+  .mp-board .mp-side .flag{width:54px;height:40px}
+  .mp-board .mp-side .nm{font-weight:800;font-size:15px;line-height:1.2;max-width:140px;
+    white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .mp-board .mp-side.win .nm{color:var(--up)}
+  .mp-board .mp-mid{display:flex;flex-direction:column;align-items:center;gap:6px;flex:none}
+  .mp-board .mp-score{font-family:'Barlow Condensed';font-weight:800;font-size:clamp(34px,11vw,52px);line-height:.9}
+  .mp-board .mp-score.live{color:#e23b3b}
+  .mp-board .mp-vs{font-family:'Barlow Condensed';font-weight:800;font-size:30px;color:var(--muted)}
+  .mp-board .mp-kick{font-size:12px;color:var(--muted);font-weight:700}
+
+  /* Kickoff time + location strip under the scoreboard. */
+  .mp-meta{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:12px 0 2px}
+  .mp-meta .mi{display:inline-flex;align-items:center;gap:6px;background:var(--card);
+    border-radius:999px;box-shadow:var(--shadow);padding:7px 13px;
+    font-size:12.5px;font-weight:700;color:var(--ink)}
+  .mp-meta .mi .ic{font-size:13px}
+  .mp-meta .mi .sub{color:var(--muted);font-weight:600}
+
+  /* Consensus summary chips + distribution. */
+  .mp-sum{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:14px 0 4px}
+  .mp-chip{background:var(--card);border-radius:999px;box-shadow:var(--shadow);padding:8px 13px;
+    font-size:12.5px;font-weight:700;color:var(--ink);display:inline-flex;align-items:center;gap:7px}
+  .mp-chip .ic{font-size:14px}
+  .mp-chip b{font-family:'Barlow Condensed';font-size:16px;letter-spacing:.3px}
+  .mp-chip.hit{background:linear-gradient(90deg,#fffae8,#fff);box-shadow:0 0 0 1.5px #f4c430 inset,var(--shadow)}
+
+  .mp-dist{background:var(--card);border-radius:14px;box-shadow:var(--shadow);padding:13px 15px;margin:12px 0 4px}
+  .mp-dist h4{margin:0 0 10px;font-size:11px;text-transform:uppercase;letter-spacing:.6px;color:var(--muted)}
+  .mp-bar{display:grid;grid-template-columns:88px 1fr 34px;align-items:center;gap:10px;margin-bottom:8px}
+  .mp-bar:last-child{margin-bottom:0}
+  .mp-bar .lab{font-family:'Barlow Condensed';font-weight:800;font-size:16px;text-align:right;white-space:nowrap;
+    overflow:hidden;text-overflow:ellipsis}
+  .mp-bar .track{height:10px;background:#eef1f7;border-radius:999px;overflow:hidden}
+  .mp-bar .fill{height:100%;border-radius:999px;background:linear-gradient(90deg,var(--accent),var(--accent2));
+    transition:width .5s cubic-bezier(.34,1.1,.64,1)}
+  .mp-bar.is-actual .fill{background:linear-gradient(90deg,#16a34a,#34d399)}
+  .mp-bar.is-actual .lab{color:var(--up)}
+  .mp-bar .cnt{font-family:'Barlow Condensed';font-weight:800;font-size:15px;color:var(--muted);text-align:left}
+  .mp-bar .lab .tick{color:var(--up);margin-left:3px;font-family:'Inter';font-size:11px}
+
+  /* Sort control row. */
+  .mp-tools{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:18px 2px 12px;flex-wrap:wrap}
+  .mp-tools h4{margin:0;font-size:14px;font-weight:800;text-transform:uppercase;letter-spacing:.6px}
+
+  /* Per-player pick rows. */
+  .mp-row{background:var(--card);border-radius:14px;box-shadow:var(--shadow);padding:11px 14px;margin-bottom:8px;
+    display:grid;grid-template-columns:34px 1fr auto auto;gap:12px;align-items:center}
+  .mp-row.exact{border:1.5px solid #f4c430;background:linear-gradient(90deg,#fffae8,#fff 34%)}
+  .mp-row.scored{border-left:3px solid var(--up)}
+  .mp-row.live{border:1.5px solid #f6b8b8;background:linear-gradient(90deg,#fff5f5,#fff 30%)}
+  .mp-rank{font-family:'Barlow Condensed';font-weight:800;font-size:15px;color:var(--muted);text-align:center}
+  .mp-who{display:flex;align-items:center;gap:10px;min-width:0}
+  .mp-who .nm{font-weight:700;font-size:14.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .mp-pick{display:flex;align-items:center;justify-content:flex-end;gap:8px;text-align:right}
+  .mp-pick .sc{font-family:'Barlow Condensed';font-weight:800;font-size:20px;color:var(--accent)}
+  .mp-pick .teams{display:flex;flex-direction:column;gap:3px;align-items:flex-end;font-size:12.5px;font-weight:700}
+  .mp-pick .teams .t{display:inline-flex;align-items:center;gap:6px}
+  .mp-pick .hid{color:var(--muted);font-style:italic;font-size:12.5px}
+  .mp-res{text-align:right;min-width:62px}
+  .mp-res .pv{font-family:'Barlow Condensed';font-weight:800;font-size:20px}
+  .mp-res .pv.zero{color:var(--muted)}
+  .mp-res .pv.live{color:#e23b3b}
+  .mp-res .tag{font-size:9.5px;font-weight:800;text-transform:uppercase;letter-spacing:.3px;color:var(--muted)}
+  .mp-res .tag.hit{color:#9a7b00}
+  .mp-self{box-shadow:0 0 0 2px var(--accent) inset, var(--shadow)}
+
+  @media(max-width:640px){
+    .mp-board .mp-side .flag{width:44px;height:33px}
+    .mp-board .mp-side .nm{font-size:13.5px;max-width:96px}
+    /* Pick rows: rank+name on top, pick + result on the second row. */
+    .mp-row{grid-template-columns:26px 1fr auto;gap:8px 10px;padding:11px 13px}
+    .mp-rank{grid-column:1;grid-row:1}
+    .mp-who{grid-column:2;grid-row:1}
+    .mp-res{grid-column:3;grid-row:1}
+    .mp-pick{grid-column:1 / -1;grid-row:2;justify-content:flex-start;padding-top:8px;border-top:1px solid var(--line)}
+    .mp-pick .teams{align-items:flex-start}
+    .mp-bar{grid-template-columns:74px 1fr 30px;gap:8px}
+  }
 </style>
 </head>
 <body>
@@ -430,6 +536,20 @@ function fmtFixture(iso){
     time:d.toLocaleTimeString(undefined,{hour:'numeric',minute:'2-digit'})
   };
 }
+// Host city from an IANA timezone, e.g. "America/New_York" -> "New York".
+function tzCity(tz){
+  if(!tz) return '';
+  const part=tz.split('/').pop()||'';
+  return part.replace(/_/g,' ').trim();
+}
+// Short timezone label for the kickoff instant in that zone, e.g. "EDT".
+function tzAbbr(iso,tz){
+  if(!iso||!tz) return '';
+  try{
+    const parts=new Intl.DateTimeFormat('en-US',{timeZone:tz,timeZoneName:'short'}).formatToParts(new Date(iso));
+    return parts.find(p=>p.type==='timeZoneName')?.value||'';
+  }catch(e){ return ''; }
+}
 function shortStamp(iso){
   const d=new Date(iso);
   return d.toLocaleDateString(undefined,{month:'short',day:'numeric'})+' '+d.toLocaleTimeString(undefined,{hour:'numeric'});
@@ -460,8 +580,9 @@ async function loadData(){
   renderMovers();
   renderBoard();
   renderRecent();
-  // If a player's prediction sheet is open, refresh its scores too.
-  if($('#overlay').classList.contains('open')) renderSheetCurrent();
+  // If a modal is open, refresh whichever view is on top so live scores update
+  // in place (without resetting scroll, filters, or the navigation stack).
+  if(MODAL_STACK.length){ const v=topView(); if(v&&v.refresh) v.refresh(); }
   $('#foot').textContent = `${RANKINGS.players.length} players · ${HISTORY.length} snapshot${HISTORY.length===1?'':'s'} tracked · times shown in your local timezone`;
 }
 
@@ -500,7 +621,7 @@ async function init(){
   setInterval(()=>{
     renderLiveStrip();
     renderRecent();
-    if($('#overlay').classList.contains('open')) renderSheetCurrent();
+    if(MODAL_STACK.length){ const v=topView(); if(v&&v.refresh) v.refresh(); }
   }, 20000);
 }
 
@@ -594,6 +715,14 @@ function isLive(fx){
   return false;
 }
 function teamName(t){ return (t&&(t.name||t.code))||'TBD'; }
+/* Stable id for a fixture, shared by every render path so a click anywhere
+   (live strip, results, a player's sheet) resolves to the same match. Every
+   scraped fixture carries a unique fixture_number; the composite is just a
+   defensive fallback. */
+function matchKey(fx){
+  if(!fx) return '';
+  return String(fx.fixture_number ?? (teamName(fx.match?.home)+'_'+teamName(fx.match?.away)+'_'+(fx.kickoff_utc||'')));
+}
 
 /* Collect the set of matches that are in progress right now, deduped by
    fixture number across every player's prediction page. */
@@ -602,12 +731,13 @@ function liveMatches(){
   Object.values(PRED).forEach(p=>{
     (p.matchdays||[]).forEach(md=>(md.fixtures||[]).forEach(fx=>{
       if(!isLive(fx)) return;
-      const key=fx.fixture_number??(teamName(fx.match?.home)+teamName(fx.match?.away));
+      const key=matchKey(fx);
       if(!seen.has(key)){
         // Until the feed posts a numeric score the raw value is a status code
         // ("NS"); show "vs" rather than leaking the badge into the matchup line.
         const sc=clean(fx.actual_score||'');
         seen.set(key,{
+          key,
           home:teamName(fx.match?.home), homeCode:fx.match?.home?.code,
           away:teamName(fx.match?.away), awayCode:fx.match?.away?.code,
           score:/\d/.test(sc)?sc:'vs', status:clean(fx.status)||'LIVE',
@@ -626,9 +756,10 @@ function allMatches(){
   const seen=new Map();
   Object.values(PRED).forEach(p=>{
     (p.matchdays||[]).forEach(md=>(md.fixtures||[]).forEach(fx=>{
-      const key=fx.fixture_number??(teamName(fx.match?.home)+teamName(fx.match?.away)+(fx.kickoff_utc||''));
+      const key=matchKey(fx);
       if(!seen.has(key)){
         seen.set(key,{
+          key,
           round:md.round||fx.round||'Matches',
           home:teamName(fx.match?.home), homeCode:fx.match?.home?.code,
           away:teamName(fx.match?.away), awayCode:fx.match?.away?.code,
@@ -662,7 +793,7 @@ function resCard(m,i){
   const tag=m.live
     ? '<span style="color:#e23b3b;display:inline-flex;align-items:center;gap:4px"><span class="livedot"></span>LIVE</span>'
     : 'FT · '+esc(dt);
-  return `<div class="rescard ${m.live?'live':''}" style="animation-delay:${i*0.05}s">
+  return `<div class="rescard ${m.live?'live':''}" data-match-key="${esc(m.key)}" role="button" tabindex="0" title="See every player's prediction for this match" style="animation-delay:${i*0.05}s">
     <div class="rc-top"><span>${esc(m.round)}</span><span>${tag}</span></div>
     <div class="rc-team ${hw?'win':''}">
       <span class="tinfo">${flagImg(m.homeCode,'flag sm')}<span class="tn">${esc(m.home)}</span></span>
@@ -675,8 +806,46 @@ function resCard(m,i){
   </div>`;
 }
 
+/* ---------------- Modal stack ----------------
+   One overlay, many stacked views. Opening a match popup from inside the
+   player sheet or the results list pushes a new view and shows a ‹ Back button
+   that returns you exactly where you came from; Esc / overlay-click pop one
+   level. Each view exposes a light `refresh()` used by the 20s live tick and
+   manual Refresh so live scores update in place without resetting scroll or
+   filters. */
+let MODAL_STACK=[];
+function topView(){ return MODAL_STACK[MODAL_STACK.length-1]||null; }
+function openModalView(view){
+  const overlay=$('#overlay');
+  if(MODAL_STACK.length) MODAL_STACK[MODAL_STACK.length-1].scroll=overlay.scrollTop;
+  destroyCharts();
+  MODAL_STACK.push(view);
+  view.render();
+  overlay.classList.add('open');
+  document.body.style.overflow='hidden';
+  overlay.scrollTop=0;
+}
+function popModal(){
+  if(MODAL_STACK.length<=1){ closeModal(); return; }
+  destroyCharts();
+  MODAL_STACK.pop();
+  const v=topView();
+  v.render();
+  $('#overlay').scrollTop=v.scroll||0;
+}
+/* Back (only when something sits beneath) + close, shared by every view. */
+function modalControls(){
+  const back=MODAL_STACK.length>1?`<button class="mback" type="button" aria-label="Go back">‹ Back</button>`:'';
+  return back+`<button class="close" type="button" aria-label="Close">×</button>`;
+}
+function wireModalControls(modal){
+  const b=modal.querySelector('.mback'); if(b) b.addEventListener('click',popModal);
+  modal.querySelector('.close').addEventListener('click',closeModal);
+}
+
 /* Full match list in a modal, grouped by round in chronological order. */
-function openResults(){
+function openResults(){ openModalView({type:'results',render:renderResultsView,refresh:renderResultsView,scroll:0}); }
+function renderResultsView(){
   const ms=allMatches();
   const groups=[], idx={};
   ms.forEach(m=>{
@@ -692,16 +861,15 @@ function openResults(){
     g.items.forEach(m=>body+=resRow(m));
     body+=`</div>`;
   });
+  const hasback=MODAL_STACK.length>1;
   const modal=$('#modal');
   modal.innerHTML=`
-    <div class="mhead">
-      <div><h3>All results &amp; fixtures</h3><div class="meta">${ms.length} matches · scores fill in as games finish</div></div>
-      <button class="close" aria-label="Close">×</button>
+    <div class="mhead${hasback?' hasback':''}">
+      <div><h3>All results &amp; fixtures</h3><div class="meta">${ms.length} matches · tap any match to see everyone's pick</div></div>
+      ${modalControls()}
     </div>
     <div class="mbody">${body||'<div class="empty">No matches scraped yet.</div>'}</div>`;
-  modal.querySelector('.close').addEventListener('click',closeModal);
-  $('#overlay').classList.add('open');
-  document.body.style.overflow='hidden';
+  wireModalControls(modal);
 }
 function resRow(m){
   const sc=parseScore(m.score);
@@ -719,7 +887,7 @@ function resRow(m){
     mid=`<span class="rr-kick">${esc(when.time||'TBD')}</span>`;
   }
   const dateLine=(when.date&&when.date!=='TBD')?`<div>${esc(when.date)}</div>`:'';
-  return `<div class="resrow ${m.live?'live':''}">
+  return `<div class="resrow ${m.live?'live':''}" data-match-key="${esc(m.key)}" role="button" tabindex="0" title="See every player's prediction for this match">
     <div class="rr-when">${badge}${dateLine}</div>
     <div class="rr-teams">
       <div class="rr-team ${hw?'win':''}">${flagImg(m.homeCode,'flag sm')}<span class="tn">${esc(m.home)}</span></div>
@@ -734,7 +902,7 @@ function renderLiveStrip(){
   const live=liveMatches();
   if(!live.length){ box.innerHTML=''; return; }
   box.innerHTML=live.map(m=>`
-    <div class="liveitem">
+    <div class="liveitem" data-match-key="${esc(m.key)}" role="button" tabindex="0" title="See every player's prediction for this match">
       <div class="lv"><span class="livedot"></span>Live now</div>
       <div class="mt">
         ${flagImg(m.homeCode,'flag sm')}<span>${esc(m.home)}</span>
@@ -854,23 +1022,27 @@ function rankTrendTag(arr){
 let FILTERS={mode:'upcoming',today:false};
 
 function openPlayer(teamId){
+  FILTERS={mode:'upcoming',today:false};   // reset only on a fresh open, not on Back
+  openModalView({type:'player',teamId,render:()=>renderPlayerView(teamId),refresh:renderSheetCurrent,scroll:0});
+}
+function renderPlayerView(teamId){
   const pdata=PRED[teamId];
   const base=RANKINGS.players.find(p=>p.team_id===teamId)||{};
   const name=(pdata&&pdata.name)||base.name||'Player';
   const flag=(pdata&&pdata.flag)||base.flag;
   const s=playerSeries(teamId);
   const ptsT=trendTag(s.pts), rkT=rankTrendTag(s.ranks), exT=trendTag(s.exact);
-  FILTERS={mode:'upcoming',today:false};
+  const hasback=MODAL_STACK.length>1;
 
   const modal=$('#modal');
   modal.innerHTML=`
-    <div class="mhead">
+    <div class="mhead${hasback?' hasback':''}">
       ${flagImg(flag)}
       <div>
         <h3>${esc(name)}</h3>
         <div class="meta">Rank #${base.rank??'–'} · ${base.points??pdata?.grand_total??0} pts · 🎯 ${base.exact??0} exact</div>
       </div>
-      <button class="close" aria-label="Close">×</button>
+      ${modalControls()}
     </div>
     <div class="mbody">
       <div class="stats">
@@ -900,14 +1072,14 @@ function openPlayer(teamId){
         </div>
       </details>
       <div class="sheet-head">
-        <h4>Prediction sheet</h4>
+        <div><h4>Prediction sheet</h4><div class="sheet-hint">Tap any match to see everyone's pick</div></div>
         <div class="filters" id="filters"></div>
       </div>
       <div id="sheet"></div>
       ${renderBonus(pdata)}
     </div>`;
 
-  modal.querySelector('.close').addEventListener('click',closeModal);
+  wireModalControls(modal);
   buildFilters(teamId);
   renderSheet(teamId);
   // Charts live in a collapsed panel; draw lazily on first expand (a hidden
@@ -919,8 +1091,6 @@ function openPlayer(teamId){
     if(!chartsDrawn){ drawCharts(s); chartsDrawn=true; }
     else charts.forEach(c=>c.resize());
   });
-  $('#overlay').classList.add('open');
-  document.body.style.overflow='hidden';
   requestAnimationFrame(positionSegThumb);
 }
 
@@ -972,15 +1142,19 @@ function buildFilters(teamId){
 
 /* Slide + size the segmented-control thumb under the active option. Run after
    the modal is visible (offsetWidth is 0 while the overlay is display:none). */
-function positionSegThumb(){
-  const seg=document.querySelector('#filters .segmented'); if(!seg) return;
+function positionThumb(seg){
+  if(!seg) return;
   const thumb=seg.querySelector('.seg-thumb');
   const active=seg.querySelector('.seg.active');
   if(!thumb||!active) return;
   thumb.style.width=active.offsetWidth+'px';
   thumb.style.transform=`translateX(${active.offsetLeft}px)`;
 }
-window.addEventListener('resize',positionSegThumb);
+function positionSegThumb(){ positionThumb(document.querySelector('#filters .segmented')); }
+window.addEventListener('resize',()=>{
+  positionSegThumb();
+  positionThumb(document.querySelector('#mpSort'));
+});
 let CURRENT_TEAM=null;
 function renderSheetCurrent(){ if(CURRENT_TEAM) renderSheet(CURRENT_TEAM); }
 
@@ -1093,7 +1267,7 @@ function fixtureHtml(fx){
     </div>`;
   }
 
-  return `<div class="fx ${live?'live':''} ${fx.is_exact&&done?'exact':''}">
+  return `<div class="fx fxlink ${live?'live':''} ${fx.is_exact&&done?'exact':''}" data-match-key="${esc(matchKey(fx))}" role="button" tabindex="0" title="See every player's prediction for this match">
     <div class="when">${st}<div>${esc(when.date)}</div><div>${esc(when.time)}</div></div>
     <div class="match">
       ${teamLine(fx.match?.home)}
@@ -1122,6 +1296,189 @@ function renderBonus(pdata){
     (b.subtotal!=null?`<span class="gsub">Subtotal <b class="num">${b.subtotal}</b></span>`:'')+`</div>${rows}</div>`;
 }
 
+/* ---------------- Match predictions popup ----------------
+   Everyone's pick for one fixture in a single view: their picked score (or, in
+   the knockout rounds, the two teams they expect), plus — once the game is
+   live/done — the points it earned them, mirroring the per-player sheet. Reached
+   by tapping a match anywhere it appears (live strip, recent results, the All
+   Results list, or any row in a player's sheet). */
+
+let MATCH_SORT=null;  // null = auto (points when there's a result, else rank)
+
+/* Pull every player's entry for one fixture, plus the shared match meta. */
+function collectMatch(key){
+  let meta=null; const picks=[];
+  Object.values(PRED).forEach(p=>{
+    (p.matchdays||[]).forEach(md=>(md.fixtures||[]).forEach(fx=>{
+      if(matchKey(fx)!==key) return;
+      if(!meta){
+        meta={
+          home:teamName(fx.match?.home), homeCode:fx.match?.home?.code,
+          away:teamName(fx.match?.away), awayCode:fx.match?.away?.code,
+          round:md.round||fx.round||'Match', kickoff:fx.kickoff_utc,
+          tz:fx.kickoff_timezone||'',
+          status:fx.status, actual:clean(fx.actual_score||''),
+          live:isLive(fx), done:isCompleted(fx),
+        };
+      }
+      const base=(RANKINGS.players||[]).find(x=>x.team_id===p.team_id)||{};
+      picks.push({
+        team_id:p.team_id, name:p.name||base.name||'Player',
+        flag:p.flag||base.flag, rank:base.rank??p.rank??999,
+        points:fx.points??0, is_exact:!!fx.is_exact, predicted:fx.predicted||null,
+      });
+    }));
+  });
+  return {meta,picks};
+}
+
+/* Normalise a prediction into a comparable label for the distribution and a
+   render-ready shape. Hidden picks have no label (excluded from consensus). */
+function predLabel(pred){
+  if(!pred||pred.hidden) return {hidden:true};
+  if(pred.type==='teams'){
+    const h=(pred.home&&(pred.home.code||pred.home.name))||'?';
+    const a=(pred.away&&(pred.away.code||pred.away.name))||'?';
+    return {hidden:false,type:'teams',home:pred.home,away:pred.away,key:h+' / '+a};
+  }
+  const s=clean(pred.score||'');
+  return {hidden:false,type:'score',score:s||'—',key:s||'—'};
+}
+
+function sortPicks(picks,mode){
+  const a=picks.slice();
+  if(mode==='rank') a.sort((x,y)=>x.rank-y.rank);
+  else if(mode==='name') a.sort((x,y)=>x.name.localeCompare(y.name));
+  else a.sort((x,y)=>(y.points-x.points)||(y.is_exact-x.is_exact)||(x.rank-y.rank)); // points
+  return a;
+}
+
+function openMatch(key){ MATCH_SORT=null; openModalView({type:'match',key,render:()=>renderMatchView(key),refresh:()=>renderMatchView(key),scroll:0}); }
+
+function renderMatchView(key){
+  const {meta,picks}=collectMatch(key);
+  const modal=$('#modal');
+  const hasback=MODAL_STACK.length>1;
+  if(!meta){
+    modal.innerHTML=`<div class="mhead${hasback?' hasback':''}"><div><h3>Match</h3></div>${modalControls()}</div>`+
+      `<div class="mbody"><div class="empty">No prediction data for this match yet.</div></div>`;
+    wireModalControls(modal); return;
+  }
+  const sc=parseScore(meta.actual);
+  const hasResult=!!sc && /\d/.test(meta.actual);
+  const hw=hasResult&&sc.h>sc.a, aw=hasResult&&sc.a>sc.h;
+
+  // Scoreboard hero
+  let mid;
+  if(meta.live) mid=`<div class="mp-score live">${hasResult?esc(sc.h+' - '+sc.a):'0 - 0'}</div><span class="st live"><span class="livedot"></span>LIVE</span>`;
+  else if(meta.done&&hasResult) mid=`<div class="mp-score">${esc(sc.h+' - '+sc.a)}</div><span class="st ft">FT</span>`;
+  else{ const w=fmtFixture(meta.kickoff); mid=`<div class="mp-vs">vs</div><div class="mp-kick">${esc(w.date)}${w.time?' · '+esc(w.time):''}</div>`; }
+  const board=`<div class="mp-board">
+    <div class="mp-side ${hw?'win':''}">${flagImg(meta.homeCode)}<div class="nm">${esc(meta.home)}</div></div>
+    <div class="mp-mid">${mid}</div>
+    <div class="mp-side ${aw?'win':''}">${flagImg(meta.awayCode)}<div class="nm">${esc(meta.away)}</div></div>
+  </div>`;
+
+  // Kickoff time + location strip. Location is the host city derived from the
+  // fixture's timezone (the only place-of-play signal in the feed).
+  const items=[];
+  const when=fmtFixture(meta.kickoff);
+  if(meta.kickoff) items.push(`<span class="mi"><span class="ic">🕒</span>${esc(when.date)}${when.time?`<span class="sub">·</span>${esc(when.time)}`:''}</span>`);
+  const loc=tzCity(meta.tz);
+  if(loc) items.push(`<span class="mi"><span class="ic">📍</span>${esc(loc)}<span class="sub">${esc(tzAbbr(meta.kickoff,meta.tz))}</span></span>`);
+  const infoHtml=items.length?`<div class="mp-meta">${items.join('')}</div>`:'';
+
+  // Consensus
+  const revealed=picks.filter(p=>!predLabel(p.predicted).hidden);
+  const hiddenCount=picks.length-revealed.length;
+  const dist={};
+  revealed.forEach(p=>{ const k=predLabel(p.predicted).key; (dist[k]=dist[k]||{key:k,count:0}).count++; });
+  const distArr=Object.values(dist).sort((a,b)=>b.count-a.count);
+  const nailed=picks.filter(p=>p.is_exact&&meta.done);
+  const scored=picks.filter(p=>p.points>0);
+  const top=picks.slice().sort((a,b)=>b.points-a.points)[0];
+  const actualKey=hasResult?(sc.h+' - '+sc.a):null;
+
+  const chips=[];
+  if(meta.done){
+    chips.push(`<div class="mp-chip ${nailed.length?'hit':''}"><span class="ic">🎯</span><b>${nailed.length}</b> of ${picks.length} nailed it</div>`);
+    chips.push(`<div class="mp-chip"><span class="ic">✅</span><b>${scored.length}</b> earned points</div>`);
+    if(top&&top.points>0) chips.push(`<div class="mp-chip"><span class="ic">🏆</span>Top: ${esc(top.name)} <b>${top.points}</b></div>`);
+  }else if(meta.live){
+    chips.push(`<div class="mp-chip"><span class="ic"><span class="livedot"></span></span><b>${scored.length}</b> in the points</div>`);
+    if(top&&top.points>0) chips.push(`<div class="mp-chip"><span class="ic">🏆</span>Leading: ${esc(top.name)} <b>${top.points}</b></div>`);
+  }else{
+    chips.push(`<div class="mp-chip"><span class="ic">📝</span><b>${revealed.length}</b> picks in${hiddenCount?` · ${hiddenCount} hidden`:''}</div>`);
+  }
+  if(distArr.length) chips.push(`<div class="mp-chip"><span class="ic">👥</span>Crowd pick <b>${esc(distArr[0].key)}</b> ×${distArr[0].count}</div>`);
+  const sumHtml=`<div class="mp-sum">${chips.join('')}</div>`;
+
+  // Distribution bars (top 5)
+  let distHtml='';
+  if(revealed.length){
+    const maxC=distArr[0].count;
+    const rows=distArr.slice(0,5).map(d=>{
+      const isAct=actualKey&&d.key===actualKey;
+      return `<div class="mp-bar ${isAct?'is-actual':''}">
+        <div class="lab">${esc(d.key)}${isAct?'<span class="tick">✓</span>':''}</div>
+        <div class="track"><div class="fill" style="width:${Math.round(d.count/maxC*100)}%"></div></div>
+        <div class="cnt">${d.count}</div></div>`;
+    }).join('');
+    distHtml=`<div class="mp-dist"><h4>Pick distribution${distArr.length>5?` · top 5 of ${distArr.length}`:''}</h4>${rows}</div>`;
+  }
+
+  // Sort + list
+  const mode=MATCH_SORT||((meta.done||meta.live)?'points':'rank');
+  const showPts=meta.done||meta.live;
+  const seg=(m,l)=>`<button class="seg ${mode===m?'active':''}" type="button" data-sort="${m}" role="tab" aria-selected="${mode===m}">${l}</button>`;
+  const tools=`<div class="mp-tools"><h4>Everyone's pick</h4>
+    <div class="segmented" id="mpSort" role="tablist" aria-label="Sort players">
+      <span class="seg-thumb" aria-hidden="true"></span>
+      ${showPts?seg('points','Points'):''}${seg('rank','Rank')}${seg('name','A–Z')}
+    </div></div>`;
+
+  const rows=sortPicks(picks,mode).map(p=>{
+    const pl=predLabel(p.predicted);
+    let pick;
+    if(pl.hidden) pick=`<span class="hid">👁️ hidden</span>`;
+    else if(pl.type==='teams') pick=`<div class="teams"><span class="t">${flagImg(pl.home&&pl.home.code,'flag sm')}${esc((pl.home&&(pl.home.name||pl.home.code))||'?')}</span><span class="t">${flagImg(pl.away&&pl.away.code,'flag sm')}${esc((pl.away&&(pl.away.name||pl.away.code))||'?')}</span></div>`;
+    else pick=`<span class="sc">${esc(pl.score)}</span>`;
+    let res;
+    if(meta.live) res=`<div class="pv live">${p.points}</div><div class="tag">live</div>`;
+    else if(meta.done) res=`<div class="pv ${p.points?'':'zero'}">${p.points}</div>`+(p.is_exact?`<div class="tag hit">🎯 exact</div>`:'');
+    else res=`<div class="tag">pending</div>`;
+    const cls=['mp-row'];
+    if(meta.done&&p.is_exact) cls.push('exact');
+    else if(showPts&&p.points>0) cls.push('scored');
+    if(meta.live&&p.points>0) cls.push('live');
+    return `<div class="${cls.join(' ')}">
+      <div class="mp-rank">${p.rank!=null&&p.rank<999?'#'+p.rank:''}</div>
+      <div class="mp-who">${flagImg(p.flag,'flag sm')}<span class="nm">${esc(p.name)}</span></div>
+      <div class="mp-pick">${pick}</div>
+      <div class="mp-res">${res}</div>
+    </div>`;
+  }).join('');
+
+  modal.innerHTML=`
+    <div class="mhead${hasback?' hasback':''}">
+      <div><h3>${esc(meta.round)}</h3><div class="meta">${esc(meta.home)} vs ${esc(meta.away)} · ${picks.length} players</div></div>
+      ${modalControls()}
+    </div>
+    <div class="mbody">
+      ${board}${infoHtml}${sumHtml}${distHtml}${tools}
+      ${rows||'<div class="empty">No picks for this match.</div>'}
+    </div>`;
+  wireModalControls(modal);
+  const sortBox=modal.querySelector('#mpSort');
+  if(sortBox){
+    sortBox.querySelectorAll('.seg').forEach(b=>b.addEventListener('click',()=>{
+      if(b.dataset.sort===mode) return;   // already showing this order
+      MATCH_SORT=b.dataset.sort; renderMatchView(key);
+    }));
+    requestAnimationFrame(()=>positionThumb(sortBox));
+  }
+}
+
 /* ---------------- Charts ---------------- */
 let CHART_LEN=0;
 function destroyCharts(){ charts.forEach(c=>c.destroy()); charts=[]; }
@@ -1148,9 +1505,24 @@ function drawCharts(s){
   mk('cExact',s.exact,amb,{scales:{x:{grid:{display:false},ticks:{maxTicksLimit:5,font:{size:10}}},y:{beginAtZero:true,ticks:{precision:0,font:{size:10}}}}});
 }
 
-function closeModal(){ $('#overlay').classList.remove('open'); document.body.style.overflow=''; destroyCharts(); }
-$('#overlay').addEventListener('click',e=>{ if(e.target.id==='overlay') closeModal(); });
-document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeModal(); });
+function closeModal(){ MODAL_STACK=[]; $('#overlay').classList.remove('open'); document.body.style.overflow=''; destroyCharts(); }
+// Overlay-click and Esc pop one level (Back), closing outright at the root.
+$('#overlay').addEventListener('click',e=>{ if(e.target.id==='overlay') popModal(); });
+document.addEventListener('keydown',e=>{ if(e.key==='Escape'&&MODAL_STACK.length) popModal(); });
+
+// One delegated handler opens the match popup from any [data-match-key] element
+// (live strip, recent results, the All Results list, a player's sheet row).
+document.addEventListener('click',e=>{
+  const el=e.target.closest&&e.target.closest('[data-match-key]');
+  if(el) openMatch(el.getAttribute('data-match-key'));
+});
+document.addEventListener('keydown',e=>{
+  if(e.key!=='Enter'&&e.key!==' ') return;
+  const el=e.target.closest&&e.target.closest('[data-match-key]');
+  if(!el) return;
+  e.preventDefault();
+  openMatch(el.getAttribute('data-match-key'));
+});
 
 init();
 </script>
