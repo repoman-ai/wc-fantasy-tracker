@@ -522,26 +522,21 @@ function computeMovement(){
   return m;
 }
 
-// Snapshots captured when no match was in progress. The scraper tags each entry
-// with `settled`; treat a missing flag as settled for forward-compatibility.
-function settledHistory(){ return HISTORY.filter(s=>s && s.settled!==false); }
-
-// Top-climber / biggest-drop movers are built from settled snapshots only, so a
-// mid-match wobble in the live totals can't manufacture a fake rank swing. We
-// compare the two most recent settled snapshots.
+// Top-climber / biggest-drop movers are built from each player's confirmed
+// settled readings (same wobble filter as the charts), so a mid-match wobble in
+// the live totals can't manufacture a fake rank swing. Per player we compare
+// their two most recent confirmed steps — i.e. the rank shift from their last
+// genuine scoring event — rather than two whole snapshots, so the strip stays
+// meaningful even when few snapshots are wholly settled.
 function computeSettledMovement(){
-  const sh=settledHistory();
-  const cur=sh[sh.length-1], prev=sh[sh.length-2];
   const move={};
-  if(cur){
-    cur.players.forEach(p=>{
-      const was=prev?prev.players.find(x=>x.team_id===p.team_id):null;
-      if(!was){ move[p.team_id]={delta:0,status:'same'}; return; }
-      const delta=was.rank-p.rank;
-      move[p.team_id]={delta,status:delta>0?'up':delta<0?'down':'same'};
-    });
-  }
-  return {snapshot:cur,move};
+  (RANKINGS.players||[]).forEach(p=>{
+    const steps=confirmedReadings(p.team_id);
+    if(steps.length<2){ move[p.team_id]={delta:0,status:'same'}; return; }
+    const delta=steps[steps.length-2].p.rank-steps[steps.length-1].p.rank; // +ve = climbed
+    move[p.team_id]={delta,status:delta>0?'up':delta<0?'down':'same'};
+  });
+  return {snapshot:{players:RANKINGS.players},move};
 }
 
 function renderMovers(){
@@ -609,10 +604,13 @@ function liveMatches(){
       if(!isLive(fx)) return;
       const key=fx.fixture_number??(teamName(fx.match?.home)+teamName(fx.match?.away));
       if(!seen.has(key)){
+        // Until the feed posts a numeric score the raw value is a status code
+        // ("NS"); show "vs" rather than leaking the badge into the matchup line.
+        const sc=clean(fx.actual_score||'');
         seen.set(key,{
           home:teamName(fx.match?.home), homeCode:fx.match?.home?.code,
           away:teamName(fx.match?.away), awayCode:fx.match?.away?.code,
-          score:fx.actual_score||'0 - 0', status:clean(fx.status)||'LIVE',
+          score:/\d/.test(sc)?sc:'vs', status:clean(fx.status)||'LIVE',
         });
       }
     }));
@@ -797,9 +795,13 @@ function renderBoard(){
    append the current live standing as a "now" point so the chart tip always
    reflects where the player stands right now. Working per-player also filters
    rank wobble caused by OTHER players' mid-match blips. */
-function playerSeries(teamId){
+const readingSig=p=>p?`${p.points}|${p.rank}|${p.exact}`:null;
+
+/* One player's confirmed settled readings, oldest→newest, collapsed so each
+   entry is a genuine scoring change. Shared by the charts and the movers strip
+   so both filter mid-match wobble the same way. */
+function confirmedReadings(teamId){
   const H=(HISTORY||[]).filter(s=>s&&Array.isArray(s.players));
-  const sig=p=>p?`${p.points}|${p.rank}|${p.exact}`:null;
   const raw=H.map(s=>{
     const p=s.players.find(x=>x.team_id===teamId);
     return {ts:s.timestamp, settled:s.settled!==false, p:p?{points:p.points,rank:p.rank,exact:p.exact}:null};
@@ -808,11 +810,15 @@ function playerSeries(teamId){
   for(let i=0;i<raw.length;i++){
     const r=raw[i]; if(!r.p) continue;
     const nxt=raw[i+1];
-    if(r.settled || (nxt&&nxt.p&&sig(nxt.p)===sig(r.p))) trusted.push(r);
+    if(r.settled || (nxt&&nxt.p&&readingSig(nxt.p)===readingSig(r.p))) trusted.push(r);
   }
   const steps=[]; let prev=null;
-  trusted.forEach(r=>{ const g=sig(r.p); if(g!==prev){ steps.push(r); prev=g; } });
+  trusted.forEach(r=>{ const g=readingSig(r.p); if(g!==prev){ steps.push(r); prev=g; } });
+  return steps;
+}
 
+function playerSeries(teamId){
+  const steps=confirmedReadings(teamId);
   const labels=[],pts=[],ranks=[],exact=[];
   steps.forEach(r=>{ labels.push(shortStamp(r.ts)); pts.push(r.p.points); ranks.push(r.p.rank); exact.push(r.p.exact); });
 
@@ -822,7 +828,7 @@ function playerSeries(teamId){
   if(cur){
     const curp={points:cur.points,rank:cur.rank,exact:cur.exact};
     const last=steps.length?steps[steps.length-1].p:null;
-    if(!last || sig(last)!==sig(curp)){
+    if(!last || readingSig(last)!==readingSig(curp)){
       labels.push('now'); pts.push(cur.points); ranks.push(cur.rank); exact.push(cur.exact); live=true;
     }
   }
