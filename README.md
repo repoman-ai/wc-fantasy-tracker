@@ -54,13 +54,17 @@ moment Pages goes live; the first real Action run overwrites them with live data
    - **Layer 1 — Standings:** ranked cards with flags, points, exact-score count,
      ▲▼ rank-movement vs the previous snapshot, green highlight for climbers, a
      "top climber / biggest drop / leader" strip, and gold/silver/bronze podium.
+     A **📅 Full Schedule** button beside the heading (and a link under the
+     recent-results strip) opens every match — played and upcoming — grouped by
+     round in kickoff order, with an **All / Upcoming / Completed** segmented
+     filter and each row showing its kickoff date + time.
    - **Layer 2 — Player view** (tap any row): points-over-time, rank-over-time, and
      exact-predictions-over-time charts, plus the full prediction sheet grouped by
      matchday — completed *and* upcoming matches — with a "🎯 perfect call" badge on
      exact scores, matchday subtotals, the bonus questions, and
      **Completed / Upcoming / Today-only** filters that combine.
    - **Layer 3 — Match view** (tap any match — in the live strip, the recent-results
-     cards, the All Results list, or any row on a player's sheet): a popup showing
+     cards, the Full Schedule list, or any row on a player's sheet): a popup showing
      **every player's prediction for that one match** — their picked score (or, in
      the knockout rounds, the two teams they expect) and, once the game is
      live/finished, the points it earned them. Players sort by points for that game
@@ -68,6 +72,12 @@ moment Pages goes live; the first real Action run overwrites them with live data
      scored most, the crowd-favourite scoreline) and a pick-distribution chart that
      highlights the actual result. Opened from inside another view, it shows a
      **‹ Back** button that returns you exactly where you were.
+
+   Every clock on the site (kickoff times, "updated" stamp, schedule rows)
+   renders in one chosen **timezone**: it defaults to the viewer's auto-detected
+   zone, but a picker in the footer (and in the Full Schedule toolbar) lets them
+   switch to any common zone — the choice is saved in `localStorage` and applied
+   site-wide so the clocks never disagree.
 
 ---
 

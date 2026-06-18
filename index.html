@@ -80,8 +80,19 @@
 
   /* ---------- Board ---------- */
   .board{margin-top:-40px;position:relative;z-index:2}
-  .board-head{display:flex;align-items:center;justify-content:space-between;margin:0 4px 10px;color:#fff}
+  .board-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 4px 10px;color:#fff;flex-wrap:wrap}
   .board-head h2{font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;margin:0;opacity:.95}
+  .bh-left{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+  /* Prominent schedule entry, sitting on the hero gradient beside "Standings". */
+  .schedbtn{display:inline-flex;align-items:center;gap:6px;cursor:pointer;font:inherit;
+    font-size:12.5px;font-weight:800;color:#fff;letter-spacing:.2px;
+    background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.32);
+    border-radius:999px;padding:6px 14px;line-height:1;
+    transition:background .15s,border-color .15s,transform .12s}
+  .schedbtn:hover{background:rgba(255,255,255,.28);border-color:rgba(255,255,255,.5);transform:translateY(-1px)}
+  .schedbtn:active{transform:translateY(0)}
+  .schedbtn .ic{font-size:14px}
+  .schedbtn:focus-visible{outline:2px solid #fff;outline-offset:2px}
   .legend{display:flex;gap:12px;font-size:11.5px;color:#e7e9f5;opacity:.9;flex-wrap:wrap}
   .legend span{display:inline-flex;align-items:center;gap:5px}
   .pill{width:9px;height:9px;border-radius:3px;display:inline-block}
@@ -170,20 +181,28 @@
   .rescard .rc-team.win .gs{color:var(--ink)}
   .rescard.live .gs{color:#e23b3b}
 
-  /* All-results modal rows */
+  /* Full Schedule modal rows */
   .resrow{background:var(--card);border-radius:14px;box-shadow:var(--shadow);padding:10px 14px;margin-bottom:8px;
-    display:grid;grid-template-columns:120px 1fr auto;gap:12px;align-items:center}
+    display:grid;grid-template-columns:128px 1fr auto;gap:12px;align-items:center}
   .resrow.live{border:1.5px solid #f6b8b8;background:linear-gradient(90deg,#fff5f5,#fff 30%)}
-  .rr-when{font-size:12px;color:var(--muted);font-weight:600}
-  .rr-when .st{margin-bottom:4px}
+  .rr-when{font-size:12px;color:var(--muted);font-weight:600;line-height:1.35}
+  .rr-when .st{margin-bottom:5px}
+  .rr-date{font-weight:700;color:var(--ink)}
+  .rr-time{font-variant-numeric:tabular-nums}
   .rr-teams{display:flex;flex-direction:column;gap:6px;min-width:0}
   .rr-team{display:flex;align-items:center;gap:8px;min-width:0}
   .rr-team .tn{font-weight:600;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .rr-team.win .tn{font-weight:800}
-  .rr-score{font-family:'Barlow Condensed';font-weight:800;font-size:22px;text-align:right;min-width:60px}
+  .rr-result{text-align:right;min-width:56px}
+  .rr-score{font-family:'Barlow Condensed';font-weight:800;font-size:22px}
   .rr-score.live{color:#e23b3b}
-  .rr-kick{font-family:'Inter';font-weight:700;font-size:13px;color:var(--muted)}
-  @media(max-width:640px){.resrow{grid-template-columns:96px 1fr auto}}
+  .rr-vs{font-family:'Barlow Condensed';font-weight:800;font-size:16px;color:var(--same)}
+  @media(max-width:640px){.resrow{grid-template-columns:104px 1fr auto}}
+
+  /* Full Schedule toolbar: segmented filter + timezone picker, sitting just
+     below the modal header. */
+  .sched-tools{display:flex;align-items:center;justify-content:space-between;
+    gap:10px;flex-wrap:wrap;padding:14px 18px 4px}
 
   /* ---------- Modal ---------- */
   .overlay{position:fixed;inset:0;background:rgba(10,15,30,.55);backdrop-filter:blur(3px);
@@ -353,7 +372,22 @@
     .bonus .val{grid-column:1 / -1}
   }
   .empty{background:var(--card);border-radius:14px;padding:26px;text-align:center;color:var(--muted);box-shadow:var(--shadow)}
-  .foot{text-align:center;color:var(--muted);font-size:12px;margin-top:26px}
+  .foot{text-align:center;color:var(--muted);font-size:12px;margin-top:14px}
+
+  /* Timezone picker — shared look between the footer bar and the schedule
+     toolbar (.tzpick). A native <select> for accessibility + zero JS overhead. */
+  .tzbar{display:flex;justify-content:center;margin-top:26px}
+  .tzpick{display:inline-flex;align-items:center;gap:8px;background:var(--card);
+    border:1px solid var(--line);border-radius:999px;padding:6px 8px 6px 14px;box-shadow:var(--shadow);
+    font-size:12.5px;font-weight:700;color:var(--muted)}
+  .tzpick .ic{font-size:13px}
+  .tzpick .lab{white-space:nowrap}
+  .tzpick select{font:inherit;font-weight:700;font-size:12.5px;color:var(--ink);
+    background:#f3f6fc;border:1px solid var(--line);border-radius:999px;padding:6px 12px;cursor:pointer;
+    max-width:200px;transition:border-color .12s}
+  .tzpick select:hover{border-color:#c9d2e3}
+  .tzpick select:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+  @media(max-width:560px){.sched-tools .tzpick .ic{display:none}.tzpick select{max-width:150px}}
   .loading{padding:80px 0;text-align:center;color:var(--muted)}
 
   /* ---------- Clickable affordances ----------
@@ -483,7 +517,12 @@
   <main class="wrap">
     <section class="board">
       <div class="board-head">
-        <h2>Standings</h2>
+        <div class="bh-left">
+          <h2>Standings</h2>
+          <button id="openSchedTop" class="schedbtn" type="button" title="See every match — played and upcoming">
+            <span class="ic">📅</span>Full Schedule
+          </button>
+        </div>
         <div class="legend">
           <span><i class="pill" style="background:var(--gold)"></i>Top 3</span>
           <span><i class="pill" style="background:var(--up)"></i>Climbed</span>
@@ -496,11 +535,18 @@
     <section class="results">
       <div class="results-head">
         <h2>Recent results</h2>
-        <button id="allResults" class="seeall" type="button">View all results →</button>
+        <button id="allResults" class="seeall" type="button">View full schedule →</button>
       </div>
       <div class="resgrid" id="recentResults"><div class="loading">Loading results…</div></div>
     </section>
 
+    <div class="tzbar">
+      <label class="tzpick" for="tzSelectFoot">
+        <span class="ic">🕒</span>
+        <span class="lab">Times shown in</span>
+        <select id="tzSelectFoot" aria-label="Display timezone"></select>
+      </label>
+    </div>
     <p class="foot" id="foot"></p>
   </main>
 
@@ -524,16 +570,50 @@ function flagImg(code, cls='flag'){
   if(!code) return `<img class="${cls}" src="${FALLBACK_FLAG}" alt="">`;
   return `<img class="${cls}" src="${FLAG(code)}" alt="${esc(code)}" onerror="this.onerror=null;this.src='${FALLBACK_FLAG}'">`;
 }
+/* ---------------- Timezone ----------------
+   Every clock on the site renders in ONE chosen zone so they never disagree.
+   The preference is either the literal string "auto" (follow whatever the
+   browser detects) or an explicit IANA zone the viewer picked; it's persisted
+   in localStorage and resolved to `TZ` (the effective zone) on every change. */
+const DETECTED_TZ = (()=>{ try{ return Intl.DateTimeFormat().resolvedOptions().timeZone||'UTC'; }catch(e){ return 'UTC'; } })();
+let TZ_PREF = (()=>{ try{ return localStorage.getItem('wc_tz')||'auto'; }catch(e){ return 'auto'; } })();
+let TZ = TZ_PREF==='auto'?DETECTED_TZ:TZ_PREF;
+/* Curated picker list: the two real venue zones for WC2026 plus a spread of
+   common world zones, deduped against the detected zone. */
+const TZ_ZONES=['Pacific/Honolulu','America/Anchorage','America/Los_Angeles','America/Denver',
+  'America/Chicago','America/New_York','America/Sao_Paulo','UTC','Europe/London','Europe/Amsterdam',
+  'Europe/Athens','Africa/Johannesburg','Asia/Dubai','Asia/Kolkata','Asia/Singapore','Asia/Tokyo','Australia/Sydney'];
+function nowAbbr(tz){
+  try{ return new Intl.DateTimeFormat('en-US',{timeZone:tz,timeZoneName:'short'})
+    .formatToParts(new Date()).find(p=>p.type==='timeZoneName')?.value||tz; }catch(e){ return tz; }
+}
+function tzLabel(tz){ const c=tzCity(tz); const a=nowAbbr(tz); return c===a?c:`${c} · ${a}`; }
+/* Build the <option> list for a TZ <select>, with "Auto-detect" pinned on top. */
+function tzOptionsHTML(){
+  const zones=[DETECTED_TZ,...TZ_ZONES.filter(z=>z!==DETECTED_TZ)];
+  const auto=`<option value="auto"${TZ_PREF==='auto'?' selected':''}>Auto-detect — ${esc(tzLabel(DETECTED_TZ))}</option>`;
+  const rest=zones.map(z=>`<option value="${esc(z)}"${TZ_PREF===z?' selected':''}>${esc(tzLabel(z))}</option>`).join('');
+  return auto+rest;
+}
+/* Apply a new preference everywhere: persist, re-resolve, repaint every clock. */
+function setTZ(pref){
+  TZ_PREF=pref; TZ=pref==='auto'?DETECTED_TZ:pref;
+  try{ localStorage.setItem('wc_tz',pref); }catch(e){}
+  document.querySelectorAll('.tzpick select').forEach(s=>{ if(s.value!==pref) s.value=pref; });
+  if(RANKINGS) $('#updated').textContent='Updated '+fmtUpdated(RANKINGS.updated);
+  renderLiveStrip(); renderRecent(); updateFoot();
+  if(MODAL_STACK.length){ const v=topView(); if(v&&v.refresh) v.refresh(); }
+}
 function fmtUpdated(iso){
   const d=new Date(iso);
-  return d.toLocaleString(undefined,{weekday:'short',month:'short',day:'numeric',hour:'numeric',minute:'2-digit'});
+  return d.toLocaleString(undefined,{weekday:'short',month:'short',day:'numeric',hour:'numeric',minute:'2-digit',timeZone:TZ});
 }
 function fmtFixture(iso){
   if(!iso) return {date:'TBD',time:''};
   const d=new Date(iso);
   return {
-    date:d.toLocaleDateString(undefined,{weekday:'short',month:'short',day:'numeric'}),
-    time:d.toLocaleTimeString(undefined,{hour:'numeric',minute:'2-digit'})
+    date:d.toLocaleDateString(undefined,{weekday:'short',month:'short',day:'numeric',timeZone:TZ}),
+    time:d.toLocaleTimeString(undefined,{hour:'numeric',minute:'2-digit',timeZone:TZ})
   };
 }
 // Host city from an IANA timezone, e.g. "America/New_York" -> "New York".
@@ -552,10 +632,12 @@ function tzAbbr(iso,tz){
 }
 function shortStamp(iso){
   const d=new Date(iso);
-  return d.toLocaleDateString(undefined,{month:'short',day:'numeric'})+' '+d.toLocaleTimeString(undefined,{hour:'numeric'});
+  return d.toLocaleDateString(undefined,{month:'short',day:'numeric',timeZone:TZ})+' '+d.toLocaleTimeString(undefined,{hour:'numeric',timeZone:TZ});
 }
-const isSameLocalDay=(iso)=>{ if(!iso) return false; const a=new Date(iso),b=new Date();
-  return a.getFullYear()===b.getFullYear()&&a.getMonth()===b.getMonth()&&a.getDate()===b.getDate(); };
+/* Calendar-day key in the chosen zone (en-CA gives YYYY-MM-DD), so "Today"
+   buckets matches by the viewer's selected timezone, not the browser's. */
+const dayKey=(iso)=>new Date(iso).toLocaleDateString('en-CA',{timeZone:TZ});
+const isSameLocalDay=(iso)=>{ if(!iso) return false; return dayKey(iso)===dayKey(Date.now()); };
 
 // Fetch the three JSON files (cache-busted) and re-render everything in place.
 // Shared by the initial load and the Refresh button, so a manual refresh pulls
@@ -583,7 +665,11 @@ async function loadData(){
   // If a modal is open, refresh whichever view is on top so live scores update
   // in place (without resetting scroll, filters, or the navigation stack).
   if(MODAL_STACK.length){ const v=topView(); if(v&&v.refresh) v.refresh(); }
-  $('#foot').textContent = `${RANKINGS.players.length} players · ${HISTORY.length} snapshot${HISTORY.length===1?'':'s'} tracked · times shown in your local timezone`;
+  updateFoot();
+}
+function updateFoot(){
+  if(!RANKINGS) return;
+  $('#foot').textContent = `${RANKINGS.players.length} players · ${HISTORY.length} snapshot${HISTORY.length===1?'':'s'} tracked`;
 }
 
 // Manual refresh: spin the icon, re-fetch, then flash green briefly on success.
@@ -615,6 +701,13 @@ async function init(){
   }
   $('#refresh').addEventListener('click', refresh);
   $('#allResults').addEventListener('click', openResults);
+  $('#openSchedTop').addEventListener('click', openResults);
+  // Footer timezone picker (the site-wide control). The schedule modal renders
+  // its own picker bound to the same setTZ(), so the two always stay in sync.
+  const tzFoot=$('#tzSelectFoot');
+  tzFoot.innerHTML=tzOptionsHTML();
+  tzFoot.value=TZ_PREF;
+  tzFoot.addEventListener('change',e=>setTZ(e.target.value));
   // Re-evaluate the clock-based live state every 20s so a match lights up as
   // soon as your computer's time passes its kickoff (and dims when it ends),
   // even between scrapes / without reloading the page.
@@ -843,10 +936,17 @@ function wireModalControls(modal){
   modal.querySelector('.close').addEventListener('click',closeModal);
 }
 
-/* Full match list in a modal, grouped by round in chronological order. */
-function openResults(){ openModalView({type:'results',render:renderResultsView,refresh:renderResultsView,scroll:0}); }
+/* Full Schedule: every match in a modal, grouped by round in chronological
+   order, with an All / Upcoming / Completed segmented filter and the shared
+   timezone picker. */
+let SCHED_MODE='all';   // 'all' | 'upcoming' | 'completed'
+function openResults(){ SCHED_MODE='all'; openModalView({type:'results',render:renderResultsView,refresh:renderResultsView,scroll:0}); }
 function renderResultsView(){
-  const ms=allMatches();
+  const all=allMatches();
+  const counts={all:all.length,
+    upcoming:all.filter(m=>!m.done).length,   // upcoming bucket also holds live
+    completed:all.filter(m=>m.done).length};
+  const ms=all.filter(m=>SCHED_MODE==='upcoming'?!m.done:SCHED_MODE==='completed'?m.done:true);
   const groups=[], idx={};
   ms.forEach(m=>{
     const r=m.round||'Matches';
@@ -862,38 +962,59 @@ function renderResultsView(){
     body+=`</div>`;
   });
   const hasback=MODAL_STACK.length>1;
+  const seg=(mode,label)=>`<button class="seg ${SCHED_MODE===mode?'active':''}" type="button" role="tab" aria-selected="${SCHED_MODE===mode}" data-mode="${mode}">${label}<span class="cnt">${counts[mode]}</span></button>`;
   const modal=$('#modal');
   modal.innerHTML=`
     <div class="mhead${hasback?' hasback':''}">
-      <div><h3>All results &amp; fixtures</h3><div class="meta">${ms.length} matches · tap any match to see everyone's pick</div></div>
+      <div><h3>Full Schedule</h3><div class="meta">${all.length} matches · tap any match to see everyone's pick</div></div>
       ${modalControls()}
     </div>
-    <div class="mbody">${body||'<div class="empty">No matches scraped yet.</div>'}</div>`;
+    <div class="sched-tools">
+      <div class="segmented" id="schedSeg" role="tablist" aria-label="Filter matches">
+        <span class="seg-thumb" aria-hidden="true"></span>
+        ${seg('all','All')}${seg('upcoming','Upcoming')}${seg('completed','Completed')}
+      </div>
+      <label class="tzpick" for="tzSelectModal">
+        <span class="ic">🕒</span>
+        <select id="tzSelectModal" aria-label="Display timezone">${tzOptionsHTML()}</select>
+      </label>
+    </div>
+    <div class="mbody">${body||'<div class="empty">No matches in this filter.</div>'}</div>`;
   wireModalControls(modal);
+  const segEl=modal.querySelector('#schedSeg');
+  segEl.querySelectorAll('.seg').forEach(b=>b.addEventListener('click',()=>{
+    if(SCHED_MODE===b.dataset.mode) return;
+    SCHED_MODE=b.dataset.mode; renderResultsView();
+  }));
+  modal.querySelector('#tzSelectModal').addEventListener('change',e=>setTZ(e.target.value));
+  requestAnimationFrame(()=>positionThumb(segEl));
 }
 function resRow(m){
   const sc=parseScore(m.score);
   const when=fmtFixture(m.kickoff);
   const hw=sc&&sc.h>sc.a, aw=sc&&sc.a>sc.h;
-  let badge, mid;
+  // Status badge (top-left). Kickoff date + time always render beneath it — so
+  // even finished games show when they were played, in the chosen timezone.
+  let badge, result;
   if(m.live){
     badge='<span class="st live"><span class="livedot"></span>LIVE</span>';
-    mid=`<span class="rr-score live">${sc?sc.h+' - '+sc.a:'0 - 0'}</span>`;
+    result=`<span class="rr-score live">${sc?sc.h+' - '+sc.a:'0 - 0'}</span>`;
   }else if(m.done&&sc){
     badge='<span class="st ft">FT</span>';
-    mid=`<span class="rr-score">${sc.h} - ${sc.a}</span>`;
+    result=`<span class="rr-score">${sc.h} - ${sc.a}</span>`;
   }else{
-    badge='<span class="st ns">'+esc(clean(m.status)||'NS')+'</span>';
-    mid=`<span class="rr-kick">${esc(when.time||'TBD')}</span>`;
+    badge='<span class="st ns">Upcoming</span>';
+    result='<span class="rr-vs">vs</span>';
   }
-  const dateLine=(when.date&&when.date!=='TBD')?`<div>${esc(when.date)}</div>`:'';
+  const dateLine=(when.date&&when.date!=='TBD')?`<div class="rr-date">${esc(when.date)}</div>`:'';
+  const timeLine=when.time?`<div class="rr-time">${esc(when.time)}</div>`:'';
   return `<div class="resrow ${m.live?'live':''}" data-match-key="${esc(m.key)}" role="button" tabindex="0" title="See every player's prediction for this match">
-    <div class="rr-when">${badge}${dateLine}</div>
+    <div class="rr-when">${badge}${dateLine}${timeLine}</div>
     <div class="rr-teams">
       <div class="rr-team ${hw?'win':''}">${flagImg(m.homeCode,'flag sm')}<span class="tn">${esc(m.home)}</span></div>
       <div class="rr-team ${aw?'win':''}">${flagImg(m.awayCode,'flag sm')}<span class="tn">${esc(m.away)}</span></div>
     </div>
-    <div>${mid}</div>
+    <div class="rr-result">${result}</div>
   </div>`;
 }
 
