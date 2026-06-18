@@ -46,9 +46,9 @@ moment Pages goes live; the first real Action run overwrites them with live data
    - **403 avoidance:** the fast `requests` fetch warms up through public site
      pages first, keeps cookies/referers in one session, and adds a small
      delay+jitter between player pages. If a bot-protection 403/503 still appears,
-     `FETCH_BACKEND=auto` switches to the browser fallback.
-     The GitHub Action uses `FETCH_BACKEND=browser` because the requests path is
-     currently blocked there.
+     `FETCH_BACKEND=auto` (the GitHub Action default) switches to the browser
+     fallback for the rest of the run. The browser path is paced the same way, so
+     it doesn't burst either if the requests path is blocked from the first hit.
    - Files are written **only when valid data is present**. `history.json` only gets
      a new entry when the standings actually changed (no duplicate snapshots).
      Before any JSON is written, the scraper also fails closed if the leaderboard
@@ -58,9 +58,9 @@ moment Pages goes live; the first real Action run overwrites them with live data
 
 2. **The workflow** runs on a cron schedule, installs deps, runs the scraper, and
    commits `data/*.json` **only if something changed** (no empty/duplicate commits).
-   It launches the runner's installed Chrome (`BROWSER_CHANNEL=chrome`) instead of
-   downloading Playwright's bundled Chromium on every run. A failed scrape commits
-   nothing.
+   When the browser fallback kicks in it launches the runner's installed Chrome
+   (`BROWSER_CHANNEL=chrome`) instead of downloading Playwright's bundled Chromium
+   on every run. A failed scrape commits nothing.
 
 3. **`index.html`** fetches the three JSON files and renders:
    - **Layer 1 — Standings:** ranked cards with flags, points, exact-score count,

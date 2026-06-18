@@ -460,6 +460,17 @@ class BrowserFetcher:
         self._leaderboard_url = None
 
     def fetch_page(self, url: str) -> tuple[str, str]:
+        # Pace browser navigations too. The requests backend has its own pacing,
+        # but in CI we run browser-only, and hitting 16+ player pages back-to-back
+        # is the same burst pattern that trips Cloudflare's rate limits.
+        global _LAST_REQUEST_AT
+        _polite_delay()
+        try:
+            return self._fetch_page(url)
+        finally:
+            _LAST_REQUEST_AT = time.monotonic()
+
+    def _fetch_page(self, url: str) -> tuple[str, str]:
         if "/team/" in url and self._leaderboard_url:
             try:
                 return self._fetch_team_page_from_leaderboard(url)
@@ -618,7 +629,6 @@ def _navigation_headers(url: str, referer: str | None = None) -> dict:
 
 
 def _polite_delay():
-    global _LAST_REQUEST_AT
     if REQUEST_DELAY_SECONDS > 0 and _LAST_REQUEST_AT:
         target_gap = REQUEST_DELAY_SECONDS + random.uniform(0, max(0.0, REQUEST_JITTER_SECONDS))
         wait = target_gap - (time.monotonic() - _LAST_REQUEST_AT)

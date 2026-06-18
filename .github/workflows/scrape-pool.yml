@@ -67,7 +67,7 @@ jobs:
     env:
       MAX_ATTEMPTS: "3"
       RETRY_GAP_SECONDS: "240"
-      FETCH_BACKEND: "browser"
+      FETCH_BACKEND: "auto"
       REQUESTS_WARMUP: "1"
       REQUEST_DELAY_SECONDS: "1.5"
       REQUEST_JITTER_SECONDS: "1.0"
