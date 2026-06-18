@@ -37,6 +37,7 @@ import argparse
 import atexit
 import json
 import os
+import random
 import re
 import sys
 import time
@@ -69,30 +70,45 @@ REQUEST_TIMEOUT = int(os.environ.get("REQUEST_TIMEOUT", "30"))
 CF_CHALLENGE_TIMEOUT = int(os.environ.get("CF_CHALLENGE_TIMEOUT", "25"))
 FETCH_BACKEND = os.environ.get("FETCH_BACKEND", "auto").lower()  # auto, requests, browser
 BROWSER_HEADLESS = os.environ.get("BROWSER_HEADLESS", "1").lower() not in {"0", "false", "no"}
-# Small pause between successive page fetches. Cloudflare rate-limits bursts
-# (especially from datacenter IPs like CI runners), and 16+ rapid player-page
-# hits is exactly the pattern that trips a 403. A short, configurable delay keeps
-# the fast requests path alive longer before the browser fallback is needed.
-REQUEST_DELAY_SECONDS = float(os.environ.get("REQUEST_DELAY_SECONDS", "0.7"))
+REQUESTS_WARMUP = os.environ.get("REQUESTS_WARMUP", "1").lower() not in {"0", "false", "no"}
+
+# Site-specific knobs for the cheap requests backend. The goal is to enter the
+# site like a normal browser session before opening pool/team URLs, with pacing
+# that does not look like a burst of isolated script hits from a CI runner.
+DEFAULT_WARMUP_URLS = [
+    f"{BASE}/",
+    f"{BASE}/fantasy-soccer-world-cup/2026/",
+]
+REQUEST_WARMUP_URLS = [
+    u.strip()
+    for u in os.environ.get("REQUEST_WARMUP_URLS", ",".join(DEFAULT_WARMUP_URLS)).split(",")
+    if u.strip()
+]
+REQUEST_DELAY_SECONDS = float(os.environ.get("REQUEST_DELAY_SECONDS", "1.25"))
+REQUEST_JITTER_SECONDS = float(os.environ.get("REQUEST_JITTER_SECONDS", "0.75"))
+MIN_PREDICTION_COVERAGE = float(os.environ.get("MIN_PREDICTION_COVERAGE", "1.0"))
+MAX_STALE_PREDICTION_RATIO = float(os.environ.get("MAX_STALE_PREDICTION_RATIO", "0.25"))
+MIN_FIXTURE_COVERAGE_RATIO = float(os.environ.get("MIN_FIXTURE_COVERAGE_RATIO", "0.80"))
+BROWSER_LOCALE = os.environ.get("BROWSER_LOCALE", "en-US")
+BROWSER_TIMEZONE = os.environ.get("BROWSER_TIMEZONE", "America/New_York")
+BROWSER_VIEWPORT_WIDTH = int(os.environ.get("BROWSER_VIEWPORT_WIDTH", "1365"))
+BROWSER_VIEWPORT_HEIGHT = int(os.environ.get("BROWSER_VIEWPORT_HEIGHT", "768"))
 HTTP_HEADERS = {
     "User-Agent": (
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
-        "(KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36"
+        "(KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"
     ),
     "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8",
     "Accept-Language": "en-US,en;q=0.9",
     "Cache-Control": "no-cache",
     "Pragma": "no-cache",
-    "Referer": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/",
     # Modern Chrome client hints — Cloudflare's bot heuristics expect these from a
-    # browser claiming to be Chrome 125, and their absence is a cheap tell.
-    "sec-ch-ua": '"Chromium";v="125", "Google Chrome";v="125", "Not.A/Brand";v="24"',
+    # browser claiming to be Chrome, and their absence is a cheap tell.
+    "sec-ch-ua": '"Not/A)Brand";v="8", "Chromium";v="126", "Google Chrome";v="126"',
     "sec-ch-ua-mobile": "?0",
     "sec-ch-ua-platform": '"Windows"',
     "Sec-Fetch-Dest": "document",
     "Sec-Fetch-Mode": "navigate",
-    "Sec-Fetch-Site": "same-origin",
-    "Sec-Fetch-User": "?1",
     "Upgrade-Insecure-Requests": "1",
 }
 
@@ -392,6 +408,8 @@ REQUEST_SESSION = requests.Session()
 REQUEST_SESSION.headers.update(HTTP_HEADERS)
 _BROWSER_FETCHER = None
 _USING_BROWSER_FETCH = False
+_REQUESTS_WARMED = False
+_LAST_SUCCESSFUL_REQUEST_URL = None
 
 
 def _response_excerpt(text: str) -> str:
@@ -423,7 +441,10 @@ class BrowserFetcher:
             args=["--disable-blink-features=AutomationControlled"],
         )
         self._context = self._browser.new_context(
-            locale="en-US",
+            user_agent=HTTP_HEADERS["User-Agent"],
+            locale=BROWSER_LOCALE,
+            timezone_id=BROWSER_TIMEZONE,
+            viewport={"width": BROWSER_VIEWPORT_WIDTH, "height": BROWSER_VIEWPORT_HEIGHT},
             extra_http_headers={
                 "Accept-Language": HTTP_HEADERS["Accept-Language"],
             },
@@ -571,13 +592,42 @@ def _get_browser_fetcher() -> BrowserFetcher:
 _LAST_REQUEST_AT = 0.0
 
 
-def _fetch_page_with_requests(url: str) -> tuple[str, str]:
+def _same_origin(a: str | None, b: str | None) -> bool:
+    if not a or not b:
+        return False
+    pa, pb = urlparse(a), urlparse(b)
+    return (pa.scheme, pa.netloc) == (pb.scheme, pb.netloc)
+
+
+def _navigation_headers(url: str, referer: str | None = None) -> dict:
+    headers = dict(HTTP_HEADERS)
+    if referer:
+        headers["Referer"] = referer
+        headers["Sec-Fetch-Site"] = "same-origin" if _same_origin(url, referer) else "cross-site"
+    else:
+        headers["Sec-Fetch-Site"] = "none"
+    headers["Sec-Fetch-User"] = "?1"
+    return headers
+
+
+def _polite_delay():
     global _LAST_REQUEST_AT
     if REQUEST_DELAY_SECONDS > 0 and _LAST_REQUEST_AT:
-        wait = REQUEST_DELAY_SECONDS - (time.monotonic() - _LAST_REQUEST_AT)
+        target_gap = REQUEST_DELAY_SECONDS + random.uniform(0, max(0.0, REQUEST_JITTER_SECONDS))
+        wait = target_gap - (time.monotonic() - _LAST_REQUEST_AT)
         if wait > 0:
             time.sleep(wait)
-    resp = REQUEST_SESSION.get(url, timeout=REQUEST_TIMEOUT, allow_redirects=True)
+
+
+def _fetch_page_with_requests(url: str, referer: str | None = None) -> tuple[str, str]:
+    global _LAST_REQUEST_AT, _LAST_SUCCESSFUL_REQUEST_URL
+    _polite_delay()
+    resp = REQUEST_SESSION.get(
+        url,
+        headers=_navigation_headers(url, referer),
+        timeout=REQUEST_TIMEOUT,
+        allow_redirects=True,
+    )
     _LAST_REQUEST_AT = time.monotonic()
     if resp.status_code in {403, 503}:
         raise requests.HTTPError(
@@ -585,7 +635,29 @@ def _fetch_page_with_requests(url: str) -> tuple[str, str]:
             response=resp,
         )
     resp.raise_for_status()
+    _LAST_SUCCESSFUL_REQUEST_URL = resp.url
     return resp.text, resp.url
+
+
+def _warm_up_requests_session(target_url: str):
+    global _REQUESTS_WARMED
+    if _REQUESTS_WARMED or not REQUESTS_WARMUP:
+        return
+
+    referer = None
+    for warmup_url in REQUEST_WARMUP_URLS:
+        absolute = urljoin(target_url, warmup_url)
+        if not _same_origin(absolute, target_url):
+            continue
+        try:
+            _, referer = _fetch_page_with_requests(absolute, referer=referer)
+            print(f"  http: warmed requests session at {referer}", file=sys.stderr)
+        except requests.HTTPError:
+            raise
+        except Exception as exc:
+            print(f"  http: requests warmup skipped {absolute}: {exc}", file=sys.stderr)
+            break
+    _REQUESTS_WARMED = True
 
 
 def fetch_page(url: str) -> tuple[str, str]:
@@ -597,7 +669,8 @@ def fetch_page(url: str) -> tuple[str, str]:
         raise RuntimeError("FETCH_BACKEND must be one of: auto, requests, browser")
 
     try:
-        return _fetch_page_with_requests(url)
+        _warm_up_requests_session(url)
+        return _fetch_page_with_requests(url, referer=_LAST_SUCCESSFUL_REQUEST_URL)
     except requests.HTTPError as exc:
         status = exc.response.status_code if exc.response is not None else None
         if FETCH_BACKEND == "auto" and status in {403, 503}:
@@ -1272,6 +1345,97 @@ def write_json(path: Path, data):
     path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n")
 
 
+def _pct(n: int | float, d: int | float) -> str:
+    return "0%" if not d else f"{(n / d) * 100:.0f}%"
+
+
+def scrape_health_errors(
+    players: list[dict],
+    predictions: dict,
+    stats: dict,
+    *,
+    strict_predictions: bool,
+) -> list[str]:
+    """Return fatal data-quality issues that should stop JSON writes."""
+    errors: list[str] = []
+    if not players:
+        return ["leaderboard has no players"]
+
+    team_ids = [p.get("team_id") for p in players]
+    duplicate_ids = sorted({tid for tid in team_ids if tid and team_ids.count(tid) > 1})
+    if duplicate_ids:
+        errors.append(f"duplicate leaderboard team ids: {', '.join(duplicate_ids[:5])}")
+
+    missing_core = [
+        str(p.get("team_id") or "?")
+        for p in players
+        if not p.get("team_id")
+        or not p.get("name")
+        or not p.get("slug")
+        or not p.get("player_url")
+        or p.get("rank") is None
+        or p.get("points") is None
+        or p.get("exact") is None
+    ]
+    if missing_core:
+        errors.append(f"leaderboard rows missing required fields: {', '.join(missing_core[:8])}")
+
+    if not strict_predictions:
+        return errors
+
+    expected_ids = {str(tid) for tid in team_ids if tid}
+    prediction_ids = {str(tid) for tid in predictions.keys()}
+    missing_predictions = sorted(expected_ids - prediction_ids)
+    extra_predictions = sorted(prediction_ids - expected_ids)
+    if missing_predictions:
+        errors.append(
+            f"missing prediction records for {len(missing_predictions)}/{len(players)} players: "
+            f"{', '.join(missing_predictions[:8])}"
+        )
+    if extra_predictions:
+        errors.append(f"prediction records not present on leaderboard: {', '.join(extra_predictions[:8])}")
+
+    coverage = (len(expected_ids & prediction_ids) / len(expected_ids)) if expected_ids else 0
+    if coverage < MIN_PREDICTION_COVERAGE:
+        errors.append(
+            f"prediction coverage {_pct(len(expected_ids & prediction_ids), len(expected_ids))} "
+            f"is below MIN_PREDICTION_COVERAGE={MIN_PREDICTION_COVERAGE:.2f}"
+        )
+
+    kept = int(stats.get("kept") or 0)
+    stale_ratio = kept / len(players)
+    if stale_ratio > MAX_STALE_PREDICTION_RATIO:
+        errors.append(
+            f"kept {kept}/{len(players)} stale prediction records "
+            f"({_pct(kept, len(players))}), above MAX_STALE_PREDICTION_RATIO={MAX_STALE_PREDICTION_RATIO:.2f}"
+        )
+
+    fixture_counts = {
+        tid: _fixture_count(pred)
+        for tid, pred in predictions.items()
+        if str(tid) in expected_ids
+    }
+    zero_fixture_ids = sorted(str(tid) for tid, count in fixture_counts.items() if count == 0)
+    if zero_fixture_ids:
+        errors.append(f"prediction records with zero fixtures: {', '.join(zero_fixture_ids[:8])}")
+
+    positive_counts = [count for count in fixture_counts.values() if count > 0]
+    if positive_counts:
+        expected_fixture_count = max(positive_counts)
+        min_fixture_count = max(1, int(expected_fixture_count * MIN_FIXTURE_COVERAGE_RATIO))
+        thin_ids = sorted(
+            f"{tid} ({count}/{expected_fixture_count})"
+            for tid, count in fixture_counts.items()
+            if 0 < count < min_fixture_count
+        )
+        if thin_ids:
+            errors.append(
+                f"prediction records with suspiciously thin fixture data: {', '.join(thin_ids[:8])}"
+            )
+
+    return errors
+
+
 def run(out_dir: Path, samples: bool):
     out_dir.mkdir(parents=True, exist_ok=True)
     rankings_path = out_dir / "rankings.json"
@@ -1349,6 +1513,18 @@ def run(out_dir: Path, samples: bool):
             "failure — not writing files.",
             file=sys.stderr,
         )
+        return 1
+
+    health_errors = scrape_health_errors(
+        players,
+        predictions,
+        stats,
+        strict_predictions=not samples,
+    )
+    if health_errors:
+        print("FATAL: scrape health checks failed; not writing files.", file=sys.stderr)
+        for err in health_errors:
+            print(f"  - {err}", file=sys.stderr)
         return 1
 
     # rankings.json

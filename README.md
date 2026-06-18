@@ -43,8 +43,16 @@ moment Pages goes live; the first real Action run overwrites them with live data
      run retries up to 3 times with a 30-minute gap (configurable via
      `MAX_ATTEMPTS` / `RETRY_GAP_SECONDS`). A single failing player page doesn't
      abort the run — that player keeps their previous data.
+   - **403 avoidance:** the fast `requests` fetch warms up through public site
+     pages first, keeps cookies/referers in one session, and adds a small
+     delay+jitter between player pages. If a bot-protection 403/503 still appears,
+     `FETCH_BACKEND=auto` switches to the browser fallback.
    - Files are written **only when valid data is present**. `history.json` only gets
      a new entry when the standings actually changed (no duplicate snapshots).
+     Before any JSON is written, the scraper also fails closed if the leaderboard
+     has duplicate/malformed rows, player predictions are missing, too many
+     players had to use stale previous prediction data, or a prediction sheet is
+     suspiciously thinner than the rest of the scrape.
 
 2. **The workflow** runs on a cron schedule, installs deps, runs the scraper, and
    commits `data/*.json` **only if something changed** (no empty/duplicate commits).
@@ -167,6 +175,15 @@ players show an empty prediction sheet until a real run fills them in.
 
 - **Different pool:** edit `POOL_ID` / `POOL_SLUG` at the top of `scraper.py`.
 - **Retry behavior:** `MAX_ATTEMPTS` / `RETRY_GAP_SECONDS` env vars (set in the workflow).
+- **Scrape politeness / 403 avoidance:** `REQUESTS_WARMUP` toggles the public-page
+  warm-up, `REQUEST_WARMUP_URLS` overrides the comma-separated warm-up path list,
+  and `REQUEST_DELAY_SECONDS` / `REQUEST_JITTER_SECONDS` control pacing between
+  page requests.
+- **Health checks:** `MIN_PREDICTION_COVERAGE` controls how many leaderboard
+  players must have prediction records, `MAX_STALE_PREDICTION_RATIO` limits how
+  many records can come only from previous saved data, and
+  `MIN_FIXTURE_COVERAGE_RATIO` rejects prediction sheets that are much thinner
+  than the richest sheet in the same scrape.
 - **Colors/branding:** the CSS variables at the top of `index.html` (`:root { … }`).
 - **If the site ever switches to client-side rendering** (the scraper returns 0 rows
   even though the page looks fine in a browser), swap the `fetch()` function in
