@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-18T01:50:45Z",
+  "updated": "2026-06-18T02:01:11Z",
   "players": {
     "246775": {
       "team_id": "246775",
@@ -39254,7 +39254,7 @@
               "fixture_number": 24,
               "round": "Matchday 1",
               "stage_type": "group",
-              "status": "NS",
+              "status": "· LIVE",
               "kickoff_utc": "2026-06-18T02:00:00Z",
               "kickoff_local": "2026-06-17 22:00",
               "kickoff_timezone": "America/New_York",
@@ -39276,8 +39276,8 @@
                 "score": "0 - 2",
                 "hidden": false
               },
-              "actual_score": "NS",
-              "points": null,
+              "actual_score": "0 - 0",
+              "points": 0,
               "is_exact": false
             }
           ]
@@ -42062,7 +42062,7 @@
       "matchdays": [
         {
           "round": "Matchday 1",
-          "subtotal": 738,
+          "subtotal": 675,
           "fixtures": [
             {
               "fixture_number": 1,
@@ -42091,7 +42091,7 @@
                 "hidden": false
               },
               "actual_score": "2 - 0",
-              "points": 63,
+              "points": 0,
               "is_exact": false
             },
             {
@@ -42758,7 +42758,7 @@
               "fixture_number": 24,
               "round": "Matchday 1",
               "stage_type": "group",
-              "status": "NS",
+              "status": "· LIVE",
               "kickoff_utc": "2026-06-18T02:00:00Z",
               "kickoff_local": "2026-06-17 22:00",
               "kickoff_timezone": "America/New_York",
@@ -42780,7 +42780,7 @@
                 "score": "0 - 0",
                 "hidden": false
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": null,
               "is_exact": false
             }
@@ -45566,7 +45566,7 @@
       "matchdays": [
         {
           "round": "Matchday 1",
-          "subtotal": 720,
+          "subtotal": 705,
           "fixtures": [
             {
               "fixture_number": 1,
@@ -45625,7 +45625,7 @@
                 "hidden": false
               },
               "actual_score": "2 - 1",
-              "points": 15,
+              "points": 0,
               "is_exact": false
             },
             {
@@ -46262,7 +46262,7 @@
               "fixture_number": 24,
               "round": "Matchday 1",
               "stage_type": "group",
-              "status": "NS",
+              "status": "· LIVE",
               "kickoff_utc": "2026-06-18T02:00:00Z",
               "kickoff_local": "2026-06-17 22:00",
               "kickoff_timezone": "America/New_York",
@@ -46284,7 +46284,7 @@
                 "score": "0 - 2",
                 "hidden": false
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": null,
               "is_exact": false
             }
@@ -49766,7 +49766,7 @@
               "fixture_number": 24,
               "round": "Matchday 1",
               "stage_type": "group",
-              "status": "NS",
+              "status": "· LIVE",
               "kickoff_utc": "2026-06-18T02:00:00Z",
               "kickoff_local": "2026-06-17 22:00",
               "kickoff_timezone": "America/New_York",
@@ -49788,7 +49788,7 @@
                 "score": "0 - 2",
                 "hidden": false
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": null,
               "is_exact": false
             }
@@ -53270,7 +53270,7 @@
               "fixture_number": 24,
               "round": "Matchday 1",
               "stage_type": "group",
-              "status": "NS",
+              "status": "· LIVE",
               "kickoff_utc": "2026-06-18T02:00:00Z",
               "kickoff_local": "2026-06-17 22:00",
               "kickoff_timezone": "America/New_York",
@@ -53292,7 +53292,7 @@
                 "score": "0 - 3",
                 "hidden": false
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": null,
               "is_exact": false
             }
