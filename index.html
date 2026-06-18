@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet" />
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
 <style>
   :root{
     --bg:#eaeef6; --card:#ffffff; --ink:#0e1726; --muted:#6b7891; --line:#e6eaf2;
@@ -602,7 +602,7 @@ function setTZ(pref){
   document.querySelectorAll('.tzpick select').forEach(s=>{ if(s.value!==pref) s.value=pref; });
   if(RANKINGS) $('#updated').textContent='Updated '+fmtUpdated(RANKINGS.updated);
   renderLiveStrip(); renderRecent(); updateFoot();
-  if(MODAL_STACK.length){ const v=topView(); if(v&&v.refresh) v.refresh(); }
+  refreshTopView();
 }
 function fmtUpdated(iso){
   const d=new Date(iso);
@@ -664,7 +664,7 @@ async function loadData(){
   renderRecent();
   // If a modal is open, refresh whichever view is on top so live scores update
   // in place (without resetting scroll, filters, or the navigation stack).
-  if(MODAL_STACK.length){ const v=topView(); if(v&&v.refresh) v.refresh(); }
+  refreshTopView();
   updateFoot();
 }
 function updateFoot(){
@@ -714,8 +714,19 @@ async function init(){
   setInterval(()=>{
     renderLiveStrip();
     renderRecent();
-    if(MODAL_STACK.length){ const v=topView(); if(v&&v.refresh) v.refresh(); }
+    refreshTopView();
   }, 20000);
+}
+
+// Refresh whichever view is on top of the modal stack, preserving the overlay's
+// scroll position. Views that rebuild their whole body (e.g. the match popup)
+// would otherwise jump back to the top on every 20s tick.
+function refreshTopView(){
+  if(!MODAL_STACK.length) return;
+  const v=topView(); if(!v||!v.refresh) return;
+  const overlay=$('#overlay'); const y=overlay.scrollTop;
+  v.refresh();
+  overlay.scrollTop=y;
 }
 
 function prevSnapshot(){
@@ -940,12 +951,16 @@ function wireModalControls(modal){
    order, with an All / Upcoming / Completed segmented filter and the shared
    timezone picker. */
 let SCHED_MODE='all';   // 'all' | 'upcoming' | 'completed'
-function openResults(){ SCHED_MODE='all'; openModalView({type:'results',render:renderResultsView,refresh:renderResultsView,scroll:0}); }
-function renderResultsView(){
-  const all=allMatches();
-  const counts={all:all.length,
+function openResults(){ SCHED_MODE='all'; openModalView({type:'results',render:renderResultsView,refresh:refreshResultsView,scroll:0}); }
+function schedCounts(all){
+  return {total:all.length, all:all.length,
     upcoming:all.filter(m=>!m.done).length,   // upcoming bucket also holds live
     completed:all.filter(m=>m.done).length};
+}
+/* Just the grouped match rows for the current filter — recomputed on each live
+   tick, but injected into the existing .mbody so the toolbar (and its thumb)
+   and the scroll position survive. */
+function schedBody(all){
   const ms=all.filter(m=>SCHED_MODE==='upcoming'?!m.done:SCHED_MODE==='completed'?m.done:true);
   const groups=[], idx={};
   ms.forEach(m=>{
@@ -961,12 +976,19 @@ function renderResultsView(){
     g.items.forEach(m=>body+=resRow(m));
     body+=`</div>`;
   });
+  return body||'<div class="empty">No matches in this filter.</div>';
+}
+// Build the whole modal shell once (on open / Back). The live tick uses the
+// lighter refreshResultsView() below instead, so it never rebuilds the toolbar.
+function renderResultsView(){
+  const all=allMatches();
+  const counts=schedCounts(all);
   const hasback=MODAL_STACK.length>1;
   const seg=(mode,label)=>`<button class="seg ${SCHED_MODE===mode?'active':''}" type="button" role="tab" aria-selected="${SCHED_MODE===mode}" data-mode="${mode}">${label}<span class="cnt">${counts[mode]}</span></button>`;
   const modal=$('#modal');
   modal.innerHTML=`
     <div class="mhead${hasback?' hasback':''}">
-      <div><h3>Full Schedule</h3><div class="meta">${all.length} matches · tap any match to see everyone's pick</div></div>
+      <div><h3>Full Schedule</h3><div class="meta">${counts.total} matches · tap any match to see everyone's pick</div></div>
       ${modalControls()}
     </div>
     <div class="sched-tools">
@@ -979,15 +1001,41 @@ function renderResultsView(){
         <select id="tzSelectModal" aria-label="Display timezone">${tzOptionsHTML()}</select>
       </label>
     </div>
-    <div class="mbody">${body||'<div class="empty">No matches in this filter.</div>'}</div>`;
+    <div class="mbody">${schedBody(all)}</div>`;
   wireModalControls(modal);
   const segEl=modal.querySelector('#schedSeg');
+  // Switching filters updates only the active state, the rows, and the thumb —
+  // so the pill slides smoothly between options instead of snapping from 0.
   segEl.querySelectorAll('.seg').forEach(b=>b.addEventListener('click',()=>{
     if(SCHED_MODE===b.dataset.mode) return;
-    SCHED_MODE=b.dataset.mode; renderResultsView();
+    SCHED_MODE=b.dataset.mode;
+    segEl.querySelectorAll('.seg').forEach(x=>{
+      const on=x.dataset.mode===SCHED_MODE;
+      x.classList.toggle('active',on);
+      x.setAttribute('aria-selected',on);
+    });
+    modal.querySelector('.mbody').innerHTML=schedBody(allMatches());
+    positionThumb(segEl);
   }));
   modal.querySelector('#tzSelectModal').addEventListener('change',e=>setTZ(e.target.value));
   requestAnimationFrame(()=>positionThumb(segEl));
+}
+/* Live-tick / manual refresh: update the counts and rows in place, leaving the
+   toolbar, the segmented thumb, and the scroll position untouched. (Rebuilding
+   the whole modal here was what made the thumb snap to the left and re-slide
+   every 20s — most visible on Upcoming/Completed, where the thumb is offset.) */
+function refreshResultsView(){
+  const modal=$('#modal');
+  const segEl=modal.querySelector('#schedSeg');
+  if(!segEl){ renderResultsView(); return; }   // not actually the results view
+  const all=allMatches();
+  const counts=schedCounts(all);
+  segEl.querySelectorAll('.seg').forEach(b=>{ const c=b.querySelector('.cnt'); if(c) c.textContent=counts[b.dataset.mode]; });
+  const meta=modal.querySelector('.mhead .meta');
+  if(meta) meta.textContent=`${counts.total} matches · tap any match to see everyone's pick`;
+  const mbody=modal.querySelector('.mbody');
+  if(mbody) mbody.innerHTML=schedBody(all);
+  positionThumb(segEl);   // counts can change width; re-align without snapping
 }
 function resRow(m){
   const sc=parseScore(m.score);
@@ -1275,6 +1323,7 @@ function positionSegThumb(){ positionThumb(document.querySelector('#filters .seg
 window.addEventListener('resize',()=>{
   positionSegThumb();
   positionThumb(document.querySelector('#mpSort'));
+  positionThumb(document.querySelector('#schedSeg'));
 });
 let CURRENT_TEAM=null;
 function renderSheetCurrent(){ if(CURRENT_TEAM) renderSheet(CURRENT_TEAM); }
