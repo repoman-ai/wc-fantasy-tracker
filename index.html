@@ -24,6 +24,18 @@
   }
   *{box-sizing:border-box}
   html,body{margin:0;padding:0}
+  html{scrollbar-color:#2563eb #dbe5f4;scrollbar-width:thin}
+  *::-webkit-scrollbar{width:11px;height:11px}
+  *::-webkit-scrollbar-track{background:linear-gradient(180deg,#dbe5f4,#eef3fb)}
+  *::-webkit-scrollbar-thumb{
+    background:linear-gradient(180deg,#38bdf8 0%,#2563eb 48%,var(--accent) 100%);
+    border:3px solid #dbe5f4;border-radius:999px;
+    box-shadow:inset 0 0 0 1px rgba(255,255,255,.45)
+  }
+  *::-webkit-scrollbar-thumb:hover{
+    background:linear-gradient(180deg,#7dd3fc 0%,#1d4ed8 45%,var(--accent2) 100%)
+  }
+  *::-webkit-scrollbar-corner{background:#dbe5f4}
   body{
     font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
     background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased;
@@ -220,7 +232,8 @@
   .modal{background:var(--bg);width:100%;max-width:920px;border-radius:22px;overflow:hidden;
     box-shadow:0 30px 80px rgba(0,0,0,.4);animation:pop .25s ease both;
     position:relative;z-index:1;
-    display:flex;flex-direction:column;max-height:calc(100dvh - 56px)}
+    display:flex;flex-direction:column;max-height:calc(100dvh - 56px);
+    touch-action:pan-y;overscroll-behavior-x:none}
   /* Collapse-to-color dismiss, contained within the popup: as you drag down, the
      header's purple sweeps downward as a curtain over the body (driven from JS
      via the --bleed-* custom properties, which survive innerHTML re-renders).
@@ -242,8 +255,9 @@
   .close{position:absolute;top:16px;right:16px;width:34px;height:34px;border-radius:50%;border:none;
     background:rgba(255,255,255,.18);color:#fff;font-size:18px;cursor:pointer;line-height:1}
   .close:hover{background:rgba(255,255,255,.3)}
-  .mbody{padding:18px 18px 26px;overflow-y:auto;-webkit-overflow-scrolling:touch;
-    flex:1 1 auto;min-height:0;overscroll-behavior:contain}
+  .mbody{padding:18px 18px 26px;overflow-x:hidden;overflow-y:auto;-webkit-overflow-scrolling:touch;
+    flex:1 1 auto;min-height:0;overscroll-behavior-y:contain;overscroll-behavior-x:none;
+    touch-action:pan-y}
 
   .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:14px}
   .stat{background:var(--card);border-radius:14px;padding:12px 14px;box-shadow:var(--shadow)}
@@ -768,7 +782,7 @@ function refreshTopView(){
   const v=topView(); if(!v||!v.refresh) return;
   const sc=modalScroller(); const y=sc?sc.scrollTop:0;
   v.refresh();
-  const sc2=modalScroller(); if(sc2) sc2.scrollTop=y;
+  const sc2=lockModalScrollAxis(); if(sc2){ sc2.scrollLeft=0; sc2.scrollTop=y; }
 }
 
 function prevSnapshot(){
@@ -964,6 +978,15 @@ function topView(){ return MODAL_STACK[MODAL_STACK.length-1]||null; }
 // .mbody is the per-view scroll container now (the header stays pinned), so
 // scroll save/restore tracks it rather than the overlay.
 function modalScroller(){ const m=$('#modal'); return m?m.querySelector('.mbody'):null; }
+function lockModalScrollAxis(){
+  const sc=modalScroller();
+  if(!sc || sc.dataset.axisLocked) return sc;
+  sc.dataset.axisLocked='1';
+  sc.addEventListener('scroll',()=>{
+    if(sc.scrollLeft) sc.scrollLeft=0;
+  },{passive:true});
+  return sc;
+}
 function openModalView(view){
   const overlay=$('#overlay');
   if(MODAL_STACK.length){ const sc=modalScroller(); MODAL_STACK[MODAL_STACK.length-1].scroll=sc?sc.scrollTop:0; }
@@ -972,7 +995,7 @@ function openModalView(view){
   view.render();
   overlay.classList.add('open');
   document.body.style.overflow='hidden';
-  const sc=modalScroller(); if(sc) sc.scrollTop=0;
+  const sc=lockModalScrollAxis(); if(sc){ sc.scrollLeft=0; sc.scrollTop=0; }
 }
 function popModal(){
   if(MODAL_STACK.length<=1){ closeModal(); return; }
@@ -980,7 +1003,7 @@ function popModal(){
   MODAL_STACK.pop();
   const v=topView();
   v.render();
-  const sc=modalScroller(); if(sc) sc.scrollTop=v.scroll||0;
+  const sc=lockModalScrollAxis(); if(sc){ sc.scrollLeft=0; sc.scrollTop=v.scroll||0; }
 }
 /* Back (only when something sits beneath) + close, shared by every view. */
 function modalControls(){
