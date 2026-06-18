@@ -219,7 +219,17 @@
      title are always in reach. */
   .modal{background:var(--bg);width:100%;max-width:920px;border-radius:22px;overflow:hidden;
     box-shadow:0 30px 80px rgba(0,0,0,.4);animation:pop .25s ease both;
+    position:relative;z-index:1;
     display:flex;flex-direction:column;max-height:calc(100dvh - 56px)}
+  /* Collapse-to-color dismiss, contained within the popup: as you drag down, the
+     header's purple sweeps downward as a curtain over the body (driven from JS
+     via the --bleed-* custom properties, which survive innerHTML re-renders).
+     The header title/close sit above it (higher z-index) and stay readable. */
+  .modal::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+    background:linear-gradient(120deg,#4f46e5,#7c3aed);will-change:opacity,clip-path;
+    opacity:var(--bleed-o,0);clip-path:inset(0 0 calc(100% * (1 - var(--bleed-p,0))) 0);
+    transition:opacity .28s ease,clip-path .28s ease}
+  .modal.dragging::before{transition:none}
   @keyframes pop{from{opacity:0;transform:translateY(14px) scale(.98)}to{opacity:1;transform:none}}
   .mhead{background:linear-gradient(120deg,#4f46e5,#7c3aed);color:#fff;padding:20px 22px;display:flex;align-items:center;gap:16px;position:relative;flex:none;z-index:2}
   /* Grab-handle affordance for swipe-to-close — shown on touch devices. */
@@ -427,12 +437,18 @@
   .mback:hover{background:rgba(255,255,255,.32)}
   .mhead.hasback{padding-top:48px}
 
-  /* "Swipe down to close" cue — fades in as you start dragging the popup down. */
-  .swipe-hint{position:absolute;top:12px;left:50%;transform:translateX(-50%);
-    background:rgba(15,20,40,.85);color:#fff;font-size:12px;font-weight:700;letter-spacing:.2px;
-    padding:7px 14px;border-radius:999px;pointer-events:none;opacity:0;transition:opacity .15s;
-    z-index:60;display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
-  .swipe-hint .ar{font-size:14px;line-height:1}
+  /* "Swipe down to close" cue — fades in as you start dragging the popup down.
+     Styled to match the popup header: purple gradient, soft glow, hairline
+     highlight, and a gently bouncing chevron. */
+  .swipe-hint{position:absolute;top:14px;left:50%;transform:translateX(-50%);
+    background:linear-gradient(120deg,#4f46e5,#7c3aed);color:#fff;
+    font-size:12.5px;font-weight:700;letter-spacing:.3px;
+    padding:8px 15px 8px 13px;border-radius:999px;pointer-events:none;opacity:0;
+    transition:opacity .2s ease;z-index:60;display:inline-flex;align-items:center;gap:7px;
+    white-space:nowrap;border:1px solid rgba(255,255,255,.28);
+    box-shadow:0 10px 26px rgba(79,70,229,.45),inset 0 1px 0 rgba(255,255,255,.25)}
+  .swipe-hint .ar{font-size:15px;line-height:1;animation:swipeBob 1.3s ease-in-out infinite}
+  @keyframes swipeBob{0%,100%{transform:translateY(-1.5px)}50%{transform:translateY(2px)}}
 
   /* ---------- Match-predictions popup ---------- */
   /* Scoreboard hero at the top of the popup. */
@@ -1714,45 +1730,79 @@ function closeModal(){
 // Overlay-click and Esc pop one level (Back), closing outright at the root.
 $('#overlay').addEventListener('click',e=>{ if(e.target.id==='overlay') popModal(); });
 
-/* ---------------- Swipe-down-to-close ----------------
+/* ---------------- Swipe-down-to-close (collapse-to-color dismiss) ----------
    Drag the popup down (from the header, or from the body when it's scrolled to
-   the top) to dismiss it. A "Swipe down to close" cue fades in during the drag;
-   releasing past the threshold closes, otherwise the popup springs back. */
+   the top) to dismiss it. As you drag, the header's purple sweeps downward as a
+   curtain inside the popup (the --bleed-* custom props feed .modal::before),
+   while the sheet itself elastically slides + scales + rounds its corners. The
+   colour expansion stays contained within the popup; the backdrop only dims.
+   Releasing past the threshold completes the fill and closes; otherwise it
+   springs back. */
 (function(){
-  const modal=$('#modal'), overlay=$('#overlay'), hint=$('#swipeHint');
+  const modal=$('#modal'), hint=$('#swipeHint');
   const CLOSE_AT=110;            // px past which release dismisses
-  let startY=0, dy=0, active=false;
+  const BLEED_FULL=220;          // px of drag that maps to the header fully filling the popup
+  const SPRING='transform .28s cubic-bezier(.22,.61,.36,1), border-radius .28s ease';
+  let startY=0, dy=0, active=false, dismissing=false, timer=0;
   function resist(d){ return d>0?d:0; }   // only downward drag counts
+  // p (0..1) drives both the sheet's motion and the in-popup colour curtain.
+  function bleed(p){ modal.style.setProperty('--bleed-p',p); modal.style.setProperty('--bleed-o',Math.min(1,p*1.6)); }
+  function paint(dist){
+    const p=Math.min(1, dist/BLEED_FULL);
+    modal.style.transform=`translateY(${dist}px) scale(${1-0.04*p})`;
+    modal.style.borderRadius=`${22+10*p}px`;
+    bleed(p);
+    if(hint) hint.style.opacity=String(Math.min(1,dist/45));
+  }
   window.resetDrag=function(){
-    active=false; dy=0;
-    modal.style.transition=''; modal.style.transform=''; modal.style.opacity='';
+    active=false; dismissing=false; dy=0; if(timer){ clearTimeout(timer); timer=0; }
+    modal.classList.remove('dragging');
+    modal.style.animation=''; modal.style.transition=''; modal.style.transform=''; modal.style.borderRadius='';
+    modal.style.removeProperty('--bleed-p'); modal.style.removeProperty('--bleed-o');
     if(hint) hint.style.opacity='0';
   };
   modal.addEventListener('touchstart',e=>{
-    if(e.touches.length!==1) return;
+    if(e.touches.length!==1 || dismissing) return;
     const body=modalScroller();
     const onHead=e.target.closest && e.target.closest('.mhead');
     const atTop=!body || body.scrollTop<=0;
     if(!onHead && !atTop) return;          // mid-scroll: let the body scroll
     startY=e.touches[0].clientY; dy=0; active=true;
+    // Drop the open ("pop") animation — its fill:both final keyframe would
+    // otherwise override the inline transform we drive during the drag. The
+    // .dragging class kills the curtain's transition so it tracks the finger.
+    modal.style.animation='none';
     modal.style.transition='none';
+    modal.classList.add('dragging');
   },{passive:true});
   modal.addEventListener('touchmove',e=>{
     if(!active) return;
     dy=resist(e.touches[0].clientY-startY);
-    if(dy<=0){ modal.style.transform=''; modal.style.opacity=''; if(hint) hint.style.opacity='0'; return; }
+    if(dy<=0){ modal.style.transform=''; modal.style.borderRadius=''; bleed(0);
+      if(hint) hint.style.opacity='0'; return; }
     if(e.cancelable) e.preventDefault();   // suppress rubber-band while dragging
-    modal.style.transform=`translateY(${dy}px)`;
-    modal.style.opacity=String(Math.max(.45,1-dy/700));
-    if(hint) hint.style.opacity=String(Math.min(1,dy/45));
+    paint(dy);
   },{passive:false});
   function end(){
     if(!active) return;
+    active=false;
     const go=dy>CLOSE_AT;
-    modal.style.transition='transform .25s ease, opacity .25s ease';
+    modal.classList.remove('dragging');     // re-enable the curtain transition
+    modal.style.transition=SPRING;
     if(hint) hint.style.opacity='0';
-    if(go){ closeModal(); }
-    else{ modal.style.transform=''; modal.style.opacity=''; active=false; dy=0; }
+    if(go){
+      // Complete the fill: the purple curtain covers the whole popup, then the
+      // now-solid-purple sheet slides away.
+      dismissing=true;
+      bleed(1);
+      const drop=(window.innerHeight||800)*0.9;
+      modal.style.transform=`translateY(${drop}px) scale(.92)`;
+      timer=setTimeout(closeModal,260);
+    } else {
+      // Spring back to rest.
+      modal.style.transform=''; modal.style.borderRadius=''; bleed(0);
+      dy=0;
+    }
   }
   modal.addEventListener('touchend',end);
   modal.addEventListener('touchcancel',end);
