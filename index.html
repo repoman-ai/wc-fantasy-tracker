@@ -141,7 +141,7 @@
     /* Tighter hero so the standings come into view sooner. The two movers
        sit side-by-side and the Leader chip spans the full width below them
        (instead of floating centered), and live matches stack full-width. */
-    .hero{padding:22px 0 54px}
+    .hero{padding:22px 0 88px}
     .movers{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:14px}
     .mover{padding:9px 11px;border-radius:12px;justify-content:space-between}
     .mover:last-child{grid-column:1 / -1}
@@ -149,6 +149,12 @@
     .livestrip{flex-direction:column;gap:8px;margin-top:12px}
     .liveitem{width:100%}
     .liveitem .mt{justify-content:center}
+
+    .board{margin-top:-74px}
+    .board-head{align-items:flex-start;gap:8px;margin-bottom:12px;color:#fff}
+    .bh-left{width:100%;justify-content:space-between;gap:8px}
+    .legend{width:100%;justify-content:center;gap:8px 12px;color:#fff;opacity:1}
+    .legend span{white-space:nowrap}
 
     .row{grid-template-columns:46px 1fr auto;gap:10px;padding:12px}
     .move{grid-column:2;grid-row:2;justify-content:flex-start;min-width:0;margin-top:-4px}
@@ -469,6 +475,9 @@
   .mp-row.live{border:1.5px solid #f6b8b8;background:linear-gradient(90deg,#fff5f5,#fff 30%)}
   .mp-rank{font-family:'Barlow Condensed';font-weight:800;font-size:15px;color:var(--muted);text-align:center}
   .mp-who{display:flex;align-items:center;gap:10px;min-width:0}
+  .mp-who[data-player-id]{cursor:pointer;border-radius:10px}
+  .mp-who[data-player-id]:hover .nm{color:var(--accent)}
+  .mp-who[data-player-id]:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
   .mp-who .nm{font-weight:700;font-size:14.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .mp-pick{display:flex;align-items:center;justify-content:flex-end;gap:8px;text-align:right}
   .mp-pick .sc{font-family:'Barlow Condensed';font-weight:800;font-size:20px;color:var(--accent)}
@@ -1625,7 +1634,7 @@ function renderMatchView(key){
     if(meta.live&&p.points>0) cls.push('live');
     return `<div class="${cls.join(' ')}">
       <div class="mp-rank">${p.rank!=null&&p.rank<999?'#'+p.rank:''}</div>
-      <div class="mp-who">${flagImg(p.flag,'flag sm')}<span class="nm">${esc(p.name)}</span></div>
+      <div class="mp-who" data-player-id="${esc(p.team_id)}" role="button" tabindex="0" title="Open ${esc(p.name)}'s prediction page">${flagImg(p.flag,'flag sm')}<span class="nm">${esc(p.name)}</span></div>
       <div class="mp-pick">${pick}</div>
       <div class="mp-res">${res}</div>
     </div>`;
@@ -1685,11 +1694,22 @@ document.addEventListener('keydown',e=>{ if(e.key==='Escape'&&MODAL_STACK.length
 // One delegated handler opens the match popup from any [data-match-key] element
 // (live strip, recent results, the All Results list, a player's sheet row).
 document.addEventListener('click',e=>{
+  const player=e.target.closest&&e.target.closest('[data-player-id]');
+  if(player){
+    openPlayer(player.getAttribute('data-player-id'));
+    return;
+  }
   const el=e.target.closest&&e.target.closest('[data-match-key]');
   if(el) openMatch(el.getAttribute('data-match-key'));
 });
 document.addEventListener('keydown',e=>{
   if(e.key!=='Enter'&&e.key!==' ') return;
+  const player=e.target.closest&&e.target.closest('[data-player-id]');
+  if(player){
+    e.preventDefault();
+    openPlayer(player.getAttribute('data-player-id'));
+    return;
+  }
   const el=e.target.closest&&e.target.closest('[data-match-key]');
   if(!el) return;
   e.preventDefault();
