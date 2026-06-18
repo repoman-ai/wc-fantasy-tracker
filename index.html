@@ -208,23 +208,32 @@
   /* Full Schedule toolbar: segmented filter + timezone picker, sitting just
      below the modal header. */
   .sched-tools{display:flex;align-items:center;justify-content:space-between;
-    gap:10px;flex-wrap:wrap;padding:14px 18px 4px}
+    gap:10px;flex-wrap:wrap;padding:14px 18px 4px;flex:none;background:var(--bg)}
 
   /* ---------- Modal ---------- */
   .overlay{position:fixed;inset:0;background:rgba(10,15,30,.55);backdrop-filter:blur(3px);
-    display:none;align-items:flex-start;justify-content:center;z-index:50;padding:28px 16px;overflow:auto}
+    display:none;align-items:flex-start;justify-content:center;z-index:50;padding:28px 16px;overflow:hidden}
   .overlay.open{display:flex}
+  /* The modal is a fixed-height flex column: the header (and any toolbar) stay
+     pinned while only .mbody scrolls — so Close / Back and the match/player
+     title are always in reach. */
   .modal{background:var(--bg);width:100%;max-width:920px;border-radius:22px;overflow:hidden;
-    box-shadow:0 30px 80px rgba(0,0,0,.4);animation:pop .25s ease both}
+    box-shadow:0 30px 80px rgba(0,0,0,.4);animation:pop .25s ease both;
+    display:flex;flex-direction:column;max-height:calc(100dvh - 56px)}
   @keyframes pop{from{opacity:0;transform:translateY(14px) scale(.98)}to{opacity:1;transform:none}}
-  .mhead{background:linear-gradient(120deg,#4f46e5,#7c3aed);color:#fff;padding:20px 22px;display:flex;align-items:center;gap:16px;position:relative}
+  .mhead{background:linear-gradient(120deg,#4f46e5,#7c3aed);color:#fff;padding:20px 22px;display:flex;align-items:center;gap:16px;position:relative;flex:none;z-index:2}
+  /* Grab-handle affordance for swipe-to-close — shown on touch devices. */
+  .mhead::before{content:"";position:absolute;top:7px;left:50%;transform:translateX(-50%);
+    width:40px;height:4px;border-radius:999px;background:rgba(255,255,255,.45);opacity:0}
+  @media(hover:none){.mhead::before{opacity:1}}
   .mhead .flag{width:46px;height:34px}
   .mhead h3{margin:0;font-size:24px;font-weight:800}
   .mhead .meta{font-size:13px;opacity:.85;margin-top:2px}
   .close{position:absolute;top:16px;right:16px;width:34px;height:34px;border-radius:50%;border:none;
     background:rgba(255,255,255,.18);color:#fff;font-size:18px;cursor:pointer;line-height:1}
   .close:hover{background:rgba(255,255,255,.3)}
-  .mbody{padding:18px 18px 26px}
+  .mbody{padding:18px 18px 26px;overflow-y:auto;-webkit-overflow-scrolling:touch;
+    flex:1 1 auto;min-height:0;overscroll-behavior:contain}
 
   .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:14px}
   .stat{background:var(--card);border-radius:14px;padding:12px 14px;box-shadow:var(--shadow)}
@@ -418,6 +427,13 @@
   .mback:hover{background:rgba(255,255,255,.32)}
   .mhead.hasback{padding-top:48px}
 
+  /* "Swipe down to close" cue — fades in as you start dragging the popup down. */
+  .swipe-hint{position:absolute;top:12px;left:50%;transform:translateX(-50%);
+    background:rgba(15,20,40,.85);color:#fff;font-size:12px;font-weight:700;letter-spacing:.2px;
+    padding:7px 14px;border-radius:999px;pointer-events:none;opacity:0;transition:opacity .15s;
+    z-index:60;display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
+  .swipe-hint .ar{font-size:14px;line-height:1}
+
   /* ---------- Match-predictions popup ---------- */
   /* Scoreboard hero at the top of the popup. */
   .mp-board{display:flex;align-items:center;justify-content:center;gap:clamp(12px,5vw,34px);
@@ -560,6 +576,7 @@
   </main>
 
   <div class="overlay" id="overlay">
+    <div class="swipe-hint" id="swipeHint" aria-hidden="true"><span class="ar">⌄</span>Swipe down to close</div>
     <div class="modal" id="modal" role="dialog" aria-modal="true"></div>
   </div>
 
@@ -733,9 +750,9 @@ async function init(){
 function refreshTopView(){
   if(!MODAL_STACK.length) return;
   const v=topView(); if(!v||!v.refresh) return;
-  const overlay=$('#overlay'); const y=overlay.scrollTop;
+  const sc=modalScroller(); const y=sc?sc.scrollTop:0;
   v.refresh();
-  overlay.scrollTop=y;
+  const sc2=modalScroller(); if(sc2) sc2.scrollTop=y;
 }
 
 function prevSnapshot(){
@@ -928,15 +945,18 @@ function resCard(m,i){
    filters. */
 let MODAL_STACK=[];
 function topView(){ return MODAL_STACK[MODAL_STACK.length-1]||null; }
+// .mbody is the per-view scroll container now (the header stays pinned), so
+// scroll save/restore tracks it rather than the overlay.
+function modalScroller(){ const m=$('#modal'); return m?m.querySelector('.mbody'):null; }
 function openModalView(view){
   const overlay=$('#overlay');
-  if(MODAL_STACK.length) MODAL_STACK[MODAL_STACK.length-1].scroll=overlay.scrollTop;
+  if(MODAL_STACK.length){ const sc=modalScroller(); MODAL_STACK[MODAL_STACK.length-1].scroll=sc?sc.scrollTop:0; }
   destroyCharts();
   MODAL_STACK.push(view);
   view.render();
   overlay.classList.add('open');
   document.body.style.overflow='hidden';
-  overlay.scrollTop=0;
+  const sc=modalScroller(); if(sc) sc.scrollTop=0;
 }
 function popModal(){
   if(MODAL_STACK.length<=1){ closeModal(); return; }
@@ -944,7 +964,7 @@ function popModal(){
   MODAL_STACK.pop();
   const v=topView();
   v.render();
-  $('#overlay').scrollTop=v.scroll||0;
+  const sc=modalScroller(); if(sc) sc.scrollTop=v.scroll||0;
 }
 /* Back (only when something sits beneath) + close, shared by every view. */
 function modalControls(){
@@ -1686,9 +1706,57 @@ function drawCharts(s){
   mk('cExact',s.exact,amb,{scales:{x:{grid:{display:false},ticks:{maxTicksLimit:5,font:{size:10}}},y:{beginAtZero:true,ticks:{precision:0,font:{size:10}}}}});
 }
 
-function closeModal(){ MODAL_STACK=[]; $('#overlay').classList.remove('open'); document.body.style.overflow=''; destroyCharts(); }
+function closeModal(){
+  MODAL_STACK=[]; $('#overlay').classList.remove('open'); document.body.style.overflow='';
+  resetDrag();   // clear any in-progress swipe transform so the next open is clean
+  destroyCharts();
+}
 // Overlay-click and Esc pop one level (Back), closing outright at the root.
 $('#overlay').addEventListener('click',e=>{ if(e.target.id==='overlay') popModal(); });
+
+/* ---------------- Swipe-down-to-close ----------------
+   Drag the popup down (from the header, or from the body when it's scrolled to
+   the top) to dismiss it. A "Swipe down to close" cue fades in during the drag;
+   releasing past the threshold closes, otherwise the popup springs back. */
+(function(){
+  const modal=$('#modal'), overlay=$('#overlay'), hint=$('#swipeHint');
+  const CLOSE_AT=110;            // px past which release dismisses
+  let startY=0, dy=0, active=false;
+  function resist(d){ return d>0?d:0; }   // only downward drag counts
+  window.resetDrag=function(){
+    active=false; dy=0;
+    modal.style.transition=''; modal.style.transform=''; modal.style.opacity='';
+    if(hint) hint.style.opacity='0';
+  };
+  modal.addEventListener('touchstart',e=>{
+    if(e.touches.length!==1) return;
+    const body=modalScroller();
+    const onHead=e.target.closest && e.target.closest('.mhead');
+    const atTop=!body || body.scrollTop<=0;
+    if(!onHead && !atTop) return;          // mid-scroll: let the body scroll
+    startY=e.touches[0].clientY; dy=0; active=true;
+    modal.style.transition='none';
+  },{passive:true});
+  modal.addEventListener('touchmove',e=>{
+    if(!active) return;
+    dy=resist(e.touches[0].clientY-startY);
+    if(dy<=0){ modal.style.transform=''; modal.style.opacity=''; if(hint) hint.style.opacity='0'; return; }
+    if(e.cancelable) e.preventDefault();   // suppress rubber-band while dragging
+    modal.style.transform=`translateY(${dy}px)`;
+    modal.style.opacity=String(Math.max(.45,1-dy/700));
+    if(hint) hint.style.opacity=String(Math.min(1,dy/45));
+  },{passive:false});
+  function end(){
+    if(!active) return;
+    const go=dy>CLOSE_AT;
+    modal.style.transition='transform .25s ease, opacity .25s ease';
+    if(hint) hint.style.opacity='0';
+    if(go){ closeModal(); }
+    else{ modal.style.transform=''; modal.style.opacity=''; active=false; dy=0; }
+  }
+  modal.addEventListener('touchend',end);
+  modal.addEventListener('touchcancel',end);
+})();
 document.addEventListener('keydown',e=>{ if(e.key==='Escape'&&MODAL_STACK.length) popModal(); });
 
 // One delegated handler opens the match popup from any [data-match-key] element
