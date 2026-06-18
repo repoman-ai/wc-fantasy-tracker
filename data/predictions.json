@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-18T20:51:27Z",
+  "updated": "2026-06-18T21:01:57Z",
   "players": {
     "247528": {
       "team_id": "247528",
@@ -8,9 +8,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247528/jj/stage/1196-grand-total?scroll=fixture",
       "flag": "FRA",
       "rank": 1,
-      "points": 1113,
+      "points": 1098,
       "exact": 5,
-      "grand_total": 1113,
+      "grand_total": 1098,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -740,7 +740,7 @@
         },
         {
           "round": "Matchday 2",
-          "subtotal": 123,
+          "subtotal": 108,
           "fixtures": [
             {
               "fixture_number": 25,
@@ -776,7 +776,7 @@
               "fixture_number": 26,
               "round": "Matchday 2",
               "stage_type": "group",
-              "status": "· LIVE",
+              "status": "FT",
               "kickoff_utc": "2026-06-18T19:00:00Z",
               "kickoff_local": "2026-06-18 15:00",
               "kickoff_timezone": "America/New_York",
@@ -798,8 +798,8 @@
                 "score": "2 - 0",
                 "hidden": false
               },
-              "actual_score": "3 - 0",
-              "points": 63,
+              "actual_score": "4 - 1",
+              "points": 48,
               "is_exact": false
             },
             {
@@ -3512,9 +3512,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/246775/bobby/stage/1196-grand-total?scroll=fixture",
       "flag": "FRA",
       "rank": 2,
-      "points": 1095,
+      "points": 1080,
       "exact": 3,
-      "grand_total": 1095,
+      "grand_total": 1080,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -4244,7 +4244,7 @@
         },
         {
           "round": "Matchday 2",
-          "subtotal": 78,
+          "subtotal": 63,
           "fixtures": [
             {
               "fixture_number": 25,
@@ -4280,7 +4280,7 @@
               "fixture_number": 26,
               "round": "Matchday 2",
               "stage_type": "group",
-              "status": "· LIVE",
+              "status": "FT",
               "kickoff_utc": "2026-06-18T19:00:00Z",
               "kickoff_local": "2026-06-18 15:00",
               "kickoff_timezone": "America/New_York",
@@ -4302,8 +4302,8 @@
                 "score": "1 - 0",
                 "hidden": false
               },
-              "actual_score": "3 - 0",
-              "points": 63,
+              "actual_score": "4 - 1",
+              "points": 48,
               "is_exact": false
             },
             {
@@ -7784,7 +7784,7 @@
               "fixture_number": 26,
               "round": "Matchday 2",
               "stage_type": "group",
-              "status": "· LIVE",
+              "status": "FT",
               "kickoff_utc": "2026-06-18T19:00:00Z",
               "kickoff_local": "2026-06-18 15:00",
               "kickoff_timezone": "America/New_York",
@@ -7806,7 +7806,7 @@
                 "score": "3 - 1",
                 "hidden": false
               },
-              "actual_score": "3 - 0",
+              "actual_score": "4 - 1",
               "points": 63,
               "is_exact": false
             },
@@ -10520,9 +10520,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247524/alejandro/stage/1196-grand-total?scroll=fixture",
       "flag": "BRA",
       "rank": 4,
-      "points": 1020,
-      "exact": 2,
-      "grand_total": 1020,
+      "points": 990,
+      "exact": 1,
+      "grand_total": 990,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -11252,7 +11252,7 @@
         },
         {
           "round": "Matchday 2",
-          "subtotal": 90,
+          "subtotal": 60,
           "fixtures": [
             {
               "fixture_number": 25,
@@ -11288,7 +11288,7 @@
               "fixture_number": 26,
               "round": "Matchday 2",
               "stage_type": "group",
-              "status": "· LIVE",
+              "status": "FT",
               "kickoff_utc": "2026-06-18T19:00:00Z",
               "kickoff_local": "2026-06-18 15:00",
               "kickoff_timezone": "America/New_York",
@@ -11310,9 +11310,9 @@
                 "score": "3 - 0",
                 "hidden": false
               },
-              "actual_score": "3 - 0",
-              "points": 90,
-              "is_exact": true
+              "actual_score": "4 - 1",
+              "points": 60,
+              "is_exact": false
             },
             {
               "fixture_number": 27,
@@ -14017,12 +14017,12 @@
         "subtotal": 0
       }
     },
-    "253790": {
-      "team_id": "253790",
-      "name": "remi",
-      "slug": "remi",
-      "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/253790/remi/stage/1196-grand-total?scroll=fixture",
-      "flag": "FRA",
+    "247930": {
+      "team_id": "247930",
+      "name": "Alec",
+      "slug": "alec",
+      "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247930/alec/stage/1196-grand-total?scroll=fixture",
+      "flag": "ESP",
       "rank": 5,
       "points": 984,
       "exact": 3,
@@ -14030,7 +14030,7 @@
       "matchdays": [
         {
           "round": "Matchday 1",
-          "subtotal": 906,
+          "subtotal": 831,
           "fixtures": [
             {
               "fixture_number": 1,
@@ -14055,7 +14055,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "2 - 1",
+                "score": "1 - 0",
                 "hidden": false
               },
               "actual_score": "2 - 0",
@@ -14085,12 +14085,12 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "1 - 0",
+                "score": "2 - 1",
                 "hidden": false
               },
               "actual_score": "2 - 1",
-              "points": 60,
-              "is_exact": false
+              "points": 90,
+              "is_exact": true
             },
             {
               "fixture_number": 3,
@@ -14115,7 +14115,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "3 - 1",
+                "score": "1 - 0",
                 "hidden": false
               },
               "actual_score": "1 - 1",
@@ -14145,11 +14145,11 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "2 - 2",
+                "score": "1 - 1",
                 "hidden": false
               },
               "actual_score": "4 - 1",
-              "points": 0,
+              "points": 15,
               "is_exact": false
             },
             {
@@ -14175,11 +14175,11 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "2 - 1",
+                "score": "0 - 2",
                 "hidden": false
               },
               "actual_score": "1 - 1",
-              "points": 15,
+              "points": 0,
               "is_exact": false
             },
             {
@@ -14205,11 +14205,11 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "3 - 0",
+                "score": "2 - 1",
                 "hidden": false
               },
               "actual_score": "1 - 1",
-              "points": 0,
+              "points": 15,
               "is_exact": false
             },
             {
@@ -14235,11 +14235,11 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "1 - 2",
+                "score": "0 - 2",
                 "hidden": false
               },
               "actual_score": "0 - 1",
-              "points": 60,
+              "points": 63,
               "is_exact": false
             },
             {
@@ -14265,12 +14265,12 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "2 - 0",
+                "score": "0 - 2",
                 "hidden": false
               },
               "actual_score": "2 - 0",
-              "points": 90,
-              "is_exact": true
+              "points": 0,
+              "is_exact": false
             },
             {
               "fixture_number": 10,
@@ -14295,7 +14295,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "3 - 0",
+                "score": "4 - 0",
                 "hidden": false
               },
               "actual_score": "7 - 1",
@@ -14325,7 +14325,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "2 - 3",
+                "score": "2 - 1",
                 "hidden": false
               },
               "actual_score": "2 - 2",
@@ -14355,11 +14355,11 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "3 - 0",
+                "score": "1 - 1",
                 "hidden": false
               },
               "actual_score": "1 - 0",
-              "points": 63,
+              "points": 15,
               "is_exact": false
             },
             {
@@ -14475,11 +14475,11 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "2 - 1",
+                "score": "0 - 2",
                 "hidden": false
               },
               "actual_score": "1 - 1",
-              "points": 15,
+              "points": 0,
               "is_exact": false
             },
             {
@@ -14505,11 +14505,11 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "3 - 1",
+                "score": "2 - 0",
                 "hidden": false
               },
               "actual_score": "2 - 2",
-              "points": 0,
+              "points": 15,
               "is_exact": false
             },
             {
@@ -14535,7 +14535,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "3 - 0",
+                "score": "2 - 1",
                 "hidden": false
               },
               "actual_score": "3 - 1",
@@ -14565,11 +14565,11 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "1 - 0",
+                "score": "1 - 3",
                 "hidden": false
               },
               "actual_score": "1 - 4",
-              "points": 15,
+              "points": 63,
               "is_exact": false
             },
             {
@@ -14595,12 +14595,12 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "3 - 0",
+                "score": "2 - 0",
                 "hidden": false
               },
               "actual_score": "3 - 0",
-              "points": 90,
-              "is_exact": true
+              "points": 63,
+              "is_exact": false
             },
             {
               "fixture_number": 20,
@@ -14625,11 +14625,11 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "1 - 1",
+                "score": "2 - 0",
                 "hidden": false
               },
               "actual_score": "3 - 1",
-              "points": 15,
+              "points": 60,
               "is_exact": false
             },
             {
@@ -14685,11 +14685,11 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "3 - 0",
+                "score": "1 - 1",
                 "hidden": false
               },
               "actual_score": "4 - 2",
-              "points": 48,
+              "points": 0,
               "is_exact": false
             },
             {
@@ -14745,18 +14745,18 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "1 - 2",
+                "score": "0 - 2",
                 "hidden": false
               },
               "actual_score": "1 - 3",
-              "points": 63,
+              "points": 60,
               "is_exact": false
             }
           ]
         },
         {
           "round": "Matchday 2",
-          "subtotal": 78,
+          "subtotal": 153,
           "fixtures": [
             {
               "fixture_number": 25,
@@ -14781,18 +14781,18 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "0 - 1",
+                "score": "1 - 1",
                 "hidden": false
               },
               "actual_score": "1 - 1",
-              "points": 15,
-              "is_exact": false
+              "points": 90,
+              "is_exact": true
             },
             {
               "fixture_number": 26,
               "round": "Matchday 2",
               "stage_type": "group",
-              "status": "· LIVE",
+              "status": "FT",
               "kickoff_utc": "2026-06-18T19:00:00Z",
               "kickoff_local": "2026-06-18 15:00",
               "kickoff_timezone": "America/New_York",
@@ -14811,10 +14811,10 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "2 - 0",
+                "score": "2 - 1",
                 "hidden": false
               },
-              "actual_score": "3 - 0",
+              "actual_score": "4 - 1",
               "points": 63,
               "is_exact": false
             },
@@ -14841,7 +14841,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "3 - 1",
+                "score": "1 - 1",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -14871,7 +14871,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "2 - 1",
+                "score": "1 - 1",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -14901,7 +14901,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "3 - 2",
+                "score": "2 - 1",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -14931,7 +14931,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "2 - 1",
+                "score": "1 - 2",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -14961,7 +14961,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "3 - 0",
+                "score": "4 - 0",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -14991,7 +14991,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "1 - 2",
+                "score": "1 - 1",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -15021,7 +15021,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "2 - 3",
+                "score": "1 - 1",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -15051,7 +15051,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "3 - 0",
+                "score": "2 - 1",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -15081,7 +15081,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "1 - 0",
+                "score": "3 - 0",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -15111,7 +15111,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "1 - 2",
+                "score": "0 - 1",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -15141,7 +15141,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "2 - 0",
+                "score": "3 - 0",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -15171,7 +15171,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "1 - 2",
+                "score": "1 - 1",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -15201,7 +15201,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "2 - 0",
+                "score": "2 - 1",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -15231,7 +15231,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "1 - 0",
+                "score": "0 - 2",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -15261,7 +15261,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "3 - 0",
+                "score": "1 - 1",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -15321,7 +15321,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "1 - 0",
+                "score": "1 - 1",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -15351,7 +15351,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "2 - 0",
+                "score": "1 - 2",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -15381,7 +15381,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "2 - 0",
+                "score": "3 - 0",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -15411,7 +15411,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "2 - 1",
+                "score": "2 - 0",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -15441,7 +15441,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "2 - 1",
+                "score": "0 - 2",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -15471,7 +15471,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "3 - 0",
+                "score": "2 - 1",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -15507,7 +15507,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "1 - 2",
+                "score": "1 - 1",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -15597,7 +15597,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "2 - 0",
+                "score": "3 - 0",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -15627,7 +15627,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "2 - 3",
+                "score": "0 - 2",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -15657,7 +15657,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "1 - 3",
+                "score": "1 - 1",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -15687,7 +15687,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "2 - 1",
+                "score": "0 - 2",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -15717,7 +15717,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "0 - 2",
+                "score": "1 - 2",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -15747,7 +15747,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "3 - 0",
+                "score": "1 - 1",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -15777,7 +15777,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "2 - 1",
+                "score": "0 - 2",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -15837,7 +15837,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "2 - 3",
+                "score": "1 - 1",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -15867,7 +15867,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "2 - 4",
+                "score": "1 - 2",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -15897,7 +15897,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "3 - 1",
+                "score": "2 - 0",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -15927,7 +15927,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "2 - 0",
+                "score": "1 - 1",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -15957,7 +15957,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "2 - 4",
+                "score": "1 - 2",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -15987,7 +15987,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "0 - 1",
+                "score": "1 - 1",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -16017,7 +16017,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "3 - 1",
+                "score": "0 - 3",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -16047,7 +16047,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "2 - 0",
+                "score": "0 - 3",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -16077,7 +16077,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "2 - 1",
+                "score": "1 - 1",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -16107,7 +16107,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "1 - 3",
+                "score": "1 - 1",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -16137,7 +16137,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "2 - 1",
+                "score": "1 - 1",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -16167,7 +16167,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "1 - 0",
+                "score": "1 - 1",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -16197,7 +16197,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "2 - 0",
+                "score": "0 - 3",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -16240,8 +16240,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": "QAT",
-                  "name": "Qatar",
+                  "code": "CAN",
+                  "name": "Canada",
                   "hidden": false
                 }
               },
@@ -16326,8 +16326,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": "BIH",
-                  "name": "Bosnia-Herzegovina",
+                  "code": "PAR",
+                  "name": "Paraguay",
                   "hidden": false
                 }
               },
@@ -16364,13 +16364,13 @@
                 "type": "teams",
                 "hidden": false,
                 "home": {
-                  "code": "JPN",
-                  "name": "Japan",
+                  "code": "NED",
+                  "name": "Netherlands",
                   "hidden": false
                 },
                 "away": {
-                  "code": "SCO",
-                  "name": "Scotland",
+                  "code": "MAR",
+                  "name": "Morocco",
                   "hidden": false
                 }
               },
@@ -16407,8 +16407,8 @@
                 "type": "teams",
                 "hidden": false,
                 "home": {
-                  "code": "CIV",
-                  "name": "Côte d'Ivoire",
+                  "code": "ECU",
+                  "name": "Ecuador",
                   "hidden": false
                 },
                 "away": {
@@ -16455,8 +16455,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": "TUN",
-                  "name": "Tunisia",
+                  "code": "JPN",
+                  "name": "Japan",
                   "hidden": false
                 }
               },
@@ -16498,8 +16498,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": "MAR",
-                  "name": "Morocco",
+                  "code": "SCO",
+                  "name": "Scotland",
                   "hidden": false
                 }
               },
@@ -16579,13 +16579,13 @@
                 "type": "teams",
                 "hidden": false,
                 "home": {
-                  "code": "IRN",
-                  "name": "Iran",
+                  "code": "BEL",
+                  "name": "Belgium",
                   "hidden": false
                 },
                 "away": {
-                  "code": "RSA",
-                  "name": "South Africa",
+                  "code": "ALG",
+                  "name": "Algeria",
                   "hidden": false
                 }
               },
@@ -16627,8 +16627,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": "SUI",
-                  "name": "Switzerland",
+                  "code": "CIV",
+                  "name": "Côte d'Ivoire",
                   "hidden": false
                 }
               },
@@ -16670,8 +16670,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": "ARG",
-                  "name": "Argentina",
+                  "code": "AUT",
+                  "name": "Austria",
                   "hidden": false
                 }
               },
@@ -16713,8 +16713,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": "PAN",
-                  "name": "Panama",
+                  "code": "CRO",
+                  "name": "Croatia",
                   "hidden": false
                 }
               },
@@ -16751,13 +16751,13 @@
                 "type": "teams",
                 "hidden": false,
                 "home": {
-                  "code": "CAN",
-                  "name": "Canada",
+                  "code": "SUI",
+                  "name": "Switzerland",
                   "hidden": false
                 },
                 "away": {
-                  "code": "BEL",
-                  "name": "Belgium",
+                  "code": "EGY",
+                  "name": "Egypt",
                   "hidden": false
                 }
               },
@@ -16794,13 +16794,13 @@
                 "type": "teams",
                 "hidden": false,
                 "home": {
-                  "code": "AUS",
-                  "name": "Australia",
+                  "code": "TUR",
+                  "name": "Turkey",
                   "hidden": false
                 },
                 "away": {
-                  "code": "NZL",
-                  "name": "New Zealand",
+                  "code": "IRN",
+                  "name": "Iran",
                   "hidden": false
                 }
               },
@@ -16837,8 +16837,8 @@
                 "type": "teams",
                 "hidden": false,
                 "home": {
-                  "code": "JOR",
-                  "name": "Jordan",
+                  "code": "ARG",
+                  "name": "Argentina",
                   "hidden": false
                 },
                 "away": {
@@ -17496,8 +17496,8 @@
           {
             "question": "🏆 Champion",
             "prediction": {
-              "text": "France",
-              "flag": "FRA"
+              "text": "Spain",
+              "flag": "ESP"
             },
             "actual": {
               "text": "-",
@@ -17508,7 +17508,7 @@
           {
             "question": "Topscorer",
             "prediction": {
-              "text": "Lionel Messi (Argentina)",
+              "text": "Kylian Mbappé (France)",
               "flag": null
             },
             "actual": {
@@ -18296,7 +18296,7 @@
               "fixture_number": 26,
               "round": "Matchday 2",
               "stage_type": "group",
-              "status": "· LIVE",
+              "status": "FT",
               "kickoff_utc": "2026-06-18T19:00:00Z",
               "kickoff_local": "2026-06-18 15:00",
               "kickoff_timezone": "America/New_York",
@@ -18318,7 +18318,7 @@
                 "score": "1 - 2",
                 "hidden": false
               },
-              "actual_score": "3 - 0",
+              "actual_score": "4 - 1",
               "points": 0,
               "is_exact": false
             },
@@ -21025,12 +21025,12 @@
         "subtotal": 0
       }
     },
-    "247930": {
-      "team_id": "247930",
-      "name": "Alec",
-      "slug": "alec",
-      "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247930/alec/stage/1196-grand-total?scroll=fixture",
-      "flag": "ESP",
+    "253790": {
+      "team_id": "253790",
+      "name": "remi",
+      "slug": "remi",
+      "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/253790/remi/stage/1196-grand-total?scroll=fixture",
+      "flag": "FRA",
       "rank": 7,
       "points": 969,
       "exact": 3,
@@ -21038,7 +21038,7 @@
       "matchdays": [
         {
           "round": "Matchday 1",
-          "subtotal": 831,
+          "subtotal": 906,
           "fixtures": [
             {
               "fixture_number": 1,
@@ -21063,7 +21063,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "1 - 0",
+                "score": "2 - 1",
                 "hidden": false
               },
               "actual_score": "2 - 0",
@@ -21093,12 +21093,12 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "2 - 1",
+                "score": "1 - 0",
                 "hidden": false
               },
               "actual_score": "2 - 1",
-              "points": 90,
-              "is_exact": true
+              "points": 60,
+              "is_exact": false
             },
             {
               "fixture_number": 3,
@@ -21123,7 +21123,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "1 - 0",
+                "score": "3 - 1",
                 "hidden": false
               },
               "actual_score": "1 - 1",
@@ -21153,11 +21153,11 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "1 - 1",
+                "score": "2 - 2",
                 "hidden": false
               },
               "actual_score": "4 - 1",
-              "points": 15,
+              "points": 0,
               "is_exact": false
             },
             {
@@ -21183,11 +21183,11 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "0 - 2",
+                "score": "2 - 1",
                 "hidden": false
               },
               "actual_score": "1 - 1",
-              "points": 0,
+              "points": 15,
               "is_exact": false
             },
             {
@@ -21213,11 +21213,11 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "2 - 1",
+                "score": "3 - 0",
                 "hidden": false
               },
               "actual_score": "1 - 1",
-              "points": 15,
+              "points": 0,
               "is_exact": false
             },
             {
@@ -21243,11 +21243,11 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "0 - 2",
+                "score": "1 - 2",
                 "hidden": false
               },
               "actual_score": "0 - 1",
-              "points": 63,
+              "points": 60,
               "is_exact": false
             },
             {
@@ -21273,12 +21273,12 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "0 - 2",
+                "score": "2 - 0",
                 "hidden": false
               },
               "actual_score": "2 - 0",
-              "points": 0,
-              "is_exact": false
+              "points": 90,
+              "is_exact": true
             },
             {
               "fixture_number": 10,
@@ -21303,7 +21303,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "4 - 0",
+                "score": "3 - 0",
                 "hidden": false
               },
               "actual_score": "7 - 1",
@@ -21333,7 +21333,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "2 - 1",
+                "score": "2 - 3",
                 "hidden": false
               },
               "actual_score": "2 - 2",
@@ -21363,11 +21363,11 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "1 - 1",
+                "score": "3 - 0",
                 "hidden": false
               },
               "actual_score": "1 - 0",
-              "points": 15,
+              "points": 63,
               "is_exact": false
             },
             {
@@ -21483,11 +21483,11 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "0 - 2",
+                "score": "2 - 1",
                 "hidden": false
               },
               "actual_score": "1 - 1",
-              "points": 0,
+              "points": 15,
               "is_exact": false
             },
             {
@@ -21513,11 +21513,11 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "2 - 0",
+                "score": "3 - 1",
                 "hidden": false
               },
               "actual_score": "2 - 2",
-              "points": 15,
+              "points": 0,
               "is_exact": false
             },
             {
@@ -21543,7 +21543,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "2 - 1",
+                "score": "3 - 0",
                 "hidden": false
               },
               "actual_score": "3 - 1",
@@ -21573,11 +21573,11 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "1 - 3",
+                "score": "1 - 0",
                 "hidden": false
               },
               "actual_score": "1 - 4",
-              "points": 63,
+              "points": 15,
               "is_exact": false
             },
             {
@@ -21603,12 +21603,12 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "2 - 0",
+                "score": "3 - 0",
                 "hidden": false
               },
               "actual_score": "3 - 0",
-              "points": 63,
-              "is_exact": false
+              "points": 90,
+              "is_exact": true
             },
             {
               "fixture_number": 20,
@@ -21633,11 +21633,11 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "2 - 0",
+                "score": "1 - 1",
                 "hidden": false
               },
               "actual_score": "3 - 1",
-              "points": 60,
+              "points": 15,
               "is_exact": false
             },
             {
@@ -21693,11 +21693,11 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "1 - 1",
+                "score": "3 - 0",
                 "hidden": false
               },
               "actual_score": "4 - 2",
-              "points": 0,
+              "points": 48,
               "is_exact": false
             },
             {
@@ -21753,18 +21753,18 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "0 - 2",
+                "score": "1 - 2",
                 "hidden": false
               },
               "actual_score": "1 - 3",
-              "points": 60,
+              "points": 63,
               "is_exact": false
             }
           ]
         },
         {
           "round": "Matchday 2",
-          "subtotal": 138,
+          "subtotal": 63,
           "fixtures": [
             {
               "fixture_number": 25,
@@ -21789,18 +21789,18 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "1 - 1",
+                "score": "0 - 1",
                 "hidden": false
               },
               "actual_score": "1 - 1",
-              "points": 90,
-              "is_exact": true
+              "points": 15,
+              "is_exact": false
             },
             {
               "fixture_number": 26,
               "round": "Matchday 2",
               "stage_type": "group",
-              "status": "· LIVE",
+              "status": "FT",
               "kickoff_utc": "2026-06-18T19:00:00Z",
               "kickoff_local": "2026-06-18 15:00",
               "kickoff_timezone": "America/New_York",
@@ -21819,10 +21819,10 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "2 - 1",
+                "score": "2 - 0",
                 "hidden": false
               },
-              "actual_score": "3 - 0",
+              "actual_score": "4 - 1",
               "points": 48,
               "is_exact": false
             },
@@ -21849,7 +21849,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "1 - 1",
+                "score": "3 - 1",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -21879,7 +21879,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "1 - 1",
+                "score": "2 - 1",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -21909,7 +21909,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "2 - 1",
+                "score": "3 - 2",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -21939,7 +21939,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "1 - 2",
+                "score": "2 - 1",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -21969,7 +21969,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "4 - 0",
+                "score": "3 - 0",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -21999,7 +21999,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "1 - 1",
+                "score": "1 - 2",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -22029,7 +22029,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "1 - 1",
+                "score": "2 - 3",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -22059,7 +22059,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "2 - 1",
+                "score": "3 - 0",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -22089,7 +22089,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "3 - 0",
+                "score": "1 - 0",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -22119,7 +22119,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "0 - 1",
+                "score": "1 - 2",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -22149,7 +22149,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "3 - 0",
+                "score": "2 - 0",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -22179,7 +22179,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "1 - 1",
+                "score": "1 - 2",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -22209,7 +22209,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "2 - 1",
+                "score": "2 - 0",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -22239,7 +22239,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "0 - 2",
+                "score": "1 - 0",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -22269,7 +22269,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "1 - 1",
+                "score": "3 - 0",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -22329,7 +22329,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "1 - 1",
+                "score": "1 - 0",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -22359,7 +22359,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "1 - 2",
+                "score": "2 - 0",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -22389,7 +22389,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "3 - 0",
+                "score": "2 - 0",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -22419,7 +22419,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "2 - 0",
+                "score": "2 - 1",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -22449,7 +22449,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "0 - 2",
+                "score": "2 - 1",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -22479,7 +22479,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "2 - 1",
+                "score": "3 - 0",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -22515,7 +22515,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "1 - 1",
+                "score": "1 - 2",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -22605,7 +22605,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "3 - 0",
+                "score": "2 - 0",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -22635,7 +22635,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "0 - 2",
+                "score": "2 - 3",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -22665,7 +22665,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "1 - 1",
+                "score": "1 - 3",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -22695,7 +22695,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "0 - 2",
+                "score": "2 - 1",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -22725,7 +22725,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "1 - 2",
+                "score": "0 - 2",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -22755,7 +22755,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "1 - 1",
+                "score": "3 - 0",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -22785,7 +22785,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "0 - 2",
+                "score": "2 - 1",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -22845,7 +22845,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "1 - 1",
+                "score": "2 - 3",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -22875,7 +22875,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "1 - 2",
+                "score": "2 - 4",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -22905,7 +22905,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "2 - 0",
+                "score": "3 - 1",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -22935,7 +22935,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "1 - 1",
+                "score": "2 - 0",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -22965,7 +22965,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "1 - 2",
+                "score": "2 - 4",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -22995,7 +22995,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "1 - 1",
+                "score": "0 - 1",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -23025,7 +23025,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "0 - 3",
+                "score": "3 - 1",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -23055,7 +23055,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "0 - 3",
+                "score": "2 - 0",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -23085,7 +23085,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "1 - 1",
+                "score": "2 - 1",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -23115,7 +23115,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "1 - 1",
+                "score": "1 - 3",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -23145,7 +23145,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "1 - 1",
+                "score": "2 - 1",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -23175,7 +23175,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "1 - 1",
+                "score": "1 - 0",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -23205,7 +23205,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "0 - 3",
+                "score": "2 - 0",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -23248,8 +23248,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": "CAN",
-                  "name": "Canada",
+                  "code": "QAT",
+                  "name": "Qatar",
                   "hidden": false
                 }
               },
@@ -23334,8 +23334,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": "PAR",
-                  "name": "Paraguay",
+                  "code": "BIH",
+                  "name": "Bosnia-Herzegovina",
                   "hidden": false
                 }
               },
@@ -23372,13 +23372,13 @@
                 "type": "teams",
                 "hidden": false,
                 "home": {
-                  "code": "NED",
-                  "name": "Netherlands",
+                  "code": "JPN",
+                  "name": "Japan",
                   "hidden": false
                 },
                 "away": {
-                  "code": "MAR",
-                  "name": "Morocco",
+                  "code": "SCO",
+                  "name": "Scotland",
                   "hidden": false
                 }
               },
@@ -23415,8 +23415,8 @@
                 "type": "teams",
                 "hidden": false,
                 "home": {
-                  "code": "ECU",
-                  "name": "Ecuador",
+                  "code": "CIV",
+                  "name": "Côte d'Ivoire",
                   "hidden": false
                 },
                 "away": {
@@ -23463,8 +23463,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": "JPN",
-                  "name": "Japan",
+                  "code": "TUN",
+                  "name": "Tunisia",
                   "hidden": false
                 }
               },
@@ -23506,8 +23506,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": "SCO",
-                  "name": "Scotland",
+                  "code": "MAR",
+                  "name": "Morocco",
                   "hidden": false
                 }
               },
@@ -23587,13 +23587,13 @@
                 "type": "teams",
                 "hidden": false,
                 "home": {
-                  "code": "BEL",
-                  "name": "Belgium",
+                  "code": "IRN",
+                  "name": "Iran",
                   "hidden": false
                 },
                 "away": {
-                  "code": "ALG",
-                  "name": "Algeria",
+                  "code": "RSA",
+                  "name": "South Africa",
                   "hidden": false
                 }
               },
@@ -23635,8 +23635,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": "CIV",
-                  "name": "Côte d'Ivoire",
+                  "code": "SUI",
+                  "name": "Switzerland",
                   "hidden": false
                 }
               },
@@ -23678,8 +23678,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": "AUT",
-                  "name": "Austria",
+                  "code": "ARG",
+                  "name": "Argentina",
                   "hidden": false
                 }
               },
@@ -23721,8 +23721,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": "CRO",
-                  "name": "Croatia",
+                  "code": "PAN",
+                  "name": "Panama",
                   "hidden": false
                 }
               },
@@ -23759,13 +23759,13 @@
                 "type": "teams",
                 "hidden": false,
                 "home": {
-                  "code": "SUI",
-                  "name": "Switzerland",
+                  "code": "CAN",
+                  "name": "Canada",
                   "hidden": false
                 },
                 "away": {
-                  "code": "EGY",
-                  "name": "Egypt",
+                  "code": "BEL",
+                  "name": "Belgium",
                   "hidden": false
                 }
               },
@@ -23802,13 +23802,13 @@
                 "type": "teams",
                 "hidden": false,
                 "home": {
-                  "code": "TUR",
-                  "name": "Turkey",
+                  "code": "AUS",
+                  "name": "Australia",
                   "hidden": false
                 },
                 "away": {
-                  "code": "IRN",
-                  "name": "Iran",
+                  "code": "NZL",
+                  "name": "New Zealand",
                   "hidden": false
                 }
               },
@@ -23845,8 +23845,8 @@
                 "type": "teams",
                 "hidden": false,
                 "home": {
-                  "code": "ARG",
-                  "name": "Argentina",
+                  "code": "JOR",
+                  "name": "Jordan",
                   "hidden": false
                 },
                 "away": {
@@ -24504,8 +24504,8 @@
           {
             "question": "🏆 Champion",
             "prediction": {
-              "text": "Spain",
-              "flag": "ESP"
+              "text": "France",
+              "flag": "FRA"
             },
             "actual": {
               "text": "-",
@@ -24516,7 +24516,7 @@
           {
             "question": "Topscorer",
             "prediction": {
-              "text": "Kylian Mbappé (France)",
+              "text": "Lionel Messi (Argentina)",
               "flag": null
             },
             "actual": {
@@ -24536,9 +24536,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/252600/el-capitan/stage/1196-grand-total?scroll=fixture",
       "flag": "FRA",
       "rank": 8,
-      "points": 957,
+      "points": 942,
       "exact": 3,
-      "grand_total": 957,
+      "grand_total": 942,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -25268,7 +25268,7 @@
         },
         {
           "round": "Matchday 2",
-          "subtotal": 78,
+          "subtotal": 63,
           "fixtures": [
             {
               "fixture_number": 25,
@@ -25304,7 +25304,7 @@
               "fixture_number": 26,
               "round": "Matchday 2",
               "stage_type": "group",
-              "status": "· LIVE",
+              "status": "FT",
               "kickoff_utc": "2026-06-18T19:00:00Z",
               "kickoff_local": "2026-06-18 15:00",
               "kickoff_timezone": "America/New_York",
@@ -25326,8 +25326,8 @@
                 "score": "1 - 0",
                 "hidden": false
               },
-              "actual_score": "3 - 0",
-              "points": 63,
+              "actual_score": "4 - 1",
+              "points": 48,
               "is_exact": false
             },
             {
@@ -28040,9 +28040,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/253787/jazmin/stage/1196-grand-total?scroll=fixture",
       "flag": "POR",
       "rank": 9,
-      "points": 924,
+      "points": 939,
       "exact": 2,
-      "grand_total": 924,
+      "grand_total": 939,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -28772,7 +28772,7 @@
         },
         {
           "round": "Matchday 2",
-          "subtotal": 48,
+          "subtotal": 63,
           "fixtures": [
             {
               "fixture_number": 25,
@@ -28808,7 +28808,7 @@
               "fixture_number": 26,
               "round": "Matchday 2",
               "stage_type": "group",
-              "status": "· LIVE",
+              "status": "FT",
               "kickoff_utc": "2026-06-18T19:00:00Z",
               "kickoff_local": "2026-06-18 15:00",
               "kickoff_timezone": "America/New_York",
@@ -28830,8 +28830,8 @@
                 "score": "2 - 1",
                 "hidden": false
               },
-              "actual_score": "3 - 0",
-              "points": 48,
+              "actual_score": "4 - 1",
+              "points": 63,
               "is_exact": false
             },
             {
@@ -31544,9 +31544,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247537/yo/stage/1196-grand-total?scroll=fixture",
       "flag": "MEX",
       "rank": 10,
-      "points": 897,
+      "points": 912,
       "exact": 3,
-      "grand_total": 897,
+      "grand_total": 912,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -32276,7 +32276,7 @@
         },
         {
           "round": "Matchday 2",
-          "subtotal": 15,
+          "subtotal": 30,
           "fixtures": [
             {
               "fixture_number": 25,
@@ -32312,7 +32312,7 @@
               "fixture_number": 26,
               "round": "Matchday 2",
               "stage_type": "group",
-              "status": "· LIVE",
+              "status": "FT",
               "kickoff_utc": "2026-06-18T19:00:00Z",
               "kickoff_local": "2026-06-18 15:00",
               "kickoff_timezone": "America/New_York",
@@ -32334,8 +32334,8 @@
                 "score": "1 - 1",
                 "hidden": false
               },
-              "actual_score": "3 - 0",
-              "points": 0,
+              "actual_score": "4 - 1",
+              "points": 15,
               "is_exact": false
             },
             {
@@ -35048,9 +35048,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247525/karenwj/stage/1196-grand-total?scroll=fixture",
       "flag": "NED",
       "rank": 11,
-      "points": 879,
+      "points": 864,
       "exact": 2,
-      "grand_total": 879,
+      "grand_total": 864,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -35780,7 +35780,7 @@
         },
         {
           "round": "Matchday 2",
-          "subtotal": 63,
+          "subtotal": 48,
           "fixtures": [
             {
               "fixture_number": 25,
@@ -35816,7 +35816,7 @@
               "fixture_number": 26,
               "round": "Matchday 2",
               "stage_type": "group",
-              "status": "· LIVE",
+              "status": "FT",
               "kickoff_utc": "2026-06-18T19:00:00Z",
               "kickoff_local": "2026-06-18 15:00",
               "kickoff_timezone": "America/New_York",
@@ -35838,8 +35838,8 @@
                 "score": "2 - 0",
                 "hidden": false
               },
-              "actual_score": "3 - 0",
-              "points": 63,
+              "actual_score": "4 - 1",
+              "points": 48,
               "is_exact": false
             },
             {
@@ -38552,9 +38552,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/252653/daniel/stage/1196-grand-total?scroll=fixture",
       "flag": "FRA",
       "rank": 12,
-      "points": 873,
+      "points": 858,
       "exact": 2,
-      "grand_total": 873,
+      "grand_total": 858,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -39284,7 +39284,7 @@
         },
         {
           "round": "Matchday 2",
-          "subtotal": 63,
+          "subtotal": 48,
           "fixtures": [
             {
               "fixture_number": 25,
@@ -39320,7 +39320,7 @@
               "fixture_number": 26,
               "round": "Matchday 2",
               "stage_type": "group",
-              "status": "· LIVE",
+              "status": "FT",
               "kickoff_utc": "2026-06-18T19:00:00Z",
               "kickoff_local": "2026-06-18 15:00",
               "kickoff_timezone": "America/New_York",
@@ -39342,8 +39342,8 @@
                 "score": "1 - 0",
                 "hidden": false
               },
-              "actual_score": "3 - 0",
-              "points": 63,
+              "actual_score": "4 - 1",
+              "points": 48,
               "is_exact": false
             },
             {
@@ -42824,7 +42824,7 @@
               "fixture_number": 26,
               "round": "Matchday 2",
               "stage_type": "group",
-              "status": "· LIVE",
+              "status": "FT",
               "kickoff_utc": "2026-06-18T19:00:00Z",
               "kickoff_local": "2026-06-18 15:00",
               "kickoff_timezone": "America/New_York",
@@ -42846,7 +42846,7 @@
                 "score": "3 - 1",
                 "hidden": false
               },
-              "actual_score": "3 - 0",
+              "actual_score": "4 - 1",
               "points": 63,
               "is_exact": false
             },
@@ -45560,9 +45560,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247535/baronmark/stage/1196-grand-total?scroll=fixture",
       "flag": "FRA",
       "rank": 14,
-      "points": 816,
+      "points": 801,
       "exact": 2,
-      "grand_total": 816,
+      "grand_total": 801,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -46292,7 +46292,7 @@
         },
         {
           "round": "Matchday 2",
-          "subtotal": 78,
+          "subtotal": 63,
           "fixtures": [
             {
               "fixture_number": 25,
@@ -46328,7 +46328,7 @@
               "fixture_number": 26,
               "round": "Matchday 2",
               "stage_type": "group",
-              "status": "· LIVE",
+              "status": "FT",
               "kickoff_utc": "2026-06-18T19:00:00Z",
               "kickoff_local": "2026-06-18 15:00",
               "kickoff_timezone": "America/New_York",
@@ -46350,8 +46350,8 @@
                 "score": "1 - 0",
                 "hidden": false
               },
-              "actual_score": "3 - 0",
-              "points": 63,
+              "actual_score": "4 - 1",
+              "points": 48,
               "is_exact": false
             },
             {
@@ -49064,9 +49064,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247526/valewalle/stage/1196-grand-total?scroll=fixture",
       "flag": "ESP",
       "rank": 15,
-      "points": 780,
+      "points": 795,
       "exact": 2,
-      "grand_total": 780,
+      "grand_total": 795,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -49796,7 +49796,7 @@
         },
         {
           "round": "Matchday 2",
-          "subtotal": 0,
+          "subtotal": 15,
           "fixtures": [
             {
               "fixture_number": 25,
@@ -49832,7 +49832,7 @@
               "fixture_number": 26,
               "round": "Matchday 2",
               "stage_type": "group",
-              "status": "· LIVE",
+              "status": "FT",
               "kickoff_utc": "2026-06-18T19:00:00Z",
               "kickoff_local": "2026-06-18 15:00",
               "kickoff_timezone": "America/New_York",
@@ -49854,8 +49854,8 @@
                 "score": "1 - 1",
                 "hidden": false
               },
-              "actual_score": "3 - 0",
-              "points": 0,
+              "actual_score": "4 - 1",
+              "points": 15,
               "is_exact": false
             },
             {
@@ -53336,7 +53336,7 @@
               "fixture_number": 26,
               "round": "Matchday 2",
               "stage_type": "group",
-              "status": "· LIVE",
+              "status": "FT",
               "kickoff_utc": "2026-06-18T19:00:00Z",
               "kickoff_local": "2026-06-18 15:00",
               "kickoff_timezone": "America/New_York",
@@ -53358,7 +53358,7 @@
                 "score": "1 - 3",
                 "hidden": false
               },
-              "actual_score": "3 - 0",
+              "actual_score": "4 - 1",
               "points": 0,
               "is_exact": false
             },
