@@ -1518,16 +1518,20 @@ function renderMatchView(key){
   const nailed=picks.filter(p=>p.is_exact&&meta.done);
   const scored=picks.filter(p=>p.points>0);
   const top=picks.slice().sort((a,b)=>b.points-a.points)[0];
+  // Only surface a single leader. When two or more players share the top score,
+  // there's no clear leader, so we drop the Top/Leading chip entirely.
+  const topTied=top&&top.points>0&&picks.filter(p=>p.points===top.points).length>1;
+  const soleTop=top&&top.points>0&&!topTied;
   const actualKey=hasResult?(sc.h+' - '+sc.a):null;
 
   const chips=[];
   if(meta.done){
     chips.push(`<div class="mp-chip ${nailed.length?'hit':''}"><span class="ic">🎯</span><b>${nailed.length}</b> of ${picks.length} nailed it</div>`);
     chips.push(`<div class="mp-chip"><span class="ic">✅</span><b>${scored.length}</b> earned points</div>`);
-    if(top&&top.points>0) chips.push(`<div class="mp-chip"><span class="ic">🏆</span>Top: ${esc(top.name)} <b>${top.points}</b></div>`);
+    if(soleTop) chips.push(`<div class="mp-chip"><span class="ic">🏆</span>Top: ${esc(top.name)} <b>${top.points}</b></div>`);
   }else if(meta.live){
     chips.push(`<div class="mp-chip"><span class="ic"><span class="livedot"></span></span><b>${scored.length}</b> in the points</div>`);
-    if(top&&top.points>0) chips.push(`<div class="mp-chip"><span class="ic">🏆</span>Leading: ${esc(top.name)} <b>${top.points}</b></div>`);
+    if(soleTop) chips.push(`<div class="mp-chip"><span class="ic">🏆</span>Leading: ${esc(top.name)} <b>${top.points}</b></div>`);
   }else{
     chips.push(`<div class="mp-chip"><span class="ic">📝</span><b>${revealed.length}</b> picks in${hiddenCount?` · ${hiddenCount} hidden`:''}</div>`);
   }
