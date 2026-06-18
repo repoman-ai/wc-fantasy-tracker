@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-18T15:36:32Z",
+  "updated": "2026-06-18T16:02:42Z",
   "players": {
     "246775": {
       "team_id": "246775",
@@ -14762,7 +14762,7 @@
               "fixture_number": 25,
               "round": "Matchday 2",
               "stage_type": "group",
-              "status": "NS",
+              "status": "· LIVE",
               "kickoff_utc": "2026-06-18T16:00:00Z",
               "kickoff_local": "2026-06-18 12:00",
               "kickoff_timezone": "America/New_York",
@@ -14784,8 +14784,8 @@
                 "score": "1 - 1",
                 "hidden": false
               },
-              "actual_score": "NS",
-              "points": null,
+              "actual_score": "0 - 0",
+              "points": 0,
               "is_exact": false
             },
             {
@@ -18266,7 +18266,7 @@
               "fixture_number": 25,
               "round": "Matchday 2",
               "stage_type": "group",
-              "status": "NS",
+              "status": "· LIVE",
               "kickoff_utc": "2026-06-18T16:00:00Z",
               "kickoff_local": "2026-06-18 12:00",
               "kickoff_timezone": "America/New_York",
@@ -18288,7 +18288,7 @@
                 "score": "2 - 1",
                 "hidden": false
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": null,
               "is_exact": false
             },
@@ -21764,13 +21764,13 @@
         },
         {
           "round": "Matchday 2",
-          "subtotal": 0,
+          "subtotal": 60,
           "fixtures": [
             {
               "fixture_number": 25,
               "round": "Matchday 2",
               "stage_type": "group",
-              "status": "NS",
+              "status": "· LIVE",
               "kickoff_utc": "2026-06-18T16:00:00Z",
               "kickoff_local": "2026-06-18 12:00",
               "kickoff_timezone": "America/New_York",
@@ -21792,7 +21792,7 @@
                 "score": "1 - 1",
                 "hidden": false
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": null,
               "is_exact": false
             },
@@ -25268,13 +25268,13 @@
         },
         {
           "round": "Matchday 2",
-          "subtotal": 0,
+          "subtotal": 15,
           "fixtures": [
             {
               "fixture_number": 25,
               "round": "Matchday 2",
               "stage_type": "group",
-              "status": "NS",
+              "status": "· LIVE",
               "kickoff_utc": "2026-06-18T16:00:00Z",
               "kickoff_local": "2026-06-18 12:00",
               "kickoff_timezone": "America/New_York",
@@ -25296,7 +25296,7 @@
                 "score": "0 - 1",
                 "hidden": false
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": null,
               "is_exact": false
             },
@@ -28772,13 +28772,13 @@
         },
         {
           "round": "Matchday 2",
-          "subtotal": 0,
+          "subtotal": 15,
           "fixtures": [
             {
               "fixture_number": 25,
               "round": "Matchday 2",
               "stage_type": "group",
-              "status": "NS",
+              "status": "· LIVE",
               "kickoff_utc": "2026-06-18T16:00:00Z",
               "kickoff_local": "2026-06-18 12:00",
               "kickoff_timezone": "America/New_York",
@@ -28800,7 +28800,7 @@
                 "score": "2 - 0",
                 "hidden": false
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": null,
               "is_exact": false
             },
@@ -32276,13 +32276,13 @@
         },
         {
           "round": "Matchday 2",
-          "subtotal": 0,
+          "subtotal": 60,
           "fixtures": [
             {
               "fixture_number": 25,
               "round": "Matchday 2",
               "stage_type": "group",
-              "status": "NS",
+              "status": "· LIVE",
               "kickoff_utc": "2026-06-18T16:00:00Z",
               "kickoff_local": "2026-06-18 12:00",
               "kickoff_timezone": "America/New_York",
@@ -32304,7 +32304,7 @@
                 "score": "1 - 1",
                 "hidden": false
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": null,
               "is_exact": false
             },
@@ -35786,7 +35786,7 @@
               "fixture_number": 25,
               "round": "Matchday 2",
               "stage_type": "group",
-              "status": "NS",
+              "status": "· LIVE",
               "kickoff_utc": "2026-06-18T16:00:00Z",
               "kickoff_local": "2026-06-18 12:00",
               "kickoff_timezone": "America/New_York",
@@ -35808,7 +35808,7 @@
                 "score": "3 - 2",
                 "hidden": false
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": null,
               "is_exact": false
             },
@@ -39284,13 +39284,13 @@
         },
         {
           "round": "Matchday 2",
-          "subtotal": 0,
+          "subtotal": 15,
           "fixtures": [
             {
               "fixture_number": 25,
               "round": "Matchday 2",
               "stage_type": "group",
-              "status": "NS",
+              "status": "· LIVE",
               "kickoff_utc": "2026-06-18T16:00:00Z",
               "kickoff_local": "2026-06-18 12:00",
               "kickoff_timezone": "America/New_York",
@@ -39312,7 +39312,7 @@
                 "score": "2 - 0",
                 "hidden": false
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": null,
               "is_exact": false
             },
@@ -42788,13 +42788,13 @@
         },
         {
           "round": "Matchday 2",
-          "subtotal": 0,
+          "subtotal": 15,
           "fixtures": [
             {
               "fixture_number": 25,
               "round": "Matchday 2",
               "stage_type": "group",
-              "status": "NS",
+              "status": "· LIVE",
               "kickoff_utc": "2026-06-18T16:00:00Z",
               "kickoff_local": "2026-06-18 12:00",
               "kickoff_timezone": "America/New_York",
@@ -42816,7 +42816,7 @@
                 "score": "2 - 0",
                 "hidden": false
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": null,
               "is_exact": false
             },
@@ -46292,13 +46292,13 @@
         },
         {
           "round": "Matchday 2",
-          "subtotal": 0,
+          "subtotal": 15,
           "fixtures": [
             {
               "fixture_number": 25,
               "round": "Matchday 2",
               "stage_type": "group",
-              "status": "NS",
+              "status": "· LIVE",
               "kickoff_utc": "2026-06-18T16:00:00Z",
               "kickoff_local": "2026-06-18 12:00",
               "kickoff_timezone": "America/New_York",
@@ -46320,7 +46320,7 @@
                 "score": "1 - 0",
                 "hidden": false
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": null,
               "is_exact": false
             },
@@ -49796,13 +49796,13 @@
         },
         {
           "round": "Matchday 2",
-          "subtotal": 0,
+          "subtotal": 60,
           "fixtures": [
             {
               "fixture_number": 25,
               "round": "Matchday 2",
               "stage_type": "group",
-              "status": "NS",
+              "status": "· LIVE",
               "kickoff_utc": "2026-06-18T16:00:00Z",
               "kickoff_local": "2026-06-18 12:00",
               "kickoff_timezone": "America/New_York",
@@ -49824,8 +49824,8 @@
                 "score": "2 - 2",
                 "hidden": false
               },
-              "actual_score": "NS",
-              "points": null,
+              "actual_score": "0 - 0",
+              "points": 60,
               "is_exact": false
             },
             {
@@ -53300,13 +53300,13 @@
         },
         {
           "round": "Matchday 2",
-          "subtotal": 0,
+          "subtotal": 60,
           "fixtures": [
             {
               "fixture_number": 25,
               "round": "Matchday 2",
               "stage_type": "group",
-              "status": "NS",
+              "status": "· LIVE",
               "kickoff_utc": "2026-06-18T16:00:00Z",
               "kickoff_local": "2026-06-18 12:00",
               "kickoff_timezone": "America/New_York",
@@ -53328,8 +53328,8 @@
                 "score": "2 - 2",
                 "hidden": false
               },
-              "actual_score": "NS",
-              "points": null,
+              "actual_score": "0 - 0",
+              "points": 60,
               "is_exact": false
             },
             {
