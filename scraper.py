@@ -1331,6 +1331,26 @@ def run(out_dir: Path, samples: bool):
         print(f"FATAL: all attempts failed; not writing files. Last error: {last_err}", file=sys.stderr)
         return 1
 
+    # Sanity guard against a partial parse. The leaderboard points column shows
+    # "-" (parsed as 0) when the page is caught mid-render — most often while
+    # matches are live — so a scrape can return the full roster with ranks and
+    # exact-counts intact but every `points` zeroed. Cumulative points never
+    # legitimately fall back to zero once earned, so if the fresh scrape totals
+    # zero while the previous good scrape had points, treat it as a failed
+    # scrape and leave every file untouched rather than overwriting good data.
+    new_total = sum(int(p.get("points") or 0) for p in players)
+    prev_rankings = load_json(rankings_path, {})
+    prev_players = prev_rankings.get("players", []) if isinstance(prev_rankings, dict) else []
+    prev_total = sum(int(p.get("points") or 0) for p in prev_players)
+    if new_total == 0 and prev_total > 0:
+        print(
+            f"FATAL: leaderboard points all zero across {len(players)} players "
+            f"(previous scrape totalled {prev_total}); likely a mid-render parse "
+            "failure — not writing files.",
+            file=sys.stderr,
+        )
+        return 1
+
     # rankings.json
     rankings = build_rankings(players, source_info)
     write_json(rankings_path, rankings)
