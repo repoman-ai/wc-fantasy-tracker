@@ -92,17 +92,37 @@ jobs:
 
       - name: Commit updated data (only if changed)
         run: |
-          git config user.name  "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/rankings.json data/history.json data/predictions.json
-          git diff --cached --quiet && echo "No changes to commit." && exit 0
-          git commit -m "data: refresh $(date -u +'%Y-%m-%dT%H:%MZ')"
+          set -euo pipefail
+
+          worktree_parent="$(mktemp -d)"
+          worktree="$worktree_parent/data-worktree"
+          cleanup() {
+            git worktree remove --force "$worktree" >/dev/null 2>&1 || true
+            rm -rf "$worktree_parent"
+          }
+          trap cleanup EXIT
+
           for attempt in 1 2 3 4 5; do
-            if git pull --rebase origin main && git push origin main; then
+            git fetch origin main
+            git worktree add --force --detach "$worktree" origin/main
+            mkdir -p "$worktree/data"
+            cp data/rankings.json data/history.json data/predictions.json "$worktree/data/"
+
+            git -C "$worktree" config user.name  "github-actions[bot]"
+            git -C "$worktree" config user.email "github-actions[bot]@users.noreply.github.com"
+            git -C "$worktree" add data/rankings.json data/history.json data/predictions.json
+            git -C "$worktree" diff --cached --quiet && echo "No changes to commit." && exit 0
+            git -C "$worktree" commit -m "data: refresh $(date -u +'%Y-%m-%dT%H:%MZ')"
+
+            if git -C "$worktree" push origin HEAD:main; then
               echo "Committed updated data."
               exit 0
             fi
-            echo "Push attempt ${attempt} failed; rebasing and retrying..."
+            echo "Push attempt ${attempt} failed; refreshing clean worktree and retrying..."
+            git worktree remove --force "$worktree"
+            rm -rf "$worktree_parent"
+            worktree_parent="$(mktemp -d)"
+            worktree="$worktree_parent/data-worktree"
             sleep 3
           done
           echo "Failed to push after 5 attempts." >&2

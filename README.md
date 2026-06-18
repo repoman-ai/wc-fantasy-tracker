@@ -17,7 +17,7 @@ public repos) + GitHub Pages.
 |------|---------|
 | `scraper.py` | Scrapes the leaderboard + per-player pages → writes `data/*.json` |
 | `requirements.txt` | Python deps (`requests`, `beautifulsoup4`) |
-| `.github/workflows/scrape.yml` | The scheduled Action (cron in UTC, retry/backoff, change-only commits) |
+| `.github/workflows/scrape-pool.yml` | The scheduled Action (cron in UTC, retry/backoff, change-only commits) |
 | `index.html` | The whole website (embedded CSS/JS, Chart.js from CDN) |
 | `data/rankings.json` | Current leaderboard snapshot |
 | `data/history.json` | Append-only log of every snapshot (for trends & rank-change) |
@@ -127,7 +127,7 @@ GitHub → **Actions** tab → **“Scrape pool & update data”** → **Run wor
 
 ## Setting your match-based cron times
 
-Open `.github/workflows/scrape.yml`. Cron is **always UTC**. Replace the
+Open `.github/workflows/scrape-pool.yml`. Cron is **always UTC**. Replace the
 placeholder line with your own triggers (one `- cron:` line per trigger):
 
 ```yaml
