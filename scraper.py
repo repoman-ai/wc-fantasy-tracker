@@ -1243,21 +1243,47 @@ def _merge_rounds(fresh_matchdays, prev_matchdays) -> tuple[list[dict], bool]:
 # --------------------------------------------------------------------------- #
 def scrape_once(get_leaderboard_html, get_player_html, prev_predictions: dict) -> tuple[list[dict], dict, dict]:
     """Run a single scrape pass. Returns (players, predictions_by_team_id, stats)."""
+    timings = {
+        "leaderboard_fetch": 0.0,
+        "leaderboard_parse": 0.0,
+        "player_fetch": 0.0,
+        "player_parse": 0.0,
+        "slowest_player_fetch": 0.0,
+        "slowest_player": None,
+    }
+
+    t0 = time.monotonic()
     leaderboard_html = get_leaderboard_html()
+    timings["leaderboard_fetch"] = time.monotonic() - t0
+    t0 = time.monotonic()
     players = parse_leaderboard(leaderboard_html)
+    timings["leaderboard_parse"] = time.monotonic() - t0
     if not players:
         raise RuntimeError("Leaderboard produced 0 rows")
+    print(
+        f"  [timing] leaderboard: fetch {timings['leaderboard_fetch']:.2f}s "
+        f"(incl. warm-up), parse {timings['leaderboard_parse']:.3f}s, {len(players)} rows",
+        file=sys.stderr,
+    )
 
     predictions = {}
-    stats = {"fresh": 0, "patched": 0, "kept": 0, "failed": 0}
+    stats = {"fresh": 0, "patched": 0, "kept": 0, "failed": 0, "timings": timings}
     for p in players:
         tid = p["team_id"]
         prev = prev_predictions.get(tid)
         try:
             if not p.get("player_url"):
                 raise RuntimeError("missing player URL in leaderboard row")
+            t0 = time.monotonic()
             html = get_player_html(p)
+            fetch_s = time.monotonic() - t0
+            timings["player_fetch"] += fetch_s
+            if fetch_s > timings["slowest_player_fetch"]:
+                timings["slowest_player_fetch"] = fetch_s
+                timings["slowest_player"] = f"{tid} ({p['name']})"
+            t0 = time.monotonic()
             parsed = parse_player_page(html)
+            timings["player_parse"] += time.monotonic() - t0
             if _fixture_count(parsed) == 0:
                 raise RuntimeError("player page produced 0 parsed fixtures")
             # Fill any rounds the fresh scrape couldn't see (e.g. login-gated
@@ -1310,6 +1336,15 @@ def scrape_once(get_leaderboard_html, get_player_html, prev_predictions: dict) -
                 )
                 predictions[tid] = kept
                 stats["kept"] += 1
+
+    attempted = stats["fresh"] + stats["patched"] + stats["failed"]
+    avg_fetch = timings["player_fetch"] / attempted if attempted else 0.0
+    print(
+        f"  [timing] players: fetch {timings['player_fetch']:.2f}s total "
+        f"({avg_fetch:.2f}s avg over {attempted}), parse {timings['player_parse']:.3f}s total; "
+        f"slowest fetch {timings['slowest_player_fetch']:.2f}s {timings['slowest_player'] or '-'}",
+        file=sys.stderr,
+    )
 
     if players and (stats["fresh"] + stats["patched"]) == 0:
         raise RuntimeError(
@@ -1491,13 +1526,15 @@ def run(out_dir: Path, samples: bool):
     for attempt in range(1, attempts + 1):
         try:
             print(f"Attempt {attempt}/{attempts} …", file=sys.stderr)
+            attempt_t0 = time.monotonic()
             players, predictions, stats = scrape_once(get_lb, get_player, prev_predictions)
             print(
                 "  ok: "
                 f"{len(players)} players, "
                 f"{stats['fresh']} fresh prediction pages, "
                 f"{stats.get('patched', 0)} partially patched, "
-                f"{stats['kept']} kept previous",
+                f"{stats['kept']} kept previous "
+                f"[{time.monotonic() - attempt_t0:.2f}s]",
                 file=sys.stderr,
             )
             break
@@ -1532,12 +1569,14 @@ def run(out_dir: Path, samples: bool):
         )
         return 1
 
+    validate_t0 = time.monotonic()
     health_errors = scrape_health_errors(
         players,
         predictions,
         stats,
         strict_predictions=not samples,
     )
+    print(f"  [timing] validation: {time.monotonic() - validate_t0:.3f}s", file=sys.stderr)
     if health_errors:
         print("FATAL: scrape health checks failed; not writing files.", file=sys.stderr)
         for err in health_errors:
@@ -1545,6 +1584,7 @@ def run(out_dir: Path, samples: bool):
         return 1
 
     # rankings.json
+    write_t0 = time.monotonic()
     rankings = build_rankings(players, source_info)
     write_json(rankings_path, rankings)
 
@@ -1595,6 +1635,7 @@ def run(out_dir: Path, samples: bool):
 
     # predictions.json
     write_json(predictions_path, {"updated": rankings["updated"], "players": predictions})
+    print(f"  [timing] json writes: {time.monotonic() - write_t0:.3f}s", file=sys.stderr)
 
     print("Done.", file=sys.stderr)
     return 0
