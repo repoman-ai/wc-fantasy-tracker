@@ -67,7 +67,7 @@ jobs:
     env:
       MAX_ATTEMPTS: "3"
       RETRY_GAP_SECONDS: "240"
-      FETCH_BACKEND: "auto"
+      FETCH_BACKEND: "browser"
       REQUESTS_WARMUP: "1"
       REQUEST_DELAY_SECONDS: "1.5"
       REQUEST_JITTER_SECONDS: "1.0"
@@ -75,6 +75,8 @@ jobs:
       MAX_STALE_PREDICTION_RATIO: "0.25"
       MIN_FIXTURE_COVERAGE_RATIO: "0.80"
       BROWSER_HEADLESS: "0"
+      BROWSER_CHANNEL: "chrome"
+      PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: "1"
 
     steps:
       - name: Checkout
@@ -89,9 +91,7 @@ jobs:
           cache: pip
 
       - name: Install dependencies
-        run: |
-          pip install -r requirements.txt
-          python -m playwright install --with-deps chromium
+        run: pip install -r requirements.txt
 
       - name: Scrape (with retry/backoff)
         run: xvfb-run -a python scraper.py --out data

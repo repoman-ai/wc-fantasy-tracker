@@ -16,7 +16,7 @@ public repos) + GitHub Pages.
 | File | Purpose |
 |------|---------|
 | `scraper.py` | Scrapes the leaderboard + per-player pages → writes `data/*.json` |
-| `requirements.txt` | Python deps (`requests`, `beautifulsoup4`) |
+| `requirements.txt` | Python deps (`requests`, `beautifulsoup4`, `playwright`) |
 | `.github/workflows/scrape-pool.yml` | The scheduled Action (cron in UTC, retry/backoff, change-only commits) |
 | `index.html` | The whole website (embedded CSS/JS, Chart.js from CDN) |
 | `data/rankings.json` | Current leaderboard snapshot |
@@ -47,6 +47,8 @@ moment Pages goes live; the first real Action run overwrites them with live data
      pages first, keeps cookies/referers in one session, and adds a small
      delay+jitter between player pages. If a bot-protection 403/503 still appears,
      `FETCH_BACKEND=auto` switches to the browser fallback.
+     The GitHub Action uses `FETCH_BACKEND=browser` because the requests path is
+     currently blocked there.
    - Files are written **only when valid data is present**. `history.json` only gets
      a new entry when the standings actually changed (no duplicate snapshots).
      Before any JSON is written, the scraper also fails closed if the leaderboard
@@ -56,7 +58,9 @@ moment Pages goes live; the first real Action run overwrites them with live data
 
 2. **The workflow** runs on a cron schedule, installs deps, runs the scraper, and
    commits `data/*.json` **only if something changed** (no empty/duplicate commits).
-   A failed scrape commits nothing.
+   It launches the runner's installed Chrome (`BROWSER_CHANNEL=chrome`) instead of
+   downloading Playwright's bundled Chromium on every run. A failed scrape commits
+   nothing.
 
 3. **`index.html`** fetches the three JSON files and renders:
    - **Layer 1 — Standings:** ranked cards with flags, points, exact-score count,
@@ -161,6 +165,7 @@ pip install -r requirements.txt
 
 python scraper.py --samples --out data   # parse the bundled sample HTML (offline)
 python scraper.py --out data             # real live scrape
+FETCH_BACKEND=browser python scraper.py --out data  # skip requests and use Chrome
 
 # preview the site (fetch() needs http://, not file://)
 python -m http.server 8000               # then open http://localhost:8000
@@ -178,13 +183,12 @@ players show an empty prediction sheet until a real run fills them in.
 - **Scrape politeness / 403 avoidance:** `REQUESTS_WARMUP` toggles the public-page
   warm-up, `REQUEST_WARMUP_URLS` overrides the comma-separated warm-up path list,
   and `REQUEST_DELAY_SECONDS` / `REQUEST_JITTER_SECONDS` control pacing between
-  page requests.
+  page requests. `FETCH_BACKEND=browser` skips the requests backend entirely.
+  `BROWSER_CHANNEL=chrome` or `BROWSER_EXECUTABLE_PATH=/path/to/chrome` lets
+  Playwright use an already-installed browser instead of a downloaded one.
 - **Health checks:** `MIN_PREDICTION_COVERAGE` controls how many leaderboard
   players must have prediction records, `MAX_STALE_PREDICTION_RATIO` limits how
   many records can come only from previous saved data, and
   `MIN_FIXTURE_COVERAGE_RATIO` rejects prediction sheets that are much thinner
   than the richest sheet in the same scrape.
 - **Colors/branding:** the CSS variables at the top of `index.html` (`:root { … }`).
-- **If the site ever switches to client-side rendering** (the scraper returns 0 rows
-  even though the page looks fine in a browser), swap the `fetch()` function in
-  `scraper.py` for a headless-browser fetch (e.g. Playwright). Nothing else changes.

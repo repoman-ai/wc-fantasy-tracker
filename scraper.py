@@ -70,6 +70,8 @@ REQUEST_TIMEOUT = int(os.environ.get("REQUEST_TIMEOUT", "30"))
 CF_CHALLENGE_TIMEOUT = int(os.environ.get("CF_CHALLENGE_TIMEOUT", "25"))
 FETCH_BACKEND = os.environ.get("FETCH_BACKEND", "auto").lower()  # auto, requests, browser
 BROWSER_HEADLESS = os.environ.get("BROWSER_HEADLESS", "1").lower() not in {"0", "false", "no"}
+BROWSER_CHANNEL = os.environ.get("BROWSER_CHANNEL", "").strip() or None
+BROWSER_EXECUTABLE_PATH = os.environ.get("BROWSER_EXECUTABLE_PATH", "").strip() or None
 REQUESTS_WARMUP = os.environ.get("REQUESTS_WARMUP", "1").lower() not in {"0", "false", "no"}
 
 # Site-specific knobs for the cheap requests backend. The goal is to enter the
@@ -436,10 +438,15 @@ class BrowserFetcher:
             ) from exc
 
         self._pw = sync_playwright().start()
-        self._browser = self._pw.chromium.launch(
-            headless=BROWSER_HEADLESS,
-            args=["--disable-blink-features=AutomationControlled"],
-        )
+        launch_options = {
+            "headless": BROWSER_HEADLESS,
+            "args": ["--disable-blink-features=AutomationControlled"],
+        }
+        if BROWSER_EXECUTABLE_PATH:
+            launch_options["executable_path"] = BROWSER_EXECUTABLE_PATH
+        elif BROWSER_CHANNEL:
+            launch_options["channel"] = BROWSER_CHANNEL
+        self._browser = self._pw.chromium.launch(**launch_options)
         self._context = self._browser.new_context(
             user_agent=HTTP_HEADERS["User-Agent"],
             locale=BROWSER_LOCALE,
