@@ -256,8 +256,8 @@ def now_iso() -> str:
 # Constants mirror the front-end's clock-based live window so both ends agree on
 # when a match is "on".
 # --------------------------------------------------------------------------- #
-LIVE_WINDOW_MINUTES = int(os.environ.get("LIVE_WINDOW_MINUTES", "135"))      # 90' + HT + stoppage
-LIVE_HARD_CAP_MINUTES = int(os.environ.get("LIVE_HARD_CAP_MINUTES", "180"))  # ET + pens ceiling
+LIVE_WINDOW_MINUTES = int(os.environ.get("LIVE_WINDOW_MINUTES", "125"))      # 90' + HT + stoppage
+LIVE_HARD_CAP_MINUTES = int(os.environ.get("LIVE_HARD_CAP_MINUTES", "130"))  # done by ~2h10m after KO
 # Historical snapshots store only rankings, not the fixture state at capture
 # time, so they can only be judged by their timestamp against the real fixture
 # schedule. That schedule comes from the scraped predictions.json itself (every

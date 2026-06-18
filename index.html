@@ -773,14 +773,14 @@ function renderMovers(){
 }
 
 /* Roughly how long a match occupies the clock from kickoff: 90' + half-time
-   + stoppage ≈ 2h15m. Used to drive the live state off your computer's clock
+   + stoppage ≈ 2h5m. Used to drive the live state off your computer's clock
    between scrapes. */
-const LIVE_WINDOW_MS = 135*60*1000;
+const LIVE_WINDOW_MS = 125*60*1000;
 /* Hard ceiling from kickoff after which a match is NEVER shown as live, even if
    a stale scrape left the status badge stuck on LIVE/HT/a minute (e.g. the
-   follow-up scrape got bot-blocked and never flipped it to FT). Generous enough
-   to cover extra time + penalties (~2h45m of wall clock), then it clears. */
-const LIVE_HARD_CAP_MS = 3*60*60*1000;
+   follow-up scrape got bot-blocked and never flipped it to FT). Kept tight so a
+   finished game clears ~2h10m after kickoff rather than lingering for hours. */
+const LIVE_HARD_CAP_MS = 130*60*1000;
 
 /* A fixture is "live" when EITHER the scraped status badge says so
    (LIVE / a minute / HT), OR — baked in off your system clock — the current
