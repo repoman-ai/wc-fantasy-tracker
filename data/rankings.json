@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-18T00:04:35Z",
+  "updated": "2026-06-18T01:01:35Z",
   "pool": {
     "id": "34193",
     "slug": "bobby-and-friends",
@@ -18,7 +18,7 @@
       "name": "bobby",
       "flag": "FRA",
       "rank": 1,
-      "points": 906,
+      "points": 954,
       "exact": 3
     },
     {
@@ -28,8 +28,38 @@
       "name": "JJ",
       "flag": "FRA",
       "rank": 2,
-      "points": 867,
+      "points": 927,
       "exact": 5
+    },
+    {
+      "team_id": "252600",
+      "slug": "el-capitan",
+      "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/252600/el-capitan/stage/1196-grand-total?scroll=fixture",
+      "name": "El Capitan",
+      "flag": "FRA",
+      "rank": 3,
+      "points": 879,
+      "exact": 3
+    },
+    {
+      "team_id": "253790",
+      "slug": "remi",
+      "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/253790/remi/stage/1196-grand-total?scroll=fixture",
+      "name": "remi",
+      "flag": "FRA",
+      "rank": 4,
+      "points": 843,
+      "exact": 3
+    },
+    {
+      "team_id": "247524",
+      "slug": "alejandro",
+      "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247524/alejandro/stage/1196-grand-total?scroll=fixture",
+      "name": "Alejandro",
+      "flag": "BRA",
+      "rank": 5,
+      "points": 840,
+      "exact": 0
     },
     {
       "team_id": "247532",
@@ -37,8 +67,8 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247532/gabriela/stage/1196-grand-total?scroll=fixture",
       "name": "Gabriela",
       "flag": "NED",
-      "rank": 3,
-      "points": 867,
+      "rank": 6,
+      "points": 822,
       "exact": 3
     },
     {
@@ -47,39 +77,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247729/maxs/stage/1196-grand-total?scroll=fixture",
       "name": "MaxS.",
       "flag": "ARG",
-      "rank": 4,
-      "points": 864,
-      "exact": 1
-    },
-    {
-      "team_id": "252600",
-      "slug": "el-capitan",
-      "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/252600/el-capitan/stage/1196-grand-total?scroll=fixture",
-      "name": "El Capitan",
-      "flag": "FRA",
-      "rank": 5,
-      "points": 831,
-      "exact": 3
-    },
-    {
-      "team_id": "247535",
-      "slug": "baronmark",
-      "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247535/baronmark/stage/1196-grand-total?scroll=fixture",
-      "name": "Baronmark",
-      "flag": "FRA",
-      "rank": 6,
-      "points": 783,
-      "exact": 2
-    },
-    {
-      "team_id": "247524",
-      "slug": "alejandro",
-      "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247524/alejandro/stage/1196-grand-total?scroll=fixture",
-      "name": "Alejandro",
-      "flag": "BRA",
       "rank": 7,
-      "points": 780,
-      "exact": 0
+      "points": 819,
+      "exact": 1
     },
     {
       "team_id": "253787",
@@ -88,7 +88,7 @@
       "name": "Jazmin",
       "flag": "POR",
       "rank": 8,
-      "points": 768,
+      "points": 816,
       "exact": 2
     },
     {
@@ -98,27 +98,7 @@
       "name": "Karenwj",
       "flag": "NED",
       "rank": 9,
-      "points": 768,
-      "exact": 2
-    },
-    {
-      "team_id": "253790",
-      "slug": "remi",
-      "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/253790/remi/stage/1196-grand-total?scroll=fixture",
-      "name": "remi",
-      "flag": "FRA",
-      "rank": 10,
-      "points": 768,
-      "exact": 2
-    },
-    {
-      "team_id": "247526",
-      "slug": "valewalle",
-      "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247526/valewalle/stage/1196-grand-total?scroll=fixture",
-      "name": "Valewalle",
-      "flag": "ESP",
-      "rank": 11,
-      "points": 765,
+      "points": 816,
       "exact": 2
     },
     {
@@ -127,18 +107,8 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247537/yo/stage/1196-grand-total?scroll=fixture",
       "name": "Yo",
       "flag": "MEX",
-      "rank": 12,
-      "points": 732,
-      "exact": 2
-    },
-    {
-      "team_id": "252653",
-      "slug": "daniel",
-      "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/252653/daniel/stage/1196-grand-total?scroll=fixture",
-      "name": "Daniel",
-      "flag": "FRA",
-      "rank": 13,
-      "points": 702,
+      "rank": 10,
+      "points": 792,
       "exact": 2
     },
     {
@@ -147,9 +117,39 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247930/alec/stage/1196-grand-total?scroll=fixture",
       "name": "Alec",
       "flag": "ESP",
+      "rank": 11,
+      "points": 771,
+      "exact": 2
+    },
+    {
+      "team_id": "252653",
+      "slug": "daniel",
+      "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/252653/daniel/stage/1196-grand-total?scroll=fixture",
+      "name": "Daniel",
+      "flag": "FRA",
+      "rank": 12,
+      "points": 750,
+      "exact": 2
+    },
+    {
+      "team_id": "247535",
+      "slug": "baronmark",
+      "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247535/baronmark/stage/1196-grand-total?scroll=fixture",
+      "name": "Baronmark",
+      "flag": "FRA",
+      "rank": 13,
+      "points": 738,
+      "exact": 2
+    },
+    {
+      "team_id": "247526",
+      "slug": "valewalle",
+      "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247526/valewalle/stage/1196-grand-total?scroll=fixture",
+      "name": "Valewalle",
+      "flag": "ESP",
       "rank": 14,
-      "points": 696,
-      "exact": 1
+      "points": 720,
+      "exact": 2
     },
     {
       "team_id": "252610",
@@ -168,7 +168,7 @@
       "name": "Beturompequinielas",
       "flag": "ARG",
       "rank": 16,
-      "points": 588,
+      "points": 636,
       "exact": 1
     }
   ]
