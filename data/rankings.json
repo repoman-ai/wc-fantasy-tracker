@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-18T23:24:28Z",
+  "updated": "2026-06-19T01:01:33Z",
   "pool": {
     "id": "34193",
     "slug": "bobby-and-friends",
@@ -18,8 +18,8 @@
       "name": "JJ",
       "flag": "FRA",
       "rank": 1,
-      "points": 1188,
-      "exact": 6
+      "points": 1161,
+      "exact": 5
     },
     {
       "team_id": "246775",
@@ -28,8 +28,8 @@
       "name": "bobby",
       "flag": "FRA",
       "rank": 2,
-      "points": 1170,
-      "exact": 4
+      "points": 1143,
+      "exact": 3
     },
     {
       "team_id": "247729",
@@ -48,8 +48,8 @@
       "name": "Alejandro",
       "flag": "BRA",
       "rank": 4,
-      "points": 1080,
-      "exact": 2
+      "points": 1053,
+      "exact": 1
     },
     {
       "team_id": "247532",
@@ -68,7 +68,7 @@
       "name": "remi",
       "flag": "FRA",
       "rank": 6,
-      "points": 1032,
+      "points": 1017,
       "exact": 3
     },
     {
@@ -112,23 +112,23 @@
       "exact": 3
     },
     {
-      "team_id": "252653",
-      "slug": "daniel",
-      "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/252653/daniel/stage/1196-grand-total?scroll=fixture",
-      "name": "Daniel",
-      "flag": "FRA",
-      "rank": 11,
-      "points": 948,
-      "exact": 3
-    },
-    {
       "team_id": "247525",
       "slug": "karenwj",
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247525/karenwj/stage/1196-grand-total?scroll=fixture",
       "name": "Karenwj",
       "flag": "NED",
-      "rank": 12,
+      "rank": 11,
       "points": 927,
+      "exact": 2
+    },
+    {
+      "team_id": "252653",
+      "slug": "daniel",
+      "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/252653/daniel/stage/1196-grand-total?scroll=fixture",
+      "name": "Daniel",
+      "flag": "FRA",
+      "rank": 12,
+      "points": 921,
       "exact": 2
     },
     {
