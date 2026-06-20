@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-20T21:31:31Z",
+  "updated": "2026-06-20T21:41:46Z",
   "players": {
     "247528": {
       "team_id": "247528",
@@ -1038,7 +1038,7 @@
                 "score": "3 - 0",
                 "hidden": false
               },
-              "actual_score": "0 - 1",
+              "actual_score": "1 - 1",
               "points": 0,
               "is_exact": false
             },
@@ -4542,7 +4542,7 @@
                 "score": "2 - 1",
                 "hidden": false
               },
-              "actual_score": "0 - 1",
+              "actual_score": "1 - 1",
               "points": 15,
               "is_exact": false
             },
@@ -8046,7 +8046,7 @@
                 "score": "2 - 0",
                 "hidden": false
               },
-              "actual_score": "0 - 1",
+              "actual_score": "1 - 1",
               "points": 0,
               "is_exact": false
             },
@@ -11550,7 +11550,7 @@
                 "score": "2 - 0",
                 "hidden": false
               },
-              "actual_score": "0 - 1",
+              "actual_score": "1 - 1",
               "points": 0,
               "is_exact": false
             },
@@ -15054,7 +15054,7 @@
                 "score": "3 - 1",
                 "hidden": false
               },
-              "actual_score": "0 - 1",
+              "actual_score": "1 - 1",
               "points": 15,
               "is_exact": false
             },
@@ -18558,7 +18558,7 @@
                 "score": "4 - 0",
                 "hidden": false
               },
-              "actual_score": "0 - 1",
+              "actual_score": "1 - 1",
               "points": 0,
               "is_exact": false
             },
@@ -25567,7 +25567,7 @@
                 "hidden": false
               },
               "actual_score": "1 - 1",
-              "points": null,
+              "points": 0,
               "is_exact": false
             },
             {
@@ -28772,7 +28772,7 @@
         },
         {
           "round": "Matchday 2",
-          "subtotal": 336,
+          "subtotal": 351,
           "fixtures": [
             {
               "fixture_number": 25,
@@ -28831,7 +28831,7 @@
                 "hidden": false
               },
               "actual_score": "4 - 1",
-              "points": 0,
+              "points": 15,
               "is_exact": false
             },
             {
@@ -29071,7 +29071,7 @@
                 "hidden": false
               },
               "actual_score": "1 - 1",
-              "points": null,
+              "points": 15,
               "is_exact": false
             },
             {
@@ -32276,7 +32276,7 @@
         },
         {
           "round": "Matchday 2",
-          "subtotal": 384,
+          "subtotal": 399,
           "fixtures": [
             {
               "fixture_number": 25,
@@ -32395,7 +32395,7 @@
                 "hidden": false
               },
               "actual_score": "1 - 0",
-              "points": 0,
+              "points": 15,
               "is_exact": false
             },
             {
@@ -32575,7 +32575,7 @@
                 "hidden": false
               },
               "actual_score": "1 - 1",
-              "points": null,
+              "points": 15,
               "is_exact": false
             },
             {
@@ -36079,7 +36079,7 @@
                 "hidden": false
               },
               "actual_score": "1 - 1",
-              "points": null,
+              "points": 0,
               "is_exact": false
             },
             {
@@ -39583,7 +39583,7 @@
                 "hidden": false
               },
               "actual_score": "1 - 1",
-              "points": null,
+              "points": 15,
               "is_exact": false
             },
             {
@@ -43087,7 +43087,7 @@
                 "hidden": false
               },
               "actual_score": "1 - 1",
-              "points": null,
+              "points": 0,
               "is_exact": false
             },
             {
@@ -46591,7 +46591,7 @@
                 "hidden": false
               },
               "actual_score": "1 - 1",
-              "points": null,
+              "points": 15,
               "is_exact": false
             },
             {
@@ -50095,7 +50095,7 @@
                 "hidden": false
               },
               "actual_score": "1 - 1",
-              "points": null,
+              "points": 0,
               "is_exact": false
             },
             {
@@ -53599,7 +53599,7 @@
                 "hidden": false
               },
               "actual_score": "1 - 1",
-              "points": null,
+              "points": 15,
               "is_exact": false
             },
             {
