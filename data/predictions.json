@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-20T01:03:01Z",
+  "updated": "2026-06-20T01:11:36Z",
   "players": {
     "247528": {
       "team_id": "247528",
@@ -948,7 +948,7 @@
                 "score": "4 - 0",
                 "hidden": false
               },
-              "actual_score": "1 - 0",
+              "actual_score": "2 - 0",
               "points": 63,
               "is_exact": false
             },
@@ -4452,7 +4452,7 @@
                 "score": "3 - 0",
                 "hidden": false
               },
-              "actual_score": "1 - 0",
+              "actual_score": "2 - 0",
               "points": 63,
               "is_exact": false
             },
@@ -7016,9 +7016,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247532/gabriela/stage/1196-grand-total?scroll=fixture",
       "flag": "NED",
       "rank": 3,
-      "points": 1314,
-      "exact": 5,
-      "grand_total": 1314,
+      "points": 1341,
+      "exact": 6,
+      "grand_total": 1341,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -7748,7 +7748,7 @@
         },
         {
           "round": "Matchday 2",
-          "subtotal": 429,
+          "subtotal": 456,
           "fixtures": [
             {
               "fixture_number": 25,
@@ -7956,9 +7956,9 @@
                 "score": "2 - 0",
                 "hidden": false
               },
-              "actual_score": "1 - 0",
-              "points": 63,
-              "is_exact": false
+              "actual_score": "2 - 0",
+              "points": 90,
+              "is_exact": true
             },
             {
               "fixture_number": 31,
@@ -10520,9 +10520,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247729/maxs/stage/1196-grand-total?scroll=fixture",
       "flag": "ARG",
       "rank": 4,
-      "points": 1281,
+      "points": 1284,
       "exact": 2,
-      "grand_total": 1281,
+      "grand_total": 1284,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -11252,7 +11252,7 @@
         },
         {
           "round": "Matchday 2",
-          "subtotal": 399,
+          "subtotal": 402,
           "fixtures": [
             {
               "fixture_number": 25,
@@ -11460,8 +11460,8 @@
                 "score": "2 - 1",
                 "hidden": false
               },
-              "actual_score": "1 - 0",
-              "points": 60,
+              "actual_score": "2 - 0",
+              "points": 63,
               "is_exact": false
             },
             {
@@ -14964,7 +14964,7 @@
                 "score": "4 - 0",
                 "hidden": false
               },
-              "actual_score": "1 - 0",
+              "actual_score": "2 - 0",
               "points": 63,
               "is_exact": false
             },
@@ -18468,7 +18468,7 @@
                 "score": "3 - 0",
                 "hidden": false
               },
-              "actual_score": "1 - 0",
+              "actual_score": "2 - 0",
               "points": 63,
               "is_exact": false
             },
@@ -21972,7 +21972,7 @@
                 "score": "3 - 0",
                 "hidden": false
               },
-              "actual_score": "1 - 0",
+              "actual_score": "2 - 0",
               "points": 63,
               "is_exact": false
             },
@@ -25476,7 +25476,7 @@
                 "score": "3 - 0",
                 "hidden": false
               },
-              "actual_score": "1 - 0",
+              "actual_score": "2 - 0",
               "points": 63,
               "is_exact": false
             },
@@ -28980,7 +28980,7 @@
                 "score": "4 - 0",
                 "hidden": false
               },
-              "actual_score": "1 - 0",
+              "actual_score": "2 - 0",
               "points": 63,
               "is_exact": false
             },
@@ -32484,7 +32484,7 @@
                 "score": "7 - 1",
                 "hidden": false
               },
-              "actual_score": "1 - 0",
+              "actual_score": "2 - 0",
               "points": 48,
               "is_exact": false
             },
@@ -35988,7 +35988,7 @@
                 "score": "3 - 0",
                 "hidden": false
               },
-              "actual_score": "1 - 0",
+              "actual_score": "2 - 0",
               "points": 63,
               "is_exact": false
             },
@@ -39492,7 +39492,7 @@
                 "score": "4 - 0",
                 "hidden": false
               },
-              "actual_score": "1 - 0",
+              "actual_score": "2 - 0",
               "points": 63,
               "is_exact": false
             },
@@ -42996,7 +42996,7 @@
                 "score": "4 - 0",
                 "hidden": false
               },
-              "actual_score": "1 - 0",
+              "actual_score": "2 - 0",
               "points": 63,
               "is_exact": false
             },
@@ -46500,7 +46500,7 @@
                 "score": "3 - 0",
                 "hidden": false
               },
-              "actual_score": "1 - 0",
+              "actual_score": "2 - 0",
               "points": 63,
               "is_exact": false
             },
@@ -49064,9 +49064,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/252610/luisa/stage/1196-grand-total?scroll=fixture",
       "flag": "POR",
       "rank": 15,
-      "points": 1053,
+      "points": 1056,
       "exact": 1,
-      "grand_total": 1053,
+      "grand_total": 1056,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -49796,7 +49796,7 @@
         },
         {
           "round": "Matchday 2",
-          "subtotal": 321,
+          "subtotal": 324,
           "fixtures": [
             {
               "fixture_number": 25,
@@ -50004,8 +50004,8 @@
                 "score": "2 - 1",
                 "hidden": false
               },
-              "actual_score": "1 - 0",
-              "points": 60,
+              "actual_score": "2 - 0",
+              "points": 63,
               "is_exact": false
             },
             {
@@ -53508,7 +53508,7 @@
                 "score": "4 - 0",
                 "hidden": false
               },
-              "actual_score": "1 - 0",
+              "actual_score": "2 - 0",
               "points": 63,
               "is_exact": false
             },
