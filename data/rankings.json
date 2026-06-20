@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-20T19:51:31Z",
+  "updated": "2026-06-20T20:03:20Z",
   "pool": {
     "id": "34193",
     "slug": "bobby-and-friends",
@@ -18,7 +18,7 @@
       "name": "JJ",
       "flag": "FRA",
       "rank": 1,
-      "points": 1515,
+      "points": 1530,
       "exact": 5
     },
     {
@@ -38,7 +38,7 @@
       "name": "Gabriela",
       "flag": "NED",
       "rank": 3,
-      "points": 1377,
+      "points": 1392,
       "exact": 5
     },
     {
@@ -48,7 +48,7 @@
       "name": "Daniel",
       "flag": "FRA",
       "rank": 4,
-      "points": 1365,
+      "points": 1380,
       "exact": 5
     },
     {
@@ -68,7 +68,7 @@
       "name": "Alejandro",
       "flag": "BRA",
       "rank": 6,
-      "points": 1314,
+      "points": 1329,
       "exact": 1
     },
     {
@@ -78,7 +78,7 @@
       "name": "remi",
       "flag": "FRA",
       "rank": 7,
-      "points": 1290,
+      "points": 1305,
       "exact": 4
     },
     {
@@ -88,7 +88,7 @@
       "name": "MaxS.",
       "flag": "ARG",
       "rank": 8,
-      "points": 1269,
+      "points": 1284,
       "exact": 2
     },
     {
@@ -128,7 +128,7 @@
       "name": "Beturompequinielas",
       "flag": "ARG",
       "rank": 12,
-      "points": 1146,
+      "points": 1161,
       "exact": 2
     },
     {
@@ -148,7 +148,7 @@
       "name": "Baronmark",
       "flag": "FRA",
       "rank": 14,
-      "points": 1119,
+      "points": 1134,
       "exact": 4
     },
     {
