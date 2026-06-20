@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-20T17:01:43Z",
+  "updated": "2026-06-20T17:02:49Z",
   "pool": {
     "id": "34193",
     "slug": "bobby-and-friends",
@@ -38,7 +38,7 @@
       "name": "Gabriela",
       "flag": "NED",
       "rank": 3,
-      "points": 1329,
+      "points": 1344,
       "exact": 5
     },
     {
@@ -48,7 +48,7 @@
       "name": "Daniel",
       "flag": "FRA",
       "rank": 4,
-      "points": 1317,
+      "points": 1332,
       "exact": 5
     },
     {
@@ -98,7 +98,7 @@
       "name": "Yo",
       "flag": "MEX",
       "rank": 9,
-      "points": 1203,
+      "points": 1263,
       "exact": 3
     },
     {
@@ -108,17 +108,7 @@
       "name": "Alec",
       "flag": "ESP",
       "rank": 10,
-      "points": 1200,
-      "exact": 3
-    },
-    {
-      "team_id": "247525",
-      "slug": "karenwj",
-      "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247525/karenwj/stage/1196-grand-total?scroll=fixture",
-      "name": "Karenwj",
-      "flag": "NED",
-      "rank": 11,
-      "points": 1140,
+      "points": 1260,
       "exact": 3
     },
     {
@@ -127,8 +117,8 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/252600/el-capitan/stage/1196-grand-total?scroll=fixture",
       "name": "El Capitan",
       "flag": "FRA",
-      "rank": 12,
-      "points": 1113,
+      "rank": 11,
+      "points": 1173,
       "exact": 3
     },
     {
@@ -137,9 +127,19 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247535/baronmark/stage/1196-grand-total?scroll=fixture",
       "name": "Baronmark",
       "flag": "FRA",
-      "rank": 13,
-      "points": 1104,
+      "rank": 12,
+      "points": 1164,
       "exact": 4
+    },
+    {
+      "team_id": "247525",
+      "slug": "karenwj",
+      "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247525/karenwj/stage/1196-grand-total?scroll=fixture",
+      "name": "Karenwj",
+      "flag": "NED",
+      "rank": 13,
+      "points": 1140,
+      "exact": 3
     },
     {
       "team_id": "252610",
@@ -148,7 +148,7 @@
       "name": "Luisa",
       "flag": "POR",
       "rank": 14,
-      "points": 1089,
+      "points": 1104,
       "exact": 1
     },
     {
@@ -168,7 +168,7 @@
       "name": "Valewalle",
       "flag": "ESP",
       "rank": 16,
-      "points": 999,
+      "points": 1014,
       "exact": 2
     }
   ]
