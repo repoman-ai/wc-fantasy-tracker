@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-20T20:11:41Z",
+  "updated": "2026-06-20T20:21:35Z",
   "players": {
     "247528": {
       "team_id": "247528",
@@ -32574,8 +32574,8 @@
                 "score": "2 - 1",
                 "hidden": false
               },
-              "actual_score": "0 - 0",
-              "points": 0,
+              "actual_score": "1 - 0",
+              "points": null,
               "is_exact": false
             },
             {
@@ -35780,7 +35780,7 @@
         },
         {
           "round": "Matchday 2",
-          "subtotal": 387,
+          "subtotal": 339,
           "fixtures": [
             {
               "fixture_number": 25,
@@ -35839,7 +35839,7 @@
                 "hidden": false
               },
               "actual_score": "4 - 1",
-              "points": 48,
+              "points": 0,
               "is_exact": false
             },
             {
@@ -36078,8 +36078,8 @@
                 "score": "3 - 2",
                 "hidden": false
               },
-              "actual_score": "0 - 0",
-              "points": 0,
+              "actual_score": "1 - 0",
+              "points": null,
               "is_exact": false
             },
             {
@@ -39582,8 +39582,8 @@
                 "score": "4 - 0",
                 "hidden": false
               },
-              "actual_score": "0 - 0",
-              "points": 15,
+              "actual_score": "1 - 0",
+              "points": null,
               "is_exact": false
             },
             {
@@ -42788,7 +42788,7 @@
         },
         {
           "round": "Matchday 2",
-          "subtotal": 405,
+          "subtotal": 453,
           "fixtures": [
             {
               "fixture_number": 25,
@@ -43086,8 +43086,8 @@
                 "score": "3 - 1",
                 "hidden": false
               },
-              "actual_score": "0 - 0",
-              "points": 0,
+              "actual_score": "1 - 0",
+              "points": null,
               "is_exact": false
             },
             {
@@ -46292,7 +46292,7 @@
         },
         {
           "round": "Matchday 2",
-          "subtotal": 396,
+          "subtotal": 444,
           "fixtures": [
             {
               "fixture_number": 25,
@@ -46590,8 +46590,8 @@
                 "score": "2 - 0",
                 "hidden": false
               },
-              "actual_score": "0 - 0",
-              "points": 15,
+              "actual_score": "1 - 0",
+              "points": null,
               "is_exact": false
             },
             {
@@ -49796,7 +49796,7 @@
         },
         {
           "round": "Matchday 2",
-          "subtotal": 234,
+          "subtotal": 294,
           "fixtures": [
             {
               "fixture_number": 25,
@@ -50094,8 +50094,8 @@
                 "score": "2 - 1",
                 "hidden": false
               },
-              "actual_score": "0 - 0",
-              "points": 0,
+              "actual_score": "1 - 0",
+              "points": null,
               "is_exact": false
             },
             {
@@ -53300,7 +53300,7 @@
         },
         {
           "round": "Matchday 2",
-          "subtotal": 267,
+          "subtotal": 327,
           "fixtures": [
             {
               "fixture_number": 25,
@@ -53598,8 +53598,8 @@
                 "score": "2 - 1",
                 "hidden": false
               },
-              "actual_score": "0 - 0",
-              "points": 0,
+              "actual_score": "1 - 0",
+              "points": null,
               "is_exact": false
             },
             {
