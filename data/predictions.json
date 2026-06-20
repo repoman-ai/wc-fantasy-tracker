@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-20T00:31:47Z",
+  "updated": "2026-06-20T00:41:27Z",
   "players": {
     "247528": {
       "team_id": "247528",
@@ -8,9 +8,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247528/jj/stage/1196-grand-total?scroll=fixture",
       "flag": "FRA",
       "rank": 1,
-      "points": 1344,
+      "points": 1359,
       "exact": 5,
-      "grand_total": 1344,
+      "grand_total": 1359,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -740,7 +740,7 @@
         },
         {
           "round": "Matchday 2",
-          "subtotal": 354,
+          "subtotal": 369,
           "fixtures": [
             {
               "fixture_number": 25,
@@ -926,7 +926,7 @@
               "fixture_number": 29,
               "round": "Matchday 2",
               "stage_type": "group",
-              "status": "NS",
+              "status": "· LIVE",
               "kickoff_utc": "2026-06-20T00:30:00Z",
               "kickoff_local": "2026-06-19 20:30",
               "kickoff_timezone": "America/New_York",
@@ -948,8 +948,8 @@
                 "score": "4 - 0",
                 "hidden": false
               },
-              "actual_score": "NS",
-              "points": null,
+              "actual_score": "0 - 0",
+              "points": 15,
               "is_exact": false
             },
             {
@@ -3512,9 +3512,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/246775/bobby/stage/1196-grand-total?scroll=fixture",
       "flag": "FRA",
       "rank": 2,
-      "points": 1308,
+      "points": 1323,
       "exact": 4,
-      "grand_total": 1308,
+      "grand_total": 1323,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -4244,7 +4244,7 @@
         },
         {
           "round": "Matchday 2",
-          "subtotal": 291,
+          "subtotal": 306,
           "fixtures": [
             {
               "fixture_number": 25,
@@ -4430,7 +4430,7 @@
               "fixture_number": 29,
               "round": "Matchday 2",
               "stage_type": "group",
-              "status": "NS",
+              "status": "· LIVE",
               "kickoff_utc": "2026-06-20T00:30:00Z",
               "kickoff_local": "2026-06-19 20:30",
               "kickoff_timezone": "America/New_York",
@@ -4452,8 +4452,8 @@
                 "score": "3 - 0",
                 "hidden": false
               },
-              "actual_score": "NS",
-              "points": null,
+              "actual_score": "0 - 0",
+              "points": 15,
               "is_exact": false
             },
             {
@@ -7016,9 +7016,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247532/gabriela/stage/1196-grand-total?scroll=fixture",
       "flag": "NED",
       "rank": 3,
-      "points": 1251,
+      "points": 1266,
       "exact": 5,
-      "grand_total": 1251,
+      "grand_total": 1266,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -7748,7 +7748,7 @@
         },
         {
           "round": "Matchday 2",
-          "subtotal": 366,
+          "subtotal": 381,
           "fixtures": [
             {
               "fixture_number": 25,
@@ -7934,7 +7934,7 @@
               "fixture_number": 29,
               "round": "Matchday 2",
               "stage_type": "group",
-              "status": "NS",
+              "status": "· LIVE",
               "kickoff_utc": "2026-06-20T00:30:00Z",
               "kickoff_local": "2026-06-19 20:30",
               "kickoff_timezone": "America/New_York",
@@ -7956,8 +7956,8 @@
                 "score": "2 - 0",
                 "hidden": false
               },
-              "actual_score": "NS",
-              "points": null,
+              "actual_score": "0 - 0",
+              "points": 15,
               "is_exact": false
             },
             {
@@ -11438,7 +11438,7 @@
               "fixture_number": 29,
               "round": "Matchday 2",
               "stage_type": "group",
-              "status": "NS",
+              "status": "· LIVE",
               "kickoff_utc": "2026-06-20T00:30:00Z",
               "kickoff_local": "2026-06-19 20:30",
               "kickoff_timezone": "America/New_York",
@@ -11460,8 +11460,8 @@
                 "score": "2 - 1",
                 "hidden": false
               },
-              "actual_score": "NS",
-              "points": null,
+              "actual_score": "0 - 0",
+              "points": 0,
               "is_exact": false
             },
             {
@@ -14024,9 +14024,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247524/alejandro/stage/1196-grand-total?scroll=fixture",
       "flag": "BRA",
       "rank": 5,
-      "points": 1191,
+      "points": 1206,
       "exact": 1,
-      "grand_total": 1191,
+      "grand_total": 1206,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -14756,7 +14756,7 @@
         },
         {
           "round": "Matchday 2",
-          "subtotal": 261,
+          "subtotal": 276,
           "fixtures": [
             {
               "fixture_number": 25,
@@ -14942,7 +14942,7 @@
               "fixture_number": 29,
               "round": "Matchday 2",
               "stage_type": "group",
-              "status": "NS",
+              "status": "· LIVE",
               "kickoff_utc": "2026-06-20T00:30:00Z",
               "kickoff_local": "2026-06-19 20:30",
               "kickoff_timezone": "America/New_York",
@@ -14964,8 +14964,8 @@
                 "score": "4 - 0",
                 "hidden": false
               },
-              "actual_score": "NS",
-              "points": null,
+              "actual_score": "0 - 0",
+              "points": 15,
               "is_exact": false
             },
             {
@@ -17528,9 +17528,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/253787/jazmin/stage/1196-grand-total?scroll=fixture",
       "flag": "POR",
       "rank": 6,
-      "points": 1173,
+      "points": 1188,
       "exact": 3,
-      "grand_total": 1173,
+      "grand_total": 1188,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -18260,7 +18260,7 @@
         },
         {
           "round": "Matchday 2",
-          "subtotal": 297,
+          "subtotal": 312,
           "fixtures": [
             {
               "fixture_number": 25,
@@ -18446,7 +18446,7 @@
               "fixture_number": 29,
               "round": "Matchday 2",
               "stage_type": "group",
-              "status": "NS",
+              "status": "· LIVE",
               "kickoff_utc": "2026-06-20T00:30:00Z",
               "kickoff_local": "2026-06-19 20:30",
               "kickoff_timezone": "America/New_York",
@@ -18468,8 +18468,8 @@
                 "score": "3 - 0",
                 "hidden": false
               },
-              "actual_score": "NS",
-              "points": null,
+              "actual_score": "0 - 0",
+              "points": 15,
               "is_exact": false
             },
             {
@@ -21032,9 +21032,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/253790/remi/stage/1196-grand-total?scroll=fixture",
       "flag": "FRA",
       "rank": 7,
-      "points": 1140,
+      "points": 1155,
       "exact": 3,
-      "grand_total": 1140,
+      "grand_total": 1155,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -21764,7 +21764,7 @@
         },
         {
           "round": "Matchday 2",
-          "subtotal": 234,
+          "subtotal": 249,
           "fixtures": [
             {
               "fixture_number": 25,
@@ -21950,7 +21950,7 @@
               "fixture_number": 29,
               "round": "Matchday 2",
               "stage_type": "group",
-              "status": "NS",
+              "status": "· LIVE",
               "kickoff_utc": "2026-06-20T00:30:00Z",
               "kickoff_local": "2026-06-19 20:30",
               "kickoff_timezone": "America/New_York",
@@ -21972,8 +21972,8 @@
                 "score": "3 - 0",
                 "hidden": false
               },
-              "actual_score": "NS",
-              "points": null,
+              "actual_score": "0 - 0",
+              "points": 15,
               "is_exact": false
             },
             {
@@ -24536,9 +24536,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/252653/daniel/stage/1196-grand-total?scroll=fixture",
       "flag": "FRA",
       "rank": 8,
-      "points": 1137,
+      "points": 1152,
       "exact": 3,
-      "grand_total": 1137,
+      "grand_total": 1152,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -25268,7 +25268,7 @@
         },
         {
           "round": "Matchday 2",
-          "subtotal": 327,
+          "subtotal": 342,
           "fixtures": [
             {
               "fixture_number": 25,
@@ -25454,7 +25454,7 @@
               "fixture_number": 29,
               "round": "Matchday 2",
               "stage_type": "group",
-              "status": "NS",
+              "status": "· LIVE",
               "kickoff_utc": "2026-06-20T00:30:00Z",
               "kickoff_local": "2026-06-19 20:30",
               "kickoff_timezone": "America/New_York",
@@ -25476,8 +25476,8 @@
                 "score": "3 - 0",
                 "hidden": false
               },
-              "actual_score": "NS",
-              "points": null,
+              "actual_score": "0 - 0",
+              "points": 15,
               "is_exact": false
             },
             {
@@ -28040,9 +28040,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247930/alec/stage/1196-grand-total?scroll=fixture",
       "flag": "ESP",
       "rank": 9,
-      "points": 1122,
+      "points": 1137,
       "exact": 3,
-      "grand_total": 1122,
+      "grand_total": 1137,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -28772,7 +28772,7 @@
         },
         {
           "round": "Matchday 2",
-          "subtotal": 291,
+          "subtotal": 306,
           "fixtures": [
             {
               "fixture_number": 25,
@@ -28958,7 +28958,7 @@
               "fixture_number": 29,
               "round": "Matchday 2",
               "stage_type": "group",
-              "status": "NS",
+              "status": "· LIVE",
               "kickoff_utc": "2026-06-20T00:30:00Z",
               "kickoff_local": "2026-06-19 20:30",
               "kickoff_timezone": "America/New_York",
@@ -28980,8 +28980,8 @@
                 "score": "4 - 0",
                 "hidden": false
               },
-              "actual_score": "NS",
-              "points": null,
+              "actual_score": "0 - 0",
+              "points": 15,
               "is_exact": false
             },
             {
@@ -32462,7 +32462,7 @@
               "fixture_number": 29,
               "round": "Matchday 2",
               "stage_type": "group",
-              "status": "NS",
+              "status": "· LIVE",
               "kickoff_utc": "2026-06-20T00:30:00Z",
               "kickoff_local": "2026-06-19 20:30",
               "kickoff_timezone": "America/New_York",
@@ -32484,8 +32484,8 @@
                 "score": "7 - 1",
                 "hidden": false
               },
-              "actual_score": "NS",
-              "points": null,
+              "actual_score": "0 - 0",
+              "points": 0,
               "is_exact": false
             },
             {
@@ -35048,9 +35048,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247525/karenwj/stage/1196-grand-total?scroll=fixture",
       "flag": "NED",
       "rank": 11,
-      "points": 1050,
+      "points": 1065,
       "exact": 2,
-      "grand_total": 1050,
+      "grand_total": 1065,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -35780,7 +35780,7 @@
         },
         {
           "round": "Matchday 2",
-          "subtotal": 234,
+          "subtotal": 249,
           "fixtures": [
             {
               "fixture_number": 25,
@@ -35966,7 +35966,7 @@
               "fixture_number": 29,
               "round": "Matchday 2",
               "stage_type": "group",
-              "status": "NS",
+              "status": "· LIVE",
               "kickoff_utc": "2026-06-20T00:30:00Z",
               "kickoff_local": "2026-06-19 20:30",
               "kickoff_timezone": "America/New_York",
@@ -35988,8 +35988,8 @@
                 "score": "3 - 0",
                 "hidden": false
               },
-              "actual_score": "NS",
-              "points": null,
+              "actual_score": "0 - 0",
+              "points": 15,
               "is_exact": false
             },
             {
@@ -38552,9 +38552,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/252600/el-capitan/stage/1196-grand-total?scroll=fixture",
       "flag": "FRA",
       "rank": 12,
-      "points": 1035,
+      "points": 1050,
       "exact": 3,
-      "grand_total": 1035,
+      "grand_total": 1050,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -39284,7 +39284,7 @@
         },
         {
           "round": "Matchday 2",
-          "subtotal": 156,
+          "subtotal": 171,
           "fixtures": [
             {
               "fixture_number": 25,
@@ -39470,7 +39470,7 @@
               "fixture_number": 29,
               "round": "Matchday 2",
               "stage_type": "group",
-              "status": "NS",
+              "status": "· LIVE",
               "kickoff_utc": "2026-06-20T00:30:00Z",
               "kickoff_local": "2026-06-19 20:30",
               "kickoff_timezone": "America/New_York",
@@ -39492,8 +39492,8 @@
                 "score": "4 - 0",
                 "hidden": false
               },
-              "actual_score": "NS",
-              "points": null,
+              "actual_score": "0 - 0",
+              "points": 15,
               "is_exact": false
             },
             {
@@ -42056,9 +42056,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247533/beturompequinielas/stage/1196-grand-total?scroll=fixture",
       "flag": "ARG",
       "rank": 13,
-      "points": 1005,
+      "points": 1020,
       "exact": 2,
-      "grand_total": 1005,
+      "grand_total": 1020,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -42788,7 +42788,7 @@
         },
         {
           "round": "Matchday 2",
-          "subtotal": 306,
+          "subtotal": 321,
           "fixtures": [
             {
               "fixture_number": 25,
@@ -42974,7 +42974,7 @@
               "fixture_number": 29,
               "round": "Matchday 2",
               "stage_type": "group",
-              "status": "NS",
+              "status": "· LIVE",
               "kickoff_utc": "2026-06-20T00:30:00Z",
               "kickoff_local": "2026-06-19 20:30",
               "kickoff_timezone": "America/New_York",
@@ -42996,8 +42996,8 @@
                 "score": "4 - 0",
                 "hidden": false
               },
-              "actual_score": "NS",
-              "points": null,
+              "actual_score": "0 - 0",
+              "points": 15,
               "is_exact": false
             },
             {
@@ -45560,9 +45560,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247535/baronmark/stage/1196-grand-total?scroll=fixture",
       "flag": "FRA",
       "rank": 14,
-      "points": 999,
+      "points": 1014,
       "exact": 3,
-      "grand_total": 999,
+      "grand_total": 1014,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -46292,7 +46292,7 @@
         },
         {
           "round": "Matchday 2",
-          "subtotal": 261,
+          "subtotal": 276,
           "fixtures": [
             {
               "fixture_number": 25,
@@ -46478,7 +46478,7 @@
               "fixture_number": 29,
               "round": "Matchday 2",
               "stage_type": "group",
-              "status": "NS",
+              "status": "· LIVE",
               "kickoff_utc": "2026-06-20T00:30:00Z",
               "kickoff_local": "2026-06-19 20:30",
               "kickoff_timezone": "America/New_York",
@@ -46500,8 +46500,8 @@
                 "score": "3 - 0",
                 "hidden": false
               },
-              "actual_score": "NS",
-              "points": null,
+              "actual_score": "0 - 0",
+              "points": 15,
               "is_exact": false
             },
             {
@@ -49982,7 +49982,7 @@
               "fixture_number": 29,
               "round": "Matchday 2",
               "stage_type": "group",
-              "status": "NS",
+              "status": "· LIVE",
               "kickoff_utc": "2026-06-20T00:30:00Z",
               "kickoff_local": "2026-06-19 20:30",
               "kickoff_timezone": "America/New_York",
@@ -50004,8 +50004,8 @@
                 "score": "2 - 1",
                 "hidden": false
               },
-              "actual_score": "NS",
-              "points": null,
+              "actual_score": "0 - 0",
+              "points": 0,
               "is_exact": false
             },
             {
@@ -52568,9 +52568,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247526/valewalle/stage/1196-grand-total?scroll=fixture",
       "flag": "ESP",
       "rank": 16,
-      "points": 888,
+      "points": 903,
       "exact": 2,
-      "grand_total": 888,
+      "grand_total": 903,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -53300,7 +53300,7 @@
         },
         {
           "round": "Matchday 2",
-          "subtotal": 108,
+          "subtotal": 123,
           "fixtures": [
             {
               "fixture_number": 25,
@@ -53486,7 +53486,7 @@
               "fixture_number": 29,
               "round": "Matchday 2",
               "stage_type": "group",
-              "status": "NS",
+              "status": "· LIVE",
               "kickoff_utc": "2026-06-20T00:30:00Z",
               "kickoff_local": "2026-06-19 20:30",
               "kickoff_timezone": "America/New_York",
@@ -53508,8 +53508,8 @@
                 "score": "4 - 0",
                 "hidden": false
               },
-              "actual_score": "NS",
-              "points": null,
+              "actual_score": "0 - 0",
+              "points": 15,
               "is_exact": false
             },
             {
