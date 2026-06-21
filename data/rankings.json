@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-21T22:41:32Z",
+  "updated": "2026-06-21T22:47:09Z",
   "pool": {
     "id": "34193",
     "slug": "bobby-and-friends",
@@ -32,23 +32,23 @@
       "exact": 5
     },
     {
-      "team_id": "252653",
-      "slug": "daniel",
-      "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/252653/daniel/stage/1196-grand-total?scroll=fixture",
-      "name": "Daniel",
-      "flag": "FRA",
-      "rank": 3,
-      "points": 1584,
-      "exact": 5
-    },
-    {
       "team_id": "247532",
       "slug": "gabriela",
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247532/gabriela/stage/1196-grand-total?scroll=fixture",
       "name": "Gabriela",
       "flag": "NED",
+      "rank": 3,
+      "points": 1626,
+      "exact": 5
+    },
+    {
+      "team_id": "252653",
+      "slug": "daniel",
+      "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/252653/daniel/stage/1196-grand-total?scroll=fixture",
+      "name": "Daniel",
+      "flag": "FRA",
       "rank": 4,
-      "points": 1581,
+      "points": 1584,
       "exact": 5
     },
     {
@@ -98,7 +98,7 @@
       "name": "MaxS.",
       "flag": "ARG",
       "rank": 9,
-      "points": 1410,
+      "points": 1425,
       "exact": 2
     },
     {
