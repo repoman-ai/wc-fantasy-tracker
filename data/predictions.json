@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-21T18:01:25Z",
+  "updated": "2026-06-21T18:02:56Z",
   "players": {
     "246775": {
       "team_id": "246775",
@@ -43154,7 +43154,7 @@
               "fixture_number": 38,
               "round": "Matchday 2",
               "stage_type": "group",
-              "status": "· LIVE",
+              "status": "FT",
               "kickoff_utc": "2026-06-21T16:00:00Z",
               "kickoff_local": "2026-06-21 12:00",
               "kickoff_timezone": "America/New_York",
@@ -46658,7 +46658,7 @@
               "fixture_number": 38,
               "round": "Matchday 2",
               "stage_type": "group",
-              "status": "· LIVE",
+              "status": "FT",
               "kickoff_utc": "2026-06-21T16:00:00Z",
               "kickoff_local": "2026-06-21 12:00",
               "kickoff_timezone": "America/New_York",
@@ -49796,7 +49796,7 @@
         },
         {
           "round": "Matchday 2",
-          "subtotal": 498,
+          "subtotal": 408,
           "fixtures": [
             {
               "fixture_number": 25,
@@ -50095,8 +50095,8 @@
                 "hidden": false
               },
               "actual_score": "2 - 1",
-              "points": 90,
-              "is_exact": true
+              "points": 0,
+              "is_exact": false
             },
             {
               "fixture_number": 34,
@@ -50162,7 +50162,7 @@
               "fixture_number": 38,
               "round": "Matchday 2",
               "stage_type": "group",
-              "status": "· LIVE",
+              "status": "FT",
               "kickoff_utc": "2026-06-21T16:00:00Z",
               "kickoff_local": "2026-06-21 12:00",
               "kickoff_timezone": "America/New_York",
@@ -53666,7 +53666,7 @@
               "fixture_number": 38,
               "round": "Matchday 2",
               "stage_type": "group",
-              "status": "· LIVE",
+              "status": "FT",
               "kickoff_utc": "2026-06-21T16:00:00Z",
               "kickoff_local": "2026-06-21 12:00",
               "kickoff_timezone": "America/New_York",
