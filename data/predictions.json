@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-21T17:10:42Z",
+  "updated": "2026-06-21T17:12:15Z",
   "players": {
     "246775": {
       "team_id": "246775",
@@ -43176,7 +43176,7 @@
                 "score": "4 - 0",
                 "hidden": false
               },
-              "actual_score": "3 - 0",
+              "actual_score": "4 - 0",
               "points": 63,
               "is_exact": false
             },
@@ -46292,7 +46292,7 @@
         },
         {
           "round": "Matchday 2",
-          "subtotal": 594,
+          "subtotal": 531,
           "fixtures": [
             {
               "fixture_number": 25,
@@ -46351,7 +46351,7 @@
                 "hidden": false
               },
               "actual_score": "4 - 1",
-              "points": 63,
+              "points": 0,
               "is_exact": false
             },
             {
@@ -46680,8 +46680,8 @@
                 "score": "4 - 0",
                 "hidden": false
               },
-              "actual_score": "3 - 0",
-              "points": 63,
+              "actual_score": "4 - 0",
+              "points": null,
               "is_exact": false
             },
             {
@@ -49796,7 +49796,7 @@
         },
         {
           "round": "Matchday 2",
-          "subtotal": 525,
+          "subtotal": 510,
           "fixtures": [
             {
               "fixture_number": 25,
@@ -49915,7 +49915,7 @@
                 "hidden": false
               },
               "actual_score": "1 - 0",
-              "points": 15,
+              "points": 0,
               "is_exact": false
             },
             {
@@ -50184,9 +50184,9 @@
                 "score": "3 - 0",
                 "hidden": false
               },
-              "actual_score": "3 - 0",
-              "points": 90,
-              "is_exact": true
+              "actual_score": "4 - 0",
+              "points": null,
+              "is_exact": false
             },
             {
               "fixture_number": 39,
@@ -53688,8 +53688,8 @@
                 "score": "3 - 1",
                 "hidden": false
               },
-              "actual_score": "3 - 0",
-              "points": 63,
+              "actual_score": "4 - 0",
+              "points": null,
               "is_exact": false
             },
             {
