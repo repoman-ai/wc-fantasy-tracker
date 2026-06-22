@@ -629,6 +629,9 @@
   .db-mvp{border-color:rgba(244,196,48,.55);background:linear-gradient(100deg,#fffaf0,#fff 70%)}
   .db-pod{border-color:rgba(156,196,240,.65);background:linear-gradient(100deg,#f2f8ff,#fff 70%)}
   .db-spot.tough{grid-column:1 / -1;background:#fff;border-color:#d7dde8}
+  .db-spot.db-next{grid-column:1 / -1;background:linear-gradient(100deg,#f4f1ff,#fff 72%);border-color:rgba(124,58,237,.38)}
+  .db-next .db-lbl{color:#6d28d9}
+  .db-next .db-av{background:linear-gradient(135deg,#7c3aed,#a855f7);font-size:19px}
   .db-spot.db-static{cursor:default}
   .db-spot.db-static:hover{transform:none;border-color:rgba(207,214,227,.8);box-shadow:0 10px 24px rgba(15,23,42,.07)}
   .db-spot .db-av{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;
@@ -701,6 +704,21 @@
   .db-share button:hover{transform:translateY(-1px)}
   .db-share button.ok{background:var(--up);color:#fff;border-color:transparent}
   .db-foot{text-align:center;color:var(--muted);font-size:11.5px;margin-top:12px;font-style:italic}
+
+  /* On deck — a small forward look at the next day's slate (anchor line + chips) */
+  .db-ondeck{margin-top:18px}
+  .db-ondeck-line{font-size:13px;font-weight:700;color:var(--ink);line-height:1.4;overflow-wrap:anywhere}
+  .db-onchips{border-top:1px solid var(--line);margin-top:10px}
+  .db-onchip{display:flex;gap:10px;align-items:flex-start;padding:11px 0;border-bottom:1px solid var(--line)}
+  .db-onchip:last-child{border-bottom:0;padding-bottom:0}
+  .db-onic{font-size:17px;line-height:1.25;flex:none}
+  .db-ontx{min-width:0}
+  .db-onh{font-size:14px;font-weight:800;color:var(--ink);line-height:1.24;overflow-wrap:anywhere}
+  .db-ond{font-size:12.5px;color:var(--muted);font-weight:500;margin-top:3px;line-height:1.42;overflow-wrap:anywhere}
+  .db-onchip.link{cursor:pointer}
+  .db-onchip.link:hover .db-onh{color:var(--accent)}
+  .db-onnote{font-size:12.5px;color:var(--muted);font-weight:500;margin-top:9px;line-height:1.4}
+
   .db-empty{text-align:center;color:var(--muted);padding:34px 14px;line-height:1.5}
   @media(max-width:560px){
     .db-head{padding:16px 18px 15px}
@@ -726,6 +744,9 @@
     .db-stories{padding:3px 12px}
     .db-lower{grid-template-columns:1fr;gap:9px;margin-top:16px}
     .db-panel{padding:12px}
+    .db-ondeck{margin-top:16px}
+    .db-onh{font-size:13.5px}
+    .db-ond{font-size:12px;line-height:1.4}
     .db-share{margin-top:14px}
   }
 </style>
@@ -1177,9 +1198,13 @@ function marginPhrase(m){ return m>=70?'A statement day.':m>=35?'Comfortable in 
 
 /* Calendar-day label that matches the (timezone-derived) date string verbatim,
    independent of where the viewer actually is. */
-function debriefDateLabel(date){
+function debriefDateLabel(date,fmt){
   const d=new Date(date+'T12:00:00Z');
-  return isNaN(d)?date:d.toLocaleDateString(undefined,{weekday:'long',month:'long',day:'numeric',timeZone:'UTC'});
+  if(isNaN(d)) return date;
+  const opts=fmt==='short'
+    ?{weekday:'short',month:'short',day:'numeric',timeZone:'UTC'}
+    :{weekday:'long',month:'long',day:'numeric',timeZone:'UTC'};
+  return d.toLocaleDateString(undefined,opts);
 }
 
 /* Flatten every player's prediction pages into one fixture list keyed by the
@@ -1334,6 +1359,118 @@ function debriefRecentLeads(ctx){
   const stored={}; debriefLeadStore().forEach(r=>{ stored[r.date]=r; });
   return recent.map(d=>stored[d]&&stored[d].id?stored[d]:debriefDerivedLead(d)).filter(Boolean);
 }
+
+/* ---- Tough-day: notability gate + the same anti-repeat memory the headlines
+   use, so the card isn't a daily fixture or a repeated pile-on of one person. */
+const DEBRIEF_TOUGH_KEY='wc_recap_tough_v1';
+/* The day's tough-day subject, but only when the low score is genuinely a
+   standout: a 0-point blank, a clear lone outlier adrift of the field, or a
+   score at/under half the day's average. Never the MVP or the steepest faller
+   (they already carry their own card). Pure function of the day's context, so it
+   doubles as the derivation used for fatigue lookback. */
+function debriefToughCandidate(ctx){
+  const ps=ctx.players||[]; if(ps.length<4) return null;
+  const low=ps[ps.length-1], secondLow=ps[ps.length-2];
+  const topId=ps[0]&&ps[0].teamId, fallerId=ctx.topFaller&&ctx.topFaller.teamId;
+  if(!low || low.teamId===topId || low.teamId===fallerId) return null;
+  const blank=low.points===0;
+  const outlier=!!secondLow && (secondLow.points-low.points)>=30;
+  const wellBelow=low.points<=Math.round((ctx.avgDay||0)*0.5);
+  return (blank||outlier||wellBelow)?{playerId:low.teamId,blank}:null;
+}
+function debriefToughStore(){
+  try{ const a=JSON.parse(localStorage.getItem(DEBRIEF_TOUGH_KEY)||'[]');
+    return Array.isArray(a)?a.filter(r=>r&&r.date).slice(-12):[]; }catch(e){ return []; }
+}
+function debriefSaveTough(date,playerId){
+  if(!date) return;
+  try{ const a=debriefToughStore().filter(r=>r.date!==date);
+    a.push({date,playerId:playerId||null}); localStorage.setItem(DEBRIEF_TOUGH_KEY,JSON.stringify(a.slice(-12))); }catch(e){}
+}
+/* debriefToughCandidate for a prior settled day, computed straight from the
+   shared fixtures/days scan — no full debriefContext rebuild (that re-flattens
+   every player's predictions). Same gate as debriefToughCandidate: 4+ players;
+   the lone low scorer, never the day's top or steepest faller (they carry their
+   own card); notable as a 0-point blank, a >=30 gap clear of 2nd-lowest, or
+   at/under half the day's average. */
+function debriefToughCandidateFor(fixtures,days,datesAsc,idx){
+  const day=days.get(datesAsc[idx]); if(!day || !day.settled) return null;
+  const players=debriefDayStats(day);
+  if(players.length<4) return null;
+  const low=players[players.length-1], secondLow=players[players.length-2];
+  const topId=players[0]&&players[0].teamId;
+  // Steepest faller vs the previous settled board (mirrors ctx.topFaller).
+  let fallerId=null;
+  if(idx>0){
+    const cur=debriefStandingsAsOf(fixtures,datesAsc[idx]);
+    const prev=debriefStandingsAsOf(fixtures,datesAsc[idx-1]);
+    let worst=0;
+    cur.arr.forEach(r=>{ const was=prev.byId[r.teamId]; if(!was) return;
+      const delta=was.rank-r.rank; if(delta<0 && delta<worst){ worst=delta; fallerId=r.teamId; } });
+  }
+  if(!low || low.teamId===topId || low.teamId===fallerId) return null;
+  const avgDay=Math.round(players.reduce((a,p)=>a+p.points,0)/players.length);
+  const blank=low.points===0;
+  const outlier=!!secondLow && (secondLow.points-low.points)>=30;
+  const wellBelow=low.points<=Math.round(avgDay*0.5);
+  return (blank||outlier||wellBelow)?{playerId:low.teamId,blank}:null;
+}
+/* What a prior settled day's tough card would ACTUALLY have shown — mirrors
+   debriefToughDecision (candidate + the same fatigue rules), so a notable-but-
+   suppressed day derives to null, not the bare candidate. Its fatigue lookback
+   reads `priorShown(i)` (the subject already resolved for settled day i), which
+   never derives further — so this can't recurse. */
+function debriefDerivedTough(fixtures,days,datesAsc,idx,priorShown){
+  const cand=debriefToughCandidateFor(fixtures,days,datesAsc,idx);
+  if(!cand) return null;
+  const recent=[priorShown(idx-1),priorShown(idx-2),priorShown(idx-3)]; // nearest first
+  const personTired=recent.some(pid=>pid&&pid===cand.playerId);
+  const themeTired=!!recent[0];
+  if(personTired) return null;
+  if(themeTired && !cand.blank) return null;
+  return cand.playerId;
+}
+/* Tough-day subject ACTUALLY shown on each of the up-to-3 prior settled days —
+   from the saved record, or, on a cold cache, the decision that would have
+   shown (mirroring debriefToughDecision), not the bare candidate. Nearest
+   first; a null playerId means "no tough card that day". Mirrors
+   debriefRecentLeads / debriefDerivedLead. Reuses a single fixtures/days scan
+   and resolves the window oldest->newest so each derived day sees the already-
+   resolved earlier days (plus stored records beyond the window) — no full
+   per-day context rebuild and no recursion. */
+function debriefRecentTough(ctx){
+  const dates=ctx.settledDates||[], idx=ctx.dayIndex==null?dates.indexOf(ctx.date):ctx.dayIndex;
+  if(idx<=0) return [];
+  const stored={}; debriefToughStore().forEach(r=>{ stored[r.date]=r; });
+  const fixtures=debriefFixtures(), days=debriefDays(fixtures);
+  const resolved={};
+  // Subject (playerId|null) for settled day i: a resolved/stored record, else
+  // null (a day older than the window we never derived). Read by derivations.
+  const priorShown=i=>{ if(i<0) return null; const d=dates[i];
+    if(d in resolved) return resolved[d];
+    return stored[d]?(stored[d].playerId||null):null; };
+  const start=Math.max(0,idx-3);
+  for(let i=start;i<idx;i++){
+    const d=dates[i];
+    resolved[d]=stored[d]?(stored[d].playerId||null)
+      :debriefDerivedTough(fixtures,days,dates,i,priorShown);
+  }
+  const out=[];
+  for(let i=idx-1;i>=start;i--) out.push({date:dates[i], playerId:resolved[dates[i]]});
+  return out;
+}
+/* Final show/skip: notable, never the same person within 3 days, and not two
+   settled days running — though a 0-point blank overrides the skip-a-day rule.
+   Returns the subject when it should show, else null. */
+function debriefToughDecision(ctx){
+  const cand=debriefToughCandidate(ctx); if(!cand) return null;
+  const recent=debriefRecentTough(ctx);
+  const personTired=recent.some(r=>r.playerId&&r.playerId===cand.playerId);
+  const themeTired=recent.length>0 && !!recent[0].playerId;
+  if(personTired) return null;
+  if(themeTired && !cand.blank) return null;
+  return cand;
+}
 function debriefStoryFatigue(s,recent,major){
   if(!recent||!recent.length||major.has(s.id)) return 0;
   const target=debriefStoryFatigueTarget(s);
@@ -1441,8 +1578,24 @@ function debriefContext(date){
   }
   const ls=debriefLeaderStreak(fixtures,datesAsc,idx);
 
+  // On deck: the earliest later day that still has unplayed fixtures (skips any
+  // rest days), summarised from its visible upcoming picks. Null once the
+  // tournament's last whistle has blown.
+  let nextDay=null;
+  const laterDates=[...days.values()].map(d=>d.date).filter(d=>d>date).sort();
+  for(const nx of laterDates){
+    const upcoming=days.get(nx).fixtures.filter(f=>!isCompleted(f));
+    if(!upcoming.length) continue;
+    const round=debriefMajorityRound(upcoming);
+    const stats=debriefPreviewStats(upcoming);
+    nextDay={ date:nx, dateLabel:debriefDateLabel(nx), round, fixtures:upcoming, stats,
+      matchCount:upcoming.length, knockout:debriefIsKnockout(round),
+      allTbd:stats.every(s=>!s.teamsKnown) };
+    break;
+  }
+
   return {
-    date, dateLabel:debriefDateLabel(date), round:debriefMajorityRound(day.fixtures), edition:idx+1,
+    date, dateLabel:debriefDateLabel(date), round:debriefMajorityRound(day.fixtures), edition:idx+1, nextDay,
     fixtures:day.fixtures, players, topPlayers, bestCall, bestCalls,
     leader:cur.arr[0], prevLeader:prev?prev.arr[0]:null, leaderN:ls.n,
     topClimber, topFaller, standings:cur.arr, prevById:prev?prev.byId:null,
@@ -1652,6 +1805,129 @@ function debriefLinkAttr(link){
   return '';
 }
 
+/* ===== On deck: a small, forward-looking peek at the next day's slate. =====
+   Same data source as the recap, but no results yet — so the detectors read the
+   room from the visible upcoming picks (a heavy crowd lean, a divided house, a
+   lone holdout), flag a marquee knockout, or note what's at stake on the table.
+   Deliberately small: one anchor line plus at most two notable chips, shown only
+   when something actually stands out. */
+
+/* A round label is a knockout stage if it isn't one of the group matchdays. */
+function debriefIsKnockout(round){ return !!round && !/^matchday/i.test(round); }
+/* "2 - 1" -> "2–1" for display. */
+function debriefNiceScore(s){ return clean(s).replace(/\s*-\s*/,'–'); }
+/* "match" / "matches" pluralisation — the count is shown alongside (sometimes
+   styled separately, e.g. the db-big slot), so this returns just the noun. */
+function matchWord(n){ return `match${n===1?'':'es'}`; }
+
+/* Per-fixture read of how the pool is leaning on an upcoming match, from the
+   visible score picks only (hidden picks and TBD knockout slots don't count). */
+function debriefPreviewStats(fixtures){
+  return fixtures.map(f=>{
+    const picks=f.picks.filter(pk=>pk.predType==='score' && !pk.hidden && pk.score);
+    const counted=picks.length;
+    const wt={H:0,A:0,D:0}, scoreCount={};
+    picks.forEach(pk=>{ const w=scoreWinner(pk.score); if(w) wt[w]++;
+      const sc=clean(pk.score); if(sc) scoreCount[sc]=(scoreCount[sc]||0)+1; });
+    let topWinner='H',wmax=-1; ['H','A','D'].forEach(k=>{ if(wt[k]>wmax){wmax=wt[k];topWinner=k;} });
+    let topScore=null,smax=0; Object.keys(scoreCount).forEach(k=>{ if(scoreCount[k]>smax){smax=scoreCount[k];topScore=k;} });
+    const teamsKnown=!!(f.home && f.away && f.home!=='TBD' && f.away!=='TBD');
+    const sideName=s=> s==='H'?f.home : s==='A'?f.away : 'a draw';
+    // The single holdout, when everyone but one backs the same winner.
+    let lone=null;
+    if(counted>=2 && counted-wmax===1) lone=picks.find(pk=>scoreWinner(pk.score)!==topWinner);
+    return {
+      key:String(f.num), f, counted, teamsKnown, round:f.round||'',
+      topWinner, topCount:wmax,
+      topShare:counted?wmax/counted:0, topScore, topScoreCount:smax,
+      winnerName:sideName(topWinner), loneName:lone?lone.name:'',
+      matchup:teamsKnown?`${f.home} v ${f.away}`:'',
+    };
+  });
+}
+
+/* Notable next-day stories. Each detector returns a chip candidate (with a
+   0–100 `drama` score) or nothing; we sort by drama and take the top `max`,
+   never two chips about the same match or the same player. */
+function debriefPreviewStories(nd, ctx, max){
+  max=max||2;
+  const S=[], add=o=>{ if(o) S.push(o); };
+  const ps=nd.stats||[];
+
+  ps.forEach(s=>{
+    if(!s.teamsKnown || s.counted<6) return;
+    const draw=s.topWinner==='D';
+
+    if(s.topScoreCount===s.counted){
+      // Everyone on the exact same scoreline — the boldest call on the board.
+      add({id:'unanimousScore',drama:84,icon:'🎯',
+        headline:`Whole pool calls ${s.matchup}`,
+        dek:`All ${s.counted} picks share one scoreline — ${debriefNiceScore(s.topScore)}. The whole room is right together or wrong together.`,
+        link:{matchKey:s.key}});
+    } else if(s.topCount===s.counted){
+      // Every visible pick on the same result — "everyone's on the same team".
+      add({id:'unanimousWinner',drama:70,icon:'🤝',
+        headline:`One-way traffic: ${s.matchup}`,
+        dek:draw?`All ${s.counted} picks have this one ending in a draw — the whole pool's leaning the same way.`
+          :`All ${s.counted} picks have ${s.winnerName} winning — the whole pool's rooting the same way.`,
+        link:{matchKey:s.key}});
+    } else if(s.loneName){
+      // One player against everyone else on the result.
+      add({id:'lone',drama:68,icon:'🧩',
+        headline:`${s.loneName} stands alone — ${s.matchup}`,
+        dek:`Everyone else has ${s.winnerName}; ${s.loneName} is the only one calling it differently.`,
+        link:{matchKey:s.key}});
+    } else if(s.topShare>=0.75){
+      // A heavy crowd lean toward one outcome.
+      add({id:'consensus',drama:48+Math.round(s.topShare*20),icon:'🔥',
+        headline:`Crowd play: ${s.matchup}`,
+        dek:draw?`${s.topCount} of ${s.counted} picks see this one ending level.`
+          :`${s.topCount} of ${s.counted} picks back ${s.winnerName} to win.`,
+        link:{matchKey:s.key}});
+    } else if(s.topShare<=0.5){
+      // A genuinely split room — no outcome near a majority.
+      add({id:'divided',drama:40+Math.round((0.5-s.topShare)*40),icon:'⚔️',
+        headline:`Split house: ${s.matchup}`,
+        dek:`The pool can't agree — the picks are split with no clear favorite before kickoff.`,
+        link:{matchKey:s.key}});
+    }
+  });
+
+  // A marquee knockout fixture worth circling, when teams are set.
+  if(nd.knockout){
+    const head=ps.find(s=>s.teamsKnown);
+    if(head) add({id:'marquee',drama:38,icon:'⭐',
+      headline:`Headliner: ${head.matchup}`,
+      dek:`The pick of the slate — ${nd.round}. Win or go home.`,
+      link:{matchKey:head.key}});
+  }
+
+  // What the day means at the top of the overall table.
+  const st=ctx.standings||[];
+  if(st.length>=2){
+    const lead=st[0], chaser=st[1], gap=lead.points-chaser.points;
+    const yard=ctx.players&&ctx.players[0]?ctx.players[0].points:0;
+    const reach=Math.round(yard*1.2);
+    if(gap>0 && yard>0 && gap<=reach){
+      add({id:'stakes',drama:34+Math.min(20,Math.round((reach-gap)/8)),icon:'📈',
+        headline:`Lead on the line`,
+        dek:`${chaser.name} sits just ${gap} behind ${lead.name} overall — a big day could swing the top of the table.`,
+        link:{playerId:chaser.teamId}});
+    }
+  }
+
+  S.sort((a,b)=>b.drama-a.drama);
+  const out=[], usedFx=new Set(), usedPl=new Set();
+  for(const s of S){
+    const fk=s.link&&s.link.matchKey, pl=s.link&&s.link.playerId;
+    if(fk&&usedFx.has(fk)) continue;
+    if(pl&&usedPl.has(pl)) continue;
+    out.push(s); if(fk)usedFx.add(fk); if(pl)usedPl.add(pl);
+    if(out.length>=max) break;
+  }
+  return out;
+}
+
 function debriefShareText(ctx,hero){
   const top=ctx.players[0];
   const tops=(ctx.topPlayers&&ctx.topPlayers.length)?ctx.topPlayers:(top?[top]:[]);
@@ -1680,6 +1956,7 @@ function renderDebriefView(){
   const dayPtsFor=id=>{ const p=ctx.players.find(x=>x.teamId===id); return p?p.points:0; };
   const c=ctx.topClimber, f=ctx.topFaller;
   const low=ctx.players.length>=4?ctx.players[ctx.players.length-1]:null;
+  const toughShow=!!debriefToughDecision(ctx);
   const calls=ctx.bestCalls||[], bc=calls[0];
   const mvpIds=new Set(tops.map(p=>p.teamId));
   const showPod=bc && calls.length<=5 && (calls.length>1 || !mvpIds.has(bc.owner.teamId));
@@ -1696,7 +1973,9 @@ function renderDebriefView(){
   tops.forEach(p=>seenTargets.add(p.teamId));
   if(c) seenTargets.add(c.teamId);
   if(f) seenTargets.add(f.teamId);
-  if(low) seenTargets.add(low.teamId);
+  // Only reserve the low scorer when the tough card actually shows — when it's
+  // suppressed (not notable, or fatigued) they're free to surface elsewhere.
+  if(low && toughShow) seenTargets.add(low.teamId);
   const sidebar=[];
   for(const s of stories){
     if(s.id===hero.id || covered.includes(s.id)) continue;
@@ -1761,11 +2040,12 @@ function renderDebriefView(){
     moversHtml=`<div class="db-movers">${riser}${faller}</div>`;
   }
 
-  // Soft reset-day note (lowest day score). Skipped unless the gap is meaningful,
-  // and skipped when it would pile onto someone already named in movement.
-  const toughDup=low&&((top&&low.teamId===top.teamId)||(f&&low.teamId===f.teamId));
-  const toughGap=low?ctx.avgDay-low.points:0;
-  const tough=low&&!toughDup&&(toughGap>=30 || low.points===0)?`
+  // Soft reset-day note (lowest day score). Only when it's a genuine standout
+  // (debriefToughDecision: a blank, a lone outlier, or well below average) and
+  // not repeating — never the same person within 3 days, and not two settled
+  // days running. Record the appearance so that memory carries forward.
+  if(toughShow) debriefSaveTough(ctx.date, low.teamId);
+  const tough=toughShow?`
     <div class="db-spot tough"${debriefLinkAttr({playerId:low.teamId})}>
       <div class="db-av">${esc((low.name||'?').slice(0,1).toUpperCase())}</div>
       <div class="db-who">
@@ -1807,6 +2087,62 @@ function renderDebriefView(){
       }).join('')}</div>
     </section>`;
 
+  // The next day's slate, shown in two places (only while a next day exists):
+  //  • a prominent "Next up" card up with the day's awards, featuring the single
+  //    biggest story (or a slate teaser when nothing stands out);
+  //  • the fuller "On deck" panel at the bottom — the slate line plus whichever
+  //    notable chips weren't already promoted to the card, so nothing repeats.
+  let nextUpHtml='', onDeckHtml='';
+  if(ctx.nextDay){
+    const nd=ctx.nextDay;
+    // debriefPreviewStories already returns a drama-sorted list with no two
+    // chips sharing a match or player, so slicing it gives us disjoint sets:
+    // the single featured chip for the "Next up" card, and the next two for the
+    // "On deck" panel — nothing repeats across the card and the panel.
+    const stories=debriefPreviewStories(nd,ctx,3);
+    const feat=stories[0]||null;
+    const rest=stories.slice(1,3);
+    const short=debriefDateLabel(nd.date,'short');
+
+    // ---- Next up card (awards row) ----
+    let icon,nm,sub,link=null;
+    if(feat){ icon=feat.icon; nm=feat.headline; sub=feat.dek; link=feat.link; }
+    else {
+      const head=nd.stats.find(s=>s.teamsKnown);
+      icon=nd.knockout?'⭐':'📅';
+      nm=nd.allTbd?nd.round:(head?head.matchup:nd.round);
+      sub=nd.allTbd?'The bracket is still taking shape.':`${nd.matchCount} ${matchWord(nd.matchCount)} on the card.`;
+      if(head) link={matchKey:head.key};
+    }
+    const nextAttr=link?debriefLinkAttr(link):'';
+    nextUpHtml=`
+      <div class="db-spot db-next${link?'':' db-static'}"${nextAttr}>
+        <div class="db-av" aria-hidden="true">${icon}</div>
+        <div class="db-who">
+          <div class="db-lbl">Next up · ${esc(short)}</div>
+          <div class="db-nm">${esc(nm)}</div>
+          <div class="db-sub">${esc(sub)}</div>
+        </div>
+        <div class="db-big">${nd.matchCount}<small>${matchWord(nd.matchCount)}</small></div>
+      </div>`;
+
+    // ---- On deck panel (bottom) ----
+    const anchor=`${esc(nd.dateLabel)} · ${nd.matchCount} ${matchWord(nd.matchCount)}${nd.knockout?` · ${esc(nd.round)}`:''}`;
+    const chipHtml=rest.map(s=>`
+      <div class="db-onchip${s.link?' link':''}"${debriefLinkAttr(s.link)}>
+        <span class="db-onic" aria-hidden="true">${s.icon}</span>
+        <div class="db-ontx"><div class="db-onh">${esc(s.headline)}</div><div class="db-ond">${esc(s.dek)}</div></div>
+      </div>`).join('');
+    const note=!feat && nd.allTbd
+      ? `<div class="db-onnote">${esc(nd.round)} begins — the bracket is still taking shape.</div>` : '';
+    onDeckHtml=`
+      <section class="db-panel db-ondeck">
+        <h4>On deck</h4>
+        <div class="db-ondeck-line">${anchor}</div>
+        ${chipHtml?`<div class="db-onchips">${chipHtml}</div>`:''}${note}
+      </section>`;
+  }
+
   modal.innerHTML=`
     <div class="mhead db-head${hasback?' hasback':''}">
       <div><h3>The Debrief</h3><div class="meta">${esc(ctx.dateLabel)} · ${esc(ctx.round)}</div></div>
@@ -1820,9 +2156,10 @@ function renderDebriefView(){
           <div class="dek">${esc(hero.dek)}</div>
         </div>
         ${moversHtml}
-        <div class="db-awards">${mvp}${pod}${tough}</div>
+        <div class="db-awards">${mvp}${pod}${tough}${nextUpHtml}</div>
         ${sidebarHtml}
         <div class="db-lower">${nums}${standHtml}</div>
+        ${onDeckHtml}
         <div class="db-share">
           <button type="button" class="primary" id="dbShare">Share headline</button>
         </div>
