@@ -92,19 +92,29 @@
 
   /* ---------- Board ---------- */
   .board{margin-top:-40px;position:relative;z-index:2}
-  .board-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 4px 10px;color:#fff;flex-wrap:wrap}
-  .board-head h2{font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;margin:0;opacity:.95}
-  .bh-left{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
-  /* Prominent schedule entry, sitting on the hero gradient beside "Standings". */
-  .schedbtn{display:inline-flex;align-items:center;gap:6px;cursor:pointer;font:inherit;
+  .board-head{display:flex;flex-direction:column;gap:7px;margin:0 4px 10px;color:#fff}
+  .board-titlebar{display:flex;align-items:center;justify-content:space-between;gap:12px}
+  .board-primary{display:flex;align-items:center;gap:8px;min-width:0}
+  .board-titlebar h2{font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;margin:0;opacity:.95;white-space:nowrap}
+  .board-tools{display:flex;align-items:center;justify-content:flex-end;gap:12px;flex-wrap:wrap}
+  .schedlink{display:inline-flex;align-items:center;gap:6px;cursor:pointer;font:inherit;
     font-size:12.5px;font-weight:800;color:#fff;letter-spacing:.2px;
     background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.32);
-    border-radius:999px;padding:6px 14px;line-height:1;
-    transition:background .15s,border-color .15s,transform .12s}
-  .schedbtn:hover{background:rgba(255,255,255,.28);border-color:rgba(255,255,255,.5);transform:translateY(-1px)}
-  .schedbtn:active{transform:translateY(0)}
-  .schedbtn .ic{font-size:14px}
-  .schedbtn:focus-visible{outline:2px solid #fff;outline-offset:2px}
+    border-radius:999px;padding:6px 14px;line-height:1;flex:none;
+    transition:background .15s,border-color .15s,transform .12s,color .15s}
+  .schedlink:hover{background:rgba(255,255,255,.28);border-color:rgba(255,255,255,.5);transform:translateY(-1px);color:#fff}
+  .schedlink:active{transform:translateY(0)}
+  .schedlink .ic{font-size:14px}
+  .schedlink:focus-visible{outline:2px solid #fff;outline-offset:2px}
+  .debrieftop{display:inline-flex;align-items:center;gap:7px;cursor:pointer;font:inherit;
+    font-size:11.5px;font-weight:900;color:#fffbe8;letter-spacing:.15px;text-transform:none;
+    background:rgba(244,196,48,.18);border:1px solid rgba(244,196,48,.48);
+    border-radius:999px;padding:5px 10px;line-height:1;box-shadow:0 1px 2px rgba(16,24,40,.08);
+    transition:transform .12s,box-shadow .15s,border-color .15s,background .15s}
+  .debrieftop:hover{transform:translateY(-1px);background:rgba(244,196,48,.28);border-color:rgba(244,196,48,.7)}
+  .debrieftop:active{transform:translateY(0)}
+  .debrieftop .ic{font-size:13px}
+  .debrieftop:focus-visible{outline:2px solid #fff;outline-offset:2px}
   .legend{display:flex;gap:12px;font-size:11.5px;color:#e7e9f5;opacity:.9;flex-wrap:wrap}
   .legend span{display:inline-flex;align-items:center;gap:5px}
   .pill{width:9px;height:9px;border-radius:3px;display:inline-block}
@@ -163,9 +173,13 @@
     .liveitem .mt{justify-content:center}
 
     .board{margin-top:-74px}
-    .board-head{align-items:flex-start;gap:8px;margin-bottom:12px;color:#fff}
-    .bh-left{width:100%;justify-content:space-between;gap:8px}
-    .legend{width:100%;justify-content:center;gap:8px 12px;color:#fff;opacity:1}
+    .board-head{gap:8px;margin-bottom:12px;color:#fff}
+    .board-titlebar{width:100%;gap:10px}
+    .board-primary{gap:7px;flex:1;min-width:0}
+    .debrieftop{padding:5px 8px;flex:none}
+    .schedlink{padding:6px 11px;flex:none}
+    .board-tools{width:100%;justify-content:center;gap:8px 12px}
+    .legend{justify-content:center;gap:8px 12px;color:#fff;opacity:1}
     .legend span{white-space:nowrap}
 
     .row{grid-template-columns:46px 1fr auto;gap:10px;padding:12px}
@@ -583,6 +597,137 @@
     .mp-pick .teams{align-items:flex-start}
     .mp-bar{grid-template-columns:74px 1fr 30px;gap:8px}
   }
+
+  /* ---------- The Debrief (daily recap) ---------- */
+  .debriefbtn{position:relative}
+  .debriefbtn.glow{background:rgba(244,196,48,.24);border-color:rgba(244,196,48,.62)}
+  .debriefbtn .ndot{position:absolute;top:-3px;right:-2px;width:9px;height:9px;border-radius:50%;
+    background:var(--gold);box-shadow:0 0 0 2px rgba(124,58,237,.85)}
+
+  .db-wrap{max-width:820px;margin:0 auto}
+  .db-head{padding:17px 22px}
+  .db-head h3{font-size:23px}
+  .db-dateline{text-align:center;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.8px;
+    color:var(--muted);margin:-2px 0 12px}
+
+  .db-hero{text-align:center;margin:0 auto 18px;padding:4px 6px 0}
+  .db-hero h2{font-family:'Barlow Condensed';font-weight:800;font-size:clamp(31px,6.4vw,49px);
+    line-height:.98;margin:0;color:var(--ink);text-transform:uppercase;overflow-wrap:anywhere}
+  .db-hero .dek{font-size:15px;line-height:1.52;color:#33405c;margin:12px auto 0;max-width:50ch;font-weight:500}
+  .db-hero.link{cursor:pointer}
+  .db-hero.link:hover h2{color:var(--accent2)}
+
+  .db-section-title{margin:20px 0 8px;font-size:11px;font-weight:800;text-transform:uppercase;
+    letter-spacing:.9px;color:var(--muted)}
+
+  .db-awards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin:12px 0 10px}
+  .db-spot{display:grid;grid-template-columns:40px minmax(0,1fr) auto;align-items:center;gap:12px;
+    background:rgba(255,255,255,.82);border:1px solid rgba(207,214,227,.8);border-radius:12px;
+    box-shadow:0 10px 24px rgba(15,23,42,.07);padding:12px 14px;cursor:pointer;
+    transition:border-color .15s,transform .12s,box-shadow .15s;min-width:0}
+  .db-spot:hover{transform:translateY(-1px);box-shadow:0 13px 28px rgba(15,23,42,.1)}
+  .db-mvp{border-color:rgba(244,196,48,.55);background:linear-gradient(100deg,#fffaf0,#fff 70%)}
+  .db-pod{border-color:rgba(156,196,240,.65);background:linear-gradient(100deg,#f2f8ff,#fff 70%)}
+  .db-spot.tough{grid-column:1 / -1;background:#fff;border-color:#d7dde8}
+  .db-spot.db-static{cursor:default}
+  .db-spot.db-static:hover{transform:none;border-color:rgba(207,214,227,.8);box-shadow:0 10px 24px rgba(15,23,42,.07)}
+  .db-spot .db-av{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    font-family:'Barlow Condensed';font-weight:800;font-size:20px;color:#fff;background:linear-gradient(135deg,var(--accent),var(--accent2))}
+  .db-spot.tough .db-av{background:linear-gradient(135deg,#8492ad,#aab4c8)}
+  .db-spot .db-who{min-width:0}
+  .db-spot .db-lbl{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.65px;color:var(--muted);
+    margin-bottom:3px;line-height:1.15}
+  .db-mvp .db-lbl{color:#9a7b00}
+  .db-pod .db-lbl{color:#185fa5}
+  .db-spot .db-nm{font-size:16px;font-weight:800;color:var(--ink);line-height:1.15;overflow-wrap:anywhere}
+  .db-spot .db-sub{font-size:12px;color:var(--muted);font-weight:600;margin-top:3px;line-height:1.35;overflow-wrap:anywhere}
+  .db-spot .db-sub b{color:var(--ink);font-weight:700}
+  .db-spot .db-big{font-family:'Barlow Condensed';font-weight:800;font-size:29px;color:var(--ink);
+    text-align:right;line-height:1;white-space:nowrap}
+  .db-spot .db-big small{display:block;font-family:'Inter';font-size:9px;text-transform:uppercase;
+    letter-spacing:.5px;color:var(--muted);font-weight:700;margin-top:2px}
+
+  .db-movers{display:grid;grid-template-columns:1fr 1fr;gap:0;margin:10px 0 4px;border:1px solid var(--line);
+    border-radius:12px;background:rgba(255,255,255,.58);overflow:hidden}
+  .db-mov{padding:10px 12px;min-width:0;border-right:1px solid var(--line);transition:background .15s}
+  .db-mov:last-child{border-right:0}
+  .db-mov[role=button]{cursor:pointer}
+  .db-mov[role=button]:hover{background:#fff}
+  .db-mov.flat{grid-column:1 / -1;text-align:center;border-right:0}
+  .db-mov .db-mov-tag{font-size:9.5px;font-weight:800;text-transform:uppercase;letter-spacing:.55px;
+    color:var(--muted);line-height:1.12}
+  .db-mov-row{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}
+  .db-mov .db-mov-nm{font-size:15px;font-weight:800;color:var(--ink);min-width:0;margin-top:4px;overflow-wrap:anywhere}
+  .db-mov .db-mov-chg{font-family:'Barlow Condensed';font-weight:800;font-size:21px;flex:none}
+  .db-mov.up .db-mov-chg,.db-mov.up .db-mov-tag{color:var(--up)}
+  .db-mov.down .db-mov-chg,.db-mov.down .db-mov-tag{color:var(--down)}
+  .db-mov .db-mov-sub{font-size:11.5px;color:var(--muted);font-weight:600;margin-top:2px;line-height:1.25}
+
+  .db-stories,.db-panel{background:rgba(255,255,255,.78);border:1px solid var(--line);border-radius:12px;
+    box-shadow:0 10px 24px rgba(15,23,42,.06)}
+  .db-stories{padding:3px 14px}
+  .db-story{padding:12px 0;border-bottom:1px solid var(--line)}
+  .db-story:last-child{border-bottom:0}
+  .db-story .db-stx{min-width:0}
+  .db-story .db-sh{font-size:14px;font-weight:800;color:var(--ink);line-height:1.24;overflow-wrap:anywhere}
+  .db-story .db-sd{font-size:12.5px;color:var(--muted);font-weight:500;margin-top:3px;line-height:1.42;overflow-wrap:anywhere}
+  .db-story.link{cursor:pointer}
+  .db-story.link:hover .db-sh{color:var(--accent)}
+
+  .db-lower{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:10px;margin-top:18px}
+  .db-panel{padding:13px 14px}
+  .db-panel h4{margin:0 0 9px;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.75px;color:var(--muted)}
+  .db-nums{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  .db-num{min-width:0;padding:0 0 9px;border-bottom:1px solid var(--line)}
+  .db-num:nth-last-child(-n+2){border-bottom:0;padding-bottom:0}
+  .db-num .k{font-size:10px;text-transform:uppercase;letter-spacing:.45px;color:var(--muted);font-weight:700}
+  .db-num .v{font-family:'Barlow Condensed';font-weight:800;font-size:25px;color:var(--ink);line-height:1.05;margin-top:3px;overflow-wrap:anywhere}
+  .db-num .v.sm{font-size:18px;line-height:1.12}
+  .db-num .v small{font-family:'Inter';font-size:11px;color:var(--muted);font-weight:600;letter-spacing:0}
+
+  .db-stand{padding-top:1px}
+  .db-srow{display:flex;align-items:center;gap:9px;font-size:13.5px;padding:7px 0;border-bottom:1px solid var(--line)}
+  .db-srow:last-child{border-bottom:0;padding-bottom:0}
+  .db-srow .r{width:18px;font-family:'Barlow Condensed';font-weight:800;color:var(--muted);font-size:16px;text-align:center;flex:none}
+  .db-srow .sn{flex:1;min-width:0;font-weight:700;color:var(--ink);line-height:1.18;overflow-wrap:anywhere}
+  .db-srow .sp{font-family:'Barlow Condensed';font-weight:800;color:var(--ink);font-variant-numeric:tabular-nums;flex:none}
+  .db-srow .mv{font-size:11.5px;font-weight:800;width:36px;text-align:right;flex:none}
+  .db-srow .mv.up{color:var(--up)}.db-srow .mv.down{color:var(--down)}.db-srow .mv.same{color:var(--same)}
+
+  .db-share{display:flex;gap:10px;margin-top:16px}
+  .db-share button{flex:1;font:inherit;font-weight:800;font-size:13.5px;cursor:pointer;border-radius:12px;
+    padding:12px 10px;border:1px solid transparent;background:var(--ink);color:#fff;
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:transform .12s,background .15s}
+  .db-share button:hover{transform:translateY(-1px)}
+  .db-share button.ok{background:var(--up);color:#fff;border-color:transparent}
+  .db-foot{text-align:center;color:var(--muted);font-size:11.5px;margin-top:12px;font-style:italic}
+  .db-empty{text-align:center;color:var(--muted);padding:34px 14px;line-height:1.5}
+  @media(max-width:560px){
+    .db-head{padding:16px 18px 15px}
+    .db-head h3{font-size:22px}
+    .db-head .meta{font-size:12px}
+    .db-dateline{margin:-1px 0 9px;font-size:10px;letter-spacing:.65px}
+    .db-hero{margin-bottom:14px;padding:0 1px}
+    .db-hero h2{font-size:clamp(26px,7.6vw,32px);line-height:1}
+    .db-hero .dek{font-size:13.5px;line-height:1.4;margin-top:9px}
+    .db-awards{grid-template-columns:1fr;gap:8px;margin-top:8px}
+    .db-spot{grid-template-columns:36px minmax(0,1fr) auto;padding:11px 12px;gap:10px}
+    .db-spot .db-av{width:36px;height:36px;font-size:18px}
+    .db-spot .db-nm{font-size:15.5px}
+    .db-spot .db-sub{font-size:12px;line-height:1.32}
+    .db-spot .db-big{font-size:25px}
+    .db-movers{margin-top:9px}
+    .db-mov{padding:9px 10px}
+    .db-mov .db-mov-tag{font-size:9px;letter-spacing:.35px}
+    .db-mov .db-mov-nm{font-size:14px}
+    .db-mov .db-mov-chg{font-size:20px}
+    .db-mov .db-mov-sub{font-size:10.5px}
+    .db-section-title{margin:17px 0 8px}
+    .db-stories{padding:3px 12px}
+    .db-lower{grid-template-columns:1fr;gap:9px;margin-top:16px}
+    .db-panel{padding:12px}
+    .db-share{margin-top:14px}
+  }
 </style>
 </head>
 <body>
@@ -605,16 +750,23 @@
   <main class="wrap">
     <section class="board">
       <div class="board-head">
-        <div class="bh-left">
-          <h2>Standings</h2>
-          <button id="openSchedTop" class="schedbtn" type="button" title="See every match — played and upcoming">
+        <div class="board-titlebar">
+          <div class="board-primary">
+            <h2>Standings</h2>
+            <button id="openDebriefTop" class="debriefbtn debrieftop" type="button" style="display:none" title="The day's front page — who won the day, the biggest moment, and more">
+              <span class="ic">🗞</span>The Debrief<span class="ndot" aria-hidden="true"></span>
+            </button>
+          </div>
+          <button id="openSchedTop" class="schedlink" type="button" title="See every match — played and upcoming">
             <span class="ic">📅</span>Full Schedule
           </button>
         </div>
-        <div class="legend">
-          <span><i class="pill" style="background:var(--gold)"></i>Top 3</span>
-          <span><i class="pill" style="background:var(--up)"></i>Climbed</span>
-          <span>🎯 Exact scores</span>
+        <div class="board-tools">
+          <div class="legend">
+            <span><i class="pill" style="background:var(--gold)"></i>Top 3</span>
+            <span><i class="pill" style="background:var(--up)"></i>Climbed</span>
+            <span>🎯 Exact scores</span>
+          </div>
         </div>
       </div>
       <div class="cards" id="board"><div class="loading">Loading standings…</div></div>
@@ -692,6 +844,7 @@ function setTZ(pref){
   if(RANKINGS) $('#updated').textContent='Updated '+fmtUpdated(RANKINGS.updated);
   renderLiveStrip(); renderRecent(); updateFoot();
   refreshTopView();
+  syncDebriefButton();
 }
 function fmtUpdated(iso){
   const d=new Date(iso);
@@ -755,6 +908,7 @@ async function loadData(){
   // in place (without resetting scroll, filters, or the navigation stack).
   refreshTopView();
   updateFoot();
+  syncDebriefButton();
 }
 function updateFoot(){
   if(!RANKINGS) return;
@@ -791,6 +945,7 @@ async function init(){
   $('#refresh').addEventListener('click', refresh);
   $('#allResults').addEventListener('click', openResults);
   $('#openSchedTop').addEventListener('click', openResults);
+  $('#openDebriefTop').addEventListener('click', ()=>openDebrief());
   // Footer timezone picker (the site-wide control). The schedule modal renders
   // its own picker bound to the same setTZ(), so the two always stay in sync.
   const tzFoot=$('#tzSelectFoot');
@@ -805,6 +960,10 @@ async function init(){
     renderRecent();
     refreshTopView();
   }, 20000);
+  // Show/refresh the Debrief button, then auto-pop the day's edition once if the
+  // latest settled day hasn't been seen yet (date-keyed in localStorage).
+  syncDebriefButton();
+  maybeAutoDebrief();
 }
 
 // Refresh whichever view is on top of the modal stack, preserving the overlay's
@@ -997,6 +1156,739 @@ function resCard(m,i){
       <span class="gs">${sc.a}</span>
     </div>
   </div>`;
+}
+
+/* ================= The Debrief (daily recap) =================
+   A once-a-day "front page" for the pool: a drama-ranked headline plus an MVP
+   spotlight, a soft tough-day note, runner-up stories, the day's numbers, and a
+   standings shift. Everything is computed client-side from predictions.json —
+   which reconciles exactly to the official standings — so no backend is needed.
+
+   The story engine is intentionally pluggable: each detector is a pure function
+   of the day's context that returns a candidate story (with a 0-100 `drama`
+   score) or nothing. We run them all, apply a light social-balance sort, and
+   the strongest story becomes the headline; the next few become "Also in
+   today's edition". Adding a new kind of headline later = appending one detector. */
+
+/* Winner side of a "h - a" scoreline: H / A / D (or null). */
+function scoreWinner(s){ const m=parseScore(s); if(!m) return null; return m.h>m.a?'H':m.a>m.h?'A':'D'; }
+function ordinal(n){ const s=['th','st','nd','rd'],v=n%100; return n+(s[(v-20)%10]||s[v]||s[0]); }
+function marginPhrase(m){ return m>=70?'A statement day.':m>=35?'Comfortable in the end.':'Just enough to take it.'; }
+
+/* Calendar-day label that matches the (timezone-derived) date string verbatim,
+   independent of where the viewer actually is. */
+function debriefDateLabel(date){
+  const d=new Date(date+'T12:00:00Z');
+  return isNaN(d)?date:d.toLocaleDateString(undefined,{weekday:'long',month:'long',day:'numeric',timeZone:'UTC'});
+}
+
+/* Flatten every player's prediction pages into one fixture list keyed by the
+   global fixture_number, each fixture carrying every player's pick and the local
+   calendar day it belongs to (in the viewer's selected zone — derived from
+   kickoff_utc, never the baked kickoff_local, which uses mixed source zones). */
+function debriefFixtures(){
+  const fixtures=new Map();
+  Object.values(PRED).forEach(p=>{
+    (p.matchdays||[]).forEach(md=>(md.fixtures||[]).forEach(fx=>{
+      const num=fx.fixture_number; if(num==null) return;
+      let f=fixtures.get(num);
+      if(!f){
+        f={num, round:md.round||fx.round||'Match Day', kickoff:fx.kickoff_utc,
+           home:teamName(fx.match&&fx.match.home), away:teamName(fx.match&&fx.match.away),
+           homeCode:fx.match&&fx.match.home&&fx.match.home.code, awayCode:fx.match&&fx.match.away&&fx.match.away.code,
+           status:fx.status, actual:clean(fx.actual_score||''),
+           day:fx.kickoff_utc?dayKey(fx.kickoff_utc):null, picks:[]};
+        fixtures.set(num,f);
+      }
+      f.picks.push({teamId:p.team_id, name:p.name, flag:p.flag,
+        predType:fx.predicted&&fx.predicted.type, score:fx.predicted&&fx.predicted.score,
+        hidden:!!(fx.predicted&&fx.predicted.hidden),
+        points:fx.points==null?null:fx.points, exact:!!fx.is_exact});
+    }));
+  });
+  return fixtures;
+}
+
+/* Group fixtures into local days; a day is "settled" once it has fixtures and
+   every one of them is Final (status FT) — i.e. no kickoff still pending. */
+function debriefDays(fixtures){
+  const days=new Map();
+  for(const f of fixtures.values()){
+    if(!f.day) continue;
+    let d=days.get(f.day); if(!d){ d={date:f.day, fixtures:[]}; days.set(f.day,d); }
+    d.fixtures.push(f);
+  }
+  for(const d of days.values()) d.settled = d.fixtures.length>0 && d.fixtures.every(isCompleted);
+  return days;
+}
+
+/* Overall standings as of the end of a given local day: sum each player's
+   fixture points for every fixture on or before that date, then rank. This is
+   deterministic from predictions and matches the official board exactly, so we
+   never depend on the noisy history.json snapshot cadence for day-over-day
+   movement, takeovers, or leader streaks. */
+function debriefStandingsAsOf(fixtures, date){
+  const tot={}, names={};
+  for(const f of fixtures.values()){
+    if(!f.day || f.day>date) continue;
+    f.picks.forEach(pk=>{ tot[pk.teamId]=(tot[pk.teamId]||0)+(pk.points||0); names[pk.teamId]=pk.name; });
+  }
+  const arr=Object.keys(tot).map(id=>({teamId:id,name:names[id],points:tot[id]}));
+  arr.sort((a,b)=>b.points-a.points);
+  const byId={}; arr.forEach((r,i)=>{ r.rank=i+1; byId[r.teamId]=r; });
+  return {arr, byId};
+}
+
+/* How many consecutive settled days (ending at idx) the same player has led. */
+function debriefLeaderStreak(fixtures, datesAsc, idx){
+  if(idx<0) return {leadId:null,n:0};
+  const lead=debriefStandingsAsOf(fixtures,datesAsc[idx]).arr[0];
+  if(!lead) return {leadId:null,n:0};
+  const leadId=lead.teamId;
+  let n=0;
+  for(let i=idx;i>=0;i--){ const a=debriefStandingsAsOf(fixtures,datesAsc[i]).arr; if(a[0]&&a[0].teamId===leadId) n++; else break; }
+  return {leadId,n};
+}
+
+/* Per-player totals for one day, best→worst, each with their single best call. */
+function debriefDayStats(day){
+  const stat={};
+  day.fixtures.forEach(f=>{
+    f.picks.forEach(pk=>{
+      let s=stat[pk.teamId]; if(!s) s=stat[pk.teamId]={teamId:pk.teamId,name:pk.name,flag:pk.flag,points:0,exacts:0,hits:0,nFin:0,best:null};
+      const pts=pk.points||0;
+      s.points+=pts; s.nFin++; if(pk.exact) s.exacts++;
+      if(pts>0) s.hits++;
+      if(!s.best || pts>s.best.points) s.best={points:pts,f,pk};
+    });
+  });
+  return Object.values(stat).sort((a,b)=>b.points-a.points || b.exacts-a.exacts || a.name.localeCompare(b.name));
+}
+function debriefPickDesc(best){
+  if(!best) return '';
+  const m=parseScore(best.f.actual); if(!m) return '';
+  const line=`${best.f.home} ${m.h}–${m.a} ${best.f.away}`;
+  return best.pk.exact?`nailed ${line} on the nose (+${best.points})`:`read ${line} for +${best.points}`;
+}
+/* Just the scoreline, no verb/points — used where the points sit in their own
+   slot so we don't print "+90" twice. */
+function debriefMatchLine(best){
+  if(!best) return '';
+  const m=parseScore(best.f.actual); if(!m) return '';
+  return `${best.f.home} ${m.h}–${m.a} ${best.f.away}`;
+}
+/* MVP subtitle — sells the scoring achievement (margin over the field, exacts),
+   NOT a single pick (that's the separate Pick of the day award). */
+function debriefMvpLine(ctx){
+  const tops=(ctx.topPlayers&&ctx.topPlayers.length)?ctx.topPlayers:[ctx.players[0]];
+  const top=tops[0], second=ctx.players.find(p=>p.points<top.points);
+  const bits=[tops.length>1?`Shared top score of all ${ctx.players.length}`:`Top scorer of all ${ctx.players.length}`];
+  if(tops.length>1) bits.push(`${tops.length} players level on ${top.points}`);
+  else if(second){ const m=top.points-second.points;
+    bits.push(`${m} clear of ${esc(second.name)}`); }
+  const ex=tops.reduce((a,p)=>a+p.exacts,0);
+  if(ex) bits.push(`${ex} exact${ex>1?'s':''} along the way`);
+  return bits.join(' · ');
+}
+function debriefNameList(names,max){
+  max=max||3;
+  const cleanNames=names.filter(Boolean);
+  const shown=cleanNames.slice(0,max);
+  let txt=shown.length<=1?(shown[0]||''):shown.slice(0,-1).join(', ')+' and '+shown[shown.length-1];
+  const extra=cleanNames.length-shown.length;
+  return extra>0?`${txt} +${extra}`:txt;
+}
+const DEBRIEF_LEAD_KEY='wc_recap_leads_v1';
+function debriefStoryTarget(s){ return s&&s.link&&(s.link.matchKey||s.link.playerId)||''; }
+function debriefStoryFatigueTarget(s){
+  if(!s||!s.link) return '';
+  if(s.link.matchKey) return `m:${s.link.matchKey}`;
+  if(s.link.playerId) return `p:${s.link.playerId}`;
+  return '';
+}
+function debriefLeadRecord(date,s){
+  return s?{date,id:s.id,target:debriefStoryFatigueTarget(s),headline:s.headline}:null;
+}
+function debriefLeadStore(){
+  try{
+    const a=JSON.parse(localStorage.getItem(DEBRIEF_LEAD_KEY)||'[]');
+    return Array.isArray(a)?a.filter(r=>r&&r.date&&r.id).slice(-18):[];
+  }catch(e){ return []; }
+}
+function debriefSaveLead(ctx,hero){
+  const rec=debriefLeadRecord(ctx&&ctx.date,hero); if(!rec) return;
+  try{
+    const a=debriefLeadStore().filter(r=>r.date!==rec.date);
+    a.push(rec); localStorage.setItem(DEBRIEF_LEAD_KEY,JSON.stringify(a.slice(-18)));
+  }catch(e){}
+}
+function debriefDerivedLead(date){
+  const ctx=debriefContext(date); if(!ctx) return null;
+  const stories=debriefStories(ctx,{noFatigue:true});
+  return debriefLeadRecord(date,stories[0]);
+}
+function debriefRecentLeads(ctx){
+  const dates=ctx.settledDates||[], idx=ctx.dayIndex==null?dates.indexOf(ctx.date):ctx.dayIndex;
+  if(idx<=0) return [];
+  const recent=dates.slice(Math.max(0,idx-3),idx).reverse();
+  const stored={}; debriefLeadStore().forEach(r=>{ stored[r.date]=r; });
+  return recent.map(d=>stored[d]&&stored[d].id?stored[d]:debriefDerivedLead(d)).filter(Boolean);
+}
+function debriefStoryFatigue(s,recent,major){
+  if(!recent||!recent.length||major.has(s.id)) return 0;
+  const target=debriefStoryFatigueTarget(s);
+  let n=0;
+  recent.forEach((r,i)=>{
+    const age=i+1;
+    if(r.id===s.id) n+=age===1?14:age===2?8:5;
+    if(target&&r.target===target) n+=age===1?18:age===2?11:7;
+  });
+  return n;
+}
+function debriefStorySort(ctx,stories,recent){
+  const topIds=new Set((ctx.topPlayers||[]).map(p=>p.teamId));
+  const major=new Set(['perfect','takeover','allmissed']);
+  const group=new Set(['allmissed','consensus','bullseye','allhit','split','noexact','tighttop','goalfest','cleancrew','droughtend','cash','trap','squeeze']);
+  return stories.map((s,i)=>{
+    let score=s.drama;
+    if(group.has(s.id) && ctx.players.length>=4) score+=7;
+    if(s.id==='daywinner' && ctx.topPlayers.length>1) score+=7;
+    if(s.id==='faller') score-=9;
+    if(s.id==='quiet') score-=3;
+    if(s.link&&s.link.playerId&&topIds.has(s.link.playerId)&&!major.has(s.id)) score-=15;
+    score-=debriefStoryFatigue(s,recent,major);
+    return {...s,_score:score,_order:i};
+  }).sort((a,b)=>b._score-a._score || b.drama-a.drama || a._order-b._order);
+}
+function debriefBestCalls(players){
+  let max=0,calls=[];
+  players.forEach(p=>{
+    const pts=p.best&&p.best.points||0; if(pts<=0) return;
+    const call={...p.best,owner:p};
+    if(pts>max){ max=pts; calls=[call]; }
+    else if(pts===max) calls.push(call);
+  });
+  return calls.sort((a,b)=>a.owner.name.localeCompare(b.owner.name));
+}
+function debriefCallSummary(calls,max){
+  max=max||2;
+  const groups={}, order=[];
+  calls.forEach(c=>{ const line=debriefMatchLine(c); if(!line) return;
+    if(!groups[line]){ groups[line]=0; order.push(line); } groups[line]++; });
+  const items=order.map(k=>groups[k]>1?`${k} x${groups[k]}`:k);
+  const shown=items.slice(0,max);
+  return shown.join(' · ')+(items.length>shown.length?` · +${items.length-shown.length} more`:'');
+}
+
+/* Cross-player picture of each fixture: how the whole pool fared on it. */
+function debriefFixtureStats(day, nameById){
+  return day.fixtures.map(f=>{
+    const m=parseScore(f.actual);
+    const picks=f.picks.filter(pk=>pk.predType==='score' && !pk.hidden);
+    const counted=picks.length;
+    let hitCount=0, exactCount=0; const wt={H:0,A:0,D:0};
+    picks.forEach(pk=>{ if((pk.points||0)>0) hitCount++; if(pk.exact) exactCount++; const w=scoreWinner(pk.score); if(w) wt[w]++; });
+    const actualWinner=m?(m.h>m.a?'H':m.a>m.h?'A':'D'):null;
+    let consensusWinner=null,cmax=-1; ['H','A','D'].forEach(k=>{ if(wt[k]>cmax){cmax=wt[k];consensusWinner=k;} });
+    const side=s=> s==='H'?f.home : s==='A'?f.away : 'a draw';
+    const hero=picks.find(pk=>(pk.points||0)>0);
+    const matchup=m?`${f.home} ${m.h}–${m.a} ${f.away}`:`${f.home} v ${f.away}`;
+    return {
+      key:String(f.num), f, counted, hitCount, exactCount, actualWinner, consensusWinner,
+      consensusShare:counted?cmax/counted:0, totalGoals:m?m.h+m.a:0, matchup,
+      resultPhrase:m?(actualWinner==='D'?`the ${m.h}–${m.a} stalemate`:`${side(actualWinner)}'s ${m.h}–${m.a}`):'',
+      heroName:hero?nameById[hero.teamId]:'',
+      wrongSide:side(consensusWinner),
+      consensusPhrase:consensusWinner==='D'?'toward a draw':`behind ${side(consensusWinner)}`,
+    };
+  });
+}
+
+function debriefMajorityRound(fxs){
+  const c={}; fxs.forEach(f=>{ const r=f.round||'Match Day'; c[r]=(c[r]||0)+1; });
+  let best='Match Day',n=-1; Object.keys(c).forEach(k=>{ if(c[k]>n){n=c[k];best=k;} }); return best;
+}
+
+/* Assemble everything a detector might need for one settled day. */
+function debriefContext(date){
+  const fixtures=debriefFixtures();
+  const days=debriefDays(fixtures);
+  const day=days.get(date); if(!day || !day.settled) return null;
+  const datesAsc=[...days.values()].filter(d=>d.settled).map(d=>d.date).sort();
+  const idx=datesAsc.indexOf(date);
+  const nameById={}; Object.values(PRED).forEach(p=>nameById[p.team_id]=p.name);
+
+  const players=debriefDayStats(day);
+  players.forEach(p=>p.bestDesc=debriefPickDesc(p.best));
+  const topScore=players[0]?players[0].points:null;
+  const topPlayers=players.filter(p=>p.points===topScore);
+  const bestCalls=debriefBestCalls(players);
+  const bestCall=bestCalls[0]||null;
+
+  const cur=debriefStandingsAsOf(fixtures,date);
+  const prevDate=idx>0?datesAsc[idx-1]:null;
+  const prev=prevDate?debriefStandingsAsOf(fixtures,prevDate):null;
+  const prevDay=prevDate?days.get(prevDate):null;
+  const prevPlayers=prevDay?debriefDayStats(prevDay):[];
+  let topClimber=null,topFaller=null;
+  if(prev){
+    cur.arr.forEach(r=>{
+      const was=prev.byId[r.teamId]; if(!was) return;
+      const delta=was.rank-r.rank;
+      if(delta>0 && (!topClimber||delta>topClimber.delta)) topClimber={teamId:r.teamId,name:r.name,delta,rank:r.rank};
+      if(delta<0 && (!topFaller||delta<topFaller.delta)) topFaller={teamId:r.teamId,name:r.name,delta,rank:r.rank};
+    });
+  }
+  const ls=debriefLeaderStreak(fixtures,datesAsc,idx);
+
+  return {
+    date, dateLabel:debriefDateLabel(date), round:debriefMajorityRound(day.fixtures), edition:idx+1,
+    fixtures:day.fixtures, players, topPlayers, bestCall, bestCalls,
+    leader:cur.arr[0], prevLeader:prev?prev.arr[0]:null, leaderN:ls.n,
+    topClimber, topFaller, standings:cur.arr, prevById:prev?prev.byId:null,
+    settledDates:datesAsc, dayIndex:idx, prevStandings:prev?prev.arr:null,
+    fixtureStats:debriefFixtureStats(day,nameById), nameById,
+    poolExacts:players.reduce((a,p)=>a+p.exacts,0),
+    prevPoolExacts:prevPlayers.reduce((a,p)=>a+p.exacts,0),
+    avgDay:players.length?Math.round(players.reduce((a,p)=>a+p.points,0)/players.length):0,
+  };
+}
+
+/* The detector battery. Each returns a story candidate or nothing. */
+function debriefStories(ctx,opt){
+  opt=opt||{};
+  const S=[], add=o=>{ if(o) S.push(o); };
+  const fs=ctx.fixtureStats, top=ctx.players[0];
+
+  ctx.players.forEach(p=>{
+    if(p.nFin>=2 && p.exacts===p.nFin){
+      add({id:'perfect',drama:96+p.nFin,icon:'🎯',
+        headline:`Perfect Card: ${p.name} Nails ${ctx.round}`,
+        dek:`${p.exacts} for ${p.nFin}, every finished scoreline right. That is as clean as a day gets.`,
+        link:{playerId:p.teamId}});
+    } else if(p.nFin>=3 && p.exacts===p.nFin-1){
+      add({id:'nearperfect',drama:79,icon:'🎯',
+        headline:`One Bounce from Perfect: ${p.name}`,
+        dek:`${p.exacts} of ${p.nFin} spot on, with one scoreline keeping the card human.`,
+        link:{playerId:p.teamId}});
+    }
+  });
+
+  if(top){
+    const tied=ctx.topPlayers&&ctx.topPlayers.length>1;
+    const second=ctx.players.find(p=>p.points<top.points), margin=second?top.points-second.points:top.points;
+    add({id:'daywinner',drama:48+Math.min(28,Math.round(margin/4))+(tied?8:0),icon:'🏆',
+      headline: tied?`Tied at the Top: ${debriefNameList(ctx.topPlayers.map(p=>p.name),2)}`
+        : margin>=60?`${top.name} Sets the Pace with ${top.points}`:`${top.name} Wins the Day`,
+      dek: tied?`${ctx.topPlayers.length} players shared the high score on ${top.points}. No need for a tiebreaker when the bragging rights can travel.`
+        : second?`${top.points} points, clear of ${second.name} by ${margin}. ${marginPhrase(margin)}`
+        :`${top.points} points and the day's bragging rights.`,
+      link:tied?null:{playerId:top.teamId}});
+  }
+
+  if(ctx.prevLeader && ctx.leader && ctx.prevLeader.teamId!==ctx.leader.teamId){
+    add({id:'takeover',drama:93,icon:'👑',
+      headline:`New Leader: ${ctx.leader.name} Takes First`,
+      dek:`The top spot changes hands as ${ctx.leader.name} moves past ${ctx.prevLeader.name} on the overall table.`,
+      link:{playerId:ctx.leader.teamId}});
+  } else if(ctx.leaderN>=2 && ctx.leader){
+    add({id:'streak',drama:38+Math.min(42,ctx.leaderN*7),icon:'👑',
+      headline:`${ctx.leader.name} Stays Top for Day ${ctx.leaderN}`,
+      dek:`${ctx.leader.name} has led after ${ctx.leaderN} straight settled days. The chase pack still has plenty of road.`,
+      link:{playerId:ctx.leader.teamId}});
+  }
+
+  if(ctx.topClimber && ctx.topClimber.delta>=1){
+    const c=ctx.topClimber;
+    add({id:'climber',drama:28+c.delta*9,icon:'🚀',
+      headline:`${c.name} Climbs ${c.delta} Spot${c.delta>1?'s':''}`,
+      dek:`A strong card moves ${c.name} to ${ordinal(c.rank)} overall. That is how the table starts to tilt.`,
+      link:{playerId:c.teamId}});
+  }
+  if(ctx.topFaller && ctx.topFaller.delta<=-1){
+    const f=ctx.topFaller;
+    add({id:'faller',drama:22+Math.abs(f.delta)*5,icon:'🌦',
+      headline:`${f.name} Gives Back ${Math.abs(f.delta)} Spot${Math.abs(f.delta)>1?'s':''}`,
+      dek:`A quieter turn nudges ${f.name} to ${ordinal(f.rank)} overall. Plenty of football left on the card.`,
+      link:{playerId:f.teamId}});
+  }
+
+  if(top && ctx.leader && ctx.prevLeader && ctx.prevLeader.teamId===ctx.leader.teamId && top.teamId!==ctx.leader.teamId && ctx.prevById){
+    const leaderDay=(ctx.players.find(p=>p.teamId===ctx.leader.teamId)||{}).points||0;
+    const row=ctx.standings.find(r=>r.teamId===top.teamId), prevRow=ctx.prevById[top.teamId];
+    const narrowed=row&&prevRow?Math.max(0,(ctx.prevLeader.points-prevRow.points)-(ctx.leader.points-row.points)):0;
+    if(row&&row.rank>1&&top.points-leaderDay>=18&&narrowed>0){
+      add({id:'loudchase',drama:47+Math.min(20,Math.round(narrowed/4)),icon:'📣',
+        headline:`Quiet Leader, Loud Chase: ${top.name}`,
+        dek:`${ctx.leader.name} still leads overall, but ${top.name} won the day and trimmed the gap by ${narrowed}.`,
+        link:{playerId:top.teamId}});
+    }
+  }
+
+  const miss=fs.filter(s=>s.counted>=6 && s.hitCount===0).sort((a,b)=>b.counted-a.counted)[0];
+  if(miss) add({id:'allmissed',drama:75+(miss.exactCount===0?6:0),icon:'🙈',
+    headline:`The Pool Misses ${miss.matchup}`,
+    dek:`${miss.resultPhrase.charAt(0).toUpperCase()+miss.resultPhrase.slice(1)} left all ${miss.counted} scorecards empty. One for the group chat.`,
+    link:{matchKey:miss.key}});
+
+  const lone=fs.filter(s=>s.counted>=6 && s.hitCount===1).sort((a,b)=>b.counted-a.counted)[0];
+  if(lone) add({id:'lone',drama:67,icon:'🧠',
+    headline:`Only ${lone.heroName} Found ${lone.matchup}`,
+    dek:`The match fooled almost everyone, but ${lone.heroName} backed ${lone.resultPhrase} and banked the points.`,
+    link:{matchKey:lone.key}});
+
+  const cons=fs.filter(s=>s.consensusWinner&&s.actualWinner&&s.consensusWinner!==s.actualWinner&&s.consensusShare>=0.55&&s.hitCount<s.counted)
+              .sort((a,b)=>b.consensusShare-a.consensusShare)[0];
+  if(cons) add({id:'consensus',drama:50+Math.round(cons.consensusShare*20),icon:'📉',
+    headline:`Group Lean Goes Sideways: ${cons.matchup}`,
+    dek:`${Math.round(cons.consensusShare*100)}% of the pool leaned ${cons.consensusPhrase}; the final score had other ideas.`,
+    link:{matchKey:cons.key}});
+
+  const trap=fs.filter(s=>s.consensusWinner&&s.actualWinner&&s.consensusWinner!==s.actualWinner&&s.consensusShare>=0.55&&s.hitCount>1&&s.hitCount/s.counted<=0.35)
+               .sort((a,b)=>a.hitCount-b.hitCount || b.consensusShare-a.consensusShare)[0];
+  if(trap) add({id:'trap',drama:54+Math.round(trap.consensusShare*12),icon:'🪤',
+    headline:`Trap Match: ${trap.matchup}`,
+    dek:`The popular side missed, but ${trap.hitCount} players still found points from ${trap.resultPhrase}.`,
+    link:{matchKey:trap.key}});
+
+  const cluster=fs.filter(s=>s.exactCount>=3).sort((a,b)=>b.exactCount-a.exactCount)[0];
+  if(cluster) add({id:'bullseye',drama:30+cluster.exactCount*3,icon:'🎯',
+    headline:`Bullseye Club: ${cluster.exactCount} Nailed ${cluster.matchup}`,
+    dek:`${cluster.exactCount} players landed the exact score. A tidy little chorus of correct scorelines.`,
+    link:{matchKey:cluster.key}});
+
+  const allhit=fs.filter(s=>s.counted>=6 && s.hitCount===s.counted).sort((a,b)=>b.exactCount-a.exactCount || b.counted-a.counted)[0];
+  if(allhit) add({id:'allhit',drama:44+Math.min(14,allhit.exactCount*2),icon:'🤝',
+    headline:`Everyone Got a Piece of ${allhit.matchup}`,
+    dek:`All ${allhit.counted} visible picks earned points. Some days everyone sees the same thing.`,
+    link:{matchKey:allhit.key}});
+
+  const cash=fs.filter(s=>s.counted>=6 && s.consensusWinner&&s.actualWinner===s.consensusWinner&&s.consensusShare>=0.6&&s.hitCount/s.counted>=0.6&&s.hitCount<s.counted)
+               .sort((a,b)=>b.consensusShare-a.consensusShare || b.hitCount-a.hitCount)[0];
+  if(cash) add({id:'cash',drama:39+Math.round(cash.consensusShare*18),icon:'🤝',
+    headline:`Consensus Cashes on ${cash.matchup}`,
+    dek:`${Math.round(cash.consensusShare*100)}% leaned ${cash.consensusPhrase}, and ${cash.hitCount} players came away with points.`,
+    link:{matchKey:cash.key}});
+
+  const split=fs.filter(s=>s.counted>=6 && s.consensusShare<=0.45 && s.hitCount>0 && s.hitCount<s.counted)
+                .sort((a,b)=>a.consensusShare-b.consensusShare || b.totalGoals-a.totalGoals)[0];
+  if(split) add({id:'split',drama:35+Math.round((.45-split.consensusShare)*40),icon:'⚖️',
+    headline:`Split Room on ${split.matchup}`,
+    dek:`No side had a majority before kickoff. The points landed, but nobody can claim the room was settled.`,
+    link:{matchKey:split.key}});
+
+  if(ctx.poolExacts===0 && ctx.fixtures.length>=2){
+    const hard=fs.slice().sort((a,b)=>a.exactCount-b.exactCount || b.totalGoals-a.totalGoals)[0];
+    add({id:'noexact',drama:40,icon:'🎯',
+      headline:`No Bullseyes on the Card`,
+      dek:`The outcomes gave out points, but the exact scorelines stayed just out of reach for everyone.`,
+      link:hard?{matchKey:hard.key}:null});
+  }
+
+  if(ctx.prevPoolExacts===0 && ctx.poolExacts>0 && ctx.dayIndex>0){
+    const exacts=ctx.players.filter(p=>p.exacts>0).sort((a,b)=>b.exacts-a.exacts || b.points-a.points);
+    add({id:'droughtend',drama:42+Math.min(18,ctx.poolExacts*4),icon:'🎯',
+      headline:`Exact Score Drought Ends`,
+      dek:`After a card with no bullseyes, ${debriefNameList(exacts.map(p=>p.name),3)} brought the exact scores back.`,
+      link:exacts[0]?{playerId:exacts[0].teamId}:null});
+  }
+
+  const clean=ctx.players.filter(p=>p.nFin>=2&&p.hits===p.nFin&&p.exacts<p.nFin);
+  if(clean.length>=2){
+    add({id:'cleancrew',drama:37+Math.min(18,clean.length*4),icon:'✅',
+      headline:`Clean Sheet Crew: ${clean.length} Scored on Every Match`,
+      dek:`${debriefNameList(clean.map(p=>p.name),3)} scored on every finished match without needing the exact-card spotlight.`,
+      link:null});
+  }
+
+  const wild=fs.slice().sort((a,b)=>b.totalGoals-a.totalGoals)[0];
+  if(wild && wild.totalGoals>=4) add({id:'goalfest',drama:18,icon:'⚽',
+    headline:`Goalfest: ${wild.matchup}`,
+    dek:`${wild.totalGoals} goals in a single match — the wildest result on the card.`,
+    link:{matchKey:wild.key}});
+
+  if(ctx.players.length>=2){
+    const m=ctx.players[0].points-ctx.players[1].points;
+    if(m>0 && m<=12) add({id:'photo',drama:34,icon:'📸',
+      headline:`Photo Finish for the Day's Top Score`,
+      dek:`${ctx.players[0].name} edged ${ctx.players[1].name} by just ${m}. Tiny margins, loud scoreboard.`,
+      link:{playerId:ctx.players[0].teamId}});
+  }
+
+  if(ctx.standings.length>=3){
+    const gap=ctx.standings[0].points-ctx.standings[2].points;
+    if(gap>0 && gap<=90) add({id:'tighttop',drama:32+Math.round((90-gap)/6),icon:'🪜',
+      headline:`The Top Three Stay Bunched`,
+      dek:`Only ${gap} points separate first from third. Nobody gets to breathe up there for long.`,
+      link:{playerId:ctx.leader&&ctx.leader.teamId}});
+  }
+
+  if(ctx.prevStandings&&ctx.standings.length>=2){
+    let squeeze=null;
+    for(let i=0;i<Math.min(5,ctx.standings.length-1);i++){
+      const a=ctx.standings[i], b=ctx.standings[i+1], pa=ctx.prevById&&ctx.prevById[a.teamId], pb=ctx.prevById&&ctx.prevById[b.teamId];
+      if(!pa||!pb) continue;
+      const oldGap=pa.points-pb.points, gap=a.points-b.points, diff=oldGap-gap;
+      if(diff>=20 && gap<=70 && (!squeeze||diff>squeeze.diff)) squeeze={a,b,gap,diff};
+    }
+    if(squeeze) add({id:'squeeze',drama:36+Math.min(22,Math.round(squeeze.diff/3)),icon:'🪜',
+      headline:`Late Table Squeeze: ${squeeze.b.name} Closes In`,
+      dek:`The gap to ${squeeze.a.name} shrank by ${squeeze.diff}; it is down to ${squeeze.gap} points on the table.`,
+      link:{playerId:squeeze.b.teamId}});
+  }
+
+  add({id:'quiet',drama:8,icon:'🗞️',
+    headline:`A Steady ${ctx.round} at the Top`,
+    dek:`No table-shaker today${ctx.leader?` — ${ctx.leader.name} keeps the lead`:''}. Everyone resets for the next kickoff.`,
+    link:ctx.leader?{playerId:ctx.leader.teamId}:null});
+
+  return debriefStorySort(ctx,S,opt.noFatigue?[]:debriefRecentLeads(ctx));
+}
+
+function debriefLinkAttr(link){
+  if(!link) return '';
+  if(link.playerId) return ` data-player-id="${esc(link.playerId)}" role="button" tabindex="0"`;
+  if(link.matchKey) return ` data-match-key="${esc(link.matchKey)}" role="button" tabindex="0"`;
+  return '';
+}
+
+function debriefShareText(ctx,hero){
+  const top=ctx.players[0];
+  const tops=(ctx.topPlayers&&ctx.topPlayers.length)?ctx.topPlayers:(top?[top]:[]);
+  const lines=[`🗞 The Debrief · ${ctx.dateLabel}`,'',`${hero.icon||'🗞️'} ${hero.headline}`, hero.dek, ''];
+  if(top) lines.push(tops.length>1?`🏆 Top score: ${debriefNameList(tops.map(p=>p.name),3)} shared ${top.points} pts`
+    :`🏆 Top score: ${top.name} with ${top.points} pts`);
+  if(ctx.leader) lines.push(`👑 ${ctx.leader.name} leads overall`);
+  lines.push('', (typeof location!=='undefined'?location.href:''));
+  return lines.join('\n').trim();
+}
+
+function renderDebriefView(){
+  const view=topView(); const date=view&&view.date;
+  const modal=$('#modal'); const hasback=MODAL_STACK.length>1;
+  const ctx=date?debriefContext(date):null;
+  if(!ctx){
+    modal.innerHTML=`<div class="mhead${hasback?' hasback':''}"><div><h3>🗞 The Debrief</h3><div class="meta">Daily recap</div></div>${modalControls()}</div>`+
+      `<div class="mbody"><div class="db-empty">No settled match day to report yet.<br>The Debrief drops once the day's last final whistle has blown.</div></div>`;
+    wireModalControls(modal); return;
+  }
+  const stories=debriefStories(ctx);
+  const hero=stories[0];
+  debriefSaveLead(ctx,hero);
+  const top=ctx.players[0];
+  const tops=(ctx.topPlayers&&ctx.topPlayers.length)?ctx.topPlayers:(top?[top]:[]);
+  const dayPtsFor=id=>{ const p=ctx.players.find(x=>x.teamId===id); return p?p.points:0; };
+  const c=ctx.topClimber, f=ctx.topFaller;
+  const low=ctx.players.length>=4?ctx.players[ctx.players.length-1]:null;
+  const calls=ctx.bestCalls||[], bc=calls[0];
+  const mvpIds=new Set(tops.map(p=>p.teamId));
+  const showPod=bc && calls.length<=5 && (calls.length>1 || !mvpIds.has(bc.owner.teamId));
+  const podClub=calls.length>3, podExact=calls.every(c=>c.pk.exact);
+  // Sidebar = runner-up stories, minus the hero and minus the ones already given
+  // their own dedicated card: 'daywinner' (MVP), 'climber'/'faller' (On the move).
+  // Also dedupe by target so two stories don't point at the same match/player, or
+  // pile extra attention onto someone already carrying a visible card.
+  const covered=['daywinner','climber','faller'];
+  const seenTargets=new Set();
+  const podTargets=new Set(showPod?calls.map(call=>String(call.f.num)):[]);
+  const heroTarget=debriefStoryTarget(hero);
+  if(heroTarget) seenTargets.add(heroTarget);
+  tops.forEach(p=>seenTargets.add(p.teamId));
+  if(c) seenTargets.add(c.teamId);
+  if(f) seenTargets.add(f.teamId);
+  if(low) seenTargets.add(low.teamId);
+  const sidebar=[];
+  for(const s of stories){
+    if(s.id===hero.id || covered.includes(s.id)) continue;
+    const t=debriefStoryTarget(s);
+    if(t && podTargets.has(t) && ['bullseye','goalfest'].includes(s.id)) continue;
+    if(t && seenTargets.has(t)) continue;
+    if(t) seenTargets.add(t);
+    sidebar.push(s);
+    if(sidebar.length>=3) break;
+  }
+  view._ctx=ctx; view._hero=hero;
+
+  const mvp=top?`
+    <div class="db-spot db-mvp${tops.length>1?' db-static':''}"${tops.length===1?debriefLinkAttr({playerId:top.teamId}):''}>
+      <div class="db-av">${tops.length>1?tops.length:esc((top.name||'?').slice(0,1).toUpperCase())}</div>
+      <div class="db-who">
+        <div class="db-lbl">${tops.length>1?'Shared MVP':'MVP'}</div>
+        <div class="db-nm">${tops.length>1?esc(debriefNameList(tops.map(p=>p.name),3)):esc(top.name)}</div>
+        <div class="db-sub">${debriefMvpLine(ctx)}</div>
+      </div>
+      <div class="db-big">${top.points}<small>points</small></div>
+    </div>`:'';
+
+  // The sharpest single prediction — separate from MVP, and only shown when it
+  // has a clear winner or a small tie. Four or five exacts become a small club
+  // moment instead of pretending one pick was "the" pick.
+  const podSummary=showPod?debriefCallSummary(calls,podClub?1:2):'';
+  const pod=showPod?`
+    <div class="db-spot db-pod${calls.length>1?' db-static':''}"${calls.length===1?debriefLinkAttr({playerId:bc.owner.teamId}):''}>
+      <div class="db-av">${calls.length>1?calls.length:esc((bc.owner.name||'?').slice(0,1).toUpperCase())}</div>
+      <div class="db-who">
+        <div class="db-lbl">${podClub?'Bullseye club':calls.length>1?'Shared pick':'Pick of the day'}</div>
+        <div class="db-nm">${podClub?`${calls.length} players`:esc(debriefNameList(calls.map(c=>c.owner.name),3))}</div>
+        <div class="db-sub">${podExact?'Exact calls:':'Top call:'} ${esc(podSummary)}</div>
+      </div>
+      <div class="db-big">+${bc.points}<small>${bc.pk.exact?'exact':'points'}</small></div>
+    </div>`:'';
+
+  // Day's biggest rank riser & steepest faller vs the previous settled board —
+  // always shown (adapted from the main board's movers strip). On opening day
+  // there's no prior board to compare, so we say so.
+  let moversHtml;
+  if(!ctx.prevById){
+    moversHtml=`<div class="db-movers"><div class="db-mov flat"><div class="db-mov-sub">Opening day: the first table is on the board. Movement starts next settled day.</div></div></div>`;
+  } else if(!c && !f){
+    moversHtml=`<div class="db-movers"><div class="db-mov flat"><div class="db-mov-sub">The board held its shape: same places, new points.</div></div></div>`;
+  } else {
+    const riser=c?`
+      <div class="db-mov up"${debriefLinkAttr({playerId:c.teamId})}>
+        <div class="db-mov-row"><span class="db-mov-tag">Riser</span><span class="db-mov-chg">▲${c.delta}</span></div>
+        <div class="db-mov-nm">${esc(c.name)}</div>
+        <div class="db-mov-sub">${ordinal(c.rank)} overall · +${dayPtsFor(c.teamId)} today</div>
+      </div>`:`
+      <div class="db-mov up"><div class="db-mov-row"><span class="db-mov-tag">Riser</span></div><div class="db-mov-nm">No climber</div><div class="db-mov-sub">Nobody gained rank today</div></div>`;
+    const faller=f?`
+      <div class="db-mov down"${debriefLinkAttr({playerId:f.teamId})}>
+        <div class="db-mov-row"><span class="db-mov-tag">Slide</span><span class="db-mov-chg">▼${Math.abs(f.delta)}</span></div>
+        <div class="db-mov-nm">${esc(f.name)}</div>
+        <div class="db-mov-sub">${ordinal(f.rank)} overall · +${dayPtsFor(f.teamId)} today</div>
+      </div>`:`
+      <div class="db-mov down"><div class="db-mov-row"><span class="db-mov-tag">Slide</span></div><div class="db-mov-nm">No slide</div><div class="db-mov-sub">Nobody gave up rank today</div></div>`;
+    moversHtml=`<div class="db-movers">${riser}${faller}</div>`;
+  }
+
+  // Soft reset-day note (lowest day score). Skipped unless the gap is meaningful,
+  // and skipped when it would pile onto someone already named in movement.
+  const toughDup=low&&((top&&low.teamId===top.teamId)||(f&&low.teamId===f.teamId));
+  const toughGap=low?ctx.avgDay-low.points:0;
+  const tough=low&&!toughDup&&(toughGap>=30 || low.points===0)?`
+    <div class="db-spot tough"${debriefLinkAttr({playerId:low.teamId})}>
+      <div class="db-av">${esc((low.name||'?').slice(0,1).toUpperCase())}</div>
+      <div class="db-who">
+        <div class="db-lbl">Tough day</div>
+        <div class="db-nm">${esc(low.name)}</div>
+        <div class="db-sub">Lowest score today with ${low.points} pts${low.exacts?` — but still found an exact score` : ''}. Next match is a reset!</div>
+      </div>
+    </div>`:'';
+
+  const sidebarHtml=sidebar.length?`
+    <div class="db-section-title">Also today</div>
+    <div class="db-stories">${sidebar.map(s=>`
+      <div class="db-story${s.link?' link':''}"${debriefLinkAttr(s.link)}>
+        <div class="db-stx"><div class="db-sh">${esc(s.headline)}</div><div class="db-sd">${esc(s.dek)}</div></div>
+      </div>`).join('')}</div>`:'';
+
+  const wild=ctx.fixtureStats.slice().sort((a,b)=>b.totalGoals-a.totalGoals)[0];
+  const nums=`
+    <section class="db-panel">
+      <h4>By the numbers</h4>
+      <div class="db-nums">
+        <div class="db-num"><div class="k">Top score</div><div class="v">${top?top.points:'—'} <small>${tops.length?esc(debriefNameList(tops.map(p=>p.name),2)):''}</small></div></div>
+        <div class="db-num"><div class="k">Bullseyes</div><div class="v">${ctx.poolExacts} <small>exact</small></div></div>
+        <div class="db-num"><div class="k">Average</div><div class="v">${ctx.avgDay} <small>pts</small></div></div>
+        <div class="db-num"><div class="k">Wildest</div><div class="v sm">${wild?esc(wild.matchup):'—'}</div></div>
+      </div>
+    </section>`;
+
+  const standHtml=`
+    <section class="db-panel">
+      <h4>Standings shift</h4>
+      <div class="db-stand">${ctx.standings.slice(0,5).map(r=>{
+        const was=ctx.prevById?ctx.prevById[r.teamId]:null;
+        const delta=was?was.rank-r.rank:0;
+        const mv=!was?{c:'same',t:'NEW'}:delta>0?{c:'up',t:'▲'+delta}:delta<0?{c:'down',t:'▼'+Math.abs(delta)}:{c:'same',t:'—'};
+        return `<div class="db-srow"${debriefLinkAttr({playerId:r.teamId})} style="cursor:pointer">
+          <span class="r">${r.rank}</span><span class="sn">${esc(r.name)}</span>
+          <span class="sp">${r.points}</span><span class="mv ${mv.c}">${mv.t}</span></div>`;
+      }).join('')}</div>
+    </section>`;
+
+  modal.innerHTML=`
+    <div class="mhead db-head${hasback?' hasback':''}">
+      <div><h3>The Debrief</h3><div class="meta">${esc(ctx.dateLabel)} · ${esc(ctx.round)}</div></div>
+      ${modalControls()}
+    </div>
+    <div class="mbody">
+      <div class="db-wrap">
+        <div class="db-dateline">Edition ${ctx.edition} · Final whistle recap</div>
+        <div class="db-hero${hero.link?' link':''}"${debriefLinkAttr(hero.link)}>
+          <h2>${esc(hero.headline)}</h2>
+          <div class="dek">${esc(hero.dek)}</div>
+        </div>
+        ${moversHtml}
+        <div class="db-awards">${mvp}${pod}${tough}</div>
+        ${sidebarHtml}
+        <div class="db-lower">${nums}${standHtml}</div>
+        <div class="db-share">
+          <button type="button" class="primary" id="dbShare">Share headline</button>
+        </div>
+        <div class="db-foot">Tap a story or name to dig into the detail.</div>
+      </div>
+    </div>`;
+  wireModalControls(modal);
+  const sh=modal.querySelector('#dbShare');
+  if(sh) sh.addEventListener('click',()=>debriefShare(sh));
+}
+
+function debriefShare(btn){
+  const view=topView(); if(!view||!view._ctx) return;
+  const text=debriefShareText(view._ctx,view._hero);
+  const done=()=>{ const prev=btn.textContent; btn.classList.add('ok'); btn.textContent='✓ Copied to clipboard';
+    setTimeout(()=>{ btn.classList.remove('ok'); btn.textContent=prev; },1700); };
+  if(navigator.share){ navigator.share({title:'The Debrief',text}).catch(()=>{}); return; }
+  if(navigator.clipboard&&navigator.clipboard.writeText){ navigator.clipboard.writeText(text).then(done).catch(()=>fallbackCopy(text,done)); }
+  else fallbackCopy(text,done);
+}
+function fallbackCopy(text,done){
+  try{ const ta=document.createElement('textarea'); ta.value=text; ta.style.position='fixed'; ta.style.opacity='0';
+    document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta); done&&done(); }catch(e){}
+}
+
+/* The most recent fully-settled local day (capped at today in the viewer's
+   zone), or null before any day has finished. */
+function latestSettledDay(){
+  const fixtures=debriefFixtures();
+  const days=debriefDays(fixtures);
+  const today=dayKey(Date.now());
+  const ds=[...days.values()].filter(d=>d.settled && d.date<=today).map(d=>d.date).sort();
+  return ds.length?ds[ds.length-1]:null;
+}
+function debriefSeen(date){ try{ return !!localStorage.getItem('wc_recap_seen_'+date); }catch(e){ return false; } }
+function openDebrief(date){
+  date=date||latestSettledDay(); if(!date) return;
+  openModalView({type:'debrief',date,render:renderDebriefView,refresh:renderDebriefView,scroll:0});
+  try{ localStorage.setItem('wc_recap_seen_'+date,'1'); }catch(e){}
+  syncDebriefButton();
+}
+function debriefAutoWindowOpen(){
+  try{
+    const h=new Intl.DateTimeFormat('en-US',{timeZone:TZ,hour:'numeric',hourCycle:'h23'}).formatToParts(new Date()).find(p=>p.type==='hour');
+    return h ? +h.value < 13 : new Date().getHours()<13;
+  }catch(e){ return new Date().getHours()<13; }
+}
+/* Auto-pop once per local day, the first time the app opens after that day has
+   truly settled (every fixture Final), but only before 1pm in the selected
+   display timezone. The date-keyed flag means it never nags twice for the same
+   day, but a brand-new settled day pops fresh during the morning window. */
+function maybeAutoDebrief(){
+  const date=latestSettledDay(); if(!date) return;
+  if(!debriefAutoWindowOpen()) return;
+  if(!debriefSeen(date)) openDebrief(date);
+}
+/* Keep the header button in sync: hidden until a day settles, with a "new" dot
+   and gentle glow until that day's edition has been opened. */
+function syncDebriefButton(){
+  const btn=$('#openDebriefTop'); if(!btn) return;
+  const date=latestSettledDay();
+  if(!date){ btn.style.display='none'; return; }
+  btn.style.display='';
+  const unseen=!debriefSeen(date);
+  btn.classList.toggle('glow',unseen);
+  const dot=btn.querySelector('.ndot'); if(dot) dot.style.display=unseen?'':'none';
 }
 
 /* ---------------- Modal stack ----------------
