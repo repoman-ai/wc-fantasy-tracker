@@ -957,7 +957,7 @@ function allMatches(){
           home:teamName(fx.match?.home), homeCode:fx.match?.home?.code,
           away:teamName(fx.match?.away), awayCode:fx.match?.away?.code,
           score:clean(fx.actual_score||''), status:fx.status, kickoff:fx.kickoff_utc,
-          live:isLive(fx), done:isCompleted(fx),
+          live:isLive(fx), done:matchIsCompletedOrPast(fx),
         });
       }
     }));
@@ -1052,17 +1052,24 @@ function wireModalControls(modal){
    order, with an All / Upcoming / Completed segmented filter and the shared
    timezone picker. */
 let SCHED_MODE='upcoming';   // 'all' | 'upcoming' | 'completed'
-function openResults(){ SCHED_MODE='upcoming'; openModalView({type:'results',render:renderResultsView,refresh:refreshResultsView,scroll:0}); }
+let SCHED_TODAY=false;
+function openResults(){
+  SCHED_MODE='upcoming';
+  SCHED_TODAY=false;
+  openModalView({type:'results',render:renderResultsView,refresh:refreshResultsView,scroll:0});
+}
 function schedCounts(all){
-  return {total:all.length, all:all.length,
-    upcoming:all.filter(m=>!m.done).length,   // upcoming bucket also holds live
-    completed:all.filter(m=>m.done).length};
+  const scoped=SCHED_TODAY?all.filter(matchIsToday):all;
+  return {total:all.length, all:scoped.length,
+    upcoming:scoped.filter(matchIsUpcomingOrLive).length,
+    completed:scoped.filter(matchIsCompletedOrPast).length,
+    today:all.filter(matchIsToday).length};
 }
 /* Just the grouped match rows for the current filter — recomputed on each live
    tick, but injected into the existing .mbody so the toolbar (and its thumb)
    and the scroll position survive. */
 function schedBody(all){
-  const ms=all.filter(m=>SCHED_MODE==='upcoming'?!m.done:SCHED_MODE==='completed'?m.done:true);
+  const ms=all.filter(m=>matchesScheduleFilters(m,SCHED_MODE,SCHED_TODAY));
   const groups=[], idx={};
   ms.forEach(m=>{
     const r=m.round||'Matches';
@@ -1097,6 +1104,7 @@ function renderResultsView(){
         <span class="seg-thumb" aria-hidden="true"></span>
         ${seg('all','All')}${seg('upcoming','Upcoming')}${seg('completed','Completed')}
       </div>
+      <button class="tog ${SCHED_TODAY?'on':''}" id="schedToday" type="button" aria-pressed="${SCHED_TODAY}">📅 Today${counts.today?`<span class="cnt">${counts.today}</span>`:''}</button>
       <label class="tzpick" for="tzSelectModal">
         <span class="ic">🕒</span>
         <select id="tzSelectModal" aria-label="Display timezone">${tzOptionsHTML()}</select>
@@ -1118,6 +1126,13 @@ function renderResultsView(){
     modal.querySelector('.mbody').innerHTML=schedBody(allMatches());
     positionThumb(segEl);
   }));
+  const todayBtn=modal.querySelector('#schedToday');
+  todayBtn.addEventListener('click',()=>{
+    SCHED_TODAY=!SCHED_TODAY;
+    todayBtn.classList.toggle('on',SCHED_TODAY);
+    todayBtn.setAttribute('aria-pressed',SCHED_TODAY);
+    refreshResultsView();
+  });
   modal.querySelector('#tzSelectModal').addEventListener('change',e=>setTZ(e.target.value));
   requestAnimationFrame(()=>positionThumb(segEl));
 }
@@ -1132,6 +1147,16 @@ function refreshResultsView(){
   const all=allMatches();
   const counts=schedCounts(all);
   segEl.querySelectorAll('.seg').forEach(b=>{ const c=b.querySelector('.cnt'); if(c) c.textContent=counts[b.dataset.mode]; });
+  const todayBtn=modal.querySelector('#schedToday');
+  if(todayBtn){
+    const c=todayBtn.querySelector('.cnt');
+    if(c) c.textContent=counts.today;
+    else if(counts.today) todayBtn.insertAdjacentHTML('beforeend',`<span class="cnt">${counts.today}</span>`);
+    const c2=todayBtn.querySelector('.cnt');
+    if(c2) c2.style.display=counts.today?'':'none';
+    todayBtn.classList.toggle('on',SCHED_TODAY);
+    todayBtn.setAttribute('aria-pressed',SCHED_TODAY);
+  }
   const meta=modal.querySelector('.mhead .meta');
   if(meta) meta.textContent=`${counts.total} matches · tap any match to see everyone's pick`;
   const mbody=modal.querySelector('.mbody');
@@ -1400,8 +1425,8 @@ function fixtureCounts(teamId){
   const pdata=PRED[teamId]; if(!pdata||!pdata.matchdays) return c;
   pdata.matchdays.forEach(md=>(md.fixtures||[]).forEach(fx=>{
     c.all++;
-    if(isCompleted(fx)) c.completed++; else c.upcoming++; // upcoming bucket also holds live
-    if(isSameLocalDay(fx.kickoff_utc)) c.today++;
+    if(matchIsCompletedOrPast(fx)) c.completed++; else c.upcoming++;
+    if(matchIsToday(fx)) c.today++;
   }));
   return c;
 }
@@ -1461,6 +1486,33 @@ let CURRENT_TEAM=null;
 function renderSheetCurrent(){ if(CURRENT_TEAM) renderSheet(CURRENT_TEAM); }
 
 function isCompleted(fx){ return (fx.status||'').toUpperCase()==='FT'; }
+function kickoffMs(item){
+  const iso=item&&(item.kickoff_utc||item.kickoff);
+  if(!iso) return NaN;
+  const ms=new Date(iso).getTime();
+  return isNaN(ms)?NaN:ms;
+}
+function hasMatchScore(item){
+  return !!parseScore(item&&(item.actual_score||item.score));
+}
+function isPastHardCap(item){
+  const ko=kickoffMs(item);
+  return !isNaN(ko) && Date.now()>=ko+LIVE_HARD_CAP_MS;
+}
+/* Filtering uses a slightly broader "completed/past" bucket than scoring does:
+   a stale non-FT row with a real score and a kickoff far in the past should not
+   keep living under Upcoming & Live. Exact/scoring UI still keys off true FT. */
+function matchIsCompletedOrPast(item){
+  return !!(item&&(item.done||isCompleted(item)||(isPastHardCap(item)&&hasMatchScore(item))));
+}
+function matchIsUpcomingOrLive(item){ return !matchIsCompletedOrPast(item); }
+function matchIsToday(item){ return !!(item&&isSameLocalDay(item.kickoff_utc||item.kickoff)); }
+function matchesScheduleFilters(item,mode,todayOnly){
+  if(todayOnly && !matchIsToday(item)) return false;
+  if(mode==='completed') return matchIsCompletedOrPast(item);
+  if(mode==='upcoming') return matchIsUpcomingOrLive(item);
+  return true;
+}
 
 function exactRate(teamId,base={}){
   const pdata=PRED[teamId];
@@ -1487,13 +1539,7 @@ function renderSheet(teamId){
   }
   let html=''; let shown=0;
   pdata.matchdays.forEach(md=>{
-    const fixtures=md.fixtures.filter(fx=>{
-      if(FILTERS.today && !isSameLocalDay(fx.kickoff_utc)) return false;
-      const done=isCompleted(fx);
-      if(FILTERS.mode==='completed') return done;
-      if(FILTERS.mode==='upcoming') return !done;   // upcoming & live (a live game is never FT)
-      return true;                                   // 'all'
-    });
+    const fixtures=md.fixtures.filter(fx=>matchesScheduleFilters(fx,FILTERS.mode,FILTERS.today));
     if(!fixtures.length) return;
     shown+=fixtures.length;
     html+=`<div class="group"><div class="grouphd"><span class="gr">${esc(md.round||'Round')}</span>`+
@@ -1521,10 +1567,11 @@ function predTeamLine(t){
 function fixtureHtml(fx){
   const live=isLive(fx);
   const done=isCompleted(fx);
+  const bucketDone=matchIsCompletedOrPast(fx);
   const when=fmtFixture(fx.kickoff_utc);
   const st=live
     ? '<span class="st live"><span class="livedot"></span>LIVE</span>'
-    : (done?'<span class="st ft">FT</span>':'<span class="st ns">'+esc(fx.status||'NS')+'</span>');
+    : (bucketDone?'<span class="st ft">FT</span>':'<span class="st ns">'+esc(fx.status||'NS')+'</span>');
 
   // Predicted column
   let predHtml='';
