@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-22T21:02:47Z",
+  "updated": "2026-06-22T21:11:52Z",
   "pool": {
     "id": "34193",
     "slug": "bobby-and-friends",
@@ -18,7 +18,7 @@
       "name": "bobby",
       "flag": "FRA",
       "rank": 1,
-      "points": 1833,
+      "points": 1848,
       "exact": 6
     },
     {
@@ -38,7 +38,7 @@
       "name": "Daniel",
       "flag": "FRA",
       "rank": 3,
-      "points": 1704,
+      "points": 1719,
       "exact": 6
     },
     {
@@ -68,7 +68,7 @@
       "name": "Alec",
       "flag": "ESP",
       "rank": 6,
-      "points": 1581,
+      "points": 1596,
       "exact": 4
     },
     {
@@ -78,7 +78,7 @@
       "name": "Alejandro",
       "flag": "BRA",
       "rank": 7,
-      "points": 1560,
+      "points": 1575,
       "exact": 2
     },
     {
@@ -88,7 +88,7 @@
       "name": "remi",
       "flag": "FRA",
       "rank": 8,
-      "points": 1557,
+      "points": 1572,
       "exact": 4
     },
     {
@@ -98,7 +98,7 @@
       "name": "Baronmark",
       "flag": "FRA",
       "rank": 9,
-      "points": 1488,
+      "points": 1503,
       "exact": 5
     },
     {
@@ -108,7 +108,7 @@
       "name": "MaxS.",
       "flag": "ARG",
       "rank": 10,
-      "points": 1488,
+      "points": 1503,
       "exact": 2
     },
     {
@@ -118,7 +118,7 @@
       "name": "Karenwj",
       "flag": "NED",
       "rank": 11,
-      "points": 1476,
+      "points": 1491,
       "exact": 4
     },
     {
@@ -128,7 +128,7 @@
       "name": "Beturompequinielas",
       "flag": "ARG",
       "rank": 12,
-      "points": 1422,
+      "points": 1437,
       "exact": 3
     },
     {
@@ -138,7 +138,7 @@
       "name": "Yo",
       "flag": "MEX",
       "rank": 13,
-      "points": 1407,
+      "points": 1422,
       "exact": 3
     },
     {
@@ -168,7 +168,7 @@
       "name": "Luisa",
       "flag": "POR",
       "rank": 16,
-      "points": 1353,
+      "points": 1368,
       "exact": 2
     }
   ]
