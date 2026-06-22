@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-22T19:03:11Z",
+  "updated": "2026-06-22T19:11:49Z",
   "players": {
     "246775": {
       "team_id": "246775",
@@ -1226,7 +1226,7 @@
               "fixture_number": 43,
               "round": "Matchday 2",
               "stage_type": "group",
-              "status": "· LIVE",
+              "status": "FT",
               "kickoff_utc": "2026-06-22T17:00:00Z",
               "kickoff_local": "2026-06-22 13:00",
               "kickoff_timezone": "America/New_York",
@@ -3496,7 +3496,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Deniz Undav (Germany), Lionel Messi (Argentina), Jonathan David (Canada)",
+              "text": "Lionel Messi (Argentina)",
               "flag": null
             },
             "points": null
@@ -4730,7 +4730,7 @@
               "fixture_number": 43,
               "round": "Matchday 2",
               "stage_type": "group",
-              "status": "· LIVE",
+              "status": "FT",
               "kickoff_utc": "2026-06-22T17:00:00Z",
               "kickoff_local": "2026-06-22 13:00",
               "kickoff_timezone": "America/New_York",
@@ -7000,7 +7000,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Deniz Undav (Germany), Lionel Messi (Argentina), Jonathan David (Canada)",
+              "text": "Lionel Messi (Argentina)",
               "flag": null
             },
             "points": null
@@ -8234,7 +8234,7 @@
               "fixture_number": 43,
               "round": "Matchday 2",
               "stage_type": "group",
-              "status": "· LIVE",
+              "status": "FT",
               "kickoff_utc": "2026-06-22T17:00:00Z",
               "kickoff_local": "2026-06-22 13:00",
               "kickoff_timezone": "America/New_York",
@@ -10504,7 +10504,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Deniz Undav (Germany), Lionel Messi (Argentina), Jonathan David (Canada)",
+              "text": "Lionel Messi (Argentina)",
               "flag": null
             },
             "points": null
@@ -11738,7 +11738,7 @@
               "fixture_number": 43,
               "round": "Matchday 2",
               "stage_type": "group",
-              "status": "· LIVE",
+              "status": "FT",
               "kickoff_utc": "2026-06-22T17:00:00Z",
               "kickoff_local": "2026-06-22 13:00",
               "kickoff_timezone": "America/New_York",
@@ -14008,7 +14008,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Deniz Undav (Germany), Lionel Messi (Argentina), Jonathan David (Canada)",
+              "text": "Lionel Messi (Argentina)",
               "flag": null
             },
             "points": null
@@ -15242,7 +15242,7 @@
               "fixture_number": 43,
               "round": "Matchday 2",
               "stage_type": "group",
-              "status": "· LIVE",
+              "status": "FT",
               "kickoff_utc": "2026-06-22T17:00:00Z",
               "kickoff_local": "2026-06-22 13:00",
               "kickoff_timezone": "America/New_York",
@@ -17512,7 +17512,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Deniz Undav (Germany), Lionel Messi (Argentina), Jonathan David (Canada)",
+              "text": "Lionel Messi (Argentina)",
               "flag": null
             },
             "points": null
@@ -18746,7 +18746,7 @@
               "fixture_number": 43,
               "round": "Matchday 2",
               "stage_type": "group",
-              "status": "· LIVE",
+              "status": "FT",
               "kickoff_utc": "2026-06-22T17:00:00Z",
               "kickoff_local": "2026-06-22 13:00",
               "kickoff_timezone": "America/New_York",
@@ -21016,7 +21016,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Deniz Undav (Germany), Lionel Messi (Argentina), Jonathan David (Canada)",
+              "text": "Lionel Messi (Argentina)",
               "flag": null
             },
             "points": null
@@ -22250,7 +22250,7 @@
               "fixture_number": 43,
               "round": "Matchday 2",
               "stage_type": "group",
-              "status": "· LIVE",
+              "status": "FT",
               "kickoff_utc": "2026-06-22T17:00:00Z",
               "kickoff_local": "2026-06-22 13:00",
               "kickoff_timezone": "America/New_York",
@@ -24520,7 +24520,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Deniz Undav (Germany), Lionel Messi (Argentina), Jonathan David (Canada)",
+              "text": "Lionel Messi (Argentina)",
               "flag": null
             },
             "points": null
@@ -28024,7 +28024,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Deniz Undav (Germany), Lionel Messi (Argentina), Jonathan David (Canada)",
+              "text": "Lionel Messi (Argentina)",
               "flag": null
             },
             "points": null
@@ -28772,7 +28772,7 @@
         },
         {
           "round": "Matchday 2",
-          "subtotal": 690,
+          "subtotal": 750,
           "fixtures": [
             {
               "fixture_number": 25,
@@ -29281,7 +29281,7 @@
                 "hidden": false
               },
               "actual_score": "2 - 0",
-              "points": null,
+              "points": 60,
               "is_exact": false
             },
             {
@@ -31528,7 +31528,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Deniz Undav (Germany), Lionel Messi (Argentina), Jonathan David (Canada)",
+              "text": "Lionel Messi (Argentina)",
               "flag": null
             },
             "points": null
@@ -32276,7 +32276,7 @@
         },
         {
           "round": "Matchday 2",
-          "subtotal": 543,
+          "subtotal": 606,
           "fixtures": [
             {
               "fixture_number": 25,
@@ -32785,7 +32785,7 @@
                 "hidden": false
               },
               "actual_score": "2 - 0",
-              "points": null,
+              "points": 63,
               "is_exact": false
             },
             {
@@ -35032,7 +35032,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Deniz Undav (Germany), Lionel Messi (Argentina), Jonathan David (Canada)",
+              "text": "Lionel Messi (Argentina)",
               "flag": null
             },
             "points": null
@@ -35780,7 +35780,7 @@
         },
         {
           "round": "Matchday 2",
-          "subtotal": 600,
+          "subtotal": 660,
           "fixtures": [
             {
               "fixture_number": 25,
@@ -36289,7 +36289,7 @@
                 "hidden": false
               },
               "actual_score": "2 - 0",
-              "points": null,
+              "points": 60,
               "is_exact": false
             },
             {
@@ -38536,7 +38536,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Deniz Undav (Germany), Lionel Messi (Argentina), Jonathan David (Canada)",
+              "text": "Lionel Messi (Argentina)",
               "flag": null
             },
             "points": null
@@ -39284,7 +39284,7 @@
         },
         {
           "round": "Matchday 2",
-          "subtotal": 633,
+          "subtotal": 723,
           "fixtures": [
             {
               "fixture_number": 25,
@@ -39793,8 +39793,8 @@
                 "hidden": false
               },
               "actual_score": "2 - 0",
-              "points": null,
-              "is_exact": false
+              "points": 90,
+              "is_exact": true
             },
             {
               "fixture_number": 42,
@@ -42040,7 +42040,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Deniz Undav (Germany), Lionel Messi (Argentina), Jonathan David (Canada)",
+              "text": "Lionel Messi (Argentina)",
               "flag": null
             },
             "points": null
@@ -42788,7 +42788,7 @@
         },
         {
           "round": "Matchday 2",
-          "subtotal": 462,
+          "subtotal": 525,
           "fixtures": [
             {
               "fixture_number": 25,
@@ -43297,7 +43297,7 @@
                 "hidden": false
               },
               "actual_score": "2 - 0",
-              "points": null,
+              "points": 63,
               "is_exact": false
             },
             {
@@ -45544,7 +45544,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Deniz Undav (Germany), Lionel Messi (Argentina), Jonathan David (Canada)",
+              "text": "Lionel Messi (Argentina)",
               "flag": null
             },
             "points": null
@@ -46801,7 +46801,7 @@
                 "hidden": false
               },
               "actual_score": "2 - 0",
-              "points": null,
+              "points": 0,
               "is_exact": false
             },
             {
@@ -49048,7 +49048,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Deniz Undav (Germany), Lionel Messi (Argentina), Jonathan David (Canada)",
+              "text": "Lionel Messi (Argentina)",
               "flag": null
             },
             "points": null
@@ -49796,7 +49796,7 @@
         },
         {
           "round": "Matchday 2",
-          "subtotal": 495,
+          "subtotal": 510,
           "fixtures": [
             {
               "fixture_number": 25,
@@ -50305,7 +50305,7 @@
                 "hidden": false
               },
               "actual_score": "2 - 0",
-              "points": null,
+              "points": 15,
               "is_exact": false
             },
             {
@@ -52552,7 +52552,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Deniz Undav (Germany), Lionel Messi (Argentina), Jonathan David (Canada)",
+              "text": "Lionel Messi (Argentina)",
               "flag": null
             },
             "points": null
@@ -53809,7 +53809,7 @@
                 "hidden": false
               },
               "actual_score": "2 - 0",
-              "points": null,
+              "points": 0,
               "is_exact": false
             },
             {
@@ -56056,7 +56056,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Deniz Undav (Germany), Lionel Messi (Argentina), Jonathan David (Canada)",
+              "text": "Lionel Messi (Argentina)",
               "flag": null
             },
             "points": null
