@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-23T03:31:32Z",
+  "updated": "2026-06-23T03:41:47Z",
   "pool": {
     "id": "34193",
     "slug": "bobby-and-friends",
@@ -18,7 +18,7 @@
       "name": "bobby",
       "flag": "FRA",
       "rank": 1,
-      "points": 1896,
+      "points": 1911,
       "exact": 6
     },
     {
@@ -28,7 +28,7 @@
       "name": "JJ",
       "flag": "FRA",
       "rank": 2,
-      "points": 1884,
+      "points": 1824,
       "exact": 5
     },
     {
@@ -38,7 +38,7 @@
       "name": "Daniel",
       "flag": "FRA",
       "rank": 3,
-      "points": 1824,
+      "points": 1809,
       "exact": 7
     },
     {
@@ -48,7 +48,17 @@
       "name": "Gabriela",
       "flag": "NED",
       "rank": 4,
-      "points": 1764,
+      "points": 1779,
+      "exact": 5
+    },
+    {
+      "team_id": "253790",
+      "slug": "remi",
+      "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/253790/remi/stage/1196-grand-total?scroll=fixture",
+      "name": "remi",
+      "flag": "FRA",
+      "rank": 5,
+      "points": 1770,
       "exact": 5
     },
     {
@@ -57,29 +67,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/253787/jazmin/stage/1196-grand-total?scroll=fixture",
       "name": "Jazmin",
       "flag": "POR",
-      "rank": 5,
-      "points": 1743,
-      "exact": 4
-    },
-    {
-      "team_id": "247535",
-      "slug": "baronmark",
-      "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247535/baronmark/stage/1196-grand-total?scroll=fixture",
-      "name": "Baronmark",
-      "flag": "FRA",
       "rank": 6,
       "points": 1728,
-      "exact": 7
-    },
-    {
-      "team_id": "253790",
-      "slug": "remi",
-      "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/253790/remi/stage/1196-grand-total?scroll=fixture",
-      "name": "remi",
-      "flag": "FRA",
-      "rank": 7,
-      "points": 1722,
-      "exact": 5
+      "exact": 4
     },
     {
       "team_id": "247524",
@@ -87,8 +77,8 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247524/alejandro/stage/1196-grand-total?scroll=fixture",
       "name": "Alejandro",
       "flag": "BRA",
-      "rank": 8,
-      "points": 1713,
+      "rank": 7,
+      "points": 1728,
       "exact": 3
     },
     {
@@ -97,8 +87,28 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247930/alec/stage/1196-grand-total?scroll=fixture",
       "name": "Alec",
       "flag": "ESP",
+      "rank": 8,
+      "points": 1686,
+      "exact": 5
+    },
+    {
+      "team_id": "247535",
+      "slug": "baronmark",
+      "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247535/baronmark/stage/1196-grand-total?scroll=fixture",
+      "name": "Baronmark",
+      "flag": "FRA",
       "rank": 9,
-      "points": 1671,
+      "points": 1653,
+      "exact": 6
+    },
+    {
+      "team_id": "247525",
+      "slug": "karenwj",
+      "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247525/karenwj/stage/1196-grand-total?scroll=fixture",
+      "name": "Karenwj",
+      "flag": "NED",
+      "rank": 10,
+      "points": 1644,
       "exact": 5
     },
     {
@@ -107,19 +117,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247729/maxs/stage/1196-grand-total?scroll=fixture",
       "name": "MaxS.",
       "flag": "ARG",
-      "rank": 10,
-      "points": 1656,
-      "exact": 3
-    },
-    {
-      "team_id": "247525",
-      "slug": "karenwj",
-      "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247525/karenwj/stage/1196-grand-total?scroll=fixture",
-      "name": "Karenwj",
-      "flag": "NED",
       "rank": 11,
-      "points": 1596,
-      "exact": 5
+      "points": 1641,
+      "exact": 3
     },
     {
       "team_id": "247537",
@@ -128,7 +128,7 @@
       "name": "Yo",
       "flag": "MEX",
       "rank": 12,
-      "points": 1560,
+      "points": 1575,
       "exact": 4
     },
     {
@@ -138,7 +138,7 @@
       "name": "Beturompequinielas",
       "flag": "ARG",
       "rank": 13,
-      "points": 1542,
+      "points": 1527,
       "exact": 4
     },
     {
@@ -148,7 +148,7 @@
       "name": "Valewalle",
       "flag": "ESP",
       "rank": 14,
-      "points": 1488,
+      "points": 1473,
       "exact": 4
     },
     {
@@ -158,7 +158,7 @@
       "name": "El Capitan",
       "flag": "FRA",
       "rank": 15,
-      "points": 1479,
+      "points": 1464,
       "exact": 4
     },
     {
@@ -168,7 +168,7 @@
       "name": "Luisa",
       "flag": "POR",
       "rank": 16,
-      "points": 1476,
+      "points": 1416,
       "exact": 2
     }
   ]
