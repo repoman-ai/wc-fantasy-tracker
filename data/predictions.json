@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-23T18:51:41Z",
+  "updated": "2026-06-23T19:03:25Z",
   "players": {
     "246775": {
       "team_id": "246775",
@@ -8,9 +8,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/246775/bobby/stage/1196-grand-total?scroll=fixture",
       "flag": "FRA",
       "rank": 1,
-      "points": 2076,
-      "exact": 8,
-      "grand_total": 2076,
+      "points": 2049,
+      "exact": 7,
+      "grand_total": 2049,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -740,7 +740,7 @@
         },
         {
           "round": "Matchday 2",
-          "subtotal": 1059,
+          "subtotal": 1032,
           "fixtures": [
             {
               "fixture_number": 25,
@@ -1346,7 +1346,7 @@
               "fixture_number": 47,
               "round": "Matchday 2",
               "stage_type": "group",
-              "status": "· LIVE",
+              "status": "FT",
               "kickoff_utc": "2026-06-23T17:00:00Z",
               "kickoff_local": "2026-06-23 13:00",
               "kickoff_timezone": "America/New_York",
@@ -1368,9 +1368,9 @@
                 "score": "4 - 0",
                 "hidden": false
               },
-              "actual_score": "4 - 0",
-              "points": 90,
-              "is_exact": true
+              "actual_score": "5 - 0",
+              "points": 63,
+              "is_exact": false
             },
             {
               "fixture_number": 45,
@@ -4850,7 +4850,7 @@
               "fixture_number": 47,
               "round": "Matchday 2",
               "stage_type": "group",
-              "status": "· LIVE",
+              "status": "FT",
               "kickoff_utc": "2026-06-23T17:00:00Z",
               "kickoff_local": "2026-06-23 13:00",
               "kickoff_timezone": "America/New_York",
@@ -4872,7 +4872,7 @@
                 "score": "2 - 0",
                 "hidden": false
               },
-              "actual_score": "4 - 0",
+              "actual_score": "5 - 0",
               "points": 63,
               "is_exact": false
             },
@@ -8354,7 +8354,7 @@
               "fixture_number": 47,
               "round": "Matchday 2",
               "stage_type": "group",
-              "status": "· LIVE",
+              "status": "FT",
               "kickoff_utc": "2026-06-23T17:00:00Z",
               "kickoff_local": "2026-06-23 13:00",
               "kickoff_timezone": "America/New_York",
@@ -8376,7 +8376,7 @@
                 "score": "3 - 1",
                 "hidden": false
               },
-              "actual_score": "4 - 0",
+              "actual_score": "5 - 0",
               "points": 48,
               "is_exact": false
             },
@@ -11858,7 +11858,7 @@
               "fixture_number": 47,
               "round": "Matchday 2",
               "stage_type": "group",
-              "status": "· LIVE",
+              "status": "FT",
               "kickoff_utc": "2026-06-23T17:00:00Z",
               "kickoff_local": "2026-06-23 13:00",
               "kickoff_timezone": "America/New_York",
@@ -11880,7 +11880,7 @@
                 "score": "3 - 0",
                 "hidden": false
               },
-              "actual_score": "4 - 0",
+              "actual_score": "5 - 0",
               "points": 63,
               "is_exact": false
             },
@@ -15362,7 +15362,7 @@
               "fixture_number": 47,
               "round": "Matchday 2",
               "stage_type": "group",
-              "status": "· LIVE",
+              "status": "FT",
               "kickoff_utc": "2026-06-23T17:00:00Z",
               "kickoff_local": "2026-06-23 13:00",
               "kickoff_timezone": "America/New_York",
@@ -15384,7 +15384,7 @@
                 "score": "3 - 0",
                 "hidden": false
               },
-              "actual_score": "4 - 0",
+              "actual_score": "5 - 0",
               "points": 63,
               "is_exact": false
             },
@@ -18866,7 +18866,7 @@
               "fixture_number": 47,
               "round": "Matchday 2",
               "stage_type": "group",
-              "status": "· LIVE",
+              "status": "FT",
               "kickoff_utc": "2026-06-23T17:00:00Z",
               "kickoff_local": "2026-06-23 13:00",
               "kickoff_timezone": "America/New_York",
@@ -18888,7 +18888,7 @@
                 "score": "3 - 0",
                 "hidden": false
               },
-              "actual_score": "4 - 0",
+              "actual_score": "5 - 0",
               "points": 63,
               "is_exact": false
             },
@@ -22370,7 +22370,7 @@
               "fixture_number": 47,
               "round": "Matchday 2",
               "stage_type": "group",
-              "status": "· LIVE",
+              "status": "FT",
               "kickoff_utc": "2026-06-23T17:00:00Z",
               "kickoff_local": "2026-06-23 13:00",
               "kickoff_timezone": "America/New_York",
@@ -22392,7 +22392,7 @@
                 "score": "3 - 0",
                 "hidden": false
               },
-              "actual_score": "4 - 0",
+              "actual_score": "5 - 0",
               "points": 63,
               "is_exact": false
             },
@@ -25874,7 +25874,7 @@
               "fixture_number": 47,
               "round": "Matchday 2",
               "stage_type": "group",
-              "status": "· LIVE",
+              "status": "FT",
               "kickoff_utc": "2026-06-23T17:00:00Z",
               "kickoff_local": "2026-06-23 13:00",
               "kickoff_timezone": "America/New_York",
@@ -25896,7 +25896,7 @@
                 "score": "2 - 0",
                 "hidden": false
               },
-              "actual_score": "4 - 0",
+              "actual_score": "5 - 0",
               "points": 63,
               "is_exact": false
             },
@@ -28040,9 +28040,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247729/maxs/stage/1196-grand-total?scroll=fixture",
       "flag": "ARG",
       "rank": 9,
-      "points": 1764,
+      "points": 1749,
       "exact": 3,
-      "grand_total": 1764,
+      "grand_total": 1749,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -28772,7 +28772,7 @@
         },
         {
           "round": "Matchday 2",
-          "subtotal": 882,
+          "subtotal": 867,
           "fixtures": [
             {
               "fixture_number": 25,
@@ -29378,7 +29378,7 @@
               "fixture_number": 47,
               "round": "Matchday 2",
               "stage_type": "group",
-              "status": "· LIVE",
+              "status": "FT",
               "kickoff_utc": "2026-06-23T17:00:00Z",
               "kickoff_local": "2026-06-23 13:00",
               "kickoff_timezone": "America/New_York",
@@ -29400,8 +29400,8 @@
                 "score": "4 - 1",
                 "hidden": false
               },
-              "actual_score": "4 - 0",
-              "points": 63,
+              "actual_score": "5 - 0",
+              "points": 48,
               "is_exact": false
             },
             {
@@ -32882,7 +32882,7 @@
               "fixture_number": 47,
               "round": "Matchday 2",
               "stage_type": "group",
-              "status": "· LIVE",
+              "status": "FT",
               "kickoff_utc": "2026-06-23T17:00:00Z",
               "kickoff_local": "2026-06-23 13:00",
               "kickoff_timezone": "America/New_York",
@@ -32904,7 +32904,7 @@
                 "score": "2 - 0",
                 "hidden": false
               },
-              "actual_score": "4 - 0",
+              "actual_score": "5 - 0",
               "points": 63,
               "is_exact": false
             },
@@ -36386,7 +36386,7 @@
               "fixture_number": 47,
               "round": "Matchday 2",
               "stage_type": "group",
-              "status": "· LIVE",
+              "status": "FT",
               "kickoff_utc": "2026-06-23T17:00:00Z",
               "kickoff_local": "2026-06-23 13:00",
               "kickoff_timezone": "America/New_York",
@@ -36408,7 +36408,7 @@
                 "score": "3 - 1",
                 "hidden": false
               },
-              "actual_score": "4 - 0",
+              "actual_score": "5 - 0",
               "points": 48,
               "is_exact": false
             },
@@ -39890,7 +39890,7 @@
               "fixture_number": 47,
               "round": "Matchday 2",
               "stage_type": "group",
-              "status": "· LIVE",
+              "status": "FT",
               "kickoff_utc": "2026-06-23T17:00:00Z",
               "kickoff_local": "2026-06-23 13:00",
               "kickoff_timezone": "America/New_York",
@@ -39912,7 +39912,7 @@
                 "score": "2 - 1",
                 "hidden": false
               },
-              "actual_score": "4 - 0",
+              "actual_score": "5 - 0",
               "points": 48,
               "is_exact": false
             },
@@ -43394,7 +43394,7 @@
               "fixture_number": 47,
               "round": "Matchday 2",
               "stage_type": "group",
-              "status": "· LIVE",
+              "status": "FT",
               "kickoff_utc": "2026-06-23T17:00:00Z",
               "kickoff_local": "2026-06-23 13:00",
               "kickoff_timezone": "America/New_York",
@@ -43416,7 +43416,7 @@
                 "score": "3 - 1",
                 "hidden": false
               },
-              "actual_score": "4 - 0",
+              "actual_score": "5 - 0",
               "points": 48,
               "is_exact": false
             },
@@ -45560,9 +45560,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247526/valewalle/stage/1196-grand-total?scroll=fixture",
       "flag": "ESP",
       "rank": 14,
-      "points": 1626,
-      "exact": 5,
-      "grand_total": 1626,
+      "points": 1599,
+      "exact": 4,
+      "grand_total": 1599,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -46292,7 +46292,7 @@
         },
         {
           "round": "Matchday 2",
-          "subtotal": 756,
+          "subtotal": 819,
           "fixtures": [
             {
               "fixture_number": 25,
@@ -46898,7 +46898,7 @@
               "fixture_number": 47,
               "round": "Matchday 2",
               "stage_type": "group",
-              "status": "· LIVE",
+              "status": "FT",
               "kickoff_utc": "2026-06-23T17:00:00Z",
               "kickoff_local": "2026-06-23 13:00",
               "kickoff_timezone": "America/New_York",
@@ -46921,7 +46921,7 @@
                 "hidden": false
               },
               "actual_score": "5 - 0",
-              "points": null,
+              "points": 63,
               "is_exact": false
             },
             {
@@ -49796,7 +49796,7 @@
         },
         {
           "round": "Matchday 2",
-          "subtotal": 645,
+          "subtotal": 693,
           "fixtures": [
             {
               "fixture_number": 25,
@@ -50402,7 +50402,7 @@
               "fixture_number": 47,
               "round": "Matchday 2",
               "stage_type": "group",
-              "status": "· LIVE",
+              "status": "FT",
               "kickoff_utc": "2026-06-23T17:00:00Z",
               "kickoff_local": "2026-06-23 13:00",
               "kickoff_timezone": "America/New_York",
@@ -50425,7 +50425,7 @@
                 "hidden": false
               },
               "actual_score": "5 - 0",
-              "points": null,
+              "points": 48,
               "is_exact": false
             },
             {
@@ -52568,9 +52568,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/252610/luisa/stage/1196-grand-total?scroll=fixture",
       "flag": "POR",
       "rank": 16,
-      "points": 1494,
+      "points": 1479,
       "exact": 2,
-      "grand_total": 1494,
+      "grand_total": 1479,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -53300,7 +53300,7 @@
         },
         {
           "round": "Matchday 2",
-          "subtotal": 699,
+          "subtotal": 747,
           "fixtures": [
             {
               "fixture_number": 25,
@@ -53906,7 +53906,7 @@
               "fixture_number": 47,
               "round": "Matchday 2",
               "stage_type": "group",
-              "status": "· LIVE",
+              "status": "FT",
               "kickoff_utc": "2026-06-23T17:00:00Z",
               "kickoff_local": "2026-06-23 13:00",
               "kickoff_timezone": "America/New_York",
@@ -53929,7 +53929,7 @@
                 "hidden": false
               },
               "actual_score": "5 - 0",
-              "points": null,
+              "points": 48,
               "is_exact": false
             },
             {
