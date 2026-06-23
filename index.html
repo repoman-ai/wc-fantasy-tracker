@@ -77,9 +77,14 @@
     background:rgba(255,255,255,.12);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.18);
     border-radius:14px;padding:10px 14px;display:flex;align-items:center;gap:10px;min-width:0;
   }
+  .mover .mv-main{min-width:0;flex:1 1 auto}
   .mover .lbl{font-size:11px;text-transform:uppercase;letter-spacing:.6px;opacity:.8}
-  .mover .nm{font-weight:700;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:140px}
-  .mover .chg{font-weight:800;font-size:15px}
+  /* Names wrap/clamp instead of overflowing: a long single name or a list of
+     tied movers stays inside the card. .multi shrinks the type so 2–3 names fit. */
+  .mover .nm{font-weight:700;font-size:14px;line-height:1.2;max-width:160px;overflow:hidden;
+    overflow-wrap:anywhere;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2}
+  .mover .nm.multi{font-size:12px;-webkit-line-clamp:3}
+  .mover .chg{font-weight:800;font-size:15px;flex:0 0 auto}
   .mover.up .chg{color:#6ee7a8}.mover.down .chg{color:#fca5a5}
 
   /* ---------- Live ticker (hero) ---------- */
@@ -998,57 +1003,77 @@ function refreshTopView(){
   const sc2=lockModalScrollAxis(); if(sc2){ sc2.scrollLeft=0; sc2.scrollTop=y; }
 }
 
-function prevSnapshot(){
-  if(HISTORY.length>=2) return HISTORY[HISTORY.length-2];
-  return null;
+// Single source of truth for one player's rank movement, shared by BOTH the
+// per-row arrows and the top-climber / biggest-drop strip so they can never
+// disagree (they used to: the strip measured movement since the last settled
+// standing while the row arrows measured it against the previous raw scrape,
+// so the same player could read ▲6 in the strip and ▲3 in their row).
+//
+// Movement is measured against each player's last CONFIRMED settled reading
+// (the same wobble filter the charts use), with the live "now" rank appended
+// when it diverges — exactly playerSeries. That makes it both stable (a
+// mid-match blip in someone else's total can't manufacture a swing) and live
+// (it keeps reacting between/within games instead of freezing on last night's
+// last settled swing). Timing is therefore "since the last genuine standing",
+// independent of the scrape cadence.
+function playerMovement(teamId){
+  const p=(RANKINGS.players||[]).find(x=>x.team_id===teamId);
+  if(!p) return {delta:0,status:'same',isNew:false};
+  const steps=confirmedReadings(teamId);
+  const ranks=steps.map(s=>s.p.rank);
+  const curSig=readingSig({points:p.points,rank:p.rank,exact:p.exact});
+  const lastSig=steps.length?readingSig(steps[steps.length-1].p):null;
+  if(!steps.length || lastSig!==curSig) ranks.push(p.rank);
+  if(ranks.length<2) return {delta:0,status:'same',isNew:false};
+  const delta=ranks[ranks.length-2]-ranks[ranks.length-1]; // +ve = climbed
+  return {delta,status:delta>0?'up':delta<0?'down':'same',isNew:false};
 }
-// The live board's up/down arrows compare the current (live) rankings against
-// the previous raw snapshot, so they keep reacting in real time during a match.
+
+// Per-row arrows (MOVE) and the movers strip both build off playerMovement, so
+// a given player shows the identical delta in their row and in the strip.
 function computeMovement(){
-  const prev=prevSnapshot(); const m={};
-  RANKINGS.players.forEach(p=>{
-    if(!prev){ m[p.team_id]={delta:0,status:'same',isNew:false}; return; }
-    const was=prev.players.find(x=>x.team_id===p.team_id);
-    if(!was){ m[p.team_id]={delta:0,status:'new',isNew:true}; return; }
-    const delta=was.rank-p.rank;
-    m[p.team_id]={delta,status:delta>0?'up':delta<0?'down':'same',isNew:false};
-  });
+  const m={};
+  (RANKINGS.players||[]).forEach(p=>{ m[p.team_id]=playerMovement(p.team_id); });
   return m;
 }
-
-// Top-climber / biggest-drop movers are built from each player's confirmed
-// settled readings (same wobble filter as the charts), so a mid-match wobble in
-// the live totals can't manufacture a fake rank swing. Per player we compare
-// their two most recent confirmed steps — i.e. the rank shift from their last
-// genuine scoring event — rather than two whole snapshots, so the strip stays
-// meaningful even when few snapshots are wholly settled.
 function computeSettledMovement(){
-  const move={};
-  (RANKINGS.players||[]).forEach(p=>{
-    const steps=confirmedReadings(p.team_id);
-    if(steps.length<2){ move[p.team_id]={delta:0,status:'same'}; return; }
-    const delta=steps[steps.length-2].p.rank-steps[steps.length-1].p.rank; // +ve = climbed
-    move[p.team_id]={delta,status:delta>0?'up':delta<0?'down':'same'};
-  });
-  return {snapshot:{players:RANKINGS.players},move};
+  return {snapshot:{players:RANKINGS.players}, move:computeMovement()};
 }
 
+// Render the tied movers' names into one card. Several players often share the
+// top swing (e.g. three all dropped 2), so we list everyone at that magnitude
+// rather than picking one arbitrarily. Up to MAX names show in full; beyond that
+// we keep the first few and append "+n" so the card never overflows.
+function moversNameHtml(list){
+  const MAX=3;
+  const names=list.map(p=>esc(p.name));
+  if(names.length<=MAX) return {html:names.join(', '), multi:names.length>1};
+  return {html:names.slice(0,MAX-1).join(', ')+` +${names.length-(MAX-1)}`, multi:true};
+}
 function renderMovers(){
   const box=$('#movers'); box.innerHTML='';
   const {snapshot,move}=computeSettledMovement();
   const cards=[];
   if(snapshot){
-    const climbers=snapshot.players.filter(p=>move[p.team_id]&&move[p.team_id].status==='up')
-      .sort((a,b)=>move[b.team_id].delta-move[a.team_id].delta);
-    const fallers=snapshot.players.filter(p=>move[p.team_id]&&move[p.team_id].status==='down')
-      .sort((a,b)=>move[a.team_id].delta-move[b.team_id].delta);
-    if(climbers.length){const c=climbers[0];cards.push(`<div class="mover up"><div><div class="lbl">🔥 Top climber</div><div class="nm">${esc(c.name)}</div></div><div class="chg">▲${move[c.team_id].delta}</div></div>`);}
-    if(fallers.length){const f=fallers[0];cards.push(`<div class="mover down"><div><div class="lbl">Biggest drop</div><div class="nm">${esc(f.name)}</div></div><div class="chg">▼${Math.abs(move[f.team_id].delta)}</div></div>`);}
+    const climbers=snapshot.players.filter(p=>move[p.team_id]&&move[p.team_id].status==='up');
+    const fallers=snapshot.players.filter(p=>move[p.team_id]&&move[p.team_id].status==='down');
+    if(climbers.length){
+      const top=Math.max(...climbers.map(p=>move[p.team_id].delta));
+      const tied=climbers.filter(p=>move[p.team_id].delta===top).sort((a,b)=>a.rank-b.rank);
+      const nm=moversNameHtml(tied);
+      cards.push(`<div class="mover up"><div class="mv-main"><div class="lbl">🔥 Top climber${tied.length>1?'s':''}</div><div class="nm${nm.multi?' multi':''}">${nm.html}</div></div><div class="chg">▲${top}</div></div>`);
+    }
+    if(fallers.length){
+      const worst=Math.min(...fallers.map(p=>move[p.team_id].delta));
+      const tied=fallers.filter(p=>move[p.team_id].delta===worst).sort((a,b)=>a.rank-b.rank);
+      const nm=moversNameHtml(tied);
+      cards.push(`<div class="mover down"><div class="mv-main"><div class="lbl">Biggest drop${tied.length>1?'s':''}</div><div class="nm${nm.multi?' multi':''}">${nm.html}</div></div><div class="chg">▼${Math.abs(worst)}</div></div>`);
+    }
   }
   // Leader is a current-standing fact (matches the live board's crown), so it
   // stays sourced from the live rankings.
   const leader=RANKINGS.players.find(p=>p.rank===1);
-  if(leader) cards.push(`<div class="mover"><div><div class="lbl">👑 Leader</div><div class="nm">${esc(leader.name)}</div></div><div class="chg num">${leader.points}</div></div>`);
+  if(leader) cards.push(`<div class="mover"><div class="mv-main"><div class="lbl">👑 Leader</div><div class="nm">${esc(leader.name)}</div></div><div class="chg num">${leader.points}</div></div>`);
   box.innerHTML=cards.join('');
 }
 
