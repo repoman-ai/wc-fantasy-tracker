@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-23T05:01:40Z",
+  "updated": "2026-06-23T05:03:11Z",
   "players": {
     "246775": {
       "team_id": "246775",
@@ -1316,7 +1316,7 @@
               "fixture_number": 44,
               "round": "Matchday 2",
               "stage_type": "group",
-              "status": "· LIVE",
+              "status": "FT",
               "kickoff_utc": "2026-06-23T03:00:00Z",
               "kickoff_local": "2026-06-22 23:00",
               "kickoff_timezone": "America/New_York",
@@ -7748,7 +7748,7 @@
         },
         {
           "round": "Matchday 2",
-          "subtotal": 879,
+          "subtotal": 969,
           "fixtures": [
             {
               "fixture_number": 25,
@@ -8347,8 +8347,8 @@
                 "hidden": false
               },
               "actual_score": "1 - 2",
-              "points": null,
-              "is_exact": false
+              "points": 90,
+              "is_exact": true
             },
             {
               "fixture_number": 47,
@@ -11252,7 +11252,7 @@
         },
         {
           "round": "Matchday 2",
-          "subtotal": 834,
+          "subtotal": 849,
           "fixtures": [
             {
               "fixture_number": 25,
@@ -11851,7 +11851,7 @@
                 "hidden": false
               },
               "actual_score": "1 - 2",
-              "points": null,
+              "points": 15,
               "is_exact": false
             },
             {
@@ -14756,7 +14756,7 @@
         },
         {
           "round": "Matchday 2",
-          "subtotal": 852,
+          "subtotal": 915,
           "fixtures": [
             {
               "fixture_number": 25,
@@ -15355,7 +15355,7 @@
                 "hidden": false
               },
               "actual_score": "1 - 2",
-              "points": null,
+              "points": 63,
               "is_exact": false
             },
             {
@@ -18260,7 +18260,7 @@
         },
         {
           "round": "Matchday 2",
-          "subtotal": 783,
+          "subtotal": 846,
           "fixtures": [
             {
               "fixture_number": 25,
@@ -18859,7 +18859,7 @@
                 "hidden": false
               },
               "actual_score": "1 - 2",
-              "points": null,
+              "points": 63,
               "is_exact": false
             },
             {
@@ -21764,7 +21764,7 @@
         },
         {
           "round": "Matchday 2",
-          "subtotal": 840,
+          "subtotal": 930,
           "fixtures": [
             {
               "fixture_number": 25,
@@ -22363,8 +22363,8 @@
                 "hidden": false
               },
               "actual_score": "1 - 2",
-              "points": null,
-              "is_exact": false
+              "points": 90,
+              "is_exact": true
             },
             {
               "fixture_number": 47,
@@ -25867,7 +25867,7 @@
                 "hidden": false
               },
               "actual_score": "1 - 2",
-              "points": null,
+              "points": 0,
               "is_exact": false
             },
             {
@@ -28772,7 +28772,7 @@
         },
         {
           "round": "Matchday 2",
-          "subtotal": 759,
+          "subtotal": 819,
           "fixtures": [
             {
               "fixture_number": 25,
@@ -29371,7 +29371,7 @@
                 "hidden": false
               },
               "actual_score": "1 - 2",
-              "points": null,
+              "points": 60,
               "is_exact": false
             },
             {
@@ -32276,7 +32276,7 @@
         },
         {
           "round": "Matchday 2",
-          "subtotal": 678,
+          "subtotal": 768,
           "fixtures": [
             {
               "fixture_number": 25,
@@ -32875,8 +32875,8 @@
                 "hidden": false
               },
               "actual_score": "1 - 2",
-              "points": null,
-              "is_exact": false
+              "points": 90,
+              "is_exact": true
             },
             {
               "fixture_number": 47,
@@ -36379,7 +36379,7 @@
                 "hidden": false
               },
               "actual_score": "1 - 2",
-              "points": null,
+              "points": 0,
               "is_exact": false
             },
             {
@@ -39284,7 +39284,7 @@
         },
         {
           "round": "Matchday 2",
-          "subtotal": 828,
+          "subtotal": 891,
           "fixtures": [
             {
               "fixture_number": 25,
@@ -39883,7 +39883,7 @@
                 "hidden": false
               },
               "actual_score": "1 - 2",
-              "points": null,
+              "points": 63,
               "is_exact": false
             },
             {
@@ -43387,7 +43387,7 @@
                 "hidden": false
               },
               "actual_score": "1 - 2",
-              "points": null,
+              "points": 0,
               "is_exact": false
             },
             {
@@ -46292,7 +46292,7 @@
         },
         {
           "round": "Matchday 2",
-          "subtotal": 693,
+          "subtotal": 756,
           "fixtures": [
             {
               "fixture_number": 25,
@@ -46891,7 +46891,7 @@
                 "hidden": false
               },
               "actual_score": "1 - 2",
-              "points": null,
+              "points": 63,
               "is_exact": false
             },
             {
@@ -49796,7 +49796,7 @@
         },
         {
           "round": "Matchday 2",
-          "subtotal": 585,
+          "subtotal": 645,
           "fixtures": [
             {
               "fixture_number": 25,
@@ -50395,7 +50395,7 @@
                 "hidden": false
               },
               "actual_score": "1 - 2",
-              "points": null,
+              "points": 60,
               "is_exact": false
             },
             {
@@ -53300,7 +53300,7 @@
         },
         {
           "round": "Matchday 2",
-          "subtotal": 684,
+          "subtotal": 699,
           "fixtures": [
             {
               "fixture_number": 25,
@@ -53899,7 +53899,7 @@
                 "hidden": false
               },
               "actual_score": "1 - 2",
-              "points": null,
+              "points": 15,
               "is_exact": false
             },
             {
