@@ -654,6 +654,10 @@
     text-align:right;line-height:1;white-space:nowrap}
   .db-spot .db-big small{display:block;font-family:'Inter';font-size:9px;text-transform:uppercase;
     letter-spacing:.5px;color:var(--muted);font-weight:700;margin-top:2px}
+  /* Runner-up story promoted into the awards row: no headline number, neutral avatar. */
+  .db-spot.db-storyspot{grid-template-columns:40px minmax(0,1fr)}
+  .db-storyspot .db-av{font-size:19px;background:linear-gradient(135deg,#64748b,#94a3b8)}
+  .db-storyspot .db-nm{font-size:15px}
 
   .db-movers{display:grid;grid-template-columns:1fr 1fr;gap:0;margin:10px 0 4px;border:1px solid var(--line);
     border-radius:12px;background:rgba(255,255,255,.58);overflow:hidden}
@@ -780,7 +784,7 @@
           <div class="board-primary">
             <h2>Standings</h2>
             <button id="openDebriefTop" class="debriefbtn debrieftop" type="button" style="display:none" title="The day's front page — who won the day, the biggest moment, and more">
-              <span class="ic">🗞</span>The Debrief<span class="ndot" aria-hidden="true"></span>
+              <span class="ic">🗞</span>Daily Debrief<span class="ndot" aria-hidden="true"></span>
             </button>
           </div>
           <button id="openSchedTop" class="schedlink" type="button" title="See every match — played and upcoming">
@@ -1823,6 +1827,20 @@ function debriefStories(ctx,opt){
   return debriefStorySort(ctx,S,opt.noFatigue?[]:debriefRecentLeads(ctx));
 }
 
+/* Short eyebrow label for a story promoted into the day's awards row. */
+function debriefStoryTag(id){
+  return ({
+    perfect:'Perfect card', nearperfect:'So close', daywinner:'Day winner',
+    takeover:'New leader', streak:'Still top', climber:'On the rise',
+    faller:'Slipping', loudchase:'Loud chase', allmissed:'Pool blank',
+    lone:'Lone read', consensus:'Group misses', trap:'Trap match',
+    bullseye:'Bullseye club', allhit:'Everyone scores', cash:'Consensus cashes',
+    split:'Split room', noexact:'No bullseyes', droughtend:'Drought ends',
+    cleancrew:'Clean sheets', goalfest:'Goalfest', photo:'Photo finish',
+    tighttop:'Tight top', squeeze:'Table squeeze', quiet:'Quiet day'
+  })[id]||'Also today';
+}
+
 function debriefLinkAttr(link){
   if(!link) return '';
   if(link.playerId) return ` data-player-id="${esc(link.playerId)}" role="button" tabindex="0"`;
@@ -1956,7 +1974,7 @@ function debriefPreviewStories(nd, ctx, max){
 function debriefShareText(ctx,hero){
   const top=ctx.players[0];
   const tops=(ctx.topPlayers&&ctx.topPlayers.length)?ctx.topPlayers:(top?[top]:[]);
-  const lines=[`🗞 The Debrief · ${ctx.dateLabel}`,'',`${hero.icon||'🗞️'} ${hero.headline}`, hero.dek, ''];
+  const lines=[`🗞 Daily Debrief · ${ctx.dateLabel}`,'',`${hero.icon||'🗞️'} ${hero.headline}`, hero.dek, ''];
   if(top) lines.push(tops.length>1?`🏆 Top score: ${debriefNameList(tops.map(p=>p.name),3)} shared ${top.points} pts`
     :`🏆 Top score: ${top.name} with ${top.points} pts`);
   if(ctx.leader) lines.push(`👑 ${ctx.leader.name} leads overall`);
@@ -1969,8 +1987,8 @@ function renderDebriefView(){
   const modal=$('#modal'); const hasback=MODAL_STACK.length>1;
   const ctx=date?debriefContext(date):null;
   if(!ctx){
-    modal.innerHTML=`<div class="mhead${hasback?' hasback':''}"><div><h3>🗞 The Debrief</h3><div class="meta">Daily recap</div></div>${modalControls()}</div>`+
-      `<div class="mbody"><div class="db-empty">No settled match day to report yet.<br>The Debrief drops once the day's last final whistle has blown.</div></div>`;
+    modal.innerHTML=`<div class="mhead${hasback?' hasback':''}"><div><h3>🗞 Daily Debrief</h3><div class="meta">Daily recap</div></div>${modalControls()}</div>`+
+      `<div class="mbody"><div class="db-empty">No settled match day to report yet.<br>The Daily Debrief drops once the day's last final whistle has blown.</div></div>`;
     wireModalControls(modal); return;
   }
   const stories=debriefStories(ctx);
@@ -2009,7 +2027,7 @@ function renderDebriefView(){
     if(t && seenTargets.has(t)) continue;
     if(t) seenTargets.add(t);
     sidebar.push(s);
-    if(sidebar.length>=3) break;
+    if(sidebar.length>=5) break;
   }
   view._ctx=ctx; view._hero=hero;
 
@@ -2080,9 +2098,27 @@ function renderDebriefView(){
       </div>
     </div>`:'';
 
-  const sidebarHtml=sidebar.length?`
+  // Keep the day's recap from looking thin: the awards row should carry at least
+  // a couple of "today" cards. MVP/pick/tough are the dedicated ones; when they
+  // don't add up to three, promote the strongest runner-up stories out of the
+  // "Also today" list and give them their own cards. Whatever's left stays below.
+  const dayCards=(top?1:0)+(showPod?1:0)+(toughShow?1:0);
+  const promoteN=Math.max(0,Math.min(3-dayCards,sidebar.length));
+  const promoted=sidebar.slice(0,promoteN);
+  const rest=sidebar.slice(promoteN,promoteN+3);
+  const promotedHtml=promoted.map(s=>`
+    <div class="db-spot db-storyspot${s.link?'':' db-static'}"${debriefLinkAttr(s.link)}>
+      <div class="db-av" aria-hidden="true">${s.icon||'🗞️'}</div>
+      <div class="db-who">
+        <div class="db-lbl">${esc(debriefStoryTag(s.id))}</div>
+        <div class="db-nm">${esc(s.headline)}</div>
+        <div class="db-sub">${esc(s.dek)}</div>
+      </div>
+    </div>`).join('');
+
+  const sidebarHtml=rest.length?`
     <div class="db-section-title">Also today</div>
-    <div class="db-stories">${sidebar.map(s=>`
+    <div class="db-stories">${rest.map(s=>`
       <div class="db-story${s.link?' link':''}"${debriefLinkAttr(s.link)}>
         <div class="db-stx"><div class="db-sh">${esc(s.headline)}</div><div class="db-sd">${esc(s.dek)}</div></div>
       </div>`).join('')}</div>`:'';
@@ -2170,7 +2206,7 @@ function renderDebriefView(){
 
   modal.innerHTML=`
     <div class="mhead db-head${hasback?' hasback':''}">
-      <div><h3>The Debrief</h3><div class="meta">${esc(ctx.dateLabel)} · ${esc(ctx.round)}</div></div>
+      <div><h3>Daily Debrief</h3><div class="meta">${esc(ctx.dateLabel)} · ${esc(ctx.round)}</div></div>
       ${modalControls()}
     </div>
     <div class="mbody">
@@ -2181,7 +2217,7 @@ function renderDebriefView(){
           <div class="dek">${esc(hero.dek)}</div>
         </div>
         ${moversHtml}
-        <div class="db-awards">${mvp}${pod}${tough}${nextUpHtml}</div>
+        <div class="db-awards">${mvp}${pod}${promotedHtml}${tough}${nextUpHtml}</div>
         ${sidebarHtml}
         <div class="db-lower">${nums}${standHtml}</div>
         ${onDeckHtml}
@@ -2201,7 +2237,7 @@ function debriefShare(btn){
   const text=debriefShareText(view._ctx,view._hero);
   const done=()=>{ const prev=btn.textContent; btn.classList.add('ok'); btn.textContent='✓ Copied to clipboard';
     setTimeout(()=>{ btn.classList.remove('ok'); btn.textContent=prev; },1700); };
-  if(navigator.share){ navigator.share({title:'The Debrief',text}).catch(()=>{}); return; }
+  if(navigator.share){ navigator.share({title:'Daily Debrief',text}).catch(()=>{}); return; }
   if(navigator.clipboard&&navigator.clipboard.writeText){ navigator.clipboard.writeText(text).then(done).catch(()=>fallbackCopy(text,done)); }
   else fallbackCopy(text,done);
 }
