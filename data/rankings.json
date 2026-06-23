@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-23T00:01:59Z",
+  "updated": "2026-06-23T00:21:35Z",
   "pool": {
     "id": "34193",
     "slug": "bobby-and-friends",
@@ -18,7 +18,7 @@
       "name": "bobby",
       "flag": "FRA",
       "rank": 1,
-      "points": 1896,
+      "points": 1956,
       "exact": 6
     },
     {
@@ -32,12 +32,22 @@
       "exact": 5
     },
     {
+      "team_id": "253787",
+      "slug": "jazmin",
+      "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/253787/jazmin/stage/1196-grand-total?scroll=fixture",
+      "name": "Jazmin",
+      "flag": "POR",
+      "rank": 3,
+      "points": 1770,
+      "exact": 4
+    },
+    {
       "team_id": "252653",
       "slug": "daniel",
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/252653/daniel/stage/1196-grand-total?scroll=fixture",
       "name": "Daniel",
       "flag": "FRA",
-      "rank": 3,
+      "rank": 4,
       "points": 1767,
       "exact": 6
     },
@@ -47,19 +57,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247532/gabriela/stage/1196-grand-total?scroll=fixture",
       "name": "Gabriela",
       "flag": "NED",
-      "rank": 4,
-      "points": 1734,
-      "exact": 5
-    },
-    {
-      "team_id": "253787",
-      "slug": "jazmin",
-      "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/253787/jazmin/stage/1196-grand-total?scroll=fixture",
-      "name": "Jazmin",
-      "flag": "POR",
       "rank": 5,
-      "points": 1698,
-      "exact": 4
+      "points": 1746,
+      "exact": 5
     },
     {
       "team_id": "247930",
@@ -68,7 +68,17 @@
       "name": "Alec",
       "flag": "ESP",
       "rank": 6,
-      "points": 1644,
+      "points": 1704,
+      "exact": 4
+    },
+    {
+      "team_id": "253790",
+      "slug": "remi",
+      "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/253790/remi/stage/1196-grand-total?scroll=fixture",
+      "name": "remi",
+      "flag": "FRA",
+      "rank": 7,
+      "points": 1635,
       "exact": 4
     },
     {
@@ -77,18 +87,18 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247524/alejandro/stage/1196-grand-total?scroll=fixture",
       "name": "Alejandro",
       "flag": "BRA",
-      "rank": 7,
+      "rank": 8,
       "points": 1623,
       "exact": 2
     },
     {
-      "team_id": "253790",
-      "slug": "remi",
-      "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/253790/remi/stage/1196-grand-total?scroll=fixture",
-      "name": "remi",
-      "flag": "FRA",
-      "rank": 8,
-      "points": 1620,
+      "team_id": "247525",
+      "slug": "karenwj",
+      "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247525/karenwj/stage/1196-grand-total?scroll=fixture",
+      "name": "Karenwj",
+      "flag": "NED",
+      "rank": 9,
+      "points": 1599,
       "exact": 4
     },
     {
@@ -97,7 +107,7 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247535/baronmark/stage/1196-grand-total?scroll=fixture",
       "name": "Baronmark",
       "flag": "FRA",
-      "rank": 9,
+      "rank": 10,
       "points": 1551,
       "exact": 5
     },
@@ -107,19 +117,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247729/maxs/stage/1196-grand-total?scroll=fixture",
       "name": "MaxS.",
       "flag": "ARG",
-      "rank": 10,
+      "rank": 11,
       "points": 1551,
       "exact": 2
-    },
-    {
-      "team_id": "247525",
-      "slug": "karenwj",
-      "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247525/karenwj/stage/1196-grand-total?scroll=fixture",
-      "name": "Karenwj",
-      "flag": "NED",
-      "rank": 11,
-      "points": 1539,
-      "exact": 4
     },
     {
       "team_id": "247533",
