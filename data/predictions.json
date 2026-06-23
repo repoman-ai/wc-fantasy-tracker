@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-23T17:11:39Z",
+  "updated": "2026-06-23T17:21:43Z",
   "players": {
     "246775": {
       "team_id": "246775",
@@ -1368,7 +1368,7 @@
                 "score": "4 - 0",
                 "hidden": false
               },
-              "actual_score": "1 - 0",
+              "actual_score": "2 - 0",
               "points": 63,
               "is_exact": false
             },
@@ -3512,9 +3512,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/252653/daniel/stage/1196-grand-total?scroll=fixture",
       "flag": "FRA",
       "rank": 2,
-      "points": 1935,
-      "exact": 7,
-      "grand_total": 1935,
+      "points": 1962,
+      "exact": 8,
+      "grand_total": 1962,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -4244,7 +4244,7 @@
         },
         {
           "round": "Matchday 2",
-          "subtotal": 1125,
+          "subtotal": 1152,
           "fixtures": [
             {
               "fixture_number": 25,
@@ -4872,9 +4872,9 @@
                 "score": "2 - 0",
                 "hidden": false
               },
-              "actual_score": "1 - 0",
-              "points": 63,
-              "is_exact": false
+              "actual_score": "2 - 0",
+              "points": 90,
+              "is_exact": true
             },
             {
               "fixture_number": 45,
@@ -7016,9 +7016,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247532/gabriela/stage/1196-grand-total?scroll=fixture",
       "flag": "NED",
       "rank": 3,
-      "points": 1902,
+      "points": 1914,
       "exact": 6,
-      "grand_total": 1902,
+      "grand_total": 1914,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -7748,7 +7748,7 @@
         },
         {
           "round": "Matchday 2",
-          "subtotal": 1017,
+          "subtotal": 1029,
           "fixtures": [
             {
               "fixture_number": 25,
@@ -8376,8 +8376,8 @@
                 "score": "3 - 1",
                 "hidden": false
               },
-              "actual_score": "1 - 0",
-              "points": 48,
+              "actual_score": "2 - 0",
+              "points": 60,
               "is_exact": false
             },
             {
@@ -11880,7 +11880,7 @@
                 "score": "3 - 0",
                 "hidden": false
               },
-              "actual_score": "1 - 0",
+              "actual_score": "2 - 0",
               "points": 63,
               "is_exact": false
             },
@@ -15384,7 +15384,7 @@
                 "score": "3 - 0",
                 "hidden": false
               },
-              "actual_score": "1 - 0",
+              "actual_score": "2 - 0",
               "points": 63,
               "is_exact": false
             },
@@ -18888,7 +18888,7 @@
                 "score": "3 - 0",
                 "hidden": false
               },
-              "actual_score": "1 - 0",
+              "actual_score": "2 - 0",
               "points": 63,
               "is_exact": false
             },
@@ -22392,7 +22392,7 @@
                 "score": "3 - 0",
                 "hidden": false
               },
-              "actual_score": "1 - 0",
+              "actual_score": "2 - 0",
               "points": 63,
               "is_exact": false
             },
@@ -24536,9 +24536,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/253790/remi/stage/1196-grand-total?scroll=fixture",
       "flag": "FRA",
       "rank": 8,
-      "points": 1770,
-      "exact": 5,
-      "grand_total": 1770,
+      "points": 1797,
+      "exact": 6,
+      "grand_total": 1797,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -25268,7 +25268,7 @@
         },
         {
           "round": "Matchday 2",
-          "subtotal": 864,
+          "subtotal": 891,
           "fixtures": [
             {
               "fixture_number": 25,
@@ -25896,9 +25896,9 @@
                 "score": "2 - 0",
                 "hidden": false
               },
-              "actual_score": "1 - 0",
-              "points": 63,
-              "is_exact": false
+              "actual_score": "2 - 0",
+              "points": 90,
+              "is_exact": true
             },
             {
               "fixture_number": 45,
@@ -29400,7 +29400,7 @@
                 "score": "4 - 1",
                 "hidden": false
               },
-              "actual_score": "1 - 0",
+              "actual_score": "2 - 0",
               "points": 48,
               "is_exact": false
             },
@@ -31544,9 +31544,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247535/baronmark/stage/1196-grand-total?scroll=fixture",
       "flag": "FRA",
       "rank": 10,
-      "points": 1701,
-      "exact": 6,
-      "grand_total": 1701,
+      "points": 1728,
+      "exact": 7,
+      "grand_total": 1728,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -32276,7 +32276,7 @@
         },
         {
           "round": "Matchday 2",
-          "subtotal": 963,
+          "subtotal": 990,
           "fixtures": [
             {
               "fixture_number": 25,
@@ -32904,9 +32904,9 @@
                 "score": "2 - 0",
                 "hidden": false
               },
-              "actual_score": "1 - 0",
-              "points": 63,
-              "is_exact": false
+              "actual_score": "2 - 0",
+              "points": 90,
+              "is_exact": true
             },
             {
               "fixture_number": 45,
@@ -35048,9 +35048,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247537/yo/stage/1196-grand-total?scroll=fixture",
       "flag": "MEX",
       "rank": 11,
-      "points": 1698,
+      "points": 1710,
       "exact": 5,
-      "grand_total": 1698,
+      "grand_total": 1710,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -35780,7 +35780,7 @@
         },
         {
           "round": "Matchday 2",
-          "subtotal": 816,
+          "subtotal": 828,
           "fixtures": [
             {
               "fixture_number": 25,
@@ -36408,8 +36408,8 @@
                 "score": "3 - 1",
                 "hidden": false
               },
-              "actual_score": "1 - 0",
-              "points": 48,
+              "actual_score": "2 - 0",
+              "points": 60,
               "is_exact": false
             },
             {
@@ -38552,9 +38552,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247533/beturompequinielas/stage/1196-grand-total?scroll=fixture",
       "flag": "ARG",
       "rank": 12,
-      "points": 1650,
+      "points": 1653,
       "exact": 4,
-      "grand_total": 1650,
+      "grand_total": 1653,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -39284,7 +39284,7 @@
         },
         {
           "round": "Matchday 2",
-          "subtotal": 951,
+          "subtotal": 954,
           "fixtures": [
             {
               "fixture_number": 25,
@@ -39912,8 +39912,8 @@
                 "score": "2 - 1",
                 "hidden": false
               },
-              "actual_score": "1 - 0",
-              "points": 60,
+              "actual_score": "2 - 0",
+              "points": 63,
               "is_exact": false
             },
             {
@@ -42056,9 +42056,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247525/karenwj/stage/1196-grand-total?scroll=fixture",
       "flag": "NED",
       "rank": 13,
-      "points": 1629,
+      "points": 1641,
       "exact": 5,
-      "grand_total": 1629,
+      "grand_total": 1641,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -42788,7 +42788,7 @@
         },
         {
           "round": "Matchday 2",
-          "subtotal": 813,
+          "subtotal": 825,
           "fixtures": [
             {
               "fixture_number": 25,
@@ -43416,8 +43416,8 @@
                 "score": "3 - 1",
                 "hidden": false
               },
-              "actual_score": "1 - 0",
-              "points": 48,
+              "actual_score": "2 - 0",
+              "points": 60,
               "is_exact": false
             },
             {
@@ -46920,7 +46920,7 @@
                 "score": "4 - 0",
                 "hidden": false
               },
-              "actual_score": "1 - 0",
+              "actual_score": "2 - 0",
               "points": 63,
               "is_exact": false
             },
@@ -49064,9 +49064,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/252600/el-capitan/stage/1196-grand-total?scroll=fixture",
       "flag": "FRA",
       "rank": 15,
-      "points": 1572,
+      "points": 1584,
       "exact": 4,
-      "grand_total": 1572,
+      "grand_total": 1584,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -49796,7 +49796,7 @@
         },
         {
           "round": "Matchday 2",
-          "subtotal": 693,
+          "subtotal": 705,
           "fixtures": [
             {
               "fixture_number": 25,
@@ -50424,8 +50424,8 @@
                 "score": "3 - 1",
                 "hidden": false
               },
-              "actual_score": "1 - 0",
-              "points": 48,
+              "actual_score": "2 - 0",
+              "points": 60,
               "is_exact": false
             },
             {
@@ -53928,7 +53928,7 @@
                 "score": "4 - 1",
                 "hidden": false
               },
-              "actual_score": "1 - 0",
+              "actual_score": "2 - 0",
               "points": 48,
               "is_exact": false
             },
