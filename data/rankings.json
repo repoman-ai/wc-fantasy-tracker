@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-23T17:03:37Z",
+  "updated": "2026-06-23T17:11:39Z",
   "pool": {
     "id": "34193",
     "slug": "bobby-and-friends",
@@ -18,7 +18,7 @@
       "name": "bobby",
       "flag": "FRA",
       "rank": 1,
-      "points": 2001,
+      "points": 2049,
       "exact": 7
     },
     {
@@ -28,7 +28,7 @@
       "name": "Daniel",
       "flag": "FRA",
       "rank": 2,
-      "points": 1887,
+      "points": 1935,
       "exact": 7
     },
     {
@@ -38,7 +38,7 @@
       "name": "Gabriela",
       "flag": "NED",
       "rank": 3,
-      "points": 1854,
+      "points": 1902,
       "exact": 6
     },
     {
@@ -48,7 +48,7 @@
       "name": "JJ",
       "flag": "FRA",
       "rank": 4,
-      "points": 1854,
+      "points": 1902,
       "exact": 5
     },
     {
@@ -58,7 +58,7 @@
       "name": "Jazmin",
       "flag": "POR",
       "rank": 5,
-      "points": 1806,
+      "points": 1854,
       "exact": 4
     },
     {
@@ -68,7 +68,7 @@
       "name": "Alejandro",
       "flag": "BRA",
       "rank": 6,
-      "points": 1791,
+      "points": 1839,
       "exact": 3
     },
     {
@@ -78,7 +78,7 @@
       "name": "Alec",
       "flag": "ESP",
       "rank": 7,
-      "points": 1776,
+      "points": 1824,
       "exact": 6
     },
     {
@@ -88,7 +88,7 @@
       "name": "remi",
       "flag": "FRA",
       "rank": 8,
-      "points": 1722,
+      "points": 1770,
       "exact": 5
     },
     {
@@ -98,7 +98,7 @@
       "name": "MaxS.",
       "flag": "ARG",
       "rank": 9,
-      "points": 1701,
+      "points": 1749,
       "exact": 3
     },
     {
@@ -108,7 +108,7 @@
       "name": "Baronmark",
       "flag": "FRA",
       "rank": 10,
-      "points": 1653,
+      "points": 1701,
       "exact": 6
     },
     {
@@ -118,7 +118,7 @@
       "name": "Yo",
       "flag": "MEX",
       "rank": 11,
-      "points": 1650,
+      "points": 1698,
       "exact": 5
     },
     {
@@ -128,7 +128,7 @@
       "name": "Beturompequinielas",
       "flag": "ARG",
       "rank": 12,
-      "points": 1590,
+      "points": 1650,
       "exact": 4
     },
     {
@@ -138,7 +138,7 @@
       "name": "Karenwj",
       "flag": "NED",
       "rank": 13,
-      "points": 1581,
+      "points": 1629,
       "exact": 5
     },
     {
@@ -148,7 +148,7 @@
       "name": "Valewalle",
       "flag": "ESP",
       "rank": 14,
-      "points": 1551,
+      "points": 1599,
       "exact": 4
     },
     {
@@ -158,7 +158,7 @@
       "name": "El Capitan",
       "flag": "FRA",
       "rank": 15,
-      "points": 1524,
+      "points": 1572,
       "exact": 4
     },
     {
@@ -168,7 +168,7 @@
       "name": "Luisa",
       "flag": "POR",
       "rank": 16,
-      "points": 1431,
+      "points": 1479,
       "exact": 2
     }
   ]
