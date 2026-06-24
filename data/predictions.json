@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-24T21:33:02Z",
+  "updated": "2026-06-24T21:41:20Z",
   "players": {
     "246775": {
       "team_id": "246775",
@@ -40755,7 +40755,7 @@
                 },
                 "away": {
                   "code": null,
-                  "name": "2B",
+                  "name": "Switzerland",
                   "hidden": false
                 }
               },
@@ -41266,7 +41266,7 @@
               "match": {
                 "home": {
                   "code": null,
-                  "name": "1B",
+                  "name": "Canada",
                   "hidden": false
                 },
                 "away": {
@@ -44240,7 +44240,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 130,
+          "subtotal": 35,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -44259,7 +44259,7 @@
                 },
                 "away": {
                   "code": null,
-                  "name": "2B",
+                  "name": "Switzerland",
                   "hidden": false
                 }
               },
@@ -44770,7 +44770,7 @@
               "match": {
                 "home": {
                   "code": null,
-                  "name": "1B",
+                  "name": "Canada",
                   "hidden": false
                 },
                 "away": {
@@ -47744,7 +47744,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 70,
+          "subtotal": 130,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -47763,7 +47763,7 @@
                 },
                 "away": {
                   "code": null,
-                  "name": "2B",
+                  "name": "Switzerland",
                   "hidden": false
                 }
               },
@@ -48274,7 +48274,7 @@
               "match": {
                 "home": {
                   "code": null,
-                  "name": "1B",
+                  "name": "Canada",
                   "hidden": false
                 },
                 "away": {
@@ -51248,7 +51248,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 70,
+          "subtotal": 130,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -51267,7 +51267,7 @@
                 },
                 "away": {
                   "code": null,
-                  "name": "2B",
+                  "name": "Switzerland",
                   "hidden": false
                 }
               },
@@ -51778,7 +51778,7 @@
               "match": {
                 "home": {
                   "code": null,
-                  "name": "1B",
+                  "name": "Canada",
                   "hidden": false
                 },
                 "away": {
@@ -54752,7 +54752,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 65,
+          "subtotal": 35,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -54771,7 +54771,7 @@
                 },
                 "away": {
                   "code": null,
-                  "name": "2B",
+                  "name": "Switzerland",
                   "hidden": false
                 }
               },
@@ -55282,7 +55282,7 @@
               "match": {
                 "home": {
                   "code": null,
-                  "name": "1B",
+                  "name": "Canada",
                   "hidden": false
                 },
                 "away": {
