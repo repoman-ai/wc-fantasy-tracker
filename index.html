@@ -1392,20 +1392,24 @@ function debriefRecentLeads(ctx){
 /* ---- Tough-day: notability gate + the same anti-repeat memory the headlines
    use, so the card isn't a daily fixture or a repeated pile-on of one person. */
 const DEBRIEF_TOUGH_KEY='wc_recap_tough_v1';
-/* The day's tough-day subject, but only when the low score is genuinely a
-   standout: a 0-point blank, a clear lone outlier adrift of the field, or a
-   score at/under half the day's average. Never the MVP or the steepest faller
-   (they already carry their own card). Pure function of the day's context, so it
-   doubles as the derivation used for fatigue lookback. */
+/* A tough day has to be genuinely bad to earn a card, not just last place: a
+   0-point blank, a low score under DEBRIEF_TOUGH_LOW, or a lowest score adrift
+   of the next-lowest by at least DEBRIEF_TOUGH_GAP (a real outlier, not a tight
+   pack). */
+const DEBRIEF_TOUGH_LOW=50, DEBRIEF_TOUGH_GAP=60;
+/* The day's tough-day subject, but only when the low score clears one of those
+   bars. Never the MVP or the steepest faller (they already carry their own
+   card). Pure function of the day's context, so it doubles as the derivation
+   used for fatigue lookback. */
 function debriefToughCandidate(ctx){
   const ps=ctx.players||[]; if(ps.length<4) return null;
   const low=ps[ps.length-1], secondLow=ps[ps.length-2];
   const topId=ps[0]&&ps[0].teamId, fallerId=ctx.topFaller&&ctx.topFaller.teamId;
   if(!low || low.teamId===topId || low.teamId===fallerId) return null;
   const blank=low.points===0;
-  const outlier=!!secondLow && (secondLow.points-low.points)>=30;
-  const wellBelow=low.points<=Math.round((ctx.avgDay||0)*0.5);
-  return (blank||outlier||wellBelow)?{playerId:low.teamId,blank}:null;
+  const veryLow=low.points<DEBRIEF_TOUGH_LOW;
+  const outlier=!!secondLow && (secondLow.points-low.points)>=DEBRIEF_TOUGH_GAP;
+  return (blank||veryLow||outlier)?{playerId:low.teamId,blank}:null;
 }
 function debriefToughStore(){
   try{ const a=JSON.parse(localStorage.getItem(DEBRIEF_TOUGH_KEY)||'[]');
@@ -1420,8 +1424,8 @@ function debriefSaveTough(date,playerId){
    shared fixtures/days scan — no full debriefContext rebuild (that re-flattens
    every player's predictions). Same gate as debriefToughCandidate: 4+ players;
    the lone low scorer, never the day's top or steepest faller (they carry their
-   own card); notable as a 0-point blank, a >=30 gap clear of 2nd-lowest, or
-   at/under half the day's average. */
+   own card); notable as a 0-point blank, a score under DEBRIEF_TOUGH_LOW, or a
+   DEBRIEF_TOUGH_GAP gap clear of 2nd-lowest. */
 function debriefToughCandidateFor(fixtures,days,datesAsc,idx){
   const day=days.get(datesAsc[idx]); if(!day || !day.settled) return null;
   const players=debriefDayStats(day);
@@ -1438,11 +1442,10 @@ function debriefToughCandidateFor(fixtures,days,datesAsc,idx){
       const delta=was.rank-r.rank; if(delta<0 && delta<worst){ worst=delta; fallerId=r.teamId; } });
   }
   if(!low || low.teamId===topId || low.teamId===fallerId) return null;
-  const avgDay=Math.round(players.reduce((a,p)=>a+p.points,0)/players.length);
   const blank=low.points===0;
-  const outlier=!!secondLow && (secondLow.points-low.points)>=30;
-  const wellBelow=low.points<=Math.round(avgDay*0.5);
-  return (blank||outlier||wellBelow)?{playerId:low.teamId,blank}:null;
+  const veryLow=low.points<DEBRIEF_TOUGH_LOW;
+  const outlier=!!secondLow && (secondLow.points-low.points)>=DEBRIEF_TOUGH_GAP;
+  return (blank||veryLow||outlier)?{playerId:low.teamId,blank}:null;
 }
 /* What a prior settled day's tough card would ACTUALLY have shown — mirrors
    debriefToughDecision (candidate + the same fatigue rules), so a notable-but-
