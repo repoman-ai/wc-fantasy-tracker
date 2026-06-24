@@ -784,7 +784,7 @@
           <div class="board-primary">
             <h2>Standings</h2>
             <button id="openDebriefTop" class="debriefbtn debrieftop" type="button" style="display:none" title="The day's front page — who won the day, the biggest moment, and more">
-              <span class="ic">🗞</span>The Daily Debrief<span class="ndot" aria-hidden="true"></span>
+              <span class="ic">🗞</span>The Debrief<span class="ndot" aria-hidden="true"></span>
             </button>
           </div>
           <button id="openSchedTop" class="schedlink" type="button" title="See every match — played and upcoming">
@@ -2117,20 +2117,15 @@ function renderDebriefView(){
       </div>
     </div>`:'';
 
-  // Keep the day's recap from looking thin: the awards row should carry at least
-  // a couple of "today" cards. MVP/pick/tough are the dedicated ones; when they
-  // don't add up to three, promote the strongest runner-up stories out of the
-  // "Also today" list and give them their own cards. On top of that, a genuinely
-  // notable runner-up (a pool blank, a lone read, a multi-exact card, etc.) earns
-  // its own card even when the row is already full — so the big moments aren't
-  // buried below. sidebar is already drama/balance sorted, so we promote from the
-  // front. Whatever's left stays in "Also today".
-  const NOTABLE=60;
+  // Keep the day's recap from looking thin without letting it sprawl: the awards
+  // row holds at most three "today" cards (MVP/pick/tough are the dedicated ones)
+  // plus the single "Next up" card — four max, which is what fits the mobile
+  // layout. When the dedicated cards don't reach three, promote the strongest
+  // runner-up stories out of the "Also today" list to fill the gap. sidebar is
+  // drama/balance sorted and rotates day to day via the fatigue weighting, so the
+  // promoted picks vary; whatever's left stays in "Also today".
   const dayCards=(top?1:0)+(showPod?1:0)+(toughShow?1:0);
-  const minFill=Math.max(0,3-dayCards);
-  let notableN=0;
-  while(notableN<sidebar.length && sidebar[notableN].drama>=NOTABLE) notableN++;
-  const promoteN=Math.min(sidebar.length,3,Math.max(minFill,notableN));
+  const promoteN=Math.max(0,Math.min(3-dayCards,sidebar.length));
   const promoted=sidebar.slice(0,promoteN);
   const rest=sidebar.slice(promoteN,promoteN+3);
   const promotedHtml=promoted.map(s=>`
