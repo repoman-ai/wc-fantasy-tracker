@@ -784,7 +784,7 @@
           <div class="board-primary">
             <h2>Standings</h2>
             <button id="openDebriefTop" class="debriefbtn debrieftop" type="button" style="display:none" title="The day's front page — who won the day, the biggest moment, and more">
-              <span class="ic">🗞</span>Daily Debrief<span class="ndot" aria-hidden="true"></span>
+              <span class="ic">🗞</span>The Daily Debrief<span class="ndot" aria-hidden="true"></span>
             </button>
           </div>
           <button id="openSchedTop" class="schedlink" type="button" title="See every match — played and upcoming">
@@ -1656,6 +1656,25 @@ function debriefStories(ctx,opt){
     }
   });
 
+  // Multiple exact scorelines from one player in a single day — short of a
+  // perfect/near-perfect card (those fire above and carry their own story), but
+  // still a standout: nailing two or three scores on the nose is rare. We surface
+  // the sharpest such card (most exacts, then most points); the drama scales with
+  // the exact count so a three-bullseye day outranks a two. The day's top scorer
+  // is already celebrated by the MVP card (whose subtitle counts their exacts), so
+  // we prefer a multi-exact player from outside the top score — the card then adds
+  // someone new rather than piling onto the MVP — falling back to the field only
+  // when every multi-exact card belongs to the joint-top score.
+  const topScore=ctx.players[0]?ctx.players[0].points:null;
+  const multiAll=ctx.players
+    .filter(p=>p.exacts>=2 && !(p.exacts===p.nFin) && !(p.nFin>=3 && p.exacts===p.nFin-1))
+    .sort((a,b)=>b.exacts-a.exacts || b.points-a.points);
+  const multi=multiAll.find(p=>p.points!==topScore)||multiAll[0];
+  if(multi) add({id:'multiexact',drama:46+Math.min(18,(multi.exacts-1)*9),icon:'🎯',
+    headline:`${multi.name} Lands ${multi.exacts} Exact Scores`,
+    dek:`${multi.exacts} scorelines called on the nose in one day${multi.nFin>multi.exacts?` from ${multi.nFin} finished matches`:''} — a sharp card even with the rest of the slate in the mix.`,
+    link:{playerId:multi.teamId}});
+
   if(top){
     const tied=ctx.topPlayers&&ctx.topPlayers.length>1;
     const second=ctx.players.find(p=>p.points<top.points), margin=second?top.points-second.points:top.points;
@@ -1830,7 +1849,7 @@ function debriefStories(ctx,opt){
 /* Short eyebrow label for a story promoted into the day's awards row. */
 function debriefStoryTag(id){
   return ({
-    perfect:'Perfect card', nearperfect:'So close', daywinner:'Day winner',
+    perfect:'Perfect card', nearperfect:'So close', multiexact:'Multiple exacts', daywinner:'Day winner',
     takeover:'New leader', streak:'Still top', climber:'On the rise',
     faller:'Slipping', loudchase:'Loud chase', allmissed:'Pool blank',
     lone:'Lone read', consensus:'Group misses', trap:'Trap match',
@@ -1974,7 +1993,7 @@ function debriefPreviewStories(nd, ctx, max){
 function debriefShareText(ctx,hero){
   const top=ctx.players[0];
   const tops=(ctx.topPlayers&&ctx.topPlayers.length)?ctx.topPlayers:(top?[top]:[]);
-  const lines=[`🗞 Daily Debrief · ${ctx.dateLabel}`,'',`${hero.icon||'🗞️'} ${hero.headline}`, hero.dek, ''];
+  const lines=[`🗞 The Daily Debrief · ${ctx.dateLabel}`,'',`${hero.icon||'🗞️'} ${hero.headline}`, hero.dek, ''];
   if(top) lines.push(tops.length>1?`🏆 Top score: ${debriefNameList(tops.map(p=>p.name),3)} shared ${top.points} pts`
     :`🏆 Top score: ${top.name} with ${top.points} pts`);
   if(ctx.leader) lines.push(`👑 ${ctx.leader.name} leads overall`);
@@ -1987,7 +2006,7 @@ function renderDebriefView(){
   const modal=$('#modal'); const hasback=MODAL_STACK.length>1;
   const ctx=date?debriefContext(date):null;
   if(!ctx){
-    modal.innerHTML=`<div class="mhead${hasback?' hasback':''}"><div><h3>🗞 Daily Debrief</h3><div class="meta">Daily recap</div></div>${modalControls()}</div>`+
+    modal.innerHTML=`<div class="mhead${hasback?' hasback':''}"><div><h3>🗞 The Daily Debrief</h3><div class="meta">Daily recap</div></div>${modalControls()}</div>`+
       `<div class="mbody"><div class="db-empty">No settled match day to report yet.<br>The Daily Debrief drops once the day's last final whistle has blown.</div></div>`;
     wireModalControls(modal); return;
   }
@@ -2101,9 +2120,17 @@ function renderDebriefView(){
   // Keep the day's recap from looking thin: the awards row should carry at least
   // a couple of "today" cards. MVP/pick/tough are the dedicated ones; when they
   // don't add up to three, promote the strongest runner-up stories out of the
-  // "Also today" list and give them their own cards. Whatever's left stays below.
+  // "Also today" list and give them their own cards. On top of that, a genuinely
+  // notable runner-up (a pool blank, a lone read, a multi-exact card, etc.) earns
+  // its own card even when the row is already full — so the big moments aren't
+  // buried below. sidebar is already drama/balance sorted, so we promote from the
+  // front. Whatever's left stays in "Also today".
+  const NOTABLE=60;
   const dayCards=(top?1:0)+(showPod?1:0)+(toughShow?1:0);
-  const promoteN=Math.max(0,Math.min(3-dayCards,sidebar.length));
+  const minFill=Math.max(0,3-dayCards);
+  let notableN=0;
+  while(notableN<sidebar.length && sidebar[notableN].drama>=NOTABLE) notableN++;
+  const promoteN=Math.min(sidebar.length,3,Math.max(minFill,notableN));
   const promoted=sidebar.slice(0,promoteN);
   const rest=sidebar.slice(promoteN,promoteN+3);
   const promotedHtml=promoted.map(s=>`
@@ -2206,7 +2233,7 @@ function renderDebriefView(){
 
   modal.innerHTML=`
     <div class="mhead db-head${hasback?' hasback':''}">
-      <div><h3>Daily Debrief</h3><div class="meta">${esc(ctx.dateLabel)} · ${esc(ctx.round)}</div></div>
+      <div><h3>The Daily Debrief</h3><div class="meta">${esc(ctx.dateLabel)} · ${esc(ctx.round)}</div></div>
       ${modalControls()}
     </div>
     <div class="mbody">
@@ -2237,7 +2264,7 @@ function debriefShare(btn){
   const text=debriefShareText(view._ctx,view._hero);
   const done=()=>{ const prev=btn.textContent; btn.classList.add('ok'); btn.textContent='✓ Copied to clipboard';
     setTimeout(()=>{ btn.classList.remove('ok'); btn.textContent=prev; },1700); };
-  if(navigator.share){ navigator.share({title:'Daily Debrief',text}).catch(()=>{}); return; }
+  if(navigator.share){ navigator.share({title:'The Daily Debrief',text}).catch(()=>{}); return; }
   if(navigator.clipboard&&navigator.clipboard.writeText){ navigator.clipboard.writeText(text).then(done).catch(()=>fallbackCopy(text,done)); }
   else fallbackCopy(text,done);
 }
