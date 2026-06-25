@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-25T00:03:03Z",
+  "updated": "2026-06-25T00:12:45Z",
   "players": {
     "246775": {
       "team_id": "246775",
@@ -1532,7 +1532,7 @@
               "fixture_number": 49,
               "round": "Matchday 3",
               "stage_type": "group",
-              "status": "· LIVE",
+              "status": "FT",
               "kickoff_utc": "2026-06-24T22:00:00Z",
               "kickoff_local": "2026-06-24 18:00",
               "kickoff_timezone": "America/New_York",
@@ -1562,7 +1562,7 @@
               "fixture_number": 50,
               "round": "Matchday 3",
               "stage_type": "group",
-              "status": "· LIVE",
+              "status": "FT",
               "kickoff_utc": "2026-06-24T22:00:00Z",
               "kickoff_local": "2026-06-24 18:00",
               "kickoff_timezone": "America/New_York",
@@ -5036,7 +5036,7 @@
               "fixture_number": 49,
               "round": "Matchday 3",
               "stage_type": "group",
-              "status": "· LIVE",
+              "status": "FT",
               "kickoff_utc": "2026-06-24T22:00:00Z",
               "kickoff_local": "2026-06-24 18:00",
               "kickoff_timezone": "America/New_York",
@@ -5066,7 +5066,7 @@
               "fixture_number": 50,
               "round": "Matchday 3",
               "stage_type": "group",
-              "status": "· LIVE",
+              "status": "FT",
               "kickoff_utc": "2026-06-24T22:00:00Z",
               "kickoff_local": "2026-06-24 18:00",
               "kickoff_timezone": "America/New_York",
@@ -8540,7 +8540,7 @@
               "fixture_number": 49,
               "round": "Matchday 3",
               "stage_type": "group",
-              "status": "· LIVE",
+              "status": "FT",
               "kickoff_utc": "2026-06-24T22:00:00Z",
               "kickoff_local": "2026-06-24 18:00",
               "kickoff_timezone": "America/New_York",
@@ -8570,7 +8570,7 @@
               "fixture_number": 50,
               "round": "Matchday 3",
               "stage_type": "group",
-              "status": "· LIVE",
+              "status": "FT",
               "kickoff_utc": "2026-06-24T22:00:00Z",
               "kickoff_local": "2026-06-24 18:00",
               "kickoff_timezone": "America/New_York",
@@ -12044,7 +12044,7 @@
               "fixture_number": 49,
               "round": "Matchday 3",
               "stage_type": "group",
-              "status": "· LIVE",
+              "status": "FT",
               "kickoff_utc": "2026-06-24T22:00:00Z",
               "kickoff_local": "2026-06-24 18:00",
               "kickoff_timezone": "America/New_York",
@@ -12074,7 +12074,7 @@
               "fixture_number": 50,
               "round": "Matchday 3",
               "stage_type": "group",
-              "status": "· LIVE",
+              "status": "FT",
               "kickoff_utc": "2026-06-24T22:00:00Z",
               "kickoff_local": "2026-06-24 18:00",
               "kickoff_timezone": "America/New_York",
@@ -15548,7 +15548,7 @@
               "fixture_number": 49,
               "round": "Matchday 3",
               "stage_type": "group",
-              "status": "· LIVE",
+              "status": "FT",
               "kickoff_utc": "2026-06-24T22:00:00Z",
               "kickoff_local": "2026-06-24 18:00",
               "kickoff_timezone": "America/New_York",
@@ -15578,7 +15578,7 @@
               "fixture_number": 50,
               "round": "Matchday 3",
               "stage_type": "group",
-              "status": "· LIVE",
+              "status": "FT",
               "kickoff_utc": "2026-06-24T22:00:00Z",
               "kickoff_local": "2026-06-24 18:00",
               "kickoff_timezone": "America/New_York",
@@ -19082,7 +19082,7 @@
               "fixture_number": 50,
               "round": "Matchday 3",
               "stage_type": "group",
-              "status": "· LIVE",
+              "status": "FT",
               "kickoff_utc": "2026-06-24T22:00:00Z",
               "kickoff_local": "2026-06-24 18:00",
               "kickoff_timezone": "America/New_York",
@@ -22579,7 +22579,7 @@
                 "hidden": false
               },
               "actual_score": "0 - 3",
-              "points": null,
+              "points": 0,
               "is_exact": false
             },
             {
@@ -25994,7 +25994,7 @@
         },
         {
           "round": "Matchday 3",
-          "subtotal": 60,
+          "subtotal": 108,
           "fixtures": [
             {
               "fixture_number": 51,
@@ -26083,7 +26083,7 @@
                 "hidden": false
               },
               "actual_score": "0 - 3",
-              "points": null,
+              "points": 48,
               "is_exact": false
             },
             {
@@ -29498,7 +29498,7 @@
         },
         {
           "round": "Matchday 3",
-          "subtotal": 186,
+          "subtotal": 249,
           "fixtures": [
             {
               "fixture_number": 51,
@@ -29587,7 +29587,7 @@
                 "hidden": false
               },
               "actual_score": "0 - 3",
-              "points": null,
+              "points": 63,
               "is_exact": false
             },
             {
@@ -33002,7 +33002,7 @@
         },
         {
           "round": "Matchday 3",
-          "subtotal": 108,
+          "subtotal": 198,
           "fixtures": [
             {
               "fixture_number": 51,
@@ -33091,8 +33091,8 @@
                 "hidden": false
               },
               "actual_score": "0 - 3",
-              "points": null,
-              "is_exact": false
+              "points": 90,
+              "is_exact": true
             },
             {
               "fixture_number": 50,
@@ -36506,7 +36506,7 @@
         },
         {
           "round": "Matchday 3",
-          "subtotal": 75,
+          "subtotal": 138,
           "fixtures": [
             {
               "fixture_number": 51,
@@ -36595,7 +36595,7 @@
                 "hidden": false
               },
               "actual_score": "0 - 3",
-              "points": null,
+              "points": 63,
               "is_exact": false
             },
             {
@@ -40010,7 +40010,7 @@
         },
         {
           "round": "Matchday 3",
-          "subtotal": 126,
+          "subtotal": 186,
           "fixtures": [
             {
               "fixture_number": 51,
@@ -40099,7 +40099,7 @@
                 "hidden": false
               },
               "actual_score": "0 - 3",
-              "points": null,
+              "points": 60,
               "is_exact": false
             },
             {
@@ -43514,7 +43514,7 @@
         },
         {
           "round": "Matchday 3",
-          "subtotal": 126,
+          "subtotal": 216,
           "fixtures": [
             {
               "fixture_number": 51,
@@ -43603,8 +43603,8 @@
                 "hidden": false
               },
               "actual_score": "0 - 3",
-              "points": null,
-              "is_exact": false
+              "points": 90,
+              "is_exact": true
             },
             {
               "fixture_number": 50,
@@ -47018,7 +47018,7 @@
         },
         {
           "round": "Matchday 3",
-          "subtotal": 135,
+          "subtotal": 198,
           "fixtures": [
             {
               "fixture_number": 51,
@@ -47107,7 +47107,7 @@
                 "hidden": false
               },
               "actual_score": "0 - 3",
-              "points": null,
+              "points": 63,
               "is_exact": false
             },
             {
@@ -50522,7 +50522,7 @@
         },
         {
           "round": "Matchday 3",
-          "subtotal": 15,
+          "subtotal": 78,
           "fixtures": [
             {
               "fixture_number": 51,
@@ -50611,7 +50611,7 @@
                 "hidden": false
               },
               "actual_score": "0 - 3",
-              "points": null,
+              "points": 63,
               "is_exact": false
             },
             {
@@ -54115,7 +54115,7 @@
                 "hidden": false
               },
               "actual_score": "0 - 3",
-              "points": null,
+              "points": 0,
               "is_exact": false
             },
             {
