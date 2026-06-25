@@ -256,6 +256,141 @@ def official_group_kickoff(home_code, away_code):
     return OFFICIAL_GROUP_KICKOFFS.get(frozenset((home_code, away_code)))
 
 
+# Authoritative host venues from the official FIFA 2026 schedule ("Stadium,
+# City"). The upstream pool feed carries no place-of-play signal at all — only a
+# timezone — so the site used to derive a city from that zone, which collapsed
+# every Eastern-time match to "New York". These tables restore the real venue.
+#
+# Group venues are keyed by the unordered pair of team codes (unique in the
+# group stage), mirroring OFFICIAL_GROUP_KICKOFFS. Keying by team pair rather
+# than match number is deliberate: the upstream feed numbers a couple of group
+# fixtures differently from the official schedule (e.g. it swaps the slots that
+# the schedule calls #21 England-Croatia / #22 Ghana-Panama), so the pair is the
+# only reliable join. Knockout slots have no fixed teams yet, so those are keyed
+# by the official match number instead.
+GROUP_VENUES = {
+    frozenset(("MEX", "RSA")): "Estadio Azteca, Mexico City",
+    frozenset(("CZE", "KOR")): "Estadio Akron, Zapopan",
+    frozenset(("BIH", "CAN")): "BMO Field, Toronto",
+    frozenset(("PAR", "USA")): "SoFi Stadium, Inglewood",
+    frozenset(("HAI", "SCO")): "Gillette Stadium, Foxborough",
+    frozenset(("AUS", "TUR")): "BC Place, Vancouver",
+    frozenset(("BRA", "MAR")): "MetLife Stadium, East Rutherford",
+    frozenset(("QAT", "SUI")): "Levi's Stadium, Santa Clara",
+    frozenset(("CIV", "ECU")): "Lincoln Financial Field, Philadelphia",
+    frozenset(("CUW", "GER")): "NRG Stadium, Houston",
+    frozenset(("JPN", "NED")): "AT&T Stadium, Arlington",
+    frozenset(("SWE", "TUN")): "Estadio BBVA, Guadalupe",
+    frozenset(("KSA", "URU")): "Hard Rock Stadium, Miami Gardens",
+    frozenset(("CPV", "ESP")): "Mercedes-Benz Stadium, Atlanta",
+    frozenset(("IRN", "NZL")): "SoFi Stadium, Inglewood",
+    frozenset(("BEL", "EGY")): "Lumen Field, Seattle",
+    frozenset(("FRA", "SEN")): "MetLife Stadium, East Rutherford",
+    frozenset(("IRQ", "NOR")): "Gillette Stadium, Foxborough",
+    frozenset(("ALG", "ARG")): "Arrowhead Stadium, Kansas City",
+    frozenset(("AUT", "JOR")): "Levi's Stadium, Santa Clara",
+    frozenset(("GHA", "PAN")): "BMO Field, Toronto",
+    frozenset(("CRO", "ENG")): "AT&T Stadium, Arlington",
+    frozenset(("COD", "POR")): "NRG Stadium, Houston",
+    frozenset(("COL", "UZB")): "Estadio Azteca, Mexico City",
+    frozenset(("CZE", "RSA")): "Mercedes-Benz Stadium, Atlanta",
+    frozenset(("BIH", "SUI")): "SoFi Stadium, Inglewood",
+    frozenset(("CAN", "QAT")): "BC Place, Vancouver",
+    frozenset(("KOR", "MEX")): "Estadio Akron, Zapopan",
+    frozenset(("BRA", "HAI")): "Lincoln Financial Field, Philadelphia",
+    frozenset(("MAR", "SCO")): "Gillette Stadium, Foxborough",
+    frozenset(("PAR", "TUR")): "Levi's Stadium, Santa Clara",
+    frozenset(("AUS", "USA")): "Lumen Field, Seattle",
+    frozenset(("CIV", "GER")): "BMO Field, Toronto",
+    frozenset(("CUW", "ECU")): "Arrowhead Stadium, Kansas City",
+    frozenset(("NED", "SWE")): "NRG Stadium, Houston",
+    frozenset(("JPN", "TUN")): "Estadio BBVA, Guadalupe",
+    frozenset(("CPV", "URU")): "Hard Rock Stadium, Miami Gardens",
+    frozenset(("ESP", "KSA")): "Mercedes-Benz Stadium, Atlanta",
+    frozenset(("BEL", "IRN")): "SoFi Stadium, Inglewood",
+    frozenset(("EGY", "NZL")): "BC Place, Vancouver",
+    frozenset(("NOR", "SEN")): "MetLife Stadium, East Rutherford",
+    frozenset(("FRA", "IRQ")): "Lincoln Financial Field, Philadelphia",
+    frozenset(("ARG", "AUT")): "AT&T Stadium, Arlington",
+    frozenset(("ALG", "JOR")): "Levi's Stadium, Santa Clara",
+    frozenset(("ENG", "GHA")): "Gillette Stadium, Foxborough",
+    frozenset(("CRO", "PAN")): "BMO Field, Toronto",
+    frozenset(("POR", "UZB")): "NRG Stadium, Houston",
+    frozenset(("COD", "COL")): "Estadio Akron, Zapopan",
+    frozenset(("BRA", "SCO")): "Hard Rock Stadium, Miami Gardens",
+    frozenset(("HAI", "MAR")): "Mercedes-Benz Stadium, Atlanta",
+    frozenset(("CAN", "SUI")): "BC Place, Vancouver",
+    frozenset(("BIH", "QAT")): "Lumen Field, Seattle",
+    frozenset(("CZE", "MEX")): "Estadio Azteca, Mexico City",
+    frozenset(("KOR", "RSA")): "Estadio BBVA, Guadalupe",
+    frozenset(("CIV", "CUW")): "Lincoln Financial Field, Philadelphia",
+    frozenset(("ECU", "GER")): "MetLife Stadium, East Rutherford",
+    frozenset(("JPN", "SWE")): "AT&T Stadium, Arlington",
+    frozenset(("NED", "TUN")): "Arrowhead Stadium, Kansas City",
+    frozenset(("TUR", "USA")): "SoFi Stadium, Inglewood",
+    frozenset(("AUS", "PAR")): "Levi's Stadium, Santa Clara",
+    frozenset(("FRA", "NOR")): "Gillette Stadium, Foxborough",
+    frozenset(("IRQ", "SEN")): "BMO Field, Toronto",
+    frozenset(("EGY", "IRN")): "Lumen Field, Seattle",
+    frozenset(("BEL", "NZL")): "BC Place, Vancouver",
+    frozenset(("CPV", "KSA")): "NRG Stadium, Houston",
+    frozenset(("ESP", "URU")): "Estadio Akron, Zapopan",
+    frozenset(("ENG", "PAN")): "MetLife Stadium, East Rutherford",
+    frozenset(("CRO", "GHA")): "Lincoln Financial Field, Philadelphia",
+    frozenset(("ALG", "AUT")): "Arrowhead Stadium, Kansas City",
+    frozenset(("ARG", "JOR")): "AT&T Stadium, Arlington",
+    frozenset(("COL", "POR")): "Hard Rock Stadium, Miami Gardens",
+    frozenset(("COD", "UZB")): "Mercedes-Benz Stadium, Atlanta",
+}
+
+KNOCKOUT_VENUES = {
+    73: "SoFi Stadium, Inglewood",
+    74: "Gillette Stadium, Foxborough",
+    75: "Estadio BBVA, Guadalupe",
+    76: "NRG Stadium, Houston",
+    77: "MetLife Stadium, East Rutherford",
+    78: "AT&T Stadium, Arlington",
+    79: "Estadio Azteca, Mexico City",
+    80: "Mercedes-Benz Stadium, Atlanta",
+    81: "Levi's Stadium, Santa Clara",
+    82: "Lumen Field, Seattle",
+    83: "BMO Field, Toronto",
+    84: "SoFi Stadium, Inglewood",
+    85: "BC Place, Vancouver",
+    86: "Hard Rock Stadium, Miami Gardens",
+    87: "Arrowhead Stadium, Kansas City",
+    88: "AT&T Stadium, Arlington",
+    89: "Lincoln Financial Field, Philadelphia",
+    90: "NRG Stadium, Houston",
+    91: "MetLife Stadium, East Rutherford",
+    92: "Estadio Azteca, Mexico City",
+    93: "AT&T Stadium, Arlington",
+    94: "Lumen Field, Seattle",
+    95: "Mercedes-Benz Stadium, Atlanta",
+    96: "BC Place, Vancouver",
+    97: "Gillette Stadium, Foxborough",
+    98: "SoFi Stadium, Inglewood",
+    99: "Hard Rock Stadium, Miami Gardens",
+    100: "Arrowhead Stadium, Kansas City",
+    101: "AT&T Stadium, Arlington",
+    102: "Mercedes-Benz Stadium, Atlanta",
+    103: "Hard Rock Stadium, Miami Gardens",
+    104: "MetLife Stadium, East Rutherford",
+}
+
+
+def venue_for(home_code, away_code, fixture_number):
+    """Resolve the host venue ("Stadium, City") for a fixture. Group matches
+    are looked up by team pair; knockout matches (no settled teams) fall back to
+    the official match number. Returns None when unknown (e.g. a future feed
+    pairing we don't have on file), so callers can simply omit the field."""
+    if home_code and away_code:
+        venue = GROUP_VENUES.get(frozenset((home_code, away_code)))
+        if venue:
+            return venue
+    return KNOCKOUT_VENUES.get(fixture_number)
+
+
 def now_iso() -> str:
     return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
@@ -906,6 +1041,7 @@ def _parse_group_fixture(tds, fixture_number, round_name) -> dict:
         "kickoff_utc": kickoff_utc,
         "kickoff_local": kickoff_local,
         "kickoff_timezone": kickoff_tz,
+        "venue": venue_for(home.get("code"), away.get("code"), fixture_number),
         "hidden": False,
         "match": {"home": home, "away": away},
         "predicted": {"type": "score", "score": predicted_score or None, "hidden": False},
@@ -988,6 +1124,7 @@ def _parse_knockout_fixture(tds, fixture_number, round_name) -> dict:
         "kickoff_utc": to_utc_iso(dt_raw, tz_name),
         "kickoff_local": dt_raw,
         "kickoff_timezone": tz_name,
+        "venue": venue_for(m_home.get("code"), m_away.get("code"), fixture_number),
         "hidden": hidden,
         "match": {"home": m_home, "away": m_away},
         "predicted": {

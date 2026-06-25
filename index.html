@@ -889,10 +889,19 @@ function fmtFixture(iso){
   };
 }
 // Host city from an IANA timezone, e.g. "America/New_York" -> "New York".
+// Kept only as a last-resort fallback; real venues come from fixture.venue.
 function tzCity(tz){
   if(!tz) return '';
   const part=tz.split('/').pop()||'';
   return part.replace(/_/g,' ').trim();
+}
+// A venue is stored as "Stadium, City". Split it for display: the city is the
+// headline (what people recognise) and the stadium is the supporting detail.
+function venueParts(v){
+  if(!v) return null;
+  const i=v.lastIndexOf(',');
+  if(i<0) return {city:v.trim(), stadium:''};
+  return {city:v.slice(i+1).trim(), stadium:v.slice(0,i).trim()};
 }
 // Short timezone label for the kickoff instant in that zone, e.g. "EDT".
 function tzAbbr(iso,tz){
@@ -2996,7 +3005,7 @@ function collectMatch(key){
           home:teamName(fx.match?.home), homeCode:fx.match?.home?.code,
           away:teamName(fx.match?.away), awayCode:fx.match?.away?.code,
           round:md.round||fx.round||'Match', kickoff:fx.kickoff_utc,
-          tz:fx.kickoff_timezone||'',
+          tz:fx.kickoff_timezone||'', venue:fx.venue||'',
           status:fx.status, actual:clean(fx.actual_score||''),
           live:isLive(fx), done:isCompleted(fx),
         };
@@ -3059,13 +3068,19 @@ function renderMatchView(key){
     <div class="mp-side ${aw?'win':''}">${flagImg(meta.awayCode)}<div class="nm">${esc(meta.away)}</div></div>
   </div>`;
 
-  // Kickoff time + location strip. Location is the host city derived from the
-  // fixture's timezone (the only place-of-play signal in the feed).
+  // Kickoff time + location strip. Location is the real host venue ("City"
+  // headline, stadium as detail); only if a fixture lacks venue data do we fall
+  // back to the timezone-derived city.
   const items=[];
   const when=fmtFixture(meta.kickoff);
   if(meta.kickoff) items.push(`<span class="mi"><span class="ic">🕒</span>${esc(when.date)}${when.time?`<span class="sub">·</span>${esc(when.time)}`:''}</span>`);
-  const loc=tzCity(meta.tz);
-  if(loc) items.push(`<span class="mi"><span class="ic">📍</span>${esc(loc)}<span class="sub">${esc(tzAbbr(meta.kickoff,meta.tz))}</span></span>`);
+  const vp=venueParts(meta.venue);
+  if(vp){
+    items.push(`<span class="mi"><span class="ic">📍</span>${esc(vp.city)}${vp.stadium?`<span class="sub">${esc(vp.stadium)}</span>`:''}</span>`);
+  }else{
+    const loc=tzCity(meta.tz);
+    if(loc) items.push(`<span class="mi"><span class="ic">📍</span>${esc(loc)}<span class="sub">${esc(tzAbbr(meta.kickoff,meta.tz))}</span></span>`);
+  }
   const infoHtml=items.length?`<div class="mp-meta">${items.join('')}</div>`:'';
 
   // Consensus
