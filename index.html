@@ -1285,17 +1285,42 @@ function debriefDays(fixtures){
   return days;
 }
 
+/* Each player's points the official board credits beyond their per-fixture
+   points — round/bracket subtotals the source attributes to a whole round, not
+   to any single fixture (e.g. Round-of-32 qualification points that already
+   count on the leaderboard before any R32 match kicks off). Derived as
+   grand_total minus the sum of fixture points, so folding it back in makes the
+   recomputed standings reconcile EXACTLY to the official leaderboard rather than
+   floating up whoever happened to score most from match scorelines alone.
+   Memoised on the current PRED so the many per-day standings scans stay cheap. */
+let _debriefBonus=null,_debriefBonusFor=null;
+function debriefBonusById(){
+  if(_debriefBonusFor===PRED && _debriefBonus) return _debriefBonus;
+  const bonus={};
+  Object.values(PRED).forEach(p=>{
+    let fx=0;
+    (p.matchdays||[]).forEach(md=>(md.fixtures||[]).forEach(f=>{ fx+=(f.points||0); }));
+    const gt=p.grand_total!=null?p.grand_total:(p.points!=null?p.points:fx);
+    bonus[p.team_id]=gt-fx;
+  });
+  _debriefBonus=bonus; _debriefBonusFor=PRED; return bonus;
+}
+
 /* Overall standings as of the end of a given local day: sum each player's
-   fixture points for every fixture on or before that date, then rank. This is
-   deterministic from predictions and matches the official board exactly, so we
-   never depend on the noisy history.json snapshot cadence for day-over-day
-   movement, takeovers, or leader streaks. */
+   fixture points for every fixture on or before that date, add their round/
+   bracket bonus, then rank. With the bonus folded in this matches the official
+   board exactly, so we never depend on the noisy history.json snapshot cadence
+   for day-over-day movement, takeovers, or leader streaks. (The bonus is a
+   constant per player, so it never distorts day-over-day rank *deltas* — those
+   stay driven purely by match results.) */
 function debriefStandingsAsOf(fixtures, date){
   const tot={}, names={};
   for(const f of fixtures.values()){
     if(!f.day || f.day>date) continue;
     f.picks.forEach(pk=>{ tot[pk.teamId]=(tot[pk.teamId]||0)+(pk.points||0); names[pk.teamId]=pk.name; });
   }
+  const bonus=debriefBonusById();
+  Object.keys(tot).forEach(id=>{ tot[id]+=(bonus[id]||0); });
   const arr=Object.keys(tot).map(id=>({teamId:id,name:names[id],points:tot[id]}));
   arr.sort((a,b)=>b.points-a.points);
   const byId={}; arr.forEach((r,i)=>{ r.rank=i+1; byId[r.teamId]=r; });
@@ -1618,6 +1643,11 @@ function debriefContext(date){
     });
   }
   const ls=debriefLeaderStreak(fixtures,datesAsc,idx);
+  // How long the player who just got knocked off the top had been leading, so a
+  // takeover can frame the end of a long reign rather than a plain handover. By
+  // construction the leader as of the previous settled day IS prevLeader, so
+  // this streak belongs to them.
+  const prevLs=idx>0?debriefLeaderStreak(fixtures,datesAsc,idx-1):{leadId:null,n:0};
 
   // On deck: the earliest later day that still has unplayed fixtures (skips any
   // rest days), summarised from its visible upcoming picks. Null once the
@@ -1638,7 +1668,7 @@ function debriefContext(date){
   return {
     date, dateLabel:debriefDateLabel(date), round:debriefMajorityRound(day.fixtures), edition:idx+1, nextDay,
     fixtures:day.fixtures, players, topPlayers, bestCall, bestCalls,
-    leader:cur.arr[0], prevLeader:prev?prev.arr[0]:null, leaderN:ls.n,
+    leader:cur.arr[0], prevLeader:prev?prev.arr[0]:null, leaderN:ls.n, prevLeaderN:prevLs.n,
     topClimber, topFaller, standings:cur.arr, prevById:prev?prev.byId:null,
     settledDates:datesAsc, dayIndex:idx, prevStandings:prev?prev.arr:null,
     fixtureStats:debriefFixtureStats(day,nameById), nameById,
@@ -1700,9 +1730,15 @@ function debriefStories(ctx,opt){
   }
 
   if(ctx.prevLeader && ctx.leader && ctx.prevLeader.teamId!==ctx.leader.teamId){
-    add({id:'takeover',drama:93,icon:'👑',
-      headline:`New Leader: ${ctx.leader.name} Takes First`,
-      dek:`The top spot changes hands as ${ctx.leader.name} moves past ${ctx.prevLeader.name} on the overall table.`,
+    // Frame the handover by how long the dethroned player had reigned: a multi-
+    // day run getting ended is a bigger deal than a one-day lead changing hands.
+    const reign=ctx.prevLeaderN||0, longReign=reign>=3;
+    add({id:'takeover',drama:93+Math.min(5,Math.max(0,reign-1)),icon:'👑',
+      headline: longReign?`Dethroned: ${ctx.leader.name} Ends ${ctx.prevLeader.name}'s Reign`
+        :`New Leader: ${ctx.leader.name} Takes First`,
+      dek: longReign?`The top spot changes hands as ${ctx.leader.name} knocks off ${ctx.prevLeader.name}, whose ${reign}-day run on top is over.`
+        : reign>=2?`The top spot changes hands as ${ctx.leader.name} moves past ${ctx.prevLeader.name}, ending a ${reign}-day stay at the summit.`
+        :`The top spot changes hands as ${ctx.leader.name} moves past ${ctx.prevLeader.name} on the overall table.`,
       link:{playerId:ctx.leader.teamId}});
   } else if(ctx.leaderN>=2 && ctx.leader){
     add({id:'streak',drama:38+Math.min(42,ctx.leaderN*7),icon:'👑',
@@ -2280,13 +2316,40 @@ function fallbackCopy(text,done){
     document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta); done&&done(); }catch(e){}
 }
 
-/* The most recent fully-settled local day (capped at today in the viewer's
-   zone), or null before any day has finished. */
+/* The pool is scored off US-hosted matches, so we treat America/Denver
+   (Mountain) as the canonical clock for deciding when a day's scores have
+   reliably settled. Day buckets themselves still follow the viewer's chosen
+   zone — only the "is this day safely final?" publish gate is Mountain-anchored.
+   Returns the current Mountain calendar date (YYYY-MM-DD) and hour (0-23). */
+const DEBRIEF_TZ='America/Denver';
+function mtNow(){
+  const now=new Date();
+  let date,hour;
+  try{ date=now.toLocaleDateString('en-CA',{timeZone:DEBRIEF_TZ}); }
+  catch(e){ date=now.toLocaleDateString('en-CA'); }
+  try{
+    const h=new Intl.DateTimeFormat('en-US',{timeZone:DEBRIEF_TZ,hour:'numeric',hourCycle:'h23'})
+      .formatToParts(now).find(p=>p.type==='hour');
+    hour=h?+h.value:now.getHours();
+  }catch(e){ hour=now.getHours(); }
+  return {date,hour};
+}
+
+/* The most recent fully-settled local day that is also safe to publish, or null
+   before any day qualifies. A day is publishable only once it is fully Final
+   AND Mountain time has ticked past midnight into a later date — i.e. the day is
+   over in MT and the 12am–2am MT settle window has begun, by which point the
+   upstream scores have reliably stopped moving. So an edition is never "written"
+   on a day whose games might still be settling; today's recap drops overnight,
+   once its last whistle is truly final. */
 function latestSettledDay(){
   const fixtures=debriefFixtures();
   const days=debriefDays(fixtures);
   const today=dayKey(Date.now());
-  const ds=[...days.values()].filter(d=>d.settled && d.date<=today).map(d=>d.date).sort();
+  const mtToday=mtNow().date;
+  const ds=[...days.values()]
+    .filter(d=>d.settled && d.date<=today && d.date<mtToday)
+    .map(d=>d.date).sort();
   return ds.length?ds[ds.length-1]:null;
 }
 function debriefSeen(date){ try{ return !!localStorage.getItem('wc_recap_seen_'+date); }catch(e){ return false; } }
@@ -2296,16 +2359,18 @@ function openDebrief(date){
   try{ localStorage.setItem('wc_recap_seen_'+date,'1'); }catch(e){}
   syncDebriefButton();
 }
+/* Morning auto-pop window, anchored to Mountain time: from midnight (when a
+   freshly-settled edition first publishes, in the 12am–2am MT settle window)
+   through the morning, so the recap lands like a morning paper regardless of
+   where the viewer is. */
 function debriefAutoWindowOpen(){
-  try{
-    const h=new Intl.DateTimeFormat('en-US',{timeZone:TZ,hour:'numeric',hourCycle:'h23'}).formatToParts(new Date()).find(p=>p.type==='hour');
-    return h ? +h.value < 13 : new Date().getHours()<13;
-  }catch(e){ return new Date().getHours()<13; }
+  return mtNow().hour<13;
 }
 /* Auto-pop once per local day, the first time the app opens after that day has
-   truly settled (every fixture Final), but only before 1pm in the selected
-   display timezone. The date-keyed flag means it never nags twice for the same
-   day, but a brand-new settled day pops fresh during the morning window. */
+   truly settled (every fixture Final) and cleared the Mountain-time publish
+   gate, but only during the morning MT window. The date-keyed flag means it
+   never nags twice for the same day, but a brand-new settled day pops fresh
+   overnight/in the morning. */
 function maybeAutoDebrief(){
   const date=latestSettledDay(); if(!date) return;
   if(!debriefAutoWindowOpen()) return;
