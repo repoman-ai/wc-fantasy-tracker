@@ -658,6 +658,7 @@
   .db-spot.db-storyspot{grid-template-columns:40px minmax(0,1fr)}
   .db-storyspot .db-av{font-size:19px;background:linear-gradient(135deg,#64748b,#94a3b8)}
   .db-storyspot .db-nm{font-size:15px}
+  .db-storyspot .db-sub{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 
   .db-movers{display:grid;grid-template-columns:1fr 1fr;gap:0;margin:10px 0 4px;border:1px solid var(--line);
     border-radius:12px;background:rgba(255,255,255,.58);overflow:hidden}
@@ -702,9 +703,12 @@
   .db-srow:last-child{border-bottom:0;padding-bottom:0}
   .db-srow .r{width:18px;font-family:'Barlow Condensed';font-weight:800;color:var(--muted);font-size:16px;text-align:center;flex:none}
   .db-srow .sn{flex:1;min-width:0;font-weight:700;color:var(--ink);line-height:1.18;overflow-wrap:anywhere}
+  .db-srow .sn small{display:block;color:var(--muted);font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.35px;margin-top:2px}
   .db-srow .sp{font-family:'Barlow Condensed';font-weight:800;color:var(--ink);font-variant-numeric:tabular-nums;flex:none}
   .db-srow .mv{font-size:11.5px;font-weight:800;width:36px;text-align:right;flex:none}
   .db-srow .mv.up{color:var(--up)}.db-srow .mv.down{color:var(--down)}.db-srow .mv.same{color:var(--same)}
+  .db-srow.extra{background:rgba(244,196,48,.11);margin:0 -8px;padding-left:8px;padding-right:8px;border-radius:8px;border-bottom:0}
+  .db-srow.extra + .db-srow.extra{margin-top:2px}
 
   .db-share{display:flex;gap:10px;margin-top:16px}
   .db-share button{flex:1;font:inherit;font-weight:800;font-size:13.5px;cursor:pointer;border-radius:12px;
@@ -835,7 +839,37 @@ let RANKINGS=null, HISTORY=[], PRED={}, MOVE={};
 let charts=[];
 const DEBRIEF_TZ='UTC';
 const DEBRIEF_DAY_CUTOFF_HOURS=8;
-const DEBRIEF_FINAL_WINDOW_MINUTES=120;
+const DEBRIEF_RULES={
+  finalWindowMinutes:120,
+  toughLow:50,
+  toughGap:60,
+  recentLeadDays:3,
+  topThreeTightGap:90,
+  squeezeMinClose:20,
+  squeezeMaxGap:70,
+  loudChaseMinDailyGain:18,
+  promotedCardsWithNext:2,
+  promotedCardsWithoutNext:3,
+  bestCallMaxShared:5,
+  // Auto-open the freshest unseen recap on first load of the day, but stop
+  // auto-popping once it's stale (past early afternoon, viewer-local). It always
+  // stays reachable from the header button; this only governs the pop.
+  autoOpenEndHour:13,
+  // End-of-day "official close" sourcing. The leaderboard is frozen between a
+  // day's last whistle and the next day's first kickoff, so the safe close is a
+  // reading taken at least this long after the last kickoff (so the final match
+  // is definitely over) but before the next day's matches start. Knockout days
+  // allow for extra time + penalties.
+  dayCloseGroupCapMin:130,
+  dayCloseKnockoutCapMin:210
+};
+/* Secondary "official close" path: a snapshot the scraper already trusts as
+   settled and that lands this long after the last whistle. The primary, safer
+   path is debriefFrozenClose (130/210 min, settled-flag-independent); this only
+   adds already-trusted settled readings. Kept below the scraper's own
+   SETTLE_BACKFILL_WINDOW_MINUTES (150) on purpose — those readings are already
+   gated by the scraper's settled flag, so no extra buffer is needed here. */
+const DEBRIEF_FINAL_WINDOW_MINUTES=DEBRIEF_RULES.finalWindowMinutes;
 
 const $ = (s,el=document)=>el.querySelector(s);
 const esc = s => (s==null?'':String(s)).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
@@ -1300,6 +1334,39 @@ function debriefDays(fixtures){
   return days;
 }
 
+/* The safe "official close" window for a recap day: a reading is trustworthy as
+   the end-of-day table only once the day's last match is definitely over
+   (lastKO + a safe cap, longer for knockouts that can go to ET/penalties) and
+   before the next day's first kickoff moves the board again. Returns ms epochs. */
+function debriefDayClose(days, date){
+  const day=days.get(date); if(!day) return null;
+  let lastKO=null, knockout=false;
+  for(const f of day.fixtures){
+    const t=f.kickoff?Date.parse(f.kickoff):NaN;
+    if(!isNaN(t) && (lastKO==null || t>lastKO)) lastKO=t;
+    if(debriefIsKnockout(f.round)) knockout=true;
+  }
+  let nextFirstKO=null;
+  for(const d of days.values()){
+    if(d.date<=date) continue;
+    for(const f of d.fixtures){
+      const t=f.kickoff?Date.parse(f.kickoff):NaN;
+      if(!isNaN(t) && (nextFirstKO==null || t<nextFirstKO)) nextFirstKO=t;
+    }
+  }
+  const capMin=knockout?DEBRIEF_RULES.dayCloseKnockoutCapMin:DEBRIEF_RULES.dayCloseGroupCapMin;
+  return {lastKO, nextFirstKO, capMin};
+}
+/* True when a snapshot timestamp sits in that frozen, post-final dead-zone, so
+   it can be trusted as the day's official close even if the scraper's wider
+   "settled" buffer left it tagged unsettled. */
+function debriefFrozenClose(ts, close){
+  if(!close || close.lastKO==null || isNaN(ts)) return false;
+  if(ts < close.lastKO + close.capMin*60*1000) return false;        // last match definitely done
+  if(close.nextFirstKO!=null && ts >= close.nextFirstKO) return false; // before next day kicks off
+  return true;
+}
+
 function debriefSnapshotAfterDayFinal(snapshot, date, fixtures){
   if(snapshot && snapshot.day_final_snapshot===true) return true;
   if(!snapshot || snapshot.settled===false || !snapshot.timestamp) return false;
@@ -1326,12 +1393,20 @@ function debriefCloneStandings(arr){
 function debriefHistoryStandingsByDate(){
   if(_debriefHistFor===HISTORY && _debriefHistPredFor===PRED && _debriefHistByDate) return _debriefHistByDate;
   const fixtures=debriefFixtures();
+  const days=debriefDays(fixtures);
   const byDate={};
   (HISTORY||[]).forEach(s=>{
-    if(!s || s.settled===false || !Array.isArray(s.players) || !s.players.length) return;
+    if(!s || !Array.isArray(s.players) || !s.players.length) return;
     const date=s.recap_day||debriefHistoryDate(s.timestamp), ts=Date.parse(s.timestamp);
     if(!date || isNaN(ts)) return;
-    const final=debriefSnapshotAfterDayFinal(s,date,fixtures);
+    // A reading counts as the day's official close if it is a normal settled
+    // snapshot past the final whistle, OR a frozen-zone close for a fully-final
+    // day (the scraper's wide settled-buffer can leave a genuine post-final
+    // reading tagged unsettled). Mid-match unsettled readings are still ignored.
+    const day=days.get(date);
+    const frozenFinal=(day && day.settled) ? debriefFrozenClose(ts, debriefDayClose(days,date)) : false;
+    if(s.settled===false && !frozenFinal) return;
+    const final=debriefSnapshotAfterDayFinal(s,date,fixtures) || frozenFinal;
     const cur=byDate[date];
     if(cur && (cur.final&&!final || cur.final===final&&cur.ts>=ts)) return;
     const arr=s.players.map((p,i)=>({
@@ -1366,8 +1441,17 @@ function debriefStandingsAsOf(fixtures, date){
   return debriefHistorySnapshot(date) || debriefCurrentStandings(date);
 }
 
-/* How many consecutive settled days (ending at idx) the same player has led. */
-function debriefLeaderStreak(fixtures, datesAsc, idx){
+/* Whether b is the completed recap day immediately after a (no completed day
+   without an official close sitting between them). Used so streaks and movement
+   never span a gap we can't actually account for. */
+function debriefDaysAdjacent(completedDates, a, b){
+  const ia=completedDates.indexOf(a), ib=completedDates.indexOf(b);
+  return ia>=0 && ib>=0 && ib-ia===1;
+}
+/* How many consecutive settled days (ending at idx) the same player has led.
+   The walk stops at any gap between official days that isn't a true calendar
+   adjacency, so a sparse history can't inflate a "days in a row" count. */
+function debriefLeaderStreak(fixtures, datesAsc, idx, completedDates){
   if(idx<0) return {leadId:null,n:0};
   const cur=debriefStandingsAsOf(fixtures,datesAsc[idx]);
   const lead=cur&&cur.arr[0];
@@ -1376,7 +1460,9 @@ function debriefLeaderStreak(fixtures, datesAsc, idx){
   let n=0;
   for(let i=idx;i>=0;i--){
     const s=debriefStandingsAsOf(fixtures,datesAsc[i]), a=s&&s.arr;
-    if(a&&a[0]&&a[0].teamId===leadId) n++; else break;
+    if(!(a&&a[0]&&a[0].teamId===leadId)) break;
+    n++;
+    if(i>0 && completedDates && !debriefDaysAdjacent(completedDates,datesAsc[i-1],datesAsc[i])) break;
   }
   return {leadId,n};
 }
@@ -1413,12 +1499,12 @@ function debriefMatchLine(best){
 function debriefMvpLine(ctx){
   const tops=(ctx.topPlayers&&ctx.topPlayers.length)?ctx.topPlayers:[ctx.players[0]];
   const top=tops[0], second=ctx.players.find(p=>p.points<top.points);
-  const bits=[tops.length>1?`Shared top score of all ${ctx.players.length}`:`Top scorer of all ${ctx.players.length}`];
-  if(tops.length>1) bits.push(`${tops.length} players level on ${top.points}`);
+  const bits=[tops.length>1?`Shared the day's high score`:`Best score in the pool`];
+  if(tops.length>1) bits.push(`${tops.length} players finished on ${top.points}`);
   else if(second){ const m=top.points-second.points;
-    bits.push(`${m} clear of ${esc(second.name)}`); }
+    bits.push(`${m} ahead of ${esc(second.name)}`); }
   const ex=tops.reduce((a,p)=>a+p.exacts,0);
-  if(ex) bits.push(`${ex} exact${ex>1?'s':''} along the way`);
+  if(ex) bits.push(`${ex} exact score${ex>1?'s':''} along the way`);
   return bits.join(' · ');
 }
 function debriefNameList(names,max){
@@ -1428,6 +1514,406 @@ function debriefNameList(names,max){
   let txt=shown.length<=1?(shown[0]||''):shown.slice(0,-1).join(', ')+' and '+shown[shown.length-1];
   const extra=cleanNames.length-shown.length;
   return extra>0?`${txt} +${extra}`:txt;
+}
+
+/* Deterministic copy variants live here so the detectors below can stay focused
+   on what happened. Variants are picked from date + story + target, so a shared
+   link reads the same way every time without feeling templated day after day. */
+const DEBRIEF_COPY={
+  perfect:({p,ctx})=>[
+    ()=>`Perfect Card: ${p.name} Nails ${ctx.round}`,
+    ()=>`${p.name} Goes Perfect`,
+    ()=>`Nothing Missed: ${p.name}`
+  ],
+  'perfect-dek':({p,ctx})=>[
+    ()=>`${p.exacts} for ${p.nFin}, every finished scoreline right. That is as clean as a day gets.`,
+    ()=>`${p.name} called all ${p.nFin} finished ${matchWord(p.nFin)} exactly right. Properly tidy.`,
+    ()=>`Every finished scoreline on ${ctx.round} landed for ${p.name}: ${p.exacts} exacts from ${p.nFin}.`
+  ],
+  nearperfect:({p})=>[
+    ()=>`One Bounce from Perfect: ${p.name}`,
+    ()=>`${p.name} Nearly Sweeps the Card`,
+    ()=>`So Close for ${p.name}`
+  ],
+  'nearperfect-dek':({p})=>[
+    ()=>`${p.exacts} of ${p.nFin} spot on, with one scoreline keeping the card human.`,
+    ()=>`${p.name} hit ${p.exacts} exacts from ${p.nFin} finished matches. One result kept it mortal.`,
+    ()=>`A near-clean card: ${p.exacts} exact score${p.exacts>1?'s':''}, one miss from the full set.`
+  ],
+  multiexact:({multi})=>[
+    ()=>`${multi.name} Lands ${multi.exacts} Exact Scores`,
+    ()=>`${multi.name} Finds the Bullseyes`,
+    ()=>`${multi.exacts} Exact Calls for ${multi.name}`
+  ],
+  'multiexact-dek':({multi})=>[
+    ()=>`${multi.exacts} scorelines called on the nose in one day${multi.nFin>multi.exacts?` from ${multi.nFin} finished matches`:''} — a sharp card even with the rest of the slate in the mix.`,
+    ()=>`${multi.name} had the scoreline radar working: ${multi.exacts} exacts on the card.`,
+    ()=>`A handy day with the fine margins: ${multi.exacts} exact score${multi.exacts>1?'s':''} for ${multi.name}.`
+  ],
+  'daywinner-tie':({ctx})=>[
+    ()=>`Top Score Shared: ${debriefNameList(ctx.topPlayers.map(p=>p.name),2)}`,
+    ()=>`Nothing Between Them: ${debriefNameList(ctx.topPlayers.map(p=>p.name),2)}`,
+    ()=>`Level at the Top: ${debriefNameList(ctx.topPlayers.map(p=>p.name),2)}`
+  ],
+  'daywinner-big':({top})=>[
+    ()=>`${top.name} Sets the Pace with ${top.points}`,
+    ()=>`${top.name} Opens Up the Day`,
+    ()=>`${top.name} Takes the Daily Honors`
+  ],
+  daywinner:({top})=>[
+    ()=>`${top.name} Claims the Day`,
+    ()=>`${top.name} Tops the Card`,
+    ()=>`${top.name} Leads Today's Scoring`
+  ],
+  'daywinner-tie-dek':({ctx,top})=>[
+    ()=>`${ctx.topPlayers.length} players finished level on ${top.points}. The bragging rights can travel.`,
+    ()=>`${top.points} was the mark, and ${ctx.topPlayers.length} players reached it together.`,
+    ()=>`No separator needed: ${ctx.topPlayers.length} players matched the day's high score on ${top.points}.`
+  ],
+  'daywinner-dek':({top,second,margin})=>[
+    ()=>`${top.points} points, ${margin} ahead of ${second.name}. ${marginPhrase(margin)}`,
+    ()=>`${top.points} points put ${top.name} ahead of ${second.name} by ${margin}.`,
+    ()=>`${top.name} posted ${top.points}, with ${second.name} next best at ${second.points}.`
+  ],
+  'takeover-long':({ctx,reign})=>[
+    ()=>`${ctx.leader.name} Takes Over After ${reign} Days`,
+    ()=>`New Name on Top: ${ctx.leader.name}`,
+    ()=>`${ctx.leader.name} Ends ${ctx.prevLeader.name}'s Run`
+  ],
+  takeover:({ctx})=>[
+    ()=>`New Leader: ${ctx.leader.name}`,
+    ()=>`${ctx.leader.name} Moves Into First`,
+    ()=>`${ctx.leader.name} Takes the Lead`
+  ],
+  'takeover-long-dek':({ctx,reign})=>[
+    ()=>`${ctx.leader.name} moved past ${ctx.prevLeader.name}, closing a ${reign}-day stay at the top.`,
+    ()=>`After ${reign} settled days led by ${ctx.prevLeader.name}, the overall lead now belongs to ${ctx.leader.name}.`,
+    ()=>`${ctx.prevLeader.name}'s ${reign}-day run ends with ${ctx.leader.name} moving into first.`
+  ],
+  'takeover-dek':({ctx,reign})=>reign>=2?[
+    ()=>`${ctx.leader.name} moves past ${ctx.prevLeader.name}, ending a ${reign}-day stay at the summit.`,
+    ()=>`The lead changes hands after ${reign} days, with ${ctx.leader.name} sliding into first.`,
+    ()=>`${ctx.prevLeader.name}'s short stay up top gives way to ${ctx.leader.name}.`
+  ]:[
+    ()=>`${ctx.leader.name} moves past ${ctx.prevLeader.name} on the overall table.`,
+    ()=>`A fresh day brings a fresh leader, with ${ctx.leader.name} now first overall.`,
+    ()=>`${ctx.leader.name} edges ahead of ${ctx.prevLeader.name} for the overall lead.`
+  ],
+  streak:({ctx})=>[
+    ()=>`${ctx.leader.name} Holds First for Day ${ctx.leaderN}`,
+    ()=>`${ctx.leader.name} Keeps the Lead`,
+    ()=>`Still First: ${ctx.leader.name}`
+  ],
+  'streak-dek':({ctx})=>[
+    ()=>`${ctx.leader.name} has led after ${ctx.leaderN} straight settled days, with the chase still in range.`,
+    ()=>`That makes ${ctx.leaderN} settled days in a row on top for ${ctx.leader.name}.`,
+    ()=>`${ctx.leader.name} keeps first place for another day; the pack gets the next card to answer.`
+  ],
+  climber:({c})=>[
+    ()=>`${c.name} Rises ${c.delta} Place${c.delta>1?'s':''}`,
+    ()=>`${c.name} Moves Up ${c.delta}`,
+    ()=>`${c.name} Climbs to ${ordinal(c.rank)}`
+  ],
+  'climber-dek':({c})=>[
+    ()=>`A solid card moves ${c.name} to ${ordinal(c.rank)} overall.`,
+    ()=>`${c.name} gained ground and now sits ${ordinal(c.rank)} on the table.`,
+    ()=>`The table tilts ${c.name}'s way: up ${c.delta}, now ${ordinal(c.rank)} overall.`
+  ],
+  faller:({f})=>[
+    ()=>`${f.name} Slides ${Math.abs(f.delta)} Place${Math.abs(f.delta)>1?'s':''}`,
+    ()=>`${f.name} Drops to ${ordinal(f.rank)}`,
+    ()=>`${f.name} Gives Up Ground`
+  ],
+  'faller-dek':({f})=>[
+    ()=>`A quieter turn leaves ${f.name} ${ordinal(f.rank)} overall. Plenty of football left.`,
+    ()=>`${f.name} slips to ${ordinal(f.rank)}, with the next card already waiting.`,
+    ()=>`A small stumble on the table, not a final verdict: ${f.name} is now ${ordinal(f.rank)}.`
+  ],
+  loudchase:({ctx,top})=>[
+    ()=>`Quiet Leader, Loud Chase: ${top.name}`,
+    ()=>`${top.name} Pulls the Chase Closer`,
+    ()=>`${top.name} Makes the Lead Look Smaller`
+  ],
+  'loudchase-dek':({ctx,top,narrowed})=>[
+    ()=>`${ctx.leader.name} still leads overall, but ${top.name} won the day and trimmed the gap by ${narrowed}.`,
+    ()=>`${top.name}'s daily win cut ${narrowed} points from the lead. ${ctx.leader.name} still has first.`,
+    ()=>`The leader stays the leader, but ${top.name} made the chase ${narrowed} points tighter.`
+  ],
+  allmissed:({miss})=>[
+    ()=>`Nobody Finds ${miss.matchup}`,
+    ()=>`${miss.matchup} Stumps the Pool`,
+    ()=>`Blank Cards on ${miss.matchup}`
+  ],
+  'allmissed-dek':({miss})=>[
+    ()=>`${miss.resultPhrase.charAt(0).toUpperCase()+miss.resultPhrase.slice(1)} left all ${miss.counted} visible picks empty.`,
+    ()=>`All ${miss.counted} visible picks came up empty on ${miss.resultPhrase}. One for the group chat.`,
+    ()=>`The final score dodged every visible pick: ${miss.counted} cards, zero points.`
+  ],
+  lone:({lone})=>[
+    ()=>`Only ${lone.heroName} Found ${lone.matchup}`,
+    ()=>`${lone.heroName} Alone on ${lone.matchup}`,
+    ()=>`One Card Solves ${lone.matchup}`
+  ],
+  'lone-dek':({lone})=>[
+    ()=>`The match fooled almost everyone, but ${lone.heroName} backed ${lone.resultPhrase} and banked the points.`,
+    ()=>`${lone.heroName} was the only visible pick to score from ${lone.resultPhrase}.`,
+    ()=>`One correct read in the whole room: ${lone.heroName} took the points from ${lone.resultPhrase}.`
+  ],
+  consensus:({cons})=>[
+    ()=>`Group Lean Goes Sideways: ${cons.matchup}`,
+    ()=>`The Room Leans Wrong on ${cons.matchup}`,
+    ()=>`${cons.matchup} Turns the Popular Pick Over`
+  ],
+  'consensus-dek':({cons})=>[
+    ()=>`${Math.round(cons.consensusShare*100)}% of the pool leaned ${cons.consensusPhrase}; the final score had other ideas.`,
+    ()=>`Most cards were ${cons.consensusPhrase}, but the points went another way.`,
+    ()=>`The popular read did not cash: ${Math.round(cons.consensusShare*100)}% leaned ${cons.consensusPhrase}.`
+  ],
+  trap:({trap})=>[
+    ()=>`Trap Match: ${trap.matchup}`,
+    ()=>`${trap.matchup} Catches the Room`,
+    ()=>`Tricky One: ${trap.matchup}`
+  ],
+  'trap-dek':({trap})=>[
+    ()=>`The popular side missed, but ${trap.hitCount} players still found points from ${trap.resultPhrase}.`,
+    ()=>`Most of the room missed the side, though ${trap.hitCount} cards still scraped points out of ${trap.resultPhrase}.`,
+    ()=>`${trap.resultPhrase.charAt(0).toUpperCase()+trap.resultPhrase.slice(1)} was awkward for the group; ${trap.hitCount} players came through.`
+  ],
+  bullseye:({cluster})=>[
+    ()=>`Bullseye Club: ${cluster.exactCount} Nailed ${cluster.matchup}`,
+    ()=>`${cluster.exactCount} Exact on ${cluster.matchup}`,
+    ()=>`Scoreline Chorus on ${cluster.matchup}`
+  ],
+  'bullseye-dek':({cluster})=>[
+    ()=>`${cluster.exactCount} players landed the exact score. A tidy little chorus of correct scorelines.`,
+    ()=>`${cluster.matchup} had ${cluster.exactCount} exact calls. Not a bad little club.`,
+    ()=>`The scoreline was not hiding: ${cluster.exactCount} players called it exactly.`
+  ],
+  allhit:({allhit})=>[
+    ()=>`Everyone Got a Piece of ${allhit.matchup}`,
+    ()=>`Clean Room on ${allhit.matchup}`,
+    ()=>`${allhit.matchup} Pays Everybody`
+  ],
+  'allhit-dek':({allhit})=>[
+    ()=>`All ${allhit.counted} visible picks earned points. Some days everyone sees the same thing.`,
+    ()=>`${allhit.counted} visible cards, ${allhit.counted} scoring cards. Nice and tidy.`,
+    ()=>`No blanks here: every visible pick took something from ${allhit.matchup}.`
+  ],
+  cash:({cash})=>[
+    ()=>`Consensus Cashes on ${cash.matchup}`,
+    ()=>`The Popular Read Pays`,
+    ()=>`${cash.matchup} Backs Up the Room`
+  ],
+  'cash-dek':({cash})=>[
+    ()=>`${Math.round(cash.consensusShare*100)}% leaned ${cash.consensusPhrase}, and ${cash.hitCount} players came away with points.`,
+    ()=>`The pool mostly liked ${cash.consensusPhrase}; ${cash.hitCount} cards got paid for it.`,
+    ()=>`This time the room had it: ${cash.hitCount} players scored after leaning ${cash.consensusPhrase}.`
+  ],
+  split:({split})=>[
+    ()=>`Split Room on ${split.matchup}`,
+    ()=>`No Clear Side on ${split.matchup}`,
+    ()=>`${split.matchup} Divides the Cards`
+  ],
+  'split-dek':({split})=>[
+    ()=>`No side had a majority before kickoff. The points landed, but nobody can claim the room was settled.`,
+    ()=>`The pool was properly split before kickoff, and the final score rewarded only part of the room.`,
+    ()=>`No consensus, just a messy pile of picks and a scoreboard that picked a side.`
+  ],
+  noexact:()=>[
+    ()=>`No Bullseyes on the Card`,
+    ()=>`Exact Scores Stay Hidden`,
+    ()=>`Close, But No Exacts`
+  ],
+  'noexact-dek':()=>[
+    ()=>`The outcomes gave out points, but the exact scorelines stayed just out of reach for everyone.`,
+    ()=>`Plenty of points were available, but nobody landed a scoreline exactly.`,
+    ()=>`The pool found results, not scorelines: zero exacts across the card.`
+  ],
+  droughtend:({exacts})=>[
+    ()=>`Exact Score Drought Ends`,
+    ()=>`Bullseyes Are Back`,
+    ()=>`The Exacts Return`
+  ],
+  'droughtend-dek':({exacts})=>[
+    ()=>`After a card with no bullseyes, ${debriefNameList(exacts.map(p=>p.name),3)} brought the exact scores back.`,
+    ()=>`The pool shook off yesterday's blank exact column, led by ${debriefNameList(exacts.map(p=>p.name),3)}.`,
+    ()=>`No exact drought today: ${debriefNameList(exacts.map(p=>p.name),3)} put scorelines on the nose.`
+  ],
+  cleancrew:({clean})=>[
+    ()=>`Clean Sheet Crew: ${clean.length} Scored on Every Match`,
+    ()=>`${clean.length} Cards Score Everywhere`,
+    ()=>`No Blanks for ${clean.length} Players`
+  ],
+  'cleancrew-dek':({clean})=>[
+    ()=>`${debriefNameList(clean.map(p=>p.name),3)} scored on every finished match without needing the exact-card spotlight.`,
+    ()=>`${debriefNameList(clean.map(p=>p.name),3)} found points on every finished match. Efficient work.`,
+    ()=>`Every match paid something for ${debriefNameList(clean.map(p=>p.name),3)}.`
+  ],
+  goalfest:({wild})=>[
+    ()=>`Goalfest: ${wild.matchup}`,
+    ()=>`${wild.totalGoals} Goals in ${wild.matchup}`,
+    ()=>`${wild.matchup} Opens Up`
+  ],
+  'goalfest-dek':({wild})=>[
+    ()=>`${wild.totalGoals} goals in a single match — the wildest result on the card.`,
+    ()=>`${wild.matchup} brought the day's biggest scoreboard with ${wild.totalGoals} goals.`,
+    ()=>`The liveliest scoreline on the card: ${wild.totalGoals} total goals.`
+  ],
+  photo:({ctx,m})=>[
+    ()=>`Photo Finish for the Day's Top Score`,
+    ()=>`${ctx.players[0].name} Edges the Day`,
+    ()=>`Tiny Margin at the Top`
+  ],
+  'photo-dek':({ctx,m})=>[
+    ()=>`${ctx.players[0].name} edged ${ctx.players[1].name} by just ${m}. Tiny margins, loud scoreboard.`,
+    ()=>`Only ${m} point${m===1?'':'s'} separated ${ctx.players[0].name} from ${ctx.players[1].name} for the daily high score.`,
+    ()=>`The day's top score came down to ${m}: ${ctx.players[0].name} just ahead of ${ctx.players[1].name}.`
+  ],
+  tighttop:({gap})=>[
+    ()=>`The Top Three Stay Bunched`,
+    ()=>`Still Tight at the Top`,
+    ()=>`Three in the Lead Pack`
+  ],
+  'tighttop-dek':({gap})=>[
+    ()=>`Only ${gap} points separate first from third. Nobody gets to breathe up there for long.`,
+    ()=>`First to third is just ${gap} points. The front of the table still has elbows out.`,
+    ()=>`${gap} points cover the top three, which keeps the whole thing nicely uncomfortable.`
+  ],
+  squeeze:({squeeze})=>[
+    ()=>`Late Table Squeeze: ${squeeze.b.name} Closes In`,
+    ()=>`${squeeze.b.name} Cuts the Gap`,
+    ()=>`Pressure Builds Behind ${squeeze.a.name}`
+  ],
+  'squeeze-dek':({squeeze})=>[
+    ()=>`The gap to ${squeeze.a.name} shrank by ${squeeze.diff}; it is down to ${squeeze.gap} points on the table.`,
+    ()=>`${squeeze.b.name} trimmed ${squeeze.diff} points from the gap to ${squeeze.a.name}. It is ${squeeze.gap} now.`,
+    ()=>`${squeeze.a.name} still has the place, but ${squeeze.b.name} made it ${squeeze.diff} points closer.`
+  ],
+  quiet:({ctx})=>[
+    ()=>`A Steady ${ctx.round}`,
+    ()=>`No Big Swing Today`,
+    ()=>`The Table Holds Its Shape`
+  ],
+  'quiet-dek':({ctx})=>[
+    ()=>`No table-shaker today${ctx.leader?`; ${ctx.leader.name} keeps the lead`:''}. Everyone resets for the next kickoff.`,
+    ()=>`The standings mostly held, which is its own kind of pool day${ctx.leader?` with ${ctx.leader.name} still first`:''}.`,
+    ()=>`A quieter edition on the table${ctx.leader?`, and ${ctx.leader.name} stays out front`:''}.`
+  ],
+  'tough-card':({low})=>[
+    ()=>`${low.name} finished with the day's low score: ${low.points} pts${low.exacts?`, plus an exact score to soften it`:''}. Next match is a reset.`,
+    ()=>`${low.points} pts was the low mark today${low.exacts?`, though ${low.name} still found an exact score`:''}. Fresh card next time.`,
+    ()=>`A rough one by the numbers: ${low.points} pts${low.exacts?`, with one exact score in the mix`:''}. On to the next kickoff.`
+  ],
+  'preview-unanimousScore':({s})=>[
+    ()=>`Whole Pool Calls ${s.matchup}`,
+    ()=>`One Scoreline for ${s.matchup}`,
+    ()=>`${s.matchup}: One Room, One Score`
+  ],
+  'preview-unanimousScore-dek':({s})=>[
+    ()=>`All ${s.counted} picks share one scoreline: ${debriefNiceScore(s.topScore)}. The whole room is right together or wrong together.`,
+    ()=>`${debriefNiceScore(s.topScore)} is on every visible card. No hiding from this one.`,
+    ()=>`The pool has landed on ${debriefNiceScore(s.topScore)} across all ${s.counted} visible picks.`
+  ],
+  'preview-unanimousWinner':({s})=>[
+    ()=>`One-Way Traffic: ${s.matchup}`,
+    ()=>`The Room Lines Up on ${s.matchup}`,
+    ()=>`${s.matchup} Has a Clear Pool Lean`
+  ],
+  'preview-unanimousWinner-dek':({s,draw})=>draw?[
+    ()=>`All ${s.counted} picks have this one ending level. The whole pool is leaning the same way.`,
+    ()=>`Every visible card is calling a draw. Cozy, or dangerous. We will know soon.`,
+    ()=>`No split here: all ${s.counted} visible picks are on the draw.`
+  ]:[
+    ()=>`All ${s.counted} picks have ${s.winnerName} winning. The whole pool is rooting the same way.`,
+    ()=>`Every visible card backs ${s.winnerName}. That is either comfort or a setup.`,
+    ()=>`${s.winnerName} is the unanimous result pick across ${s.counted} visible cards.`
+  ],
+  'preview-lone':({s})=>[
+    ()=>`${s.loneName} Stands Alone: ${s.matchup}`,
+    ()=>`One Holdout on ${s.matchup}`,
+    ()=>`${s.loneName} Goes Against the Room`
+  ],
+  'preview-lone-dek':({s})=>[
+    ()=>`Everyone else has ${s.winnerName}; ${s.loneName} is the only one calling it differently.`,
+    ()=>`${s.loneName} is the lone visible pick away from ${s.winnerName}. That card will be easy to find after full time.`,
+    ()=>`The room points one way, ${s.loneName} points another. Perfect little subplot.`
+  ],
+  'preview-consensus':({s})=>[
+    ()=>`Crowd Play: ${s.matchup}`,
+    ()=>`Heavy Lean on ${s.matchup}`,
+    ()=>`${s.matchup} Has a Popular Side`
+  ],
+  'preview-consensus-dek':({s,draw})=>draw?[
+    ()=>`${s.topCount} of ${s.counted} picks see this one ending level.`,
+    ()=>`The draw has the room's attention: ${s.topCount} of ${s.counted} visible picks.`,
+    ()=>`A strong draw lean is forming, with ${s.topCount} of ${s.counted} cards on level terms.`
+  ]:[
+    ()=>`${s.topCount} of ${s.counted} picks back ${s.winnerName} to win.`,
+    ()=>`${s.winnerName} is the crowd side: ${s.topCount} of ${s.counted} visible picks.`,
+    ()=>`Most of the room is behind ${s.winnerName}, with ${s.topCount} of ${s.counted} cards leaning that way.`
+  ],
+  'preview-divided':({s})=>[
+    ()=>`Split House: ${s.matchup}`,
+    ()=>`${s.matchup} Divides the Cards`,
+    ()=>`No Clear Favorite: ${s.matchup}`
+  ],
+  'preview-divided-dek':({s})=>[
+    ()=>`The pool can't agree; the picks are split with no clear favorite before kickoff.`,
+    ()=>`No outcome has taken over the room. This one starts with the picks scattered.`,
+    ()=>`A properly divided board before kickoff. The scoreboard gets the deciding vote.`
+  ],
+  'preview-marquee':({head,nd})=>[
+    ()=>`Headliner: ${head.matchup}`,
+    ()=>`Circle This One: ${head.matchup}`,
+    ()=>`${head.matchup} Takes the Spotlight`
+  ],
+  'preview-marquee-dek':({nd})=>[
+    ()=>`The pick of the slate: ${nd.round}. Win or go home.`,
+    ()=>`${nd.round} gives this one a little extra weight.`,
+    ()=>`A knockout-stage headline with the bracket waiting on the answer.`
+  ],
+  'preview-stakes':({lead,chaser,gap})=>[
+    ()=>`Lead on the Line`,
+    ()=>`${chaser.name} Can Make It Interesting`,
+    ()=>`Top Spot Within Reach`
+  ],
+  'preview-stakes-dek':({lead,chaser,gap})=>[
+    ()=>`${chaser.name} sits just ${gap} behind ${lead.name} overall. A big day could swing the top of the table.`,
+    ()=>`${gap} points separate ${lead.name} and ${chaser.name}. The next card has room for trouble.`,
+    ()=>`${lead.name} leads, but ${chaser.name} is close enough for the next slate to matter.`
+  ],
+  'preview-fallback-title':({nd,head})=>[
+    ()=>nd.allTbd?nd.round:(head?head.matchup:nd.round),
+    ()=>nd.allTbd?`Bracket Watch: ${nd.round}`:(head?`Next Slate Starts with ${head.matchup}`:nd.round),
+    ()=>nd.allTbd?`Waiting on ${nd.round}`:(head?`On Deck: ${head.matchup}`:nd.round)
+  ],
+  'preview-fallback-dek':({nd})=>[
+    ()=>nd.allTbd?'The bracket is still taking shape.':`${nd.matchCount} ${matchWord(nd.matchCount)} on the card.`,
+    ()=>nd.allTbd?'The teams are not all set yet, but the next page is coming.':`A compact next slate: ${nd.matchCount} ${matchWord(nd.matchCount)} ready to move the pool.`,
+    ()=>nd.allTbd?'The matchup board is waiting for the bracket to settle.':`${nd.matchCount} ${matchWord(nd.matchCount)} waiting, and plenty of room for movement.`
+  ],
+  'preview-tbd-note':({nd})=>[
+    ()=>`${nd.round} begins; the bracket is still taking shape.`,
+    ()=>`${nd.round} is next, with the matchup board still settling.`,
+    ()=>`Bracket watch for ${nd.round}: the field is still filling in.`
+  ]
+};
+function debriefStableIndex(key,n){
+  if(!n) return 0;
+  let h=2166136261;
+  for(let i=0;i<key.length;i++){
+    h^=key.charCodeAt(i);
+    h=Math.imul(h,16777619);
+  }
+  return (h>>>0)%n;
+}
+function debriefCopy(ctx,id,target,data){
+  const maker=DEBRIEF_COPY[id];
+  const variants=Array.isArray(data)?data:(maker?maker(data||{},ctx):[]);
+  if(!variants||!variants.length) return '';
+  const key=[ctx.date||'',id||'',target||'',ctx.round||''].join('|');
+  const v=variants[debriefStableIndex(key,variants.length)];
+  return typeof v==='function'?v():v;
 }
 function debriefStoryTarget(s){ return s&&s.link&&(s.link.matchKey||s.link.playerId)||''; }
 function debriefStoryFatigueTarget(s){
@@ -1447,17 +1933,16 @@ function debriefDerivedLead(date){
 function debriefRecentLeads(ctx){
   const dates=ctx.settledDates||[], idx=ctx.dayIndex==null?dates.indexOf(ctx.date):ctx.dayIndex;
   if(idx<=0) return [];
-  const recent=dates.slice(Math.max(0,idx-3),idx).reverse();
+  const recent=dates.slice(Math.max(0,idx-DEBRIEF_RULES.recentLeadDays),idx).reverse();
   return recent.map(d=>debriefDerivedLead(d)).filter(Boolean);
 }
 
 /* ---- Tough-day: notability gate + the same anti-repeat memory the headlines
    use, so the card isn't a daily fixture or a repeated pile-on of one person. */
 /* A tough day has to be genuinely bad to earn a card, not just last place: a
-   0-point blank, a low score under DEBRIEF_TOUGH_LOW, or a lowest score adrift
-   of the next-lowest by at least DEBRIEF_TOUGH_GAP (a real outlier, not a tight
+   0-point blank, a low score under DEBRIEF_RULES.toughLow, or a lowest score adrift
+   of the next-lowest by at least DEBRIEF_RULES.toughGap (a real outlier, not a tight
    pack). */
-const DEBRIEF_TOUGH_LOW=50, DEBRIEF_TOUGH_GAP=60;
 /* The day's tough-day subject, but only when the low score clears one of those
    bars. Never the MVP or the steepest faller (they already carry their own
    card). Pure function of the day's context, so it doubles as the derivation
@@ -1468,16 +1953,16 @@ function debriefToughCandidate(ctx){
   const topId=ps[0]&&ps[0].teamId, fallerId=ctx.topFaller&&ctx.topFaller.teamId;
   if(!low || low.teamId===topId || low.teamId===fallerId) return null;
   const blank=low.points===0;
-  const veryLow=low.points<DEBRIEF_TOUGH_LOW;
-  const outlier=!!secondLow && (secondLow.points-low.points)>=DEBRIEF_TOUGH_GAP;
+  const veryLow=low.points<DEBRIEF_RULES.toughLow;
+  const outlier=!!secondLow && (secondLow.points-low.points)>=DEBRIEF_RULES.toughGap;
   return (blank||veryLow||outlier)?{playerId:low.teamId,blank}:null;
 }
 /* debriefToughCandidate for a prior settled day, computed straight from the
    shared fixtures/days scan — no full debriefContext rebuild (that re-flattens
    every player's predictions). Same gate as debriefToughCandidate: 4+ players;
    the lone low scorer, never the day's top or steepest faller (they carry their
-   own card); notable as a 0-point blank, a score under DEBRIEF_TOUGH_LOW, or a
-   DEBRIEF_TOUGH_GAP gap clear of 2nd-lowest. */
+   own card); notable as a 0-point blank, a score under DEBRIEF_RULES.toughLow,
+   or a DEBRIEF_RULES.toughGap gap clear of 2nd-lowest. */
 function debriefToughCandidateFor(fixtures,days,datesAsc,idx){
   const day=days.get(datesAsc[idx]); if(!day || !day.settled) return null;
   const players=debriefDayStats(day);
@@ -1497,8 +1982,8 @@ function debriefToughCandidateFor(fixtures,days,datesAsc,idx){
   }
   if(!low || low.teamId===topId || low.teamId===fallerId) return null;
   const blank=low.points===0;
-  const veryLow=low.points<DEBRIEF_TOUGH_LOW;
-  const outlier=!!secondLow && (secondLow.points-low.points)>=DEBRIEF_TOUGH_GAP;
+  const veryLow=low.points<DEBRIEF_RULES.toughLow;
+  const outlier=!!secondLow && (secondLow.points-low.points)>=DEBRIEF_RULES.toughGap;
   return (blank||veryLow||outlier)?{playerId:low.teamId,blank}:null;
 }
 /* What a prior settled day's tough card would ACTUALLY have shown — mirrors
@@ -1509,7 +1994,8 @@ function debriefToughCandidateFor(fixtures,days,datesAsc,idx){
 function debriefDerivedTough(fixtures,days,datesAsc,idx,priorShown){
   const cand=debriefToughCandidateFor(fixtures,days,datesAsc,idx);
   if(!cand) return null;
-  const recent=[priorShown(idx-1),priorShown(idx-2),priorShown(idx-3)]; // nearest first
+  const recent=[];
+  for(let n=1;n<=DEBRIEF_RULES.recentLeadDays;n++) recent.push(priorShown(idx-n)); // nearest first
   const personTired=recent.some(pid=>pid&&pid===cand.playerId);
   const themeTired=!!recent[0];
   if(personTired) return null;
@@ -1529,7 +2015,7 @@ function debriefRecentTough(ctx){
   const priorShown=i=>{ if(i<0) return null; const d=dates[i];
     if(d in resolved) return resolved[d];
     return null; };
-  const start=Math.max(0,idx-3);
+  const start=Math.max(0,idx-DEBRIEF_RULES.recentLeadDays);
   for(let i=start;i<idx;i++){
     const d=dates[i];
     resolved[d]=debriefDerivedTough(fixtures,days,dates,i,priorShown);
@@ -1605,7 +2091,7 @@ function debriefFixtureStats(day, nameById){
     let hitCount=0, exactCount=0; const wt={H:0,A:0,D:0};
     picks.forEach(pk=>{ if((pk.points||0)>0) hitCount++; if(pk.exact) exactCount++; const w=scoreWinner(pk.score); if(w) wt[w]++; });
     const actualWinner=m?(m.h>m.a?'H':m.a>m.h?'A':'D'):null;
-    let consensusWinner=null,cmax=-1; ['H','A','D'].forEach(k=>{ if(wt[k]>cmax){cmax=wt[k];consensusWinner=k;} });
+    let consensusWinner=null,cmax=-1; if(counted) ['H','A','D'].forEach(k=>{ if(wt[k]>cmax){cmax=wt[k];consensusWinner=k;} });
     const side=s=> s==='H'?f.home : s==='A'?f.away : 'a draw';
     const hero=picks.find(pk=>(pk.points||0)>0);
     const matchup=m?`${f.home} ${m.h}–${m.a} ${f.away}`:`${f.home} v ${f.away}`;
@@ -1635,6 +2121,11 @@ function debriefContext(date){
     .map(d=>d.date).sort();
   const idx=datesAsc.indexOf(date);
   if(idx<0) return null;
+  // Every fully-final recap day, including ones we have no official close for.
+  // Edition numbering and gap detection run off the real calendar, not the
+  // (possibly sparse) set of days we can actually render.
+  const completedDates=[...days.values()].filter(d=>d.settled).map(d=>d.date).sort();
+  const edition=completedDates.filter(d=>d<=date).length;
   const nameById={}; Object.values(PRED).forEach(p=>nameById[p.team_id]=p.name);
 
   const players=debriefDayStats(day);
@@ -1646,8 +2137,14 @@ function debriefContext(date){
 
   const cur=debriefStandingsAsOf(fixtures,date);
   const prevDate=idx>0?datesAsc[idx-1]:null;
-  const prev=prevDate?debriefStandingsAsOf(fixtures,prevDate):null;
-  const prevDay=prevDate?days.get(prevDate):null;
+  // Day-over-day stories (movement, takeover, squeeze, loud chase) are only
+  // honest when the previous official day is the immediately-preceding completed
+  // day. If a completed day sits between them without an official close, we can't
+  // claim "since yesterday", so we drop the prev-day context and those stories
+  // simply don't fire for this edition.
+  const prevAdjacent=!!(prevDate && debriefDaysAdjacent(completedDates,prevDate,date));
+  const prev=(prevDate && prevAdjacent)?debriefStandingsAsOf(fixtures,prevDate):null;
+  const prevDay=(prevDate && prevAdjacent)?days.get(prevDate):null;
   const prevPlayers=prevDay?debriefDayStats(prevDay):[];
   let topClimber=null,topFaller=null;
   if(cur&&prev){
@@ -1658,12 +2155,12 @@ function debriefContext(date){
       if(delta<0 && (!topFaller||delta<topFaller.delta)) topFaller={teamId:r.teamId,name:r.name,delta,rank:r.rank};
     });
   }
-  const ls=debriefLeaderStreak(fixtures,datesAsc,idx);
+  const ls=debriefLeaderStreak(fixtures,datesAsc,idx,completedDates);
   // How long the player who just got knocked off the top had been leading, so a
   // takeover can frame the end of a long reign rather than a plain handover. By
   // construction the leader as of the previous settled day IS prevLeader, so
-  // this streak belongs to them.
-  const prevLs=idx>0?debriefLeaderStreak(fixtures,datesAsc,idx-1):{leadId:null,n:0};
+  // this streak belongs to them. Only meaningful when that day is adjacent.
+  const prevLs=(idx>0 && prevAdjacent)?debriefLeaderStreak(fixtures,datesAsc,idx-1,completedDates):{leadId:null,n:0};
 
   // On deck: the earliest later day that still has unplayed fixtures (skips any
   // rest days), summarised from its visible upcoming picks. Null once the
@@ -1682,14 +2179,19 @@ function debriefContext(date){
   }
 
   return {
-    date, dateLabel:debriefDateLabel(date), round:debriefMajorityRound(day.fixtures), edition:idx+1, nextDay,
+    date, dateLabel:debriefDateLabel(date), round:debriefMajorityRound(day.fixtures), edition, nextDay,
     fixtures:day.fixtures, players, topPlayers, bestCall, bestCalls,
     leader:cur.arr[0], prevLeader:prev?prev.arr[0]:null, leaderN:ls.n, prevLeaderN:prevLs.n,
     topClimber, topFaller, standings:cur.arr, prevById:prev?prev.byId:null,
     settledDates:datesAsc, dayIndex:idx, prevStandings:prev?prev.arr:null,
+    // prevGap: a prior edition exists, but the immediately-preceding completed
+    // day has no official close, so we can't draw day-over-day comparisons.
+    prevGap:idx>0 && !prevAdjacent,
     fixtureStats:debriefFixtureStats(day,nameById), nameById,
     poolExacts:players.reduce((a,p)=>a+p.exacts,0),
-    prevPoolExacts:prevPlayers.reduce((a,p)=>a+p.exacts,0),
+    // null (not 0) when we have no adjacent prior day, so the drought-end story
+    // doesn't misread a missing baseline as "yesterday had no exacts".
+    prevPoolExacts:prevDay?prevPlayers.reduce((a,p)=>a+p.exacts,0):null,
     avgDay:players.length?Math.round(players.reduce((a,p)=>a+p.points,0)/players.length):0,
   };
 }
@@ -1699,17 +2201,18 @@ function debriefStories(ctx,opt){
   opt=opt||{};
   const S=[], add=o=>{ if(o) S.push(o); };
   const fs=ctx.fixtureStats, top=ctx.players[0];
+  const copy=(id,target,variants)=>debriefCopy(ctx,id,target,variants);
 
   ctx.players.forEach(p=>{
     if(p.nFin>=2 && p.exacts===p.nFin){
       add({id:'perfect',drama:96+p.nFin,icon:'🎯',
-        headline:`Perfect Card: ${p.name} Nails ${ctx.round}`,
-        dek:`${p.exacts} for ${p.nFin}, every finished scoreline right. That is as clean as a day gets.`,
+        headline:copy('perfect',p.teamId,{p,ctx}),
+        dek:copy('perfect-dek',p.teamId,{p,ctx}),
         link:{playerId:p.teamId}});
     } else if(p.nFin>=3 && p.exacts===p.nFin-1){
       add({id:'nearperfect',drama:79,icon:'🎯',
-        headline:`One Bounce from Perfect: ${p.name}`,
-        dek:`${p.exacts} of ${p.nFin} spot on, with one scoreline keeping the card human.`,
+        headline:copy('nearperfect',p.teamId,{p,ctx}),
+        dek:copy('nearperfect-dek',p.teamId,{p,ctx}),
         link:{playerId:p.teamId}});
     }
   });
@@ -1729,18 +2232,19 @@ function debriefStories(ctx,opt){
     .sort((a,b)=>b.exacts-a.exacts || b.points-a.points);
   const multi=multiAll.find(p=>p.points!==topScore)||multiAll[0];
   if(multi) add({id:'multiexact',drama:46+Math.min(18,(multi.exacts-1)*9),icon:'🎯',
-    headline:`${multi.name} Lands ${multi.exacts} Exact Scores`,
-    dek:`${multi.exacts} scorelines called on the nose in one day${multi.nFin>multi.exacts?` from ${multi.nFin} finished matches`:''} — a sharp card even with the rest of the slate in the mix.`,
+    headline:copy('multiexact',multi.teamId,{multi}),
+    dek:copy('multiexact-dek',multi.teamId,{multi}),
     link:{playerId:multi.teamId}});
 
   if(top){
     const tied=ctx.topPlayers&&ctx.topPlayers.length>1;
     const second=ctx.players.find(p=>p.points<top.points), margin=second?top.points-second.points:top.points;
     add({id:'daywinner',drama:48+Math.min(28,Math.round(margin/4))+(tied?8:0),icon:'🏆',
-      headline: tied?`Tied at the Top: ${debriefNameList(ctx.topPlayers.map(p=>p.name),2)}`
-        : margin>=60?`${top.name} Sets the Pace with ${top.points}`:`${top.name} Wins the Day`,
-      dek: tied?`${ctx.topPlayers.length} players shared the high score on ${top.points}. No need for a tiebreaker when the bragging rights can travel.`
-        : second?`${top.points} points, clear of ${second.name} by ${margin}. ${marginPhrase(margin)}`
+      headline: tied?copy('daywinner-tie','top',{ctx,top})
+        : margin>=60?copy('daywinner-big',top.teamId,{top,margin})
+        : copy('daywinner',top.teamId,{top,margin}),
+      dek: tied?copy('daywinner-tie-dek','top',{ctx,top})
+        : second?copy('daywinner-dek',top.teamId,{top,second,margin})
         :`${top.points} points and the day's bragging rights.`,
       link:tied?null:{playerId:top.teamId}});
   }
@@ -1750,31 +2254,30 @@ function debriefStories(ctx,opt){
     // day run getting ended is a bigger deal than a one-day lead changing hands.
     const reign=ctx.prevLeaderN||0, longReign=reign>=3;
     add({id:'takeover',drama:93+Math.min(5,Math.max(0,reign-1)),icon:'👑',
-      headline: longReign?`Dethroned: ${ctx.leader.name} Ends ${ctx.prevLeader.name}'s Reign`
-        :`New Leader: ${ctx.leader.name} Takes First`,
-      dek: longReign?`The top spot changes hands as ${ctx.leader.name} knocks off ${ctx.prevLeader.name}, whose ${reign}-day run on top is over.`
-        : reign>=2?`The top spot changes hands as ${ctx.leader.name} moves past ${ctx.prevLeader.name}, ending a ${reign}-day stay at the summit.`
-        :`The top spot changes hands as ${ctx.leader.name} moves past ${ctx.prevLeader.name} on the overall table.`,
+      headline: longReign?copy('takeover-long',ctx.leader.teamId,{ctx,reign})
+        :copy('takeover',ctx.leader.teamId,{ctx,reign}),
+      dek: longReign?copy('takeover-long-dek',ctx.leader.teamId,{ctx,reign})
+        :copy('takeover-dek',ctx.leader.teamId,{ctx,reign}),
       link:{playerId:ctx.leader.teamId}});
   } else if(ctx.leaderN>=2 && ctx.leader){
     add({id:'streak',drama:38+Math.min(42,ctx.leaderN*7),icon:'👑',
-      headline:`${ctx.leader.name} Stays Top for Day ${ctx.leaderN}`,
-      dek:`${ctx.leader.name} has led after ${ctx.leaderN} straight settled days. The chase pack still has plenty of road.`,
+      headline:copy('streak',ctx.leader.teamId,{ctx}),
+      dek:copy('streak-dek',ctx.leader.teamId,{ctx}),
       link:{playerId:ctx.leader.teamId}});
   }
 
   if(ctx.topClimber && ctx.topClimber.delta>=1){
     const c=ctx.topClimber;
     add({id:'climber',drama:28+c.delta*9,icon:'🚀',
-      headline:`${c.name} Climbs ${c.delta} Spot${c.delta>1?'s':''}`,
-      dek:`A strong card moves ${c.name} to ${ordinal(c.rank)} overall. That is how the table starts to tilt.`,
+      headline:copy('climber',c.teamId,{c}),
+      dek:copy('climber-dek',c.teamId,{c}),
       link:{playerId:c.teamId}});
   }
   if(ctx.topFaller && ctx.topFaller.delta<=-1){
     const f=ctx.topFaller;
     add({id:'faller',drama:22+Math.abs(f.delta)*5,icon:'🌦',
-      headline:`${f.name} Gives Back ${Math.abs(f.delta)} Spot${Math.abs(f.delta)>1?'s':''}`,
-      dek:`A quieter turn nudges ${f.name} to ${ordinal(f.rank)} overall. Plenty of football left on the card.`,
+      headline:copy('faller',f.teamId,{f}),
+      dek:copy('faller-dek',f.teamId,{f}),
       link:{playerId:f.teamId}});
   }
 
@@ -1782,109 +2285,109 @@ function debriefStories(ctx,opt){
     const leaderDay=(ctx.players.find(p=>p.teamId===ctx.leader.teamId)||{}).points||0;
     const row=ctx.standings.find(r=>r.teamId===top.teamId), prevRow=ctx.prevById[top.teamId];
     const narrowed=row&&prevRow?Math.max(0,(ctx.prevLeader.points-prevRow.points)-(ctx.leader.points-row.points)):0;
-    if(row&&row.rank>1&&top.points-leaderDay>=18&&narrowed>0){
+    if(row&&row.rank>1&&top.points-leaderDay>=DEBRIEF_RULES.loudChaseMinDailyGain&&narrowed>0){
       add({id:'loudchase',drama:47+Math.min(20,Math.round(narrowed/4)),icon:'📣',
-        headline:`Quiet Leader, Loud Chase: ${top.name}`,
-        dek:`${ctx.leader.name} still leads overall, but ${top.name} won the day and trimmed the gap by ${narrowed}.`,
+        headline:copy('loudchase',top.teamId,{ctx,top,narrowed}),
+        dek:copy('loudchase-dek',top.teamId,{ctx,top,narrowed}),
         link:{playerId:top.teamId}});
     }
   }
 
   const miss=fs.filter(s=>s.counted>=6 && s.hitCount===0).sort((a,b)=>b.counted-a.counted)[0];
   if(miss) add({id:'allmissed',drama:75+(miss.exactCount===0?6:0),icon:'🙈',
-    headline:`The Pool Misses ${miss.matchup}`,
-    dek:`${miss.resultPhrase.charAt(0).toUpperCase()+miss.resultPhrase.slice(1)} left all ${miss.counted} scorecards empty. One for the group chat.`,
+    headline:copy('allmissed',miss.key,{miss}),
+    dek:copy('allmissed-dek',miss.key,{miss}),
     link:{matchKey:miss.key}});
 
   const lone=fs.filter(s=>s.counted>=6 && s.hitCount===1).sort((a,b)=>b.counted-a.counted)[0];
   if(lone) add({id:'lone',drama:67,icon:'🧠',
-    headline:`Only ${lone.heroName} Found ${lone.matchup}`,
-    dek:`The match fooled almost everyone, but ${lone.heroName} backed ${lone.resultPhrase} and banked the points.`,
+    headline:copy('lone',lone.key,{lone}),
+    dek:copy('lone-dek',lone.key,{lone}),
     link:{matchKey:lone.key}});
 
   const cons=fs.filter(s=>s.consensusWinner&&s.actualWinner&&s.consensusWinner!==s.actualWinner&&s.consensusShare>=0.55&&s.hitCount<s.counted)
               .sort((a,b)=>b.consensusShare-a.consensusShare)[0];
   if(cons) add({id:'consensus',drama:50+Math.round(cons.consensusShare*20),icon:'📉',
-    headline:`Group Lean Goes Sideways: ${cons.matchup}`,
-    dek:`${Math.round(cons.consensusShare*100)}% of the pool leaned ${cons.consensusPhrase}; the final score had other ideas.`,
+    headline:copy('consensus',cons.key,{cons}),
+    dek:copy('consensus-dek',cons.key,{cons}),
     link:{matchKey:cons.key}});
 
   const trap=fs.filter(s=>s.consensusWinner&&s.actualWinner&&s.consensusWinner!==s.actualWinner&&s.consensusShare>=0.55&&s.hitCount>1&&s.hitCount/s.counted<=0.35)
                .sort((a,b)=>a.hitCount-b.hitCount || b.consensusShare-a.consensusShare)[0];
   if(trap) add({id:'trap',drama:54+Math.round(trap.consensusShare*12),icon:'🪤',
-    headline:`Trap Match: ${trap.matchup}`,
-    dek:`The popular side missed, but ${trap.hitCount} players still found points from ${trap.resultPhrase}.`,
+    headline:copy('trap',trap.key,{trap}),
+    dek:copy('trap-dek',trap.key,{trap}),
     link:{matchKey:trap.key}});
 
   const cluster=fs.filter(s=>s.exactCount>=3).sort((a,b)=>b.exactCount-a.exactCount)[0];
   if(cluster) add({id:'bullseye',drama:30+cluster.exactCount*3,icon:'🎯',
-    headline:`Bullseye Club: ${cluster.exactCount} Nailed ${cluster.matchup}`,
-    dek:`${cluster.exactCount} players landed the exact score. A tidy little chorus of correct scorelines.`,
+    headline:copy('bullseye',cluster.key,{cluster}),
+    dek:copy('bullseye-dek',cluster.key,{cluster}),
     link:{matchKey:cluster.key}});
 
   const allhit=fs.filter(s=>s.counted>=6 && s.hitCount===s.counted).sort((a,b)=>b.exactCount-a.exactCount || b.counted-a.counted)[0];
   if(allhit) add({id:'allhit',drama:44+Math.min(14,allhit.exactCount*2),icon:'🤝',
-    headline:`Everyone Got a Piece of ${allhit.matchup}`,
-    dek:`All ${allhit.counted} visible picks earned points. Some days everyone sees the same thing.`,
+    headline:copy('allhit',allhit.key,{allhit}),
+    dek:copy('allhit-dek',allhit.key,{allhit}),
     link:{matchKey:allhit.key}});
 
   const cash=fs.filter(s=>s.counted>=6 && s.consensusWinner&&s.actualWinner===s.consensusWinner&&s.consensusShare>=0.6&&s.hitCount/s.counted>=0.6&&s.hitCount<s.counted)
                .sort((a,b)=>b.consensusShare-a.consensusShare || b.hitCount-a.hitCount)[0];
   if(cash) add({id:'cash',drama:39+Math.round(cash.consensusShare*18),icon:'🤝',
-    headline:`Consensus Cashes on ${cash.matchup}`,
-    dek:`${Math.round(cash.consensusShare*100)}% leaned ${cash.consensusPhrase}, and ${cash.hitCount} players came away with points.`,
+    headline:copy('cash',cash.key,{cash}),
+    dek:copy('cash-dek',cash.key,{cash}),
     link:{matchKey:cash.key}});
 
   const split=fs.filter(s=>s.counted>=6 && s.consensusShare<=0.45 && s.hitCount>0 && s.hitCount<s.counted)
                 .sort((a,b)=>a.consensusShare-b.consensusShare || b.totalGoals-a.totalGoals)[0];
   if(split) add({id:'split',drama:35+Math.round((.45-split.consensusShare)*40),icon:'⚖️',
-    headline:`Split Room on ${split.matchup}`,
-    dek:`No side had a majority before kickoff. The points landed, but nobody can claim the room was settled.`,
+    headline:copy('split',split.key,{split}),
+    dek:copy('split-dek',split.key,{split}),
     link:{matchKey:split.key}});
 
   if(ctx.poolExacts===0 && ctx.fixtures.length>=2){
     const hard=fs.slice().sort((a,b)=>a.exactCount-b.exactCount || b.totalGoals-a.totalGoals)[0];
     add({id:'noexact',drama:40,icon:'🎯',
-      headline:`No Bullseyes on the Card`,
-      dek:`The outcomes gave out points, but the exact scorelines stayed just out of reach for everyone.`,
+      headline:copy('noexact','pool',{ctx}),
+      dek:copy('noexact-dek','pool',{ctx}),
       link:hard?{matchKey:hard.key}:null});
   }
 
   if(ctx.prevPoolExacts===0 && ctx.poolExacts>0 && ctx.dayIndex>0){
     const exacts=ctx.players.filter(p=>p.exacts>0).sort((a,b)=>b.exacts-a.exacts || b.points-a.points);
     add({id:'droughtend',drama:42+Math.min(18,ctx.poolExacts*4),icon:'🎯',
-      headline:`Exact Score Drought Ends`,
-      dek:`After a card with no bullseyes, ${debriefNameList(exacts.map(p=>p.name),3)} brought the exact scores back.`,
+      headline:copy('droughtend','pool',{ctx,exacts}),
+      dek:copy('droughtend-dek','pool',{ctx,exacts}),
       link:exacts[0]?{playerId:exacts[0].teamId}:null});
   }
 
   const clean=ctx.players.filter(p=>p.nFin>=2&&p.hits===p.nFin&&p.exacts<p.nFin);
   if(clean.length>=2){
     add({id:'cleancrew',drama:37+Math.min(18,clean.length*4),icon:'✅',
-      headline:`Clean Sheet Crew: ${clean.length} Scored on Every Match`,
-      dek:`${debriefNameList(clean.map(p=>p.name),3)} scored on every finished match without needing the exact-card spotlight.`,
+      headline:copy('cleancrew','pool',{clean}),
+      dek:copy('cleancrew-dek','pool',{clean}),
       link:null});
   }
 
   const wild=fs.slice().sort((a,b)=>b.totalGoals-a.totalGoals)[0];
   if(wild && wild.totalGoals>=4) add({id:'goalfest',drama:18,icon:'⚽',
-    headline:`Goalfest: ${wild.matchup}`,
-    dek:`${wild.totalGoals} goals in a single match — the wildest result on the card.`,
+    headline:copy('goalfest',wild.key,{wild}),
+    dek:copy('goalfest-dek',wild.key,{wild}),
     link:{matchKey:wild.key}});
 
   if(ctx.players.length>=2){
     const m=ctx.players[0].points-ctx.players[1].points;
     if(m>0 && m<=12) add({id:'photo',drama:34,icon:'📸',
-      headline:`Photo Finish for the Day's Top Score`,
-      dek:`${ctx.players[0].name} edged ${ctx.players[1].name} by just ${m}. Tiny margins, loud scoreboard.`,
+      headline:copy('photo','top',{ctx,m}),
+      dek:copy('photo-dek','top',{ctx,m}),
       link:{playerId:ctx.players[0].teamId}});
   }
 
   if(ctx.standings.length>=3){
     const gap=ctx.standings[0].points-ctx.standings[2].points;
-    if(gap>0 && gap<=90) add({id:'tighttop',drama:32+Math.round((90-gap)/6),icon:'🪜',
-      headline:`The Top Three Stay Bunched`,
-      dek:`Only ${gap} points separate first from third. Nobody gets to breathe up there for long.`,
+    if(gap>0 && gap<=DEBRIEF_RULES.topThreeTightGap) add({id:'tighttop',drama:32+Math.round((DEBRIEF_RULES.topThreeTightGap-gap)/6),icon:'🪜',
+      headline:copy('tighttop','top3',{gap}),
+      dek:copy('tighttop-dek','top3',{gap}),
       link:{playerId:ctx.leader&&ctx.leader.teamId}});
   }
 
@@ -1894,17 +2397,17 @@ function debriefStories(ctx,opt){
       const a=ctx.standings[i], b=ctx.standings[i+1], pa=ctx.prevById&&ctx.prevById[a.teamId], pb=ctx.prevById&&ctx.prevById[b.teamId];
       if(!pa||!pb) continue;
       const oldGap=pa.points-pb.points, gap=a.points-b.points, diff=oldGap-gap;
-      if(diff>=20 && gap<=70 && (!squeeze||diff>squeeze.diff)) squeeze={a,b,gap,diff};
+      if(diff>=DEBRIEF_RULES.squeezeMinClose && gap<=DEBRIEF_RULES.squeezeMaxGap && (!squeeze||diff>squeeze.diff)) squeeze={a,b,gap,diff};
     }
     if(squeeze) add({id:'squeeze',drama:36+Math.min(22,Math.round(squeeze.diff/3)),icon:'🪜',
-      headline:`Late Table Squeeze: ${squeeze.b.name} Closes In`,
-      dek:`The gap to ${squeeze.a.name} shrank by ${squeeze.diff}; it is down to ${squeeze.gap} points on the table.`,
+      headline:copy('squeeze',squeeze.b.teamId,{squeeze}),
+      dek:copy('squeeze-dek',squeeze.b.teamId,{squeeze}),
       link:{playerId:squeeze.b.teamId}});
   }
 
   add({id:'quiet',drama:8,icon:'🗞️',
-    headline:`A Steady ${ctx.round} at the Top`,
-    dek:`No table-shaker today${ctx.leader?` — ${ctx.leader.name} keeps the lead`:''}. Everyone resets for the next kickoff.`,
+    headline:copy('quiet',ctx.leader&&ctx.leader.teamId,{ctx}),
+    dek:copy('quiet-dek',ctx.leader&&ctx.leader.teamId,{ctx}),
     link:ctx.leader?{playerId:ctx.leader.teamId}:null});
 
   return debriefStorySort(ctx,S,opt.noFatigue?[]:debriefRecentLeads(ctx));
@@ -1979,6 +2482,7 @@ function debriefPreviewStories(nd, ctx, max){
   max=max||2;
   const S=[], add=o=>{ if(o) S.push(o); };
   const ps=nd.stats||[];
+  const copy=(id,target,data)=>debriefCopy(ctx,`preview-${id}`,target,{...(data||{}),nd,ctx});
 
   ps.forEach(s=>{
     if(!s.teamsKnown || s.counted<6) return;
@@ -1987,34 +2491,32 @@ function debriefPreviewStories(nd, ctx, max){
     if(s.topScoreCount===s.counted){
       // Everyone on the exact same scoreline — the boldest call on the board.
       add({id:'unanimousScore',drama:84,icon:'🎯',
-        headline:`Whole pool calls ${s.matchup}`,
-        dek:`All ${s.counted} picks share one scoreline — ${debriefNiceScore(s.topScore)}. The whole room is right together or wrong together.`,
+        headline:copy('unanimousScore',s.key,{s}),
+        dek:copy('unanimousScore-dek',s.key,{s}),
         link:{matchKey:s.key}});
     } else if(s.topCount===s.counted){
       // Every visible pick on the same result — "everyone's on the same team".
       add({id:'unanimousWinner',drama:70,icon:'🤝',
-        headline:`One-way traffic: ${s.matchup}`,
-        dek:draw?`All ${s.counted} picks have this one ending in a draw — the whole pool's leaning the same way.`
-          :`All ${s.counted} picks have ${s.winnerName} winning — the whole pool's rooting the same way.`,
+        headline:copy('unanimousWinner',s.key,{s,draw}),
+        dek:copy('unanimousWinner-dek',s.key,{s,draw}),
         link:{matchKey:s.key}});
     } else if(s.loneName){
       // One player against everyone else on the result.
       add({id:'lone',drama:68,icon:'🧩',
-        headline:`${s.loneName} stands alone — ${s.matchup}`,
-        dek:`Everyone else has ${s.winnerName}; ${s.loneName} is the only one calling it differently.`,
+        headline:copy('lone',s.key,{s}),
+        dek:copy('lone-dek',s.key,{s}),
         link:{matchKey:s.key}});
     } else if(s.topShare>=0.75){
       // A heavy crowd lean toward one outcome.
       add({id:'consensus',drama:48+Math.round(s.topShare*20),icon:'🔥',
-        headline:`Crowd play: ${s.matchup}`,
-        dek:draw?`${s.topCount} of ${s.counted} picks see this one ending level.`
-          :`${s.topCount} of ${s.counted} picks back ${s.winnerName} to win.`,
+        headline:copy('consensus',s.key,{s,draw}),
+        dek:copy('consensus-dek',s.key,{s,draw}),
         link:{matchKey:s.key}});
     } else if(s.topShare<=0.5){
       // A genuinely split room — no outcome near a majority.
       add({id:'divided',drama:40+Math.round((0.5-s.topShare)*40),icon:'⚔️',
-        headline:`Split house: ${s.matchup}`,
-        dek:`The pool can't agree — the picks are split with no clear favorite before kickoff.`,
+        headline:copy('divided',s.key,{s}),
+        dek:copy('divided-dek',s.key,{s}),
         link:{matchKey:s.key}});
     }
   });
@@ -2023,8 +2525,8 @@ function debriefPreviewStories(nd, ctx, max){
   if(nd.knockout){
     const head=ps.find(s=>s.teamsKnown);
     if(head) add({id:'marquee',drama:38,icon:'⭐',
-      headline:`Headliner: ${head.matchup}`,
-      dek:`The pick of the slate — ${nd.round}. Win or go home.`,
+      headline:copy('marquee',head.key,{head}),
+      dek:copy('marquee-dek',head.key,{head}),
       link:{matchKey:head.key}});
   }
 
@@ -2036,8 +2538,8 @@ function debriefPreviewStories(nd, ctx, max){
     const reach=Math.round(yard*1.2);
     if(gap>0 && yard>0 && gap<=reach){
       add({id:'stakes',drama:34+Math.min(20,Math.round((reach-gap)/8)),icon:'📈',
-        headline:`Lead on the line`,
-        dek:`${chaser.name} sits just ${gap} behind ${lead.name} overall — a big day could swing the top of the table.`,
+        headline:copy('stakes',chaser.teamId,{lead,chaser,gap}),
+        dek:copy('stakes-dek',chaser.teamId,{lead,chaser,gap}),
         link:{playerId:chaser.teamId}});
     }
   }
@@ -2085,11 +2587,24 @@ function debriefShareText(ctx,hero){
   const top=ctx.players[0];
   const tops=(ctx.topPlayers&&ctx.topPlayers.length)?ctx.topPlayers:(top?[top]:[]);
   const lines=[`🗞 The Daily Debrief · ${ctx.dateLabel}`,'',`${hero.icon||'🗞️'} ${hero.headline}`, hero.dek, ''];
-  if(top) lines.push(tops.length>1?`🏆 Top score: ${debriefNameList(tops.map(p=>p.name),3)} shared ${top.points} pts`
-    :`🏆 Top score: ${top.name} with ${top.points} pts`);
+  if(top) lines.push(tops.length>1?`🏆 Top score: ${debriefNameList(tops.map(p=>p.name),3)} finished level on ${top.points} pts`
+    :`🏆 Top score: ${top.name}, ${top.points} pts`);
   if(ctx.leader) lines.push(`👑 ${ctx.leader.name} leads overall`);
   lines.push('', debriefUrl(ctx.date));
   return lines.join('\n').trim();
+}
+function debriefStandingsPanelRows(ctx){
+  const rows=(ctx.standings||[]).slice(0,5).map(r=>({r,note:''}));
+  const seen=new Set(rows.map(x=>x.r.teamId));
+  const addFeatured=(m,note)=>{
+    if(!m || seen.has(m.teamId)) return;
+    const r=(ctx.standings||[]).find(x=>x.teamId===m.teamId);
+    if(!r) return;
+    rows.push({r,note}); seen.add(r.teamId);
+  };
+  addFeatured(ctx.topClimber,'featured riser');
+  addFeatured(ctx.topFaller,'featured slide');
+  return rows;
 }
 
 function renderDebriefView(){
@@ -2111,7 +2626,7 @@ function renderDebriefView(){
   const toughShow=!!debriefToughDecision(ctx);
   const calls=ctx.bestCalls||[], bc=calls[0];
   const mvpIds=new Set(tops.map(p=>p.teamId));
-  const showPod=bc && calls.length<=5 && (calls.length>1 || !mvpIds.has(bc.owner.teamId));
+  const showPod=bc && calls.length<=DEBRIEF_RULES.bestCallMaxShared && (calls.length>1 || !mvpIds.has(bc.owner.teamId));
   const podClub=calls.length>3, podExact=calls.every(c=>c.pk.exact);
   // Sidebar = runner-up stories, minus the hero and minus the ones already given
   // their own dedicated card: 'daywinner' (MVP), 'climber'/'faller' (On the move).
@@ -2168,10 +2683,14 @@ function renderDebriefView(){
 
   // Day's biggest rank riser & steepest faller vs the previous settled board —
   // always shown (adapted from the main board's movers strip). On opening day
-  // there's no prior board to compare, so we say so.
+  // there's no prior board to compare; after a gap (a completed day with no
+  // official close) there's no honest day-over-day baseline either, so we say so.
   let moversHtml;
   if(!ctx.prevById){
-    moversHtml=`<div class="db-movers"><div class="db-mov flat"><div class="db-mov-sub">Opening day: the first table is on the board. Movement starts next settled day.</div></div></div>`;
+    const msg=ctx.prevGap
+      ? `No movement read today: the previous day's official table wasn't captured, so there's nothing to compare against.`
+      : `Opening day: the first table is on the board. Movement starts next settled day.`;
+    moversHtml=`<div class="db-movers"><div class="db-mov flat"><div class="db-mov-sub">${msg}</div></div></div>`;
   } else if(!c && !f){
     moversHtml=`<div class="db-movers"><div class="db-mov flat"><div class="db-mov-sub">The board held its shape: same places, new points.</div></div></div>`;
   } else {
@@ -2196,25 +2715,23 @@ function renderDebriefView(){
   // (debriefToughDecision: a blank, a lone outlier, or well below average) and
   // not repeating — never the same person within 3 days, and not two settled
   // days running.
+  const toughLine=low?debriefCopy(ctx,'tough-card',low.teamId,{low}):'';
   const tough=toughShow?`
     <div class="db-spot tough"${debriefLinkAttr({playerId:low.teamId})}>
       <div class="db-av">${esc((low.name||'?').slice(0,1).toUpperCase())}</div>
       <div class="db-who">
         <div class="db-lbl">Tough day</div>
         <div class="db-nm">${esc(low.name)}</div>
-        <div class="db-sub">Lowest score today with ${low.points} pts${low.exacts?` — but still found an exact score` : ''}. Next match is a reset!</div>
+        <div class="db-sub">${esc(toughLine)}</div>
       </div>
     </div>`:'';
 
-  // Keep the day's recap from looking thin without letting it sprawl: the awards
-  // row holds at most three "today" cards (MVP/pick/tough are the dedicated ones)
-  // plus the single "Next up" card — four max, which is what fits the mobile
-  // layout. When the dedicated cards don't reach three, promote the strongest
-  // runner-up stories out of the "Also today" list to fill the gap. sidebar is
-  // drama/balance sorted and rotates day to day via the fatigue weighting, so the
-  // promoted picks vary; whatever's left stays in "Also today".
+  // Keep the day's recap from looking thin without letting it sprawl. When a
+  // Next up card exists, promote fewer runner-up stories into the awards row and
+  // leave more of the digest in "Also today".
   const dayCards=(top?1:0)+(showPod?1:0)+(toughShow?1:0);
-  const promoteN=Math.max(0,Math.min(3-dayCards,sidebar.length));
+  const maxPromotedCards=ctx.nextDay?DEBRIEF_RULES.promotedCardsWithNext:DEBRIEF_RULES.promotedCardsWithoutNext;
+  const promoteN=Math.max(0,Math.min(maxPromotedCards-dayCards,sidebar.length));
   const promoted=sidebar.slice(0,promoteN);
   const rest=sidebar.slice(promoteN,promoteN+3);
   const promotedHtml=promoted.map(s=>`
@@ -2246,15 +2763,17 @@ function renderDebriefView(){
       </div>
     </section>`;
 
+  const standingsRows=debriefStandingsPanelRows(ctx);
   const standHtml=`
     <section class="db-panel">
       <h4>Standings shift</h4>
-      <div class="db-stand">${ctx.standings.slice(0,5).map(r=>{
+      <div class="db-stand">${standingsRows.map(item=>{
+        const r=item.r;
         const was=ctx.prevById?ctx.prevById[r.teamId]:null;
         const delta=was?was.rank-r.rank:0;
         const mv=!was?{c:'same',t:'NEW'}:delta>0?{c:'up',t:'▲'+delta}:delta<0?{c:'down',t:'▼'+Math.abs(delta)}:{c:'same',t:'—'};
-        return `<div class="db-srow"${debriefLinkAttr({playerId:r.teamId})} style="cursor:pointer">
-          <span class="r">${r.rank}</span><span class="sn">${esc(r.name)}</span>
+        return `<div class="db-srow${item.note?' extra':''}"${debriefLinkAttr({playerId:r.teamId})} style="cursor:pointer">
+          <span class="r">${r.rank}</span><span class="sn">${esc(r.name)}${item.note?`<small>${esc(item.note)}</small>`:''}</span>
           <span class="sp">${r.points}</span><span class="mv ${mv.c}">${mv.t}</span></div>`;
       }).join('')}</div>
     </section>`;
@@ -2282,8 +2801,9 @@ function renderDebriefView(){
     else {
       const head=nd.stats.find(s=>s.teamsKnown);
       icon=nd.knockout?'⭐':'📅';
-      nm=nd.allTbd?nd.round:(head?head.matchup:nd.round);
-      sub=nd.allTbd?'The bracket is still taking shape.':`${nd.matchCount} ${matchWord(nd.matchCount)} on the card.`;
+      const target=head?head.key:nd.date;
+      nm=debriefCopy(ctx,'preview-fallback-title',target,{nd,head});
+      sub=debriefCopy(ctx,'preview-fallback-dek',target,{nd,head});
       if(head) link={matchKey:head.key};
     }
     const nextAttr=link?debriefLinkAttr(link):'';
@@ -2306,7 +2826,7 @@ function renderDebriefView(){
         <div class="db-ontx"><div class="db-onh">${esc(s.headline)}</div><div class="db-ond">${esc(s.dek)}</div></div>
       </div>`).join('');
     const note=!feat && nd.allTbd
-      ? `<div class="db-onnote">${esc(nd.round)} begins — the bracket is still taking shape.</div>` : '';
+      ? `<div class="db-onnote">${esc(debriefCopy(ctx,'preview-tbd-note',nd.date,{nd}))}</div>` : '';
     onDeckHtml=`
       <section class="db-panel db-ondeck">
         <h4>On deck</h4>
@@ -2362,15 +2882,7 @@ function fallbackCopy(text,done){
    recap clock is UTC too. Returns the current Debrief date (YYYY-MM-DD) and
    UTC hour (0-23). */
 function debriefNow(){
-  const now=new Date();
-  let date,hour;
-  date=debriefDayKey(now.toISOString());
-  try{
-    const h=new Intl.DateTimeFormat('en-US',{timeZone:DEBRIEF_TZ,hour:'numeric',hourCycle:'h23'})
-      .formatToParts(now).find(p=>p.type==='hour');
-    hour=h?+h.value:now.getHours();
-  }catch(e){ hour=now.getHours(); }
-  return {date,hour};
+  return {date:debriefDayKey(new Date().toISOString()), hour:hourInZone(DEBRIEF_TZ)};
 }
 
 /* The most recent fully-settled UTC-cutoff day that is also safe to publish, or null
@@ -2395,17 +2907,26 @@ function openDebrief(date){
   try{ localStorage.setItem('wc_recap_seen_'+date,'1'); }catch(e){}
   syncDebriefButton();
 }
-/* Auto-pop window on the Debrief's canonical UTC clock: from the daily cutoff
-   through the next 13 hours. */
+function hourInZone(tz){
+  try{
+    const h=new Intl.DateTimeFormat('en-US',{timeZone:tz,hour:'numeric',hourCycle:'h23'})
+      .formatToParts(new Date()).find(p=>p.type==='hour');
+    return h?+h.value:new Date().getHours();
+  }catch(e){ return new Date().getHours(); }
+}
+/* Auto-pop cutoff follows the viewer's selected display timezone. The recap day
+   itself still uses the canonical UTC cutoff; this only decides whether a fresh
+   unseen Debrief should open by itself. No lower bound — a first open early in
+   the morning still pops — but once it's past early afternoon the recap is stale
+   enough that we leave it to the button rather than popping it. */
 function debriefAutoWindowOpen(){
-  const hour=debriefNow().hour;
-  const elapsed=(hour-DEBRIEF_DAY_CUTOFF_HOURS+24)%24;
-  return elapsed<13;
+  return hourInZone(TZ)<DEBRIEF_RULES.autoOpenEndHour;
 }
 /* Auto-pop once per canonical UTC-cutoff day, the first time the app opens
    after that day has truly settled (every fixture Final) and cleared the UTC
-   publish gate, but only during the cutoff-relative window. The date-keyed flag
-   means it never nags twice for the same day. */
+   publish gate, as long as it's still before the early-afternoon cutoff in the
+   viewer's timezone. The date-keyed flag means it never nags twice for the same
+   day, so this is effectively "open on first load of the day". */
 function maybeAutoDebrief(){
   const date=latestSettledDay(); if(!date) return;
   if(!debriefAutoWindowOpen()) return;
