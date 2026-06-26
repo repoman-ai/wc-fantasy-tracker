@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-26T20:31:21Z",
+  "updated": "2026-06-26T20:41:13Z",
   "pool": {
     "id": "34193",
     "slug": "bobby-and-friends",
@@ -48,7 +48,7 @@
       "name": "Jazmin",
       "flag": "POR",
       "rank": 4,
-      "points": 3331,
+      "points": 3316,
       "exact": 6
     },
     {
@@ -58,7 +58,7 @@
       "name": "JJ",
       "flag": "FRA",
       "rank": 5,
-      "points": 3298,
+      "points": 3283,
       "exact": 6
     },
     {
@@ -68,8 +68,8 @@
       "name": "Alejandro",
       "flag": "BRA",
       "rank": 6,
-      "points": 3187,
-      "exact": 6
+      "points": 3160,
+      "exact": 5
     },
     {
       "team_id": "247535",
@@ -118,7 +118,7 @@
       "name": "remi",
       "flag": "FRA",
       "rank": 11,
-      "points": 2897,
+      "points": 2882,
       "exact": 5
     },
     {
@@ -128,8 +128,8 @@
       "name": "Luisa",
       "flag": "POR",
       "rank": 12,
-      "points": 2860,
-      "exact": 4
+      "points": 2833,
+      "exact": 3
     },
     {
       "team_id": "247525",
@@ -168,7 +168,7 @@
       "name": "Beturompequinielas",
       "flag": "ARG",
       "rank": 16,
-      "points": 2739,
+      "points": 2724,
       "exact": 4
     }
   ]
