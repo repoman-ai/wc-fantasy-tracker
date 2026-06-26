@@ -833,6 +833,9 @@ const FALLBACK_FLAG = "data:image/svg+xml;utf8," + encodeURIComponent(
 
 let RANKINGS=null, HISTORY=[], PRED={}, MOVE={};
 let charts=[];
+const DEBRIEF_TZ='UTC';
+const DEBRIEF_DAY_CUTOFF_HOURS=8;
+const DEBRIEF_FINAL_WINDOW_MINUTES=120;
 
 const $ = (s,el=document)=>el.querySelector(s);
 const esc = s => (s==null?'':String(s)).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
@@ -849,9 +852,8 @@ function flagImg(code, cls='flag'){
 const DETECTED_TZ = (()=>{ try{ return Intl.DateTimeFormat().resolvedOptions().timeZone||'UTC'; }catch(e){ return 'UTC'; } })();
 let TZ_PREF = (()=>{ try{ return localStorage.getItem('wc_tz')||'auto'; }catch(e){ return 'auto'; } })();
 let TZ = TZ_PREF==='auto'?DETECTED_TZ:TZ_PREF;
-/* Curated picker list: the two real venue zones for WC2026 plus a spread of
-   common world zones, deduped against the detected zone. */
-const TZ_ZONES=['Pacific/Honolulu','America/Anchorage','America/Los_Angeles','America/Denver',
+/* Curated picker list: common world zones, deduped against the detected zone. */
+const TZ_ZONES=['Pacific/Honolulu','America/Anchorage','America/Los_Angeles',
   'America/Chicago','America/New_York','America/Sao_Paulo','UTC','Europe/London','Europe/Amsterdam',
   'Europe/Athens','Africa/Johannesburg','Asia/Dubai','Asia/Kolkata','Asia/Singapore','Asia/Tokyo','Australia/Sydney'];
 function nowAbbr(tz){
@@ -999,10 +1001,12 @@ async function init(){
     renderRecent();
     refreshTopView();
   }, 20000);
-  // Show/refresh the Debrief button, then auto-pop the day's edition once if the
-  // latest settled day hasn't been seen yet (date-keyed in localStorage).
+  // Show/refresh the Debrief button, then open a linked edition or auto-pop the
+  // latest settled UTC edition once if it hasn't been seen yet.
   syncDebriefButton();
-  maybeAutoDebrief();
+  const linkedDebrief=debriefDateFromUrl();
+  if(linkedDebrief) openDebrief(linkedDebrief);
+  else maybeAutoDebrief();
 }
 
 // Refresh whichever view is on top of the modal stack, preserving the overlay's
@@ -1220,8 +1224,8 @@ function resCard(m,i){
 /* ================= The Debrief (daily recap) =================
    A once-a-day "front page" for the pool: a drama-ranked headline plus an MVP
    spotlight, a soft tough-day note, runner-up stories, the day's numbers, and a
-   standings shift. Everything is computed client-side from predictions.json —
-   which reconciles exactly to the official standings — so no backend is needed.
+   standings shift. Match stories come from predictions.json, while overall
+   standings and leader history come only from the scraped leaderboard snapshots.
 
    The story engine is intentionally pluggable: each detector is a pure function
    of the day's context that returns a candidate story (with a 0-100 `drama`
@@ -1245,10 +1249,21 @@ function debriefDateLabel(date,fmt){
   return d.toLocaleDateString(undefined,opts);
 }
 
+function debriefUtcDate(iso){
+  const d=new Date(iso);
+  if(isNaN(d)) return '';
+  return d.toLocaleDateString('en-CA',{timeZone:DEBRIEF_TZ});
+}
+function debriefDayKey(iso){
+  const t=Date.parse(iso);
+  if(isNaN(t)) return '';
+  return debriefUtcDate(t-DEBRIEF_DAY_CUTOFF_HOURS*60*60*1000);
+}
+
 /* Flatten every player's prediction pages into one fixture list keyed by the
-   global fixture_number, each fixture carrying every player's pick and the local
-   calendar day it belongs to (in the viewer's selected zone — derived from
-   kickoff_utc, never the baked kickoff_local, which uses mixed source zones). */
+   global fixture_number, each fixture carrying every player's pick and the
+   canonical UTC-cutoff day it belongs to — derived from kickoff_utc, never the
+   baked kickoff_local, which uses mixed source zones. */
 function debriefFixtures(){
   const fixtures=new Map();
   Object.values(PRED).forEach(p=>{
@@ -1260,7 +1275,7 @@ function debriefFixtures(){
            home:teamName(fx.match&&fx.match.home), away:teamName(fx.match&&fx.match.away),
            homeCode:fx.match&&fx.match.home&&fx.match.home.code, awayCode:fx.match&&fx.match.away&&fx.match.away.code,
            status:fx.status, actual:clean(fx.actual_score||''),
-           day:fx.kickoff_utc?dayKey(fx.kickoff_utc):null, picks:[]};
+           day:fx.kickoff_utc?debriefDayKey(fx.kickoff_utc):null, picks:[]};
         fixtures.set(num,f);
       }
       f.picks.push({teamId:p.team_id, name:p.name, flag:p.flag,
@@ -1272,7 +1287,7 @@ function debriefFixtures(){
   return fixtures;
 }
 
-/* Group fixtures into local days; a day is "settled" once it has fixtures and
+/* Group fixtures into UTC-cutoff days; a day is "settled" once it has fixtures and
    every one of them is Final (status FT) — i.e. no kickoff still pending. */
 function debriefDays(fixtures){
   const days=new Map();
@@ -1285,56 +1300,84 @@ function debriefDays(fixtures){
   return days;
 }
 
-/* Each player's points the official board credits beyond their per-fixture
-   points — round/bracket subtotals the source attributes to a whole round, not
-   to any single fixture (e.g. Round-of-32 qualification points that already
-   count on the leaderboard before any R32 match kicks off). Derived as
-   grand_total minus the sum of fixture points, so folding it back in makes the
-   recomputed standings reconcile EXACTLY to the official leaderboard rather than
-   floating up whoever happened to score most from match scorelines alone.
-   Memoised on the current PRED so the many per-day standings scans stay cheap. */
-let _debriefBonus=null,_debriefBonusFor=null;
-function debriefBonusById(){
-  if(_debriefBonusFor===PRED && _debriefBonus) return _debriefBonus;
-  const bonus={};
-  Object.values(PRED).forEach(p=>{
-    let fx=0;
-    (p.matchdays||[]).forEach(md=>(md.fixtures||[]).forEach(f=>{ fx+=(f.points||0); }));
-    const gt=p.grand_total!=null?p.grand_total:(p.points!=null?p.points:fx);
-    bonus[p.team_id]=gt-fx;
-  });
-  _debriefBonus=bonus; _debriefBonusFor=PRED; return bonus;
+function debriefSnapshotAfterDayFinal(snapshot, date, fixtures){
+  if(snapshot && snapshot.day_final_snapshot===true) return true;
+  if(!snapshot || snapshot.settled===false || !snapshot.timestamp) return false;
+  let latest=null;
+  for(const f of fixtures.values()){
+    if(f.day!==date || !f.kickoff) continue;
+    const t=Date.parse(f.kickoff);
+    if(!isNaN(t) && (latest==null || t>latest)) latest=t;
+  }
+  if(latest==null) return false;
+  const ts=Date.parse(snapshot.timestamp);
+  return !isNaN(ts) && ts>=latest+DEBRIEF_FINAL_WINDOW_MINUTES*60*1000;
 }
 
-/* Overall standings as of the end of a given local day: sum each player's
-   fixture points for every fixture on or before that date, add their round/
-   bracket bonus, then rank. With the bonus folded in this matches the official
-   board exactly, so we never depend on the noisy history.json snapshot cadence
-   for day-over-day movement, takeovers, or leader streaks. (The bonus is a
-   constant per player, so it never distorts day-over-day rank *deltas* — those
-   stay driven purely by match results.) */
+let _debriefHistByDate=null,_debriefHistFor=null,_debriefHistPredFor=null;
+function debriefHistoryDate(timestamp){
+  return debriefDayKey(timestamp);
+}
+function debriefCloneStandings(arr){
+  const out=arr.map((r,i)=>({...r,rank:r.rank||i+1}));
+  const byId={}; out.forEach(r=>{ byId[r.teamId]=r; });
+  return {arr:out, byId};
+}
+function debriefHistoryStandingsByDate(){
+  if(_debriefHistFor===HISTORY && _debriefHistPredFor===PRED && _debriefHistByDate) return _debriefHistByDate;
+  const fixtures=debriefFixtures();
+  const byDate={};
+  (HISTORY||[]).forEach(s=>{
+    if(!s || s.settled===false || !Array.isArray(s.players) || !s.players.length) return;
+    const date=s.recap_day||debriefHistoryDate(s.timestamp), ts=Date.parse(s.timestamp);
+    if(!date || isNaN(ts)) return;
+    const final=debriefSnapshotAfterDayFinal(s,date,fixtures);
+    const cur=byDate[date];
+    if(cur && (cur.final&&!final || cur.final===final&&cur.ts>=ts)) return;
+    const arr=s.players.map((p,i)=>({
+      teamId:p.team_id, name:p.name, flag:p.flag, points:p.points||0,
+      exact:p.exact||0, rank:p.rank||i+1
+    }));
+    byDate[date]={date,ts,arr,final};
+  });
+  _debriefHistByDate=byDate; _debriefHistFor=HISTORY; _debriefHistPredFor=PRED; return byDate;
+}
+function debriefHistorySnapshot(date){
+  const s=debriefHistoryStandingsByDate()[date];
+  return s&&s.final?debriefCloneStandings(s.arr):null;
+}
+
+function debriefCurrentStandings(date){
+  if(!RANKINGS || !Array.isArray(RANKINGS.players) || !RANKINGS.players.length) return null;
+  const updated=RANKINGS.updated ? debriefHistoryDate(RANKINGS.updated) : '';
+  if(updated!==date) return null;
+  const arr=RANKINGS.players.map((p,i)=>({
+    teamId:p.team_id, name:p.name, flag:p.flag, points:p.points||0,
+    exact:p.exact||0, rank:p.rank||i+1
+  }));
+  return debriefCloneStandings(arr);
+}
+
+/* Overall standings as of the end of a UTC-cutoff day. These come only from the
+   official scraped leaderboard: settled history snapshots first, then the
+   current rankings file when it belongs to the requested day. The Debrief never
+   reconstructs overall leaderboard points from prediction rows. */
 function debriefStandingsAsOf(fixtures, date){
-  const tot={}, names={};
-  for(const f of fixtures.values()){
-    if(!f.day || f.day>date) continue;
-    f.picks.forEach(pk=>{ tot[pk.teamId]=(tot[pk.teamId]||0)+(pk.points||0); names[pk.teamId]=pk.name; });
-  }
-  const bonus=debriefBonusById();
-  Object.keys(tot).forEach(id=>{ tot[id]+=(bonus[id]||0); });
-  const arr=Object.keys(tot).map(id=>({teamId:id,name:names[id],points:tot[id]}));
-  arr.sort((a,b)=>b.points-a.points);
-  const byId={}; arr.forEach((r,i)=>{ r.rank=i+1; byId[r.teamId]=r; });
-  return {arr, byId};
+  return debriefHistorySnapshot(date) || debriefCurrentStandings(date);
 }
 
 /* How many consecutive settled days (ending at idx) the same player has led. */
 function debriefLeaderStreak(fixtures, datesAsc, idx){
   if(idx<0) return {leadId:null,n:0};
-  const lead=debriefStandingsAsOf(fixtures,datesAsc[idx]).arr[0];
+  const cur=debriefStandingsAsOf(fixtures,datesAsc[idx]);
+  const lead=cur&&cur.arr[0];
   if(!lead) return {leadId:null,n:0};
   const leadId=lead.teamId;
   let n=0;
-  for(let i=idx;i>=0;i--){ const a=debriefStandingsAsOf(fixtures,datesAsc[i]).arr; if(a[0]&&a[0].teamId===leadId) n++; else break; }
+  for(let i=idx;i>=0;i--){
+    const s=debriefStandingsAsOf(fixtures,datesAsc[i]), a=s&&s.arr;
+    if(a&&a[0]&&a[0].teamId===leadId) n++; else break;
+  }
   return {leadId,n};
 }
 
@@ -1386,7 +1429,6 @@ function debriefNameList(names,max){
   const extra=cleanNames.length-shown.length;
   return extra>0?`${txt} +${extra}`:txt;
 }
-const DEBRIEF_LEAD_KEY='wc_recap_leads_v1';
 function debriefStoryTarget(s){ return s&&s.link&&(s.link.matchKey||s.link.playerId)||''; }
 function debriefStoryFatigueTarget(s){
   if(!s||!s.link) return '';
@@ -1397,19 +1439,6 @@ function debriefStoryFatigueTarget(s){
 function debriefLeadRecord(date,s){
   return s?{date,id:s.id,target:debriefStoryFatigueTarget(s),headline:s.headline}:null;
 }
-function debriefLeadStore(){
-  try{
-    const a=JSON.parse(localStorage.getItem(DEBRIEF_LEAD_KEY)||'[]');
-    return Array.isArray(a)?a.filter(r=>r&&r.date&&r.id).slice(-18):[];
-  }catch(e){ return []; }
-}
-function debriefSaveLead(ctx,hero){
-  const rec=debriefLeadRecord(ctx&&ctx.date,hero); if(!rec) return;
-  try{
-    const a=debriefLeadStore().filter(r=>r.date!==rec.date);
-    a.push(rec); localStorage.setItem(DEBRIEF_LEAD_KEY,JSON.stringify(a.slice(-18)));
-  }catch(e){}
-}
 function debriefDerivedLead(date){
   const ctx=debriefContext(date); if(!ctx) return null;
   const stories=debriefStories(ctx,{noFatigue:true});
@@ -1419,13 +1448,11 @@ function debriefRecentLeads(ctx){
   const dates=ctx.settledDates||[], idx=ctx.dayIndex==null?dates.indexOf(ctx.date):ctx.dayIndex;
   if(idx<=0) return [];
   const recent=dates.slice(Math.max(0,idx-3),idx).reverse();
-  const stored={}; debriefLeadStore().forEach(r=>{ stored[r.date]=r; });
-  return recent.map(d=>stored[d]&&stored[d].id?stored[d]:debriefDerivedLead(d)).filter(Boolean);
+  return recent.map(d=>debriefDerivedLead(d)).filter(Boolean);
 }
 
 /* ---- Tough-day: notability gate + the same anti-repeat memory the headlines
    use, so the card isn't a daily fixture or a repeated pile-on of one person. */
-const DEBRIEF_TOUGH_KEY='wc_recap_tough_v1';
 /* A tough day has to be genuinely bad to earn a card, not just last place: a
    0-point blank, a low score under DEBRIEF_TOUGH_LOW, or a lowest score adrift
    of the next-lowest by at least DEBRIEF_TOUGH_GAP (a real outlier, not a tight
@@ -1445,15 +1472,6 @@ function debriefToughCandidate(ctx){
   const outlier=!!secondLow && (secondLow.points-low.points)>=DEBRIEF_TOUGH_GAP;
   return (blank||veryLow||outlier)?{playerId:low.teamId,blank}:null;
 }
-function debriefToughStore(){
-  try{ const a=JSON.parse(localStorage.getItem(DEBRIEF_TOUGH_KEY)||'[]');
-    return Array.isArray(a)?a.filter(r=>r&&r.date).slice(-12):[]; }catch(e){ return []; }
-}
-function debriefSaveTough(date,playerId){
-  if(!date) return;
-  try{ const a=debriefToughStore().filter(r=>r.date!==date);
-    a.push({date,playerId:playerId||null}); localStorage.setItem(DEBRIEF_TOUGH_KEY,JSON.stringify(a.slice(-12))); }catch(e){}
-}
 /* debriefToughCandidate for a prior settled day, computed straight from the
    shared fixtures/days scan — no full debriefContext rebuild (that re-flattens
    every player's predictions). Same gate as debriefToughCandidate: 4+ players;
@@ -1471,9 +1489,11 @@ function debriefToughCandidateFor(fixtures,days,datesAsc,idx){
   if(idx>0){
     const cur=debriefStandingsAsOf(fixtures,datesAsc[idx]);
     const prev=debriefStandingsAsOf(fixtures,datesAsc[idx-1]);
-    let worst=0;
-    cur.arr.forEach(r=>{ const was=prev.byId[r.teamId]; if(!was) return;
-      const delta=was.rank-r.rank; if(delta<0 && delta<worst){ worst=delta; fallerId=r.teamId; } });
+    if(cur&&prev){
+      let worst=0;
+      cur.arr.forEach(r=>{ const was=prev.byId[r.teamId]; if(!was) return;
+        const delta=was.rank-r.rank; if(delta<0 && delta<worst){ worst=delta; fallerId=r.teamId; } });
+    }
   }
   if(!low || low.teamId===topId || low.teamId===fallerId) return null;
   const blank=low.points===0;
@@ -1497,29 +1517,22 @@ function debriefDerivedTough(fixtures,days,datesAsc,idx,priorShown){
   return cand.playerId;
 }
 /* Tough-day subject ACTUALLY shown on each of the up-to-3 prior settled days —
-   from the saved record, or, on a cold cache, the decision that would have
-   shown (mirroring debriefToughDecision), not the bare candidate. Nearest
-   first; a null playerId means "no tough card that day". Mirrors
-   debriefRecentLeads / debriefDerivedLead. Reuses a single fixtures/days scan
-   and resolves the window oldest->newest so each derived day sees the already-
-   resolved earlier days (plus stored records beyond the window) — no full
-   per-day context rebuild and no recursion. */
+   derived from data, not browser-local memory, so every viewer gets the same
+   edition. Nearest first; a null playerId means "no tough card that day". */
 function debriefRecentTough(ctx){
   const dates=ctx.settledDates||[], idx=ctx.dayIndex==null?dates.indexOf(ctx.date):ctx.dayIndex;
   if(idx<=0) return [];
-  const stored={}; debriefToughStore().forEach(r=>{ stored[r.date]=r; });
   const fixtures=debriefFixtures(), days=debriefDays(fixtures);
   const resolved={};
-  // Subject (playerId|null) for settled day i: a resolved/stored record, else
-  // null (a day older than the window we never derived). Read by derivations.
+  // Subject (playerId|null) for settled day i: a resolved record, else null.
+  // Read by derivations.
   const priorShown=i=>{ if(i<0) return null; const d=dates[i];
     if(d in resolved) return resolved[d];
-    return stored[d]?(stored[d].playerId||null):null; };
+    return null; };
   const start=Math.max(0,idx-3);
   for(let i=start;i<idx;i++){
     const d=dates[i];
-    resolved[d]=stored[d]?(stored[d].playerId||null)
-      :debriefDerivedTough(fixtures,days,dates,i,priorShown);
+    resolved[d]=debriefDerivedTough(fixtures,days,dates,i,priorShown);
   }
   const out=[];
   for(let i=idx-1;i>=start;i--) out.push({date:dates[i], playerId:resolved[dates[i]]});
@@ -1617,8 +1630,11 @@ function debriefContext(date){
   const fixtures=debriefFixtures();
   const days=debriefDays(fixtures);
   const day=days.get(date); if(!day || !day.settled) return null;
-  const datesAsc=[...days.values()].filter(d=>d.settled).map(d=>d.date).sort();
+  const datesAsc=[...days.values()]
+    .filter(d=>d.settled && debriefStandingsAsOf(fixtures,d.date))
+    .map(d=>d.date).sort();
   const idx=datesAsc.indexOf(date);
+  if(idx<0) return null;
   const nameById={}; Object.values(PRED).forEach(p=>nameById[p.team_id]=p.name);
 
   const players=debriefDayStats(day);
@@ -1634,7 +1650,7 @@ function debriefContext(date){
   const prevDay=prevDate?days.get(prevDate):null;
   const prevPlayers=prevDay?debriefDayStats(prevDay):[];
   let topClimber=null,topFaller=null;
-  if(prev){
+  if(cur&&prev){
     cur.arr.forEach(r=>{
       const was=prev.byId[r.teamId]; if(!was) return;
       const delta=was.rank-r.rank;
@@ -2038,6 +2054,33 @@ function debriefPreviewStories(nd, ctx, max){
   return out;
 }
 
+function debriefUrl(date){
+  try{
+    const u=new URL(location.href);
+    u.searchParams.set('debrief',date);
+    u.hash='';
+    return u.toString();
+  }catch(e){ return typeof location!=='undefined'?location.href:''; }
+}
+function debriefDateFromUrl(){
+  try{
+    const d=new URL(location.href).searchParams.get('debrief');
+    return /^\d{4}-\d{2}-\d{2}$/.test(d||'')?d:null;
+  }catch(e){ return null; }
+}
+function debriefEmptyHtml(date){
+  const fixtures=debriefFixtures(), days=debriefDays(fixtures);
+  const target=date || [...days.values()].filter(d=>d.settled).map(d=>d.date).sort().pop();
+  if(target){
+    const day=days.get(target), standings=debriefStandingsAsOf(fixtures,target);
+    if(day&&day.settled&&!standings){
+      return `Scores are final for this recap day.<br>Waiting for the official leaderboard snapshot before writing the Debrief.`;
+    }
+    if(!day) return `No match day found for ${esc(target)}.<br>Check the shared Debrief link or open the latest edition.`;
+  }
+  return `No settled match day to report yet.<br>The Daily Debrief drops once the day's last final whistle has blown.`;
+}
+
 function debriefShareText(ctx,hero){
   const top=ctx.players[0];
   const tops=(ctx.topPlayers&&ctx.topPlayers.length)?ctx.topPlayers:(top?[top]:[]);
@@ -2045,7 +2088,7 @@ function debriefShareText(ctx,hero){
   if(top) lines.push(tops.length>1?`🏆 Top score: ${debriefNameList(tops.map(p=>p.name),3)} shared ${top.points} pts`
     :`🏆 Top score: ${top.name} with ${top.points} pts`);
   if(ctx.leader) lines.push(`👑 ${ctx.leader.name} leads overall`);
-  lines.push('', (typeof location!=='undefined'?location.href:''));
+  lines.push('', debriefUrl(ctx.date));
   return lines.join('\n').trim();
 }
 
@@ -2055,12 +2098,11 @@ function renderDebriefView(){
   const ctx=date?debriefContext(date):null;
   if(!ctx){
     modal.innerHTML=`<div class="mhead${hasback?' hasback':''}"><div><h3>🗞 The Daily Debrief</h3><div class="meta">Daily recap</div></div>${modalControls()}</div>`+
-      `<div class="mbody"><div class="db-empty">No settled match day to report yet.<br>The Daily Debrief drops once the day's last final whistle has blown.</div></div>`;
+      `<div class="mbody"><div class="db-empty">${debriefEmptyHtml(date)}</div></div>`;
     wireModalControls(modal); return;
   }
   const stories=debriefStories(ctx);
   const hero=stories[0];
-  debriefSaveLead(ctx,hero);
   const top=ctx.players[0];
   const tops=(ctx.topPlayers&&ctx.topPlayers.length)?ctx.topPlayers:(top?[top]:[]);
   const dayPtsFor=id=>{ const p=ctx.players.find(x=>x.teamId===id); return p?p.points:0; };
@@ -2153,8 +2195,7 @@ function renderDebriefView(){
   // Soft reset-day note (lowest day score). Only when it's a genuine standout
   // (debriefToughDecision: a blank, a lone outlier, or well below average) and
   // not repeating — never the same person within 3 days, and not two settled
-  // days running. Record the appearance so that memory carries forward.
-  if(toughShow) debriefSaveTough(ctx.date, low.teamId);
+  // days running.
   const tough=toughShow?`
     <div class="db-spot tough"${debriefLinkAttr({playerId:low.teamId})}>
       <div class="db-av">${esc((low.name||'?').slice(0,1).toUpperCase())}</div>
@@ -2316,17 +2357,14 @@ function fallbackCopy(text,done){
     document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta); done&&done(); }catch(e){}
 }
 
-/* The pool is scored off US-hosted matches, so we treat America/Denver
-   (Mountain) as the canonical clock for deciding when a day's scores have
-   reliably settled. Day buckets themselves still follow the viewer's chosen
-   zone — only the "is this day safely final?" publish gate is Mountain-anchored.
-   Returns the current Mountain calendar date (YYYY-MM-DD) and hour (0-23). */
-const DEBRIEF_TZ='America/Denver';
-function mtNow(){
+/* The Debrief uses one canonical UTC-cutoff clock for buckets, history
+   snapshots, and publish timing. Source scrape timestamps are UTC, so the
+   recap clock is UTC too. Returns the current Debrief date (YYYY-MM-DD) and
+   UTC hour (0-23). */
+function debriefNow(){
   const now=new Date();
   let date,hour;
-  try{ date=now.toLocaleDateString('en-CA',{timeZone:DEBRIEF_TZ}); }
-  catch(e){ date=now.toLocaleDateString('en-CA'); }
+  date=debriefDayKey(now.toISOString());
   try{
     const h=new Intl.DateTimeFormat('en-US',{timeZone:DEBRIEF_TZ,hour:'numeric',hourCycle:'h23'})
       .formatToParts(now).find(p=>p.type==='hour');
@@ -2335,20 +2373,18 @@ function mtNow(){
   return {date,hour};
 }
 
-/* The most recent fully-settled local day that is also safe to publish, or null
+/* The most recent fully-settled UTC-cutoff day that is also safe to publish, or null
    before any day qualifies. A day is publishable only once it is fully Final
-   AND Mountain time has ticked past midnight into a later date — i.e. the day is
-   over in MT and the 12am–2am MT settle window has begun, by which point the
-   upstream scores have reliably stopped moving. So an edition is never "written"
-   on a day whose games might still be settling; today's recap drops overnight,
-   once its last whistle is truly final. */
+   and the UTC cutoff has ticked into a later Debrief date. So an edition is
+   never "written" on a day whose games might still be settling; today's recap
+   drops once its last whistle is truly final and the canonical day has rolled
+   over. */
 function latestSettledDay(){
   const fixtures=debriefFixtures();
   const days=debriefDays(fixtures);
-  const today=dayKey(Date.now());
-  const mtToday=mtNow().date;
+  const utcToday=debriefNow().date;
   const ds=[...days.values()]
-    .filter(d=>d.settled && d.date<=today && d.date<mtToday)
+    .filter(d=>d.settled && d.date<utcToday && debriefStandingsAsOf(fixtures,d.date))
     .map(d=>d.date).sort();
   return ds.length?ds[ds.length-1]:null;
 }
@@ -2359,18 +2395,17 @@ function openDebrief(date){
   try{ localStorage.setItem('wc_recap_seen_'+date,'1'); }catch(e){}
   syncDebriefButton();
 }
-/* Morning auto-pop window, anchored to Mountain time: from midnight (when a
-   freshly-settled edition first publishes, in the 12am–2am MT settle window)
-   through the morning, so the recap lands like a morning paper regardless of
-   where the viewer is. */
+/* Auto-pop window on the Debrief's canonical UTC clock: from the daily cutoff
+   through the next 13 hours. */
 function debriefAutoWindowOpen(){
-  return mtNow().hour<13;
+  const hour=debriefNow().hour;
+  const elapsed=(hour-DEBRIEF_DAY_CUTOFF_HOURS+24)%24;
+  return elapsed<13;
 }
-/* Auto-pop once per local day, the first time the app opens after that day has
-   truly settled (every fixture Final) and cleared the Mountain-time publish
-   gate, but only during the morning MT window. The date-keyed flag means it
-   never nags twice for the same day, but a brand-new settled day pops fresh
-   overnight/in the morning. */
+/* Auto-pop once per canonical UTC-cutoff day, the first time the app opens
+   after that day has truly settled (every fixture Final) and cleared the UTC
+   publish gate, but only during the cutoff-relative window. The date-keyed flag
+   means it never nags twice for the same day. */
 function maybeAutoDebrief(){
   const date=latestSettledDay(); if(!date) return;
   if(!debriefAutoWindowOpen()) return;

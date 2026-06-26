@@ -8,7 +8,7 @@ Scrapes:
 
 Outputs (written only when a scrape succeeds and has data):
   rankings.json     current leaderboard snapshot
-  history.json      append-only log of leaderboard snapshots (deduped on no change)
+  history.json      append-only log of leaderboard snapshots and daily final anchors
   predictions.json  per-player fixture/bonus breakdown, keyed by team_id
 
 Design notes
@@ -419,6 +419,7 @@ LIVE_HARD_CAP_MINUTES = int(os.environ.get("LIVE_HARD_CAP_MINUTES", "130"))  # d
 # from sneaking in as "settled"; losing a borderline-but-genuine reading is
 # harmless (charts just step once less often).
 SETTLE_BACKFILL_WINDOW_MINUTES = int(os.environ.get("SETTLE_BACKFILL_WINDOW_MINUTES", "150"))
+RECAP_DAY_CUTOFF_HOURS = int(os.environ.get("RECAP_DAY_CUTOFF_HOURS", "8"))
 
 _FIXTURE_MINUTE_RE = re.compile(r"\d+'")
 
@@ -532,10 +533,77 @@ def backfill_settled(history: list, predictions: dict) -> bool:
         return False
     changed = False
     for entry in history:
-        if isinstance(entry, dict) and "settled" not in entry:
+        if not isinstance(entry, dict):
+            continue
+        ts = _parse_utc(entry.get("timestamp"))
+        if "settled" not in entry:
             entry["settled"] = _timestamp_settled(entry.get("timestamp"), kickoffs)
             changed = True
+        if ts is not None and "recap_day" not in entry:
+            entry["recap_day"] = recap_day_for(ts)
+            changed = True
+        if ts is not None and "day_final_snapshot" not in entry:
+            entry["day_final_snapshot"] = day_final_snapshot(
+                predictions,
+                ts,
+                bool(entry.get("settled", True)),
+            )
+            changed = True
     return changed
+
+
+def recap_day_for(ts: datetime) -> str:
+    """Canonical recap-day key for a UTC timestamp, using an overnight cutoff."""
+    return (ts - timedelta(hours=RECAP_DAY_CUTOFF_HOURS)).date().isoformat()
+
+
+def _fixture_recap_day(fx: dict) -> str | None:
+    ko = _parse_utc(fx.get("kickoff_utc") if isinstance(fx, dict) else None)
+    return recap_day_for(ko) if ko is not None else None
+
+
+def _latest_recap_day_kickoff(predictions: dict, recap_day: str) -> datetime | None:
+    latest = None
+    for fx in _recap_day_fixtures(predictions, recap_day).values():
+        ko = _parse_utc(fx.get("kickoff_utc"))
+        if ko is not None and (latest is None or ko > latest):
+            latest = ko
+    return latest
+
+
+def _recap_day_fixtures(predictions: dict, recap_day: str) -> dict:
+    fixtures = {}
+    if not isinstance(predictions, dict):
+        return fixtures
+    for p in predictions.values():
+        if not isinstance(p, dict):
+            continue
+        for md in p.get("matchdays", []):
+            if not isinstance(md, dict):
+                continue
+            for fx in md.get("fixtures", []):
+                if not isinstance(fx, dict) or _fixture_recap_day(fx) != recap_day:
+                    continue
+                key = fx.get("fixture_number") or fx.get("kickoff_utc") or len(fixtures)
+                fixtures[key] = fx
+    return fixtures
+
+
+def day_final_snapshot(predictions: dict, captured_at: datetime, settled: bool) -> bool:
+    """True when a leaderboard scrape is the post-final anchor for its recap day."""
+    if not settled:
+        return False
+    recap_day = recap_day_for(captured_at)
+    fixtures = _recap_day_fixtures(predictions, recap_day)
+    if not fixtures:
+        return False
+    latest = _latest_recap_day_kickoff(predictions, recap_day)
+    if latest is None:
+        return False
+    if captured_at >= latest and all(_status_is_final(fx.get("status")) for fx in fixtures.values()):
+        return True
+    final_window = timedelta(minutes=SETTLE_BACKFILL_WINDOW_MINUTES)
+    return captured_at >= latest + final_window
 
 
 # --------------------------------------------------------------------------- #
@@ -1486,6 +1554,29 @@ def snapshot_signature(players: list[dict]) -> str:
     return json.dumps(rows)
 
 
+def history_entry(players: list[dict], timestamp: str, settled: bool, predictions: dict) -> dict:
+    captured_at = _parse_utc(timestamp) or datetime.now(timezone.utc)
+    return {
+        "timestamp": timestamp,
+        "settled": settled,
+        "recap_day": recap_day_for(captured_at),
+        "day_final_snapshot": day_final_snapshot(predictions, captured_at, settled),
+        "players": [
+            {
+                "team_id": p["team_id"],
+                "name": p["name"],
+                "slug": p["slug"],
+                "player_url": p.get("player_url"),
+                "flag": p["flag"],
+                "rank": p["rank"],
+                "points": p["points"],
+                "exact": p["exact"],
+            }
+            for p in players
+        ],
+    }
+
+
 def load_json(path: Path, default):
     if path.exists():
         try:
@@ -1685,9 +1776,10 @@ def run(out_dir: Path, samples: bool):
     rankings = build_rankings(players, source_info)
     write_json(rankings_path, rankings)
 
-    # history.json — append only if the snapshot actually changed. Each entry is
-    # tagged `settled` (no match in progress at capture time) so the front-end
-    # can chart / rank movers off settled data and ignore mid-match wobble.
+    # history.json — append when the leaderboard changes, plus one final anchor
+    # per recap day even if the signature is unchanged. Each entry is tagged
+    # `settled` (no match in progress at capture time); final anchors are what
+    # the Daily Debrief uses as its official end-of-day table.
     history = load_json(history_path, [])
     backfilled = backfill_settled(history, predictions)  # heal untagged entries
 
@@ -1697,33 +1789,28 @@ def run(out_dir: Path, samples: bool):
 
     sig = snapshot_signature(players)
     last_sig = snapshot_signature(history[-1]["players"]) if history else None
+    entry = history_entry(players, rankings["updated"], settled, predictions)
+    has_final_anchor = any(
+        isinstance(h, dict)
+        and h.get("recap_day") == entry["recap_day"]
+        and h.get("day_final_snapshot") is True
+        for h in history
+    )
     appended = False
-    if sig != last_sig:
-        history.append(
-            {
-                "timestamp": rankings["updated"],
-                "settled": settled,
-                "players": [
-                    {
-                        "team_id": p["team_id"],
-                        "name": p["name"],
-                        "slug": p["slug"],
-                        "player_url": p.get("player_url"),
-                        "flag": p["flag"],
-                        "rank": p["rank"],
-                        "points": p["points"],
-                        "exact": p["exact"],
-                    }
-                    for p in players
-                ],
-            }
-        )
+    if sig != last_sig or (entry["day_final_snapshot"] and not has_final_anchor):
+        history.append(entry)
         appended = True
 
     if appended or backfilled:
         write_json(history_path, history)
         if appended:
-            state = "settled" if settled else "mid-match (live, excluded from charts)"
+            state = (
+                f"final recap-day anchor for {entry['recap_day']}"
+                if entry["day_final_snapshot"]
+                else "settled"
+                if settled
+                else "mid-match (live, excluded from charts)"
+            )
             print(f"  history: appended {state} snapshot ({len(history)} total)", file=sys.stderr)
         if backfilled:
             print("  history: backfilled settled flags on existing snapshots", file=sys.stderr)
