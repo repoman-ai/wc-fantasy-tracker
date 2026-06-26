@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-26T19:31:34Z",
+  "updated": "2026-06-26T19:41:29Z",
   "players": {
     "246775": {
       "team_id": "246775",
@@ -8,9 +8,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/246775/bobby/stage/1196-grand-total?scroll=fixture",
       "flag": "FRA",
       "rank": 1,
-      "points": 3422,
-      "exact": 9,
-      "grand_total": 3422,
+      "points": 3449,
+      "exact": 10,
+      "grand_total": 3449,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -1514,7 +1514,7 @@
         },
         {
           "round": "Matchday 3",
-          "subtotal": 597,
+          "subtotal": 624,
           "fixtures": [
             {
               "fixture_number": 51,
@@ -1915,9 +1915,9 @@
                 "score": "1 - 3",
                 "hidden": false
               },
-              "actual_score": "1 - 2",
-              "points": 63,
-              "is_exact": false
+              "actual_score": "1 - 3",
+              "points": 90,
+              "is_exact": true
             },
             {
               "fixture_number": 62,
@@ -3616,9 +3616,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/252653/daniel/stage/1196-grand-total?scroll=fixture",
       "flag": "FRA",
       "rank": 2,
-      "points": 3396,
-      "exact": 10,
-      "grand_total": 3396,
+      "points": 3369,
+      "exact": 9,
+      "grand_total": 3369,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -5122,7 +5122,7 @@
         },
         {
           "round": "Matchday 3",
-          "subtotal": 660,
+          "subtotal": 633,
           "fixtures": [
             {
               "fixture_number": 51,
@@ -5523,9 +5523,9 @@
                 "score": "1 - 2",
                 "hidden": false
               },
-              "actual_score": "1 - 2",
-              "points": 90,
-              "is_exact": true
+              "actual_score": "1 - 3",
+              "points": 63,
+              "is_exact": false
             },
             {
               "fixture_number": 62,
@@ -7224,9 +7224,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247930/alec/stage/1196-grand-total?scroll=fixture",
       "flag": "ESP",
       "rank": 3,
-      "points": 3369,
-      "exact": 9,
-      "grand_total": 3369,
+      "points": 3342,
+      "exact": 8,
+      "grand_total": 3342,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -8730,7 +8730,7 @@
         },
         {
           "round": "Matchday 3",
-          "subtotal": 687,
+          "subtotal": 660,
           "fixtures": [
             {
               "fixture_number": 51,
@@ -9131,9 +9131,9 @@
                 "score": "1 - 2",
                 "hidden": false
               },
-              "actual_score": "1 - 2",
-              "points": 90,
-              "is_exact": true
+              "actual_score": "1 - 3",
+              "points": 63,
+              "is_exact": false
             },
             {
               "fixture_number": 62,
@@ -10832,9 +10832,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/253787/jazmin/stage/1196-grand-total?scroll=fixture",
       "flag": "POR",
       "rank": 4,
-      "points": 3313,
+      "points": 3316,
       "exact": 6,
-      "grand_total": 3313,
+      "grand_total": 3316,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -12338,7 +12338,7 @@
         },
         {
           "round": "Matchday 3",
-          "subtotal": 591,
+          "subtotal": 594,
           "fixtures": [
             {
               "fixture_number": 51,
@@ -12739,8 +12739,8 @@
                 "score": "2 - 3",
                 "hidden": false
               },
-              "actual_score": "1 - 2",
-              "points": 60,
+              "actual_score": "1 - 3",
+              "points": 63,
               "is_exact": false
             },
             {
@@ -14440,9 +14440,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247528/jj/stage/1196-grand-total?scroll=fixture",
       "flag": "FRA",
       "rank": 5,
-      "points": 3268,
+      "points": 3283,
       "exact": 6,
-      "grand_total": 3268,
+      "grand_total": 3283,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -15946,7 +15946,7 @@
         },
         {
           "round": "Matchday 3",
-          "subtotal": 405,
+          "subtotal": 420,
           "fixtures": [
             {
               "fixture_number": 51,
@@ -16347,8 +16347,8 @@
                 "score": "0 - 3",
                 "hidden": false
               },
-              "actual_score": "1 - 2",
-              "points": 48,
+              "actual_score": "1 - 3",
+              "points": 63,
               "is_exact": false
             },
             {
@@ -18048,9 +18048,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247524/alejandro/stage/1196-grand-total?scroll=fixture",
       "flag": "BRA",
       "rank": 6,
-      "points": 3187,
-      "exact": 6,
-      "grand_total": 3187,
+      "points": 3160,
+      "exact": 5,
+      "grand_total": 3160,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -19554,7 +19554,7 @@
         },
         {
           "round": "Matchday 3",
-          "subtotal": 582,
+          "subtotal": 555,
           "fixtures": [
             {
               "fixture_number": 51,
@@ -19955,9 +19955,9 @@
                 "score": "1 - 2",
                 "hidden": false
               },
-              "actual_score": "1 - 2",
-              "points": 90,
-              "is_exact": true
+              "actual_score": "1 - 3",
+              "points": 63,
+              "is_exact": false
             },
             {
               "fixture_number": 62,
@@ -21656,9 +21656,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247535/baronmark/stage/1196-grand-total?scroll=fixture",
       "flag": "FRA",
       "rank": 7,
-      "points": 3108,
-      "exact": 9,
-      "grand_total": 3108,
+      "points": 3081,
+      "exact": 8,
+      "grand_total": 3081,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -23162,7 +23162,7 @@
         },
         {
           "round": "Matchday 3",
-          "subtotal": 534,
+          "subtotal": 507,
           "fixtures": [
             {
               "fixture_number": 51,
@@ -23563,9 +23563,9 @@
                 "score": "1 - 2",
                 "hidden": false
               },
-              "actual_score": "1 - 2",
-              "points": 90,
-              "is_exact": true
+              "actual_score": "1 - 3",
+              "points": 63,
+              "is_exact": false
             },
             {
               "fixture_number": 62,
@@ -25264,9 +25264,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247532/gabriela/stage/1196-grand-total?scroll=fixture",
       "flag": "NED",
       "rank": 8,
-      "points": 3034,
+      "points": 3031,
       "exact": 7,
-      "grand_total": 3034,
+      "grand_total": 3031,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -26770,7 +26770,7 @@
         },
         {
           "round": "Matchday 3",
-          "subtotal": 387,
+          "subtotal": 384,
           "fixtures": [
             {
               "fixture_number": 51,
@@ -27171,8 +27171,8 @@
                 "score": "0 - 2",
                 "hidden": false
               },
-              "actual_score": "1 - 2",
-              "points": 63,
+              "actual_score": "1 - 3",
+              "points": 60,
               "is_exact": false
             },
             {
@@ -28872,9 +28872,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247537/yo/stage/1196-grand-total?scroll=fixture",
       "flag": "MEX",
       "rank": 9,
-      "points": 2987,
-      "exact": 6,
-      "grand_total": 2987,
+      "points": 3014,
+      "exact": 7,
+      "grand_total": 3014,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -30378,7 +30378,7 @@
         },
         {
           "round": "Matchday 3",
-          "subtotal": 618,
+          "subtotal": 645,
           "fixtures": [
             {
               "fixture_number": 51,
@@ -30779,9 +30779,9 @@
                 "score": "1 - 3",
                 "hidden": false
               },
-              "actual_score": "1 - 2",
-              "points": 63,
-              "is_exact": false
+              "actual_score": "1 - 3",
+              "points": 90,
+              "is_exact": true
             },
             {
               "fixture_number": 62,
@@ -32480,9 +32480,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247526/valewalle/stage/1196-grand-total?scroll=fixture",
       "flag": "ESP",
       "rank": 10,
-      "points": 2959,
+      "points": 2962,
       "exact": 7,
-      "grand_total": 2959,
+      "grand_total": 2962,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -33986,7 +33986,7 @@
         },
         {
           "round": "Matchday 3",
-          "subtotal": 612,
+          "subtotal": 615,
           "fixtures": [
             {
               "fixture_number": 51,
@@ -34387,8 +34387,8 @@
                 "score": "2 - 3",
                 "hidden": false
               },
-              "actual_score": "1 - 2",
-              "points": 60,
+              "actual_score": "1 - 3",
+              "points": 63,
               "is_exact": false
             },
             {
@@ -36088,9 +36088,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/253790/remi/stage/1196-grand-total?scroll=fixture",
       "flag": "FRA",
       "rank": 11,
-      "points": 2870,
+      "points": 2882,
       "exact": 5,
-      "grand_total": 2870,
+      "grand_total": 2882,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -37594,7 +37594,7 @@
         },
         {
           "round": "Matchday 3",
-          "subtotal": 327,
+          "subtotal": 339,
           "fixtures": [
             {
               "fixture_number": 51,
@@ -37995,8 +37995,8 @@
                 "score": "2 - 4",
                 "hidden": false
               },
-              "actual_score": "1 - 2",
-              "points": 48,
+              "actual_score": "1 - 3",
+              "points": 60,
               "is_exact": false
             },
             {
@@ -41603,7 +41603,7 @@
                 "score": "0 - 5",
                 "hidden": false
               },
-              "actual_score": "1 - 2",
+              "actual_score": "1 - 3",
               "points": 48,
               "is_exact": false
             },
@@ -43297,20 +43297,20 @@
         "subtotal": 0
       }
     },
-    "247729": {
-      "team_id": "247729",
-      "name": "MaxS.",
-      "slug": "maxs",
-      "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247729/maxs/stage/1196-grand-total?scroll=fixture",
-      "flag": "ARG",
+    "247525": {
+      "team_id": "247525",
+      "name": "Karenwj",
+      "slug": "karenwj",
+      "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247525/karenwj/stage/1196-grand-total?scroll=fixture",
+      "flag": "NED",
       "rank": 13,
-      "points": 2794,
-      "exact": 4,
-      "grand_total": 2794,
+      "points": 2802,
+      "exact": 6,
+      "grand_total": 2802,
       "matchdays": [
         {
           "round": "Matchday 1",
-          "subtotal": 882,
+          "subtotal": 816,
           "fixtures": [
             {
               "fixture_number": 1,
@@ -43336,7 +43336,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "1 - 0",
+                "score": "2 - 1",
                 "hidden": false
               },
               "actual_score": "2 - 0",
@@ -43367,11 +43367,11 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "2 - 2",
+                "score": "1 - 0",
                 "hidden": false
               },
               "actual_score": "2 - 1",
-              "points": 15,
+              "points": 60,
               "is_exact": false
             },
             {
@@ -43398,11 +43398,11 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "2 - 0",
+                "score": "3 - 1",
                 "hidden": false
               },
               "actual_score": "1 - 1",
-              "points": 0,
+              "points": 15,
               "is_exact": false
             },
             {
@@ -43429,11 +43429,11 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "1 - 1",
+                "score": "2 - 1",
                 "hidden": false
               },
               "actual_score": "4 - 1",
-              "points": 15,
+              "points": 63,
               "is_exact": false
             },
             {
@@ -43460,11 +43460,11 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "0 - 3",
+                "score": "3 - 1",
                 "hidden": false
               },
               "actual_score": "1 - 1",
-              "points": 0,
+              "points": 15,
               "is_exact": false
             },
             {
@@ -43491,11 +43491,11 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "2 - 2",
+                "score": "3 - 2",
                 "hidden": false
               },
               "actual_score": "1 - 1",
-              "points": 60,
+              "points": 0,
               "is_exact": false
             },
             {
@@ -43553,7 +43553,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "0 - 3",
+                "score": "1 - 2",
                 "hidden": false
               },
               "actual_score": "2 - 0",
@@ -43615,11 +43615,11 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "2 - 3",
+                "score": "3 - 1",
                 "hidden": false
               },
               "actual_score": "2 - 2",
-              "points": 15,
+              "points": 0,
               "is_exact": false
             },
             {
@@ -43646,11 +43646,11 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "0 - 2",
+                "score": "1 - 2",
                 "hidden": false
               },
               "actual_score": "1 - 0",
-              "points": 0,
+              "points": 15,
               "is_exact": false
             },
             {
@@ -43739,7 +43739,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "4 - 1",
+                "score": "3 - 1",
                 "hidden": false
               },
               "actual_score": "1 - 1",
@@ -43770,11 +43770,11 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "0 - 0",
+                "score": "3 - 0",
                 "hidden": false
               },
               "actual_score": "1 - 1",
-              "points": 60,
+              "points": 0,
               "is_exact": false
             },
             {
@@ -43801,7 +43801,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "0 - 0",
+                "score": "1 - 1",
                 "hidden": false
               },
               "actual_score": "2 - 2",
@@ -43863,11 +43863,11 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "0 - 2",
+                "score": "2 - 1",
                 "hidden": false
               },
               "actual_score": "1 - 4",
-              "points": 48,
+              "points": 0,
               "is_exact": false
             },
             {
@@ -43894,7 +43894,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "2 - 0",
+                "score": "4 - 0",
                 "hidden": false
               },
               "actual_score": "3 - 0",
@@ -43925,12 +43925,12 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "1 - 0",
+                "score": "3 - 1",
                 "hidden": false
               },
               "actual_score": "3 - 1",
-              "points": 48,
-              "is_exact": false
+              "points": 90,
+              "is_exact": true
             },
             {
               "fixture_number": 23,
@@ -43956,11 +43956,11 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "3 - 0",
+                "score": "3 - 1",
                 "hidden": false
               },
               "actual_score": "1 - 1",
-              "points": 0,
+              "points": 15,
               "is_exact": false
             },
             {
@@ -43987,11 +43987,11 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "3 - 2",
+                "score": "1 - 1",
                 "hidden": false
               },
               "actual_score": "4 - 2",
-              "points": 63,
+              "points": 0,
               "is_exact": false
             },
             {
@@ -44018,11 +44018,11 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "1 - 1",
+                "score": "2 - 0",
                 "hidden": false
               },
               "actual_score": "1 - 0",
-              "points": 15,
+              "points": 63,
               "is_exact": false
             },
             {
@@ -44049,18 +44049,18 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "0 - 3",
+                "score": "3 - 0",
                 "hidden": false
               },
               "actual_score": "1 - 3",
-              "points": 63,
+              "points": 0,
               "is_exact": false
             }
           ]
         },
         {
           "round": "Matchday 2",
-          "subtotal": 1053,
+          "subtotal": 876,
           "fixtures": [
             {
               "fixture_number": 25,
@@ -44086,12 +44086,12 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "1 - 1",
+                "score": "3 - 2",
                 "hidden": false
               },
               "actual_score": "1 - 1",
-              "points": 90,
-              "is_exact": true
+              "points": 0,
+              "is_exact": false
             },
             {
               "fixture_number": 26,
@@ -44117,11 +44117,11 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "3 - 1",
+                "score": "2 - 0",
                 "hidden": false
               },
               "actual_score": "4 - 1",
-              "points": 63,
+              "points": 48,
               "is_exact": false
             },
             {
@@ -44179,11 +44179,11 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "0 - 1",
+                "score": "2 - 1",
                 "hidden": false
               },
               "actual_score": "1 - 0",
-              "points": 0,
+              "points": 60,
               "is_exact": false
             },
             {
@@ -44210,7 +44210,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "1 - 0",
+                "score": "2 - 1",
                 "hidden": false
               },
               "actual_score": "2 - 0",
@@ -44241,11 +44241,11 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "1 - 2",
+                "score": "2 - 2",
                 "hidden": false
               },
               "actual_score": "0 - 1",
-              "points": 60,
+              "points": 0,
               "is_exact": false
             },
             {
@@ -44272,12 +44272,12 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "2 - 1",
+                "score": "3 - 0",
                 "hidden": false
               },
               "actual_score": "3 - 0",
-              "points": 48,
-              "is_exact": false
+              "points": 90,
+              "is_exact": true
             },
             {
               "fixture_number": 31,
@@ -44303,7 +44303,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "3 - 3",
+                "score": "1 - 0",
                 "hidden": false
               },
               "actual_score": "0 - 1",
@@ -44334,11 +44334,11 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "1 - 2",
+                "score": "2 - 1",
                 "hidden": false
               },
               "actual_score": "5 - 1",
-              "points": 0,
+              "points": 63,
               "is_exact": false
             },
             {
@@ -44365,11 +44365,11 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "4 - 0",
+                "score": "3 - 2",
                 "hidden": false
               },
               "actual_score": "2 - 1",
-              "points": 48,
+              "points": 60,
               "is_exact": false
             },
             {
@@ -44396,11 +44396,11 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "1 - 0",
+                "score": "3 - 1",
                 "hidden": false
               },
               "actual_score": "0 - 0",
-              "points": 15,
+              "points": 0,
               "is_exact": false
             },
             {
@@ -44427,11 +44427,11 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "0 - 2",
+                "score": "2 - 1",
                 "hidden": false
               },
               "actual_score": "0 - 4",
-              "points": 63,
+              "points": 0,
               "is_exact": false
             },
             {
@@ -44458,12 +44458,12 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "1 - 1",
+                "score": "4 - 0",
                 "hidden": false
               },
               "actual_score": "4 - 0",
-              "points": 0,
-              "is_exact": false
+              "points": 90,
+              "is_exact": true
             },
             {
               "fixture_number": 39,
@@ -44489,11 +44489,11 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "2 - 0",
+                "score": "3 - 1",
                 "hidden": false
               },
               "actual_score": "0 - 0",
-              "points": 15,
+              "points": 0,
               "is_exact": false
             },
             {
@@ -44520,7 +44520,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "1 - 0",
+                "score": "3 - 0",
                 "hidden": false
               },
               "actual_score": "2 - 2",
@@ -44551,11 +44551,11 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "1 - 0",
+                "score": "1 - 2",
                 "hidden": false
               },
               "actual_score": "1 - 3",
-              "points": 15,
+              "points": 63,
               "is_exact": false
             },
             {
@@ -44582,11 +44582,11 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "2 - 1",
+                "score": "3 - 1",
                 "hidden": false
               },
               "actual_score": "2 - 0",
-              "points": 63,
+              "points": 60,
               "is_exact": false
             },
             {
@@ -44644,11 +44644,11 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "3 - 1",
+                "score": "2 - 2",
                 "hidden": false
               },
               "actual_score": "3 - 2",
-              "points": 63,
+              "points": 15,
               "is_exact": false
             },
             {
@@ -44675,11 +44675,11 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "0 - 1",
+                "score": "2 - 0",
                 "hidden": false
               },
               "actual_score": "1 - 2",
-              "points": 60,
+              "points": 0,
               "is_exact": false
             },
             {
@@ -44706,7 +44706,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "4 - 1",
+                "score": "3 - 1",
                 "hidden": false
               },
               "actual_score": "5 - 0",
@@ -44737,11 +44737,11 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "2 - 2",
+                "score": "3 - 1",
                 "hidden": false
               },
               "actual_score": "0 - 0",
-              "points": 60,
+              "points": 0,
               "is_exact": false
             },
             {
@@ -44768,11 +44768,11 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "0 - 3",
+                "score": "2 - 1",
                 "hidden": false
               },
               "actual_score": "0 - 1",
-              "points": 63,
+              "points": 15,
               "is_exact": false
             },
             {
@@ -44799,18 +44799,18 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "3 - 0",
+                "score": "3 - 1",
                 "hidden": false
               },
               "actual_score": "1 - 0",
-              "points": 63,
+              "points": 48,
               "is_exact": false
             }
           ]
         },
         {
           "round": "Matchday 3",
-          "subtotal": 354,
+          "subtotal": 615,
           "fixtures": [
             {
               "fixture_number": 51,
@@ -44836,12 +44836,12 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "2 - 1",
+                "score": "1 - 1",
                 "hidden": false
               },
               "actual_score": "2 - 1",
-              "points": 90,
-              "is_exact": true
+              "points": 15,
+              "is_exact": false
             },
             {
               "fixture_number": 52,
@@ -44867,11 +44867,11 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "1 - 1",
+                "score": "2 - 0",
                 "hidden": false
               },
               "actual_score": "3 - 1",
-              "points": 15,
+              "points": 60,
               "is_exact": false
             },
             {
@@ -44898,11 +44898,11 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "1 - 1",
+                "score": "1 - 3",
                 "hidden": false
               },
               "actual_score": "0 - 3",
-              "points": 0,
+              "points": 63,
               "is_exact": false
             },
             {
@@ -44929,11 +44929,11 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "3 - 0",
+                "score": "2 - 0",
                 "hidden": false
               },
               "actual_score": "4 - 2",
-              "points": 48,
+              "points": 60,
               "is_exact": false
             },
             {
@@ -44960,11 +44960,11 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "1 - 1",
+                "score": "1 - 2",
                 "hidden": false
               },
               "actual_score": "0 - 3",
-              "points": 0,
+              "points": 48,
               "is_exact": false
             },
             {
@@ -44991,11 +44991,11 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "0 - 2",
+                "score": "1 - 3",
                 "hidden": false
               },
               "actual_score": "1 - 0",
-              "points": 0,
+              "points": 15,
               "is_exact": false
             },
             {
@@ -45022,11 +45022,11 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "2 - 2",
+                "score": "2 - 0",
                 "hidden": false
               },
               "actual_score": "0 - 2",
-              "points": 15,
+              "points": 0,
               "is_exact": false
             },
             {
@@ -45053,11 +45053,11 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "2 - 2",
+                "score": "3 - 1",
                 "hidden": false
               },
               "actual_score": "2 - 1",
-              "points": 15,
+              "points": 63,
               "is_exact": false
             },
             {
@@ -45084,11 +45084,11 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "2 - 1",
+                "score": "2 - 2",
                 "hidden": false
               },
               "actual_score": "1 - 1",
-              "points": 15,
+              "points": 60,
               "is_exact": false
             },
             {
@@ -45115,7 +45115,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "0 - 3",
+                "score": "1 - 2",
                 "hidden": false
               },
               "actual_score": "1 - 3",
@@ -45146,11 +45146,11 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "1 - 3",
+                "score": "2 - 2",
                 "hidden": false
               },
               "actual_score": "3 - 2",
-              "points": 0,
+              "points": 15,
               "is_exact": false
             },
             {
@@ -45177,11 +45177,11 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "1 - 0",
+                "score": "2 - 1",
                 "hidden": false
               },
               "actual_score": "0 - 0",
-              "points": 15,
+              "points": 0,
               "is_exact": false
             },
             {
@@ -45208,12 +45208,12 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "3 - 2",
+                "score": "1 - 3",
                 "hidden": false
               },
-              "actual_score": "1 - 2",
-              "points": 15,
-              "is_exact": false
+              "actual_score": "1 - 3",
+              "points": 90,
+              "is_exact": true
             },
             {
               "fixture_number": 62,
@@ -45270,7 +45270,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "0 - 2",
+                "score": "1 - 1",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -45363,7 +45363,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "2 - 2",
+                "score": "1 - 3",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -45394,7 +45394,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "2 - 4",
+                "score": "1 - 3",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -45425,7 +45425,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "2 - 0",
+                "score": "1 - 1",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -45487,7 +45487,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "0 - 0",
+                "score": "2 - 1",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -45549,7 +45549,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "0 - 3",
+                "score": "1 - 3",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -45560,7 +45560,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 505,
+          "subtotal": 495,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -45588,13 +45588,13 @@
                 "type": "teams",
                 "hidden": false,
                 "home": {
-                  "code": "MEX",
-                  "name": "Mexico",
+                  "code": "KOR",
+                  "name": "Korea Republic",
                   "hidden": false
                 },
                 "away": {
-                  "code": "CAN",
-                  "name": "Canada",
+                  "code": "SUI",
+                  "name": "Switzerland",
                   "hidden": false
                 }
               },
@@ -45632,8 +45632,8 @@
                 "type": "teams",
                 "hidden": false,
                 "home": {
-                  "code": "MAR",
-                  "name": "Morocco",
+                  "code": "BRA",
+                  "name": "Brazil",
                   "hidden": false
                 },
                 "away": {
@@ -45676,8 +45676,8 @@
                 "type": "teams",
                 "hidden": false,
                 "home": {
-                  "code": "GER",
-                  "name": "Germany",
+                  "code": "ECU",
+                  "name": "Ecuador",
                   "hidden": false
                 },
                 "away": {
@@ -45720,13 +45720,13 @@
                 "type": "teams",
                 "hidden": false,
                 "home": {
-                  "code": "JPN",
-                  "name": "Japan",
+                  "code": "NED",
+                  "name": "Netherlands",
                   "hidden": false
                 },
                 "away": {
-                  "code": "BRA",
-                  "name": "Brazil",
+                  "code": "MAR",
+                  "name": "Morocco",
                   "hidden": false
                 }
               },
@@ -45764,13 +45764,13 @@
                 "type": "teams",
                 "hidden": false,
                 "home": {
-                  "code": "ECU",
-                  "name": "Ecuador",
+                  "code": "GER",
+                  "name": "Germany",
                   "hidden": false
                 },
                 "away": {
-                  "code": "FRA",
-                  "name": "France",
+                  "code": "SEN",
+                  "name": "Senegal",
                   "hidden": false
                 }
               },
@@ -45808,13 +45808,13 @@
                 "type": "teams",
                 "hidden": false,
                 "home": {
-                  "code": "NOR",
-                  "name": "Norway",
+                  "code": "FRA",
+                  "name": "France",
                   "hidden": false
                 },
                 "away": {
-                  "code": "NED",
-                  "name": "Netherlands",
+                  "code": "TUN",
+                  "name": "Tunisia",
                   "hidden": false
                 }
               },
@@ -45852,13 +45852,13 @@
                 "type": "teams",
                 "hidden": false,
                 "home": {
-                  "code": "KOR",
-                  "name": "Korea Republic",
+                  "code": "MEX",
+                  "name": "Mexico",
                   "hidden": false
                 },
                 "away": {
-                  "code": "URU",
-                  "name": "Uruguay",
+                  "code": "KSA",
+                  "name": "Saudi Arabia",
                   "hidden": false
                 }
               },
@@ -45901,8 +45901,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": "SEN",
-                  "name": "Senegal",
+                  "code": "UZB",
+                  "name": "Uzbekistan",
                   "hidden": false
                 }
               },
@@ -45989,8 +45989,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": "ALG",
-                  "name": "Algeria",
+                  "code": "BIH",
+                  "name": "Bosnia-Herzegovina",
                   "hidden": false
                 }
               },
@@ -46077,8 +46077,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": "CRO",
-                  "name": "Croatia",
+                  "code": "GHA",
+                  "name": "Ghana",
                   "hidden": false
                 }
               },
@@ -46116,13 +46116,13 @@
                 "type": "teams",
                 "hidden": false,
                 "home": {
-                  "code": "SUI",
-                  "name": "Switzerland",
+                  "code": "CAN",
+                  "name": "Canada",
                   "hidden": false
                 },
                 "away": {
-                  "code": "EGY",
-                  "name": "Egypt",
+                  "code": "JOR",
+                  "name": "Jordan",
                   "hidden": false
                 }
               },
@@ -46160,13 +46160,13 @@
                 "type": "teams",
                 "hidden": false,
                 "home": {
-                  "code": "PAR",
-                  "name": "Paraguay",
+                  "code": "TUR",
+                  "name": "Turkey",
                   "hidden": false
                 },
                 "away": {
-                  "code": "NZL",
-                  "name": "New Zealand",
+                  "code": "EGY",
+                  "name": "Egypt",
                   "hidden": false
                 }
               },
@@ -46209,8 +46209,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": "KSA",
-                  "name": "Saudi Arabia",
+                  "code": "URU",
+                  "name": "Uruguay",
                   "hidden": false
                 }
               },
@@ -46253,8 +46253,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": "TUR",
-                  "name": "Turkey",
+                  "code": "PAR",
+                  "name": "Paraguay",
                   "hidden": false
                 }
               },
@@ -46880,8 +46880,8 @@
           {
             "question": "🏆 Champion",
             "prediction": {
-              "text": "Argentina",
-              "flag": "ARG"
+              "text": "Netherlands",
+              "flag": "NED"
             },
             "actual": {
               "text": "-",
@@ -46892,7 +46892,7 @@
           {
             "question": "Topscorer",
             "prediction": {
-              "text": "Kylian Mbappé (France)",
+              "text": "Vinicius Junior (Brazil)",
               "flag": null
             },
             "actual": {
@@ -46912,9 +46912,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/252600/el-capitan/stage/1196-grand-total?scroll=fixture",
       "flag": "FRA",
       "rank": 14,
-      "points": 2793,
+      "points": 2796,
       "exact": 6,
-      "grand_total": 2793,
+      "grand_total": 2796,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -48418,7 +48418,7 @@
         },
         {
           "round": "Matchday 3",
-          "subtotal": 441,
+          "subtotal": 444,
           "fixtures": [
             {
               "fixture_number": 51,
@@ -48819,8 +48819,8 @@
                 "score": "2 - 3",
                 "hidden": false
               },
-              "actual_score": "1 - 2",
-              "points": 60,
+              "actual_score": "1 - 3",
+              "points": 63,
               "is_exact": false
             },
             {
@@ -50513,20 +50513,20 @@
         "subtotal": 0
       }
     },
-    "247525": {
-      "team_id": "247525",
-      "name": "Karenwj",
-      "slug": "karenwj",
-      "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247525/karenwj/stage/1196-grand-total?scroll=fixture",
-      "flag": "NED",
+    "247729": {
+      "team_id": "247729",
+      "name": "MaxS.",
+      "slug": "maxs",
+      "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247729/maxs/stage/1196-grand-total?scroll=fixture",
+      "flag": "ARG",
       "rank": 15,
-      "points": 2775,
-      "exact": 5,
-      "grand_total": 2775,
+      "points": 2779,
+      "exact": 4,
+      "grand_total": 2779,
       "matchdays": [
         {
           "round": "Matchday 1",
-          "subtotal": 816,
+          "subtotal": 882,
           "fixtures": [
             {
               "fixture_number": 1,
@@ -50552,7 +50552,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "2 - 1",
+                "score": "1 - 0",
                 "hidden": false
               },
               "actual_score": "2 - 0",
@@ -50583,11 +50583,11 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "1 - 0",
+                "score": "2 - 2",
                 "hidden": false
               },
               "actual_score": "2 - 1",
-              "points": 60,
+              "points": 15,
               "is_exact": false
             },
             {
@@ -50614,11 +50614,11 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "3 - 1",
+                "score": "2 - 0",
                 "hidden": false
               },
               "actual_score": "1 - 1",
-              "points": 15,
+              "points": 0,
               "is_exact": false
             },
             {
@@ -50645,11 +50645,11 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "2 - 1",
+                "score": "1 - 1",
                 "hidden": false
               },
               "actual_score": "4 - 1",
-              "points": 63,
+              "points": 15,
               "is_exact": false
             },
             {
@@ -50676,11 +50676,11 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "3 - 1",
+                "score": "0 - 3",
                 "hidden": false
               },
               "actual_score": "1 - 1",
-              "points": 15,
+              "points": 0,
               "is_exact": false
             },
             {
@@ -50707,11 +50707,11 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "3 - 2",
+                "score": "2 - 2",
                 "hidden": false
               },
               "actual_score": "1 - 1",
-              "points": 0,
+              "points": 60,
               "is_exact": false
             },
             {
@@ -50769,7 +50769,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "1 - 2",
+                "score": "0 - 3",
                 "hidden": false
               },
               "actual_score": "2 - 0",
@@ -50831,11 +50831,11 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "3 - 1",
+                "score": "2 - 3",
                 "hidden": false
               },
               "actual_score": "2 - 2",
-              "points": 0,
+              "points": 15,
               "is_exact": false
             },
             {
@@ -50862,11 +50862,11 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "1 - 2",
+                "score": "0 - 2",
                 "hidden": false
               },
               "actual_score": "1 - 0",
-              "points": 15,
+              "points": 0,
               "is_exact": false
             },
             {
@@ -50955,7 +50955,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "3 - 1",
+                "score": "4 - 1",
                 "hidden": false
               },
               "actual_score": "1 - 1",
@@ -50986,11 +50986,11 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "3 - 0",
+                "score": "0 - 0",
                 "hidden": false
               },
               "actual_score": "1 - 1",
-              "points": 0,
+              "points": 60,
               "is_exact": false
             },
             {
@@ -51017,7 +51017,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "1 - 1",
+                "score": "0 - 0",
                 "hidden": false
               },
               "actual_score": "2 - 2",
@@ -51079,11 +51079,11 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "2 - 1",
+                "score": "0 - 2",
                 "hidden": false
               },
               "actual_score": "1 - 4",
-              "points": 0,
+              "points": 48,
               "is_exact": false
             },
             {
@@ -51110,7 +51110,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "4 - 0",
+                "score": "2 - 0",
                 "hidden": false
               },
               "actual_score": "3 - 0",
@@ -51141,12 +51141,12 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "3 - 1",
+                "score": "1 - 0",
                 "hidden": false
               },
               "actual_score": "3 - 1",
-              "points": 90,
-              "is_exact": true
+              "points": 48,
+              "is_exact": false
             },
             {
               "fixture_number": 23,
@@ -51172,11 +51172,11 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "3 - 1",
+                "score": "3 - 0",
                 "hidden": false
               },
               "actual_score": "1 - 1",
-              "points": 15,
+              "points": 0,
               "is_exact": false
             },
             {
@@ -51203,11 +51203,11 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "1 - 1",
+                "score": "3 - 2",
                 "hidden": false
               },
               "actual_score": "4 - 2",
-              "points": 0,
+              "points": 63,
               "is_exact": false
             },
             {
@@ -51234,11 +51234,11 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "2 - 0",
+                "score": "1 - 1",
                 "hidden": false
               },
               "actual_score": "1 - 0",
-              "points": 63,
+              "points": 15,
               "is_exact": false
             },
             {
@@ -51265,18 +51265,18 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "3 - 0",
+                "score": "0 - 3",
                 "hidden": false
               },
               "actual_score": "1 - 3",
-              "points": 0,
+              "points": 63,
               "is_exact": false
             }
           ]
         },
         {
           "round": "Matchday 2",
-          "subtotal": 876,
+          "subtotal": 1053,
           "fixtures": [
             {
               "fixture_number": 25,
@@ -51302,12 +51302,12 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "3 - 2",
+                "score": "1 - 1",
                 "hidden": false
               },
               "actual_score": "1 - 1",
-              "points": 0,
-              "is_exact": false
+              "points": 90,
+              "is_exact": true
             },
             {
               "fixture_number": 26,
@@ -51333,11 +51333,11 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "2 - 0",
+                "score": "3 - 1",
                 "hidden": false
               },
               "actual_score": "4 - 1",
-              "points": 48,
+              "points": 63,
               "is_exact": false
             },
             {
@@ -51395,11 +51395,11 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "2 - 1",
+                "score": "0 - 1",
                 "hidden": false
               },
               "actual_score": "1 - 0",
-              "points": 60,
+              "points": 0,
               "is_exact": false
             },
             {
@@ -51426,7 +51426,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "2 - 1",
+                "score": "1 - 0",
                 "hidden": false
               },
               "actual_score": "2 - 0",
@@ -51457,11 +51457,11 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "2 - 2",
+                "score": "1 - 2",
                 "hidden": false
               },
               "actual_score": "0 - 1",
-              "points": 0,
+              "points": 60,
               "is_exact": false
             },
             {
@@ -51488,12 +51488,12 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "3 - 0",
+                "score": "2 - 1",
                 "hidden": false
               },
               "actual_score": "3 - 0",
-              "points": 90,
-              "is_exact": true
+              "points": 48,
+              "is_exact": false
             },
             {
               "fixture_number": 31,
@@ -51519,7 +51519,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "1 - 0",
+                "score": "3 - 3",
                 "hidden": false
               },
               "actual_score": "0 - 1",
@@ -51550,11 +51550,11 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "2 - 1",
+                "score": "1 - 2",
                 "hidden": false
               },
               "actual_score": "5 - 1",
-              "points": 63,
+              "points": 0,
               "is_exact": false
             },
             {
@@ -51581,11 +51581,11 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "3 - 2",
+                "score": "4 - 0",
                 "hidden": false
               },
               "actual_score": "2 - 1",
-              "points": 60,
+              "points": 48,
               "is_exact": false
             },
             {
@@ -51612,11 +51612,11 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "3 - 1",
+                "score": "1 - 0",
                 "hidden": false
               },
               "actual_score": "0 - 0",
-              "points": 0,
+              "points": 15,
               "is_exact": false
             },
             {
@@ -51643,11 +51643,11 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "2 - 1",
+                "score": "0 - 2",
                 "hidden": false
               },
               "actual_score": "0 - 4",
-              "points": 0,
+              "points": 63,
               "is_exact": false
             },
             {
@@ -51674,12 +51674,12 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "4 - 0",
+                "score": "1 - 1",
                 "hidden": false
               },
               "actual_score": "4 - 0",
-              "points": 90,
-              "is_exact": true
+              "points": 0,
+              "is_exact": false
             },
             {
               "fixture_number": 39,
@@ -51705,11 +51705,11 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "3 - 1",
+                "score": "2 - 0",
                 "hidden": false
               },
               "actual_score": "0 - 0",
-              "points": 0,
+              "points": 15,
               "is_exact": false
             },
             {
@@ -51736,7 +51736,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "3 - 0",
+                "score": "1 - 0",
                 "hidden": false
               },
               "actual_score": "2 - 2",
@@ -51767,11 +51767,11 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "1 - 2",
+                "score": "1 - 0",
                 "hidden": false
               },
               "actual_score": "1 - 3",
-              "points": 63,
+              "points": 15,
               "is_exact": false
             },
             {
@@ -51798,11 +51798,11 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "3 - 1",
+                "score": "2 - 1",
                 "hidden": false
               },
               "actual_score": "2 - 0",
-              "points": 60,
+              "points": 63,
               "is_exact": false
             },
             {
@@ -51860,11 +51860,11 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "2 - 2",
+                "score": "3 - 1",
                 "hidden": false
               },
               "actual_score": "3 - 2",
-              "points": 15,
+              "points": 63,
               "is_exact": false
             },
             {
@@ -51891,11 +51891,11 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "2 - 0",
+                "score": "0 - 1",
                 "hidden": false
               },
               "actual_score": "1 - 2",
-              "points": 0,
+              "points": 60,
               "is_exact": false
             },
             {
@@ -51922,7 +51922,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "3 - 1",
+                "score": "4 - 1",
                 "hidden": false
               },
               "actual_score": "5 - 0",
@@ -51953,11 +51953,11 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "3 - 1",
+                "score": "2 - 2",
                 "hidden": false
               },
               "actual_score": "0 - 0",
-              "points": 0,
+              "points": 60,
               "is_exact": false
             },
             {
@@ -51984,11 +51984,11 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "2 - 1",
+                "score": "0 - 3",
                 "hidden": false
               },
               "actual_score": "0 - 1",
-              "points": 15,
+              "points": 63,
               "is_exact": false
             },
             {
@@ -52015,18 +52015,18 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "3 - 1",
+                "score": "3 - 0",
                 "hidden": false
               },
               "actual_score": "1 - 0",
-              "points": 48,
+              "points": 63,
               "is_exact": false
             }
           ]
         },
         {
           "round": "Matchday 3",
-          "subtotal": 588,
+          "subtotal": 339,
           "fixtures": [
             {
               "fixture_number": 51,
@@ -52052,12 +52052,12 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "1 - 1",
+                "score": "2 - 1",
                 "hidden": false
               },
               "actual_score": "2 - 1",
-              "points": 15,
-              "is_exact": false
+              "points": 90,
+              "is_exact": true
             },
             {
               "fixture_number": 52,
@@ -52083,11 +52083,11 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "2 - 0",
+                "score": "1 - 1",
                 "hidden": false
               },
               "actual_score": "3 - 1",
-              "points": 60,
+              "points": 15,
               "is_exact": false
             },
             {
@@ -52114,11 +52114,11 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "1 - 3",
+                "score": "1 - 1",
                 "hidden": false
               },
               "actual_score": "0 - 3",
-              "points": 63,
+              "points": 0,
               "is_exact": false
             },
             {
@@ -52145,11 +52145,11 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "2 - 0",
+                "score": "3 - 0",
                 "hidden": false
               },
               "actual_score": "4 - 2",
-              "points": 60,
+              "points": 48,
               "is_exact": false
             },
             {
@@ -52176,11 +52176,11 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "1 - 2",
+                "score": "1 - 1",
                 "hidden": false
               },
               "actual_score": "0 - 3",
-              "points": 48,
+              "points": 0,
               "is_exact": false
             },
             {
@@ -52207,11 +52207,11 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "1 - 3",
+                "score": "0 - 2",
                 "hidden": false
               },
               "actual_score": "1 - 0",
-              "points": 15,
+              "points": 0,
               "is_exact": false
             },
             {
@@ -52238,11 +52238,11 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "2 - 0",
+                "score": "2 - 2",
                 "hidden": false
               },
               "actual_score": "0 - 2",
-              "points": 0,
+              "points": 15,
               "is_exact": false
             },
             {
@@ -52269,11 +52269,11 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "3 - 1",
+                "score": "2 - 2",
                 "hidden": false
               },
               "actual_score": "2 - 1",
-              "points": 63,
+              "points": 15,
               "is_exact": false
             },
             {
@@ -52300,11 +52300,11 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "2 - 2",
+                "score": "2 - 1",
                 "hidden": false
               },
               "actual_score": "1 - 1",
-              "points": 60,
+              "points": 15,
               "is_exact": false
             },
             {
@@ -52331,7 +52331,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "1 - 2",
+                "score": "0 - 3",
                 "hidden": false
               },
               "actual_score": "1 - 3",
@@ -52362,11 +52362,11 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "2 - 2",
+                "score": "1 - 3",
                 "hidden": false
               },
               "actual_score": "3 - 2",
-              "points": 15,
+              "points": 0,
               "is_exact": false
             },
             {
@@ -52393,11 +52393,11 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "2 - 1",
+                "score": "1 - 0",
                 "hidden": false
               },
               "actual_score": "0 - 0",
-              "points": 0,
+              "points": 15,
               "is_exact": false
             },
             {
@@ -52424,11 +52424,11 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "1 - 3",
+                "score": "3 - 2",
                 "hidden": false
               },
-              "actual_score": "1 - 2",
-              "points": 63,
+              "actual_score": "1 - 3",
+              "points": 0,
               "is_exact": false
             },
             {
@@ -52486,7 +52486,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "1 - 1",
+                "score": "0 - 2",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -52579,7 +52579,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "1 - 3",
+                "score": "2 - 2",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -52610,7 +52610,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "1 - 3",
+                "score": "2 - 4",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -52641,7 +52641,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "1 - 1",
+                "score": "2 - 0",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -52703,7 +52703,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "2 - 1",
+                "score": "0 - 0",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -52765,7 +52765,7 @@
               },
               "predicted": {
                 "type": "score",
-                "score": "1 - 3",
+                "score": "0 - 3",
                 "hidden": false
               },
               "actual_score": "NS",
@@ -52776,7 +52776,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 495,
+          "subtotal": 505,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -52804,13 +52804,13 @@
                 "type": "teams",
                 "hidden": false,
                 "home": {
-                  "code": "KOR",
-                  "name": "Korea Republic",
+                  "code": "MEX",
+                  "name": "Mexico",
                   "hidden": false
                 },
                 "away": {
-                  "code": "SUI",
-                  "name": "Switzerland",
+                  "code": "CAN",
+                  "name": "Canada",
                   "hidden": false
                 }
               },
@@ -52848,8 +52848,8 @@
                 "type": "teams",
                 "hidden": false,
                 "home": {
-                  "code": "BRA",
-                  "name": "Brazil",
+                  "code": "MAR",
+                  "name": "Morocco",
                   "hidden": false
                 },
                 "away": {
@@ -52892,8 +52892,8 @@
                 "type": "teams",
                 "hidden": false,
                 "home": {
-                  "code": "ECU",
-                  "name": "Ecuador",
+                  "code": "GER",
+                  "name": "Germany",
                   "hidden": false
                 },
                 "away": {
@@ -52936,13 +52936,13 @@
                 "type": "teams",
                 "hidden": false,
                 "home": {
-                  "code": "NED",
-                  "name": "Netherlands",
+                  "code": "JPN",
+                  "name": "Japan",
                   "hidden": false
                 },
                 "away": {
-                  "code": "MAR",
-                  "name": "Morocco",
+                  "code": "BRA",
+                  "name": "Brazil",
                   "hidden": false
                 }
               },
@@ -52980,13 +52980,13 @@
                 "type": "teams",
                 "hidden": false,
                 "home": {
-                  "code": "GER",
-                  "name": "Germany",
+                  "code": "ECU",
+                  "name": "Ecuador",
                   "hidden": false
                 },
                 "away": {
-                  "code": "SEN",
-                  "name": "Senegal",
+                  "code": "FRA",
+                  "name": "France",
                   "hidden": false
                 }
               },
@@ -53024,13 +53024,13 @@
                 "type": "teams",
                 "hidden": false,
                 "home": {
-                  "code": "FRA",
-                  "name": "France",
+                  "code": "NOR",
+                  "name": "Norway",
                   "hidden": false
                 },
                 "away": {
-                  "code": "TUN",
-                  "name": "Tunisia",
+                  "code": "NED",
+                  "name": "Netherlands",
                   "hidden": false
                 }
               },
@@ -53068,13 +53068,13 @@
                 "type": "teams",
                 "hidden": false,
                 "home": {
-                  "code": "MEX",
-                  "name": "Mexico",
+                  "code": "KOR",
+                  "name": "Korea Republic",
                   "hidden": false
                 },
                 "away": {
-                  "code": "KSA",
-                  "name": "Saudi Arabia",
+                  "code": "URU",
+                  "name": "Uruguay",
                   "hidden": false
                 }
               },
@@ -53117,8 +53117,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": "UZB",
-                  "name": "Uzbekistan",
+                  "code": "SEN",
+                  "name": "Senegal",
                   "hidden": false
                 }
               },
@@ -53205,8 +53205,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": "BIH",
-                  "name": "Bosnia-Herzegovina",
+                  "code": "ALG",
+                  "name": "Algeria",
                   "hidden": false
                 }
               },
@@ -53293,8 +53293,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": "GHA",
-                  "name": "Ghana",
+                  "code": "CRO",
+                  "name": "Croatia",
                   "hidden": false
                 }
               },
@@ -53332,13 +53332,13 @@
                 "type": "teams",
                 "hidden": false,
                 "home": {
-                  "code": "CAN",
-                  "name": "Canada",
+                  "code": "SUI",
+                  "name": "Switzerland",
                   "hidden": false
                 },
                 "away": {
-                  "code": "JOR",
-                  "name": "Jordan",
+                  "code": "EGY",
+                  "name": "Egypt",
                   "hidden": false
                 }
               },
@@ -53376,13 +53376,13 @@
                 "type": "teams",
                 "hidden": false,
                 "home": {
-                  "code": "TUR",
-                  "name": "Turkey",
+                  "code": "PAR",
+                  "name": "Paraguay",
                   "hidden": false
                 },
                 "away": {
-                  "code": "EGY",
-                  "name": "Egypt",
+                  "code": "NZL",
+                  "name": "New Zealand",
                   "hidden": false
                 }
               },
@@ -53425,8 +53425,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": "URU",
-                  "name": "Uruguay",
+                  "code": "KSA",
+                  "name": "Saudi Arabia",
                   "hidden": false
                 }
               },
@@ -53469,8 +53469,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": "PAR",
-                  "name": "Paraguay",
+                  "code": "TUR",
+                  "name": "Turkey",
                   "hidden": false
                 }
               },
@@ -54096,8 +54096,8 @@
           {
             "question": "🏆 Champion",
             "prediction": {
-              "text": "Netherlands",
-              "flag": "NED"
+              "text": "Argentina",
+              "flag": "ARG"
             },
             "actual": {
               "text": "-",
@@ -54108,7 +54108,7 @@
           {
             "question": "Topscorer",
             "prediction": {
-              "text": "Vinicius Junior (Brazil)",
+              "text": "Kylian Mbappé (France)",
               "flag": null
             },
             "actual": {
@@ -54128,9 +54128,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247533/beturompequinielas/stage/1196-grand-total?scroll=fixture",
       "flag": "ARG",
       "rank": 16,
-      "points": 2727,
+      "points": 2724,
       "exact": 4,
-      "grand_total": 2727,
+      "grand_total": 2724,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -55634,7 +55634,7 @@
         },
         {
           "round": "Matchday 3",
-          "subtotal": 471,
+          "subtotal": 468,
           "fixtures": [
             {
               "fixture_number": 51,
@@ -56035,8 +56035,8 @@
                 "score": "0 - 2",
                 "hidden": false
               },
-              "actual_score": "1 - 2",
-              "points": 63,
+              "actual_score": "1 - 3",
+              "points": 60,
               "is_exact": false
             },
             {
