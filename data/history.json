@@ -147,7 +147,9 @@
         "exact": 1
       }
     ],
-    "settled": true
+    "settled": true,
+    "recap_day": "2026-06-15",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-15T23:00:20Z",
@@ -313,7 +315,9 @@
         "exact": 1
       }
     ],
-    "settled": false
+    "settled": false,
+    "recap_day": "2026-06-15",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-16T02:07:34Z",
@@ -479,7 +483,9 @@
         "exact": 1
       }
     ],
-    "settled": false
+    "settled": false,
+    "recap_day": "2026-06-15",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-16T03:19:02Z",
@@ -645,7 +651,9 @@
         "exact": 1
       }
     ],
-    "settled": false
+    "settled": false,
+    "recap_day": "2026-06-15",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-16T20:41:29Z",
@@ -811,7 +819,9 @@
         "exact": 1
       }
     ],
-    "settled": false
+    "settled": false,
+    "recap_day": "2026-06-16",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-16T20:51:13Z",
@@ -977,7 +987,9 @@
         "exact": 1
       }
     ],
-    "settled": false
+    "settled": false,
+    "recap_day": "2026-06-16",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-16T21:01:43Z",
@@ -1143,7 +1155,9 @@
         "exact": 1
       }
     ],
-    "settled": false
+    "settled": false,
+    "recap_day": "2026-06-16",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-16T22:01:43Z",
@@ -1309,7 +1323,9 @@
         "exact": 2
       }
     ],
-    "settled": false
+    "settled": false,
+    "recap_day": "2026-06-16",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-16T22:57:56Z",
@@ -1475,7 +1491,9 @@
         "exact": 1
       }
     ],
-    "settled": false
+    "settled": false,
+    "recap_day": "2026-06-16",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-16T23:58:25Z",
@@ -1641,7 +1659,9 @@
         "exact": 1
       }
     ],
-    "settled": false
+    "settled": false,
+    "recap_day": "2026-06-16",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-17T00:01:55Z",
@@ -1807,7 +1827,9 @@
         "exact": 1
       }
     ],
-    "settled": false
+    "settled": false,
+    "recap_day": "2026-06-16",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-17T00:06:27Z",
@@ -1973,7 +1995,9 @@
         "exact": 1
       }
     ],
-    "settled": false
+    "settled": false,
+    "recap_day": "2026-06-16",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-17T02:01:32Z",
@@ -2139,7 +2163,9 @@
         "exact": 1
       }
     ],
-    "settled": false
+    "settled": false,
+    "recap_day": "2026-06-16",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-17T03:01:32Z",
@@ -2305,7 +2331,9 @@
         "exact": 1
       }
     ],
-    "settled": false
+    "settled": false,
+    "recap_day": "2026-06-16",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-17T04:01:26Z",
@@ -2471,7 +2499,9 @@
         "exact": 1
       }
     ],
-    "settled": false
+    "settled": false,
+    "recap_day": "2026-06-16",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-17T05:01:23Z",
@@ -2637,7 +2667,9 @@
         "exact": 2
       }
     ],
-    "settled": false
+    "settled": false,
+    "recap_day": "2026-06-16",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-17T06:01:30Z",
@@ -2803,7 +2835,9 @@
         "exact": 1
       }
     ],
-    "settled": false
+    "settled": false,
+    "recap_day": "2026-06-16",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-17T07:01:27Z",
@@ -2969,7 +3003,9 @@
         "exact": 1
       }
     ],
-    "settled": true
+    "settled": true,
+    "recap_day": "2026-06-16",
+    "day_final_snapshot": true
   },
   {
     "timestamp": "2026-06-17T18:01:40Z",
@@ -3135,7 +3171,9 @@
         "exact": 1
       }
     ],
-    "settled": false
+    "settled": false,
+    "recap_day": "2026-06-17",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-17T21:01:33Z",
@@ -3301,7 +3339,9 @@
         "points": 588,
         "exact": 1
       }
-    ]
+    ],
+    "recap_day": "2026-06-17",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-17T21:34:43Z",
@@ -3467,7 +3507,9 @@
         "points": 573,
         "exact": 1
       }
-    ]
+    ],
+    "recap_day": "2026-06-17",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-17T22:01:28Z",
@@ -3633,7 +3675,9 @@
         "points": 573,
         "exact": 1
       }
-    ]
+    ],
+    "recap_day": "2026-06-17",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-17T23:14:22Z",
@@ -3799,7 +3843,9 @@
         "points": 588,
         "exact": 1
       }
-    ]
+    ],
+    "recap_day": "2026-06-17",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-18T01:01:35Z",
@@ -3965,7 +4011,9 @@
         "points": 636,
         "exact": 1
       }
-    ]
+    ],
+    "recap_day": "2026-06-17",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-18T02:16:21Z",
@@ -4131,7 +4179,9 @@
         "points": 651,
         "exact": 1
       }
-    ]
+    ],
+    "recap_day": "2026-06-17",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-18T02:46:16Z",
@@ -4297,7 +4347,9 @@
         "points": 699,
         "exact": 1
       }
-    ]
+    ],
+    "recap_day": "2026-06-17",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-18T03:31:31Z",
@@ -4463,7 +4515,9 @@
         "points": 684,
         "exact": 1
       }
-    ]
+    ],
+    "recap_day": "2026-06-17",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-18T04:23:17Z",
@@ -4629,7 +4683,9 @@
         "points": 699,
         "exact": 1
       }
-    ]
+    ],
+    "recap_day": "2026-06-17",
+    "day_final_snapshot": true
   },
   {
     "timestamp": "2026-06-18T16:09:05Z",
@@ -4795,7 +4851,9 @@
         "points": 699,
         "exact": 1
       }
-    ]
+    ],
+    "recap_day": "2026-06-18",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-18T17:49:19Z",
@@ -4961,7 +5019,9 @@
         "points": 753,
         "exact": 2
       }
-    ]
+    ],
+    "recap_day": "2026-06-18",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-18T19:03:26Z",
@@ -5127,7 +5187,9 @@
         "points": 759,
         "exact": 1
       }
-    ]
+    ],
+    "recap_day": "2026-06-18",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-18T20:41:25Z",
@@ -5293,7 +5355,9 @@
         "points": 774,
         "exact": 1
       }
-    ]
+    ],
+    "recap_day": "2026-06-18",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-18T20:51:27Z",
@@ -5459,7 +5523,9 @@
         "points": 759,
         "exact": 1
       }
-    ]
+    ],
+    "recap_day": "2026-06-18",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-18T21:03:14Z",
@@ -5625,7 +5691,9 @@
         "points": 759,
         "exact": 1
       }
-    ]
+    ],
+    "recap_day": "2026-06-18",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-18T22:11:31Z",
@@ -5791,7 +5859,9 @@
         "points": 759,
         "exact": 1
       }
-    ]
+    ],
+    "recap_day": "2026-06-18",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-18T22:21:41Z",
@@ -5957,7 +6027,9 @@
         "points": 819,
         "exact": 1
       }
-    ]
+    ],
+    "recap_day": "2026-06-18",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-18T22:41:15Z",
@@ -6123,7 +6195,9 @@
         "points": 822,
         "exact": 1
       }
-    ]
+    ],
+    "recap_day": "2026-06-18",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-18T22:52:20Z",
@@ -6289,7 +6363,9 @@
         "points": 807,
         "exact": 1
       }
-    ]
+    ],
+    "recap_day": "2026-06-18",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-19T01:01:33Z",
@@ -6455,7 +6531,9 @@
         "points": 807,
         "exact": 1
       }
-    ]
+    ],
+    "recap_day": "2026-06-18",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-19T01:11:13Z",
@@ -6621,7 +6699,9 @@
         "points": 807,
         "exact": 1
       }
-    ]
+    ],
+    "recap_day": "2026-06-18",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-19T02:21:22Z",
@@ -6787,7 +6867,9 @@
         "points": 867,
         "exact": 1
       }
-    ]
+    ],
+    "recap_day": "2026-06-18",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-19T19:11:19Z",
@@ -6953,7 +7035,9 @@
         "points": 870,
         "exact": 1
       }
-    ]
+    ],
+    "recap_day": "2026-06-19",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-19T19:18:58Z",
@@ -7119,7 +7203,9 @@
         "points": 888,
         "exact": 2
       }
-    ]
+    ],
+    "recap_day": "2026-06-19",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-19T19:52:02Z",
@@ -7285,7 +7371,9 @@
         "points": 873,
         "exact": 2
       }
-    ]
+    ],
+    "recap_day": "2026-06-19",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-19T22:02:50Z",
@@ -7451,7 +7539,9 @@
         "points": 933,
         "exact": 2
       }
-    ]
+    ],
+    "recap_day": "2026-06-19",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-19T22:11:39Z",
@@ -7617,7 +7707,9 @@
         "points": 888,
         "exact": 2
       }
-    ]
+    ],
+    "recap_day": "2026-06-19",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-20T00:41:27Z",
@@ -7783,7 +7875,9 @@
         "points": 903,
         "exact": 2
       }
-    ]
+    ],
+    "recap_day": "2026-06-19",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-20T01:03:01Z",
@@ -7949,7 +8043,9 @@
         "points": 951,
         "exact": 2
       }
-    ]
+    ],
+    "recap_day": "2026-06-19",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-20T01:11:36Z",
@@ -8115,7 +8211,9 @@
         "points": 951,
         "exact": 2
       }
-    ]
+    ],
+    "recap_day": "2026-06-19",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-20T01:31:23Z",
@@ -8281,7 +8379,9 @@
         "points": 951,
         "exact": 2
       }
-    ]
+    ],
+    "recap_day": "2026-06-19",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-20T03:11:46Z",
@@ -8447,7 +8547,9 @@
         "points": 999,
         "exact": 2
       }
-    ]
+    ],
+    "recap_day": "2026-06-19",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-20T17:02:49Z",
@@ -8613,7 +8715,9 @@
         "points": 1014,
         "exact": 2
       }
-    ]
+    ],
+    "recap_day": "2026-06-20",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-20T17:11:45Z",
@@ -8779,7 +8883,9 @@
         "points": 1062,
         "exact": 2
       }
-    ]
+    ],
+    "recap_day": "2026-06-20",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-20T17:21:30Z",
@@ -8945,7 +9051,9 @@
         "points": 1089,
         "exact": 3
       }
-    ]
+    ],
+    "recap_day": "2026-06-20",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-20T18:11:30Z",
@@ -9111,7 +9219,9 @@
         "points": 1062,
         "exact": 2
       }
-    ]
+    ],
+    "recap_day": "2026-06-20",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-20T18:31:37Z",
@@ -9277,7 +9387,9 @@
         "points": 1047,
         "exact": 2
       }
-    ]
+    ],
+    "recap_day": "2026-06-20",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-20T20:03:20Z",
@@ -9443,7 +9555,9 @@
         "points": 1047,
         "exact": 2
       }
-    ]
+    ],
+    "recap_day": "2026-06-20",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-20T20:51:31Z",
@@ -9609,7 +9723,9 @@
         "points": 1062,
         "exact": 2
       }
-    ]
+    ],
+    "recap_day": "2026-06-20",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-20T22:03:32Z",
@@ -9775,7 +9891,9 @@
         "points": 1137,
         "exact": 3
       }
-    ]
+    ],
+    "recap_day": "2026-06-20",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-21T00:02:55Z",
@@ -9941,7 +10059,9 @@
         "points": 1152,
         "exact": 3
       }
-    ]
+    ],
+    "recap_day": "2026-06-20",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-21T04:03:17Z",
@@ -10107,7 +10227,9 @@
         "points": 1167,
         "exact": 3
       }
-    ]
+    ],
+    "recap_day": "2026-06-20",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-21T04:11:59Z",
@@ -10273,7 +10395,9 @@
         "points": 1215,
         "exact": 3
       }
-    ]
+    ],
+    "recap_day": "2026-06-20",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-21T04:41:36Z",
@@ -10439,7 +10563,9 @@
         "points": 1209,
         "exact": 2
       }
-    ]
+    ],
+    "recap_day": "2026-06-20",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-21T05:31:19Z",
@@ -10605,7 +10731,9 @@
         "points": 1209,
         "exact": 2
       }
-    ]
+    ],
+    "recap_day": "2026-06-20",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-21T16:11:32Z",
@@ -10771,7 +10899,9 @@
         "points": 1209,
         "exact": 2
       }
-    ]
+    ],
+    "recap_day": "2026-06-21",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-21T16:21:37Z",
@@ -10937,7 +11067,9 @@
         "points": 1257,
         "exact": 2
       }
-    ]
+    ],
+    "recap_day": "2026-06-21",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-21T16:31:46Z",
@@ -11103,7 +11235,9 @@
         "points": 1272,
         "exact": 2
       }
-    ]
+    ],
+    "recap_day": "2026-06-21",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-21T17:21:15Z",
@@ -11269,7 +11403,9 @@
         "points": 1257,
         "exact": 2
       }
-    ]
+    ],
+    "recap_day": "2026-06-21",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-21T19:03:26Z",
@@ -11435,7 +11571,9 @@
         "points": 1272,
         "exact": 2
       }
-    ]
+    ],
+    "recap_day": "2026-06-21",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-21T22:04:07Z",
@@ -11601,7 +11739,9 @@
         "points": 1287,
         "exact": 2
       }
-    ]
+    ],
+    "recap_day": "2026-06-21",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-21T22:31:37Z",
@@ -11767,7 +11907,9 @@
         "points": 1272,
         "exact": 2
       }
-    ]
+    ],
+    "recap_day": "2026-06-21",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-21T22:47:09Z",
@@ -11933,7 +12075,9 @@
         "points": 1272,
         "exact": 2
       }
-    ]
+    ],
+    "recap_day": "2026-06-21",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-21T23:02:51Z",
@@ -12099,7 +12243,9 @@
         "points": 1320,
         "exact": 2
       }
-    ]
+    ],
+    "recap_day": "2026-06-21",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-21T23:31:29Z",
@@ -12265,7 +12411,9 @@
         "points": 1272,
         "exact": 2
       }
-    ]
+    ],
+    "recap_day": "2026-06-21",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-22T01:11:37Z",
@@ -12431,7 +12579,9 @@
         "points": 1287,
         "exact": 2
       }
-    ]
+    ],
+    "recap_day": "2026-06-21",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-22T01:21:21Z",
@@ -12597,7 +12747,9 @@
         "points": 1272,
         "exact": 2
       }
-    ]
+    ],
+    "recap_day": "2026-06-21",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-22T02:21:51Z",
@@ -12763,7 +12915,9 @@
         "points": 1272,
         "exact": 2
       }
-    ]
+    ],
+    "recap_day": "2026-06-21",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-22T02:31:42Z",
@@ -12929,7 +13083,9 @@
         "points": 1335,
         "exact": 2
       }
-    ]
+    ],
+    "recap_day": "2026-06-21",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-22T02:52:02Z",
@@ -13095,7 +13251,9 @@
         "points": 1332,
         "exact": 2
       }
-    ]
+    ],
+    "recap_day": "2026-06-21",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-22T17:11:43Z",
@@ -13261,7 +13419,9 @@
         "points": 1344,
         "exact": 3
       }
-    ]
+    ],
+    "recap_day": "2026-06-22",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-22T17:41:36Z",
@@ -13427,7 +13587,9 @@
         "points": 1368,
         "exact": 2
       }
-    ]
+    ],
+    "recap_day": "2026-06-22",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-22T19:03:11Z",
@@ -13593,7 +13755,9 @@
         "points": 1353,
         "exact": 2
       }
-    ]
+    ],
+    "recap_day": "2026-06-22",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-22T21:11:52Z",
@@ -13759,7 +13923,9 @@
         "points": 1368,
         "exact": 2
       }
-    ]
+    ],
+    "recap_day": "2026-06-22",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-22T21:21:44Z",
@@ -13925,7 +14091,9 @@
         "points": 1416,
         "exact": 2
       }
-    ]
+    ],
+    "recap_day": "2026-06-22",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-23T00:21:35Z",
@@ -14091,7 +14259,9 @@
         "points": 1416,
         "exact": 2
       }
-    ]
+    ],
+    "recap_day": "2026-06-22",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-23T00:31:57Z",
@@ -14257,7 +14427,9 @@
         "points": 1416,
         "exact": 2
       }
-    ]
+    ],
+    "recap_day": "2026-06-22",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-23T00:51:39Z",
@@ -14423,7 +14595,9 @@
         "points": 1431,
         "exact": 2
       }
-    ]
+    ],
+    "recap_day": "2026-06-22",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-23T01:11:49Z",
@@ -14589,7 +14763,9 @@
         "points": 1416,
         "exact": 2
       }
-    ]
+    ],
+    "recap_day": "2026-06-22",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-23T01:21:39Z",
@@ -14755,7 +14931,9 @@
         "points": 1416,
         "exact": 2
       }
-    ]
+    ],
+    "recap_day": "2026-06-22",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-23T02:02:57Z",
@@ -14921,7 +15099,9 @@
         "points": 1416,
         "exact": 2
       }
-    ]
+    ],
+    "recap_day": "2026-06-22",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-23T03:03:33Z",
@@ -15087,7 +15267,9 @@
         "points": 1476,
         "exact": 2
       }
-    ]
+    ],
+    "recap_day": "2026-06-22",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-23T03:41:47Z",
@@ -15253,7 +15435,9 @@
         "points": 1416,
         "exact": 2
       }
-    ]
+    ],
+    "recap_day": "2026-06-22",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-23T04:41:26Z",
@@ -15419,7 +15603,9 @@
         "points": 1473,
         "exact": 4
       }
-    ]
+    ],
+    "recap_day": "2026-06-22",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-23T04:51:44Z",
@@ -15585,7 +15771,9 @@
         "points": 1431,
         "exact": 2
       }
-    ]
+    ],
+    "recap_day": "2026-06-22",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-23T17:03:37Z",
@@ -15751,7 +15939,9 @@
         "points": 1431,
         "exact": 2
       }
-    ]
+    ],
+    "recap_day": "2026-06-23",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-23T17:11:39Z",
@@ -15917,7 +16107,9 @@
         "points": 1479,
         "exact": 2
       }
-    ]
+    ],
+    "recap_day": "2026-06-23",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-23T17:21:43Z",
@@ -16083,7 +16275,9 @@
         "points": 1479,
         "exact": 2
       }
-    ]
+    ],
+    "recap_day": "2026-06-23",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-23T17:32:31Z",
@@ -16249,7 +16443,9 @@
         "points": 1494,
         "exact": 2
       }
-    ]
+    ],
+    "recap_day": "2026-06-23",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-23T17:41:36Z",
@@ -16415,7 +16611,9 @@
         "points": 1491,
         "exact": 2
       }
-    ]
+    ],
+    "recap_day": "2026-06-23",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-23T18:31:42Z",
@@ -16581,7 +16779,9 @@
         "points": 1494,
         "exact": 2
       }
-    ]
+    ],
+    "recap_day": "2026-06-23",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-23T19:03:25Z",
@@ -16747,7 +16947,9 @@
         "points": 1479,
         "exact": 2
       }
-    ]
+    ],
+    "recap_day": "2026-06-23",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-23T20:11:36Z",
@@ -16913,7 +17115,9 @@
         "points": 1479,
         "exact": 2
       }
-    ]
+    ],
+    "recap_day": "2026-06-23",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-23T23:11:41Z",
@@ -17079,7 +17283,9 @@
         "points": 1479,
         "exact": 2
       }
-    ]
+    ],
+    "recap_day": "2026-06-23",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-24T00:21:33Z",
@@ -17245,7 +17451,9 @@
         "points": 1539,
         "exact": 2
       }
-    ]
+    ],
+    "recap_day": "2026-06-23",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-24T02:03:24Z",
@@ -17411,7 +17619,9 @@
         "points": 1554,
         "exact": 2
       }
-    ]
+    ],
+    "recap_day": "2026-06-23",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-24T03:51:38Z",
@@ -17577,7 +17787,9 @@
         "points": 1602,
         "exact": 2
       }
-    ]
+    ],
+    "recap_day": "2026-06-23",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-24T19:03:12Z",
@@ -17743,7 +17955,9 @@
         "points": 1602,
         "exact": 2
       }
-    ]
+    ],
+    "recap_day": "2026-06-24",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-24T19:31:39Z",
@@ -17909,7 +18123,9 @@
         "points": 1650,
         "exact": 2
       }
-    ]
+    ],
+    "recap_day": "2026-06-24",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-24T19:41:54Z",
@@ -18075,7 +18291,9 @@
         "points": 1662,
         "exact": 2
       }
-    ]
+    ],
+    "recap_day": "2026-06-24",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-24T19:51:25Z",
@@ -18241,7 +18459,9 @@
         "points": 1665,
         "exact": 2
       }
-    ]
+    ],
+    "recap_day": "2026-06-24",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-24T20:11:51Z",
@@ -18407,7 +18627,9 @@
         "points": 1713,
         "exact": 2
       }
-    ]
+    ],
+    "recap_day": "2026-06-24",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-24T20:21:38Z",
@@ -18573,7 +18795,9 @@
         "points": 1725,
         "exact": 2
       }
-    ]
+    ],
+    "recap_day": "2026-06-24",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-24T20:31:29Z",
@@ -18739,7 +18963,9 @@
         "points": 1790,
         "exact": 2
       }
-    ]
+    ],
+    "recap_day": "2026-06-24",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-24T20:41:33Z",
@@ -18905,7 +19131,9 @@
         "points": 1793,
         "exact": 2
       }
-    ]
+    ],
+    "recap_day": "2026-06-24",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-24T21:01:30Z",
@@ -19071,7 +19299,9 @@
         "points": 1820,
         "exact": 3
       }
-    ]
+    ],
+    "recap_day": "2026-06-24",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-24T21:11:37Z",
@@ -19237,7 +19467,9 @@
         "points": 1755,
         "exact": 3
       }
-    ]
+    ],
+    "recap_day": "2026-06-24",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-24T22:03:07Z",
@@ -19403,7 +19635,9 @@
         "points": 1820,
         "exact": 3
       }
-    ]
+    ],
+    "recap_day": "2026-06-24",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-24T22:11:20Z",
@@ -19569,7 +19803,9 @@
         "points": 1835,
         "exact": 3
       }
-    ]
+    ],
+    "recap_day": "2026-06-24",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-24T22:21:34Z",
@@ -19735,7 +19971,9 @@
         "points": 1820,
         "exact": 3
       }
-    ]
+    ],
+    "recap_day": "2026-06-24",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-24T22:41:36Z",
@@ -19901,7 +20139,9 @@
         "points": 1890,
         "exact": 3
       }
-    ]
+    ],
+    "recap_day": "2026-06-24",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-24T22:47:04Z",
@@ -20067,7 +20307,9 @@
         "points": 1890,
         "exact": 3
       }
-    ]
+    ],
+    "recap_day": "2026-06-24",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-24T22:53:24Z",
@@ -20233,7 +20475,9 @@
         "points": 1905,
         "exact": 3
       }
-    ]
+    ],
+    "recap_day": "2026-06-24",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-24T23:31:16Z",
@@ -20399,7 +20643,9 @@
         "points": 1890,
         "exact": 3
       }
-    ]
+    ],
+    "recap_day": "2026-06-24",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-24T23:48:15Z",
@@ -20565,7 +20811,9 @@
         "points": 1938,
         "exact": 3
       }
-    ]
+    ],
+    "recap_day": "2026-06-24",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-25T00:03:03Z",
@@ -20731,7 +20979,9 @@
         "points": 1953,
         "exact": 3
       }
-    ]
+    ],
+    "recap_day": "2026-06-24",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-25T01:11:20Z",
@@ -20897,7 +21147,9 @@
         "points": 2053,
         "exact": 3
       }
-    ]
+    ],
+    "recap_day": "2026-06-24",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-25T02:21:38Z",
@@ -21063,7 +21315,9 @@
         "points": 2101,
         "exact": 3
       }
-    ]
+    ],
+    "recap_day": "2026-06-24",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-25T02:31:21Z",
@@ -21229,7 +21483,9 @@
         "points": 2191,
         "exact": 3
       }
-    ]
+    ],
+    "recap_day": "2026-06-24",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-25T03:03:36Z",
@@ -21395,7 +21651,9 @@
         "points": 2194,
         "exact": 3
       }
-    ]
+    ],
+    "recap_day": "2026-06-24",
+    "day_final_snapshot": true
   },
   {
     "timestamp": "2026-06-25T20:11:27Z",
@@ -21561,7 +21819,9 @@
         "points": 2268,
         "exact": 5
       }
-    ]
+    ],
+    "recap_day": "2026-06-25",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-25T21:31:56Z",
@@ -21727,7 +21987,9 @@
         "points": 2268,
         "exact": 5
       }
-    ]
+    ],
+    "recap_day": "2026-06-25",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-25T21:41:25Z",
@@ -21893,7 +22155,9 @@
         "points": 2316,
         "exact": 5
       }
-    ]
+    ],
+    "recap_day": "2026-06-25",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-25T23:04:46Z",
@@ -22059,7 +22323,9 @@
         "points": 2453,
         "exact": 4
       }
-    ]
+    ],
+    "recap_day": "2026-06-25",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-25T23:11:35Z",
@@ -22225,7 +22491,9 @@
         "points": 2453,
         "exact": 4
       }
-    ]
+    ],
+    "recap_day": "2026-06-25",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-26T00:21:14Z",
@@ -22391,7 +22659,9 @@
         "points": 2453,
         "exact": 4
       }
-    ]
+    ],
+    "recap_day": "2026-06-25",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-26T00:31:36Z",
@@ -22557,7 +22827,9 @@
         "points": 2468,
         "exact": 4
       }
-    ]
+    ],
+    "recap_day": "2026-06-25",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-26T02:21:22Z",
@@ -22723,7 +22995,9 @@
         "points": 2503,
         "exact": 4
       }
-    ]
+    ],
+    "recap_day": "2026-06-25",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-26T02:41:33Z",
@@ -22889,7 +23163,9 @@
         "points": 2566,
         "exact": 4
       }
-    ]
+    ],
+    "recap_day": "2026-06-25",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-26T03:21:46Z",
@@ -23055,7 +23331,9 @@
         "points": 2518,
         "exact": 4
       }
-    ]
+    ],
+    "recap_day": "2026-06-25",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-26T04:11:29Z",
@@ -23221,7 +23499,9 @@
         "points": 2551,
         "exact": 4
       }
-    ]
+    ],
+    "recap_day": "2026-06-25",
+    "day_final_snapshot": true
   },
   {
     "timestamp": "2026-06-26T19:11:31Z",
@@ -23387,7 +23667,9 @@
         "points": 2727,
         "exact": 4
       }
-    ]
+    ],
+    "recap_day": "2026-06-26",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-26T19:31:34Z",
@@ -23553,7 +23835,9 @@
         "points": 2727,
         "exact": 4
       }
-    ]
+    ],
+    "recap_day": "2026-06-26",
+    "day_final_snapshot": false
   },
   {
     "timestamp": "2026-06-26T19:41:29Z",
@@ -23719,6 +24003,8 @@
         "points": 2724,
         "exact": 4
       }
-    ]
+    ],
+    "recap_day": "2026-06-26",
+    "day_final_snapshot": false
   }
 ]
