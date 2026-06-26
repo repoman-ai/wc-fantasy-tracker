@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-26T04:01:39Z",
+  "updated": "2026-06-26T04:11:29Z",
   "pool": {
     "id": "34193",
     "slug": "bobby-and-friends",
@@ -68,7 +68,7 @@
       "name": "Alejandro",
       "flag": "BRA",
       "rank": 6,
-      "points": 2919,
+      "points": 2904,
       "exact": 5
     },
     {
@@ -118,18 +118,8 @@
       "name": "Luisa",
       "flag": "POR",
       "rank": 11,
-      "points": 2672,
+      "points": 2657,
       "exact": 3
-    },
-    {
-      "team_id": "247525",
-      "slug": "karenwj",
-      "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247525/karenwj/stage/1196-grand-total?scroll=fixture",
-      "name": "Karenwj",
-      "flag": "NED",
-      "rank": 12,
-      "points": 2659,
-      "exact": 6
     },
     {
       "team_id": "247729",
@@ -137,7 +127,7 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247729/maxs/stage/1196-grand-total?scroll=fixture",
       "name": "MaxS.",
       "flag": "ARG",
-      "rank": 13,
+      "rank": 12,
       "points": 2646,
       "exact": 4
     },
@@ -147,7 +137,7 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/253790/remi/stage/1196-grand-total?scroll=fixture",
       "name": "remi",
       "flag": "FRA",
-      "rank": 14,
+      "rank": 13,
       "points": 2644,
       "exact": 5
     },
@@ -157,9 +147,19 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/252600/el-capitan/stage/1196-grand-total?scroll=fixture",
       "name": "El Capitan",
       "flag": "FRA",
-      "rank": 15,
+      "rank": 14,
       "points": 2618,
       "exact": 6
+    },
+    {
+      "team_id": "247525",
+      "slug": "karenwj",
+      "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247525/karenwj/stage/1196-grand-total?scroll=fixture",
+      "name": "Karenwj",
+      "flag": "NED",
+      "rank": 15,
+      "points": 2584,
+      "exact": 5
     },
     {
       "team_id": "247533",
@@ -168,7 +168,7 @@
       "name": "Beturompequinielas",
       "flag": "ARG",
       "rank": 16,
-      "points": 2518,
+      "points": 2551,
       "exact": 4
     }
   ]
