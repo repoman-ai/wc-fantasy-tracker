@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-27T01:51:35Z",
+  "updated": "2026-06-27T02:02:37Z",
   "players": {
     "246775": {
       "team_id": "246775",
@@ -1954,7 +1954,7 @@
               "fixture_number": 65,
               "round": "Matchday 3",
               "stage_type": "group",
-              "status": "· LIVE",
+              "status": "FT",
               "kickoff_utc": "2026-06-27T00:00:00Z",
               "kickoff_local": "2026-06-26 20:00",
               "kickoff_timezone": "America/New_York",
@@ -5562,7 +5562,7 @@
               "fixture_number": 65,
               "round": "Matchday 3",
               "stage_type": "group",
-              "status": "· LIVE",
+              "status": "FT",
               "kickoff_utc": "2026-06-27T00:00:00Z",
               "kickoff_local": "2026-06-26 20:00",
               "kickoff_timezone": "America/New_York",
@@ -9170,7 +9170,7 @@
               "fixture_number": 65,
               "round": "Matchday 3",
               "stage_type": "group",
-              "status": "· LIVE",
+              "status": "FT",
               "kickoff_utc": "2026-06-27T00:00:00Z",
               "kickoff_local": "2026-06-26 20:00",
               "kickoff_timezone": "America/New_York",
@@ -12778,7 +12778,7 @@
               "fixture_number": 65,
               "round": "Matchday 3",
               "stage_type": "group",
-              "status": "· LIVE",
+              "status": "FT",
               "kickoff_utc": "2026-06-27T00:00:00Z",
               "kickoff_local": "2026-06-26 20:00",
               "kickoff_timezone": "America/New_York",
@@ -16386,7 +16386,7 @@
               "fixture_number": 65,
               "round": "Matchday 3",
               "stage_type": "group",
-              "status": "· LIVE",
+              "status": "FT",
               "kickoff_utc": "2026-06-27T00:00:00Z",
               "kickoff_local": "2026-06-26 20:00",
               "kickoff_timezone": "America/New_York",
@@ -16417,7 +16417,7 @@
               "fixture_number": 66,
               "round": "Matchday 3",
               "stage_type": "group",
-              "status": "· LIVE",
+              "status": "FT",
               "kickoff_utc": "2026-06-27T00:00:00Z",
               "kickoff_local": "2026-06-26 20:00",
               "kickoff_timezone": "America/New_York",
@@ -19554,7 +19554,7 @@
         },
         {
           "round": "Matchday 3",
-          "subtotal": 615,
+          "subtotal": 555,
           "fixtures": [
             {
               "fixture_number": 51,
@@ -19994,7 +19994,7 @@
               "fixture_number": 65,
               "round": "Matchday 3",
               "stage_type": "group",
-              "status": "· LIVE",
+              "status": "FT",
               "kickoff_utc": "2026-06-27T00:00:00Z",
               "kickoff_local": "2026-06-26 20:00",
               "kickoff_timezone": "America/New_York",
@@ -20025,7 +20025,7 @@
               "fixture_number": 66,
               "round": "Matchday 3",
               "stage_type": "group",
-              "status": "· LIVE",
+              "status": "FT",
               "kickoff_utc": "2026-06-27T00:00:00Z",
               "kickoff_local": "2026-06-26 20:00",
               "kickoff_timezone": "America/New_York",
@@ -20049,7 +20049,7 @@
                 "hidden": false
               },
               "actual_score": "0 - 1",
-              "points": 60,
+              "points": null,
               "is_exact": false
             },
             {
@@ -20940,7 +20940,7 @@
                 },
                 "away": {
                   "code": null,
-                  "name": "Cape Verde Islands",
+                  "name": "Uruguay",
                   "hidden": false
                 }
               },
@@ -23162,7 +23162,7 @@
         },
         {
           "round": "Matchday 3",
-          "subtotal": 642,
+          "subtotal": 582,
           "fixtures": [
             {
               "fixture_number": 51,
@@ -23602,7 +23602,7 @@
               "fixture_number": 65,
               "round": "Matchday 3",
               "stage_type": "group",
-              "status": "· LIVE",
+              "status": "FT",
               "kickoff_utc": "2026-06-27T00:00:00Z",
               "kickoff_local": "2026-06-26 20:00",
               "kickoff_timezone": "America/New_York",
@@ -23633,7 +23633,7 @@
               "fixture_number": 66,
               "round": "Matchday 3",
               "stage_type": "group",
-              "status": "· LIVE",
+              "status": "FT",
               "kickoff_utc": "2026-06-27T00:00:00Z",
               "kickoff_local": "2026-06-26 20:00",
               "kickoff_timezone": "America/New_York",
@@ -23657,7 +23657,7 @@
                 "hidden": false
               },
               "actual_score": "0 - 1",
-              "points": 60,
+              "points": null,
               "is_exact": false
             },
             {
@@ -24548,7 +24548,7 @@
                 },
                 "away": {
                   "code": null,
-                  "name": "Cape Verde Islands",
+                  "name": "Uruguay",
                   "hidden": false
                 }
               },
@@ -26770,7 +26770,7 @@
         },
         {
           "round": "Matchday 3",
-          "subtotal": 420,
+          "subtotal": 357,
           "fixtures": [
             {
               "fixture_number": 51,
@@ -27210,7 +27210,7 @@
               "fixture_number": 65,
               "round": "Matchday 3",
               "stage_type": "group",
-              "status": "· LIVE",
+              "status": "FT",
               "kickoff_utc": "2026-06-27T00:00:00Z",
               "kickoff_local": "2026-06-26 20:00",
               "kickoff_timezone": "America/New_York",
@@ -27241,7 +27241,7 @@
               "fixture_number": 66,
               "round": "Matchday 3",
               "stage_type": "group",
-              "status": "· LIVE",
+              "status": "FT",
               "kickoff_utc": "2026-06-27T00:00:00Z",
               "kickoff_local": "2026-06-26 20:00",
               "kickoff_timezone": "America/New_York",
@@ -27265,7 +27265,7 @@
                 "hidden": false
               },
               "actual_score": "0 - 1",
-              "points": 63,
+              "points": null,
               "is_exact": false
             },
             {
@@ -28156,7 +28156,7 @@
                 },
                 "away": {
                   "code": null,
-                  "name": "Cape Verde Islands",
+                  "name": "Uruguay",
                   "hidden": false
                 }
               },
@@ -30378,7 +30378,7 @@
         },
         {
           "round": "Matchday 3",
-          "subtotal": 693,
+          "subtotal": 645,
           "fixtures": [
             {
               "fixture_number": 51,
@@ -30818,7 +30818,7 @@
               "fixture_number": 65,
               "round": "Matchday 3",
               "stage_type": "group",
-              "status": "· LIVE",
+              "status": "FT",
               "kickoff_utc": "2026-06-27T00:00:00Z",
               "kickoff_local": "2026-06-26 20:00",
               "kickoff_timezone": "America/New_York",
@@ -30849,7 +30849,7 @@
               "fixture_number": 66,
               "round": "Matchday 3",
               "stage_type": "group",
-              "status": "· LIVE",
+              "status": "FT",
               "kickoff_utc": "2026-06-27T00:00:00Z",
               "kickoff_local": "2026-06-26 20:00",
               "kickoff_timezone": "America/New_York",
@@ -30873,7 +30873,7 @@
                 "hidden": false
               },
               "actual_score": "0 - 1",
-              "points": 48,
+              "points": null,
               "is_exact": false
             },
             {
@@ -31764,7 +31764,7 @@
                 },
                 "away": {
                   "code": null,
-                  "name": "Cape Verde Islands",
+                  "name": "Uruguay",
                   "hidden": false
                 }
               },
@@ -33986,7 +33986,7 @@
         },
         {
           "round": "Matchday 3",
-          "subtotal": 621,
+          "subtotal": 606,
           "fixtures": [
             {
               "fixture_number": 51,
@@ -34426,7 +34426,7 @@
               "fixture_number": 65,
               "round": "Matchday 3",
               "stage_type": "group",
-              "status": "· LIVE",
+              "status": "FT",
               "kickoff_utc": "2026-06-27T00:00:00Z",
               "kickoff_local": "2026-06-26 20:00",
               "kickoff_timezone": "America/New_York",
@@ -34457,7 +34457,7 @@
               "fixture_number": 66,
               "round": "Matchday 3",
               "stage_type": "group",
-              "status": "· LIVE",
+              "status": "FT",
               "kickoff_utc": "2026-06-27T00:00:00Z",
               "kickoff_local": "2026-06-26 20:00",
               "kickoff_timezone": "America/New_York",
@@ -34481,7 +34481,7 @@
                 "hidden": false
               },
               "actual_score": "0 - 1",
-              "points": 15,
+              "points": null,
               "is_exact": false
             },
             {
@@ -35372,7 +35372,7 @@
                 },
                 "away": {
                   "code": null,
-                  "name": "Cape Verde Islands",
+                  "name": "Uruguay",
                   "hidden": false
                 }
               },
@@ -37594,7 +37594,7 @@
         },
         {
           "round": "Matchday 3",
-          "subtotal": 405,
+          "subtotal": 357,
           "fixtures": [
             {
               "fixture_number": 51,
@@ -38034,7 +38034,7 @@
               "fixture_number": 65,
               "round": "Matchday 3",
               "stage_type": "group",
-              "status": "· LIVE",
+              "status": "FT",
               "kickoff_utc": "2026-06-27T00:00:00Z",
               "kickoff_local": "2026-06-26 20:00",
               "kickoff_timezone": "America/New_York",
@@ -38065,7 +38065,7 @@
               "fixture_number": 66,
               "round": "Matchday 3",
               "stage_type": "group",
-              "status": "· LIVE",
+              "status": "FT",
               "kickoff_utc": "2026-06-27T00:00:00Z",
               "kickoff_local": "2026-06-26 20:00",
               "kickoff_timezone": "America/New_York",
@@ -38089,7 +38089,7 @@
                 "hidden": false
               },
               "actual_score": "0 - 1",
-              "points": 48,
+              "points": null,
               "is_exact": false
             },
             {
@@ -38980,7 +38980,7 @@
                 },
                 "away": {
                   "code": null,
-                  "name": "Cape Verde Islands",
+                  "name": "Uruguay",
                   "hidden": false
                 }
               },
@@ -41202,7 +41202,7 @@
         },
         {
           "round": "Matchday 3",
-          "subtotal": 744,
+          "subtotal": 696,
           "fixtures": [
             {
               "fixture_number": 51,
@@ -41642,7 +41642,7 @@
               "fixture_number": 65,
               "round": "Matchday 3",
               "stage_type": "group",
-              "status": "· LIVE",
+              "status": "FT",
               "kickoff_utc": "2026-06-27T00:00:00Z",
               "kickoff_local": "2026-06-26 20:00",
               "kickoff_timezone": "America/New_York",
@@ -41673,7 +41673,7 @@
               "fixture_number": 66,
               "round": "Matchday 3",
               "stage_type": "group",
-              "status": "· LIVE",
+              "status": "FT",
               "kickoff_utc": "2026-06-27T00:00:00Z",
               "kickoff_local": "2026-06-26 20:00",
               "kickoff_timezone": "America/New_York",
@@ -41697,7 +41697,7 @@
                 "hidden": false
               },
               "actual_score": "0 - 1",
-              "points": 48,
+              "points": null,
               "is_exact": false
             },
             {
@@ -42588,7 +42588,7 @@
                 },
                 "away": {
                   "code": null,
-                  "name": "Cape Verde Islands",
+                  "name": "Uruguay",
                   "hidden": false
                 }
               },
@@ -44810,7 +44810,7 @@
         },
         {
           "round": "Matchday 3",
-          "subtotal": 522,
+          "subtotal": 474,
           "fixtures": [
             {
               "fixture_number": 51,
@@ -45250,7 +45250,7 @@
               "fixture_number": 65,
               "round": "Matchday 3",
               "stage_type": "group",
-              "status": "· LIVE",
+              "status": "FT",
               "kickoff_utc": "2026-06-27T00:00:00Z",
               "kickoff_local": "2026-06-26 20:00",
               "kickoff_timezone": "America/New_York",
@@ -45281,7 +45281,7 @@
               "fixture_number": 66,
               "round": "Matchday 3",
               "stage_type": "group",
-              "status": "· LIVE",
+              "status": "FT",
               "kickoff_utc": "2026-06-27T00:00:00Z",
               "kickoff_local": "2026-06-26 20:00",
               "kickoff_timezone": "America/New_York",
@@ -45305,7 +45305,7 @@
                 "hidden": false
               },
               "actual_score": "0 - 1",
-              "points": 48,
+              "points": null,
               "is_exact": false
             },
             {
@@ -46196,7 +46196,7 @@
                 },
                 "away": {
                   "code": null,
-                  "name": "Cape Verde Islands",
+                  "name": "Uruguay",
                   "hidden": false
                 }
               },
@@ -48858,7 +48858,7 @@
               "fixture_number": 65,
               "round": "Matchday 3",
               "stage_type": "group",
-              "status": "· LIVE",
+              "status": "FT",
               "kickoff_utc": "2026-06-27T00:00:00Z",
               "kickoff_local": "2026-06-26 20:00",
               "kickoff_timezone": "America/New_York",
@@ -48889,7 +48889,7 @@
               "fixture_number": 66,
               "round": "Matchday 3",
               "stage_type": "group",
-              "status": "· LIVE",
+              "status": "FT",
               "kickoff_utc": "2026-06-27T00:00:00Z",
               "kickoff_local": "2026-06-26 20:00",
               "kickoff_timezone": "America/New_York",
@@ -48913,7 +48913,7 @@
                 "hidden": false
               },
               "actual_score": "0 - 1",
-              "points": 0,
+              "points": null,
               "is_exact": false
             },
             {
@@ -49804,7 +49804,7 @@
                 },
                 "away": {
                   "code": null,
-                  "name": "Cape Verde Islands",
+                  "name": "Uruguay",
                   "hidden": false
                 }
               },
@@ -52466,7 +52466,7 @@
               "fixture_number": 65,
               "round": "Matchday 3",
               "stage_type": "group",
-              "status": "· LIVE",
+              "status": "FT",
               "kickoff_utc": "2026-06-27T00:00:00Z",
               "kickoff_local": "2026-06-26 20:00",
               "kickoff_timezone": "America/New_York",
@@ -52497,7 +52497,7 @@
               "fixture_number": 66,
               "round": "Matchday 3",
               "stage_type": "group",
-              "status": "· LIVE",
+              "status": "FT",
               "kickoff_utc": "2026-06-27T00:00:00Z",
               "kickoff_local": "2026-06-26 20:00",
               "kickoff_timezone": "America/New_York",
@@ -52521,7 +52521,7 @@
                 "hidden": false
               },
               "actual_score": "0 - 1",
-              "points": 0,
+              "points": null,
               "is_exact": false
             },
             {
@@ -53412,7 +53412,7 @@
                 },
                 "away": {
                   "code": null,
-                  "name": "Cape Verde Islands",
+                  "name": "Uruguay",
                   "hidden": false
                 }
               },
@@ -56074,7 +56074,7 @@
               "fixture_number": 65,
               "round": "Matchday 3",
               "stage_type": "group",
-              "status": "· LIVE",
+              "status": "FT",
               "kickoff_utc": "2026-06-27T00:00:00Z",
               "kickoff_local": "2026-06-26 20:00",
               "kickoff_timezone": "America/New_York",
@@ -56105,7 +56105,7 @@
               "fixture_number": 66,
               "round": "Matchday 3",
               "stage_type": "group",
-              "status": "· LIVE",
+              "status": "FT",
               "kickoff_utc": "2026-06-27T00:00:00Z",
               "kickoff_local": "2026-06-26 20:00",
               "kickoff_timezone": "America/New_York",
@@ -56129,7 +56129,7 @@
                 "hidden": false
               },
               "actual_score": "0 - 1",
-              "points": 0,
+              "points": null,
               "is_exact": false
             },
             {
@@ -57020,7 +57020,7 @@
                 },
                 "away": {
                   "code": null,
-                  "name": "Cape Verde Islands",
+                  "name": "Uruguay",
                   "hidden": false
                 }
               },
