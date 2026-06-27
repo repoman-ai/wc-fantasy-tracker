@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-27T02:02:37Z",
+  "updated": "2026-06-27T02:11:41Z",
   "players": {
     "246775": {
       "team_id": "246775",
@@ -1985,7 +1985,7 @@
               "fixture_number": 66,
               "round": "Matchday 3",
               "stage_type": "group",
-              "status": "· LIVE",
+              "status": "FT",
               "kickoff_utc": "2026-06-27T00:00:00Z",
               "kickoff_local": "2026-06-26 20:00",
               "kickoff_timezone": "America/New_York",
@@ -5593,7 +5593,7 @@
               "fixture_number": 66,
               "round": "Matchday 3",
               "stage_type": "group",
-              "status": "· LIVE",
+              "status": "FT",
               "kickoff_utc": "2026-06-27T00:00:00Z",
               "kickoff_local": "2026-06-26 20:00",
               "kickoff_timezone": "America/New_York",
@@ -9201,7 +9201,7 @@
               "fixture_number": 66,
               "round": "Matchday 3",
               "stage_type": "group",
-              "status": "· LIVE",
+              "status": "FT",
               "kickoff_utc": "2026-06-27T00:00:00Z",
               "kickoff_local": "2026-06-26 20:00",
               "kickoff_timezone": "America/New_York",
@@ -12809,7 +12809,7 @@
               "fixture_number": 66,
               "round": "Matchday 3",
               "stage_type": "group",
-              "status": "· LIVE",
+              "status": "FT",
               "kickoff_utc": "2026-06-27T00:00:00Z",
               "kickoff_local": "2026-06-26 20:00",
               "kickoff_timezone": "America/New_York",
@@ -19554,7 +19554,7 @@
         },
         {
           "round": "Matchday 3",
-          "subtotal": 555,
+          "subtotal": 615,
           "fixtures": [
             {
               "fixture_number": 51,
@@ -20049,7 +20049,7 @@
                 "hidden": false
               },
               "actual_score": "0 - 1",
-              "points": null,
+              "points": 60,
               "is_exact": false
             },
             {
@@ -20940,7 +20940,7 @@
                 },
                 "away": {
                   "code": null,
-                  "name": "Uruguay",
+                  "name": "Cape Verde Islands",
                   "hidden": false
                 }
               },
@@ -23162,7 +23162,7 @@
         },
         {
           "round": "Matchday 3",
-          "subtotal": 582,
+          "subtotal": 642,
           "fixtures": [
             {
               "fixture_number": 51,
@@ -23657,7 +23657,7 @@
                 "hidden": false
               },
               "actual_score": "0 - 1",
-              "points": null,
+              "points": 60,
               "is_exact": false
             },
             {
@@ -24548,7 +24548,7 @@
                 },
                 "away": {
                   "code": null,
-                  "name": "Uruguay",
+                  "name": "Cape Verde Islands",
                   "hidden": false
                 }
               },
@@ -26770,7 +26770,7 @@
         },
         {
           "round": "Matchday 3",
-          "subtotal": 357,
+          "subtotal": 420,
           "fixtures": [
             {
               "fixture_number": 51,
@@ -27265,7 +27265,7 @@
                 "hidden": false
               },
               "actual_score": "0 - 1",
-              "points": null,
+              "points": 63,
               "is_exact": false
             },
             {
@@ -28156,7 +28156,7 @@
                 },
                 "away": {
                   "code": null,
-                  "name": "Uruguay",
+                  "name": "Cape Verde Islands",
                   "hidden": false
                 }
               },
@@ -30378,7 +30378,7 @@
         },
         {
           "round": "Matchday 3",
-          "subtotal": 645,
+          "subtotal": 693,
           "fixtures": [
             {
               "fixture_number": 51,
@@ -30873,7 +30873,7 @@
                 "hidden": false
               },
               "actual_score": "0 - 1",
-              "points": null,
+              "points": 48,
               "is_exact": false
             },
             {
@@ -31764,7 +31764,7 @@
                 },
                 "away": {
                   "code": null,
-                  "name": "Uruguay",
+                  "name": "Cape Verde Islands",
                   "hidden": false
                 }
               },
@@ -33986,7 +33986,7 @@
         },
         {
           "round": "Matchday 3",
-          "subtotal": 606,
+          "subtotal": 621,
           "fixtures": [
             {
               "fixture_number": 51,
@@ -34481,7 +34481,7 @@
                 "hidden": false
               },
               "actual_score": "0 - 1",
-              "points": null,
+              "points": 15,
               "is_exact": false
             },
             {
@@ -35372,7 +35372,7 @@
                 },
                 "away": {
                   "code": null,
-                  "name": "Uruguay",
+                  "name": "Cape Verde Islands",
                   "hidden": false
                 }
               },
@@ -37594,7 +37594,7 @@
         },
         {
           "round": "Matchday 3",
-          "subtotal": 357,
+          "subtotal": 405,
           "fixtures": [
             {
               "fixture_number": 51,
@@ -38089,7 +38089,7 @@
                 "hidden": false
               },
               "actual_score": "0 - 1",
-              "points": null,
+              "points": 48,
               "is_exact": false
             },
             {
@@ -38980,7 +38980,7 @@
                 },
                 "away": {
                   "code": null,
-                  "name": "Uruguay",
+                  "name": "Cape Verde Islands",
                   "hidden": false
                 }
               },
@@ -41202,7 +41202,7 @@
         },
         {
           "round": "Matchday 3",
-          "subtotal": 696,
+          "subtotal": 744,
           "fixtures": [
             {
               "fixture_number": 51,
@@ -41697,7 +41697,7 @@
                 "hidden": false
               },
               "actual_score": "0 - 1",
-              "points": null,
+              "points": 48,
               "is_exact": false
             },
             {
@@ -42588,7 +42588,7 @@
                 },
                 "away": {
                   "code": null,
-                  "name": "Uruguay",
+                  "name": "Cape Verde Islands",
                   "hidden": false
                 }
               },
@@ -44810,7 +44810,7 @@
         },
         {
           "round": "Matchday 3",
-          "subtotal": 474,
+          "subtotal": 522,
           "fixtures": [
             {
               "fixture_number": 51,
@@ -45305,7 +45305,7 @@
                 "hidden": false
               },
               "actual_score": "0 - 1",
-              "points": null,
+              "points": 48,
               "is_exact": false
             },
             {
@@ -46196,7 +46196,7 @@
                 },
                 "away": {
                   "code": null,
-                  "name": "Uruguay",
+                  "name": "Cape Verde Islands",
                   "hidden": false
                 }
               },
@@ -48913,7 +48913,7 @@
                 "hidden": false
               },
               "actual_score": "0 - 1",
-              "points": null,
+              "points": 0,
               "is_exact": false
             },
             {
@@ -49804,7 +49804,7 @@
                 },
                 "away": {
                   "code": null,
-                  "name": "Uruguay",
+                  "name": "Cape Verde Islands",
                   "hidden": false
                 }
               },
@@ -52521,7 +52521,7 @@
                 "hidden": false
               },
               "actual_score": "0 - 1",
-              "points": null,
+              "points": 0,
               "is_exact": false
             },
             {
@@ -53412,7 +53412,7 @@
                 },
                 "away": {
                   "code": null,
-                  "name": "Uruguay",
+                  "name": "Cape Verde Islands",
                   "hidden": false
                 }
               },
@@ -56129,7 +56129,7 @@
                 "hidden": false
               },
               "actual_score": "0 - 1",
-              "points": null,
+              "points": 0,
               "is_exact": false
             },
             {
@@ -57020,7 +57020,7 @@
                 },
                 "away": {
                   "code": null,
-                  "name": "Uruguay",
+                  "name": "Cape Verde Islands",
                   "hidden": false
                 }
               },
