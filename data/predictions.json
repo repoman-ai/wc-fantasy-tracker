@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-27T20:51:22Z",
+  "updated": "2026-06-27T21:01:24Z",
   "players": {
     "247930": {
       "team_id": "247930",
@@ -45374,7 +45374,7 @@
               "fixture_number": 67,
               "round": "Matchday 3",
               "stage_type": "group",
-              "status": "NS",
+              "status": "· LIVE",
               "kickoff_utc": "2026-06-27T21:00:00Z",
               "kickoff_local": "2026-06-27 17:00",
               "kickoff_timezone": "America/New_York",
@@ -45397,7 +45397,7 @@
                 "score": "1 - 3",
                 "hidden": false
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": null,
               "is_exact": false
             },
@@ -48982,7 +48982,7 @@
               "fixture_number": 67,
               "round": "Matchday 3",
               "stage_type": "group",
-              "status": "NS",
+              "status": "· LIVE",
               "kickoff_utc": "2026-06-27T21:00:00Z",
               "kickoff_local": "2026-06-27 17:00",
               "kickoff_timezone": "America/New_York",
@@ -49005,7 +49005,7 @@
                 "score": "2 - 0",
                 "hidden": false
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": null,
               "is_exact": false
             },
@@ -49491,7 +49491,7 @@
               "match": {
                 "home": {
                   "code": null,
-                  "name": "1L",
+                  "name": "England",
                   "hidden": false
                 },
                 "away": {
@@ -49672,7 +49672,7 @@
                 },
                 "away": {
                   "code": null,
-                  "name": "2L",
+                  "name": "Ghana",
                   "hidden": false
                 }
               },
@@ -52590,7 +52590,7 @@
               "fixture_number": 67,
               "round": "Matchday 3",
               "stage_type": "group",
-              "status": "NS",
+              "status": "· LIVE",
               "kickoff_utc": "2026-06-27T21:00:00Z",
               "kickoff_local": "2026-06-27 17:00",
               "kickoff_timezone": "America/New_York",
@@ -52613,7 +52613,7 @@
                 "score": "2 - 4",
                 "hidden": false
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": null,
               "is_exact": false
             },
@@ -53099,7 +53099,7 @@
               "match": {
                 "home": {
                   "code": null,
-                  "name": "1L",
+                  "name": "England",
                   "hidden": false
                 },
                 "away": {
@@ -53280,7 +53280,7 @@
                 },
                 "away": {
                   "code": null,
-                  "name": "2L",
+                  "name": "Ghana",
                   "hidden": false
                 }
               },
@@ -56198,7 +56198,7 @@
               "fixture_number": 67,
               "round": "Matchday 3",
               "stage_type": "group",
-              "status": "NS",
+              "status": "· LIVE",
               "kickoff_utc": "2026-06-27T21:00:00Z",
               "kickoff_local": "2026-06-27 17:00",
               "kickoff_timezone": "America/New_York",
@@ -56221,7 +56221,7 @@
                 "score": "1 - 3",
                 "hidden": false
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": null,
               "is_exact": false
             },
@@ -56707,7 +56707,7 @@
               "match": {
                 "home": {
                   "code": null,
-                  "name": "1L",
+                  "name": "England",
                   "hidden": false
                 },
                 "away": {
@@ -56888,7 +56888,7 @@
                 },
                 "away": {
                   "code": null,
-                  "name": "2L",
+                  "name": "Ghana",
                   "hidden": false
                 }
               },
