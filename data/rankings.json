@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-27T22:47:03Z",
+  "updated": "2026-06-27T23:11:33Z",
   "pool": {
     "id": "34193",
     "slug": "bobby-and-friends",
@@ -18,7 +18,7 @@
       "name": "bobby",
       "flag": "FRA",
       "rank": 1,
-      "points": 3943,
+      "points": 3973,
       "exact": 10
     },
     {
@@ -28,7 +28,7 @@
       "name": "Alec",
       "flag": "ESP",
       "rank": 2,
-      "points": 3943,
+      "points": 3973,
       "exact": 9
     },
     {
@@ -38,7 +38,7 @@
       "name": "Daniel",
       "flag": "FRA",
       "rank": 3,
-      "points": 3937,
+      "points": 3967,
       "exact": 11
     },
     {
@@ -68,18 +68,8 @@
       "name": "Alejandro",
       "flag": "BRA",
       "rank": 6,
-      "points": 3686,
+      "points": 3716,
       "exact": 6
-    },
-    {
-      "team_id": "247535",
-      "slug": "baronmark",
-      "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247535/baronmark/stage/1196-grand-total?scroll=fixture",
-      "name": "Baronmark",
-      "flag": "FRA",
-      "rank": 7,
-      "points": 3632,
-      "exact": 10
     },
     {
       "team_id": "247526",
@@ -87,8 +77,18 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247526/valewalle/stage/1196-grand-total?scroll=fixture",
       "name": "Valewalle",
       "flag": "ESP",
+      "rank": 7,
+      "points": 3695,
+      "exact": 10
+    },
+    {
+      "team_id": "247535",
+      "slug": "baronmark",
+      "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247535/baronmark/stage/1196-grand-total?scroll=fixture",
+      "name": "Baronmark",
+      "flag": "FRA",
       "rank": 8,
-      "points": 3630,
+      "points": 3667,
       "exact": 10
     },
     {
@@ -98,7 +98,7 @@
       "name": "Gabriela",
       "flag": "NED",
       "rank": 9,
-      "points": 3576,
+      "points": 3641,
       "exact": 7
     },
     {
@@ -118,18 +118,8 @@
       "name": "El Capitan",
       "flag": "FRA",
       "rank": 11,
-      "points": 3367,
+      "points": 3337,
       "exact": 7
-    },
-    {
-      "team_id": "247525",
-      "slug": "karenwj",
-      "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247525/karenwj/stage/1196-grand-total?scroll=fixture",
-      "name": "Karenwj",
-      "flag": "NED",
-      "rank": 12,
-      "points": 3313,
-      "exact": 5
     },
     {
       "team_id": "252610",
@@ -137,19 +127,19 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/252610/luisa/stage/1196-grand-total?scroll=fixture",
       "name": "Luisa",
       "flag": "POR",
-      "rank": 13,
-      "points": 3285,
+      "rank": 12,
+      "points": 3320,
       "exact": 3
     },
     {
-      "team_id": "253790",
-      "slug": "remi",
-      "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/253790/remi/stage/1196-grand-total?scroll=fixture",
-      "name": "remi",
-      "flag": "FRA",
-      "rank": 14,
-      "points": 3253,
-      "exact": 6
+      "team_id": "247525",
+      "slug": "karenwj",
+      "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247525/karenwj/stage/1196-grand-total?scroll=fixture",
+      "name": "Karenwj",
+      "flag": "NED",
+      "rank": 13,
+      "points": 3248,
+      "exact": 5
     },
     {
       "team_id": "247729",
@@ -157,9 +147,19 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247729/maxs/stage/1196-grand-total?scroll=fixture",
       "name": "MaxS.",
       "flag": "ARG",
-      "rank": 15,
-      "points": 3162,
+      "rank": 14,
+      "points": 3227,
       "exact": 4
+    },
+    {
+      "team_id": "253790",
+      "slug": "remi",
+      "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/253790/remi/stage/1196-grand-total?scroll=fixture",
+      "name": "remi",
+      "flag": "FRA",
+      "rank": 15,
+      "points": 3218,
+      "exact": 6
     },
     {
       "team_id": "247533",
