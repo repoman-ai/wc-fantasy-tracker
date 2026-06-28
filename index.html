@@ -594,13 +594,15 @@
   @media(max-width:640px){
     .mp-board .mp-side .flag{width:44px;height:33px}
     .mp-board .mp-side .nm{font-size:13.5px;max-width:96px}
-    /* Pick rows: rank+name on top, pick + result on the second row. */
-    .mp-row{grid-template-columns:26px 1fr auto;gap:8px 10px;padding:11px 13px}
+    /* Pick rows: score picks stay compact; legacy team-pair picks can still wrap. */
+    .mp-row{grid-template-columns:26px minmax(0,1fr) auto 42px;gap:8px 9px;padding:10px 12px}
     .mp-rank{grid-column:1;grid-row:1}
     .mp-who{grid-column:2;grid-row:1}
-    .mp-res{grid-column:3;grid-row:1}
-    .mp-pick{grid-column:1 / -1;grid-row:2;justify-content:flex-start;padding-top:8px;border-top:1px solid var(--line)}
-    .mp-pick .teams{align-items:flex-start}
+    .mp-pick{grid-column:3;grid-row:1;justify-content:center;min-width:42px}
+    .mp-pick .sc{font-size:23px}
+    .mp-res{grid-column:4;grid-row:1;min-width:34px}
+    .mp-pick.teampick{grid-column:1 / -1;grid-row:2;justify-content:flex-start;padding-top:8px;border-top:1px solid var(--line)}
+    .mp-pick.teampick .teams{align-items:flex-start}
     .mp-bar{grid-template-columns:74px 1fr 30px;gap:8px}
   }
 
@@ -3606,11 +3608,10 @@ function renderBonus(pdata){
 }
 
 /* ---------------- Match predictions popup ----------------
-   Everyone's pick for one fixture in a single view: their picked score (or, in
-   the knockout rounds, the two teams they expect), plus — once the game is
-   live/done — the points it earned them, mirroring the per-player sheet. Reached
-   by tapping a match anywhere it appears (live strip, recent results, the All
-   Results list, or any row in a player's sheet). */
+   Everyone's picked score for one fixture in a single view, plus — once the
+   game is live/done — the points it earned them, mirroring the per-player
+   sheet. Reached by tapping a match anywhere it appears (live strip, recent
+   results, the All Results list, or any row in a player's sheet). */
 
 let MATCH_SORT=null;  // null = auto (points when there's a result, else rank)
 
@@ -3771,7 +3772,7 @@ function renderMatchView(key){
     return `<div class="${cls.join(' ')}">
       <div class="mp-rank">${p.rank!=null&&p.rank<999?'#'+p.rank:''}</div>
       <div class="mp-who" data-player-id="${esc(p.team_id)}" role="button" tabindex="0" title="Open ${esc(p.name)}'s prediction page">${flagImg(p.flag,'flag sm')}<span class="nm">${esc(p.name)}</span></div>
-      <div class="mp-pick">${pick}</div>
+      <div class="mp-pick ${pl.type==='teams'?'teampick':(pl.hidden?'hiddenpick':'scorepick')}">${pick}</div>
       <div class="mp-res">${res}</div>
     </div>`;
   }).join('');

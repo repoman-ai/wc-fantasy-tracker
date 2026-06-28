@@ -1132,6 +1132,10 @@ def _knockout_score_parts(score_td):
     return predicted_score, actual_score or None
 
 
+def _is_live_status(status: str | None) -> bool:
+    return bool(status and "LIVE" in status.upper())
+
+
 def _parse_group_fixture(tds, fixture_number, round_name) -> dict:
     date_td, match_td, pred_td, score_td, pts_td = tds[0], tds[1], tds[2], tds[3], tds[4]
 
@@ -1229,20 +1233,27 @@ def _parse_knockout_fixture(tds, fixture_number, round_name) -> dict:
     # Player's predicted score plus the actual result share one cell.
     predicted_score, actual_score = _knockout_score_parts(score_td)
 
-    # Points split into Countries + Score components.
-    du = pts_td.select_one(".dotted_underline")
-    pts_countries = to_int(du.get_text()) if du else None
-    # The score-component points are the trailing text after the second label.
+    # Points split into Countries + Result components. Older markup wrapped the
+    # country component in .dotted_underline; current knockout markup uses plain
+    # Bootstrap badges, so read the meaningful values in label order.
     pts_text_nodes = [clean(t) for t in pts_td.find_all(string=True) if clean(t) and clean(t) not in ("Countries", "Score", "Result")]
+    du = pts_td.select_one(".dotted_underline")
+    if du:
+        pts_countries = to_int(du.get_text())
+    elif pts_text_nodes:
+        pts_countries = to_int(pts_text_nodes[0])
+    else:
+        pts_countries = None
+
     pts_score = None
-    if pts_text_nodes:
-        # last meaningful node is the score points ('-' or a number)
+    if len(pts_text_nodes) >= 2:
         pts_score = to_int(pts_text_nodes[-1])
     total = (pts_countries or 0) + (pts_score or 0)
     if pts_countries is None and pts_score is None:
         total = None
 
     status = clean(badge.get_text()) if badge else (actual_score or None)
+    is_exact = bool(pts_score == 90 and not _is_live_status(status))
 
     return {
         "fixture_number": fixture_number,
@@ -1266,7 +1277,7 @@ def _parse_knockout_fixture(tds, fixture_number, round_name) -> dict:
         "actual_score": actual_score or None,
         "points": total,
         "points_breakdown": {"countries": pts_countries, "score": pts_score},
-        "is_exact": False,
+        "is_exact": is_exact,
     }
 
 
@@ -1371,7 +1382,11 @@ def _parse_round_table(table, round_name) -> dict:
     md = {"round": round_name, "subtotal": None, "fixtures": []}
     seen_numbers = set()
     tbody = table.find("tbody") or table
-    for tr in tbody.find_all("tr", recursive=False):
+    # TournamentSoccer's knockout table can omit closing </tr> tags in the raw
+    # HTML, which makes html.parser nest later fixture rows inside the first one.
+    # Walk recursively and rely on fixture-number de-duping so those rows do not
+    # disappear from the scrape.
+    for tr in tbody.find_all("tr"):
         if "d-md-none" in tr.get("class", []):
             continue  # mobile-only duplicate of a desktop row
 
