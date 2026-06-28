@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-28T19:01:29Z",
+  "updated": "2026-06-28T19:11:23Z",
   "players": {
     "252653": {
       "team_id": "252653",
@@ -2270,10 +2270,10 @@
               "fixture_number": 73,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-06-28T19:00:00Z",
-              "kickoff_local": "2026-06-28 21:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "SoFi Stadium, Inglewood",
               "hidden": false,
               "match": {
@@ -2303,11 +2303,11 @@
                 },
                 "score": "1 - 2"
               },
-              "actual_score": "NS",
-              "points": null,
+              "actual_score": "0 - 0",
+              "points": 0,
               "points_breakdown": {
                 "countries": null,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             },
@@ -6038,10 +6038,10 @@
               "fixture_number": 73,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-06-28T19:00:00Z",
-              "kickoff_local": "2026-06-28 21:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "SoFi Stadium, Inglewood",
               "hidden": false,
               "match": {
@@ -6071,11 +6071,11 @@
                 },
                 "score": "1 - 2"
               },
-              "actual_score": "NS",
-              "points": null,
+              "actual_score": "0 - 0",
+              "points": 0,
               "points_breakdown": {
                 "countries": null,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             },
@@ -9806,10 +9806,10 @@
               "fixture_number": 73,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-06-28T19:00:00Z",
-              "kickoff_local": "2026-06-28 21:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "SoFi Stadium, Inglewood",
               "hidden": false,
               "match": {
@@ -9839,11 +9839,11 @@
                 },
                 "score": "1 - 2"
               },
-              "actual_score": "NS",
-              "points": null,
+              "actual_score": "0 - 0",
+              "points": 0,
               "points_breakdown": {
                 "countries": null,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             },
@@ -13574,10 +13574,10 @@
               "fixture_number": 73,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-06-28T19:00:00Z",
-              "kickoff_local": "2026-06-28 21:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "SoFi Stadium, Inglewood",
               "hidden": false,
               "match": {
@@ -13607,11 +13607,11 @@
                 },
                 "score": "2 - 1"
               },
-              "actual_score": "NS",
-              "points": null,
+              "actual_score": "0 - 0",
+              "points": 0,
               "points_breakdown": {
                 "countries": null,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             },
@@ -15080,9 +15080,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247526/valewalle/stage/1196-grand-total?scroll=fixture",
       "flag": "ESP",
       "rank": 5,
-      "points": 4348,
+      "points": 4363,
       "exact": 10,
-      "grand_total": 4348,
+      "grand_total": 4363,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -17336,16 +17336,16 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1510,
+          "subtotal": 1525,
           "fixtures": [
             {
               "fixture_number": 73,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-06-28T19:00:00Z",
-              "kickoff_local": "2026-06-28 21:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "SoFi Stadium, Inglewood",
               "hidden": false,
               "match": {
@@ -17375,11 +17375,11 @@
                 },
                 "score": "2 - 0"
               },
-              "actual_score": "NS",
-              "points": null,
+              "actual_score": "0 - 0",
+              "points": 15,
               "points_breakdown": {
                 "countries": null,
-                "score": null
+                "score": 15
               },
               "is_exact": false
             },
@@ -21110,10 +21110,10 @@
               "fixture_number": 73,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-06-28T19:00:00Z",
-              "kickoff_local": "2026-06-28 21:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "SoFi Stadium, Inglewood",
               "hidden": false,
               "match": {
@@ -21143,11 +21143,11 @@
                 },
                 "score": "2 - 3"
               },
-              "actual_score": "NS",
-              "points": null,
+              "actual_score": "0 - 0",
+              "points": 0,
               "points_breakdown": {
                 "countries": null,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             },
@@ -24878,10 +24878,10 @@
               "fixture_number": 73,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-06-28T19:00:00Z",
-              "kickoff_local": "2026-06-28 21:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "SoFi Stadium, Inglewood",
               "hidden": false,
               "match": {
@@ -24911,11 +24911,11 @@
                 },
                 "score": "1 - 2"
               },
-              "actual_score": "NS",
-              "points": null,
+              "actual_score": "0 - 0",
+              "points": 0,
               "points_breakdown": {
                 "countries": null,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             },
@@ -30152,9 +30152,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/252600/el-capitan/stage/1196-grand-total?scroll=fixture",
       "flag": "FRA",
       "rank": 9,
-      "points": 4148,
+      "points": 4163,
       "exact": 7,
-      "grand_total": 4148,
+      "grand_total": 4163,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -32408,7 +32408,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1485,
+          "subtotal": 1565,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -32448,10 +32448,10 @@
                 "score": "0 - 2"
               },
               "actual_score": "0 - 0",
-              "points": null,
+              "points": 15,
               "points_breakdown": {
                 "countries": null,
-                "score": null
+                "score": 15
               },
               "is_exact": false
             },
@@ -36176,7 +36176,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1190,
+          "subtotal": 1260,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -36216,10 +36216,10 @@
                 "score": "1 - 2"
               },
               "actual_score": "0 - 0",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
                 "countries": null,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             },
@@ -39944,7 +39944,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1230,
+          "subtotal": 1265,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -39984,10 +39984,10 @@
                 "score": "1 - 2"
               },
               "actual_score": "0 - 0",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
                 "countries": null,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             },
@@ -43712,7 +43712,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1160,
+          "subtotal": 1195,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -43752,10 +43752,10 @@
                 "score": "1 - 2"
               },
               "actual_score": "0 - 0",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
                 "countries": null,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             },
@@ -47480,7 +47480,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1075,
+          "subtotal": 1175,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -47520,10 +47520,10 @@
                 "score": "1 - 2"
               },
               "actual_score": "0 - 0",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
                 "countries": null,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             },
@@ -51248,7 +51248,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1015,
+          "subtotal": 1080,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -51288,10 +51288,10 @@
                 "score": "2 - 1"
               },
               "actual_score": "0 - 0",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
                 "countries": null,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             },
@@ -55016,7 +55016,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1140,
+          "subtotal": 1175,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -55056,10 +55056,10 @@
                 "score": "1 - 3"
               },
               "actual_score": "0 - 0",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
                 "countries": null,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             },
@@ -56528,9 +56528,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/253790/remi/stage/1196-grand-total?scroll=fixture",
       "flag": "FRA",
       "rank": 16,
-      "points": 3556,
+      "points": 3571,
       "exact": 6,
-      "grand_total": 3556,
+      "grand_total": 3571,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -58784,7 +58784,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1065,
+          "subtotal": 1150,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -58824,10 +58824,10 @@
                 "score": "0 - 3"
               },
               "actual_score": "0 - 0",
-              "points": null,
+              "points": 15,
               "points_breakdown": {
                 "countries": null,
-                "score": null
+                "score": 15
               },
               "is_exact": false
             },
