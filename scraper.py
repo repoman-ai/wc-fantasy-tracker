@@ -64,6 +64,11 @@ LEADERBOARD_URL = f"{BASE}/fantasy-soccer-world-cup/2026/pool/{POOL_ID}/{POOL_SL
 # Flag SVGs reuse the source CDN (the codes match exactly, e.g. FRA/ESP/RSA).
 FLAG_URL_TMPL = "https://assets.tournamentsoccer.us/flags/4x3/{code}.svg"
 
+# The site fills knockout bracket slots with a "ZZZ" placeholder flag until the
+# team is settled (e.g. "3ABCDF"/"W73"). It's never a real country, so we treat
+# it as "no flag" rather than emit a code that 404s on the CDN.
+PLACEHOLDER_FLAG_CODE = "ZZZ"
+
 MAX_ATTEMPTS = int(os.environ.get("MAX_ATTEMPTS", "4"))          # 1 try + 3 retries
 RETRY_GAP_SECONDS = int(os.environ.get("RETRY_GAP_SECONDS", "1800"))  # 30 minutes
 REQUEST_TIMEOUT = int(os.environ.get("REQUEST_TIMEOUT", "30"))
@@ -379,12 +384,14 @@ KNOCKOUT_VENUES = {
 }
 
 
-def venue_for(home_code, away_code, fixture_number):
+def venue_for(home_code, away_code, fixture_number, stage_type="group"):
     """Resolve the host venue ("Stadium, City") for a fixture. Group matches
-    are looked up by team pair; knockout matches (no settled teams) fall back to
-    the official match number. Returns None when unknown (e.g. a future feed
-    pairing we don't have on file), so callers can simply omit the field."""
-    if home_code and away_code:
+    are looked up by team pair; knockout matches are looked up by official match
+    number (their hosts are fixed by bracket slot, and now that knockout teams
+    are settled a pair could otherwise collide with a group-stage pairing).
+    Returns None when unknown (e.g. a future feed pairing we don't have on
+    file), so callers can simply omit the field."""
+    if stage_type == "group" and home_code and away_code:
         venue = GROUP_VENUES.get(frozenset((home_code, away_code)))
         if venue:
             return venue
@@ -1075,6 +1082,17 @@ def _team_from_col(col) -> dict:
     return {"code": code, "name": name or None, "hidden": False}
 
 
+def _team_from_slot_col(col) -> dict:
+    """Team identity for a knockout 'Result' cell. Same shape as _team_from_col,
+    but a bracket slot whose team isn't settled yet carries the "ZZZ" placeholder
+    flag with a slot label ("3ABCDF", "W73") instead of a name; drop that code so
+    the front-end shows its blank fallback rather than a 404ing ZZZ.svg."""
+    team = _team_from_col(col)
+    if team.get("code") == PLACEHOLDER_FLAG_CODE:
+        team["code"] = None
+    return team
+
+
 def _parse_group_fixture(tds, fixture_number, round_name) -> dict:
     date_td, match_td, pred_td, score_td, pts_td = tds[0], tds[1], tds[2], tds[3], tds[4]
 
@@ -1157,13 +1175,14 @@ def _parse_knockout_fixture(tds, fixture_number, round_name) -> dict:
     p_away = _team_from_col(pred_cols[1]) if len(pred_cols) > 1 else {"code": None, "name": None, "hidden": True}
     hidden = bool(p_home.get("hidden") or p_away.get("hidden"))
 
-    # The actual matchup identity (bracket slot labels like "2A"/"W73") lives
-    # under the second section — labelled "Result" on the live site (older
-    # markup used "Score").
+    # The actual matchup identity lives under the second section — labelled
+    # "Result" on the live site (older markup used "Score"). Once a round is
+    # drawn the slot shows the settled team (flag + name); until then it's a
+    # bracket label ("2A"/"W73") with the ZZZ placeholder flag (-> code None).
     slot_row = pick("Result") or pick("Score")
     slot_cols = slot_row.find_all("div", class_="col") if slot_row else []
-    m_home = {"code": None, "name": clean(slot_cols[0].get_text()) or None, "hidden": False} if len(slot_cols) > 0 else {"code": None, "name": None, "hidden": False}
-    m_away = {"code": None, "name": clean(slot_cols[1].get_text()) or None, "hidden": False} if len(slot_cols) > 1 else {"code": None, "name": None, "hidden": False}
+    m_home = _team_from_slot_col(slot_cols[0]) if len(slot_cols) > 0 else {"code": None, "name": None, "hidden": False}
+    m_away = _team_from_slot_col(slot_cols[1]) if len(slot_cols) > 1 else {"code": None, "name": None, "hidden": False}
 
     # Actual result
     actual_link = score_td.find("a")
@@ -1192,7 +1211,7 @@ def _parse_knockout_fixture(tds, fixture_number, round_name) -> dict:
         "kickoff_utc": to_utc_iso(dt_raw, tz_name),
         "kickoff_local": dt_raw,
         "kickoff_timezone": tz_name,
-        "venue": venue_for(m_home.get("code"), m_away.get("code"), fixture_number),
+        "venue": venue_for(m_home.get("code"), m_away.get("code"), fixture_number, stage_type="knockout"),
         "hidden": hidden,
         "match": {"home": m_home, "away": m_away},
         "predicted": {
