@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-28T03:41:24Z",
+  "updated": "2026-06-28T03:51:24Z",
   "pool": {
     "id": "34193",
     "slug": "bobby-and-friends",
@@ -18,7 +18,7 @@
       "name": "Alec",
       "flag": "ESP",
       "rank": 1,
-      "points": 4356,
+      "points": 4371,
       "exact": 9
     },
     {
@@ -28,7 +28,7 @@
       "name": "Daniel",
       "flag": "FRA",
       "rank": 2,
-      "points": 4305,
+      "points": 4320,
       "exact": 11
     },
     {
@@ -38,7 +38,7 @@
       "name": "bobby",
       "flag": "FRA",
       "rank": 3,
-      "points": 4281,
+      "points": 4296,
       "exact": 10
     },
     {
@@ -48,8 +48,8 @@
       "name": "Jazmin",
       "flag": "POR",
       "rank": 4,
-      "points": 4105,
-      "exact": 7
+      "points": 4132,
+      "exact": 8
     },
     {
       "team_id": "247528",
@@ -68,7 +68,7 @@
       "name": "Valewalle",
       "flag": "ESP",
       "rank": 6,
-      "points": 4018,
+      "points": 4033,
       "exact": 10
     },
     {
@@ -78,7 +78,7 @@
       "name": "Baronmark",
       "flag": "FRA",
       "rank": 7,
-      "points": 3975,
+      "points": 3990,
       "exact": 10
     },
     {
@@ -98,7 +98,17 @@
       "name": "Gabriela",
       "flag": "NED",
       "rank": 9,
-      "points": 3902,
+      "points": 3899,
+      "exact": 7
+    },
+    {
+      "team_id": "252600",
+      "slug": "el-capitan",
+      "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/252600/el-capitan/stage/1196-grand-total?scroll=fixture",
+      "name": "El Capitan",
+      "flag": "FRA",
+      "rank": 10,
+      "points": 3783,
       "exact": 7
     },
     {
@@ -107,19 +117,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247537/yo/stage/1196-grand-total?scroll=fixture",
       "name": "Yo",
       "flag": "MEX",
-      "rank": 10,
+      "rank": 11,
       "points": 3774,
       "exact": 6
-    },
-    {
-      "team_id": "252600",
-      "slug": "el-capitan",
-      "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/252600/el-capitan/stage/1196-grand-total?scroll=fixture",
-      "name": "El Capitan",
-      "flag": "FRA",
-      "rank": 11,
-      "points": 3768,
-      "exact": 7
     },
     {
       "team_id": "247525",
@@ -128,8 +128,8 @@
       "name": "Karenwj",
       "flag": "NED",
       "rank": 12,
-      "points": 3649,
-      "exact": 5
+      "points": 3676,
+      "exact": 6
     },
     {
       "team_id": "252610",
@@ -148,7 +148,7 @@
       "name": "MaxS.",
       "flag": "ARG",
       "rank": 14,
-      "points": 3550,
+      "points": 3565,
       "exact": 4
     },
     {
@@ -168,8 +168,8 @@
       "name": "Beturompequinielas",
       "flag": "ARG",
       "rank": 16,
-      "points": 3333,
-      "exact": 4
+      "points": 3360,
+      "exact": 5
     }
   ]
 }
