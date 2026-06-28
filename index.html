@@ -3082,7 +3082,7 @@ function renderResultsView(){
     refreshResultsView();
   });
   modal.querySelector('#tzSelectModal').addEventListener('change',e=>setTZ(e.target.value));
-  requestAnimationFrame(()=>positionThumb(segEl));
+  requestAnimationFrame(()=>positionThumb(segEl,false));
 }
 /* Live-tick / manual refresh: update the counts and rows in place, leaving the
    toolbar, the segmented thumb, and the scroll position untouched. (Rebuilding
@@ -3109,7 +3109,7 @@ function refreshResultsView(){
   if(meta) meta.textContent=`${counts.total} matches · tap any match to see everyone's pick`;
   const mbody=modal.querySelector('.mbody');
   if(mbody) mbody.innerHTML=schedBody(all);
-  positionThumb(segEl);   // counts can change width; re-align without snapping
+  positionThumb(segEl,false);   // counts can change width; re-align without snapping
 }
 function resRow(m){
   const sc=parseScore(m.score);
@@ -3365,7 +3365,7 @@ function renderPlayerView(teamId){
     if(!chartsDrawn){ drawCharts(s); chartsDrawn=true; }
     else charts.forEach(c=>c.resize());
   });
-  requestAnimationFrame(positionSegThumb);
+  requestAnimationFrame(()=>positionSegThumb(false));
 }
 
 function fixtureCounts(teamId){
@@ -3416,15 +3416,20 @@ function buildFilters(teamId){
 
 /* Slide + size the segmented-control thumb under the active option. Run after
    the modal is visible (offsetWidth is 0 while the overlay is display:none). */
-function positionThumb(seg){
+function positionThumb(seg,animate=true){
   if(!seg) return;
   const thumb=seg.querySelector('.seg-thumb');
   const active=seg.querySelector('.seg.active');
   if(!thumb||!active) return;
+  if(!animate) thumb.style.transition='none';
   thumb.style.width=active.offsetWidth+'px';
   thumb.style.transform=`translateX(${active.offsetLeft}px)`;
+  if(!animate){
+    thumb.offsetHeight;
+    requestAnimationFrame(()=>{ thumb.style.transition=''; });
+  }
 }
-function positionSegThumb(){ positionThumb(document.querySelector('#filters .segmented')); }
+function positionSegThumb(animate=true){ positionThumb(document.querySelector('#filters .segmented'),animate); }
 window.addEventListener('resize',()=>{
   positionSegThumb();
   positionThumb(document.querySelector('#mpSort'));
@@ -3663,6 +3668,31 @@ function sortPicks(picks,mode){
   return a;
 }
 
+function matchRowsHtml(picks,meta,mode,showPts){
+  const rows=sortPicks(picks,mode).map(p=>{
+    const pl=predLabel(p.predicted);
+    let pick;
+    if(pl.hidden) pick=`<span class="hid">👁️ hidden</span>`;
+    else if(pl.type==='teams') pick=`<div class="teams"><span class="t">${flagImg(pl.home&&pl.home.code,'flag sm')}${esc((pl.home&&(pl.home.name||pl.home.code))||'?')}</span><span class="t">${flagImg(pl.away&&pl.away.code,'flag sm')}${esc((pl.away&&(pl.away.name||pl.away.code))||'?')}</span></div>`;
+    else pick=`<span class="sc">${esc(pl.score)}</span>`;
+    let res;
+    if(meta.live) res=`<div class="pv live">${p.points}</div><div class="tag">live</div>`;
+    else if(meta.done) res=`<div class="pv ${p.points?'':'zero'}">${p.points}</div>`+(p.is_exact?`<div class="tag hit">🎯 exact</div>`:'');
+    else res=`<div class="tag">pending</div>`;
+    const cls=['mp-row'];
+    if(meta.done&&p.is_exact) cls.push('exact');
+    else if(showPts&&p.points>0) cls.push('scored');
+    if(meta.live&&p.points>0) cls.push('live');
+    return `<div class="${cls.join(' ')}">
+      <div class="mp-rank">${p.rank!=null&&p.rank<999?'#'+p.rank:''}</div>
+      <div class="mp-who" data-player-id="${esc(p.team_id)}" role="button" tabindex="0" title="Open ${esc(p.name)}'s prediction page">${flagImg(p.flag,'flag sm')}<span class="nm">${esc(p.name)}</span></div>
+      <div class="mp-pick ${pl.type==='teams'?'teampick':(pl.hidden?'hiddenpick':'scorepick')}">${pick}</div>
+      <div class="mp-res">${res}</div>
+    </div>`;
+  }).join('');
+  return rows||'<div class="empty">No picks for this match.</div>';
+}
+
 function openMatch(key){ MATCH_SORT=null; openModalView({type:'match',key,render:()=>renderMatchView(key),refresh:()=>renderMatchView(key),scroll:0}); }
 
 function renderMatchView(key){
@@ -3746,8 +3776,8 @@ function renderMatchView(key){
   }
 
   // Sort + list
-  const mode=MATCH_SORT||((meta.done||meta.live)?'points':'rank');
   const showPts=meta.done||meta.live;
+  const mode=(MATCH_SORT==='points'&&!showPts)?'rank':(MATCH_SORT||(showPts?'points':'rank'));
   const seg=(m,l)=>`<button class="seg ${mode===m?'active':''}" type="button" data-sort="${m}" role="tab" aria-selected="${mode===m}">${l}</button>`;
   const tools=`<div class="mp-tools"><h4>Everyone's pick</h4>
     <div class="segmented" id="mpSort" role="tablist" aria-label="Sort players">
@@ -3755,27 +3785,7 @@ function renderMatchView(key){
       ${showPts?seg('points','Points'):''}${seg('rank','Rank')}${seg('name','A–Z')}
     </div></div>`;
 
-  const rows=sortPicks(picks,mode).map(p=>{
-    const pl=predLabel(p.predicted);
-    let pick;
-    if(pl.hidden) pick=`<span class="hid">👁️ hidden</span>`;
-    else if(pl.type==='teams') pick=`<div class="teams"><span class="t">${flagImg(pl.home&&pl.home.code,'flag sm')}${esc((pl.home&&(pl.home.name||pl.home.code))||'?')}</span><span class="t">${flagImg(pl.away&&pl.away.code,'flag sm')}${esc((pl.away&&(pl.away.name||pl.away.code))||'?')}</span></div>`;
-    else pick=`<span class="sc">${esc(pl.score)}</span>`;
-    let res;
-    if(meta.live) res=`<div class="pv live">${p.points}</div><div class="tag">live</div>`;
-    else if(meta.done) res=`<div class="pv ${p.points?'':'zero'}">${p.points}</div>`+(p.is_exact?`<div class="tag hit">🎯 exact</div>`:'');
-    else res=`<div class="tag">pending</div>`;
-    const cls=['mp-row'];
-    if(meta.done&&p.is_exact) cls.push('exact');
-    else if(showPts&&p.points>0) cls.push('scored');
-    if(meta.live&&p.points>0) cls.push('live');
-    return `<div class="${cls.join(' ')}">
-      <div class="mp-rank">${p.rank!=null&&p.rank<999?'#'+p.rank:''}</div>
-      <div class="mp-who" data-player-id="${esc(p.team_id)}" role="button" tabindex="0" title="Open ${esc(p.name)}'s prediction page">${flagImg(p.flag,'flag sm')}<span class="nm">${esc(p.name)}</span></div>
-      <div class="mp-pick ${pl.type==='teams'?'teampick':(pl.hidden?'hiddenpick':'scorepick')}">${pick}</div>
-      <div class="mp-res">${res}</div>
-    </div>`;
-  }).join('');
+  const rows=matchRowsHtml(picks,meta,mode,showPts);
 
   modal.innerHTML=`
     <div class="mhead${hasback?' hasback':''}">
@@ -3784,16 +3794,25 @@ function renderMatchView(key){
     </div>
     <div class="mbody">
       ${board}${infoHtml}${sumHtml}${distHtml}${tools}
-      ${rows||'<div class="empty">No picks for this match.</div>'}
+      <div id="mpRows">${rows}</div>
     </div>`;
   wireModalControls(modal);
   const sortBox=modal.querySelector('#mpSort');
   if(sortBox){
     sortBox.querySelectorAll('.seg').forEach(b=>b.addEventListener('click',()=>{
-      if(b.dataset.sort===mode) return;   // already showing this order
-      MATCH_SORT=b.dataset.sort; renderMatchView(key);
+      const next=b.dataset.sort;
+      if(next===sortBox.querySelector('.seg.active')?.dataset.sort) return;   // already showing this order
+      MATCH_SORT=next;
+      sortBox.querySelectorAll('.seg').forEach(x=>{
+        const on=x.dataset.sort===MATCH_SORT;
+        x.classList.toggle('active',on);
+        x.setAttribute('aria-selected',on);
+      });
+      positionThumb(sortBox);
+      const rowsEl=modal.querySelector('#mpRows');
+      if(rowsEl) rowsEl.innerHTML=matchRowsHtml(picks,meta,MATCH_SORT,showPts);
     }));
-    requestAnimationFrame(()=>positionThumb(sortBox));
+    requestAnimationFrame(()=>positionThumb(sortBox,false));
   }
 }
 
