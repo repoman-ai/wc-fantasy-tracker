@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-28T05:41:29Z",
+  "updated": "2026-06-28T05:51:27Z",
   "players": {
     "247930": {
       "team_id": "247930",
@@ -2371,8 +2371,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3ABCDF",
+                  "code": "PAR",
+                  "name": "Paraguay",
                   "hidden": false
                 }
               },
@@ -2503,8 +2503,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3CDFGH",
+                  "code": "SWE",
+                  "name": "Sweden",
                   "hidden": false
                 }
               },
@@ -2547,8 +2547,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3CEFHI",
+                  "code": "ECU",
+                  "name": "Ecuador",
                   "hidden": false
                 }
               },
@@ -2591,8 +2591,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3EHIJK",
+                  "code": "COD",
+                  "name": "DR Congo",
                   "hidden": false
                 }
               },
@@ -2635,8 +2635,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3AEHIJ",
+                  "code": "SEN",
+                  "name": "Senegal",
                   "hidden": false
                 }
               },
@@ -2679,8 +2679,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3BEFIJ",
+                  "code": "BIH",
+                  "name": "Bosnia-Herzegovina",
                   "hidden": false
                 }
               },
@@ -2811,8 +2811,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3EFGIJ",
+                  "code": "ALG",
+                  "name": "Algeria",
                   "hidden": false
                 }
               },
@@ -2943,8 +2943,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3DEIJL",
+                  "code": "GHA",
+                  "name": "Ghana",
                   "hidden": false
                 }
               },
@@ -5979,8 +5979,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3ABCDF",
+                  "code": "PAR",
+                  "name": "Paraguay",
                   "hidden": false
                 }
               },
@@ -6111,8 +6111,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3CDFGH",
+                  "code": "SWE",
+                  "name": "Sweden",
                   "hidden": false
                 }
               },
@@ -6155,8 +6155,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3CEFHI",
+                  "code": "ECU",
+                  "name": "Ecuador",
                   "hidden": false
                 }
               },
@@ -6199,8 +6199,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3EHIJK",
+                  "code": "COD",
+                  "name": "DR Congo",
                   "hidden": false
                 }
               },
@@ -6243,8 +6243,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3AEHIJ",
+                  "code": "SEN",
+                  "name": "Senegal",
                   "hidden": false
                 }
               },
@@ -6287,8 +6287,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3BEFIJ",
+                  "code": "BIH",
+                  "name": "Bosnia-Herzegovina",
                   "hidden": false
                 }
               },
@@ -6419,8 +6419,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3EFGIJ",
+                  "code": "ALG",
+                  "name": "Algeria",
                   "hidden": false
                 }
               },
@@ -6551,8 +6551,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3DEIJL",
+                  "code": "GHA",
+                  "name": "Ghana",
                   "hidden": false
                 }
               },
@@ -9587,8 +9587,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3ABCDF",
+                  "code": "PAR",
+                  "name": "Paraguay",
                   "hidden": false
                 }
               },
@@ -9719,8 +9719,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3CDFGH",
+                  "code": "SWE",
+                  "name": "Sweden",
                   "hidden": false
                 }
               },
@@ -9763,8 +9763,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3CEFHI",
+                  "code": "ECU",
+                  "name": "Ecuador",
                   "hidden": false
                 }
               },
@@ -9807,8 +9807,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3EHIJK",
+                  "code": "COD",
+                  "name": "DR Congo",
                   "hidden": false
                 }
               },
@@ -9851,8 +9851,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3AEHIJ",
+                  "code": "SEN",
+                  "name": "Senegal",
                   "hidden": false
                 }
               },
@@ -9895,8 +9895,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3BEFIJ",
+                  "code": "BIH",
+                  "name": "Bosnia-Herzegovina",
                   "hidden": false
                 }
               },
@@ -10027,8 +10027,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3EFGIJ",
+                  "code": "ALG",
+                  "name": "Algeria",
                   "hidden": false
                 }
               },
@@ -10159,8 +10159,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3DEIJL",
+                  "code": "GHA",
+                  "name": "Ghana",
                   "hidden": false
                 }
               },
@@ -13195,8 +13195,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3ABCDF",
+                  "code": "PAR",
+                  "name": "Paraguay",
                   "hidden": false
                 }
               },
@@ -13327,8 +13327,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3CDFGH",
+                  "code": "SWE",
+                  "name": "Sweden",
                   "hidden": false
                 }
               },
@@ -13371,8 +13371,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3CEFHI",
+                  "code": "ECU",
+                  "name": "Ecuador",
                   "hidden": false
                 }
               },
@@ -13415,8 +13415,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3EHIJK",
+                  "code": "COD",
+                  "name": "DR Congo",
                   "hidden": false
                 }
               },
@@ -13459,8 +13459,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3AEHIJ",
+                  "code": "SEN",
+                  "name": "Senegal",
                   "hidden": false
                 }
               },
@@ -13503,8 +13503,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3BEFIJ",
+                  "code": "BIH",
+                  "name": "Bosnia-Herzegovina",
                   "hidden": false
                 }
               },
@@ -13635,8 +13635,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3EFGIJ",
+                  "code": "ALG",
+                  "name": "Algeria",
                   "hidden": false
                 }
               },
@@ -13767,8 +13767,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3DEIJL",
+                  "code": "GHA",
+                  "name": "Ghana",
                   "hidden": false
                 }
               },
@@ -16803,8 +16803,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3ABCDF",
+                  "code": "PAR",
+                  "name": "Paraguay",
                   "hidden": false
                 }
               },
@@ -16935,8 +16935,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3CDFGH",
+                  "code": "SWE",
+                  "name": "Sweden",
                   "hidden": false
                 }
               },
@@ -16979,8 +16979,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3CEFHI",
+                  "code": "ECU",
+                  "name": "Ecuador",
                   "hidden": false
                 }
               },
@@ -17023,8 +17023,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3EHIJK",
+                  "code": "COD",
+                  "name": "DR Congo",
                   "hidden": false
                 }
               },
@@ -17067,8 +17067,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3AEHIJ",
+                  "code": "SEN",
+                  "name": "Senegal",
                   "hidden": false
                 }
               },
@@ -17111,8 +17111,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3BEFIJ",
+                  "code": "BIH",
+                  "name": "Bosnia-Herzegovina",
                   "hidden": false
                 }
               },
@@ -17243,8 +17243,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3EFGIJ",
+                  "code": "ALG",
+                  "name": "Algeria",
                   "hidden": false
                 }
               },
@@ -17375,8 +17375,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3DEIJL",
+                  "code": "GHA",
+                  "name": "Ghana",
                   "hidden": false
                 }
               },
@@ -20411,8 +20411,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3ABCDF",
+                  "code": "PAR",
+                  "name": "Paraguay",
                   "hidden": false
                 }
               },
@@ -20543,8 +20543,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3CDFGH",
+                  "code": "SWE",
+                  "name": "Sweden",
                   "hidden": false
                 }
               },
@@ -20587,8 +20587,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3CEFHI",
+                  "code": "ECU",
+                  "name": "Ecuador",
                   "hidden": false
                 }
               },
@@ -20631,8 +20631,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3EHIJK",
+                  "code": "COD",
+                  "name": "DR Congo",
                   "hidden": false
                 }
               },
@@ -20675,8 +20675,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3AEHIJ",
+                  "code": "SEN",
+                  "name": "Senegal",
                   "hidden": false
                 }
               },
@@ -20719,8 +20719,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3BEFIJ",
+                  "code": "BIH",
+                  "name": "Bosnia-Herzegovina",
                   "hidden": false
                 }
               },
@@ -20851,8 +20851,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3EFGIJ",
+                  "code": "ALG",
+                  "name": "Algeria",
                   "hidden": false
                 }
               },
@@ -20983,8 +20983,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3DEIJL",
+                  "code": "GHA",
+                  "name": "Ghana",
                   "hidden": false
                 }
               },
@@ -24019,8 +24019,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3ABCDF",
+                  "code": "PAR",
+                  "name": "Paraguay",
                   "hidden": false
                 }
               },
@@ -24151,8 +24151,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3CDFGH",
+                  "code": "SWE",
+                  "name": "Sweden",
                   "hidden": false
                 }
               },
@@ -24195,8 +24195,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3CEFHI",
+                  "code": "ECU",
+                  "name": "Ecuador",
                   "hidden": false
                 }
               },
@@ -24239,8 +24239,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3EHIJK",
+                  "code": "COD",
+                  "name": "DR Congo",
                   "hidden": false
                 }
               },
@@ -24283,8 +24283,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3AEHIJ",
+                  "code": "SEN",
+                  "name": "Senegal",
                   "hidden": false
                 }
               },
@@ -24327,8 +24327,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3BEFIJ",
+                  "code": "BIH",
+                  "name": "Bosnia-Herzegovina",
                   "hidden": false
                 }
               },
@@ -24459,8 +24459,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3EFGIJ",
+                  "code": "ALG",
+                  "name": "Algeria",
                   "hidden": false
                 }
               },
@@ -24591,8 +24591,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3DEIJL",
+                  "code": "GHA",
+                  "name": "Ghana",
                   "hidden": false
                 }
               },
@@ -27627,8 +27627,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3ABCDF",
+                  "code": "PAR",
+                  "name": "Paraguay",
                   "hidden": false
                 }
               },
@@ -27759,8 +27759,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3CDFGH",
+                  "code": "SWE",
+                  "name": "Sweden",
                   "hidden": false
                 }
               },
@@ -27803,8 +27803,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3CEFHI",
+                  "code": "ECU",
+                  "name": "Ecuador",
                   "hidden": false
                 }
               },
@@ -27847,8 +27847,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3EHIJK",
+                  "code": "COD",
+                  "name": "DR Congo",
                   "hidden": false
                 }
               },
@@ -27891,8 +27891,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3AEHIJ",
+                  "code": "SEN",
+                  "name": "Senegal",
                   "hidden": false
                 }
               },
@@ -27935,8 +27935,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3BEFIJ",
+                  "code": "BIH",
+                  "name": "Bosnia-Herzegovina",
                   "hidden": false
                 }
               },
@@ -28067,8 +28067,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3EFGIJ",
+                  "code": "ALG",
+                  "name": "Algeria",
                   "hidden": false
                 }
               },
@@ -28199,8 +28199,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3DEIJL",
+                  "code": "GHA",
+                  "name": "Ghana",
                   "hidden": false
                 }
               },
@@ -31235,8 +31235,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3ABCDF",
+                  "code": "PAR",
+                  "name": "Paraguay",
                   "hidden": false
                 }
               },
@@ -31367,8 +31367,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3CDFGH",
+                  "code": "SWE",
+                  "name": "Sweden",
                   "hidden": false
                 }
               },
@@ -31411,8 +31411,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3CEFHI",
+                  "code": "ECU",
+                  "name": "Ecuador",
                   "hidden": false
                 }
               },
@@ -31455,8 +31455,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3EHIJK",
+                  "code": "COD",
+                  "name": "DR Congo",
                   "hidden": false
                 }
               },
@@ -31499,8 +31499,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3AEHIJ",
+                  "code": "SEN",
+                  "name": "Senegal",
                   "hidden": false
                 }
               },
@@ -31543,8 +31543,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3BEFIJ",
+                  "code": "BIH",
+                  "name": "Bosnia-Herzegovina",
                   "hidden": false
                 }
               },
@@ -31675,8 +31675,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3EFGIJ",
+                  "code": "ALG",
+                  "name": "Algeria",
                   "hidden": false
                 }
               },
@@ -31807,8 +31807,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3DEIJL",
+                  "code": "GHA",
+                  "name": "Ghana",
                   "hidden": false
                 }
               },
@@ -34843,8 +34843,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3ABCDF",
+                  "code": "PAR",
+                  "name": "Paraguay",
                   "hidden": false
                 }
               },
@@ -34975,8 +34975,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3CDFGH",
+                  "code": "SWE",
+                  "name": "Sweden",
                   "hidden": false
                 }
               },
@@ -35019,8 +35019,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3CEFHI",
+                  "code": "ECU",
+                  "name": "Ecuador",
                   "hidden": false
                 }
               },
@@ -35063,8 +35063,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3EHIJK",
+                  "code": "COD",
+                  "name": "DR Congo",
                   "hidden": false
                 }
               },
@@ -35107,8 +35107,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3AEHIJ",
+                  "code": "SEN",
+                  "name": "Senegal",
                   "hidden": false
                 }
               },
@@ -35151,8 +35151,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3BEFIJ",
+                  "code": "BIH",
+                  "name": "Bosnia-Herzegovina",
                   "hidden": false
                 }
               },
@@ -35283,8 +35283,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3EFGIJ",
+                  "code": "ALG",
+                  "name": "Algeria",
                   "hidden": false
                 }
               },
@@ -35415,8 +35415,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3DEIJL",
+                  "code": "GHA",
+                  "name": "Ghana",
                   "hidden": false
                 }
               },
@@ -38451,8 +38451,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3ABCDF",
+                  "code": "PAR",
+                  "name": "Paraguay",
                   "hidden": false
                 }
               },
@@ -38583,8 +38583,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3CDFGH",
+                  "code": "SWE",
+                  "name": "Sweden",
                   "hidden": false
                 }
               },
@@ -38627,8 +38627,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3CEFHI",
+                  "code": "ECU",
+                  "name": "Ecuador",
                   "hidden": false
                 }
               },
@@ -38671,8 +38671,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3EHIJK",
+                  "code": "COD",
+                  "name": "DR Congo",
                   "hidden": false
                 }
               },
@@ -38715,8 +38715,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3AEHIJ",
+                  "code": "SEN",
+                  "name": "Senegal",
                   "hidden": false
                 }
               },
@@ -38759,8 +38759,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3BEFIJ",
+                  "code": "BIH",
+                  "name": "Bosnia-Herzegovina",
                   "hidden": false
                 }
               },
@@ -38891,8 +38891,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3EFGIJ",
+                  "code": "ALG",
+                  "name": "Algeria",
                   "hidden": false
                 }
               },
@@ -39023,8 +39023,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3DEIJL",
+                  "code": "GHA",
+                  "name": "Ghana",
                   "hidden": false
                 }
               },
@@ -42059,8 +42059,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3ABCDF",
+                  "code": "PAR",
+                  "name": "Paraguay",
                   "hidden": false
                 }
               },
@@ -42191,8 +42191,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3CDFGH",
+                  "code": "SWE",
+                  "name": "Sweden",
                   "hidden": false
                 }
               },
@@ -42235,8 +42235,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3CEFHI",
+                  "code": "ECU",
+                  "name": "Ecuador",
                   "hidden": false
                 }
               },
@@ -42279,8 +42279,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3EHIJK",
+                  "code": "COD",
+                  "name": "DR Congo",
                   "hidden": false
                 }
               },
@@ -42323,8 +42323,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3AEHIJ",
+                  "code": "SEN",
+                  "name": "Senegal",
                   "hidden": false
                 }
               },
@@ -42367,8 +42367,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3BEFIJ",
+                  "code": "BIH",
+                  "name": "Bosnia-Herzegovina",
                   "hidden": false
                 }
               },
@@ -42499,8 +42499,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3EFGIJ",
+                  "code": "ALG",
+                  "name": "Algeria",
                   "hidden": false
                 }
               },
@@ -42631,8 +42631,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3DEIJL",
+                  "code": "GHA",
+                  "name": "Ghana",
                   "hidden": false
                 }
               },
@@ -45667,8 +45667,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3ABCDF",
+                  "code": "PAR",
+                  "name": "Paraguay",
                   "hidden": false
                 }
               },
@@ -45799,8 +45799,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3CDFGH",
+                  "code": "SWE",
+                  "name": "Sweden",
                   "hidden": false
                 }
               },
@@ -45843,8 +45843,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3CEFHI",
+                  "code": "ECU",
+                  "name": "Ecuador",
                   "hidden": false
                 }
               },
@@ -45887,8 +45887,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3EHIJK",
+                  "code": "COD",
+                  "name": "DR Congo",
                   "hidden": false
                 }
               },
@@ -45931,8 +45931,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3AEHIJ",
+                  "code": "SEN",
+                  "name": "Senegal",
                   "hidden": false
                 }
               },
@@ -45975,8 +45975,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3BEFIJ",
+                  "code": "BIH",
+                  "name": "Bosnia-Herzegovina",
                   "hidden": false
                 }
               },
@@ -46107,8 +46107,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3EFGIJ",
+                  "code": "ALG",
+                  "name": "Algeria",
                   "hidden": false
                 }
               },
@@ -46239,8 +46239,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3DEIJL",
+                  "code": "GHA",
+                  "name": "Ghana",
                   "hidden": false
                 }
               },
@@ -49275,8 +49275,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3ABCDF",
+                  "code": "PAR",
+                  "name": "Paraguay",
                   "hidden": false
                 }
               },
@@ -49407,8 +49407,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3CDFGH",
+                  "code": "SWE",
+                  "name": "Sweden",
                   "hidden": false
                 }
               },
@@ -49451,8 +49451,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3CEFHI",
+                  "code": "ECU",
+                  "name": "Ecuador",
                   "hidden": false
                 }
               },
@@ -49495,8 +49495,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3EHIJK",
+                  "code": "COD",
+                  "name": "DR Congo",
                   "hidden": false
                 }
               },
@@ -49539,8 +49539,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3AEHIJ",
+                  "code": "SEN",
+                  "name": "Senegal",
                   "hidden": false
                 }
               },
@@ -49583,8 +49583,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3BEFIJ",
+                  "code": "BIH",
+                  "name": "Bosnia-Herzegovina",
                   "hidden": false
                 }
               },
@@ -49715,8 +49715,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3EFGIJ",
+                  "code": "ALG",
+                  "name": "Algeria",
                   "hidden": false
                 }
               },
@@ -49847,8 +49847,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3DEIJL",
+                  "code": "GHA",
+                  "name": "Ghana",
                   "hidden": false
                 }
               },
@@ -52883,8 +52883,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3ABCDF",
+                  "code": "PAR",
+                  "name": "Paraguay",
                   "hidden": false
                 }
               },
@@ -53015,8 +53015,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3CDFGH",
+                  "code": "SWE",
+                  "name": "Sweden",
                   "hidden": false
                 }
               },
@@ -53059,8 +53059,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3CEFHI",
+                  "code": "ECU",
+                  "name": "Ecuador",
                   "hidden": false
                 }
               },
@@ -53103,8 +53103,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3EHIJK",
+                  "code": "COD",
+                  "name": "DR Congo",
                   "hidden": false
                 }
               },
@@ -53147,8 +53147,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3AEHIJ",
+                  "code": "SEN",
+                  "name": "Senegal",
                   "hidden": false
                 }
               },
@@ -53191,8 +53191,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3BEFIJ",
+                  "code": "BIH",
+                  "name": "Bosnia-Herzegovina",
                   "hidden": false
                 }
               },
@@ -53323,8 +53323,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3EFGIJ",
+                  "code": "ALG",
+                  "name": "Algeria",
                   "hidden": false
                 }
               },
@@ -53455,8 +53455,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3DEIJL",
+                  "code": "GHA",
+                  "name": "Ghana",
                   "hidden": false
                 }
               },
@@ -56491,8 +56491,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3ABCDF",
+                  "code": "PAR",
+                  "name": "Paraguay",
                   "hidden": false
                 }
               },
@@ -56623,8 +56623,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3CDFGH",
+                  "code": "SWE",
+                  "name": "Sweden",
                   "hidden": false
                 }
               },
@@ -56667,8 +56667,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3CEFHI",
+                  "code": "ECU",
+                  "name": "Ecuador",
                   "hidden": false
                 }
               },
@@ -56711,8 +56711,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3EHIJK",
+                  "code": "COD",
+                  "name": "DR Congo",
                   "hidden": false
                 }
               },
@@ -56755,8 +56755,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3AEHIJ",
+                  "code": "SEN",
+                  "name": "Senegal",
                   "hidden": false
                 }
               },
@@ -56799,8 +56799,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3BEFIJ",
+                  "code": "BIH",
+                  "name": "Bosnia-Herzegovina",
                   "hidden": false
                 }
               },
@@ -56931,8 +56931,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3EFGIJ",
+                  "code": "ALG",
+                  "name": "Algeria",
                   "hidden": false
                 }
               },
@@ -57063,8 +57063,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "3DEIJL",
+                  "code": "GHA",
+                  "name": "Ghana",
                   "hidden": false
                 }
               },
