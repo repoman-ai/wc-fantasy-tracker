@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-28T03:51:24Z",
+  "updated": "2026-06-28T04:02:58Z",
   "pool": {
     "id": "34193",
     "slug": "bobby-and-friends",
@@ -48,7 +48,7 @@
       "name": "Jazmin",
       "flag": "POR",
       "rank": 4,
-      "points": 4132,
+      "points": 4117,
       "exact": 8
     },
     {
@@ -58,7 +58,7 @@
       "name": "JJ",
       "flag": "FRA",
       "rank": 5,
-      "points": 4057,
+      "points": 4042,
       "exact": 6
     },
     {
@@ -68,7 +68,7 @@
       "name": "Valewalle",
       "flag": "ESP",
       "rank": 6,
-      "points": 4033,
+      "points": 4018,
       "exact": 10
     },
     {
@@ -88,7 +88,7 @@
       "name": "Alejandro",
       "flag": "BRA",
       "rank": 8,
-      "points": 3964,
+      "points": 3979,
       "exact": 6
     },
     {
@@ -118,7 +118,7 @@
       "name": "Yo",
       "flag": "MEX",
       "rank": 11,
-      "points": 3774,
+      "points": 3759,
       "exact": 6
     },
     {
@@ -128,7 +128,7 @@
       "name": "Karenwj",
       "flag": "NED",
       "rank": 12,
-      "points": 3676,
+      "points": 3661,
       "exact": 6
     },
     {
@@ -138,8 +138,8 @@
       "name": "Luisa",
       "flag": "POR",
       "rank": 13,
-      "points": 3613,
-      "exact": 4
+      "points": 3583,
+      "exact": 3
     },
     {
       "team_id": "247729",
@@ -148,7 +148,7 @@
       "name": "MaxS.",
       "flag": "ARG",
       "rank": 14,
-      "points": 3565,
+      "points": 3550,
       "exact": 4
     },
     {
@@ -168,7 +168,7 @@
       "name": "Beturompequinielas",
       "flag": "ARG",
       "rank": 16,
-      "points": 3360,
+      "points": 3375,
       "exact": 5
     }
   ]
