@@ -1073,6 +1073,10 @@ def _team_from_col(col) -> dict:
         return {"code": None, "name": None, "hidden": True}
     flag = col.select_one(".flag-icon")
     code = flag_code_from_style(flag.get("style")) if flag else None
+    # Knockout result slots now include a numeric Bootstrap badge beside settled
+    # teams (pool points/seed metadata). It is not part of the country name.
+    for badge in col.select(".badge"):
+        badge.decompose()
     # Prefer the long (desktop) name span, else the short, else whatever text remains.
     long_name = col.select_one(".d-none.d-md-inline-block")
     short_name = col.select_one(".d-md-none")
@@ -1091,6 +1095,41 @@ def _team_from_slot_col(col) -> dict:
     if team.get("code") == PLACEHOLDER_FLAG_CODE:
         team["code"] = None
     return team
+
+
+def _knockout_score_parts(score_td):
+    """Return (predicted_score, actual_score) from a knockout score/result cell.
+
+    Live knockout markup keeps the predicted score and actual result in one cell:
+    an invisible alignment label, the player's predicted score (or an eye-slash),
+    another invisible label, then the actual result link/status.
+    """
+    value_blocks = [
+        child for child in score_td.find_all("div", recursive=False)
+        if "small" not in child.get("class", [])
+    ]
+
+    # Predicted and actual always arrive as a pair (separated by invisible
+    # alignment labels). Only treat the first block as the prediction when both
+    # are present, so a lone result block is never misread as the player's pick.
+    predicted_score = None
+    if len(value_blocks) >= 2:
+        pred_block = value_blocks[0]
+        if not pred_block.select_one(".fa-eye-slash"):
+            pred_text = clean(pred_block.get_text())
+            predicted_score = pred_text if pred_text and re.search(r"\d", pred_text) else None
+
+    actual_score = None
+    actual_block = value_blocks[-1] if len(value_blocks) >= 2 else None
+    actual_link = actual_block.find("a") if actual_block else score_td.find("a")
+    if actual_link:
+        actual_score = clean(actual_link.get_text())
+    elif actual_block:
+        actual_score = clean(actual_block.get_text())
+    else:
+        actual_score = clean(score_td.get_text())
+
+    return predicted_score, actual_score or None
 
 
 def _parse_group_fixture(tds, fixture_number, round_name) -> dict:
@@ -1184,9 +1223,8 @@ def _parse_knockout_fixture(tds, fixture_number, round_name) -> dict:
     m_home = _team_from_slot_col(slot_cols[0]) if len(slot_cols) > 0 else {"code": None, "name": None, "hidden": False}
     m_away = _team_from_slot_col(slot_cols[1]) if len(slot_cols) > 1 else {"code": None, "name": None, "hidden": False}
 
-    # Actual result
-    actual_link = score_td.find("a")
-    actual_score = clean(actual_link.get_text()) if actual_link else clean(score_td.get_text())
+    # Player's predicted score plus the actual result share one cell.
+    predicted_score, actual_score = _knockout_score_parts(score_td)
 
     # Points split into Countries + Score components.
     du = pts_td.select_one(".dotted_underline")
@@ -1219,6 +1257,7 @@ def _parse_knockout_fixture(tds, fixture_number, round_name) -> dict:
             "hidden": hidden,
             "home": None if hidden else p_home,
             "away": None if hidden else p_away,
+            "score": None if hidden else predicted_score,
         },
         "actual_score": actual_score or None,
         "points": total,

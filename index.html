@@ -424,6 +424,7 @@
   .predteams .ph{color:var(--muted);font-style:italic}
   .predteams .qmark{display:inline-flex;align-items:center;justify-content:center;width:22px;height:16px;border-radius:3px;background:#eef1f7;color:#9aa3b5;font-weight:800;font-size:12px;border:1px dashed #c2cadb}
   .predteams .pt.pend{cursor:help}
+  .predteamscore{margin-top:6px;font-size:17px}
   .ptsbox{text-align:right;min-width:0}
   .ptsbox .pv{font-family:'Barlow Condensed';font-weight:800;font-size:22px}
   .ptsbox .pp{font-size:12px;color:var(--muted);font-weight:700}
@@ -3532,7 +3533,8 @@ function fixtureHtml(fx){
         <span class="pt pend"><span class="qmark">?</span></span>
       </div>`;
     }else{
-      predHtml=`<div class="predteams">${predTeamLine(fx.predicted.home)}${predTeamLine(fx.predicted.away)}</div>`;
+      predHtml=`<div class="predteams">${predTeamLine(fx.predicted.home)}${predTeamLine(fx.predicted.away)}</div>`+
+        (fx.predicted.score?`<div class="scoreline pred predteamscore">${esc(fx.predicted.score)}</div>`:'');
     }
   }else{
     predHtml=`<div class="scoreline pred">${esc(fx.predicted?.score||'—')}</div>`;
