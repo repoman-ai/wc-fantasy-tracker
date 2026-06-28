@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-28T19:41:28Z",
+  "updated": "2026-06-28T19:51:27Z",
   "players": {
     "252653": {
       "team_id": "252653",
@@ -2294,9 +2294,9 @@
                 "score": "1 - 2"
               },
               "actual_score": "0 - 0",
-              "points": 0,
+              "points": 35,
               "points_breakdown": {
-                "countries": null,
+                "countries": 35,
                 "score": 0
               },
               "is_exact": false
@@ -2329,9 +2329,9 @@
                 "score": "2 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 130,
               "points_breakdown": {
-                "countries": null,
+                "countries": 130,
                 "score": null
               },
               "is_exact": false
@@ -2364,9 +2364,9 @@
                 "score": "2 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 100,
               "points_breakdown": {
-                "countries": null,
+                "countries": 100,
                 "score": null
               },
               "is_exact": false
@@ -2399,9 +2399,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 130,
               "points_breakdown": {
-                "countries": null,
+                "countries": 130,
                 "score": null
               },
               "is_exact": false
@@ -2434,9 +2434,9 @@
                 "score": "0 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 70,
               "points_breakdown": {
-                "countries": null,
+                "countries": 70,
                 "score": null
               },
               "is_exact": false
@@ -2469,9 +2469,9 @@
                 "score": "2 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 100,
               "points_breakdown": {
-                "countries": null,
+                "countries": 100,
                 "score": null
               },
               "is_exact": false
@@ -2504,9 +2504,9 @@
                 "score": "2 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 100,
               "points_breakdown": {
-                "countries": null,
+                "countries": 100,
                 "score": null
               },
               "is_exact": false
@@ -2539,9 +2539,9 @@
                 "score": "2 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 130,
               "points_breakdown": {
-                "countries": null,
+                "countries": 130,
                 "score": null
               },
               "is_exact": false
@@ -2574,9 +2574,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 100,
               "points_breakdown": {
-                "countries": null,
+                "countries": 100,
                 "score": null
               },
               "is_exact": false
@@ -2609,9 +2609,9 @@
                 "score": "2 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 130,
               "points_breakdown": {
-                "countries": null,
+                "countries": 130,
                 "score": null
               },
               "is_exact": false
@@ -2644,9 +2644,9 @@
                 "score": "2 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 100,
               "points_breakdown": {
-                "countries": null,
+                "countries": 100,
                 "score": null
               },
               "is_exact": false
@@ -2679,9 +2679,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 100,
               "points_breakdown": {
-                "countries": null,
+                "countries": 100,
                 "score": null
               },
               "is_exact": false
@@ -2714,9 +2714,9 @@
                 "score": "2 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 70,
               "points_breakdown": {
-                "countries": null,
+                "countries": 70,
                 "score": null
               },
               "is_exact": false
@@ -2749,9 +2749,9 @@
                 "score": "1 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 65,
               "points_breakdown": {
-                "countries": null,
+                "countries": 65,
                 "score": null
               },
               "is_exact": false
@@ -2784,9 +2784,9 @@
                 "score": "3 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 65,
               "points_breakdown": {
-                "countries": null,
+                "countries": 65,
                 "score": null
               },
               "is_exact": false
@@ -2819,9 +2819,9 @@
                 "score": "2 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 100,
               "points_breakdown": {
-                "countries": null,
+                "countries": 100,
                 "score": null
               },
               "is_exact": false
@@ -2860,9 +2860,9 @@
                 "score": "0 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -2895,9 +2895,9 @@
                 "score": "1 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -2930,9 +2930,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -2965,9 +2965,9 @@
                 "score": "1 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -3000,9 +3000,9 @@
                 "score": "0 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -3035,9 +3035,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -3070,9 +3070,9 @@
                 "score": "2 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -3105,9 +3105,9 @@
                 "score": "0 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -3146,9 +3146,9 @@
                 "score": "2 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -3181,9 +3181,9 @@
                 "score": "1 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -3216,9 +3216,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -3251,9 +3251,9 @@
                 "score": "2 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -3292,9 +3292,9 @@
                 "score": "1 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -3327,9 +3327,9 @@
                 "score": "1 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -3368,9 +3368,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -3409,9 +3409,9 @@
                 "score": "1 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -5742,9 +5742,9 @@
                 "score": "1 - 2"
               },
               "actual_score": "0 - 0",
-              "points": 0,
+              "points": 65,
               "points_breakdown": {
-                "countries": null,
+                "countries": 65,
                 "score": 0
               },
               "is_exact": false
@@ -5777,9 +5777,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 100,
               "points_breakdown": {
-                "countries": null,
+                "countries": 100,
                 "score": null
               },
               "is_exact": false
@@ -5812,9 +5812,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 130,
               "points_breakdown": {
-                "countries": null,
+                "countries": 130,
                 "score": null
               },
               "is_exact": false
@@ -5847,9 +5847,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 130,
               "points_breakdown": {
-                "countries": null,
+                "countries": 130,
                 "score": null
               },
               "is_exact": false
@@ -5882,9 +5882,9 @@
                 "score": "1 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 100,
               "points_breakdown": {
-                "countries": null,
+                "countries": 100,
                 "score": null
               },
               "is_exact": false
@@ -5917,9 +5917,9 @@
                 "score": "3 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 100,
               "points_breakdown": {
-                "countries": null,
+                "countries": 100,
                 "score": null
               },
               "is_exact": false
@@ -5952,9 +5952,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 100,
               "points_breakdown": {
-                "countries": null,
+                "countries": 100,
                 "score": null
               },
               "is_exact": false
@@ -5987,9 +5987,9 @@
                 "score": "2 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 65,
               "points_breakdown": {
-                "countries": null,
+                "countries": 65,
                 "score": null
               },
               "is_exact": false
@@ -6022,9 +6022,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 100,
               "points_breakdown": {
-                "countries": null,
+                "countries": 100,
                 "score": null
               },
               "is_exact": false
@@ -6057,9 +6057,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 65,
               "points_breakdown": {
-                "countries": null,
+                "countries": 65,
                 "score": null
               },
               "is_exact": false
@@ -6092,9 +6092,9 @@
                 "score": "2 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 130,
               "points_breakdown": {
-                "countries": null,
+                "countries": 130,
                 "score": null
               },
               "is_exact": false
@@ -6127,9 +6127,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 100,
               "points_breakdown": {
-                "countries": null,
+                "countries": 100,
                 "score": null
               },
               "is_exact": false
@@ -6162,9 +6162,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 100,
               "points_breakdown": {
-                "countries": null,
+                "countries": 100,
                 "score": null
               },
               "is_exact": false
@@ -6197,9 +6197,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 35,
               "points_breakdown": {
-                "countries": null,
+                "countries": 35,
                 "score": null
               },
               "is_exact": false
@@ -6232,9 +6232,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 65,
               "points_breakdown": {
-                "countries": null,
+                "countries": 65,
                 "score": null
               },
               "is_exact": false
@@ -6267,9 +6267,9 @@
                 "score": "2 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 100,
               "points_breakdown": {
-                "countries": null,
+                "countries": 100,
                 "score": null
               },
               "is_exact": false
@@ -6308,9 +6308,9 @@
                 "score": "0 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -6343,9 +6343,9 @@
                 "score": "1 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -6378,9 +6378,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -6413,9 +6413,9 @@
                 "score": "1 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -6448,9 +6448,9 @@
                 "score": "1 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -6483,9 +6483,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -6518,9 +6518,9 @@
                 "score": "2 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -6553,9 +6553,9 @@
                 "score": "1 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -6594,9 +6594,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -6629,9 +6629,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -6664,9 +6664,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -6699,9 +6699,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -6740,9 +6740,9 @@
                 "score": "1 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -6775,9 +6775,9 @@
                 "score": "1 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -6816,9 +6816,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -6857,9 +6857,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -9190,9 +9190,9 @@
                 "score": "1 - 2"
               },
               "actual_score": "0 - 0",
-              "points": 0,
+              "points": 35,
               "points_breakdown": {
-                "countries": null,
+                "countries": 35,
                 "score": 0
               },
               "is_exact": false
@@ -9225,9 +9225,9 @@
                 "score": "2 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 100,
               "points_breakdown": {
-                "countries": null,
+                "countries": 100,
                 "score": null
               },
               "is_exact": false
@@ -9260,9 +9260,9 @@
                 "score": "2 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 65,
               "points_breakdown": {
-                "countries": null,
+                "countries": 65,
                 "score": null
               },
               "is_exact": false
@@ -9295,9 +9295,9 @@
                 "score": "1 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 100,
               "points_breakdown": {
-                "countries": null,
+                "countries": 100,
                 "score": null
               },
               "is_exact": false
@@ -9330,9 +9330,9 @@
                 "score": "1 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 70,
               "points_breakdown": {
-                "countries": null,
+                "countries": 70,
                 "score": null
               },
               "is_exact": false
@@ -9365,9 +9365,9 @@
                 "score": "3 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 130,
               "points_breakdown": {
-                "countries": null,
+                "countries": 130,
                 "score": null
               },
               "is_exact": false
@@ -9400,9 +9400,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 70,
               "points_breakdown": {
-                "countries": null,
+                "countries": 70,
                 "score": null
               },
               "is_exact": false
@@ -9435,9 +9435,9 @@
                 "score": "2 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 65,
               "points_breakdown": {
-                "countries": null,
+                "countries": 65,
                 "score": null
               },
               "is_exact": false
@@ -9470,9 +9470,9 @@
                 "score": "1 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 100,
               "points_breakdown": {
-                "countries": null,
+                "countries": 100,
                 "score": null
               },
               "is_exact": false
@@ -9505,9 +9505,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 65,
               "points_breakdown": {
-                "countries": null,
+                "countries": 65,
                 "score": null
               },
               "is_exact": false
@@ -9540,9 +9540,9 @@
                 "score": "3 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 130,
               "points_breakdown": {
-                "countries": null,
+                "countries": 130,
                 "score": null
               },
               "is_exact": false
@@ -9575,9 +9575,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 100,
               "points_breakdown": {
-                "countries": null,
+                "countries": 100,
                 "score": null
               },
               "is_exact": false
@@ -9610,9 +9610,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 100,
               "points_breakdown": {
-                "countries": null,
+                "countries": 100,
                 "score": null
               },
               "is_exact": false
@@ -9645,9 +9645,9 @@
                 "score": "1 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 65,
               "points_breakdown": {
-                "countries": null,
+                "countries": 65,
                 "score": null
               },
               "is_exact": false
@@ -9680,9 +9680,9 @@
                 "score": "3 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 65,
               "points_breakdown": {
-                "countries": null,
+                "countries": 65,
                 "score": null
               },
               "is_exact": false
@@ -9715,9 +9715,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 100,
               "points_breakdown": {
-                "countries": null,
+                "countries": 100,
                 "score": null
               },
               "is_exact": false
@@ -9756,9 +9756,9 @@
                 "score": "1 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -9791,9 +9791,9 @@
                 "score": "2 - 3"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -9826,9 +9826,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -9861,9 +9861,9 @@
                 "score": "3 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -9896,9 +9896,9 @@
                 "score": "1 - 3"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -9931,9 +9931,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -9966,9 +9966,9 @@
                 "score": "3 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -10001,9 +10001,9 @@
                 "score": "1 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -10042,9 +10042,9 @@
                 "score": "3 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -10077,9 +10077,9 @@
                 "score": "3 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -10112,9 +10112,9 @@
                 "score": "2 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -10147,9 +10147,9 @@
                 "score": "3 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -10188,9 +10188,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -10223,9 +10223,9 @@
                 "score": "2 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -10264,9 +10264,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -10305,9 +10305,9 @@
                 "score": "3 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -12638,9 +12638,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "0 - 0",
-              "points": 0,
+              "points": 65,
               "points_breakdown": {
-                "countries": null,
+                "countries": 65,
                 "score": 0
               },
               "is_exact": false
@@ -12673,9 +12673,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 130,
               "points_breakdown": {
-                "countries": null,
+                "countries": 130,
                 "score": null
               },
               "is_exact": false
@@ -12708,9 +12708,9 @@
                 "score": "4 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 130,
               "points_breakdown": {
-                "countries": null,
+                "countries": 130,
                 "score": null
               },
               "is_exact": false
@@ -12743,9 +12743,9 @@
                 "score": "3 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 130,
               "points_breakdown": {
-                "countries": null,
+                "countries": 130,
                 "score": null
               },
               "is_exact": false
@@ -12778,9 +12778,9 @@
                 "score": "1 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 65,
               "points_breakdown": {
-                "countries": null,
+                "countries": 65,
                 "score": null
               },
               "is_exact": false
@@ -12813,9 +12813,9 @@
                 "score": "4 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 130,
               "points_breakdown": {
-                "countries": null,
+                "countries": 130,
                 "score": null
               },
               "is_exact": false
@@ -12848,9 +12848,9 @@
                 "score": "3 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 100,
               "points_breakdown": {
-                "countries": null,
+                "countries": 100,
                 "score": null
               },
               "is_exact": false
@@ -12883,9 +12883,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 35,
               "points_breakdown": {
-                "countries": null,
+                "countries": 35,
                 "score": null
               },
               "is_exact": false
@@ -12918,9 +12918,9 @@
                 "score": "3 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 100,
               "points_breakdown": {
-                "countries": null,
+                "countries": 100,
                 "score": null
               },
               "is_exact": false
@@ -12953,9 +12953,9 @@
                 "score": "3 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 65,
               "points_breakdown": {
-                "countries": null,
+                "countries": 65,
                 "score": null
               },
               "is_exact": false
@@ -12988,9 +12988,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 100,
               "points_breakdown": {
-                "countries": null,
+                "countries": 100,
                 "score": null
               },
               "is_exact": false
@@ -13023,9 +13023,9 @@
                 "score": "3 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 70,
               "points_breakdown": {
-                "countries": null,
+                "countries": 70,
                 "score": null
               },
               "is_exact": false
@@ -13058,9 +13058,9 @@
                 "score": "3 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 100,
               "points_breakdown": {
-                "countries": null,
+                "countries": 100,
                 "score": null
               },
               "is_exact": false
@@ -13093,9 +13093,9 @@
                 "score": "1 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 65,
               "points_breakdown": {
-                "countries": null,
+                "countries": 65,
                 "score": null
               },
               "is_exact": false
@@ -13128,9 +13128,9 @@
                 "score": "3 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 65,
               "points_breakdown": {
-                "countries": null,
+                "countries": 65,
                 "score": null
               },
               "is_exact": false
@@ -13163,9 +13163,9 @@
                 "score": "2 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 100,
               "points_breakdown": {
-                "countries": null,
+                "countries": 100,
                 "score": null
               },
               "is_exact": false
@@ -13204,9 +13204,9 @@
                 "score": "1 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -13239,9 +13239,9 @@
                 "score": "1 - 3"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -13274,9 +13274,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -13309,9 +13309,9 @@
                 "score": "3 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -13344,9 +13344,9 @@
                 "score": "4 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -13379,9 +13379,9 @@
                 "score": "1 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -13414,9 +13414,9 @@
                 "score": "3 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -13449,9 +13449,9 @@
                 "score": "1 - 3"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -13490,9 +13490,9 @@
                 "score": "3 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -13525,9 +13525,9 @@
                 "score": "3 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -13560,9 +13560,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -13595,9 +13595,9 @@
                 "score": "3 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -13636,9 +13636,9 @@
                 "score": "2 - 3"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -13671,9 +13671,9 @@
                 "score": "1 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -13712,9 +13712,9 @@
                 "score": "3 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -13753,9 +13753,9 @@
                 "score": "3 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -16086,9 +16086,9 @@
                 "score": "2 - 0"
               },
               "actual_score": "0 - 0",
-              "points": 15,
+              "points": 50,
               "points_breakdown": {
-                "countries": null,
+                "countries": 35,
                 "score": 15
               },
               "is_exact": false
@@ -16121,9 +16121,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 130,
               "points_breakdown": {
-                "countries": null,
+                "countries": 130,
                 "score": null
               },
               "is_exact": false
@@ -16156,9 +16156,9 @@
                 "score": "3 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 100,
               "points_breakdown": {
-                "countries": null,
+                "countries": 100,
                 "score": null
               },
               "is_exact": false
@@ -16191,9 +16191,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 130,
               "points_breakdown": {
-                "countries": null,
+                "countries": 130,
                 "score": null
               },
               "is_exact": false
@@ -16226,9 +16226,9 @@
                 "score": "1 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 65,
               "points_breakdown": {
-                "countries": null,
+                "countries": 65,
                 "score": null
               },
               "is_exact": false
@@ -16261,9 +16261,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 130,
               "points_breakdown": {
-                "countries": null,
+                "countries": 130,
                 "score": null
               },
               "is_exact": false
@@ -16296,9 +16296,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 130,
               "points_breakdown": {
-                "countries": null,
+                "countries": 130,
                 "score": null
               },
               "is_exact": false
@@ -16331,9 +16331,9 @@
                 "score": "3 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 130,
               "points_breakdown": {
-                "countries": null,
+                "countries": 130,
                 "score": null
               },
               "is_exact": false
@@ -16366,9 +16366,9 @@
                 "score": "2 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 100,
               "points_breakdown": {
-                "countries": null,
+                "countries": 100,
                 "score": null
               },
               "is_exact": false
@@ -16401,9 +16401,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 130,
               "points_breakdown": {
-                "countries": null,
+                "countries": 130,
                 "score": null
               },
               "is_exact": false
@@ -16436,9 +16436,9 @@
                 "score": "3 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 130,
               "points_breakdown": {
-                "countries": null,
+                "countries": 130,
                 "score": null
               },
               "is_exact": false
@@ -16471,9 +16471,9 @@
                 "score": "1 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 100,
               "points_breakdown": {
-                "countries": null,
+                "countries": 100,
                 "score": null
               },
               "is_exact": false
@@ -16506,9 +16506,9 @@
                 "score": "2 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 35,
               "points_breakdown": {
-                "countries": null,
+                "countries": 35,
                 "score": null
               },
               "is_exact": false
@@ -16541,9 +16541,9 @@
                 "score": "1 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 65,
               "points_breakdown": {
-                "countries": null,
+                "countries": 65,
                 "score": null
               },
               "is_exact": false
@@ -16576,9 +16576,9 @@
                 "score": "3 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 65,
               "points_breakdown": {
-                "countries": null,
+                "countries": 65,
                 "score": null
               },
               "is_exact": false
@@ -16611,9 +16611,9 @@
                 "score": "2 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 35,
               "points_breakdown": {
-                "countries": null,
+                "countries": 35,
                 "score": null
               },
               "is_exact": false
@@ -16652,9 +16652,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -16687,9 +16687,9 @@
                 "score": "1 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -16722,9 +16722,9 @@
                 "score": "3 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -16757,9 +16757,9 @@
                 "score": "3 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -16792,9 +16792,9 @@
                 "score": "1 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -16827,9 +16827,9 @@
                 "score": "1 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -16862,9 +16862,9 @@
                 "score": "3 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -16897,9 +16897,9 @@
                 "score": "0 - 3"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -16938,9 +16938,9 @@
                 "score": "2 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -16973,9 +16973,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -17008,9 +17008,9 @@
                 "score": "1 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -17043,9 +17043,9 @@
                 "score": "3 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -17084,9 +17084,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -17119,9 +17119,9 @@
                 "score": "2 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -17160,9 +17160,9 @@
                 "score": "1 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -17201,9 +17201,9 @@
                 "score": "2 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -19534,9 +19534,9 @@
                 "score": "2 - 3"
               },
               "actual_score": "0 - 0",
-              "points": 0,
+              "points": 65,
               "points_breakdown": {
-                "countries": null,
+                "countries": 65,
                 "score": 0
               },
               "is_exact": false
@@ -19569,9 +19569,9 @@
                 "score": "3 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 100,
               "points_breakdown": {
-                "countries": null,
+                "countries": 100,
                 "score": null
               },
               "is_exact": false
@@ -19604,9 +19604,9 @@
                 "score": "3 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 130,
               "points_breakdown": {
-                "countries": null,
+                "countries": 130,
                 "score": null
               },
               "is_exact": false
@@ -19639,9 +19639,9 @@
                 "score": "3 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 35,
               "points_breakdown": {
-                "countries": null,
+                "countries": 35,
                 "score": null
               },
               "is_exact": false
@@ -19674,9 +19674,9 @@
                 "score": "1 - 3"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 65,
               "points_breakdown": {
-                "countries": null,
+                "countries": 65,
                 "score": null
               },
               "is_exact": false
@@ -19709,9 +19709,9 @@
                 "score": "3 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 100,
               "points_breakdown": {
-                "countries": null,
+                "countries": 100,
                 "score": null
               },
               "is_exact": false
@@ -19744,9 +19744,9 @@
                 "score": "3 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 100,
               "points_breakdown": {
-                "countries": null,
+                "countries": 100,
                 "score": null
               },
               "is_exact": false
@@ -19779,9 +19779,9 @@
                 "score": "3 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 65,
               "points_breakdown": {
-                "countries": null,
+                "countries": 65,
                 "score": null
               },
               "is_exact": false
@@ -19814,9 +19814,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 100,
               "points_breakdown": {
-                "countries": null,
+                "countries": 100,
                 "score": null
               },
               "is_exact": false
@@ -19849,9 +19849,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 130,
               "points_breakdown": {
-                "countries": null,
+                "countries": 130,
                 "score": null
               },
               "is_exact": false
@@ -19884,9 +19884,9 @@
                 "score": "3 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 130,
               "points_breakdown": {
-                "countries": null,
+                "countries": 130,
                 "score": null
               },
               "is_exact": false
@@ -19919,9 +19919,9 @@
                 "score": "3 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 100,
               "points_breakdown": {
-                "countries": null,
+                "countries": 100,
                 "score": null
               },
               "is_exact": false
@@ -19954,9 +19954,9 @@
                 "score": "3 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 65,
               "points_breakdown": {
-                "countries": null,
+                "countries": 65,
                 "score": null
               },
               "is_exact": false
@@ -19989,9 +19989,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 100,
               "points_breakdown": {
-                "countries": null,
+                "countries": 100,
                 "score": null
               },
               "is_exact": false
@@ -20024,9 +20024,9 @@
                 "score": "3 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 65,
               "points_breakdown": {
-                "countries": null,
+                "countries": 65,
                 "score": null
               },
               "is_exact": false
@@ -20059,9 +20059,9 @@
                 "score": "4 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 100,
               "points_breakdown": {
-                "countries": null,
+                "countries": 100,
                 "score": null
               },
               "is_exact": false
@@ -20100,9 +20100,9 @@
                 "score": "1 - 3"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -20135,9 +20135,9 @@
                 "score": "1 - 3"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -20170,9 +20170,9 @@
                 "score": "2 - 3"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -20205,9 +20205,9 @@
                 "score": "2 - 3"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -20240,9 +20240,9 @@
                 "score": "1 - 3"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -20275,9 +20275,9 @@
                 "score": "1 - 3"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -20310,9 +20310,9 @@
                 "score": "3 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -20345,9 +20345,9 @@
                 "score": "2 - 3"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -20386,9 +20386,9 @@
                 "score": "3 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -20421,9 +20421,9 @@
                 "score": "3 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -20456,9 +20456,9 @@
                 "score": "2 - 3"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -20491,9 +20491,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -20532,9 +20532,9 @@
                 "score": "3 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -20567,9 +20567,9 @@
                 "score": "1 - 3"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -20608,9 +20608,9 @@
                 "score": "3 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -20649,9 +20649,9 @@
                 "score": "3 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -22982,9 +22982,9 @@
                 "score": "1 - 2"
               },
               "actual_score": "0 - 0",
-              "points": 0,
+              "points": 35,
               "points_breakdown": {
-                "countries": null,
+                "countries": 35,
                 "score": 0
               },
               "is_exact": false
@@ -23017,9 +23017,9 @@
                 "score": "3 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 130,
               "points_breakdown": {
-                "countries": null,
+                "countries": 130,
                 "score": null
               },
               "is_exact": false
@@ -23052,9 +23052,9 @@
                 "score": "2 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 130,
               "points_breakdown": {
-                "countries": null,
+                "countries": 130,
                 "score": null
               },
               "is_exact": false
@@ -23087,9 +23087,9 @@
                 "score": "2 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 65,
               "points_breakdown": {
-                "countries": null,
+                "countries": 65,
                 "score": null
               },
               "is_exact": false
@@ -23122,9 +23122,9 @@
                 "score": "1 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 130,
               "points_breakdown": {
-                "countries": null,
+                "countries": 130,
                 "score": null
               },
               "is_exact": false
@@ -23157,9 +23157,9 @@
                 "score": "3 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 130,
               "points_breakdown": {
-                "countries": null,
+                "countries": 130,
                 "score": null
               },
               "is_exact": false
@@ -23192,9 +23192,9 @@
                 "score": "1 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 130,
               "points_breakdown": {
-                "countries": null,
+                "countries": 130,
                 "score": null
               },
               "is_exact": false
@@ -23227,9 +23227,9 @@
                 "score": "3 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 35,
               "points_breakdown": {
-                "countries": null,
+                "countries": 35,
                 "score": null
               },
               "is_exact": false
@@ -23262,9 +23262,9 @@
                 "score": "3 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 65,
               "points_breakdown": {
-                "countries": null,
+                "countries": 65,
                 "score": null
               },
               "is_exact": false
@@ -23297,9 +23297,9 @@
                 "score": "2 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 65,
               "points_breakdown": {
-                "countries": null,
+                "countries": 65,
                 "score": null
               },
               "is_exact": false
@@ -23332,9 +23332,9 @@
                 "score": "1 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 130,
               "points_breakdown": {
-                "countries": null,
+                "countries": 130,
                 "score": null
               },
               "is_exact": false
@@ -23367,9 +23367,9 @@
                 "score": "1 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 70,
               "points_breakdown": {
-                "countries": null,
+                "countries": 70,
                 "score": null
               },
               "is_exact": false
@@ -23402,9 +23402,9 @@
                 "score": "1 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 70,
               "points_breakdown": {
-                "countries": null,
+                "countries": 70,
                 "score": null
               },
               "is_exact": false
@@ -23437,9 +23437,9 @@
                 "score": "1 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 100,
               "points_breakdown": {
-                "countries": null,
+                "countries": 100,
                 "score": null
               },
               "is_exact": false
@@ -23472,9 +23472,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 65,
               "points_breakdown": {
-                "countries": null,
+                "countries": 65,
                 "score": null
               },
               "is_exact": false
@@ -23507,9 +23507,9 @@
                 "score": "2 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 35,
               "points_breakdown": {
-                "countries": null,
+                "countries": 35,
                 "score": null
               },
               "is_exact": false
@@ -23548,9 +23548,9 @@
                 "score": "0 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -23583,9 +23583,9 @@
                 "score": "1 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -23618,9 +23618,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -23653,9 +23653,9 @@
                 "score": "1 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -23688,9 +23688,9 @@
                 "score": "2 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -23723,9 +23723,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -23758,9 +23758,9 @@
                 "score": "3 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -23793,9 +23793,9 @@
                 "score": "1 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -23834,9 +23834,9 @@
                 "score": "2 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -23869,9 +23869,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -23904,9 +23904,9 @@
                 "score": "2 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -23939,9 +23939,9 @@
                 "score": "2 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -23980,9 +23980,9 @@
                 "score": "3 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -24015,9 +24015,9 @@
                 "score": "1 - 3"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -24056,9 +24056,9 @@
                 "score": "2 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -24097,9 +24097,9 @@
                 "score": "0 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -26430,9 +26430,9 @@
                 "score": "1 - 2"
               },
               "actual_score": "0 - 0",
-              "points": 0,
+              "points": 100,
               "points_breakdown": {
-                "countries": null,
+                "countries": 100,
                 "score": 0
               },
               "is_exact": false
@@ -26465,9 +26465,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 130,
               "points_breakdown": {
-                "countries": null,
+                "countries": 130,
                 "score": null
               },
               "is_exact": false
@@ -26500,9 +26500,9 @@
                 "score": "3 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 65,
               "points_breakdown": {
-                "countries": null,
+                "countries": 65,
                 "score": null
               },
               "is_exact": false
@@ -26535,9 +26535,9 @@
                 "score": "3 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 130,
               "points_breakdown": {
-                "countries": null,
+                "countries": 130,
                 "score": null
               },
               "is_exact": false
@@ -26570,9 +26570,9 @@
                 "score": "2 - 3"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 70,
               "points_breakdown": {
-                "countries": null,
+                "countries": 70,
                 "score": null
               },
               "is_exact": false
@@ -26605,9 +26605,9 @@
                 "score": "3 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 100,
               "points_breakdown": {
-                "countries": null,
+                "countries": 100,
                 "score": null
               },
               "is_exact": false
@@ -26640,9 +26640,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 100,
               "points_breakdown": {
-                "countries": null,
+                "countries": 100,
                 "score": null
               },
               "is_exact": false
@@ -26675,9 +26675,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 35,
               "points_breakdown": {
-                "countries": null,
+                "countries": 35,
                 "score": null
               },
               "is_exact": false
@@ -26710,9 +26710,9 @@
                 "score": "2 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 100,
               "points_breakdown": {
-                "countries": null,
+                "countries": 100,
                 "score": null
               },
               "is_exact": false
@@ -26745,9 +26745,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 65,
               "points_breakdown": {
-                "countries": null,
+                "countries": 65,
                 "score": null
               },
               "is_exact": false
@@ -26780,9 +26780,9 @@
                 "score": "3 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 130,
               "points_breakdown": {
-                "countries": null,
+                "countries": 130,
                 "score": null
               },
               "is_exact": false
@@ -26815,9 +26815,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 70,
               "points_breakdown": {
-                "countries": null,
+                "countries": 70,
                 "score": null
               },
               "is_exact": false
@@ -26850,9 +26850,9 @@
                 "score": "2 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 35,
               "points_breakdown": {
-                "countries": null,
+                "countries": 35,
                 "score": null
               },
               "is_exact": false
@@ -26885,9 +26885,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 100,
               "points_breakdown": {
-                "countries": null,
+                "countries": 100,
                 "score": null
               },
               "is_exact": false
@@ -26920,9 +26920,9 @@
                 "score": "3 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 65,
               "points_breakdown": {
-                "countries": null,
+                "countries": 65,
                 "score": null
               },
               "is_exact": false
@@ -26955,9 +26955,9 @@
                 "score": "2 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 100,
               "points_breakdown": {
-                "countries": null,
+                "countries": 100,
                 "score": null
               },
               "is_exact": false
@@ -26996,9 +26996,9 @@
                 "score": "1 - 3"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -27031,9 +27031,9 @@
                 "score": "2 - 4"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -27066,9 +27066,9 @@
                 "score": "3 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -27101,9 +27101,9 @@
                 "score": "0 - 3"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -27136,9 +27136,9 @@
                 "score": "3 - 4"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -27171,9 +27171,9 @@
                 "score": "2 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -27206,9 +27206,9 @@
                 "score": "3 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -27241,9 +27241,9 @@
                 "score": "1 - 3"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -27282,9 +27282,9 @@
                 "score": "3 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -27317,9 +27317,9 @@
                 "score": "3 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -27352,9 +27352,9 @@
                 "score": "3 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -27387,9 +27387,9 @@
                 "score": "2 - 3"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -27428,9 +27428,9 @@
                 "score": "3 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -27463,9 +27463,9 @@
                 "score": "2 - 3"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -27504,9 +27504,9 @@
                 "score": "3 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -27545,9 +27545,9 @@
                 "score": "3 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -29878,9 +29878,9 @@
                 "score": "0 - 2"
               },
               "actual_score": "0 - 0",
-              "points": 15,
+              "points": 80,
               "points_breakdown": {
-                "countries": null,
+                "countries": 65,
                 "score": 15
               },
               "is_exact": false
@@ -29913,9 +29913,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 100,
               "points_breakdown": {
-                "countries": null,
+                "countries": 100,
                 "score": null
               },
               "is_exact": false
@@ -29948,9 +29948,9 @@
                 "score": "2 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 35,
               "points_breakdown": {
-                "countries": null,
+                "countries": 35,
                 "score": null
               },
               "is_exact": false
@@ -29983,9 +29983,9 @@
                 "score": "1 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 100,
               "points_breakdown": {
-                "countries": null,
+                "countries": 100,
                 "score": null
               },
               "is_exact": false
@@ -30018,9 +30018,9 @@
                 "score": "0 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 70,
               "points_breakdown": {
-                "countries": null,
+                "countries": 70,
                 "score": null
               },
               "is_exact": false
@@ -30053,9 +30053,9 @@
                 "score": "2 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 130,
               "points_breakdown": {
-                "countries": null,
+                "countries": 130,
                 "score": null
               },
               "is_exact": false
@@ -30088,9 +30088,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 100,
               "points_breakdown": {
-                "countries": null,
+                "countries": 100,
                 "score": null
               },
               "is_exact": false
@@ -30123,9 +30123,9 @@
                 "score": "1 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 130,
               "points_breakdown": {
-                "countries": null,
+                "countries": 130,
                 "score": null
               },
               "is_exact": false
@@ -30158,9 +30158,9 @@
                 "score": "1 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 100,
               "points_breakdown": {
-                "countries": null,
+                "countries": 100,
                 "score": null
               },
               "is_exact": false
@@ -30193,9 +30193,9 @@
                 "score": "2 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 130,
               "points_breakdown": {
-                "countries": null,
+                "countries": 130,
                 "score": null
               },
               "is_exact": false
@@ -30228,9 +30228,9 @@
                 "score": "1 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 130,
               "points_breakdown": {
-                "countries": null,
+                "countries": 130,
                 "score": null
               },
               "is_exact": false
@@ -30263,9 +30263,9 @@
                 "score": "1 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 100,
               "points_breakdown": {
-                "countries": null,
+                "countries": 100,
                 "score": null
               },
               "is_exact": false
@@ -30298,9 +30298,9 @@
                 "score": "0 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 130,
               "points_breakdown": {
-                "countries": null,
+                "countries": 130,
                 "score": null
               },
               "is_exact": false
@@ -30333,9 +30333,9 @@
                 "score": "0 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 65,
               "points_breakdown": {
-                "countries": null,
+                "countries": 65,
                 "score": null
               },
               "is_exact": false
@@ -30368,9 +30368,9 @@
                 "score": "3 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 65,
               "points_breakdown": {
-                "countries": null,
+                "countries": 65,
                 "score": null
               },
               "is_exact": false
@@ -30403,9 +30403,9 @@
                 "score": "1 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 100,
               "points_breakdown": {
-                "countries": null,
+                "countries": 100,
                 "score": null
               },
               "is_exact": false
@@ -30444,9 +30444,9 @@
                 "score": "1 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -30479,9 +30479,9 @@
                 "score": "1 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -30514,9 +30514,9 @@
                 "score": "2 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -30549,9 +30549,9 @@
                 "score": "1 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -30584,9 +30584,9 @@
                 "score": "0 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -30619,9 +30619,9 @@
                 "score": "0 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -30654,9 +30654,9 @@
                 "score": "2 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -30689,9 +30689,9 @@
                 "score": "0 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -30730,9 +30730,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -30765,9 +30765,9 @@
                 "score": "1 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -30800,9 +30800,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -30835,9 +30835,9 @@
                 "score": "1 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -30876,9 +30876,9 @@
                 "score": "2 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -30911,9 +30911,9 @@
                 "score": "1 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -30952,9 +30952,9 @@
                 "score": "1 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -30993,9 +30993,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -33326,9 +33326,9 @@
                 "score": "1 - 2"
               },
               "actual_score": "0 - 0",
-              "points": 0,
+              "points": 35,
               "points_breakdown": {
-                "countries": null,
+                "countries": 35,
                 "score": 0
               },
               "is_exact": false
@@ -33361,9 +33361,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 100,
               "points_breakdown": {
-                "countries": null,
+                "countries": 100,
                 "score": null
               },
               "is_exact": false
@@ -33396,9 +33396,9 @@
                 "score": "3 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 65,
               "points_breakdown": {
-                "countries": null,
+                "countries": 65,
                 "score": null
               },
               "is_exact": false
@@ -33431,9 +33431,9 @@
                 "score": "1 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 100,
               "points_breakdown": {
-                "countries": null,
+                "countries": 100,
                 "score": null
               },
               "is_exact": false
@@ -33466,9 +33466,9 @@
                 "score": "0 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 35,
               "points_breakdown": {
-                "countries": null,
+                "countries": 35,
                 "score": null
               },
               "is_exact": false
@@ -33501,9 +33501,9 @@
                 "score": "3 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 65,
               "points_breakdown": {
-                "countries": null,
+                "countries": 65,
                 "score": null
               },
               "is_exact": false
@@ -33536,9 +33536,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 100,
               "points_breakdown": {
-                "countries": null,
+                "countries": 100,
                 "score": null
               },
               "is_exact": false
@@ -33571,9 +33571,9 @@
                 "score": "3 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 130,
               "points_breakdown": {
-                "countries": null,
+                "countries": 130,
                 "score": null
               },
               "is_exact": false
@@ -33606,9 +33606,9 @@
                 "score": "2 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 100,
               "points_breakdown": {
-                "countries": null,
+                "countries": 100,
                 "score": null
               },
               "is_exact": false
@@ -33641,9 +33641,9 @@
                 "score": "2 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 100,
               "points_breakdown": {
-                "countries": null,
+                "countries": 100,
                 "score": null
               },
               "is_exact": false
@@ -33676,9 +33676,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 65,
               "points_breakdown": {
-                "countries": null,
+                "countries": 65,
                 "score": null
               },
               "is_exact": false
@@ -33711,9 +33711,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 100,
               "points_breakdown": {
-                "countries": null,
+                "countries": 100,
                 "score": null
               },
               "is_exact": false
@@ -33746,9 +33746,9 @@
                 "score": "2 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 35,
               "points_breakdown": {
-                "countries": null,
+                "countries": 35,
                 "score": null
               },
               "is_exact": false
@@ -33781,9 +33781,9 @@
                 "score": "1 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 65,
               "points_breakdown": {
-                "countries": null,
+                "countries": 65,
                 "score": null
               },
               "is_exact": false
@@ -33816,9 +33816,9 @@
                 "score": "3 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 130,
               "points_breakdown": {
-                "countries": null,
+                "countries": 130,
                 "score": null
               },
               "is_exact": false
@@ -33851,9 +33851,9 @@
                 "score": "2 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 35,
               "points_breakdown": {
-                "countries": null,
+                "countries": 35,
                 "score": null
               },
               "is_exact": false
@@ -33892,9 +33892,9 @@
                 "score": "1 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -33927,9 +33927,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -33962,9 +33962,9 @@
                 "score": "1 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -33997,9 +33997,9 @@
                 "score": "2 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -34032,9 +34032,9 @@
                 "score": "1 - 3"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -34067,9 +34067,9 @@
                 "score": "1 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -34102,9 +34102,9 @@
                 "score": "1 - 3"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -34137,9 +34137,9 @@
                 "score": "0 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -34178,9 +34178,9 @@
                 "score": "1 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -34213,9 +34213,9 @@
                 "score": "0 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -34248,9 +34248,9 @@
                 "score": "1 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -34283,9 +34283,9 @@
                 "score": "0 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -34324,9 +34324,9 @@
                 "score": "0 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -34359,9 +34359,9 @@
                 "score": "2 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -34400,9 +34400,9 @@
                 "score": "1 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -34441,9 +34441,9 @@
                 "score": "1 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -36774,9 +36774,9 @@
                 "score": "1 - 2"
               },
               "actual_score": "0 - 0",
-              "points": 0,
+              "points": 35,
               "points_breakdown": {
-                "countries": null,
+                "countries": 35,
                 "score": 0
               },
               "is_exact": false
@@ -36809,9 +36809,9 @@
                 "score": "3 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 65,
               "points_breakdown": {
-                "countries": null,
+                "countries": 65,
                 "score": null
               },
               "is_exact": false
@@ -36844,9 +36844,9 @@
                 "score": "3 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 100,
               "points_breakdown": {
-                "countries": null,
+                "countries": 100,
                 "score": null
               },
               "is_exact": false
@@ -36879,9 +36879,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 100,
               "points_breakdown": {
-                "countries": null,
+                "countries": 100,
                 "score": null
               },
               "is_exact": false
@@ -36914,9 +36914,9 @@
                 "score": "0 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 65,
               "points_breakdown": {
-                "countries": null,
+                "countries": 65,
                 "score": null
               },
               "is_exact": false
@@ -36949,9 +36949,9 @@
                 "score": "3 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 100,
               "points_breakdown": {
-                "countries": null,
+                "countries": 100,
                 "score": null
               },
               "is_exact": false
@@ -36984,9 +36984,9 @@
                 "score": "3 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 100,
               "points_breakdown": {
-                "countries": null,
+                "countries": 100,
                 "score": null
               },
               "is_exact": false
@@ -37019,9 +37019,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 35,
               "points_breakdown": {
-                "countries": null,
+                "countries": 35,
                 "score": null
               },
               "is_exact": false
@@ -37054,9 +37054,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 100,
               "points_breakdown": {
-                "countries": null,
+                "countries": 100,
                 "score": null
               },
               "is_exact": false
@@ -37089,9 +37089,9 @@
                 "score": "3 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 70,
               "points_breakdown": {
-                "countries": null,
+                "countries": 70,
                 "score": null
               },
               "is_exact": false
@@ -37124,9 +37124,9 @@
                 "score": "3 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 130,
               "points_breakdown": {
-                "countries": null,
+                "countries": 130,
                 "score": null
               },
               "is_exact": false
@@ -37159,9 +37159,9 @@
                 "score": "4 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 70,
               "points_breakdown": {
-                "countries": null,
+                "countries": 70,
                 "score": null
               },
               "is_exact": false
@@ -37194,9 +37194,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 130,
               "points_breakdown": {
-                "countries": null,
+                "countries": 130,
                 "score": null
               },
               "is_exact": false
@@ -37229,9 +37229,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -37264,9 +37264,9 @@
                 "score": "4 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 65,
               "points_breakdown": {
-                "countries": null,
+                "countries": 65,
                 "score": null
               },
               "is_exact": false
@@ -37299,9 +37299,9 @@
                 "score": "3 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 100,
               "points_breakdown": {
-                "countries": null,
+                "countries": 100,
                 "score": null
               },
               "is_exact": false
@@ -37340,9 +37340,9 @@
                 "score": "2 - 3"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -37375,9 +37375,9 @@
                 "score": "3 - 3"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -37410,9 +37410,9 @@
                 "score": "3 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -37445,9 +37445,9 @@
                 "score": "3 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -37480,9 +37480,9 @@
                 "score": "3 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -37515,9 +37515,9 @@
                 "score": "0 - 3"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -37550,9 +37550,9 @@
                 "score": "3 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -37585,9 +37585,9 @@
                 "score": "2 - 3"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -37626,9 +37626,9 @@
                 "score": "2 - 3"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -37661,9 +37661,9 @@
                 "score": "0 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -37696,9 +37696,9 @@
                 "score": "1 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -37731,9 +37731,9 @@
                 "score": "3 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -37772,9 +37772,9 @@
                 "score": "3 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -37807,9 +37807,9 @@
                 "score": "3 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -37848,9 +37848,9 @@
                 "score": "1 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -37889,9 +37889,9 @@
                 "score": "1 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -40222,9 +40222,9 @@
                 "score": "1 - 2"
               },
               "actual_score": "0 - 0",
-              "points": 0,
+              "points": 35,
               "points_breakdown": {
-                "countries": null,
+                "countries": 35,
                 "score": 0
               },
               "is_exact": false
@@ -40257,9 +40257,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 65,
               "points_breakdown": {
-                "countries": null,
+                "countries": 65,
                 "score": null
               },
               "is_exact": false
@@ -40292,9 +40292,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 70,
               "points_breakdown": {
-                "countries": null,
+                "countries": 70,
                 "score": null
               },
               "is_exact": false
@@ -40327,9 +40327,9 @@
                 "score": "3 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 130,
               "points_breakdown": {
-                "countries": null,
+                "countries": 130,
                 "score": null
               },
               "is_exact": false
@@ -40362,9 +40362,9 @@
                 "score": "1 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -40397,9 +40397,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 100,
               "points_breakdown": {
-                "countries": null,
+                "countries": 100,
                 "score": null
               },
               "is_exact": false
@@ -40432,9 +40432,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 100,
               "points_breakdown": {
-                "countries": null,
+                "countries": 100,
                 "score": null
               },
               "is_exact": false
@@ -40467,9 +40467,9 @@
                 "score": "3 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 65,
               "points_breakdown": {
-                "countries": null,
+                "countries": 65,
                 "score": null
               },
               "is_exact": false
@@ -40502,9 +40502,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 100,
               "points_breakdown": {
-                "countries": null,
+                "countries": 100,
                 "score": null
               },
               "is_exact": false
@@ -40537,9 +40537,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 130,
               "points_breakdown": {
-                "countries": null,
+                "countries": 130,
                 "score": null
               },
               "is_exact": false
@@ -40572,9 +40572,9 @@
                 "score": "3 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 130,
               "points_breakdown": {
-                "countries": null,
+                "countries": 130,
                 "score": null
               },
               "is_exact": false
@@ -40607,9 +40607,9 @@
                 "score": "3 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 35,
               "points_breakdown": {
-                "countries": null,
+                "countries": 35,
                 "score": null
               },
               "is_exact": false
@@ -40642,9 +40642,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 35,
               "points_breakdown": {
-                "countries": null,
+                "countries": 35,
                 "score": null
               },
               "is_exact": false
@@ -40677,9 +40677,9 @@
                 "score": "1 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 65,
               "points_breakdown": {
-                "countries": null,
+                "countries": 65,
                 "score": null
               },
               "is_exact": false
@@ -40712,9 +40712,9 @@
                 "score": "3 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 65,
               "points_breakdown": {
-                "countries": null,
+                "countries": 65,
                 "score": null
               },
               "is_exact": false
@@ -40747,9 +40747,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 70,
               "points_breakdown": {
-                "countries": null,
+                "countries": 70,
                 "score": null
               },
               "is_exact": false
@@ -40788,9 +40788,9 @@
                 "score": "1 - 3"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -40823,9 +40823,9 @@
                 "score": "2 - 3"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -40858,9 +40858,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -40893,9 +40893,9 @@
                 "score": "1 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -40928,9 +40928,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -40963,9 +40963,9 @@
                 "score": "1 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -40998,9 +40998,9 @@
                 "score": "3 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -41033,9 +41033,9 @@
                 "score": "1 - 3"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -41074,9 +41074,9 @@
                 "score": "1 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -41109,9 +41109,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -41144,9 +41144,9 @@
                 "score": "1 - 3"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -41179,9 +41179,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -41220,9 +41220,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -41255,9 +41255,9 @@
                 "score": "1 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -41296,9 +41296,9 @@
                 "score": "3 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -41337,9 +41337,9 @@
                 "score": "3 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -43670,9 +43670,9 @@
                 "score": "1 - 2"
               },
               "actual_score": "0 - 0",
-              "points": 0,
+              "points": 65,
               "points_breakdown": {
-                "countries": null,
+                "countries": 65,
                 "score": 0
               },
               "is_exact": false
@@ -43705,9 +43705,9 @@
                 "score": "1 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 70,
               "points_breakdown": {
-                "countries": null,
+                "countries": 70,
                 "score": null
               },
               "is_exact": false
@@ -43740,9 +43740,9 @@
                 "score": "2 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 100,
               "points_breakdown": {
-                "countries": null,
+                "countries": 100,
                 "score": null
               },
               "is_exact": false
@@ -43775,9 +43775,9 @@
                 "score": "1 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 70,
               "points_breakdown": {
-                "countries": null,
+                "countries": 70,
                 "score": null
               },
               "is_exact": false
@@ -43810,9 +43810,9 @@
                 "score": "0 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 35,
               "points_breakdown": {
-                "countries": null,
+                "countries": 35,
                 "score": null
               },
               "is_exact": false
@@ -43845,9 +43845,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 70,
               "points_breakdown": {
-                "countries": null,
+                "countries": 70,
                 "score": null
               },
               "is_exact": false
@@ -43880,9 +43880,9 @@
                 "score": "0 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 70,
               "points_breakdown": {
-                "countries": null,
+                "countries": 70,
                 "score": null
               },
               "is_exact": false
@@ -43915,9 +43915,9 @@
                 "score": "3 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 65,
               "points_breakdown": {
-                "countries": null,
+                "countries": 65,
                 "score": null
               },
               "is_exact": false
@@ -43950,9 +43950,9 @@
                 "score": "0 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 100,
               "points_breakdown": {
-                "countries": null,
+                "countries": 100,
                 "score": null
               },
               "is_exact": false
@@ -43985,9 +43985,9 @@
                 "score": "3 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 65,
               "points_breakdown": {
-                "countries": null,
+                "countries": 65,
                 "score": null
               },
               "is_exact": false
@@ -44020,9 +44020,9 @@
                 "score": "3 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 130,
               "points_breakdown": {
-                "countries": null,
+                "countries": 130,
                 "score": null
               },
               "is_exact": false
@@ -44055,9 +44055,9 @@
                 "score": "3 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 100,
               "points_breakdown": {
-                "countries": null,
+                "countries": 100,
                 "score": null
               },
               "is_exact": false
@@ -44090,9 +44090,9 @@
                 "score": "2 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 100,
               "points_breakdown": {
-                "countries": null,
+                "countries": 100,
                 "score": null
               },
               "is_exact": false
@@ -44125,9 +44125,9 @@
                 "score": "1 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 35,
               "points_breakdown": {
-                "countries": null,
+                "countries": 35,
                 "score": null
               },
               "is_exact": false
@@ -44160,9 +44160,9 @@
                 "score": "2 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 65,
               "points_breakdown": {
-                "countries": null,
+                "countries": 65,
                 "score": null
               },
               "is_exact": false
@@ -44195,9 +44195,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 35,
               "points_breakdown": {
-                "countries": null,
+                "countries": 35,
                 "score": null
               },
               "is_exact": false
@@ -44236,9 +44236,9 @@
                 "score": "1 - 3"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -44271,9 +44271,9 @@
                 "score": "2 - 3"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -44306,9 +44306,9 @@
                 "score": "2 - 3"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -44341,9 +44341,9 @@
                 "score": "0 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -44376,9 +44376,9 @@
                 "score": "1 - 3"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -44411,9 +44411,9 @@
                 "score": "1 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -44446,9 +44446,9 @@
                 "score": "3 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -44481,9 +44481,9 @@
                 "score": "1 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -44522,9 +44522,9 @@
                 "score": "3 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -44557,9 +44557,9 @@
                 "score": "1 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -44592,9 +44592,9 @@
                 "score": "4 - 3"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -44627,9 +44627,9 @@
                 "score": "1 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -44668,9 +44668,9 @@
                 "score": "1 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -44703,9 +44703,9 @@
                 "score": "1 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -44744,9 +44744,9 @@
                 "score": "2 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -44785,9 +44785,9 @@
                 "score": "1 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -47118,9 +47118,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "0 - 0",
-              "points": 0,
+              "points": 65,
               "points_breakdown": {
-                "countries": null,
+                "countries": 65,
                 "score": 0
               },
               "is_exact": false
@@ -47153,9 +47153,9 @@
                 "score": "1 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 100,
               "points_breakdown": {
-                "countries": null,
+                "countries": 100,
                 "score": null
               },
               "is_exact": false
@@ -47188,9 +47188,9 @@
                 "score": "2 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 100,
               "points_breakdown": {
-                "countries": null,
+                "countries": 100,
                 "score": null
               },
               "is_exact": false
@@ -47223,9 +47223,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 100,
               "points_breakdown": {
-                "countries": null,
+                "countries": 100,
                 "score": null
               },
               "is_exact": false
@@ -47258,9 +47258,9 @@
                 "score": "3 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 35,
               "points_breakdown": {
-                "countries": null,
+                "countries": 35,
                 "score": null
               },
               "is_exact": false
@@ -47293,9 +47293,9 @@
                 "score": "4 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 65,
               "points_breakdown": {
-                "countries": null,
+                "countries": 65,
                 "score": null
               },
               "is_exact": false
@@ -47328,9 +47328,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 100,
               "points_breakdown": {
-                "countries": null,
+                "countries": 100,
                 "score": null
               },
               "is_exact": false
@@ -47363,9 +47363,9 @@
                 "score": "1 - 3"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 35,
               "points_breakdown": {
-                "countries": null,
+                "countries": 35,
                 "score": null
               },
               "is_exact": false
@@ -47398,9 +47398,9 @@
                 "score": "0 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 70,
               "points_breakdown": {
-                "countries": null,
+                "countries": 70,
                 "score": null
               },
               "is_exact": false
@@ -47433,9 +47433,9 @@
                 "score": "2 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 70,
               "points_breakdown": {
-                "countries": null,
+                "countries": 70,
                 "score": null
               },
               "is_exact": false
@@ -47468,9 +47468,9 @@
                 "score": "4 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 100,
               "points_breakdown": {
-                "countries": null,
+                "countries": 100,
                 "score": null
               },
               "is_exact": false
@@ -47503,9 +47503,9 @@
                 "score": "1 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 70,
               "points_breakdown": {
-                "countries": null,
+                "countries": 70,
                 "score": null
               },
               "is_exact": false
@@ -47538,9 +47538,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 65,
               "points_breakdown": {
-                "countries": null,
+                "countries": 65,
                 "score": null
               },
               "is_exact": false
@@ -47573,9 +47573,9 @@
                 "score": "1 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 35,
               "points_breakdown": {
-                "countries": null,
+                "countries": 35,
                 "score": null
               },
               "is_exact": false
@@ -47608,9 +47608,9 @@
                 "score": "2 - 3"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 35,
               "points_breakdown": {
-                "countries": null,
+                "countries": 35,
                 "score": null
               },
               "is_exact": false
@@ -47643,9 +47643,9 @@
                 "score": "2 - 3"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 35,
               "points_breakdown": {
-                "countries": null,
+                "countries": 35,
                 "score": null
               },
               "is_exact": false
@@ -47684,9 +47684,9 @@
                 "score": "2 - 4"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -47719,9 +47719,9 @@
                 "score": "2 - 3"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -47754,9 +47754,9 @@
                 "score": "3 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -47789,9 +47789,9 @@
                 "score": "3 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -47824,9 +47824,9 @@
                 "score": "4 - 3"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -47859,9 +47859,9 @@
                 "score": "2 - 3"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -47894,9 +47894,9 @@
                 "score": "3 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -47929,9 +47929,9 @@
                 "score": "1 - 3"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -47970,9 +47970,9 @@
                 "score": "2 - 4"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -48005,9 +48005,9 @@
                 "score": "3 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -48040,9 +48040,9 @@
                 "score": "2 - 4"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -48075,9 +48075,9 @@
                 "score": "1 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -48116,9 +48116,9 @@
                 "score": "3 - 4"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -48151,9 +48151,9 @@
                 "score": "3 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -48192,9 +48192,9 @@
                 "score": "4 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -48233,9 +48233,9 @@
                 "score": "4 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -50566,9 +50566,9 @@
                 "score": "1 - 3"
               },
               "actual_score": "0 - 0",
-              "points": 0,
+              "points": 35,
               "points_breakdown": {
-                "countries": null,
+                "countries": 35,
                 "score": 0
               },
               "is_exact": false
@@ -50601,9 +50601,9 @@
                 "score": "3 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 65,
               "points_breakdown": {
-                "countries": null,
+                "countries": 65,
                 "score": null
               },
               "is_exact": false
@@ -50636,9 +50636,9 @@
                 "score": "1 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 130,
               "points_breakdown": {
-                "countries": null,
+                "countries": 130,
                 "score": null
               },
               "is_exact": false
@@ -50671,9 +50671,9 @@
                 "score": "2 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 130,
               "points_breakdown": {
-                "countries": null,
+                "countries": 130,
                 "score": null
               },
               "is_exact": false
@@ -50706,9 +50706,9 @@
                 "score": "0 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -50741,9 +50741,9 @@
                 "score": "2 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 100,
               "points_breakdown": {
-                "countries": null,
+                "countries": 100,
                 "score": null
               },
               "is_exact": false
@@ -50776,9 +50776,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 100,
               "points_breakdown": {
-                "countries": null,
+                "countries": 100,
                 "score": null
               },
               "is_exact": false
@@ -50811,9 +50811,9 @@
                 "score": "3 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 35,
               "points_breakdown": {
-                "countries": null,
+                "countries": 35,
                 "score": null
               },
               "is_exact": false
@@ -50846,9 +50846,9 @@
                 "score": "1 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 70,
               "points_breakdown": {
-                "countries": null,
+                "countries": 70,
                 "score": null
               },
               "is_exact": false
@@ -50881,9 +50881,9 @@
                 "score": "1 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 70,
               "points_breakdown": {
-                "countries": null,
+                "countries": 70,
                 "score": null
               },
               "is_exact": false
@@ -50916,9 +50916,9 @@
                 "score": "2 - 3"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 100,
               "points_breakdown": {
-                "countries": null,
+                "countries": 100,
                 "score": null
               },
               "is_exact": false
@@ -50951,9 +50951,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 70,
               "points_breakdown": {
-                "countries": null,
+                "countries": 70,
                 "score": null
               },
               "is_exact": false
@@ -50986,9 +50986,9 @@
                 "score": "3 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 70,
               "points_breakdown": {
-                "countries": null,
+                "countries": 70,
                 "score": null
               },
               "is_exact": false
@@ -51021,9 +51021,9 @@
                 "score": "3 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 35,
               "points_breakdown": {
-                "countries": null,
+                "countries": 35,
                 "score": null
               },
               "is_exact": false
@@ -51056,9 +51056,9 @@
                 "score": "3 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 65,
               "points_breakdown": {
-                "countries": null,
+                "countries": 65,
                 "score": null
               },
               "is_exact": false
@@ -51091,9 +51091,9 @@
                 "score": "4 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 100,
               "points_breakdown": {
-                "countries": null,
+                "countries": 100,
                 "score": null
               },
               "is_exact": false
@@ -51132,9 +51132,9 @@
                 "score": "1 - 3"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -51167,9 +51167,9 @@
                 "score": "2 - 3"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -51202,9 +51202,9 @@
                 "score": "4 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -51237,9 +51237,9 @@
                 "score": "1 - 3"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -51272,9 +51272,9 @@
                 "score": "0 - 3"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -51307,9 +51307,9 @@
                 "score": "1 - 3"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -51342,9 +51342,9 @@
                 "score": "3 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -51377,9 +51377,9 @@
                 "score": "1 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -51418,9 +51418,9 @@
                 "score": "3 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -51453,9 +51453,9 @@
                 "score": "3 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -51488,9 +51488,9 @@
                 "score": "2 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -51523,9 +51523,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -51564,9 +51564,9 @@
                 "score": "3 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -51599,9 +51599,9 @@
                 "score": "0 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -51640,9 +51640,9 @@
                 "score": "3 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -51681,9 +51681,9 @@
                 "score": "2 - 3"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -54014,9 +54014,9 @@
                 "score": "0 - 3"
               },
               "actual_score": "0 - 0",
-              "points": 15,
+              "points": 85,
               "points_breakdown": {
-                "countries": null,
+                "countries": 70,
                 "score": 15
               },
               "is_exact": false
@@ -54049,9 +54049,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 100,
               "points_breakdown": {
-                "countries": null,
+                "countries": 100,
                 "score": null
               },
               "is_exact": false
@@ -54084,9 +54084,9 @@
                 "score": "4 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 65,
               "points_breakdown": {
-                "countries": null,
+                "countries": 65,
                 "score": null
               },
               "is_exact": false
@@ -54119,9 +54119,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 35,
               "points_breakdown": {
-                "countries": null,
+                "countries": 35,
                 "score": null
               },
               "is_exact": false
@@ -54154,9 +54154,9 @@
                 "score": "1 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 130,
               "points_breakdown": {
-                "countries": null,
+                "countries": 130,
                 "score": null
               },
               "is_exact": false
@@ -54189,9 +54189,9 @@
                 "score": "3 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 100,
               "points_breakdown": {
-                "countries": null,
+                "countries": 100,
                 "score": null
               },
               "is_exact": false
@@ -54224,9 +54224,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 65,
               "points_breakdown": {
-                "countries": null,
+                "countries": 65,
                 "score": null
               },
               "is_exact": false
@@ -54259,9 +54259,9 @@
                 "score": "3 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 65,
               "points_breakdown": {
-                "countries": null,
+                "countries": 65,
                 "score": null
               },
               "is_exact": false
@@ -54294,9 +54294,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 70,
               "points_breakdown": {
-                "countries": null,
+                "countries": 70,
                 "score": null
               },
               "is_exact": false
@@ -54329,9 +54329,9 @@
                 "score": "2 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 100,
               "points_breakdown": {
-                "countries": null,
+                "countries": 100,
                 "score": null
               },
               "is_exact": false
@@ -54364,9 +54364,9 @@
                 "score": "3 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 65,
               "points_breakdown": {
-                "countries": null,
+                "countries": 65,
                 "score": null
               },
               "is_exact": false
@@ -54399,9 +54399,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 35,
               "points_breakdown": {
-                "countries": null,
+                "countries": 35,
                 "score": null
               },
               "is_exact": false
@@ -54434,9 +54434,9 @@
                 "score": "2 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 35,
               "points_breakdown": {
-                "countries": null,
+                "countries": 35,
                 "score": null
               },
               "is_exact": false
@@ -54469,9 +54469,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 65,
               "points_breakdown": {
-                "countries": null,
+                "countries": 65,
                 "score": null
               },
               "is_exact": false
@@ -54504,9 +54504,9 @@
                 "score": "4 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 35,
               "points_breakdown": {
-                "countries": null,
+                "countries": 35,
                 "score": null
               },
               "is_exact": false
@@ -54539,9 +54539,9 @@
                 "score": "2 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 100,
               "points_breakdown": {
-                "countries": null,
+                "countries": 100,
                 "score": null
               },
               "is_exact": false
@@ -54580,9 +54580,9 @@
                 "score": "1 - 3"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -54615,9 +54615,9 @@
                 "score": "1 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -54650,9 +54650,9 @@
                 "score": "3 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -54685,9 +54685,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -54720,9 +54720,9 @@
                 "score": "2 - 3"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -54755,9 +54755,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -54790,9 +54790,9 @@
                 "score": "3 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -54825,9 +54825,9 @@
                 "score": "1 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -54866,9 +54866,9 @@
                 "score": "3 - 0"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -54901,9 +54901,9 @@
                 "score": "4 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -54936,9 +54936,9 @@
                 "score": "3 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -54971,9 +54971,9 @@
                 "score": "3 - 1"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -55012,9 +55012,9 @@
                 "score": "2 - 3"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -55047,9 +55047,9 @@
                 "score": "2 - 4"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -55088,9 +55088,9 @@
                 "score": "3 - 2"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -55129,9 +55129,9 @@
                 "score": "4 - 3"
               },
               "actual_score": "NS",
-              "points": null,
+              "points": 0,
               "points_breakdown": {
-                "countries": null,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
