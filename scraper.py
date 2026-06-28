@@ -1207,7 +1207,10 @@ def _parse_knockout_fixture(tds, fixture_number, round_name) -> dict:
         rows = s["desktop"] or s["mobile"]
         return rows[0] if rows else None
 
-    # Player's predicted teams (or hidden) live under "Predicted".
+    # The "Predicted" section also carries the player's bracket pick (which
+    # teams they expected to reach this slot). We only use it to detect a
+    # still-locked pick (eye-slash) — the displayed prediction is the score,
+    # not the advancement teams, so the parsed teams are intentionally dropped.
     pred_row = pick("Predicted")
     pred_cols = pred_row.find_all("div", class_="col") if pred_row else []
     p_home = _team_from_col(pred_cols[0]) if len(pred_cols) > 0 else {"code": None, "name": None, "hidden": True}
@@ -1252,11 +1255,12 @@ def _parse_knockout_fixture(tds, fixture_number, round_name) -> dict:
         "venue": venue_for(m_home.get("code"), m_away.get("code"), fixture_number, stage_type="knockout"),
         "hidden": hidden,
         "match": {"home": m_home, "away": m_away},
+        # Knockout predictions are shown as a scoreline, exactly like the group
+        # stage — the player's predicted score for this fixture, not which teams
+        # they had advancing into the slot.
         "predicted": {
-            "type": "teams",
+            "type": "score",
             "hidden": hidden,
-            "home": None if hidden else p_home,
-            "away": None if hidden else p_away,
             "score": None if hidden else predicted_score,
         },
         "actual_score": actual_score or None,

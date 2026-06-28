@@ -3519,23 +3519,20 @@ function fixtureHtml(fx){
     ? '<span class="st live"><span class="livedot"></span>LIVE</span>'
     : (bucketDone?'<span class="st ft">FT</span>':'<span class="st ns">'+esc(fx.status||'NS')+'</span>');
 
-  // Predicted column
+  // Predicted column. Knockout and group predictions are both scorelines now —
+  // the player's predicted score for the fixture. (Older cached data may still
+  // carry the legacy knockout "teams" shape, handled as a fallback.)
   let predHtml='';
-  if(fx.predicted && fx.predicted.type==='teams'){
-    if(fx.predicted.hidden){
-      // Pick is locked/blocked for now (deadline not passed, or not yet
-      // scrapeable). Show "?" placeholders aligned to the same flag column as a
-      // revealed pick — they fill in automatically once the prediction becomes
-      // available, no code change needed. (The Status column already reads
-      // "pending", so no extra label here.)
-      predHtml=`<div class="predteams" title="Pick stays hidden until the deadline — it fills in automatically once it's revealed">
-        <span class="pt pend"><span class="qmark">?</span></span>
-        <span class="pt pend"><span class="qmark">?</span></span>
-      </div>`;
-    }else{
-      predHtml=`<div class="predteams">${predTeamLine(fx.predicted.home)}${predTeamLine(fx.predicted.away)}</div>`+
-        (fx.predicted.score?`<div class="scoreline pred predteamscore">${esc(fx.predicted.score)}</div>`:'');
-    }
+  if(fx.predicted && fx.predicted.hidden){
+    // Pick is locked/blocked for now (deadline not passed, or not yet
+    // scrapeable). Show a "?" placeholder; it fills in automatically once the
+    // prediction is revealed. (The Status column already reads "pending".)
+    predHtml=`<div class="predteams" title="Pick stays hidden until the deadline — it fills in automatically once it's revealed">
+      <span class="pt pend"><span class="qmark">?</span></span>
+    </div>`;
+  }else if(fx.predicted && fx.predicted.type==='teams'){
+    predHtml=`<div class="predteams">${predTeamLine(fx.predicted.home)}${predTeamLine(fx.predicted.away)}</div>`+
+      (fx.predicted.score?`<div class="scoreline pred predteamscore">${esc(fx.predicted.score)}</div>`:'');
   }else{
     predHtml=`<div class="scoreline pred">${esc(fx.predicted?.score||'—')}</div>`;
   }
