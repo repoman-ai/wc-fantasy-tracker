@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-29T22:43:17Z",
+  "updated": "2026-06-29T22:51:34Z",
   "players": {
     "252653": {
       "team_id": "252653",
@@ -8,9 +8,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/252653/daniel/stage/1196-grand-total?scroll=fixture",
       "flag": "FRA",
       "rank": 1,
-      "points": 4997,
+      "points": 5089,
       "exact": 11,
-      "grand_total": 4997,
+      "grand_total": 5089,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -2830,7 +2830,7 @@
         },
         {
           "round": "Round of 16",
-          "subtotal": 184,
+          "subtotal": 276,
           "fixtures": [
             {
               "fixture_number": 90,
@@ -2879,8 +2879,8 @@
               "hidden": false,
               "match": {
                 "home": {
-                  "code": "PAR",
-                  "name": "Paraguay",
+                  "code": "GER",
+                  "name": "Germany",
                   "hidden": false
                 },
                 "away": {
@@ -2895,9 +2895,9 @@
                 "score": "1 - 2"
               },
               "actual_score": "NS",
-              "points": 0,
+              "points": 92,
               "points_breakdown": {
-                "countries": 0,
+                "countries": 92,
                 "score": null
               },
               "is_exact": false
@@ -3456,9 +3456,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247930/alec/stage/1196-grand-total?scroll=fixture",
       "flag": "ESP",
       "rank": 2,
-      "points": 4990,
+      "points": 5082,
       "exact": 10,
-      "grand_total": 4990,
+      "grand_total": 5082,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -6278,7 +6278,7 @@
         },
         {
           "round": "Round of 16",
-          "subtotal": 184,
+          "subtotal": 276,
           "fixtures": [
             {
               "fixture_number": 90,
@@ -6327,8 +6327,8 @@
               "hidden": false,
               "match": {
                 "home": {
-                  "code": "PAR",
-                  "name": "Paraguay",
+                  "code": "GER",
+                  "name": "Germany",
                   "hidden": false
                 },
                 "away": {
@@ -6343,9 +6343,9 @@
                 "score": "1 - 2"
               },
               "actual_score": "NS",
-              "points": 0,
+              "points": 92,
               "points_breakdown": {
-                "countries": 0,
+                "countries": 92,
                 "score": null
               },
               "is_exact": false
@@ -6904,9 +6904,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/246775/bobby/stage/1196-grand-total?scroll=fixture",
       "flag": "FRA",
       "rank": 3,
-      "points": 4728,
+      "points": 4820,
       "exact": 10,
-      "grand_total": 4728,
+      "grand_total": 4820,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -9726,7 +9726,7 @@
         },
         {
           "round": "Round of 16",
-          "subtotal": 92,
+          "subtotal": 184,
           "fixtures": [
             {
               "fixture_number": 90,
@@ -9775,8 +9775,8 @@
               "hidden": false,
               "match": {
                 "home": {
-                  "code": "PAR",
-                  "name": "Paraguay",
+                  "code": "GER",
+                  "name": "Germany",
                   "hidden": false
                 },
                 "away": {
@@ -9791,9 +9791,9 @@
                 "score": "2 - 3"
               },
               "actual_score": "NS",
-              "points": 0,
+              "points": 92,
               "points_breakdown": {
-                "countries": 0,
+                "countries": 92,
                 "score": null
               },
               "is_exact": false
@@ -10352,9 +10352,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/253787/jazmin/stage/1196-grand-total?scroll=fixture",
       "flag": "POR",
       "rank": 4,
-      "points": 4629,
+      "points": 4721,
       "exact": 9,
-      "grand_total": 4629,
+      "grand_total": 4721,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -13174,7 +13174,7 @@
         },
         {
           "round": "Round of 16",
-          "subtotal": 92,
+          "subtotal": 184,
           "fixtures": [
             {
               "fixture_number": 90,
@@ -13223,8 +13223,8 @@
               "hidden": false,
               "match": {
                 "home": {
-                  "code": "PAR",
-                  "name": "Paraguay",
+                  "code": "GER",
+                  "name": "Germany",
                   "hidden": false
                 },
                 "away": {
@@ -13239,9 +13239,9 @@
                 "score": "1 - 3"
               },
               "actual_score": "NS",
-              "points": 0,
+              "points": 92,
               "points_breakdown": {
-                "countries": 0,
+                "countries": 92,
                 "score": null
               },
               "is_exact": false
@@ -13800,9 +13800,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247524/alejandro/stage/1196-grand-total?scroll=fixture",
       "flag": "BRA",
       "rank": 5,
-      "points": 4598,
+      "points": 4690,
       "exact": 6,
-      "grand_total": 4598,
+      "grand_total": 4690,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -16622,7 +16622,7 @@
         },
         {
           "round": "Round of 16",
-          "subtotal": 184,
+          "subtotal": 276,
           "fixtures": [
             {
               "fixture_number": 90,
@@ -16671,8 +16671,8 @@
               "hidden": false,
               "match": {
                 "home": {
-                  "code": "PAR",
-                  "name": "Paraguay",
+                  "code": "GER",
+                  "name": "Germany",
                   "hidden": false
                 },
                 "away": {
@@ -16687,9 +16687,9 @@
                 "score": "1 - 3"
               },
               "actual_score": "NS",
-              "points": 0,
+              "points": 92,
               "points_breakdown": {
-                "countries": 0,
+                "countries": 92,
                 "score": null
               },
               "is_exact": false
@@ -17248,9 +17248,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247526/valewalle/stage/1196-grand-total?scroll=fixture",
       "flag": "ESP",
       "rank": 6,
-      "points": 4597,
+      "points": 4641,
       "exact": 11,
-      "grand_total": 4597,
+      "grand_total": 4641,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -20070,7 +20070,7 @@
         },
         {
           "round": "Round of 16",
-          "subtotal": 144,
+          "subtotal": 188,
           "fixtures": [
             {
               "fixture_number": 90,
@@ -20119,8 +20119,8 @@
               "hidden": false,
               "match": {
                 "home": {
-                  "code": "PAR",
-                  "name": "Paraguay",
+                  "code": "GER",
+                  "name": "Germany",
                   "hidden": false
                 },
                 "away": {
@@ -20135,9 +20135,9 @@
                 "score": "1 - 2"
               },
               "actual_score": "NS",
-              "points": 48,
+              "points": 92,
               "points_breakdown": {
-                "countries": 48,
+                "countries": 92,
                 "score": null
               },
               "is_exact": false
@@ -20696,9 +20696,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247528/jj/stage/1196-grand-total?scroll=fixture",
       "flag": "FRA",
       "rank": 7,
-      "points": 4546,
+      "points": 4638,
       "exact": 7,
-      "grand_total": 4546,
+      "grand_total": 4638,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -23518,7 +23518,7 @@
         },
         {
           "round": "Round of 16",
-          "subtotal": 184,
+          "subtotal": 276,
           "fixtures": [
             {
               "fixture_number": 90,
@@ -23567,8 +23567,8 @@
               "hidden": false,
               "match": {
                 "home": {
-                  "code": "PAR",
-                  "name": "Paraguay",
+                  "code": "GER",
+                  "name": "Germany",
                   "hidden": false
                 },
                 "away": {
@@ -23583,9 +23583,9 @@
                 "score": "2 - 4"
               },
               "actual_score": "NS",
-              "points": 0,
+              "points": 92,
               "points_breakdown": {
-                "countries": 0,
+                "countries": 92,
                 "score": null
               },
               "is_exact": false
@@ -24144,9 +24144,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247535/baronmark/stage/1196-grand-total?scroll=fixture",
       "flag": "FRA",
       "rank": 8,
-      "points": 4527,
+      "points": 4619,
       "exact": 10,
-      "grand_total": 4527,
+      "grand_total": 4619,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -26966,7 +26966,7 @@
         },
         {
           "round": "Round of 16",
-          "subtotal": 184,
+          "subtotal": 276,
           "fixtures": [
             {
               "fixture_number": 90,
@@ -27015,8 +27015,8 @@
               "hidden": false,
               "match": {
                 "home": {
-                  "code": "PAR",
-                  "name": "Paraguay",
+                  "code": "GER",
+                  "name": "Germany",
                   "hidden": false
                 },
                 "away": {
@@ -27031,9 +27031,9 @@
                 "score": "1 - 2"
               },
               "actual_score": "NS",
-              "points": 0,
+              "points": 92,
               "points_breakdown": {
-                "countries": 0,
+                "countries": 92,
                 "score": null
               },
               "is_exact": false
@@ -27592,9 +27592,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/252600/el-capitan/stage/1196-grand-total?scroll=fixture",
       "flag": "FRA",
       "rank": 9,
-      "points": 4485,
+      "points": 4577,
       "exact": 8,
-      "grand_total": 4485,
+      "grand_total": 4577,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -30414,7 +30414,7 @@
         },
         {
           "round": "Round of 16",
-          "subtotal": 184,
+          "subtotal": 276,
           "fixtures": [
             {
               "fixture_number": 90,
@@ -30463,8 +30463,8 @@
               "hidden": false,
               "match": {
                 "home": {
-                  "code": "PAR",
-                  "name": "Paraguay",
+                  "code": "GER",
+                  "name": "Germany",
                   "hidden": false
                 },
                 "away": {
@@ -30479,9 +30479,9 @@
                 "score": "1 - 2"
               },
               "actual_score": "NS",
-              "points": 0,
+              "points": 92,
               "points_breakdown": {
-                "countries": 0,
+                "countries": 92,
                 "score": null
               },
               "is_exact": false
@@ -31040,9 +31040,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247532/gabriela/stage/1196-grand-total?scroll=fixture",
       "flag": "NED",
       "rank": 10,
-      "points": 4438,
+      "points": 4530,
       "exact": 8,
-      "grand_total": 4438,
+      "grand_total": 4530,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -33862,7 +33862,7 @@
         },
         {
           "round": "Round of 16",
-          "subtotal": 184,
+          "subtotal": 276,
           "fixtures": [
             {
               "fixture_number": 90,
@@ -33911,8 +33911,8 @@
               "hidden": false,
               "match": {
                 "home": {
-                  "code": "PAR",
-                  "name": "Paraguay",
+                  "code": "GER",
+                  "name": "Germany",
                   "hidden": false
                 },
                 "away": {
@@ -33927,9 +33927,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": 0,
+              "points": 92,
               "points_breakdown": {
-                "countries": 0,
+                "countries": 92,
                 "score": null
               },
               "is_exact": false
@@ -34488,9 +34488,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247537/yo/stage/1196-grand-total?scroll=fixture",
       "flag": "MEX",
       "rank": 11,
-      "points": 4386,
+      "points": 4478,
       "exact": 6,
-      "grand_total": 4386,
+      "grand_total": 4478,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -37310,7 +37310,7 @@
         },
         {
           "round": "Round of 16",
-          "subtotal": 184,
+          "subtotal": 276,
           "fixtures": [
             {
               "fixture_number": 90,
@@ -37359,8 +37359,8 @@
               "hidden": false,
               "match": {
                 "home": {
-                  "code": "PAR",
-                  "name": "Paraguay",
+                  "code": "GER",
+                  "name": "Germany",
                   "hidden": false
                 },
                 "away": {
@@ -37375,9 +37375,9 @@
                 "score": "3 - 3"
               },
               "actual_score": "NS",
-              "points": 0,
+              "points": 92,
               "points_breakdown": {
-                "countries": 0,
+                "countries": 92,
                 "score": null
               },
               "is_exact": false
@@ -37936,9 +37936,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247525/karenwj/stage/1196-grand-total?scroll=fixture",
       "flag": "NED",
       "rank": 12,
-      "points": 4250,
+      "points": 4342,
       "exact": 7,
-      "grand_total": 4250,
+      "grand_total": 4342,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -40758,7 +40758,7 @@
         },
         {
           "round": "Round of 16",
-          "subtotal": 184,
+          "subtotal": 276,
           "fixtures": [
             {
               "fixture_number": 90,
@@ -40807,8 +40807,8 @@
               "hidden": false,
               "match": {
                 "home": {
-                  "code": "PAR",
-                  "name": "Paraguay",
+                  "code": "GER",
+                  "name": "Germany",
                   "hidden": false
                 },
                 "away": {
@@ -40823,9 +40823,9 @@
                 "score": "2 - 3"
               },
               "actual_score": "NS",
-              "points": 0,
+              "points": 92,
               "points_breakdown": {
-                "countries": 0,
+                "countries": 92,
                 "score": null
               },
               "is_exact": false
@@ -41384,9 +41384,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247533/beturompequinielas/stage/1196-grand-total?scroll=fixture",
       "flag": "ARG",
       "rank": 13,
-      "points": 3990,
+      "points": 4082,
       "exact": 5,
-      "grand_total": 3990,
+      "grand_total": 4082,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -44206,7 +44206,7 @@
         },
         {
           "round": "Round of 16",
-          "subtotal": 184,
+          "subtotal": 276,
           "fixtures": [
             {
               "fixture_number": 90,
@@ -44255,8 +44255,8 @@
               "hidden": false,
               "match": {
                 "home": {
-                  "code": "PAR",
-                  "name": "Paraguay",
+                  "code": "GER",
+                  "name": "Germany",
                   "hidden": false
                 },
                 "away": {
@@ -44271,9 +44271,9 @@
                 "score": "2 - 3"
               },
               "actual_score": "NS",
-              "points": 0,
+              "points": 92,
               "points_breakdown": {
-                "countries": 0,
+                "countries": 92,
                 "score": null
               },
               "is_exact": false
@@ -44832,9 +44832,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247729/maxs/stage/1196-grand-total?scroll=fixture",
       "flag": "ARG",
       "rank": 14,
-      "points": 3973,
+      "points": 4017,
       "exact": 4,
-      "grand_total": 3973,
+      "grand_total": 4017,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -47654,7 +47654,7 @@
         },
         {
           "round": "Round of 16",
-          "subtotal": 188,
+          "subtotal": 232,
           "fixtures": [
             {
               "fixture_number": 90,
@@ -47703,8 +47703,8 @@
               "hidden": false,
               "match": {
                 "home": {
-                  "code": "PAR",
-                  "name": "Paraguay",
+                  "code": "GER",
+                  "name": "Germany",
                   "hidden": false
                 },
                 "away": {
@@ -47719,9 +47719,9 @@
                 "score": "2 - 3"
               },
               "actual_score": "NS",
-              "points": 48,
+              "points": 92,
               "points_breakdown": {
-                "countries": 48,
+                "countries": 92,
                 "score": null
               },
               "is_exact": false
@@ -48280,9 +48280,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/253790/remi/stage/1196-grand-total?scroll=fixture",
       "flag": "FRA",
       "rank": 15,
-      "points": 3908,
+      "points": 4000,
       "exact": 7,
-      "grand_total": 3908,
+      "grand_total": 4000,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -51102,7 +51102,7 @@
         },
         {
           "round": "Round of 16",
-          "subtotal": 184,
+          "subtotal": 276,
           "fixtures": [
             {
               "fixture_number": 90,
@@ -51151,8 +51151,8 @@
               "hidden": false,
               "match": {
                 "home": {
-                  "code": "PAR",
-                  "name": "Paraguay",
+                  "code": "GER",
+                  "name": "Germany",
                   "hidden": false
                 },
                 "away": {
@@ -51167,9 +51167,9 @@
                 "score": "1 - 2"
               },
               "actual_score": "NS",
-              "points": 0,
+              "points": 92,
               "points_breakdown": {
-                "countries": 0,
+                "countries": 92,
                 "score": null
               },
               "is_exact": false
@@ -51728,9 +51728,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/252610/luisa/stage/1196-grand-total?scroll=fixture",
       "flag": "POR",
       "rank": 16,
-      "points": 3786,
+      "points": 3878,
       "exact": 3,
-      "grand_total": 3786,
+      "grand_total": 3878,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -54550,7 +54550,7 @@
         },
         {
           "round": "Round of 16",
-          "subtotal": 48,
+          "subtotal": 140,
           "fixtures": [
             {
               "fixture_number": 90,
@@ -54599,8 +54599,8 @@
               "hidden": false,
               "match": {
                 "home": {
-                  "code": "PAR",
-                  "name": "Paraguay",
+                  "code": "GER",
+                  "name": "Germany",
                   "hidden": false
                 },
                 "away": {
@@ -54615,9 +54615,9 @@
                 "score": "2 - 3"
               },
               "actual_score": "NS",
-              "points": 0,
+              "points": 92,
               "points_breakdown": {
-                "countries": 0,
+                "countries": 92,
                 "score": null
               },
               "is_exact": false
