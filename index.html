@@ -372,7 +372,7 @@
 
   .fx{background:var(--card);border-radius:14px;box-shadow:var(--shadow);padding:12px 14px;margin-bottom:8px;
     min-width:0;max-width:100%;
-    display:grid;grid-template-columns:104px 1fr 124px 84px;gap:12px;align-items:center}
+    display:grid;grid-template-columns:104px 1fr 124px 126px;gap:12px;align-items:center}
   .fx.exact{border:1.5px solid #f4c430;background:linear-gradient(90deg,#fffae8,#fff 30%)}
   .fx .when{font-size:12px;color:var(--muted);font-weight:600}
   .fx .when .st{display:inline-block;font-size:10px;font-weight:800;padding:2px 6px;border-radius:6px;margin-bottom:4px;letter-spacing:.4px}
@@ -428,6 +428,9 @@
   .ptsbox{text-align:right;min-width:0}
   .ptsbox .pv{font-family:'Barlow Condensed';font-weight:800;font-size:22px}
   .ptsbox .pp{font-size:12px;color:var(--muted);font-weight:700}
+  .ptsplit{margin-top:2px;font-size:10.5px;line-height:1.28;color:var(--muted);font-weight:700;display:flex;flex-direction:column;align-items:flex-end;gap:1px}
+  .ptsplit span{white-space:nowrap}
+  .ptsplit b{color:#59637a;font-weight:800}
   .perfect{display:inline-block;background:#f4c430;color:#5a4300;font-size:9.5px;font-weight:800;padding:3px 7px;
     border-radius:999px;margin-top:4px;line-height:1.2;white-space:normal;max-width:100%;letter-spacing:.2px}
 
@@ -442,7 +445,7 @@
        status + date sit on the left, points are pinned top-right (so the
        score stays right-aligned), and the matchup shares a clean row with
        the predicted/final scores below one full-width divider. */
-    .fx{grid-template-columns:minmax(0,1fr) 72px;gap:9px 10px;padding:13px 12px;position:relative}
+    .fx{grid-template-columns:minmax(0,1fr) 100px;gap:9px 10px;padding:13px 12px;position:relative}
     .fx::before{content:"";grid-column:1 / -1;grid-row:2;align-self:start;border-top:1px solid var(--line);z-index:0}
     .fx .when{grid-column:1;grid-row:1;display:flex;align-items:center;flex-wrap:wrap;gap:4px 8px}
     .fx .when .st{margin-bottom:0}
@@ -453,6 +456,7 @@
     .fx .pcol .lab,.fx .actualrow .lab{font-size:9px}
     .fx .scoreline{font-size:18px}
     .fx .scoreline.fin{font-size:17px}
+    .fx .ptsplit{font-size:10px;line-height:1.22}
     .fx .actualrow{margin-top:7px;padding-top:6px;border-top:1px dashed var(--line);display:block}
     .fx .perfect{margin-top:0}
     .fx .livecap{grid-column:1 / -1;grid-row:4}
@@ -589,6 +593,7 @@
   .mp-res .pv.live{color:#e23b3b}
   .mp-res .tag{font-size:9.5px;font-weight:800;text-transform:uppercase;letter-spacing:.3px;color:var(--muted)}
   .mp-res .tag.hit{color:#9a7b00}
+  .mp-res .ptsplit{margin-top:1px;font-size:10px;line-height:1.22;gap:0}
   .mp-self{box-shadow:0 0 0 2px var(--accent) inset, var(--shadow)}
 
   @media(max-width:640px){
@@ -601,6 +606,14 @@
     .mp-pick{grid-column:3;grid-row:1;justify-content:center;min-width:42px}
     .mp-pick .sc{font-size:23px}
     .mp-res{grid-column:4;grid-row:1;min-width:34px}
+    .mp-row.has-breakdown{grid-template-columns:26px minmax(0,1fr) auto 76px}
+    .mp-row.has-breakdown .mp-res{min-width:72px}
+    /* Knockout rows can pair a stacked Teams/Result block with a team-pair
+       pick that wraps to its own row. Top-align so the breakdown reads from
+       the top and the wrapped pick clears it without overlapping. */
+    .mp-row.has-breakdown.has-teampick{align-items:start}
+    .mp-row.has-breakdown.has-teampick .mp-rank,
+    .mp-row.has-breakdown.has-teampick .mp-who{align-self:center}
     .mp-pick.teampick{grid-column:1 / -1;grid-row:2;justify-content:flex-start;padding-top:8px;border-top:1px solid var(--line)}
     .mp-pick.teampick .teams{align-items:flex-start}
     .mp-bar{grid-template-columns:74px 1fr 30px;gap:8px}
@@ -3517,10 +3530,32 @@ function predTeamLine(t){
   return `<span class="pt" title="${name}">${flagImg(t&&t.code,'flag sm')}<span class="ptn">${name}</span></span>`;
 }
 
+function hasPointBreakdown(fx){
+  const bd=fx&&fx.points_breakdown;
+  if(!bd||(bd.countries==null&&bd.score==null)) return false;
+  // Only surface the split when its parts reconcile with the row total the
+  // scraper recorded; a mismatch means points came from somewhere these two
+  // buckets don't capture, so showing them would mislead.
+  return (bd.countries||0)+(bd.score||0)===(fx.points??0);
+}
+
+function pointBreakdownHtml(fx){
+  const bd=fx&&fx.points_breakdown;
+  if(!bd) return '';
+  const teams=bd.countries==null?'pending':bd.countries;
+  const result=bd.score==null?'pending':bd.score;
+  const label=`Teams ${teams} ${teams===1?'point':'points'}, Result ${result===1?result+' point':(result==='pending'?'pending':result+' points')}`;
+  return `<div class="ptsplit" role="group" aria-label="${esc(label)}">
+    <span aria-hidden="true"><b>Teams</b> ${esc(teams)}</span>
+    <span aria-hidden="true"><b>Result</b> ${esc(result)}</span>
+  </div>`;
+}
+
 function fixtureHtml(fx){
   const live=isLive(fx);
   const done=isCompleted(fx);
   const bucketDone=matchIsCompletedOrPast(fx);
+  const hasBreakdown=hasPointBreakdown(fx);
   const when=fmtFixture(fx.kickoff_utc);
   const st=live
     ? '<span class="st live"><span class="livedot"></span>LIVE</span>'
@@ -3562,9 +3597,11 @@ function fixtureHtml(fx){
   // Points column
   let ptsHtml;
   if(live){
-    ptsHtml=`<div class="pv num">${fx.points??0}</div><div class="pp live">live pts</div>`;
+    ptsHtml=`<div class="pv num">${fx.points??0}</div>`+(hasBreakdown?pointBreakdownHtml(fx):`<div class="pp live">live pts</div>`);
   }else if(done){
-    ptsHtml=`<div class="pv num">${fx.points??0}</div>`+(fx.is_exact?`<div class="perfect">🎯 Perfect</div>`:'');
+    ptsHtml=`<div class="pv num">${fx.points??0}</div>`+pointBreakdownHtml(fx)+(fx.is_exact?`<div class="perfect">🎯 Perfect</div>`:'');
+  }else if(hasBreakdown){
+    ptsHtml=`<div class="pv num">${fx.points??0}</div>`+pointBreakdownHtml(fx);
   }else{
     ptsHtml=`<div class="pp">pending</div>`;
   }
@@ -3590,7 +3627,7 @@ function fixtureHtml(fx){
       ${teamLine(fx.match?.away)}
     </div>
     <div class="pcol"><div class="lab">Predicted</div>${predHtml}${finalHtml}</div>
-    <div class="ptsbox"><div class="lab">${live?'Live':(done?'Points':'Status')}</div>${ptsHtml}</div>
+    <div class="ptsbox"><div class="lab">${live?'Live':((done||hasBreakdown)?'Points':'Status')}</div>${ptsHtml}</div>
     ${liveCap}
   </div>`;
 }
@@ -3640,7 +3677,9 @@ function collectMatch(key){
       picks.push({
         team_id:p.team_id, name:p.name||base.name||'Player',
         flag:p.flag||base.flag, rank:base.rank??p.rank??999,
-        points:fx.points??0, is_exact:!!fx.is_exact, predicted:fx.predicted||null,
+        points:fx.points??0, points_breakdown:fx.points_breakdown||null,
+        has_breakdown:hasPointBreakdown(fx),
+        is_exact:!!fx.is_exact, predicted:fx.predicted||null,
       });
     }));
   });
@@ -3671,15 +3710,19 @@ function sortPicks(picks,mode){
 function matchRowsHtml(picks,meta,mode,showPts){
   const rows=sortPicks(picks,mode).map(p=>{
     const pl=predLabel(p.predicted);
+    const hasBreakdown=p.has_breakdown;
     let pick;
     if(pl.hidden) pick=`<span class="hid">👁️ hidden</span>`;
     else if(pl.type==='teams') pick=`<div class="teams"><span class="t">${flagImg(pl.home&&pl.home.code,'flag sm')}${esc((pl.home&&(pl.home.name||pl.home.code))||'?')}</span><span class="t">${flagImg(pl.away&&pl.away.code,'flag sm')}${esc((pl.away&&(pl.away.name||pl.away.code))||'?')}</span></div>`;
     else pick=`<span class="sc">${esc(pl.score)}</span>`;
     let res;
-    if(meta.live) res=`<div class="pv live">${p.points}</div><div class="tag">live</div>`;
-    else if(meta.done) res=`<div class="pv ${p.points?'':'zero'}">${p.points}</div>`+(p.is_exact?`<div class="tag hit">🎯 exact</div>`:'');
+    if(meta.live) res=`<div class="pv live">${p.points}</div>`+(hasBreakdown?pointBreakdownHtml(p):`<div class="tag">live</div>`);
+    else if(meta.done) res=`<div class="pv ${p.points?'':'zero'}">${p.points}</div>`+(hasBreakdown?pointBreakdownHtml(p):'')+(p.is_exact?`<div class="tag hit">🎯 exact</div>`:'');
+    else if(hasBreakdown) res=`<div class="pv ${p.points?'':'zero'}">${p.points}</div>${pointBreakdownHtml(p)}`;
     else res=`<div class="tag">pending</div>`;
     const cls=['mp-row'];
+    if(hasBreakdown) cls.push('has-breakdown');
+    if(pl.type==='teams') cls.push('has-teampick');
     if(meta.done&&p.is_exact) cls.push('exact');
     else if(showPts&&p.points>0) cls.push('scored');
     if(meta.live&&p.points>0) cls.push('live');
@@ -3776,7 +3819,8 @@ function renderMatchView(key){
   }
 
   // Sort + list
-  const showPts=meta.done||meta.live;
+  const hasBreakdowns=picks.some(p=>p.has_breakdown);
+  const showPts=meta.done||meta.live||hasBreakdowns;
   const mode=(MATCH_SORT==='points'&&!showPts)?'rank':(MATCH_SORT||(showPts?'points':'rank'));
   const seg=(m,l)=>`<button class="seg ${mode===m?'active':''}" type="button" data-sort="${m}" role="tab" aria-selected="${mode===m}">${l}</button>`;
   const tools=`<div class="mp-tools"><h4>Everyone's pick</h4>

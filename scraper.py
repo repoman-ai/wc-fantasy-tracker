@@ -1132,6 +1132,26 @@ def _knockout_score_parts(score_td):
     return predicted_score, actual_score or None
 
 
+def _points_after_label(pts_td, label_names: tuple[str, ...]):
+    labels = {name.lower() for name in label_names}
+    for label in pts_td.find_all("div"):
+        if "small" not in (label.get("class") or []):
+            continue
+        if clean(label.get_text()).lower() not in labels:
+            continue
+
+        parts = []
+        for sib in label.next_siblings:
+            if getattr(sib, "name", None) == "div" and "small" in (sib.get("class") or []):
+                break
+            txt = clean(sib.get_text(" ") if hasattr(sib, "get_text") else str(sib))
+            if txt:
+                parts.append(txt)
+        if parts:
+            return to_int(" ".join(parts))
+    return None
+
+
 def _is_live_status(status: str | None) -> bool:
     return bool(status and "LIVE" in status.upper())
 
@@ -1238,15 +1258,15 @@ def _parse_knockout_fixture(tds, fixture_number, round_name) -> dict:
     # Bootstrap badges, so read the meaningful values in label order.
     pts_text_nodes = [clean(t) for t in pts_td.find_all(string=True) if clean(t) and clean(t) not in ("Countries", "Score", "Result")]
     du = pts_td.select_one(".dotted_underline")
-    if du:
-        pts_countries = to_int(du.get_text())
-    elif pts_text_nodes:
-        pts_countries = to_int(pts_text_nodes[0])
-    else:
-        pts_countries = None
+    pts_countries = _points_after_label(pts_td, ("Countries",))
+    if pts_countries is None:
+        if du:
+            pts_countries = to_int(du.get_text())
+        elif pts_text_nodes:
+            pts_countries = to_int(pts_text_nodes[0])
 
-    pts_score = None
-    if len(pts_text_nodes) >= 2:
+    pts_score = _points_after_label(pts_td, ("Result", "Score"))
+    if pts_score is None and len(pts_text_nodes) >= 2:
         pts_score = to_int(pts_text_nodes[-1])
     total = (pts_countries or 0) + (pts_score or 0)
     if pts_countries is None and pts_score is None:
