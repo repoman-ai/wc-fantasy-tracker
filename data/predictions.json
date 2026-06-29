@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-29T21:11:28Z",
+  "updated": "2026-06-29T21:12:52Z",
   "players": {
     "252653": {
       "team_id": "252653",
@@ -9160,7 +9160,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1450,
+          "subtotal": 1370,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -9259,11 +9259,11 @@
                 "hidden": false,
                 "score": "2 - 0"
               },
-              "actual_score": "0 - 0",
-              "points": 80,
+              "actual_score": "0 - 1",
+              "points": 65,
               "points_breakdown": {
                 "countries": 65,
-                "score": 15
+                "score": null
               },
               "is_exact": false
             },
@@ -9775,8 +9775,8 @@
               "hidden": false,
               "match": {
                 "home": {
-                  "code": null,
-                  "name": "W74",
+                  "code": "PAR",
+                  "name": "Paraguay",
                   "hidden": false
                 },
                 "away": {
@@ -12608,7 +12608,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1555,
+          "subtotal": 1360,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -12638,9 +12638,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "0 - 1",
-              "points": 80,
+              "points": 15,
               "points_breakdown": {
-                "countries": 65,
+                "countries": 0,
                 "score": 15
               },
               "is_exact": false
@@ -12707,11 +12707,11 @@
                 "hidden": false,
                 "score": "4 - 1"
               },
-              "actual_score": "0 - 0",
+              "actual_score": "0 - 1",
               "points": 130,
               "points_breakdown": {
                 "countries": 130,
-                "score": 0
+                "score": null
               },
               "is_exact": false
             },
@@ -13223,8 +13223,8 @@
               "hidden": false,
               "match": {
                 "home": {
-                  "code": null,
-                  "name": "W74",
+                  "code": "PAR",
+                  "name": "Paraguay",
                   "hidden": false
                 },
                 "away": {
@@ -16056,7 +16056,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1570,
+          "subtotal": 1375,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -16121,9 +16121,9 @@
                 "score": "3 - 2"
               },
               "actual_score": "2 - 1",
-              "points": 160,
+              "points": 95,
               "points_breakdown": {
-                "countries": 100,
+                "countries": 35,
                 "score": 60
               },
               "is_exact": false
@@ -16155,11 +16155,11 @@
                 "hidden": false,
                 "score": "3 - 1"
               },
-              "actual_score": "0 - 0",
+              "actual_score": "0 - 1",
               "points": 130,
               "points_breakdown": {
                 "countries": 130,
-                "score": 0
+                "score": null
               },
               "is_exact": false
             },
@@ -16671,8 +16671,8 @@
               "hidden": false,
               "match": {
                 "home": {
-                  "code": null,
-                  "name": "W74",
+                  "code": "PAR",
+                  "name": "Paraguay",
                   "hidden": false
                 },
                 "away": {
@@ -19504,7 +19504,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1560,
+          "subtotal": 1415,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -19603,11 +19603,11 @@
                 "hidden": false,
                 "score": "3 - 0"
               },
-              "actual_score": "0 - 0",
-              "points": 80,
+              "actual_score": "0 - 1",
+              "points": 65,
               "points_breakdown": {
                 "countries": 65,
-                "score": 15
+                "score": null
               },
               "is_exact": false
             },
@@ -19709,9 +19709,9 @@
                 "score": "3 - 1"
               },
               "actual_score": "NS",
-              "points": 100,
+              "points": 35,
               "points_breakdown": {
-                "countries": 100,
+                "countries": 35,
                 "score": null
               },
               "is_exact": false
@@ -20119,8 +20119,8 @@
               "hidden": false,
               "match": {
                 "home": {
-                  "code": null,
-                  "name": "W74",
+                  "code": "PAR",
+                  "name": "Paraguay",
                   "hidden": false
                 },
                 "away": {
@@ -22952,7 +22952,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1523,
+          "subtotal": 1313,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -23051,11 +23051,11 @@
                 "hidden": false,
                 "score": "2 - 0"
               },
-              "actual_score": "0 - 0",
-              "points": 145,
+              "actual_score": "0 - 1",
+              "points": 130,
               "points_breakdown": {
                 "countries": 130,
-                "score": 15
+                "score": null
               },
               "is_exact": false
             },
@@ -23157,9 +23157,9 @@
                 "score": "3 - 0"
               },
               "actual_score": "NS",
-              "points": 130,
+              "points": 65,
               "points_breakdown": {
-                "countries": 130,
+                "countries": 65,
                 "score": null
               },
               "is_exact": false
@@ -23567,8 +23567,8 @@
               "hidden": false,
               "match": {
                 "home": {
-                  "code": null,
-                  "name": "W74",
+                  "code": "PAR",
+                  "name": "Paraguay",
                   "hidden": false
                 },
                 "away": {
@@ -26400,7 +26400,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1600,
+          "subtotal": 1500,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -26499,11 +26499,11 @@
                 "hidden": false,
                 "score": "3 - 1"
               },
-              "actual_score": "0 - 0",
+              "actual_score": "0 - 1",
               "points": 100,
               "points_breakdown": {
                 "countries": 100,
-                "score": 0
+                "score": null
               },
               "is_exact": false
             },
@@ -27015,8 +27015,8 @@
               "hidden": false,
               "match": {
                 "home": {
-                  "code": null,
-                  "name": "W74",
+                  "code": "PAR",
+                  "name": "Paraguay",
                   "hidden": false
                 },
                 "away": {
@@ -29848,7 +29848,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1718,
+          "subtotal": 1668,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -29947,11 +29947,11 @@
                 "hidden": false,
                 "score": "2 - 0"
               },
-              "actual_score": "0 - 0",
-              "points": 50,
+              "actual_score": "0 - 1",
+              "points": 35,
               "points_breakdown": {
                 "countries": 35,
-                "score": 15
+                "score": null
               },
               "is_exact": false
             },
@@ -30463,8 +30463,8 @@
               "hidden": false,
               "match": {
                 "home": {
-                  "code": null,
-                  "name": "W74",
+                  "code": "PAR",
+                  "name": "Paraguay",
                   "hidden": false
                 },
                 "away": {
@@ -33296,7 +33296,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1425,
+          "subtotal": 1310,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -33395,11 +33395,11 @@
                 "hidden": false,
                 "score": "3 - 0"
               },
-              "actual_score": "0 - 0",
-              "points": 80,
+              "actual_score": "0 - 1",
+              "points": 65,
               "points_breakdown": {
                 "countries": 65,
-                "score": 15
+                "score": null
               },
               "is_exact": false
             },
@@ -33606,9 +33606,9 @@
                 "score": "2 - 0"
               },
               "actual_score": "NS",
-              "points": 100,
+              "points": 65,
               "points_breakdown": {
-                "countries": 100,
+                "countries": 65,
                 "score": null
               },
               "is_exact": false
@@ -33911,8 +33911,8 @@
               "hidden": false,
               "match": {
                 "home": {
-                  "code": null,
-                  "name": "W74",
+                  "code": "PAR",
+                  "name": "Paraguay",
                   "hidden": false
                 },
                 "away": {
@@ -36744,7 +36744,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1388,
+          "subtotal": 1288,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -36843,11 +36843,11 @@
                 "hidden": false,
                 "score": "3 - 1"
               },
-              "actual_score": "0 - 0",
+              "actual_score": "0 - 1",
               "points": 100,
               "points_breakdown": {
                 "countries": 100,
-                "score": 0
+                "score": null
               },
               "is_exact": false
             },
@@ -37359,8 +37359,8 @@
               "hidden": false,
               "match": {
                 "home": {
-                  "code": null,
-                  "name": "W74",
+                  "code": "PAR",
+                  "name": "Paraguay",
                   "hidden": false
                 },
                 "away": {
@@ -40192,7 +40192,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1345,
+          "subtotal": 1210,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -40291,11 +40291,11 @@
                 "hidden": false,
                 "score": "2 - 1"
               },
-              "actual_score": "0 - 0",
+              "actual_score": "0 - 1",
               "points": 70,
               "points_breakdown": {
                 "countries": 70,
-                "score": 0
+                "score": null
               },
               "is_exact": false
             },
@@ -40572,9 +40572,9 @@
                 "score": "3 - 1"
               },
               "actual_score": "NS",
-              "points": 130,
+              "points": 65,
               "points_breakdown": {
-                "countries": 130,
+                "countries": 65,
                 "score": null
               },
               "is_exact": false
@@ -40807,8 +40807,8 @@
               "hidden": false,
               "match": {
                 "home": {
-                  "code": null,
-                  "name": "W74",
+                  "code": "PAR",
+                  "name": "Paraguay",
                   "hidden": false
                 },
                 "away": {
@@ -43640,7 +43640,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1301,
+          "subtotal": 1121,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -43739,11 +43739,11 @@
                 "hidden": false,
                 "score": "1 - 0"
               },
-              "actual_score": "0 - 0",
-              "points": 145,
+              "actual_score": "0 - 1",
+              "points": 130,
               "points_breakdown": {
                 "countries": 130,
-                "score": 15
+                "score": null
               },
               "is_exact": false
             },
@@ -44055,9 +44055,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": 70,
+              "points": 35,
               "points_breakdown": {
-                "countries": 70,
+                "countries": 35,
                 "score": null
               },
               "is_exact": false
@@ -44255,8 +44255,8 @@
               "hidden": false,
               "match": {
                 "home": {
-                  "code": null,
-                  "name": "W74",
+                  "code": "PAR",
+                  "name": "Paraguay",
                   "hidden": false
                 },
                 "away": {
@@ -47088,7 +47088,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1250,
+          "subtotal": 1070,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -47187,11 +47187,11 @@
                 "hidden": false,
                 "score": "2 - 0"
               },
-              "actual_score": "0 - 0",
-              "points": 115,
+              "actual_score": "0 - 1",
+              "points": 100,
               "points_breakdown": {
                 "countries": 100,
-                "score": 15
+                "score": null
               },
               "is_exact": false
             },
@@ -47503,9 +47503,9 @@
                 "score": "3 - 2"
               },
               "actual_score": "NS",
-              "points": 100,
+              "points": 35,
               "points_breakdown": {
-                "countries": 100,
+                "countries": 35,
                 "score": null
               },
               "is_exact": false
@@ -47703,8 +47703,8 @@
               "hidden": false,
               "match": {
                 "home": {
-                  "code": null,
-                  "name": "W74",
+                  "code": "PAR",
+                  "name": "Paraguay",
                   "hidden": false
                 },
                 "away": {
@@ -50536,7 +50536,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1288,
+          "subtotal": 1223,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -50635,11 +50635,11 @@
                 "hidden": false,
                 "score": "4 - 1"
               },
-              "actual_score": "0 - 0",
+              "actual_score": "0 - 1",
               "points": 65,
               "points_breakdown": {
                 "countries": 65,
-                "score": 0
+                "score": null
               },
               "is_exact": false
             },
@@ -51151,8 +51151,8 @@
               "hidden": false,
               "match": {
                 "home": {
-                  "code": null,
-                  "name": "W74",
+                  "code": "PAR",
+                  "name": "Paraguay",
                   "hidden": false
                 },
                 "away": {
@@ -53984,7 +53984,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1110,
+          "subtotal": 960,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -54083,11 +54083,11 @@
                 "hidden": false,
                 "score": "2 - 0"
               },
-              "actual_score": "0 - 0",
-              "points": 115,
+              "actual_score": "0 - 1",
+              "points": 100,
               "points_breakdown": {
                 "countries": 100,
-                "score": 15
+                "score": null
               },
               "is_exact": false
             },
@@ -54504,9 +54504,9 @@
                 "score": "2 - 3"
               },
               "actual_score": "NS",
-              "points": 35,
+              "points": 0,
               "points_breakdown": {
-                "countries": 35,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -54599,8 +54599,8 @@
               "hidden": false,
               "match": {
                 "home": {
-                  "code": null,
-                  "name": "W74",
+                  "code": "PAR",
+                  "name": "Paraguay",
                   "hidden": false
                 },
                 "away": {
