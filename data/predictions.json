@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-29T21:41:27Z",
+  "updated": "2026-06-29T21:51:13Z",
   "players": {
     "252653": {
       "team_id": "252653",
@@ -2363,7 +2363,7 @@
                 "hidden": false,
                 "score": "2 - 0"
               },
-              "actual_score": "0 - 1",
+              "actual_score": "1 - 1",
               "points": 100,
               "points_breakdown": {
                 "countries": 100,
@@ -5811,7 +5811,7 @@
                 "hidden": false,
                 "score": "2 - 1"
               },
-              "actual_score": "0 - 1",
+              "actual_score": "1 - 1",
               "points": 145,
               "points_breakdown": {
                 "countries": 130,
@@ -9259,7 +9259,7 @@
                 "hidden": false,
                 "score": "2 - 0"
               },
-              "actual_score": "0 - 1",
+              "actual_score": "1 - 1",
               "points": 65,
               "points_breakdown": {
                 "countries": 65,
@@ -12707,7 +12707,7 @@
                 "hidden": false,
                 "score": "4 - 1"
               },
-              "actual_score": "0 - 1",
+              "actual_score": "1 - 1",
               "points": 145,
               "points_breakdown": {
                 "countries": 130,
@@ -16155,7 +16155,7 @@
                 "hidden": false,
                 "score": "3 - 1"
               },
-              "actual_score": "0 - 1",
+              "actual_score": "1 - 1",
               "points": 145,
               "points_breakdown": {
                 "countries": 130,
@@ -19603,7 +19603,7 @@
                 "hidden": false,
                 "score": "3 - 1"
               },
-              "actual_score": "0 - 1",
+              "actual_score": "1 - 1",
               "points": 115,
               "points_breakdown": {
                 "countries": 100,
@@ -23051,7 +23051,7 @@
                 "hidden": false,
                 "score": "3 - 0"
               },
-              "actual_score": "0 - 1",
+              "actual_score": "1 - 1",
               "points": 65,
               "points_breakdown": {
                 "countries": 65,
@@ -26499,7 +26499,7 @@
                 "hidden": false,
                 "score": "2 - 0"
               },
-              "actual_score": "0 - 1",
+              "actual_score": "1 - 1",
               "points": 130,
               "points_breakdown": {
                 "countries": 130,
@@ -29947,7 +29947,7 @@
                 "hidden": false,
                 "score": "2 - 0"
               },
-              "actual_score": "0 - 1",
+              "actual_score": "1 - 1",
               "points": 35,
               "points_breakdown": {
                 "countries": 35,
@@ -33395,7 +33395,7 @@
                 "hidden": false,
                 "score": "3 - 0"
               },
-              "actual_score": "0 - 1",
+              "actual_score": "1 - 1",
               "points": 65,
               "points_breakdown": {
                 "countries": 65,
@@ -36843,7 +36843,7 @@
                 "hidden": false,
                 "score": "3 - 1"
               },
-              "actual_score": "0 - 1",
+              "actual_score": "1 - 1",
               "points": 115,
               "points_breakdown": {
                 "countries": 100,
@@ -40291,7 +40291,7 @@
                 "hidden": false,
                 "score": "2 - 1"
               },
-              "actual_score": "0 - 1",
+              "actual_score": "1 - 1",
               "points": 85,
               "points_breakdown": {
                 "countries": 70,
@@ -41384,9 +41384,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247533/beturompequinielas/stage/1196-grand-total?scroll=fixture",
       "flag": "ARG",
       "rank": 13,
-      "points": 3975,
+      "points": 3990,
       "exact": 5,
-      "grand_total": 3975,
+      "grand_total": 3990,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -43640,7 +43640,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1286,
+          "subtotal": 1301,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -43739,11 +43739,11 @@
                 "hidden": false,
                 "score": "1 - 0"
               },
-              "actual_score": "0 - 1",
-              "points": 130,
+              "actual_score": "1 - 1",
+              "points": 145,
               "points_breakdown": {
                 "countries": 130,
-                "score": 0
+                "score": 15
               },
               "is_exact": false
             },
@@ -47187,7 +47187,7 @@
                 "hidden": false,
                 "score": "2 - 0"
               },
-              "actual_score": "0 - 1",
+              "actual_score": "1 - 1",
               "points": 100,
               "points_breakdown": {
                 "countries": 100,
@@ -50635,7 +50635,7 @@
                 "hidden": false,
                 "score": "4 - 1"
               },
-              "actual_score": "0 - 1",
+              "actual_score": "1 - 1",
               "points": 80,
               "points_breakdown": {
                 "countries": 65,
@@ -54083,7 +54083,7 @@
                 "hidden": false,
                 "score": "2 - 0"
               },
-              "actual_score": "0 - 1",
+              "actual_score": "1 - 1",
               "points": 100,
               "points_breakdown": {
                 "countries": 100,
