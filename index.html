@@ -365,6 +365,13 @@
   @media(prefers-reduced-motion:reduce){.segmented .seg-thumb{transition:none}}
 
   .group{margin-bottom:18px}
+  /* "Now" boundary line in the All view: marks where finished hands off to
+     upcoming/live, so the relevant slice is obvious after the scroll-to-now. */
+  .nowline{display:flex;align-items:center;gap:10px;margin:2px 2px 14px;
+    font-weight:800;font-size:11.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--accent)}
+  .nowline .dot{width:8px;height:8px;border-radius:50%;background:currentColor;flex:none;
+    box-shadow:0 0 0 4px rgba(79,70,229,.16)}
+  .nowline::after{content:"";height:2px;flex:1;border-radius:2px;background:currentColor;opacity:.26}
   .grouphd{display:flex;align-items:center;justify-content:space-between;margin:0 2px 8px}
   .grouphd .gr{font-weight:800;font-size:15px}
   .grouphd .gsub{font-size:12px;color:var(--muted);font-weight:700}
@@ -3016,10 +3023,12 @@ function wireModalControls(modal){
 let SCHED_MODE='upcoming';   // 'all' | 'upcoming' | 'completed'
 let SCHED_TODAY=false;
 let SCHED_ROUND='all';       // 'all' | a round label from roundLabel()
+let SCHED_SORT='newest';     // 'newest' | 'oldest' — Completed view only
 function openResults(){
   SCHED_MODE='upcoming';
   SCHED_TODAY=false;
   SCHED_ROUND='all';
+  SCHED_SORT='newest';
   openModalView({type:'results',render:renderResultsView,refresh:refreshResultsView,scroll:0});
 }
 function schedCounts(all){
@@ -3030,11 +3039,23 @@ function schedCounts(all){
     completed:scoped.filter(matchIsCompletedOrPast).length,
     today:byRound.filter(matchIsToday).length};
 }
-/* Just the grouped match rows for the current filter — recomputed on each live
-   tick, but injected into the existing .mbody so the toolbar (and its thumb)
-   and the scroll position survive. */
+/* Just the rows for the current filter — recomputed on each live tick, but
+   injected into the existing .mbody so the toolbar (and its thumb) and the
+   scroll position survive. Completed uses a recency-first day feed; the other
+   modes keep the round-grouped tournament order. */
 function schedBody(all){
   const ms=all.filter(m=>matchesScheduleFilters(m,SCHED_MODE,SCHED_TODAY,SCHED_ROUND));
+  if(!ms.length) return '<div class="empty">No matches in this filter.</div>';
+  return SCHED_MODE==='completed' ? schedBodyByDay(ms) : schedBodyByRound(ms);
+}
+function groupBlock(label,items,rows){
+  return `<div class="group"><div class="grouphd"><span class="gr">${esc(label)}</span>`+
+    `<span class="gsub">${items.length} match${items.length===1?'':'es'}</span></div>${rows}</div>`;
+}
+/* Round-grouped tournament order. In All mode a "Now" line is injected before
+   the earliest live/upcoming match so finished/upcoming are visibly split. */
+function schedBodyByRound(ms){
+  const nowKey = SCHED_MODE==='all' ? nowBoundaryKey(ms) : null;
   const groups=[], idx={};
   ms.forEach(m=>{
     const r=roundLabel(m);
@@ -3044,12 +3065,46 @@ function schedBody(all){
   let body='';
   groups.forEach(g=>{
     g.items.sort((a,b)=>new Date(a.kickoff)-new Date(b.kickoff));
-    body+=`<div class="group"><div class="grouphd"><span class="gr">${esc(g.round)}</span>`+
-      `<span class="gsub">${g.items.length} match${g.items.length===1?'':'es'}</span></div>`;
-    g.items.forEach(m=>body+=resRow(m));
-    body+=`</div>`;
+    let rows='';
+    g.items.forEach(m=>{
+      if(nowKey && m.key===nowKey) rows+=`<div class="nowline" id="schedNow"><span class="dot"></span>Now</div>`;
+      rows+=resRow(m);
+    });
+    body+=groupBlock(g.round,g.items,rows);
   });
-  return body||'<div class="empty">No matches in this filter.</div>';
+  return body;
+}
+/* Recency feed for Completed: one header per calendar day in the selected TZ
+   ("Today" / "Yesterday" / "Sat, Jun 27"), ordered by SCHED_SORT. */
+function schedBodyByDay(ms){
+  const dir = SCHED_SORT==='oldest' ? 1 : -1;
+  const days=[], idx={};
+  ms.forEach(m=>{
+    const k=dayKey(m.kickoff);
+    if(!(k in idx)){ idx[k]=days.length; days.push({key:k,label:dayGroupLabel(m.kickoff),items:[]}); }
+    days[idx[k]].items.push(m);
+  });
+  days.sort((a,b)=> a.key<b.key?-dir : a.key>b.key?dir : 0);
+  let body='';
+  days.forEach(d=>{
+    d.items.sort((a,b)=> (new Date(a.kickoff)-new Date(b.kickoff))*dir);
+    let rows=''; d.items.forEach(m=>rows+=resRow(m));
+    body+=groupBlock(d.label,d.items,rows);
+  });
+  return body;
+}
+/* Key of the earliest live/upcoming match — the now/upcoming boundary. */
+function nowBoundaryKey(ms){
+  let best=null;
+  ms.forEach(m=>{ if(matchIsUpcomingOrLive(m) && (!best || new Date(m.kickoff)<new Date(best.kickoff))) best=m; });
+  return best?best.key:null;
+}
+/* Day-header label in the selected TZ, relative where natural. */
+function dayGroupLabel(iso){
+  const k=dayKey(iso), today=dayKey(Date.now());
+  if(k===today) return 'Today';
+  if(k===dayKey(Date.now()-864e5)) return 'Yesterday';
+  return new Date(iso).toLocaleDateString(undefined,{weekday:'short',month:'short',day:'numeric',timeZone:TZ});
 }
 // Build the whole modal shell once (on open / Back). The live tick uses the
 // lighter refreshResultsView() below instead, so it never rebuilds the toolbar.
@@ -3074,6 +3129,13 @@ function renderResultsView(){
         <span class="ic">🏆</span>
         <select id="schedRound" aria-label="Filter by round">${roundOptionsHTML(all,SCHED_ROUND)}</select>
       </label>
+      <label class="roundpick" id="schedSortWrap" for="schedSort" style="${SCHED_MODE==='completed'?'':'display:none'}">
+        <span class="ic">↕️</span>
+        <select id="schedSort" aria-label="Sort completed matches">
+          <option value="newest"${SCHED_SORT==='newest'?' selected':''}>Newest first</option>
+          <option value="oldest"${SCHED_SORT==='oldest'?' selected':''}>Oldest first</option>
+        </select>
+      </label>
       <label class="tzpick" for="tzSelectModal">
         <span class="ic">🕒</span>
         <select id="tzSelectModal" aria-label="Display timezone">${tzOptionsHTML()}</select>
@@ -3092,8 +3154,13 @@ function renderResultsView(){
       x.classList.toggle('active',on);
       x.setAttribute('aria-selected',on);
     });
+    // Sort only makes sense for the Completed recency feed.
+    const sortWrap=modal.querySelector('#schedSortWrap');
+    if(sortWrap) sortWrap.style.display = SCHED_MODE==='completed' ? '' : 'none';
     modal.querySelector('.mbody').innerHTML=schedBody(allMatches());
     positionThumb(segEl);
+    // Landing on All: drop the viewer at the now/upcoming boundary.
+    if(SCHED_MODE==='all') requestAnimationFrame(()=>scrollSchedToNow(true));
   }));
   const todayBtn=modal.querySelector('#schedToday');
   todayBtn.addEventListener('click',()=>{
@@ -3107,8 +3174,22 @@ function renderResultsView(){
   // place (toolbar untouched, so the select keeps its value and the thumb its
   // position).
   roundSel.addEventListener('change',()=>{ SCHED_ROUND=roundSel.value; refreshResultsView(); });
+  const sortSel=modal.querySelector('#schedSort');
+  if(sortSel) sortSel.addEventListener('change',()=>{ SCHED_SORT=sortSel.value; refreshResultsView(); });
   modal.querySelector('#tzSelectModal').addEventListener('change',e=>setTZ(e.target.value));
-  requestAnimationFrame(()=>positionThumb(segEl,false));
+  requestAnimationFrame(()=>{
+    positionThumb(segEl,false);
+    if(SCHED_MODE==='all') scrollSchedToNow(false);   // e.g. reopened in All
+  });
+}
+/* Bring the "Now" line to the top of the scroll area. Used on open/switch to
+   All only — never on the live tick, so it doesn't yank the user mid-scroll. */
+function scrollSchedToNow(animate){
+  const modal=$('#modal'); if(!modal) return;
+  const now=modal.querySelector('#schedNow'), mbody=modal.querySelector('.mbody');
+  if(!now||!mbody) return;
+  const top=now.getBoundingClientRect().top-mbody.getBoundingClientRect().top+mbody.scrollTop-8;
+  mbody.scrollTo({top:Math.max(0,top),behavior:animate?'smooth':'auto'});
 }
 /* Live-tick / manual refresh: update the counts and rows in place, leaving the
    toolbar, the segmented thumb, and the scroll position untouched. (Rebuilding
