@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-30T01:01:46Z",
+  "updated": "2026-06-30T01:11:52Z",
   "pool": {
     "id": "34193",
     "slug": "bobby-and-friends",
@@ -82,24 +82,24 @@
       "exact": 7
     },
     {
-      "team_id": "247535",
-      "slug": "baronmark",
-      "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247535/baronmark/stage/1196-grand-total?scroll=fixture",
-      "name": "Baronmark",
-      "flag": "FRA",
-      "rank": 8,
-      "points": 4527,
-      "exact": 10
-    },
-    {
       "team_id": "252600",
       "slug": "el-capitan",
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/252600/el-capitan/stage/1196-grand-total?scroll=fixture",
       "name": "El Capitan",
       "flag": "FRA",
-      "rank": 9,
-      "points": 4485,
+      "rank": 8,
+      "points": 4545,
       "exact": 8
+    },
+    {
+      "team_id": "247535",
+      "slug": "baronmark",
+      "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247535/baronmark/stage/1196-grand-total?scroll=fixture",
+      "name": "Baronmark",
+      "flag": "FRA",
+      "rank": 9,
+      "points": 4542,
+      "exact": 10
     },
     {
       "team_id": "247532",
@@ -138,7 +138,7 @@
       "name": "Beturompequinielas",
       "flag": "ARG",
       "rank": 13,
-      "points": 3990,
+      "points": 4050,
       "exact": 5
     },
     {
