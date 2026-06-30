@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-30T18:51:36Z",
+  "updated": "2026-06-30T19:03:00Z",
   "players": {
     "247930": {
       "team_id": "247930",
@@ -2410,10 +2410,10 @@
               "fixture_number": 78,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-06-30T17:00:00Z",
+              "kickoff_local": "2026-06-30 19:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "AT&T Stadium, Arlington",
               "hidden": false,
               "match": {
@@ -2439,7 +2439,7 @@
                 "countries": 100,
                 "score": 90
               },
-              "is_exact": false
+              "is_exact": true
             },
             {
               "fixture_number": 77,
@@ -5858,10 +5858,10 @@
               "fixture_number": 78,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-06-30T17:00:00Z",
+              "kickoff_local": "2026-06-30 19:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "AT&T Stadium, Arlington",
               "hidden": false,
               "match": {
@@ -9306,10 +9306,10 @@
               "fixture_number": 78,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-06-30T17:00:00Z",
+              "kickoff_local": "2026-06-30 19:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "AT&T Stadium, Arlington",
               "hidden": false,
               "match": {
@@ -9335,7 +9335,7 @@
                 "countries": 70,
                 "score": 90
               },
-              "is_exact": false
+              "is_exact": true
             },
             {
               "fixture_number": 77,
@@ -12754,10 +12754,10 @@
               "fixture_number": 78,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-06-30T17:00:00Z",
+              "kickoff_local": "2026-06-30 19:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "AT&T Stadium, Arlington",
               "hidden": false,
               "match": {
@@ -16202,10 +16202,10 @@
               "fixture_number": 78,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-06-30T17:00:00Z",
+              "kickoff_local": "2026-06-30 19:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "AT&T Stadium, Arlington",
               "hidden": false,
               "match": {
@@ -16231,7 +16231,7 @@
                 "countries": 65,
                 "score": 90
               },
-              "is_exact": false
+              "is_exact": true
             },
             {
               "fixture_number": 77,
@@ -19650,10 +19650,10 @@
               "fixture_number": 78,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-06-30T17:00:00Z",
+              "kickoff_local": "2026-06-30 19:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "AT&T Stadium, Arlington",
               "hidden": false,
               "match": {
@@ -23098,10 +23098,10 @@
               "fixture_number": 78,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-06-30T17:00:00Z",
+              "kickoff_local": "2026-06-30 19:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "AT&T Stadium, Arlington",
               "hidden": false,
               "match": {
@@ -26546,10 +26546,10 @@
               "fixture_number": 78,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-06-30T17:00:00Z",
+              "kickoff_local": "2026-06-30 19:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "AT&T Stadium, Arlington",
               "hidden": false,
               "match": {
@@ -26575,7 +26575,7 @@
                 "countries": 130,
                 "score": 90
               },
-              "is_exact": false
+              "is_exact": true
             },
             {
               "fixture_number": 77,
@@ -29994,10 +29994,10 @@
               "fixture_number": 78,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-06-30T17:00:00Z",
+              "kickoff_local": "2026-06-30 19:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "AT&T Stadium, Arlington",
               "hidden": false,
               "match": {
@@ -30023,7 +30023,7 @@
                 "countries": 65,
                 "score": 90
               },
-              "is_exact": false
+              "is_exact": true
             },
             {
               "fixture_number": 77,
@@ -33442,10 +33442,10 @@
               "fixture_number": 78,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-06-30T17:00:00Z",
+              "kickoff_local": "2026-06-30 19:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "AT&T Stadium, Arlington",
               "hidden": false,
               "match": {
@@ -36890,10 +36890,10 @@
               "fixture_number": 78,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-06-30T17:00:00Z",
+              "kickoff_local": "2026-06-30 19:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "AT&T Stadium, Arlington",
               "hidden": false,
               "match": {
@@ -40338,10 +40338,10 @@
               "fixture_number": 78,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-06-30T17:00:00Z",
+              "kickoff_local": "2026-06-30 19:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "AT&T Stadium, Arlington",
               "hidden": false,
               "match": {
@@ -40367,7 +40367,7 @@
                 "countries": 0,
                 "score": 90
               },
-              "is_exact": false
+              "is_exact": true
             },
             {
               "fixture_number": 77,
@@ -43786,10 +43786,10 @@
               "fixture_number": 78,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-06-30T17:00:00Z",
+              "kickoff_local": "2026-06-30 19:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "AT&T Stadium, Arlington",
               "hidden": false,
               "match": {
@@ -47234,10 +47234,10 @@
               "fixture_number": 78,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-06-30T17:00:00Z",
+              "kickoff_local": "2026-06-30 19:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "AT&T Stadium, Arlington",
               "hidden": false,
               "match": {
@@ -47263,7 +47263,7 @@
                 "countries": 130,
                 "score": 90
               },
-              "is_exact": false
+              "is_exact": true
             },
             {
               "fixture_number": 77,
@@ -50682,10 +50682,10 @@
               "fixture_number": 78,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-06-30T17:00:00Z",
+              "kickoff_local": "2026-06-30 19:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "AT&T Stadium, Arlington",
               "hidden": false,
               "match": {
@@ -54130,10 +54130,10 @@
               "fixture_number": 78,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-06-30T17:00:00Z",
+              "kickoff_local": "2026-06-30 19:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "AT&T Stadium, Arlington",
               "hidden": false,
               "match": {
