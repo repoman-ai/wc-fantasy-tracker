@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-30T22:53:54Z",
+  "updated": "2026-06-30T22:58:38Z",
   "players": {
     "247930": {
       "team_id": "247930",
@@ -2445,10 +2445,10 @@
               "fixture_number": 77,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-06-30T21:00:00Z",
+              "kickoff_local": "2026-06-30 23:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "MetLife Stadium, East Rutherford",
               "hidden": false,
               "match": {
@@ -2474,7 +2474,7 @@
                 "countries": 100,
                 "score": 90
               },
-              "is_exact": false
+              "is_exact": true
             },
             {
               "fixture_number": 79,
@@ -5893,10 +5893,10 @@
               "fixture_number": 77,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-06-30T21:00:00Z",
+              "kickoff_local": "2026-06-30 23:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "MetLife Stadium, East Rutherford",
               "hidden": false,
               "match": {
@@ -9341,10 +9341,10 @@
               "fixture_number": 77,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-06-30T21:00:00Z",
+              "kickoff_local": "2026-06-30 23:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "MetLife Stadium, East Rutherford",
               "hidden": false,
               "match": {
@@ -12789,10 +12789,10 @@
               "fixture_number": 77,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-06-30T21:00:00Z",
+              "kickoff_local": "2026-06-30 23:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "MetLife Stadium, East Rutherford",
               "hidden": false,
               "match": {
@@ -16237,10 +16237,10 @@
               "fixture_number": 77,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-06-30T21:00:00Z",
+              "kickoff_local": "2026-06-30 23:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "MetLife Stadium, East Rutherford",
               "hidden": false,
               "match": {
@@ -19685,10 +19685,10 @@
               "fixture_number": 77,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-06-30T21:00:00Z",
+              "kickoff_local": "2026-06-30 23:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "MetLife Stadium, East Rutherford",
               "hidden": false,
               "match": {
@@ -23133,10 +23133,10 @@
               "fixture_number": 77,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-06-30T21:00:00Z",
+              "kickoff_local": "2026-06-30 23:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "MetLife Stadium, East Rutherford",
               "hidden": false,
               "match": {
@@ -23162,7 +23162,7 @@
                 "countries": 130,
                 "score": 90
               },
-              "is_exact": false
+              "is_exact": true
             },
             {
               "fixture_number": 79,
@@ -26581,10 +26581,10 @@
               "fixture_number": 77,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-06-30T21:00:00Z",
+              "kickoff_local": "2026-06-30 23:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "MetLife Stadium, East Rutherford",
               "hidden": false,
               "match": {
@@ -30029,10 +30029,10 @@
               "fixture_number": 77,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-06-30T21:00:00Z",
+              "kickoff_local": "2026-06-30 23:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "MetLife Stadium, East Rutherford",
               "hidden": false,
               "match": {
@@ -33477,10 +33477,10 @@
               "fixture_number": 77,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-06-30T21:00:00Z",
+              "kickoff_local": "2026-06-30 23:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "MetLife Stadium, East Rutherford",
               "hidden": false,
               "match": {
@@ -33506,7 +33506,7 @@
                 "countries": 65,
                 "score": 90
               },
-              "is_exact": false
+              "is_exact": true
             },
             {
               "fixture_number": 79,
@@ -40192,7 +40192,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1365,
+          "subtotal": 1513,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -40397,10 +40397,10 @@
                 "score": "2 - 1"
               },
               "actual_score": "3 - 0",
-              "points": 100,
+              "points": 148,
               "points_breakdown": {
                 "countries": 100,
-                "score": null
+                "score": 48
               },
               "is_exact": false
             },
@@ -43640,7 +43640,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1321,
+          "subtotal": 1484,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -43845,10 +43845,10 @@
                 "score": "2 - 0"
               },
               "actual_score": "3 - 0",
-              "points": 100,
+              "points": 163,
               "points_breakdown": {
                 "countries": 100,
-                "score": null
+                "score": 63
               },
               "is_exact": false
             },
@@ -47088,7 +47088,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1308,
+          "subtotal": 1498,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -47293,12 +47293,12 @@
                 "score": "3 - 0"
               },
               "actual_score": "3 - 0",
-              "points": 100,
+              "points": 190,
               "points_breakdown": {
                 "countries": 100,
-                "score": null
+                "score": 90
               },
-              "is_exact": false
+              "is_exact": true
             },
             {
               "fixture_number": 79,
@@ -50536,7 +50536,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1208,
+          "subtotal": 1361,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -50636,9 +50636,9 @@
                 "score": "2 - 0"
               },
               "actual_score": "1 - 1",
-              "points": 65,
+              "points": 100,
               "points_breakdown": {
-                "countries": 65,
+                "countries": 100,
                 "score": 0
               },
               "is_exact": false
@@ -50741,10 +50741,10 @@
                 "score": "2 - 1"
               },
               "actual_score": "3 - 0",
-              "points": 70,
+              "points": 118,
               "points_breakdown": {
                 "countries": 70,
-                "score": null
+                "score": 48
               },
               "is_exact": false
             },
@@ -53984,7 +53984,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1045,
+          "subtotal": 1158,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -54189,10 +54189,10 @@
                 "score": "4 - 2"
               },
               "actual_score": "3 - 0",
-              "points": 65,
+              "points": 113,
               "points_breakdown": {
                 "countries": 65,
-                "score": null
+                "score": 48
               },
               "is_exact": false
             },
