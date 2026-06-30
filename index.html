@@ -472,17 +472,18 @@
   /* Timezone picker — shared look between the footer bar and the schedule
      toolbar (.tzpick). A native <select> for accessibility + zero JS overhead. */
   .tzbar{display:flex;justify-content:center;margin-top:26px}
-  .tzpick{display:inline-flex;align-items:center;gap:8px;background:var(--card);
+  .tzpick,.roundpick{display:inline-flex;align-items:center;gap:8px;background:var(--card);
     border:1px solid var(--line);border-radius:999px;padding:6px 8px 6px 14px;box-shadow:var(--shadow);
     font-size:12.5px;font-weight:700;color:var(--muted)}
-  .tzpick .ic{font-size:13px}
+  .tzpick .ic,.roundpick .ic{font-size:13px}
   .tzpick .lab{white-space:nowrap}
-  .tzpick select{font:inherit;font-weight:700;font-size:12.5px;color:var(--ink);
+  .tzpick select,.roundpick select{font:inherit;font-weight:700;font-size:12.5px;color:var(--ink);
     background:#f3f6fc;border:1px solid var(--line);border-radius:999px;padding:6px 12px;cursor:pointer;
     max-width:200px;transition:border-color .12s}
-  .tzpick select:hover{border-color:#c9d2e3}
-  .tzpick select:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
-  @media(max-width:560px){.sched-tools .tzpick .ic{display:none}.tzpick select{max-width:150px}}
+  .tzpick select:hover,.roundpick select:hover{border-color:#c9d2e3}
+  .tzpick select:focus-visible,.roundpick select:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+  @media(max-width:560px){.sched-tools .tzpick .ic,.sched-tools .roundpick .ic{display:none}
+    .tzpick select,.roundpick select{max-width:150px}}
   .loading{padding:80px 0;text-align:center;color:var(--muted)}
 
   /* ---------- Clickable affordances ----------
@@ -3014,26 +3015,29 @@ function wireModalControls(modal){
    timezone picker. */
 let SCHED_MODE='upcoming';   // 'all' | 'upcoming' | 'completed'
 let SCHED_TODAY=false;
+let SCHED_ROUND='all';       // 'all' | a round label from roundLabel()
 function openResults(){
   SCHED_MODE='upcoming';
   SCHED_TODAY=false;
+  SCHED_ROUND='all';
   openModalView({type:'results',render:renderResultsView,refresh:refreshResultsView,scroll:0});
 }
 function schedCounts(all){
-  const scoped=SCHED_TODAY?all.filter(matchIsToday):all;
+  const byRound=SCHED_ROUND==='all'?all:all.filter(m=>roundLabel(m)===SCHED_ROUND);
+  const scoped=SCHED_TODAY?byRound.filter(matchIsToday):byRound;
   return {total:all.length, all:scoped.length,
     upcoming:scoped.filter(matchIsUpcomingOrLive).length,
     completed:scoped.filter(matchIsCompletedOrPast).length,
-    today:all.filter(matchIsToday).length};
+    today:byRound.filter(matchIsToday).length};
 }
 /* Just the grouped match rows for the current filter — recomputed on each live
    tick, but injected into the existing .mbody so the toolbar (and its thumb)
    and the scroll position survive. */
 function schedBody(all){
-  const ms=all.filter(m=>matchesScheduleFilters(m,SCHED_MODE,SCHED_TODAY));
+  const ms=all.filter(m=>matchesScheduleFilters(m,SCHED_MODE,SCHED_TODAY,SCHED_ROUND));
   const groups=[], idx={};
   ms.forEach(m=>{
-    const r=m.round||'Matches';
+    const r=roundLabel(m);
     if(!(r in idx)){ idx[r]=groups.length; groups.push({round:r,items:[]}); }
     groups[idx[r]].items.push(m);
   });
@@ -3066,6 +3070,10 @@ function renderResultsView(){
         ${seg('all','All')}${seg('upcoming','Upcoming')}${seg('completed','Completed')}
       </div>
       <button class="tog ${SCHED_TODAY?'on':''}" id="schedToday" type="button" aria-pressed="${SCHED_TODAY}">📅 Today${counts.today?`<span class="cnt">${counts.today}</span>`:''}</button>
+      <label class="roundpick" for="schedRound">
+        <span class="ic">🏆</span>
+        <select id="schedRound" aria-label="Filter by round">${roundOptionsHTML(all,SCHED_ROUND)}</select>
+      </label>
       <label class="tzpick" for="tzSelectModal">
         <span class="ic">🕒</span>
         <select id="tzSelectModal" aria-label="Display timezone">${tzOptionsHTML()}</select>
@@ -3094,6 +3102,11 @@ function renderResultsView(){
     todayBtn.setAttribute('aria-pressed',SCHED_TODAY);
     refreshResultsView();
   });
+  const roundSel=modal.querySelector('#schedRound');
+  // Round changes the active set, so seg/today counts move too — refresh in
+  // place (toolbar untouched, so the select keeps its value and the thumb its
+  // position).
+  roundSel.addEventListener('change',()=>{ SCHED_ROUND=roundSel.value; refreshResultsView(); });
   modal.querySelector('#tzSelectModal').addEventListener('change',e=>setTZ(e.target.value));
   requestAnimationFrame(()=>positionThumb(segEl,false));
 }
@@ -3305,10 +3318,10 @@ function rankTrendTag(arr){
   return {cls:'same',txt:'holding'};
 }
 
-let FILTERS={mode:'upcoming',today:false};
+let FILTERS={mode:'upcoming',today:false,round:'all'};
 
 function openPlayer(teamId){
-  FILTERS={mode:'upcoming',today:false};   // reset only on a fresh open, not on Back
+  FILTERS={mode:'upcoming',today:false,round:'all'};   // reset only on a fresh open, not on Back
   openModalView({type:'player',teamId,render:()=>renderPlayerView(teamId),refresh:renderSheetCurrent,scroll:0});
 }
 function renderPlayerView(teamId){
@@ -3381,19 +3394,28 @@ function renderPlayerView(teamId){
   requestAnimationFrame(()=>positionSegThumb(false));
 }
 
+/* Filter-bar counts. Status counts honor the active Round and Today filters;
+   the Today count honors Round only — same scoping the Full Schedule uses, so
+   the two surfaces read consistently. */
 function fixtureCounts(teamId){
   const c={all:0,upcoming:0,completed:0,today:0};
   const pdata=PRED[teamId]; if(!pdata||!pdata.matchdays) return c;
-  pdata.matchdays.forEach(md=>(md.fixtures||[]).forEach(fx=>{
-    c.all++;
-    if(matchIsCompletedOrPast(fx)) c.completed++; else c.upcoming++;
-    if(matchIsToday(fx)) c.today++;
-  }));
+  pdata.matchdays.forEach(md=>{
+    if(FILTERS.round!=='all' && roundLabel(md)!==FILTERS.round) return;
+    (md.fixtures||[]).forEach(fx=>{
+      const today=matchIsToday(fx);
+      if(today) c.today++;
+      if(FILTERS.today && !today) return;
+      c.all++;
+      if(matchIsCompletedOrPast(fx)) c.completed++; else c.upcoming++;
+    });
+  });
   return c;
 }
 
 function buildFilters(teamId){
   const f=$('#filters');
+  const pdata=PRED[teamId];
   const c=fixtureCounts(teamId);
   const seg=(mode,label,n)=>{
     const on=FILTERS.mode===mode;
@@ -3406,7 +3428,11 @@ function buildFilters(teamId){
       ${seg('upcoming','<span class="seg-long">Upcoming & Live</span><span class="seg-short">Upcoming</span>',c.upcoming)}
       ${seg('completed','Completed',c.completed)}
     </div>
-    <button class="tog ${FILTERS.today?'on':''}" data-k="today" aria-pressed="${FILTERS.today}">📅 Today${c.today?`<span class="cnt">${c.today}</span>`:''}</button>`;
+    <button class="tog ${FILTERS.today?'on':''}" data-k="today" aria-pressed="${FILTERS.today}">📅 Today${c.today?`<span class="cnt">${c.today}</span>`:''}</button>
+    <label class="roundpick" for="filterRound">
+      <span class="ic">🏆</span>
+      <select id="filterRound" aria-label="Filter by round">${roundOptionsHTML(pdata?.matchdays,FILTERS.round)}</select>
+    </label>`;
   f.querySelectorAll('.seg').forEach(b=>b.addEventListener('click',()=>{
     if(FILTERS.mode===b.dataset.mode) return;
     FILTERS.mode=b.dataset.mode;
@@ -3421,8 +3447,17 @@ function buildFilters(teamId){
   const tg=f.querySelector('.tog');
   if(tg) tg.addEventListener('click',()=>{
     FILTERS.today=!FILTERS.today;
-    tg.classList.toggle('on');
-    tg.setAttribute('aria-pressed',FILTERS.today);
+    // Status counts honor Today, so rebuild the bar (re-pins the thumb) instead
+    // of just toggling the class.
+    buildFilters(teamId);
+    positionSegThumb(false);
+    renderSheetCurrent();
+  });
+  const rp=f.querySelector('#filterRound');
+  if(rp) rp.addEventListener('change',()=>{
+    FILTERS.round=rp.value;
+    buildFilters(teamId);          // round shifts seg/today counts
+    positionSegThumb(false);
     renderSheetCurrent();
   });
 }
@@ -3473,7 +3508,24 @@ function matchIsCompletedOrPast(item){
 }
 function matchIsUpcomingOrLive(item){ return !matchIsCompletedOrPast(item); }
 function matchIsToday(item){ return !!(item&&isSameLocalDay(item.kickoff_utc||item.kickoff)); }
-function matchesScheduleFilters(item,mode,todayOnly){
+/* Canonical round label for a match or matchday — one source of truth so the
+   round picker's options, the group headers, and the round filter all agree.
+   (Avoids the fallback drift between 'Matches'/'Round'/'Match Day' elsewhere.) */
+function roundLabel(item){ return (item&&item.round)||'Matches'; }
+/* Distinct round labels in source order (already chronological), de-duped. */
+function roundKeys(items){
+  const seen=new Set(), out=[];
+  (items||[]).forEach(it=>{ const r=roundLabel(it); if(!seen.has(r)){ seen.add(r); out.push(r); } });
+  return out;
+}
+/* <option>s for a round <select>: "All rounds" then each round in order. */
+function roundOptionsHTML(items,sel){
+  const out=[`<option value="all"${sel==='all'?' selected':''}>All rounds</option>`];
+  roundKeys(items).forEach(r=>out.push(`<option value="${esc(r)}"${r===sel?' selected':''}>${esc(r)}</option>`));
+  return out.join('');
+}
+function matchesScheduleFilters(item,mode,todayOnly,round){
+  if(round && round!=='all' && roundLabel(item)!==round) return false;
   if(todayOnly && !matchIsToday(item)) return false;
   if(mode==='completed') return matchIsCompletedOrPast(item);
   if(mode==='upcoming') return matchIsUpcomingOrLive(item);
@@ -3505,10 +3557,11 @@ function renderSheet(teamId){
   }
   let html=''; let shown=0;
   pdata.matchdays.forEach(md=>{
+    if(FILTERS.round!=='all' && roundLabel(md)!==FILTERS.round) return;
     const fixtures=md.fixtures.filter(fx=>matchesScheduleFilters(fx,FILTERS.mode,FILTERS.today));
     if(!fixtures.length) return;
     shown+=fixtures.length;
-    html+=`<div class="group"><div class="grouphd"><span class="gr">${esc(md.round||'Round')}</span>`+
+    html+=`<div class="group"><div class="grouphd"><span class="gr">${esc(roundLabel(md))}</span>`+
       (md.subtotal!=null?`<span class="gsub">Subtotal <b class="num">${md.subtotal}</b></span>`:'')+`</div>`;
     fixtures.forEach(fx=>html+=fixtureHtml(fx));
     html+=`</div>`;

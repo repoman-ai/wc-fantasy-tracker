@@ -69,12 +69,14 @@ moment Pages goes live; the first real Action run overwrites them with live data
      A **📅 Full Schedule** button beside the heading (and a link under the
      recent-results strip) opens every match — played and upcoming — grouped by
      round in kickoff order, with an **All / Upcoming / Completed** segmented
-     filter and each row showing its kickoff date + time.
+     filter, a **Today** toggle, a **round** picker (Round of 32 … Final), and
+     each row showing its kickoff date + time. The filters combine.
    - **Layer 2 — Player view** (tap any row): points-over-time, rank-over-time, and
      exact-predictions-over-time charts, plus the full prediction sheet grouped by
      matchday — completed *and* upcoming matches — with a "🎯 perfect call" badge on
      exact scores, matchday subtotals, the bonus questions, and
-     **Completed / Upcoming / Today-only** filters that combine.
+     **Completed / Upcoming / Today-only** filters plus a **round** picker that
+     all combine.
    - **Layer 3 — Match view** (tap any match — in the live strip, the recent-results
      cards, the Full Schedule list, or any row on a player's sheet): a popup showing
      **every player's prediction for that one match** — their picked score (or, in
