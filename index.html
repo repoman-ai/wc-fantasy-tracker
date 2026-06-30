@@ -474,6 +474,11 @@
     .bonus .val{grid-column:1 / -1}
   }
   .empty{background:var(--card);border-radius:14px;padding:26px;text-align:center;color:var(--muted);box-shadow:var(--shadow)}
+  .empty-reset{display:inline-block;margin-top:14px;border:1px solid var(--line);background:#f3f6fc;
+    color:var(--accent);font-weight:800;font-size:12.5px;padding:8px 16px;border-radius:999px;cursor:pointer;
+    transition:border-color .12s,background .12s}
+  .empty-reset:hover{border-color:#c9d2e3;background:#eef1f7}
+  .empty-reset:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
   .foot{text-align:center;color:var(--muted);font-size:12px;margin-top:14px}
 
   /* Timezone picker — shared look between the footer bar and the schedule
@@ -3045,7 +3050,10 @@ function schedCounts(all){
    modes keep the round-grouped tournament order. */
 function schedBody(all){
   const ms=all.filter(m=>matchesScheduleFilters(m,SCHED_MODE,SCHED_TODAY,SCHED_ROUND));
-  if(!ms.length) return '<div class="empty">No matches in this filter.</div>';
+  if(!ms.length){
+    const narrowed = SCHED_TODAY||SCHED_ROUND!=='all'||SCHED_MODE!=='all';
+    return `<div class="empty">No matches in this filter.${narrowed?'<button class="empty-reset" type="button">Show all matches</button>':''}</div>`;
+  }
   return SCHED_MODE==='completed' ? schedBodyByDay(ms) : schedBodyByRound(ms);
 }
 function groupBlock(label,items,rows){
@@ -3147,8 +3155,13 @@ function renderResultsView(){
   // Switching filters updates only the active state, the rows, and the thumb —
   // so the pill slides smoothly between options instead of snapping from 0.
   segEl.querySelectorAll('.seg').forEach(b=>b.addEventListener('click',()=>{
-    if(SCHED_MODE===b.dataset.mode) return;
-    SCHED_MODE=b.dataset.mode;
+    const mode=b.dataset.mode;
+    // All / Upcoming mean "show me this whole category", so they shed a lingering
+    // Today narrowing. Completed keeps Today — "today's results" is a useful view.
+    const dropToday = SCHED_TODAY && mode!=='completed';
+    if(SCHED_MODE===mode && !dropToday) return;
+    SCHED_MODE=mode;
+    if(dropToday) SCHED_TODAY=false;
     segEl.querySelectorAll('.seg').forEach(x=>{
       const on=x.dataset.mode===SCHED_MODE;
       x.classList.toggle('active',on);
@@ -3157,11 +3170,14 @@ function renderResultsView(){
     // Sort only makes sense for the Completed recency feed.
     const sortWrap=modal.querySelector('#schedSortWrap');
     if(sortWrap) sortWrap.style.display = SCHED_MODE==='completed' ? '' : 'none';
-    modal.querySelector('.mbody').innerHTML=schedBody(allMatches());
-    positionThumb(segEl);
+    refreshResultsView(true);   // counts/today/rows in place + animated thumb slide
     // Landing on All: drop the viewer at the now/upcoming boundary.
     if(SCHED_MODE==='all') requestAnimationFrame(()=>scrollSchedToNow(true));
   }));
+  // Empty-state "Show all matches" — delegated on .mbody so it survives re-renders.
+  modal.querySelector('.mbody').addEventListener('click',e=>{
+    if(e.target.closest('.empty-reset')) schedResetFilters();
+  });
   const todayBtn=modal.querySelector('#schedToday');
   todayBtn.addEventListener('click',()=>{
     SCHED_TODAY=!SCHED_TODAY;
@@ -3195,7 +3211,7 @@ function scrollSchedToNow(animate){
    toolbar, the segmented thumb, and the scroll position untouched. (Rebuilding
    the whole modal here was what made the thumb snap to the left and re-slide
    every 20s — most visible on Upcoming/Completed, where the thumb is offset.) */
-function refreshResultsView(){
+function refreshResultsView(animateThumb=false){
   const modal=$('#modal');
   const segEl=modal.querySelector('#schedSeg');
   if(!segEl){ renderResultsView(); return; }   // not actually the results view
@@ -3216,7 +3232,13 @@ function refreshResultsView(){
   if(meta) meta.textContent=`${counts.total} matches · tap any match to see everyone's pick`;
   const mbody=modal.querySelector('.mbody');
   if(mbody) mbody.innerHTML=schedBody(all);
-  positionThumb(segEl,false);   // counts can change width; re-align without snapping
+  positionThumb(segEl,animateThumb);   // counts can change width; re-align (animate only on user action)
+}
+/* Reset every narrowing filter back to the whole-tournament view — wired to the
+   "Show all matches" action in the empty state so a dead-end is one tap out. */
+function schedResetFilters(){
+  SCHED_MODE='all'; SCHED_TODAY=false; SCHED_ROUND='all'; SCHED_SORT='newest';
+  renderResultsView();
 }
 function resRow(m){
   const sc=parseScore(m.score);
@@ -3463,6 +3485,8 @@ function renderPlayerView(teamId){
   wireModalControls(modal);
   buildFilters(teamId);
   renderSheet(teamId);
+  // Empty-state "Show all matches" — delegated on #sheet so it survives re-renders.
+  $('#sheet').addEventListener('click',e=>{ if(e.target.closest('.empty-reset')) playerResetFilters(teamId); });
   // Charts live in a collapsed panel; draw lazily on first expand (a hidden
   // canvas would size to 0), then just resize on subsequent opens.
   const track=modal.querySelector('#trackPanel');
@@ -3515,14 +3539,24 @@ function buildFilters(teamId){
       <select id="filterRound" aria-label="Filter by round">${roundOptionsHTML(pdata?.matchdays,FILTERS.round)}</select>
     </label>`;
   f.querySelectorAll('.seg').forEach(b=>b.addEventListener('click',()=>{
-    if(FILTERS.mode===b.dataset.mode) return;
-    FILTERS.mode=b.dataset.mode;
-    f.querySelectorAll('.seg').forEach(x=>{
-      const on=x.dataset.mode===FILTERS.mode;
-      x.classList.toggle('active',on);
-      x.setAttribute('aria-selected',on);
-    });
-    positionSegThumb();
+    const mode=b.dataset.mode;
+    // All / Upcoming broaden, so they drop a lingering Today narrowing; Completed
+    // keeps it ("today's results"). Matches the Full Schedule behaviour.
+    const dropToday = FILTERS.today && mode!=='completed';
+    if(FILTERS.mode===mode && !dropToday) return;
+    FILTERS.mode=mode;
+    if(dropToday){
+      FILTERS.today=false;
+      buildFilters(teamId);       // today changed → counts move; rebuild the bar
+      positionSegThumb(false);    // re-pin without a left-snap
+    }else{
+      f.querySelectorAll('.seg').forEach(x=>{
+        const on=x.dataset.mode===FILTERS.mode;
+        x.classList.toggle('active',on);
+        x.setAttribute('aria-selected',on);
+      });
+      positionSegThumb();         // smooth slide
+    }
     renderSheetCurrent();
   }));
   const tg=f.querySelector('.tog');
@@ -3541,6 +3575,13 @@ function buildFilters(teamId){
     positionSegThumb(false);
     renderSheetCurrent();
   });
+}
+/* Reset the player sheet to the whole, unfiltered view (empty-state action). */
+function playerResetFilters(teamId){
+  FILTERS={mode:'all',today:false,round:'all'};
+  buildFilters(teamId);
+  positionSegThumb(false);
+  renderSheetCurrent();
 }
 
 /* Slide + size the segmented-control thumb under the active option. Run after
@@ -3656,7 +3697,11 @@ function renderSheet(teamId){
     fixtures.forEach(fx=>html+=fixtureHtml(fx));
     html+=`</div>`;
   });
-  host.innerHTML = shown? html : `<div class="empty">No matches match these filters.</div>`;
+  if(shown){ host.innerHTML=html; }
+  else{
+    const narrowed = FILTERS.today||FILTERS.round!=='all'||FILTERS.mode!=='all';
+    host.innerHTML=`<div class="empty">No matches match these filters.${narrowed?'<button class="empty-reset" type="button">Show all matches</button>':''}</div>`;
+  }
 }
 
 function teamLine(t){
