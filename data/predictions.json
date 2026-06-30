@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-30T00:51:21Z",
+  "updated": "2026-06-30T01:01:46Z",
   "players": {
     "252653": {
       "team_id": "252653",
@@ -26400,7 +26400,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1508,
+          "subtotal": 1443,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -26511,10 +26511,10 @@
               "fixture_number": 75,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-06-30T01:00:00Z",
-              "kickoff_local": "2026-06-30 03:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "Estadio BBVA, Guadalupe",
               "hidden": false,
               "match": {
@@ -26534,7 +26534,7 @@
                 "hidden": false,
                 "score": "2 - 0"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 65,
               "points_breakdown": {
                 "countries": 65,
@@ -29848,7 +29848,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1703,
+          "subtotal": 1603,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -29959,10 +29959,10 @@
               "fixture_number": 75,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-06-30T01:00:00Z",
-              "kickoff_local": "2026-06-30 03:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "Estadio BBVA, Guadalupe",
               "hidden": false,
               "match": {
@@ -29982,7 +29982,7 @@
                 "hidden": false,
                 "score": "1 - 1"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 100,
               "points_breakdown": {
                 "countries": 100,
@@ -33296,7 +33296,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1410,
+          "subtotal": 1275,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -33407,10 +33407,10 @@
               "fixture_number": 75,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-06-30T01:00:00Z",
-              "kickoff_local": "2026-06-30 03:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "Estadio BBVA, Guadalupe",
               "hidden": false,
               "match": {
@@ -33430,7 +33430,7 @@
                 "hidden": false,
                 "score": "1 - 2"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 100,
               "points_breakdown": {
                 "countries": 100,
@@ -33466,9 +33466,9 @@
                 "score": "0 - 2"
               },
               "actual_score": "NS",
-              "points": 35,
+              "points": 0,
               "points_breakdown": {
-                "countries": 35,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -36744,7 +36744,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1403,
+          "subtotal": 1238,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -36855,10 +36855,10 @@
               "fixture_number": 75,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-06-30T01:00:00Z",
-              "kickoff_local": "2026-06-30 03:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "Estadio BBVA, Guadalupe",
               "hidden": false,
               "match": {
@@ -36878,7 +36878,7 @@
                 "hidden": false,
                 "score": "2 - 1"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 100,
               "points_breakdown": {
                 "countries": 100,
@@ -36949,9 +36949,9 @@
                 "score": "3 - 1"
               },
               "actual_score": "NS",
-              "points": 100,
+              "points": 35,
               "points_breakdown": {
-                "countries": 100,
+                "countries": 35,
                 "score": null
               },
               "is_exact": false
@@ -40192,7 +40192,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1360,
+          "subtotal": 1230,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -40303,10 +40303,10 @@
               "fixture_number": 75,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-06-30T01:00:00Z",
-              "kickoff_local": "2026-06-30 03:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "Estadio BBVA, Guadalupe",
               "hidden": false,
               "match": {
@@ -40326,7 +40326,7 @@
                 "hidden": false,
                 "score": "3 - 1"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 130,
               "points_breakdown": {
                 "countries": 130,
@@ -43640,7 +43640,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1301,
+          "subtotal": 1136,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -43751,10 +43751,10 @@
               "fixture_number": 75,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-06-30T01:00:00Z",
-              "kickoff_local": "2026-06-30 03:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "Estadio BBVA, Guadalupe",
               "hidden": false,
               "match": {
@@ -43774,7 +43774,7 @@
                 "hidden": false,
                 "score": "2 - 2"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 130,
               "points_breakdown": {
                 "countries": 130,
@@ -43880,9 +43880,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": 100,
+              "points": 65,
               "points_breakdown": {
-                "countries": 100,
+                "countries": 65,
                 "score": null
               },
               "is_exact": false
@@ -47088,7 +47088,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1235,
+          "subtotal": 1165,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -47199,10 +47199,10 @@
               "fixture_number": 75,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-06-30T01:00:00Z",
-              "kickoff_local": "2026-06-30 03:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "Estadio BBVA, Guadalupe",
               "hidden": false,
               "match": {
@@ -47222,7 +47222,7 @@
                 "hidden": false,
                 "score": "1 - 2"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 70,
               "points_breakdown": {
                 "countries": 70,
@@ -50536,7 +50536,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1303,
+          "subtotal": 1268,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -50647,10 +50647,10 @@
               "fixture_number": 75,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-06-30T01:00:00Z",
-              "kickoff_local": "2026-06-30 03:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "Estadio BBVA, Guadalupe",
               "hidden": false,
               "match": {
@@ -50670,7 +50670,7 @@
                 "hidden": false,
                 "score": "2 - 1"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 35,
               "points_breakdown": {
                 "countries": 35,
@@ -53984,7 +53984,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1095,
+          "subtotal": 960,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -54095,10 +54095,10 @@
               "fixture_number": 75,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-06-30T01:00:00Z",
-              "kickoff_local": "2026-06-30 03:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "Estadio BBVA, Guadalupe",
               "hidden": false,
               "match": {
@@ -54118,7 +54118,7 @@
                 "hidden": false,
                 "score": "2 - 1"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 100,
               "points_breakdown": {
                 "countries": 100,
@@ -54329,9 +54329,9 @@
                 "score": "2 - 0"
               },
               "actual_score": "NS",
-              "points": 70,
+              "points": 35,
               "points_breakdown": {
-                "countries": 70,
+                "countries": 35,
                 "score": null
               },
               "is_exact": false
