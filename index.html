@@ -3588,7 +3588,16 @@ function matchIsCompletedOrPast(item){
   return !!(item&&(item.done||isCompleted(item)||(isPastHardCap(item)&&hasMatchScore(item))));
 }
 function matchIsUpcomingOrLive(item){ return !matchIsCompletedOrPast(item); }
-function matchIsToday(item){ return !!(item&&isSameLocalDay(item.kickoff_utc||item.kickoff)); }
+/* Live right now, whether it's a schedule match object (precomputed .live) or
+   a raw fixture (status/clock via isLive). */
+function itemIsLive(item){
+  if(!item) return false;
+  if(typeof item.live==='boolean') return item.live;
+  return isLive(item);
+}
+/* "Today" includes anything live right now: a late game still in play after
+   local midnight is happening today even though it kicked off yesterday. */
+function matchIsToday(item){ return !!(item&&(itemIsLive(item)||isSameLocalDay(item.kickoff_utc||item.kickoff))); }
 /* Canonical round label for a match or matchday — one source of truth so the
    round picker's options, the group headers, and the round filter all agree.
    (Avoids the fallback drift between 'Matches'/'Round'/'Match Day' elsewhere.) */
