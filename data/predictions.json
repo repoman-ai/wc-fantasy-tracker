@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-01T04:02:41Z",
+  "updated": "2026-07-01T04:11:42Z",
   "players": {
     "247930": {
       "team_id": "247930",
@@ -2480,10 +2480,10 @@
               "fixture_number": 79,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-01T01:00:00Z",
+              "kickoff_local": "2026-07-01 03:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "Estadio Azteca, Mexico City",
               "hidden": false,
               "match": {
@@ -5928,10 +5928,10 @@
               "fixture_number": 79,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-01T01:00:00Z",
+              "kickoff_local": "2026-07-01 03:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "Estadio Azteca, Mexico City",
               "hidden": false,
               "match": {
@@ -5957,7 +5957,7 @@
                 "countries": 100,
                 "score": 90
               },
-              "is_exact": false
+              "is_exact": true
             },
             {
               "fixture_number": 80,
@@ -9376,10 +9376,10 @@
               "fixture_number": 79,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-01T01:00:00Z",
+              "kickoff_local": "2026-07-01 03:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "Estadio Azteca, Mexico City",
               "hidden": false,
               "match": {
@@ -12824,10 +12824,10 @@
               "fixture_number": 79,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-01T01:00:00Z",
+              "kickoff_local": "2026-07-01 03:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "Estadio Azteca, Mexico City",
               "hidden": false,
               "match": {
@@ -16272,10 +16272,10 @@
               "fixture_number": 79,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-01T01:00:00Z",
+              "kickoff_local": "2026-07-01 03:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "Estadio Azteca, Mexico City",
               "hidden": false,
               "match": {
@@ -19720,10 +19720,10 @@
               "fixture_number": 79,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-01T01:00:00Z",
+              "kickoff_local": "2026-07-01 03:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "Estadio Azteca, Mexico City",
               "hidden": false,
               "match": {
@@ -23168,10 +23168,10 @@
               "fixture_number": 79,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-01T01:00:00Z",
+              "kickoff_local": "2026-07-01 03:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "Estadio Azteca, Mexico City",
               "hidden": false,
               "match": {
@@ -26616,10 +26616,10 @@
               "fixture_number": 79,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-01T01:00:00Z",
+              "kickoff_local": "2026-07-01 03:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "Estadio Azteca, Mexico City",
               "hidden": false,
               "match": {
@@ -30064,10 +30064,10 @@
               "fixture_number": 79,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-01T01:00:00Z",
+              "kickoff_local": "2026-07-01 03:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "Estadio Azteca, Mexico City",
               "hidden": false,
               "match": {
@@ -36744,7 +36744,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1441,
+          "subtotal": 1601,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -36984,10 +36984,10 @@
                 "score": "3 - 1"
               },
               "actual_score": "2 - 0",
-              "points": 100,
+              "points": 160,
               "points_breakdown": {
                 "countries": 100,
-                "score": null
+                "score": 60
               },
               "is_exact": false
             },
@@ -40192,7 +40192,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1378,
+          "subtotal": 1576,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -40222,9 +40222,9 @@
                 "score": "1 - 2"
               },
               "actual_score": "0 - 1",
-              "points": 60,
+              "points": 95,
               "points_breakdown": {
-                "countries": 0,
+                "countries": 35,
                 "score": 60
               },
               "is_exact": false
@@ -40432,10 +40432,10 @@
                 "score": "2 - 1"
               },
               "actual_score": "2 - 0",
-              "points": 100,
+              "points": 163,
               "points_breakdown": {
                 "countries": 100,
-                "score": null
+                "score": 63
               },
               "is_exact": false
             },
@@ -43640,7 +43640,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1384,
+          "subtotal": 1547,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -43880,10 +43880,10 @@
                 "score": "2 - 1"
               },
               "actual_score": "2 - 0",
-              "points": 100,
+              "points": 163,
               "points_breakdown": {
                 "countries": 100,
-                "score": null
+                "score": 63
               },
               "is_exact": false
             },
@@ -47088,7 +47088,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1433,
+          "subtotal": 1561,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -47328,10 +47328,10 @@
                 "score": "2 - 1"
               },
               "actual_score": "2 - 0",
-              "points": 65,
+              "points": 128,
               "points_breakdown": {
                 "countries": 65,
-                "score": null
+                "score": 63
               },
               "is_exact": false
             },
@@ -50536,7 +50536,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1291,
+          "subtotal": 1361,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -50779,7 +50779,7 @@
               "points": 70,
               "points_breakdown": {
                 "countries": 70,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             },
@@ -53984,7 +53984,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1058,
+          "subtotal": 1221,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -54224,10 +54224,10 @@
                 "score": "2 - 1"
               },
               "actual_score": "2 - 0",
-              "points": 100,
+              "points": 163,
               "points_breakdown": {
                 "countries": 100,
-                "score": null
+                "score": 63
               },
               "is_exact": false
             },
