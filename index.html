@@ -880,6 +880,10 @@ const DEBRIEF_RULES={
   promotedCardsWithNext:2,
   promotedCardsWithoutNext:3,
   bestCallMaxShared:5,
+  playerExposureDays:7,
+  playerFatigueCap:34,
+  underfeaturedMinWaitDays:3,
+  underfeaturedRankFloor:7,
   // Auto-open the freshest unseen recap on first load of the day, but stop
   // auto-popping once it's stale (past late morning, viewer-local). It always
   // stays reachable from the header button; this only governs the pop.
@@ -1668,6 +1672,16 @@ const DEBRIEF_COPY={
     ()=>`${top.name}'s daily win cut ${narrowed} points from the lead. ${ctx.leader.name} still has first.`,
     ()=>`The leader stays the leader, but ${top.name} made the chase ${narrowed} points tighter.`
   ],
+  underradar:({p})=>[
+    ()=>`Under the Radar: ${p.name}`,
+    ()=>`${p.name} Gets a Turn in the Light`,
+    ()=>`Worth a Look: ${p.name}`
+  ],
+  'underradar-dek':({p,row,wait})=>[
+    ()=>`${p.points} points on the day from ${row?ordinal(row.rank)+' overall':'the chasing pack'}, and ${wait} settled days since their last feature.`,
+    ()=>`${p.name} has been quiet in the headlines, but ${p.points} today earns a proper mention.`,
+    ()=>`Not the loudest card, just the right one to notice: ${p.points} points and a little overdue attention.`
+  ],
   allmissed:({miss})=>[
     ()=>`Nobody Finds ${miss.matchup}`,
     ()=>`${miss.matchup} Stumps the Pool`,
@@ -1945,6 +1959,15 @@ function debriefCopy(ctx,id,target,data){
   return typeof v==='function'?v():v;
 }
 function debriefStoryTarget(s){ return s&&s.link&&(s.link.matchKey||s.link.playerId)||''; }
+function debriefStoryPlayerIds(s){
+  const ids=new Set((s&&s.players)||[]);
+  if(s&&s.link&&s.link.playerId) ids.add(s.link.playerId);
+  return [...ids].filter(Boolean);
+}
+function debriefCountableFeaturePlayerIds(s){
+  const ids=debriefStoryPlayerIds(s);
+  return ids.length<=2?ids:[];
+}
 function debriefStoryFatigueTarget(s){
   if(!s||!s.link) return '';
   if(s.link.matchKey) return `m:${s.link.matchKey}`;
@@ -1955,9 +1978,12 @@ function debriefLeadRecord(date,s){
   return s?{date,id:s.id,target:debriefStoryFatigueTarget(s),headline:s.headline}:null;
 }
 function debriefDerivedLead(date){
-  const ctx=debriefContext(date); if(!ctx) return null;
-  const stories=debriefStories(ctx,{noFatigue:true});
-  return debriefLeadRecord(date,stories[0]);
+  const cache=debriefExposureCaches().leads;
+  if(date in cache) return cache[date];
+  const ctx=debriefContext(date);
+  const rec=ctx?debriefLeadRecord(date,debriefStories(ctx,{noFatigue:true})[0]):null;
+  cache[date]=rec;
+  return rec;
 }
 function debriefRecentLeads(ctx){
   const dates=ctx.settledDates||[], idx=ctx.dayIndex==null?dates.indexOf(ctx.date):ctx.dayIndex;
@@ -2076,10 +2102,146 @@ function debriefStoryFatigue(s,recent,major){
   });
   return n;
 }
-function debriefStorySort(ctx,stories,recent){
+// Per-edition caches, all keyed by date and invalidated together the moment a
+// data refresh swaps in a new PRED/HISTORY (compared by identity). Deriving the
+// exposure window rebuilds every prior edition's plan, and each plan re-runs the
+// full story pipeline, so ctx and derived-lead lookups memoised here keep that
+// cascade from re-flattening all of predictions.json once per prior day.
+let _debriefExposureCache=null,_debriefExposureFor=null,_debriefExposurePredFor=null,_debriefPlanCache=null,_debriefCtxCache=null,_debriefLeadCache=null;
+function debriefExposureCaches(){
+  if(_debriefExposureFor!==HISTORY || _debriefExposurePredFor!==PRED || !_debriefExposureCache){
+    _debriefExposureCache={}; _debriefPlanCache={}; _debriefCtxCache={}; _debriefLeadCache={};
+    _debriefExposureFor=HISTORY; _debriefExposurePredFor=PRED;
+  }
+  return {exposure:_debriefExposureCache, plans:_debriefPlanCache, ctx:_debriefCtxCache, leads:_debriefLeadCache};
+}
+function debriefAddExposure(map,playerId,date,weight,role){
+  if(!playerId) return;
+  let r=map[playerId];
+  if(!r) r=map[playerId]={playerId,score:0,appearances:0,headline:0,lastDate:null,roles:{}};
+  r.score+=weight; r.appearances++;
+  if(role==='hero') r.headline++;
+  r.lastDate=date;
+  r.roles[role]=(r.roles[role]||0)+1;
+}
+function debriefToughForCtx(ctx){
+  const cand=debriefToughDecision(ctx);
+  if(!cand) return null;
+  return (ctx.players||[]).find(p=>p.teamId===cand.playerId)||null;
+}
+function debriefBestCallShown(ctx){
+  const calls=ctx.bestCalls||[], bc=calls[0]; if(!bc) return null;
+  const mvpIds=new Set((ctx.topPlayers||[]).map(p=>p.teamId));
+  const show= calls.length<=DEBRIEF_RULES.bestCallMaxShared && (calls.length>1 || !mvpIds.has(bc.owner.teamId));
+  return show?{calls,bc}:null;
+}
+function debriefEditionPlan(ctx){
+  if(!ctx) return null;
+  const caches=debriefExposureCaches();
+  if(caches.plans[ctx.date]) return caches.plans[ctx.date];
+  const stories=debriefStories(ctx);
+  const hero=stories[0];
+  const top=ctx.players[0];
+  const tops=(ctx.topPlayers&&ctx.topPlayers.length)?ctx.topPlayers:(top?[top]:[]);
+  const bestCall=debriefBestCallShown(ctx);
+  const toughPlayer=debriefToughForCtx(ctx);
+  const seenTargets=new Set();
+  const podTargets=new Set(bestCall?bestCall.calls.map(call=>String(call.f.num)):[]);
+  const heroTarget=debriefStoryTarget(hero);
+  if(heroTarget) seenTargets.add(heroTarget);
+  tops.forEach(p=>seenTargets.add(p.teamId));
+  if(ctx.topClimber) seenTargets.add(ctx.topClimber.teamId);
+  if(ctx.topFaller) seenTargets.add(ctx.topFaller.teamId);
+  if(toughPlayer) seenTargets.add(toughPlayer.teamId);
+  const covered=['daywinner','climber','faller'];
+  const sidebar=[];
+  for(const s of stories){
+    if(hero&&s.id===hero.id || covered.includes(s.id)) continue;
+    const t=debriefStoryTarget(s);
+    if(t && podTargets.has(t) && ['bullseye','goalfest'].includes(s.id)) continue;
+    if(t && seenTargets.has(t)) continue;
+    if(t) seenTargets.add(t);
+    sidebar.push(s);
+    if(sidebar.length>=5) break;
+  }
+  const underStory=stories.find(s=>s.id==='underradar' && (!hero || s!==hero));
+  if(underStory && !sidebar.some(s=>s.id==='underradar')){
+    const t=debriefStoryTarget(underStory);
+    if(!t || !seenTargets.has(t)){
+      if(sidebar.length>=5) sidebar.pop();
+      sidebar.splice(Math.min(1,sidebar.length),0,underStory);
+      if(t) seenTargets.add(t);
+    }
+  }
+  const dayCards=(top?1:0)+(bestCall?1:0)+(toughPlayer?1:0);
+  const maxPromotedCards=ctx.nextDay?DEBRIEF_RULES.promotedCardsWithNext:DEBRIEF_RULES.promotedCardsWithoutNext;
+  const promoteN=Math.max(0,Math.min(maxPromotedCards-dayCards,sidebar.length));
+  const plan={stories,hero,top,tops,bestCall,toughPlayer,sidebar,
+    promoted:sidebar.slice(0,promoteN), rest:sidebar.slice(promoteN,promoteN+3)};
+  caches.plans[ctx.date]=plan;
+  return plan;
+}
+function debriefEditionPlayerExposure(ctx){
+  const plan=debriefEditionPlan(ctx), out=[];
+  if(!(plan&&plan.hero)) return out;
+  const push=(role,weight,ids)=>ids.forEach(id=>out.push({playerId:id,role,weight}));
+  push('hero',4.2,debriefCountableFeaturePlayerIds(plan.hero));
+  const mvpIds=(plan.tops||[]).map(p=>p.teamId);
+  if(mvpIds.length<=2) push('mvp',3.1,mvpIds);
+  if(plan.bestCall){
+    const callIds=plan.bestCall.calls.map(c=>c.owner.teamId);
+    if(callIds.length<=2) push('pick',2.2,callIds);
+  }
+  if(ctx.topClimber) push('riser',2.1,[ctx.topClimber.teamId]);
+  if(ctx.topFaller) push('slide',1.5,[ctx.topFaller.teamId]);
+  if(plan.toughPlayer) push('tough',1.1,[plan.toughPlayer.teamId]);
+  (plan.promoted||[]).forEach(s=>push('promoted',1.8,debriefCountableFeaturePlayerIds(s)));
+  (plan.rest||[]).forEach(s=>push('digest',1.0,debriefCountableFeaturePlayerIds(s)));
+  return out;
+}
+function debriefRecentPlayerExposure(ctx){
+  const caches=debriefExposureCaches(), key=ctx&&ctx.date;
+  if(!key) return {};
+  if(caches.exposure[key]) return caches.exposure[key];
+  const dates=ctx.settledDates||[], idx=ctx.dayIndex==null?dates.indexOf(ctx.date):ctx.dayIndex;
+  const out={};
+  const start=Math.max(0,idx-DEBRIEF_RULES.playerExposureDays);
+  for(let i=start;i<idx;i++){
+    const d=dates[i], prior=debriefContext(d); if(!prior) continue;
+    const age=idx-i, decay=Math.max(.35,1-(age-1)*.13);
+    debriefEditionPlayerExposure(prior).forEach(e=>{
+      debriefAddExposure(out,e.playerId,d,e.weight*decay,e.role);
+    });
+  }
+  caches.exposure[key]=out;
+  return out;
+}
+function debriefPlayerWaitDays(ctx,playerId,exposure){
+  const dates=ctx.settledDates||[], idx=ctx.dayIndex==null?dates.indexOf(ctx.date):ctx.dayIndex;
+  if(idx<=0) return 0;
+  const last=exposure&&exposure[playerId]&&exposure[playerId].lastDate;
+  if(!last) return Math.min(idx,DEBRIEF_RULES.playerExposureDays+1);
+  const li=dates.indexOf(last);
+  return li<0?DEBRIEF_RULES.playerExposureDays+1:idx-li;
+}
+function debriefPlayerFatigue(ctx,playerId,major,exposure){
+  if(!playerId||major) return 0;
+  const e=(exposure||debriefRecentPlayerExposure(ctx))[playerId];
+  if(!e) return 0;
+  return Math.min(DEBRIEF_RULES.playerFatigueCap,Math.round(e.score*5+e.headline*5));
+}
+function debriefPlayerSpotlightBonus(ctx,playerId,exposure){
+  if(!playerId) return 0;
+  const wait=debriefPlayerWaitDays(ctx,playerId,exposure||debriefRecentPlayerExposure(ctx));
+  if(wait<DEBRIEF_RULES.underfeaturedMinWaitDays) return 0;
+  return Math.min(20,6+(wait-DEBRIEF_RULES.underfeaturedMinWaitDays+1)*3);
+}
+function debriefStorySort(ctx,stories,recent,opt){
+  opt=opt||{};
   const topIds=new Set((ctx.topPlayers||[]).map(p=>p.teamId));
   const major=new Set(['perfect','takeover','allmissed']);
   const group=new Set(['allmissed','consensus','bullseye','allhit','split','noexact','tighttop','goalfest','cleancrew','droughtend','cash','trap','squeeze']);
+  const exposure=opt.noPlayerFatigue?{}:debriefRecentPlayerExposure(ctx);
   return stories.map((s,i)=>{
     let score=s.drama;
     if(group.has(s.id) && ctx.players.length>=4) score+=7;
@@ -2088,6 +2250,17 @@ function debriefStorySort(ctx,stories,recent){
     if(s.id==='quiet') score-=3;
     if(s.link&&s.link.playerId&&topIds.has(s.link.playerId)&&!major.has(s.id)) score-=15;
     score-=debriefStoryFatigue(s,recent,major);
+    if(!opt.noPlayerFatigue){
+      // Mirror the exposure-accrual rule: only solo/duo story subjects carry
+      // per-player fatigue. Group/list items (>2 subjects) never accrue and so
+      // aren't penalised per-listed-player — a novel group story isn't buried
+      // just because a few of its members were featured individually elsewhere.
+      const playerIds=debriefCountableFeaturePlayerIds(s), isMajor=major.has(s.id);
+      playerIds.forEach(id=>{
+        score-=debriefPlayerFatigue(ctx,id,isMajor,exposure);
+        if(['underradar','climber','multiexact','nearperfect'].includes(s.id)) score+=debriefPlayerSpotlightBonus(ctx,id,exposure);
+      });
+    }
     return {...s,_score:score,_order:i};
   }).sort((a,b)=>b._score-a._score || b.drama-a.drama || a._order-b._order);
 }
@@ -2128,6 +2301,7 @@ function debriefFixtureStats(day, nameById){
       key:String(f.num), f, counted, hitCount, exactCount, actualWinner, consensusWinner,
       consensusShare:counted?cmax/counted:0, totalGoals:m?m.h+m.a:0, matchup,
       resultPhrase:m?(actualWinner==='D'?`the ${m.h}–${m.a} stalemate`:`${side(actualWinner)}'s ${m.h}–${m.a}`):'',
+      heroId:hero&&hero.teamId,
       heroName:hero?nameById[hero.teamId]:'',
       wrongSide:side(consensusWinner),
       consensusPhrase:consensusWinner==='D'?'toward a draw':`behind ${side(consensusWinner)}`,
@@ -2142,6 +2316,16 @@ function debriefMajorityRound(fxs){
 
 /* Assemble everything a detector might need for one settled day. */
 function debriefContext(date){
+  // Pure function of PRED/HISTORY, but heavy (re-flattens every prediction).
+  // The exposure cascade calls it once per prior day across the whole history,
+  // so memoise by date; null results are cached too (via `date in cache`).
+  const cache=debriefExposureCaches().ctx;
+  if(date in cache) return cache[date];
+  const ctx=debriefContextBuild(date);
+  cache[date]=ctx;
+  return ctx;
+}
+function debriefContextBuild(date){
   const fixtures=debriefFixtures();
   const days=debriefDays(fixtures);
   const day=days.get(date); if(!day || !day.settled) return null;
@@ -2275,7 +2459,8 @@ function debriefStories(ctx,opt){
       dek: tied?copy('daywinner-tie-dek','top',{ctx,top})
         : second?copy('daywinner-dek',top.teamId,{top,second,margin})
         :`${top.points} points and the day's bragging rights.`,
-      link:tied?null:{playerId:top.teamId}});
+      link:tied?null:{playerId:top.teamId},
+      players:tied?ctx.topPlayers.map(p=>p.teamId):[top.teamId]});
   }
 
   if(ctx.prevLeader && ctx.leader && ctx.prevLeader.teamId!==ctx.leader.teamId){
@@ -2287,7 +2472,8 @@ function debriefStories(ctx,opt){
         :copy('takeover',ctx.leader.teamId,{ctx,reign}),
       dek: longReign?copy('takeover-long-dek',ctx.leader.teamId,{ctx,reign})
         :copy('takeover-dek',ctx.leader.teamId,{ctx,reign}),
-      link:{playerId:ctx.leader.teamId}});
+      link:{playerId:ctx.leader.teamId},
+      players:[ctx.leader.teamId,ctx.prevLeader.teamId]});
   } else if(ctx.leaderN>=2 && ctx.leader){
     add({id:'streak',drama:38+Math.min(42,ctx.leaderN*7),icon:'👑',
       headline:copy('streak',ctx.leader.teamId,{ctx}),
@@ -2318,7 +2504,8 @@ function debriefStories(ctx,opt){
       add({id:'loudchase',drama:47+Math.min(20,Math.round(narrowed/4)),icon:'📣',
         headline:copy('loudchase',top.teamId,{ctx,top,narrowed}),
         dek:copy('loudchase-dek',top.teamId,{ctx,top,narrowed}),
-        link:{playerId:top.teamId}});
+        link:{playerId:top.teamId},
+        players:[top.teamId,ctx.leader.teamId]});
     }
   }
 
@@ -2332,7 +2519,8 @@ function debriefStories(ctx,opt){
   if(lone) add({id:'lone',drama:67,icon:'🧠',
     headline:copy('lone',lone.key,{lone}),
     dek:copy('lone-dek',lone.key,{lone}),
-    link:{matchKey:lone.key}});
+    link:{matchKey:lone.key},
+    players:lone.heroId?[lone.heroId]:[]});
 
   const cons=fs.filter(s=>s.consensusWinner&&s.actualWinner&&s.consensusWinner!==s.actualWinner&&s.consensusShare>=0.55&&s.hitCount<s.counted)
               .sort((a,b)=>b.consensusShare-a.consensusShare)[0];
@@ -2387,7 +2575,8 @@ function debriefStories(ctx,opt){
     add({id:'droughtend',drama:42+Math.min(18,ctx.poolExacts*4),icon:'🎯',
       headline:copy('droughtend','pool',{ctx,exacts}),
       dek:copy('droughtend-dek','pool',{ctx,exacts}),
-      link:exacts[0]?{playerId:exacts[0].teamId}:null});
+      link:exacts[0]?{playerId:exacts[0].teamId}:null,
+      players:exacts.slice(0,3).map(p=>p.teamId)});
   }
 
   const clean=ctx.players.filter(p=>p.nFin>=2&&p.hits===p.nFin&&p.exacts<p.nFin);
@@ -2395,7 +2584,8 @@ function debriefStories(ctx,opt){
     add({id:'cleancrew',drama:37+Math.min(18,clean.length*4),icon:'✅',
       headline:copy('cleancrew','pool',{clean}),
       dek:copy('cleancrew-dek','pool',{clean}),
-      link:null});
+      link:null,
+      players:clean.slice(0,3).map(p=>p.teamId)});
   }
 
   const wild=fs.slice().sort((a,b)=>b.totalGoals-a.totalGoals)[0];
@@ -2431,15 +2621,54 @@ function debriefStories(ctx,opt){
     if(squeeze) add({id:'squeeze',drama:36+Math.min(22,Math.round(squeeze.diff/3)),icon:'🪜',
       headline:copy('squeeze',squeeze.b.teamId,{squeeze}),
       dek:copy('squeeze-dek',squeeze.b.teamId,{squeeze}),
-      link:{playerId:squeeze.b.teamId}});
+      link:{playerId:squeeze.b.teamId},
+      players:[squeeze.a.teamId,squeeze.b.teamId]});
   }
 
   add({id:'quiet',drama:8,icon:'🗞️',
     headline:copy('quiet',ctx.leader&&ctx.leader.teamId,{ctx}),
     dek:copy('quiet-dek',ctx.leader&&ctx.leader.teamId,{ctx}),
-    link:ctx.leader?{playerId:ctx.leader.teamId}:null});
+    link:ctx.leader?{playerId:ctx.leader.teamId}:null,
+    players:ctx.leader?[ctx.leader.teamId]:[]});
 
-  return debriefStorySort(ctx,S,opt.noFatigue?[]:debriefRecentLeads(ctx));
+  // Under the Radar: give an overdue, above-average player a mention so the
+  // Debrief eventually features everyone rather than orbiting the same names.
+  // Runs last so featureIds sees every other story already added — a player
+  // who's the subject (solo or duo) of any other card today is excluded, and
+  // group/list items (>2 subjects, e.g. "10 got it right") never count.
+  if(!opt.noFatigue){
+    const exposure=debriefRecentPlayerExposure(ctx);
+    const featureIds=new Set([
+      ...(ctx.topPlayers||[]).map(p=>p.teamId),
+      ctx.topClimber&&ctx.topClimber.teamId,
+      ctx.topFaller&&ctx.topFaller.teamId,
+      ctx.leader&&ctx.leader.teamId
+    ].filter(Boolean));
+    S.forEach(s=>debriefCountableFeaturePlayerIds(s).forEach(id=>featureIds.add(id)));
+    const under=ctx.players
+      .filter(p=>p.points>0 && !featureIds.has(p.teamId))
+      .map(p=>{
+        const row=(ctx.standings||[]).find(r=>r.teamId===p.teamId);
+        const wait=debriefPlayerWaitDays(ctx,p.teamId,exposure);
+        const rank=row&&row.rank||99;
+        const enoughWait=wait>=DEBRIEF_RULES.underfeaturedMinWaitDays;
+        const lowerBand=rank>=DEBRIEF_RULES.underfeaturedRankFloor;
+        const aboveAvg=p.points>=Math.max(1,Math.round(ctx.avgDay*.82));
+        const score=(enoughWait?wait*6:0)+(lowerBand?8:0)+(aboveAvg?7:0)+Math.min(10,Math.round(p.points/15));
+        return {...p,row,wait,rank,enoughWait,lowerBand,aboveAvg,spotScore:score};
+      })
+      .filter(p=>(p.enoughWait||p.lowerBand) && p.aboveAvg)
+      .sort((a,b)=>b.spotScore-a.spotScore || b.points-a.points || b.wait-a.wait || a.name.localeCompare(b.name))[0];
+    if(under){
+      add({id:'underradar',drama:25+Math.min(22,under.spotScore),icon:'🔎',
+        headline:copy('underradar',under.teamId,{p:under,row:under.row,wait:under.wait}),
+        dek:copy('underradar-dek',under.teamId,{p:under,row:under.row,wait:under.wait}),
+        link:{playerId:under.teamId},
+        players:[under.teamId]});
+    }
+  }
+
+  return debriefStorySort(ctx,S,opt.noFatigue?[]:debriefRecentLeads(ctx),{noPlayerFatigue:!!opt.noFatigue});
 }
 
 /* Short eyebrow label for a story promoted into the day's awards row. */
@@ -2447,7 +2676,7 @@ function debriefStoryTag(id){
   return ({
     perfect:'Perfect card', nearperfect:'So close', multiexact:'Multiple exacts', daywinner:'Day winner',
     takeover:'New leader', streak:'Still top', climber:'On the rise',
-    faller:'Slipping', loudchase:'Loud chase', allmissed:'Pool blank',
+    faller:'Slipping', loudchase:'Loud chase', underradar:'Under radar', allmissed:'Pool blank',
     lone:'Lone read', consensus:'Group misses', trap:'Trap match',
     bullseye:'Bullseye club', allhit:'Everyone scores', cash:'Consensus cashes',
     split:'Split room', noexact:'No bullseyes', droughtend:'Drought ends',
@@ -2645,43 +2874,18 @@ function renderDebriefView(){
       `<div class="mbody"><div class="db-empty">${debriefEmptyHtml(date)}</div></div>`;
     wireModalControls(modal); return;
   }
-  const stories=debriefStories(ctx);
-  const hero=stories[0];
-  const top=ctx.players[0];
-  const tops=(ctx.topPlayers&&ctx.topPlayers.length)?ctx.topPlayers:(top?[top]:[]);
+  const plan=debriefEditionPlan(ctx);
+  const stories=plan.stories;
+  const hero=plan.hero;
+  const top=plan.top;
+  const tops=plan.tops;
   const dayPtsFor=id=>{ const p=ctx.players.find(x=>x.teamId===id); return p?p.points:0; };
   const c=ctx.topClimber, f=ctx.topFaller;
-  const low=ctx.players.length>=4?ctx.players[ctx.players.length-1]:null;
-  const toughShow=!!debriefToughDecision(ctx);
-  const calls=ctx.bestCalls||[], bc=calls[0];
-  const mvpIds=new Set(tops.map(p=>p.teamId));
-  const showPod=bc && calls.length<=DEBRIEF_RULES.bestCallMaxShared && (calls.length>1 || !mvpIds.has(bc.owner.teamId));
+  const low=plan.toughPlayer;
+  const toughShow=!!low;
+  const calls=plan.bestCall?plan.bestCall.calls:[], bc=plan.bestCall&&plan.bestCall.bc;
+  const showPod=!!plan.bestCall;
   const podClub=calls.length>3, podExact=calls.every(c=>c.pk.exact);
-  // Sidebar = runner-up stories, minus the hero and minus the ones already given
-  // their own dedicated card: 'daywinner' (MVP), 'climber'/'faller' (On the move).
-  // Also dedupe by target so two stories don't point at the same match/player, or
-  // pile extra attention onto someone already carrying a visible card.
-  const covered=['daywinner','climber','faller'];
-  const seenTargets=new Set();
-  const podTargets=new Set(showPod?calls.map(call=>String(call.f.num)):[]);
-  const heroTarget=debriefStoryTarget(hero);
-  if(heroTarget) seenTargets.add(heroTarget);
-  tops.forEach(p=>seenTargets.add(p.teamId));
-  if(c) seenTargets.add(c.teamId);
-  if(f) seenTargets.add(f.teamId);
-  // Only reserve the low scorer when the tough card actually shows — when it's
-  // suppressed (not notable, or fatigued) they're free to surface elsewhere.
-  if(low && toughShow) seenTargets.add(low.teamId);
-  const sidebar=[];
-  for(const s of stories){
-    if(s.id===hero.id || covered.includes(s.id)) continue;
-    const t=debriefStoryTarget(s);
-    if(t && podTargets.has(t) && ['bullseye','goalfest'].includes(s.id)) continue;
-    if(t && seenTargets.has(t)) continue;
-    if(t) seenTargets.add(t);
-    sidebar.push(s);
-    if(sidebar.length>=5) break;
-  }
   view._ctx=ctx; view._hero=hero;
 
   const mvp=top?`
@@ -2758,11 +2962,8 @@ function renderDebriefView(){
   // Keep the day's recap from looking thin without letting it sprawl. When a
   // Next up card exists, promote fewer runner-up stories into the awards row and
   // leave more of the digest in "Also today".
-  const dayCards=(top?1:0)+(showPod?1:0)+(toughShow?1:0);
-  const maxPromotedCards=ctx.nextDay?DEBRIEF_RULES.promotedCardsWithNext:DEBRIEF_RULES.promotedCardsWithoutNext;
-  const promoteN=Math.max(0,Math.min(maxPromotedCards-dayCards,sidebar.length));
-  const promoted=sidebar.slice(0,promoteN);
-  const rest=sidebar.slice(promoteN,promoteN+3);
+  const promoted=plan.promoted;
+  const rest=plan.rest;
   const promotedHtml=promoted.map(s=>`
     <div class="db-spot db-storyspot${s.link?'':' db-static'}"${debriefLinkAttr(s.link)}>
       <div class="db-av" aria-hidden="true">${s.icon||'🗞️'}</div>
