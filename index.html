@@ -2951,14 +2951,22 @@ function hourInZone(tz){
 function debriefAutoWindowOpen(){
   return hourInZone(TZ)<DEBRIEF_RULES.autoOpenEndHour;
 }
+/* Do not auto-pop the Debrief over live match context. The existing isLive()
+   helper already treats a fixture as started when the viewer's clock has passed
+   kickoff, while still honoring Final badges and the hard cap for stale feeds. */
+function debriefAutoBlockedByMatch(){
+  return liveMatches().length>0;
+}
 /* Auto-pop once per canonical UTC-cutoff day, the first time the app opens
    after that day has truly settled (every fixture Final) and cleared the UTC
    publish gate, as long as it's still before the early-afternoon cutoff in the
-   viewer's timezone. The date-keyed flag means it never nags twice for the same
-   day, so this is effectively "open on first load of the day". */
+   viewer's timezone and no match is already live/started. The date-keyed flag
+   means it never nags twice for the same day, so this is effectively "open on
+   first load of the day". */
 function maybeAutoDebrief(){
   const date=latestSettledDay(); if(!date) return;
   if(!debriefAutoWindowOpen()) return;
+  if(debriefAutoBlockedByMatch()) return;
   if(!debriefSeen(date)) openDebrief(date);
 }
 /* Keep the header button in sync: hidden until a day settles, with a "new" dot
