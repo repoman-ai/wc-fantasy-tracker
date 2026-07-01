@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-01T02:31:41Z",
+  "updated": "2026-07-01T02:41:26Z",
   "pool": {
     "id": "34193",
     "slug": "bobby-and-friends",
@@ -18,7 +18,7 @@
       "name": "Alec",
       "flag": "ESP",
       "rank": 1,
-      "points": 5521,
+      "points": 5524,
       "exact": 12
     },
     {
@@ -28,8 +28,8 @@
       "name": "Daniel",
       "flag": "FRA",
       "rank": 2,
-      "points": 5477,
-      "exact": 11
+      "points": 5504,
+      "exact": 12
     },
     {
       "team_id": "246775",
@@ -38,7 +38,7 @@
       "name": "bobby",
       "flag": "FRA",
       "rank": 3,
-      "points": 5324,
+      "points": 5327,
       "exact": 11
     },
     {
@@ -48,7 +48,7 @@
       "name": "El Capitan",
       "flag": "FRA",
       "rank": 4,
-      "points": 5129,
+      "points": 5132,
       "exact": 9
     },
     {
@@ -58,7 +58,7 @@
       "name": "Jazmin",
       "flag": "POR",
       "rank": 5,
-      "points": 5103,
+      "points": 5115,
       "exact": 10
     },
     {
@@ -78,7 +78,7 @@
       "name": "JJ",
       "flag": "FRA",
       "rank": 7,
-      "points": 5020,
+      "points": 5023,
       "exact": 7
     },
     {
@@ -88,7 +88,7 @@
       "name": "Baronmark",
       "flag": "FRA",
       "rank": 8,
-      "points": 4998,
+      "points": 4983,
       "exact": 12
     },
     {
@@ -98,7 +98,7 @@
       "name": "Valewalle",
       "flag": "ESP",
       "rank": 9,
-      "points": 4902,
+      "points": 4905,
       "exact": 12
     },
     {
@@ -108,7 +108,7 @@
       "name": "Gabriela",
       "flag": "NED",
       "rank": 10,
-      "points": 4898,
+      "points": 4901,
       "exact": 9
     },
     {
@@ -118,7 +118,7 @@
       "name": "Yo",
       "flag": "MEX",
       "rank": 11,
-      "points": 4848,
+      "points": 4860,
       "exact": 6
     },
     {
@@ -128,7 +128,7 @@
       "name": "Karenwj",
       "flag": "NED",
       "rank": 12,
-      "points": 4739,
+      "points": 4742,
       "exact": 8
     },
     {
@@ -138,7 +138,7 @@
       "name": "Beturompequinielas",
       "flag": "ARG",
       "rank": 13,
-      "points": 4509,
+      "points": 4512,
       "exact": 5
     },
     {
@@ -148,7 +148,7 @@
       "name": "remi",
       "flag": "FRA",
       "rank": 14,
-      "points": 4439,
+      "points": 4442,
       "exact": 9
     },
     {
@@ -168,7 +168,7 @@
       "name": "Luisa",
       "flag": "POR",
       "rank": 16,
-      "points": 4001,
+      "points": 4004,
       "exact": 3
     }
   ]
