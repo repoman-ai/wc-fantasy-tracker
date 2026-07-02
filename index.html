@@ -896,6 +896,10 @@ const DEBRIEF_RULES={
   dayCloseGroupCapMin:130,
   dayCloseKnockoutCapMin:210
 };
+const DEBRIEF_MANUAL_HIGHLIGHTS=[
+  // Recap date uses the same UTC cutoff day as the Debrief URL (?debrief=YYYY-MM-DD).
+  {date:'2026-07-03', playerId:'247525', note:'Karenwj'}
+];
 /* Secondary "official close" path: a snapshot the scraper already trusts as
    settled and that lands this long after the last whistle. The primary, safer
    path is debriefFrozenClose (130/210 min, settled-flag-independent); this only
@@ -1230,6 +1234,24 @@ function liveMatches(){
   return [...seen.values()];
 }
 function clean(s){ return (s==null?'':String(s)).replace(/^[\s·•\-–]+|[\s·•\-–]+$/g,'').trim(); }
+
+function debriefManualHighlightMatch(player, entry){
+  if(!(player&&entry)) return false;
+  const playerId=String(player.teamId||'');
+  if(entry.playerId && playerId===String(entry.playerId)) return true;
+  const slug=clean(entry.slug||'').toLowerCase();
+  if(!slug) return false;
+  const source=Object.values(PRED||{}).find(p=>String(p.team_id||'')===playerId);
+  return clean(source&&source.slug||player.name).toLowerCase()===slug;
+}
+function debriefManualHighlightFor(ctx, featureIds){
+  if(!(ctx&&Array.isArray(ctx.players))) return null;
+  const entry=DEBRIEF_MANUAL_HIGHLIGHTS.find(h=>h&&h.date===ctx.date);
+  if(!entry) return null;
+  const player=ctx.players.find(p=>debriefManualHighlightMatch(p,entry));
+  if(!player || (featureIds&&featureIds.has(player.teamId))) return null;
+  return player;
+}
 
 /* Collect every fixture across all players' prediction pages, deduped by
    fixture number, into a single global match list (used for the results
@@ -2645,8 +2667,9 @@ function debriefStories(ctx,opt){
       ctx.leader&&ctx.leader.teamId
     ].filter(Boolean));
     S.forEach(s=>debriefCountableFeaturePlayerIds(s).forEach(id=>featureIds.add(id)));
+    const manual=debriefManualHighlightFor(ctx,featureIds);
     const under=ctx.players
-      .filter(p=>p.points>0 && !featureIds.has(p.teamId))
+      .filter(p=>(p.points>0 || (manual&&manual.teamId===p.teamId)) && !featureIds.has(p.teamId))
       .map(p=>{
         const row=(ctx.standings||[]).find(r=>r.teamId===p.teamId);
         const wait=debriefPlayerWaitDays(ctx,p.teamId,exposure);
@@ -2654,13 +2677,15 @@ function debriefStories(ctx,opt){
         const enoughWait=wait>=DEBRIEF_RULES.underfeaturedMinWaitDays;
         const lowerBand=rank>=DEBRIEF_RULES.underfeaturedRankFloor;
         const aboveAvg=p.points>=Math.max(1,Math.round(ctx.avgDay*.82));
+        const manualBoost=manual&&manual.teamId===p.teamId;
         const score=(enoughWait?wait*6:0)+(lowerBand?8:0)+(aboveAvg?7:0)+Math.min(10,Math.round(p.points/15));
-        return {...p,row,wait,rank,enoughWait,lowerBand,aboveAvg,spotScore:score};
+        return {...p,row,wait,rank,enoughWait,lowerBand,aboveAvg,manualBoost,spotScore:manualBoost?score+80:score};
       })
-      .filter(p=>(p.enoughWait||p.lowerBand) && p.aboveAvg)
-      .sort((a,b)=>b.spotScore-a.spotScore || b.points-a.points || b.wait-a.wait || a.name.localeCompare(b.name))[0];
+      .filter(p=>p.manualBoost || ((p.enoughWait||p.lowerBand) && p.aboveAvg))
+      .sort((a,b)=>(b.manualBoost?1:0)-(a.manualBoost?1:0) || b.spotScore-a.spotScore || b.points-a.points || b.wait-a.wait || a.name.localeCompare(b.name))[0];
     if(under){
-      add({id:'underradar',drama:25+Math.min(22,under.spotScore),icon:'🔎',
+      add({id:'underradar',drama:under.manualBoost?120:25+Math.min(22,under.spotScore),icon:'🔎',
+        manual:!!under.manualBoost,
         headline:copy('underradar',under.teamId,{p:under,row:under.row,wait:under.wait}),
         dek:copy('underradar-dek',under.teamId,{p:under,row:under.row,wait:under.wait}),
         link:{playerId:under.teamId},
