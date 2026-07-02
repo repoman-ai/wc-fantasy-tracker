@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-01T23:55:18Z",
+  "updated": "2026-07-02T00:01:25Z",
   "players": {
     "247930": {
       "team_id": "247930",
@@ -6033,10 +6033,10 @@
               "fixture_number": 81,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-02T00:00:00Z",
-              "kickoff_local": "2026-07-02 02:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "Levi's Stadium, Santa Clara",
               "hidden": false,
               "match": {
@@ -6056,11 +6056,11 @@
                 "hidden": false,
                 "score": "2 - 0"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 130,
               "points_breakdown": {
                 "countries": 130,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             },
@@ -9160,7 +9160,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1789,
+          "subtotal": 1724,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -9481,10 +9481,10 @@
               "fixture_number": 81,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-02T00:00:00Z",
-              "kickoff_local": "2026-07-02 02:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "Levi's Stadium, Santa Clara",
               "hidden": false,
               "match": {
@@ -9504,7 +9504,7 @@
                 "hidden": false,
                 "score": "2 - 1"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 65,
               "points_breakdown": {
                 "countries": 65,
@@ -12608,7 +12608,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 2102,
+          "subtotal": 1937,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -12673,9 +12673,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "2 - 1",
-              "points": 190,
+              "points": 155,
               "points_breakdown": {
-                "countries": 100,
+                "countries": 65,
                 "score": 90
               },
               "is_exact": true
@@ -12929,10 +12929,10 @@
               "fixture_number": 81,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-02T00:00:00Z",
-              "kickoff_local": "2026-07-02 02:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "Levi's Stadium, Santa Clara",
               "hidden": false,
               "match": {
@@ -12952,7 +12952,7 @@
                 "hidden": false,
                 "score": "2 - 0"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 130,
               "points_breakdown": {
                 "countries": 130,
@@ -16056,7 +16056,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1870,
+          "subtotal": 1740,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -16156,9 +16156,9 @@
                 "score": "4 - 1"
               },
               "actual_score": "1 - 1",
-              "points": 145,
+              "points": 80,
               "points_breakdown": {
-                "countries": 130,
+                "countries": 65,
                 "score": 15
               },
               "is_exact": false
@@ -16377,10 +16377,10 @@
               "fixture_number": 81,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-02T00:00:00Z",
-              "kickoff_local": "2026-07-02 02:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "Levi's Stadium, Santa Clara",
               "hidden": false,
               "match": {
@@ -16400,7 +16400,7 @@
                 "hidden": false,
                 "score": "3 - 0"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 65,
               "points_breakdown": {
                 "countries": 65,
@@ -19504,7 +19504,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1852,
+          "subtotal": 1722,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -19825,10 +19825,10 @@
               "fixture_number": 81,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-02T00:00:00Z",
-              "kickoff_local": "2026-07-02 02:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "Levi's Stadium, Santa Clara",
               "hidden": false,
               "match": {
@@ -19848,7 +19848,7 @@
                 "hidden": false,
                 "score": "2 - 1"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 130,
               "points_breakdown": {
                 "countries": 130,
@@ -22952,7 +22952,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1926,
+          "subtotal": 1826,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -23122,9 +23122,9 @@
                 "score": "2 - 3"
               },
               "actual_score": "1 - 2",
-              "points": 130,
+              "points": 95,
               "points_breakdown": {
-                "countries": 70,
+                "countries": 35,
                 "score": 60
               },
               "is_exact": false
@@ -23273,10 +23273,10 @@
               "fixture_number": 81,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-02T00:00:00Z",
-              "kickoff_local": "2026-07-02 02:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "Levi's Stadium, Santa Clara",
               "hidden": false,
               "match": {
@@ -23296,7 +23296,7 @@
                 "hidden": false,
                 "score": "2 - 1"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 65,
               "points_breakdown": {
                 "countries": 65,
@@ -26400,7 +26400,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1736,
+          "subtotal": 1671,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -26721,10 +26721,10 @@
               "fixture_number": 81,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-02T00:00:00Z",
-              "kickoff_local": "2026-07-02 02:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "Levi's Stadium, Santa Clara",
               "hidden": false,
               "match": {
@@ -26744,7 +26744,7 @@
                 "hidden": false,
                 "score": "2 - 0"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 65,
               "points_breakdown": {
                 "countries": 65,
@@ -29848,7 +29848,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1719,
+          "subtotal": 1619,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -30169,10 +30169,10 @@
               "fixture_number": 81,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-02T00:00:00Z",
-              "kickoff_local": "2026-07-02 02:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "Levi's Stadium, Santa Clara",
               "hidden": false,
               "match": {
@@ -30192,7 +30192,7 @@
                 "hidden": false,
                 "score": "2 - 0"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 100,
               "points_breakdown": {
                 "countries": 100,
@@ -33296,7 +33296,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1894,
+          "subtotal": 1699,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -33571,9 +33571,9 @@
                 "score": "3 - 0"
               },
               "actual_score": "2 - 1",
-              "points": 178,
+              "points": 113,
               "points_breakdown": {
-                "countries": 130,
+                "countries": 65,
                 "score": 48
               },
               "is_exact": false
@@ -33617,10 +33617,10 @@
               "fixture_number": 81,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-02T00:00:00Z",
-              "kickoff_local": "2026-07-02 02:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "Levi's Stadium, Santa Clara",
               "hidden": false,
               "match": {
@@ -33640,7 +33640,7 @@
                 "hidden": false,
                 "score": "2 - 1"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 130,
               "points_breakdown": {
                 "countries": 130,
@@ -36744,7 +36744,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1706,
+          "subtotal": 1571,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -37054,9 +37054,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "2 - 2",
-              "points": 115,
+              "points": 50,
               "points_breakdown": {
-                "countries": 100,
+                "countries": 35,
                 "score": 15
               },
               "is_exact": false
@@ -37065,10 +37065,10 @@
               "fixture_number": 81,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-02T00:00:00Z",
-              "kickoff_local": "2026-07-02 02:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "Levi's Stadium, Santa Clara",
               "hidden": false,
               "match": {
@@ -37088,7 +37088,7 @@
                 "hidden": false,
                 "score": "3 - 1"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 70,
               "points_breakdown": {
                 "countries": 70,
@@ -40192,7 +40192,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1654,
+          "subtotal": 1524,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -40513,10 +40513,10 @@
               "fixture_number": 81,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-02T00:00:00Z",
-              "kickoff_local": "2026-07-02 02:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "Levi's Stadium, Santa Clara",
               "hidden": false,
               "match": {
@@ -40536,7 +40536,7 @@
                 "hidden": false,
                 "score": "2 - 1"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 130,
               "points_breakdown": {
                 "countries": 130,
@@ -43640,7 +43640,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1624,
+          "subtotal": 1459,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -43961,10 +43961,10 @@
               "fixture_number": 81,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-02T00:00:00Z",
-              "kickoff_local": "2026-07-02 02:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "Levi's Stadium, Santa Clara",
               "hidden": false,
               "match": {
@@ -43984,7 +43984,7 @@
                 "hidden": false,
                 "score": "2 - 0"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 100,
               "points_breakdown": {
                 "countries": 100,
@@ -44020,9 +44020,9 @@
                 "score": "3 - 0"
               },
               "actual_score": "NS",
-              "points": 65,
+              "points": 0,
               "points_breakdown": {
-                "countries": 65,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -47088,7 +47088,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1610,
+          "subtotal": 1505,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -47409,10 +47409,10 @@
               "fixture_number": 81,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-02T00:00:00Z",
-              "kickoff_local": "2026-07-02 02:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "Levi's Stadium, Santa Clara",
               "hidden": false,
               "match": {
@@ -47432,7 +47432,7 @@
                 "hidden": false,
                 "score": "1 - 2"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 70,
               "points_breakdown": {
                 "countries": 70,
@@ -47503,9 +47503,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": 70,
+              "points": 35,
               "points_breakdown": {
-                "countries": 70,
+                "countries": 35,
                 "score": null
               },
               "is_exact": false
@@ -50536,7 +50536,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1409,
+          "subtotal": 1279,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -50857,10 +50857,10 @@
               "fixture_number": 81,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-02T00:00:00Z",
-              "kickoff_local": "2026-07-02 02:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "Levi's Stadium, Santa Clara",
               "hidden": false,
               "match": {
@@ -50880,7 +50880,7 @@
                 "hidden": false,
                 "score": "3 - 1"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 65,
               "points_breakdown": {
                 "countries": 65,
@@ -50986,9 +50986,9 @@
                 "score": "2 - 0"
               },
               "actual_score": "NS",
-              "points": 100,
+              "points": 35,
               "points_breakdown": {
-                "countries": 100,
+                "countries": 35,
                 "score": null
               },
               "is_exact": false
@@ -53984,7 +53984,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1236,
+          "subtotal": 1131,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -54305,10 +54305,10 @@
               "fixture_number": 81,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-02T00:00:00Z",
-              "kickoff_local": "2026-07-02 02:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "Levi's Stadium, Santa Clara",
               "hidden": false,
               "match": {
@@ -54328,7 +54328,7 @@
                 "hidden": false,
                 "score": "2 - 0"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 70,
               "points_breakdown": {
                 "countries": 70,
@@ -54469,9 +54469,9 @@
                 "score": "1 - 2"
               },
               "actual_score": "NS",
-              "points": 35,
+              "points": 0,
               "points_breakdown": {
-                "countries": 35,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
