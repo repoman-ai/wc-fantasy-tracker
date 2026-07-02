@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-02T00:01:25Z",
+  "updated": "2026-07-02T00:11:25Z",
   "players": {
     "247930": {
       "team_id": "247930",
@@ -2585,10 +2585,10 @@
               "fixture_number": 81,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-02T00:00:00Z",
-              "kickoff_local": "2026-07-02 02:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "Levi's Stadium, Santa Clara",
               "hidden": false,
               "match": {
@@ -2608,11 +2608,11 @@
                 "hidden": false,
                 "score": "2 - 1"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 65,
               "points_breakdown": {
                 "countries": 65,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             },
@@ -3456,9 +3456,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/252653/daniel/stage/1196-grand-total?scroll=fixture",
       "flag": "FRA",
       "rank": 2,
-      "points": 5766,
+      "points": 5781,
       "exact": 12,
-      "grand_total": 5766,
+      "grand_total": 5781,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -5712,7 +5712,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1957,
+          "subtotal": 1972,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -6057,10 +6057,10 @@
                 "score": "2 - 0"
               },
               "actual_score": "0 - 0",
-              "points": 130,
+              "points": 145,
               "points_breakdown": {
                 "countries": 130,
-                "score": 0
+                "score": 15
               },
               "is_exact": false
             },
@@ -9160,7 +9160,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1724,
+          "subtotal": 1789,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -9508,7 +9508,7 @@
               "points": 65,
               "points_breakdown": {
                 "countries": 65,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             },
@@ -10352,9 +10352,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/252600/el-capitan/stage/1196-grand-total?scroll=fixture",
       "flag": "FRA",
       "rank": 4,
-      "points": 5436,
+      "points": 5451,
       "exact": 9,
-      "grand_total": 5436,
+      "grand_total": 5451,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -12608,7 +12608,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1937,
+          "subtotal": 2117,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -12673,9 +12673,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "2 - 1",
-              "points": 155,
+              "points": 190,
               "points_breakdown": {
-                "countries": 65,
+                "countries": 100,
                 "score": 90
               },
               "is_exact": true
@@ -12953,10 +12953,10 @@
                 "score": "2 - 0"
               },
               "actual_score": "0 - 0",
-              "points": 130,
+              "points": 145,
               "points_breakdown": {
                 "countries": 130,
-                "score": null
+                "score": 15
               },
               "is_exact": false
             },
@@ -13800,9 +13800,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/253787/jazmin/stage/1196-grand-total?scroll=fixture",
       "flag": "POR",
       "rank": 5,
-      "points": 5389,
+      "points": 5404,
       "exact": 11,
-      "grand_total": 5389,
+      "grand_total": 5404,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -16056,7 +16056,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1740,
+          "subtotal": 1885,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -16156,9 +16156,9 @@
                 "score": "4 - 1"
               },
               "actual_score": "1 - 1",
-              "points": 80,
+              "points": 145,
               "points_breakdown": {
-                "countries": 65,
+                "countries": 130,
                 "score": 15
               },
               "is_exact": false
@@ -16401,10 +16401,10 @@
                 "score": "3 - 0"
               },
               "actual_score": "0 - 0",
-              "points": 65,
+              "points": 80,
               "points_breakdown": {
                 "countries": 65,
-                "score": null
+                "score": 15
               },
               "is_exact": false
             },
@@ -19504,7 +19504,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1722,
+          "subtotal": 1852,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -19852,7 +19852,7 @@
               "points": 130,
               "points_breakdown": {
                 "countries": 130,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             },
@@ -22952,7 +22952,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1826,
+          "subtotal": 1926,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -23122,9 +23122,9 @@
                 "score": "2 - 3"
               },
               "actual_score": "1 - 2",
-              "points": 95,
+              "points": 130,
               "points_breakdown": {
-                "countries": 35,
+                "countries": 70,
                 "score": 60
               },
               "is_exact": false
@@ -23300,7 +23300,7 @@
               "points": 65,
               "points_breakdown": {
                 "countries": 65,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             },
@@ -24144,9 +24144,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247535/baronmark/stage/1196-grand-total?scroll=fixture",
       "flag": "FRA",
       "rank": 8,
-      "points": 5215,
+      "points": 5230,
       "exact": 12,
-      "grand_total": 5215,
+      "grand_total": 5230,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -26400,7 +26400,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1671,
+          "subtotal": 1751,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -26745,10 +26745,10 @@
                 "score": "2 - 0"
               },
               "actual_score": "0 - 0",
-              "points": 65,
+              "points": 80,
               "points_breakdown": {
                 "countries": 65,
-                "score": null
+                "score": 15
               },
               "is_exact": false
             },
@@ -27592,9 +27592,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247532/gabriela/stage/1196-grand-total?scroll=fixture",
       "flag": "NED",
       "rank": 9,
-      "points": 5163,
+      "points": 5178,
       "exact": 9,
-      "grand_total": 5163,
+      "grand_total": 5178,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -29848,7 +29848,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1619,
+          "subtotal": 1734,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -30193,10 +30193,10 @@
                 "score": "2 - 0"
               },
               "actual_score": "0 - 0",
-              "points": 100,
+              "points": 115,
               "points_breakdown": {
                 "countries": 100,
-                "score": null
+                "score": 15
               },
               "is_exact": false
             },
@@ -33296,7 +33296,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1699,
+          "subtotal": 1894,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -33571,9 +33571,9 @@
                 "score": "3 - 0"
               },
               "actual_score": "2 - 1",
-              "points": 113,
+              "points": 178,
               "points_breakdown": {
-                "countries": 65,
+                "countries": 130,
                 "score": 48
               },
               "is_exact": false
@@ -33644,7 +33644,7 @@
               "points": 130,
               "points_breakdown": {
                 "countries": 130,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             },
@@ -36744,7 +36744,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1571,
+          "subtotal": 1706,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -37054,9 +37054,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "2 - 2",
-              "points": 50,
+              "points": 115,
               "points_breakdown": {
-                "countries": 35,
+                "countries": 100,
                 "score": 15
               },
               "is_exact": false
@@ -37092,7 +37092,7 @@
               "points": 70,
               "points_breakdown": {
                 "countries": 70,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             },
@@ -40192,7 +40192,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1524,
+          "subtotal": 1654,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -40540,7 +40540,7 @@
               "points": 130,
               "points_breakdown": {
                 "countries": 130,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             },
@@ -41384,9 +41384,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/253790/remi/stage/1196-grand-total?scroll=fixture",
       "flag": "FRA",
       "rank": 13,
-      "points": 4689,
+      "points": 4704,
       "exact": 9,
-      "grand_total": 4689,
+      "grand_total": 4704,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -43640,7 +43640,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1459,
+          "subtotal": 1639,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -43985,10 +43985,10 @@
                 "score": "2 - 0"
               },
               "actual_score": "0 - 0",
-              "points": 100,
+              "points": 115,
               "points_breakdown": {
                 "countries": 100,
-                "score": null
+                "score": 15
               },
               "is_exact": false
             },
@@ -44020,9 +44020,9 @@
                 "score": "3 - 0"
               },
               "actual_score": "NS",
-              "points": 0,
+              "points": 65,
               "points_breakdown": {
-                "countries": 0,
+                "countries": 65,
                 "score": null
               },
               "is_exact": false
@@ -47088,7 +47088,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1505,
+          "subtotal": 1610,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -47436,7 +47436,7 @@
               "points": 70,
               "points_breakdown": {
                 "countries": 70,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             },
@@ -47503,9 +47503,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": 35,
+              "points": 70,
               "points_breakdown": {
-                "countries": 35,
+                "countries": 70,
                 "score": null
               },
               "is_exact": false
@@ -50536,7 +50536,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1279,
+          "subtotal": 1409,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -50884,7 +50884,7 @@
               "points": 65,
               "points_breakdown": {
                 "countries": 65,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             },
@@ -50986,9 +50986,9 @@
                 "score": "2 - 0"
               },
               "actual_score": "NS",
-              "points": 35,
+              "points": 100,
               "points_breakdown": {
-                "countries": 35,
+                "countries": 100,
                 "score": null
               },
               "is_exact": false
@@ -51728,9 +51728,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/252610/luisa/stage/1196-grand-total?scroll=fixture",
       "flag": "POR",
       "rank": 16,
-      "points": 4019,
+      "points": 4034,
       "exact": 3,
-      "grand_total": 4019,
+      "grand_total": 4034,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -53984,7 +53984,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1131,
+          "subtotal": 1251,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -54329,10 +54329,10 @@
                 "score": "2 - 0"
               },
               "actual_score": "0 - 0",
-              "points": 70,
+              "points": 85,
               "points_breakdown": {
                 "countries": 70,
-                "score": null
+                "score": 15
               },
               "is_exact": false
             },
@@ -54469,9 +54469,9 @@
                 "score": "1 - 2"
               },
               "actual_score": "NS",
-              "points": 0,
+              "points": 35,
               "points_breakdown": {
-                "countries": 0,
+                "countries": 35,
                 "score": null
               },
               "is_exact": false
