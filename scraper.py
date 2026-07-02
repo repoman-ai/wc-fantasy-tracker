@@ -20,15 +20,18 @@ Design notes
   returns a bot-protection 403/503, the live scraper can automatically fall back to
   Playwright/Chromium while leaving the parser unchanged.
 * Retries: the whole run is retried up to MAX_ATTEMPTS times with RETRY_GAP_SECONDS
-  between attempts if the leaderboard yields zero rows or throws. A single player page
-  failing does NOT abort the run — that player keeps their previously-scraped data.
+  between attempts if the leaderboard yields zero rows or throws. If a scrape parses
+  but fails the pre-write data-quality checks (for example, leaderboard scores are
+  blank while the site recalculates), the scraper waits SCORE_RETRY_GAP_SECONDS and
+  tries once more before exiting without writing. A single player page failing does
+  NOT abort the run — that player keeps their previously-scraped data.
 
 Usage
 -----
   python scraper.py                       # live scrape
   python scraper.py --samples             # parse the local sample HTML files (offline test)
   python scraper.py --out ./data          # write JSON into ./data instead of repo root
-  MAX_ATTEMPTS=4 RETRY_GAP_SECONDS=1800 python scraper.py
+  MAX_ATTEMPTS=4 RETRY_GAP_SECONDS=1800 SCORE_RETRY_GAP_SECONDS=180 python scraper.py
 """
 
 from __future__ import annotations
@@ -71,6 +74,7 @@ PLACEHOLDER_FLAG_CODE = "ZZZ"
 
 MAX_ATTEMPTS = int(os.environ.get("MAX_ATTEMPTS", "4"))          # 1 try + 3 retries
 RETRY_GAP_SECONDS = int(os.environ.get("RETRY_GAP_SECONDS", "1800"))  # 30 minutes
+SCORE_RETRY_GAP_SECONDS = int(os.environ.get("SCORE_RETRY_GAP_SECONDS", "180"))  # 3 minutes
 REQUEST_TIMEOUT = int(os.environ.get("REQUEST_TIMEOUT", "30"))
 CF_CHALLENGE_TIMEOUT = int(os.environ.get("CF_CHALLENGE_TIMEOUT", "25"))
 FETCH_BACKEND = os.environ.get("FETCH_BACKEND", "auto").lower()  # auto, requests, browser
@@ -1044,8 +1048,8 @@ def parse_leaderboard(html: str) -> list[dict]:
         flag_span = tds[1].select_one("span.flag-icon")
         flag = flag_code_from_style(flag_span.get("style")) if flag_span else None
 
-        exact = to_int(tds[2].get_text()) or 0
-        points = to_int(tds[3].get_text()) or 0
+        exact = to_int(tds[2].get_text())
+        points = to_int(tds[3].get_text())
 
         players.append(
             {
@@ -1778,6 +1782,50 @@ def scrape_health_errors(
     return errors
 
 
+def prewrite_scrape_errors(
+    players: list[dict],
+    predictions: dict,
+    stats: dict,
+    prev_rankings: dict,
+    *,
+    strict_predictions: bool,
+) -> list[str]:
+    """Return data-quality issues that should stop every JSON write."""
+    errors: list[str] = []
+
+    # Sanity guard against a partial parse. The leaderboard points column shows
+    # "-" or blanks when the page is caught mid-render — most often while
+    # matches are live — so a scrape can return the full roster with ranks and
+    # exact-counts intact but every `points` value missing/zeroed. Cumulative
+    # points never legitimately fall back to zero once earned, so if the fresh
+    # scrape totals zero while the previous good scrape had points, treat it as
+    # failed and leave every file untouched rather than overwriting good data.
+    new_total = sum(int(p.get("points") or 0) for p in players)
+    prev_players = prev_rankings.get("players", []) if isinstance(prev_rankings, dict) else []
+    prev_total = sum(int(p.get("points") or 0) for p in prev_players)
+    if new_total == 0 and prev_total > 0:
+        errors.append(
+            f"leaderboard points all zero across {len(players)} players "
+            f"(previous scrape totalled {prev_total}); likely a mid-render parse failure"
+        )
+
+    errors.extend(
+        scrape_health_errors(
+            players,
+            predictions,
+            stats,
+            strict_predictions=strict_predictions,
+        )
+    )
+    return errors
+
+
+def print_scrape_errors(errors: list[str], heading: str = "FATAL: scrape health checks failed; not writing files."):
+    print(heading, file=sys.stderr)
+    for err in errors:
+        print(f"  - {err}", file=sys.stderr)
+
+
 def run(out_dir: Path, samples: bool):
     out_dir.mkdir(parents=True, exist_ok=True)
     rankings_path = out_dir / "rankings.json"
@@ -1837,36 +1885,45 @@ def run(out_dir: Path, samples: bool):
         print(f"FATAL: all attempts failed; not writing files. Last error: {last_err}", file=sys.stderr)
         return 1
 
-    # Sanity guard against a partial parse. The leaderboard points column shows
-    # "-" (parsed as 0) when the page is caught mid-render — most often while
-    # matches are live — so a scrape can return the full roster with ranks and
-    # exact-counts intact but every `points` zeroed. Cumulative points never
-    # legitimately fall back to zero once earned, so if the fresh scrape totals
-    # zero while the previous good scrape had points, treat it as a failed
-    # scrape and leave every file untouched rather than overwriting good data.
-    new_total = sum(int(p.get("points") or 0) for p in players)
     prev_rankings = load_json(rankings_path, {})
-    prev_players = prev_rankings.get("players", []) if isinstance(prev_rankings, dict) else []
-    prev_total = sum(int(p.get("points") or 0) for p in prev_players)
-    if new_total == 0 and prev_total > 0:
-        print(
-            f"FATAL: leaderboard points all zero across {len(players)} players "
-            f"(previous scrape totalled {prev_total}); likely a mid-render parse "
-            "failure — not writing files.",
-            file=sys.stderr,
-        )
-        return 1
-
-    health_errors = scrape_health_errors(
+    health_errors = prewrite_scrape_errors(
         players,
         predictions,
         stats,
+        prev_rankings,
         strict_predictions=not samples,
     )
+    if health_errors and not samples:
+        print_scrape_errors(
+            health_errors,
+            "Scrape parsed but data is not ready; not writing files yet.",
+        )
+        print(f"  waiting {SCORE_RETRY_GAP_SECONDS}s before one data-quality retry …", file=sys.stderr)
+        time.sleep(SCORE_RETRY_GAP_SECONDS)
+        try:
+            print("Data-quality retry 1/1 …", file=sys.stderr)
+            players, predictions, stats = scrape_once(get_lb, get_player, prev_predictions)
+            print(
+                "  ok: "
+                f"{len(players)} players, "
+                f"{stats['fresh']} fresh prediction pages, "
+                f"{stats.get('patched', 0)} partially patched, "
+                f"{stats['kept']} kept previous",
+                file=sys.stderr,
+            )
+        except Exception as exc:
+            print(f"FATAL: data-quality retry failed; not writing files. Error: {exc}", file=sys.stderr)
+            return 1
+        health_errors = prewrite_scrape_errors(
+            players,
+            predictions,
+            stats,
+            prev_rankings,
+            strict_predictions=not samples,
+        )
+
     if health_errors:
-        print("FATAL: scrape health checks failed; not writing files.", file=sys.stderr)
-        for err in health_errors:
-            print(f"  - {err}", file=sys.stderr)
+        print_scrape_errors(health_errors)
         return 1
 
     # rankings.json
