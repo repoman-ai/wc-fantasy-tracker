@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-02T20:21:39Z",
+  "updated": "2026-07-02T20:31:27Z",
   "pool": {
     "id": "34193",
     "slug": "bobby-and-friends",
@@ -18,8 +18,8 @@
       "name": "Daniel",
       "flag": "FRA",
       "rank": 1,
-      "points": 6103,
-      "exact": 13
+      "points": 6130,
+      "exact": 14
     },
     {
       "team_id": "247930",
@@ -28,8 +28,8 @@
       "name": "Alec",
       "flag": "ESP",
       "rank": 2,
-      "points": 6096,
-      "exact": 12
+      "points": 6123,
+      "exact": 13
     },
     {
       "team_id": "246775",
@@ -38,7 +38,7 @@
       "name": "bobby",
       "flag": "FRA",
       "rank": 3,
-      "points": 5837,
+      "points": 5849,
       "exact": 11
     },
     {
@@ -48,8 +48,8 @@
       "name": "El Capitan",
       "flag": "FRA",
       "rank": 4,
-      "points": 5800,
-      "exact": 11
+      "points": 5773,
+      "exact": 10
     },
     {
       "team_id": "253787",
@@ -58,7 +58,7 @@
       "name": "Jazmin",
       "flag": "POR",
       "rank": 5,
-      "points": 5696,
+      "points": 5699,
       "exact": 11
     },
     {
@@ -68,7 +68,7 @@
       "name": "Alejandro",
       "flag": "BRA",
       "rank": 6,
-      "points": 5620,
+      "points": 5632,
       "exact": 6
     },
     {
@@ -88,8 +88,8 @@
       "name": "Baronmark",
       "flag": "FRA",
       "rank": 8,
-      "points": 5579,
-      "exact": 14
+      "points": 5552,
+      "exact": 13
     },
     {
       "team_id": "247532",
@@ -98,7 +98,7 @@
       "name": "Gabriela",
       "flag": "NED",
       "rank": 9,
-      "points": 5497,
+      "points": 5500,
       "exact": 10
     },
     {
@@ -108,7 +108,7 @@
       "name": "Valewalle",
       "flag": "ESP",
       "rank": 10,
-      "points": 5447,
+      "points": 5459,
       "exact": 12
     },
     {
@@ -118,7 +118,7 @@
       "name": "Karenwj",
       "flag": "NED",
       "rank": 11,
-      "points": 5299,
+      "points": 5311,
       "exact": 8
     },
     {
@@ -128,7 +128,7 @@
       "name": "Yo",
       "flag": "MEX",
       "rank": 12,
-      "points": 5213,
+      "points": 5225,
       "exact": 7
     },
     {
@@ -158,7 +158,7 @@
       "name": "Beturompequinielas",
       "flag": "ARG",
       "rank": 15,
-      "points": 4575,
+      "points": 4590,
       "exact": 5
     },
     {
