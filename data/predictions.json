@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-02T20:51:35Z",
+  "updated": "2026-07-02T21:06:09Z",
   "players": {
     "252653": {
       "team_id": "252653",
@@ -8,9 +8,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/252653/daniel/stage/1196-grand-total?scroll=fixture",
       "flag": "FRA",
       "rank": 1,
-      "points": 6130,
-      "exact": 14,
-      "grand_total": 6130,
+      "points": 6103,
+      "exact": 13,
+      "grand_total": 6103,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -2264,7 +2264,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 2137,
+          "subtotal": 2110,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -2620,10 +2620,10 @@
               "fixture_number": 84,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-02T19:00:00Z",
+              "kickoff_local": "2026-07-02 21:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "SoFi Stadium, Inglewood",
               "hidden": false,
               "match": {
@@ -2644,10 +2644,10 @@
                 "score": "2 - 0"
               },
               "actual_score": "3 - 0",
-              "points": 190,
+              "points": 163,
               "points_breakdown": {
                 "countries": 100,
-                "score": 90
+                "score": 63
               },
               "is_exact": false
             },
@@ -3456,9 +3456,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247930/alec/stage/1196-grand-total?scroll=fixture",
       "flag": "ESP",
       "rank": 2,
-      "points": 6123,
-      "exact": 13,
-      "grand_total": 6123,
+      "points": 6096,
+      "exact": 12,
+      "grand_total": 6096,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -5712,7 +5712,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1919,
+          "subtotal": 2112,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -6068,10 +6068,10 @@
               "fixture_number": 84,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-02T19:00:00Z",
+              "kickoff_local": "2026-07-02 21:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "SoFi Stadium, Inglewood",
               "hidden": false,
               "match": {
@@ -6092,10 +6092,10 @@
                 "score": "2 - 0"
               },
               "actual_score": "3 - 0",
-              "points": 130,
+              "points": 193,
               "points_breakdown": {
                 "countries": 130,
-                "score": null
+                "score": 63
               },
               "is_exact": false
             },
@@ -6904,9 +6904,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/246775/bobby/stage/1196-grand-total?scroll=fixture",
       "flag": "FRA",
       "rank": 3,
-      "points": 5849,
+      "points": 5852,
       "exact": 11,
-      "grand_total": 5849,
+      "grand_total": 5852,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -9160,7 +9160,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1722,
+          "subtotal": 1915,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -9516,10 +9516,10 @@
               "fixture_number": 84,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-02T19:00:00Z",
+              "kickoff_local": "2026-07-02 21:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "SoFi Stadium, Inglewood",
               "hidden": false,
               "match": {
@@ -9540,10 +9540,10 @@
                 "score": "3 - 1"
               },
               "actual_score": "3 - 0",
-              "points": 130,
+              "points": 193,
               "points_breakdown": {
                 "countries": 130,
-                "score": null
+                "score": 63
               },
               "is_exact": false
             },
@@ -12608,7 +12608,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 2062,
+          "subtotal": 2255,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -12964,10 +12964,10 @@
               "fixture_number": 84,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-02T19:00:00Z",
+              "kickoff_local": "2026-07-02 21:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "SoFi Stadium, Inglewood",
               "hidden": false,
               "match": {
@@ -12988,10 +12988,10 @@
                 "score": "1 - 0"
               },
               "actual_score": "3 - 0",
-              "points": 130,
+              "points": 193,
               "points_breakdown": {
                 "countries": 130,
-                "score": null
+                "score": 63
               },
               "is_exact": false
             },
@@ -13800,9 +13800,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/253787/jazmin/stage/1196-grand-total?scroll=fixture",
       "flag": "POR",
       "rank": 5,
-      "points": 5699,
+      "points": 5684,
       "exact": 11,
-      "grand_total": 5699,
+      "grand_total": 5684,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -16056,7 +16056,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1833,
+          "subtotal": 1981,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -16412,10 +16412,10 @@
               "fixture_number": 84,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-02T19:00:00Z",
+              "kickoff_local": "2026-07-02 21:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "SoFi Stadium, Inglewood",
               "hidden": false,
               "match": {
@@ -16436,10 +16436,10 @@
                 "score": "2 - 1"
               },
               "actual_score": "3 - 0",
-              "points": 100,
+              "points": 148,
               "points_breakdown": {
                 "countries": 100,
-                "score": null
+                "score": 48
               },
               "is_exact": false
             },
@@ -17248,9 +17248,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247524/alejandro/stage/1196-grand-total?scroll=fixture",
       "flag": "BRA",
       "rank": 6,
-      "points": 5632,
+      "points": 5635,
       "exact": 6,
-      "grand_total": 5632,
+      "grand_total": 5635,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -19504,7 +19504,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1785,
+          "subtotal": 1978,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -19860,10 +19860,10 @@
               "fixture_number": 84,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-02T19:00:00Z",
+              "kickoff_local": "2026-07-02 21:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "SoFi Stadium, Inglewood",
               "hidden": false,
               "match": {
@@ -19884,10 +19884,10 @@
                 "score": "3 - 1"
               },
               "actual_score": "3 - 0",
-              "points": 130,
+              "points": 193,
               "points_breakdown": {
                 "countries": 130,
-                "score": null
+                "score": 63
               },
               "is_exact": false
             },
@@ -20696,9 +20696,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247528/jj/stage/1196-grand-total?scroll=fixture",
       "flag": "FRA",
       "rank": 7,
-      "points": 5605,
-      "exact": 9,
-      "grand_total": 5605,
+      "points": 5632,
+      "exact": 10,
+      "grand_total": 5632,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -22952,7 +22952,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1794,
+          "subtotal": 2079,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -23157,9 +23157,9 @@
                 "score": "3 - 1"
               },
               "actual_score": "3 - 0",
-              "points": 98,
+              "points": 163,
               "points_breakdown": {
-                "countries": 35,
+                "countries": 100,
                 "score": 63
               },
               "is_exact": false
@@ -23308,10 +23308,10 @@
               "fixture_number": 84,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-02T19:00:00Z",
+              "kickoff_local": "2026-07-02 21:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "SoFi Stadium, Inglewood",
               "hidden": false,
               "match": {
@@ -23332,12 +23332,12 @@
                 "score": "3 - 0"
               },
               "actual_score": "3 - 0",
-              "points": 130,
+              "points": 220,
               "points_breakdown": {
                 "countries": 130,
-                "score": null
+                "score": 90
               },
-              "is_exact": false
+              "is_exact": true
             },
             {
               "fixture_number": 83,
@@ -26400,7 +26400,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1631,
+          "subtotal": 1889,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -26640,9 +26640,9 @@
                 "score": "1 - 1"
               },
               "actual_score": "2 - 0",
-              "points": 65,
+              "points": 130,
               "points_breakdown": {
-                "countries": 65,
+                "countries": 130,
                 "score": 0
               },
               "is_exact": false
@@ -26756,10 +26756,10 @@
               "fixture_number": 84,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-02T19:00:00Z",
+              "kickoff_local": "2026-07-02 21:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "SoFi Stadium, Inglewood",
               "hidden": false,
               "match": {
@@ -26780,10 +26780,10 @@
                 "score": "1 - 0"
               },
               "actual_score": "3 - 0",
-              "points": 130,
+              "points": 193,
               "points_breakdown": {
                 "countries": 130,
-                "score": null
+                "score": 63
               },
               "is_exact": false
             },
@@ -27592,9 +27592,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247532/gabriela/stage/1196-grand-total?scroll=fixture",
       "flag": "NED",
       "rank": 9,
-      "points": 5500,
+      "points": 5485,
       "exact": 10,
-      "grand_total": 5500,
+      "grand_total": 5485,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -29848,7 +29848,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1679,
+          "subtotal": 1857,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -30123,9 +30123,9 @@
                 "score": "3 - 1"
               },
               "actual_score": "2 - 1",
-              "points": 128,
+              "points": 193,
               "points_breakdown": {
-                "countries": 65,
+                "countries": 130,
                 "score": 63
               },
               "is_exact": false
@@ -30204,10 +30204,10 @@
               "fixture_number": 84,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-02T19:00:00Z",
+              "kickoff_local": "2026-07-02 21:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "SoFi Stadium, Inglewood",
               "hidden": false,
               "match": {
@@ -30228,10 +30228,10 @@
                 "score": "2 - 1"
               },
               "actual_score": "3 - 0",
-              "points": 65,
+              "points": 113,
               "points_breakdown": {
                 "countries": 65,
-                "score": null
+                "score": 48
               },
               "is_exact": false
             },
@@ -31040,9 +31040,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247526/valewalle/stage/1196-grand-total?scroll=fixture",
       "flag": "ESP",
       "rank": 10,
-      "points": 5459,
+      "points": 5462,
       "exact": 12,
-      "grand_total": 5459,
+      "grand_total": 5462,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -33296,7 +33296,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1762,
+          "subtotal": 2020,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -33606,9 +33606,9 @@
                 "score": "2 - 0"
               },
               "actual_score": "2 - 2",
-              "points": 50,
+              "points": 115,
               "points_breakdown": {
-                "countries": 35,
+                "countries": 100,
                 "score": 15
               },
               "is_exact": false
@@ -33652,10 +33652,10 @@
               "fixture_number": 84,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-02T19:00:00Z",
+              "kickoff_local": "2026-07-02 21:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "SoFi Stadium, Inglewood",
               "hidden": false,
               "match": {
@@ -33676,10 +33676,10 @@
                 "score": "3 - 1"
               },
               "actual_score": "3 - 0",
-              "points": 130,
+              "points": 193,
               "points_breakdown": {
                 "countries": 130,
-                "score": null
+                "score": 63
               },
               "is_exact": false
             },
@@ -34488,9 +34488,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247525/karenwj/stage/1196-grand-total?scroll=fixture",
       "flag": "NED",
       "rank": 11,
-      "points": 5311,
+      "points": 5314,
       "exact": 8,
-      "grand_total": 5311,
+      "grand_total": 5314,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -36744,7 +36744,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1522,
+          "subtotal": 1780,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -37089,9 +37089,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "2 - 0",
-              "points": 128,
+              "points": 193,
               "points_breakdown": {
-                "countries": 65,
+                "countries": 130,
                 "score": 63
               },
               "is_exact": false
@@ -37100,10 +37100,10 @@
               "fixture_number": 84,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-02T19:00:00Z",
+              "kickoff_local": "2026-07-02 21:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "SoFi Stadium, Inglewood",
               "hidden": false,
               "match": {
@@ -37124,10 +37124,10 @@
                 "score": "3 - 1"
               },
               "actual_score": "3 - 0",
-              "points": 130,
+              "points": 193,
               "points_breakdown": {
                 "countries": 130,
-                "score": null
+                "score": 63
               },
               "is_exact": false
             },
@@ -37936,9 +37936,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247537/yo/stage/1196-grand-total?scroll=fixture",
       "flag": "MEX",
       "rank": 12,
-      "points": 5225,
+      "points": 5228,
       "exact": 7,
-      "grand_total": 5225,
+      "grand_total": 5228,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -40192,7 +40192,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1636,
+          "subtotal": 1829,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -40548,10 +40548,10 @@
               "fixture_number": 84,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-02T19:00:00Z",
+              "kickoff_local": "2026-07-02 21:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "SoFi Stadium, Inglewood",
               "hidden": false,
               "match": {
@@ -40572,10 +40572,10 @@
                 "score": "3 - 1"
               },
               "actual_score": "3 - 0",
-              "points": 65,
+              "points": 193,
               "points_breakdown": {
-                "countries": 65,
-                "score": null
+                "countries": 130,
+                "score": 63
               },
               "is_exact": false
             },
@@ -41384,9 +41384,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/253790/remi/stage/1196-grand-total?scroll=fixture",
       "flag": "FRA",
       "rank": 13,
-      "points": 5026,
-      "exact": 10,
-      "grand_total": 5026,
+      "points": 5053,
+      "exact": 11,
+      "grand_total": 5053,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -43640,7 +43640,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1614,
+          "subtotal": 1804,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -43996,10 +43996,10 @@
               "fixture_number": 84,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-02T19:00:00Z",
+              "kickoff_local": "2026-07-02 21:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "SoFi Stadium, Inglewood",
               "hidden": false,
               "match": {
@@ -44020,12 +44020,12 @@
                 "score": "3 - 0"
               },
               "actual_score": "3 - 0",
-              "points": 65,
+              "points": 155,
               "points_breakdown": {
                 "countries": 65,
-                "score": null
+                "score": 90
               },
-              "is_exact": false
+              "is_exact": true
             },
             {
               "fixture_number": 83,
@@ -44055,9 +44055,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "NS",
-              "points": 0,
+              "points": 35,
               "points_breakdown": {
-                "countries": 0,
+                "countries": 35,
                 "score": null
               },
               "is_exact": false
@@ -44832,9 +44832,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247729/maxs/stage/1196-grand-total?scroll=fixture",
       "flag": "ARG",
       "rank": 14,
-      "points": 4642,
-      "exact": 4,
-      "grand_total": 4642,
+      "points": 4669,
+      "exact": 5,
+      "grand_total": 4669,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -47088,7 +47088,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1274,
+          "subtotal": 1559,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -47444,10 +47444,10 @@
               "fixture_number": 84,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-02T19:00:00Z",
+              "kickoff_local": "2026-07-02 21:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "SoFi Stadium, Inglewood",
               "hidden": false,
               "match": {
@@ -47468,12 +47468,12 @@
                 "score": "3 - 0"
               },
               "actual_score": "3 - 0",
-              "points": 130,
+              "points": 220,
               "points_breakdown": {
                 "countries": 130,
-                "score": null
+                "score": 90
               },
-              "is_exact": false
+              "is_exact": true
             },
             {
               "fixture_number": 83,
@@ -47538,9 +47538,9 @@
                 "score": "2 - 0"
               },
               "actual_score": "NS",
-              "points": 35,
+              "points": 100,
               "points_breakdown": {
-                "countries": 35,
+                "countries": 100,
                 "score": null
               },
               "is_exact": false
@@ -48280,9 +48280,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247533/beturompequinielas/stage/1196-grand-total?scroll=fixture",
       "flag": "ARG",
       "rank": 15,
-      "points": 4590,
+      "points": 4575,
       "exact": 5,
-      "grand_total": 4590,
+      "grand_total": 4575,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -50536,7 +50536,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1475,
+          "subtotal": 1610,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -50892,10 +50892,10 @@
               "fixture_number": 84,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-02T19:00:00Z",
+              "kickoff_local": "2026-07-02 21:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "SoFi Stadium, Inglewood",
               "hidden": false,
               "match": {
@@ -50919,7 +50919,7 @@
               "points": 100,
               "points_breakdown": {
                 "countries": 100,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             },
@@ -51021,9 +51021,9 @@
                 "score": "3 - 2"
               },
               "actual_score": "NS",
-              "points": 0,
+              "points": 35,
               "points_breakdown": {
-                "countries": 0,
+                "countries": 35,
                 "score": null
               },
               "is_exact": false
@@ -51728,9 +51728,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/252610/luisa/stage/1196-grand-total?scroll=fixture",
       "flag": "POR",
       "rank": 16,
-      "points": 4341,
+      "points": 4353,
       "exact": 4,
-      "grand_total": 4341,
+      "grand_total": 4353,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -53984,7 +53984,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1191,
+          "subtotal": 1386,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -54340,10 +54340,10 @@
               "fixture_number": 84,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-02T19:00:00Z",
+              "kickoff_local": "2026-07-02 21:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "SoFi Stadium, Inglewood",
               "hidden": false,
               "match": {
@@ -54364,10 +54364,10 @@
                 "score": "4 - 1"
               },
               "actual_score": "3 - 0",
-              "points": 100,
+              "points": 160,
               "points_breakdown": {
                 "countries": 100,
-                "score": null
+                "score": 60
               },
               "is_exact": false
             },
@@ -54539,9 +54539,9 @@
                 "score": "2 - 3"
               },
               "actual_score": "NS",
-              "points": 0,
+              "points": 35,
               "points_breakdown": {
-                "countries": 0,
+                "countries": 35,
                 "score": null
               },
               "is_exact": false
