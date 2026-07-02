@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-02T22:53:49Z",
+  "updated": "2026-07-02T23:05:40Z",
   "players": {
     "252653": {
       "team_id": "252653",
@@ -2655,10 +2655,10 @@
               "fixture_number": 83,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-02T23:00:00Z",
-              "kickoff_local": "2026-07-03 01:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "BMO Field, Toronto",
               "hidden": false,
               "match": {
@@ -2678,11 +2678,11 @@
                 "hidden": false,
                 "score": "2 - 1"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 100,
               "points_breakdown": {
                 "countries": 100,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             },
@@ -6103,10 +6103,10 @@
               "fixture_number": 83,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-02T23:00:00Z",
-              "kickoff_local": "2026-07-03 01:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "BMO Field, Toronto",
               "hidden": false,
               "match": {
@@ -6126,11 +6126,11 @@
                 "hidden": false,
                 "score": "2 - 1"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 100,
               "points_breakdown": {
                 "countries": 100,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             },
@@ -9551,10 +9551,10 @@
               "fixture_number": 83,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-02T23:00:00Z",
-              "kickoff_local": "2026-07-03 01:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "BMO Field, Toronto",
               "hidden": false,
               "match": {
@@ -9574,11 +9574,11 @@
                 "hidden": false,
                 "score": "2 - 1"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 100,
               "points_breakdown": {
                 "countries": 100,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             },
@@ -10352,9 +10352,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/252600/el-capitan/stage/1196-grand-total?scroll=fixture",
       "flag": "FRA",
       "rank": 4,
-      "points": 5773,
+      "points": 5788,
       "exact": 10,
-      "grand_total": 5773,
+      "grand_total": 5788,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -12608,7 +12608,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 2255,
+          "subtotal": 2270,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -12999,10 +12999,10 @@
               "fixture_number": 83,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-02T23:00:00Z",
-              "kickoff_local": "2026-07-03 01:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "BMO Field, Toronto",
               "hidden": false,
               "match": {
@@ -13022,11 +13022,11 @@
                 "hidden": false,
                 "score": "1 - 0"
               },
-              "actual_score": "NS",
-              "points": 100,
+              "actual_score": "0 - 0",
+              "points": 115,
               "points_breakdown": {
                 "countries": 100,
-                "score": null
+                "score": 15
               },
               "is_exact": false
             },
@@ -16447,10 +16447,10 @@
               "fixture_number": 83,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-02T23:00:00Z",
-              "kickoff_local": "2026-07-03 01:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "BMO Field, Toronto",
               "hidden": false,
               "match": {
@@ -16470,11 +16470,11 @@
                 "hidden": false,
                 "score": "3 - 2"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 70,
               "points_breakdown": {
                 "countries": 70,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             },
@@ -19895,10 +19895,10 @@
               "fixture_number": 83,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-02T23:00:00Z",
-              "kickoff_local": "2026-07-03 01:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "BMO Field, Toronto",
               "hidden": false,
               "match": {
@@ -19918,11 +19918,11 @@
                 "hidden": false,
                 "score": "3 - 2"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 100,
               "points_breakdown": {
                 "countries": 100,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             },
@@ -23343,10 +23343,10 @@
               "fixture_number": 83,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-02T23:00:00Z",
-              "kickoff_local": "2026-07-03 01:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "BMO Field, Toronto",
               "hidden": false,
               "match": {
@@ -23366,11 +23366,11 @@
                 "hidden": false,
                 "score": "2 - 1"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 70,
               "points_breakdown": {
                 "countries": 70,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             },
@@ -24144,9 +24144,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247535/baronmark/stage/1196-grand-total?scroll=fixture",
       "flag": "FRA",
       "rank": 8,
-      "points": 5552,
+      "points": 5612,
       "exact": 13,
-      "grand_total": 5552,
+      "grand_total": 5612,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -26400,7 +26400,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1889,
+          "subtotal": 1949,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -26791,10 +26791,10 @@
               "fixture_number": 83,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-02T23:00:00Z",
-              "kickoff_local": "2026-07-03 01:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "BMO Field, Toronto",
               "hidden": false,
               "match": {
@@ -26814,11 +26814,11 @@
                 "hidden": false,
                 "score": "1 - 1"
               },
-              "actual_score": "NS",
-              "points": 70,
+              "actual_score": "0 - 0",
+              "points": 130,
               "points_breakdown": {
                 "countries": 70,
-                "score": null
+                "score": 60
               },
               "is_exact": false
             },
@@ -30239,10 +30239,10 @@
               "fixture_number": 83,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-02T23:00:00Z",
-              "kickoff_local": "2026-07-03 01:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "BMO Field, Toronto",
               "hidden": false,
               "match": {
@@ -30262,11 +30262,11 @@
                 "hidden": false,
                 "score": "2 - 1"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 100,
               "points_breakdown": {
                 "countries": 100,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             },
@@ -33687,10 +33687,10 @@
               "fixture_number": 83,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-02T23:00:00Z",
-              "kickoff_local": "2026-07-03 01:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "BMO Field, Toronto",
               "hidden": false,
               "match": {
@@ -33710,11 +33710,11 @@
                 "hidden": false,
                 "score": "1 - 2"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 100,
               "points_breakdown": {
                 "countries": 100,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             },
@@ -37135,10 +37135,10 @@
               "fixture_number": 83,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-02T23:00:00Z",
-              "kickoff_local": "2026-07-03 01:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "BMO Field, Toronto",
               "hidden": false,
               "match": {
@@ -37158,11 +37158,11 @@
                 "hidden": false,
                 "score": "3 - 2"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 35,
               "points_breakdown": {
                 "countries": 35,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             },
@@ -40583,10 +40583,10 @@
               "fixture_number": 83,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-02T23:00:00Z",
-              "kickoff_local": "2026-07-03 01:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "BMO Field, Toronto",
               "hidden": false,
               "match": {
@@ -40606,11 +40606,11 @@
                 "hidden": false,
                 "score": "4 - 1"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 70,
               "points_breakdown": {
                 "countries": 70,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             },
@@ -44031,10 +44031,10 @@
               "fixture_number": 83,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-02T23:00:00Z",
-              "kickoff_local": "2026-07-03 01:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "BMO Field, Toronto",
               "hidden": false,
               "match": {
@@ -44054,11 +44054,11 @@
                 "hidden": false,
                 "score": "2 - 1"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 35,
               "points_breakdown": {
                 "countries": 35,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             },
@@ -47479,10 +47479,10 @@
               "fixture_number": 83,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-02T23:00:00Z",
-              "kickoff_local": "2026-07-03 01:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "BMO Field, Toronto",
               "hidden": false,
               "match": {
@@ -47502,11 +47502,11 @@
                 "hidden": false,
                 "score": "3 - 2"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 100,
               "points_breakdown": {
                 "countries": 100,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             },
@@ -50927,10 +50927,10 @@
               "fixture_number": 83,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-02T23:00:00Z",
-              "kickoff_local": "2026-07-03 01:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "BMO Field, Toronto",
               "hidden": false,
               "match": {
@@ -50950,11 +50950,11 @@
                 "hidden": false,
                 "score": "2 - 1"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 70,
               "points_breakdown": {
                 "countries": 70,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             },
@@ -51728,9 +51728,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/252610/luisa/stage/1196-grand-total?scroll=fixture",
       "flag": "POR",
       "rank": 16,
-      "points": 4353,
+      "points": 4413,
       "exact": 4,
-      "grand_total": 4353,
+      "grand_total": 4413,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -53984,7 +53984,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1386,
+          "subtotal": 1446,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -54375,10 +54375,10 @@
               "fixture_number": 83,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-02T23:00:00Z",
-              "kickoff_local": "2026-07-03 01:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "BMO Field, Toronto",
               "hidden": false,
               "match": {
@@ -54398,11 +54398,11 @@
                 "hidden": false,
                 "score": "1 - 1"
               },
-              "actual_score": "NS",
-              "points": 70,
+              "actual_score": "0 - 0",
+              "points": 130,
               "points_breakdown": {
                 "countries": 70,
-                "score": null
+                "score": 60
               },
               "is_exact": false
             },
