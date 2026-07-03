@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-03T23:11:39Z",
+  "updated": "2026-07-03T23:26:05Z",
   "pool": {
     "id": "34193",
     "slug": "bobby-and-friends",
@@ -18,7 +18,7 @@
       "name": "Daniel",
       "flag": "FRA",
       "rank": 1,
-      "points": 6804,
+      "points": 6741,
       "exact": 16
     },
     {
@@ -28,7 +28,7 @@
       "name": "Alec",
       "flag": "ESP",
       "rank": 2,
-      "points": 6600,
+      "points": 6555,
       "exact": 13
     },
     {
@@ -38,7 +38,7 @@
       "name": "bobby",
       "flag": "FRA",
       "rank": 3,
-      "points": 6526,
+      "points": 6463,
       "exact": 13
     },
     {
@@ -48,7 +48,7 @@
       "name": "El Capitan",
       "flag": "FRA",
       "rank": 4,
-      "points": 6279,
+      "points": 6246,
       "exact": 10
     },
     {
@@ -58,7 +58,7 @@
       "name": "Jazmin",
       "flag": "POR",
       "rank": 5,
-      "points": 6253,
+      "points": 6190,
       "exact": 11
     },
     {
@@ -68,7 +68,7 @@
       "name": "Gabriela",
       "flag": "NED",
       "rank": 6,
-      "points": 6186,
+      "points": 6123,
       "exact": 13
     },
     {
@@ -78,7 +78,7 @@
       "name": "Alejandro",
       "flag": "BRA",
       "rank": 7,
-      "points": 6097,
+      "points": 6064,
       "exact": 6
     },
     {
@@ -88,7 +88,7 @@
       "name": "JJ",
       "flag": "FRA",
       "rank": 8,
-      "points": 6076,
+      "points": 6043,
       "exact": 11
     },
     {
@@ -98,7 +98,7 @@
       "name": "Baronmark",
       "flag": "FRA",
       "rank": 9,
-      "points": 5964,
+      "points": 5919,
       "exact": 14
     },
     {
@@ -108,7 +108,7 @@
       "name": "Karenwj",
       "flag": "NED",
       "rank": 10,
-      "points": 5868,
+      "points": 5835,
       "exact": 8
     },
     {
@@ -118,7 +118,7 @@
       "name": "Valewalle",
       "flag": "ESP",
       "rank": 11,
-      "points": 5722,
+      "points": 5659,
       "exact": 13
     },
     {
@@ -128,7 +128,7 @@
       "name": "Yo",
       "flag": "MEX",
       "rank": 12,
-      "points": 5601,
+      "points": 5568,
       "exact": 7
     },
     {
@@ -138,7 +138,7 @@
       "name": "remi",
       "flag": "FRA",
       "rank": 13,
-      "points": 5587,
+      "points": 5524,
       "exact": 13
     },
     {
@@ -148,7 +148,7 @@
       "name": "MaxS.",
       "flag": "ARG",
       "rank": 14,
-      "points": 5129,
+      "points": 5066,
       "exact": 6
     },
     {
@@ -158,7 +158,7 @@
       "name": "Beturompequinielas",
       "flag": "ARG",
       "rank": 15,
-      "points": 4913,
+      "points": 4880,
       "exact": 6
     },
     {

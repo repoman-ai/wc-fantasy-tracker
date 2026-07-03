@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-03T23:11:39Z",
+  "updated": "2026-07-03T23:26:05Z",
   "players": {
     "252653": {
       "team_id": "252653",
@@ -8,9 +8,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/252653/daniel/stage/1196-grand-total?scroll=fixture",
       "flag": "FRA",
       "rank": 1,
-      "points": 6804,
+      "points": 6741,
       "exact": 16,
-      "grand_total": 6804,
+      "grand_total": 6741,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -2264,7 +2264,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 2443,
+          "subtotal": 2380,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -2783,11 +2783,11 @@
                 "hidden": false,
                 "score": "3 - 0"
               },
-              "actual_score": "1 - 0",
-              "points": 128,
+              "actual_score": "1 - 1",
+              "points": 65,
               "points_breakdown": {
                 "countries": 65,
-                "score": 63
+                "score": 0
               },
               "is_exact": false
             },
@@ -3054,8 +3054,8 @@
               "hidden": false,
               "match": {
                 "home": {
-                  "code": "ARG",
-                  "name": "Argentina",
+                  "code": null,
+                  "name": "W86",
                   "hidden": false
                 },
                 "away": {
@@ -3456,9 +3456,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247930/alec/stage/1196-grand-total?scroll=fixture",
       "flag": "ESP",
       "rank": 2,
-      "points": 6600,
+      "points": 6555,
       "exact": 13,
-      "grand_total": 6600,
+      "grand_total": 6555,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -5712,7 +5712,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 2340,
+          "subtotal": 2295,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -6231,11 +6231,11 @@
                 "hidden": false,
                 "score": "2 - 1"
               },
-              "actual_score": "1 - 0",
-              "points": 125,
+              "actual_score": "1 - 1",
+              "points": 80,
               "points_breakdown": {
                 "countries": 65,
-                "score": 60
+                "score": 15
               },
               "is_exact": false
             },
@@ -6502,8 +6502,8 @@
               "hidden": false,
               "match": {
                 "home": {
-                  "code": "ARG",
-                  "name": "Argentina",
+                  "code": null,
+                  "name": "W86",
                   "hidden": false
                 },
                 "away": {
@@ -6904,9 +6904,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/246775/bobby/stage/1196-grand-total?scroll=fixture",
       "flag": "FRA",
       "rank": 3,
-      "points": 6526,
+      "points": 6463,
       "exact": 13,
-      "grand_total": 6526,
+      "grand_total": 6463,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -9160,7 +9160,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 2221,
+          "subtotal": 2158,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -9679,11 +9679,11 @@
                 "hidden": false,
                 "score": "3 - 0"
               },
-              "actual_score": "1 - 0",
-              "points": 128,
+              "actual_score": "1 - 1",
+              "points": 65,
               "points_breakdown": {
                 "countries": 65,
-                "score": 63
+                "score": 0
               },
               "is_exact": false
             },
@@ -9950,8 +9950,8 @@
               "hidden": false,
               "match": {
                 "home": {
-                  "code": "ARG",
-                  "name": "Argentina",
+                  "code": null,
+                  "name": "W86",
                   "hidden": false
                 },
                 "away": {
@@ -10352,9 +10352,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/252600/el-capitan/stage/1196-grand-total?scroll=fixture",
       "flag": "FRA",
       "rank": 4,
-      "points": 6279,
+      "points": 6246,
       "exact": 10,
-      "grand_total": 6279,
+      "grand_total": 6246,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -12608,7 +12608,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 2393,
+          "subtotal": 2360,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -13127,11 +13127,11 @@
                 "hidden": false,
                 "score": "3 - 1"
               },
-              "actual_score": "1 - 0",
-              "points": 113,
+              "actual_score": "1 - 1",
+              "points": 80,
               "points_breakdown": {
                 "countries": 65,
-                "score": 48
+                "score": 15
               },
               "is_exact": false
             },
@@ -13398,8 +13398,8 @@
               "hidden": false,
               "match": {
                 "home": {
-                  "code": "ARG",
-                  "name": "Argentina",
+                  "code": null,
+                  "name": "W86",
                   "hidden": false
                 },
                 "away": {
@@ -13800,9 +13800,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/253787/jazmin/stage/1196-grand-total?scroll=fixture",
       "flag": "POR",
       "rank": 5,
-      "points": 6253,
+      "points": 6190,
       "exact": 11,
-      "grand_total": 6253,
+      "grand_total": 6190,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -16056,7 +16056,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 2182,
+          "subtotal": 2119,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -16575,11 +16575,11 @@
                 "hidden": false,
                 "score": "3 - 0"
               },
-              "actual_score": "1 - 0",
-              "points": 128,
+              "actual_score": "1 - 1",
+              "points": 65,
               "points_breakdown": {
                 "countries": 65,
-                "score": 63
+                "score": 0
               },
               "is_exact": false
             },
@@ -16846,8 +16846,8 @@
               "hidden": false,
               "match": {
                 "home": {
-                  "code": "ARG",
-                  "name": "Argentina",
+                  "code": null,
+                  "name": "W86",
                   "hidden": false
                 },
                 "away": {
@@ -17248,9 +17248,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247532/gabriela/stage/1196-grand-total?scroll=fixture",
       "flag": "NED",
       "rank": 6,
-      "points": 6186,
+      "points": 6123,
       "exact": 13,
-      "grand_total": 6186,
+      "grand_total": 6123,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -19504,7 +19504,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 2190,
+          "subtotal": 2127,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -20023,11 +20023,11 @@
                 "hidden": false,
                 "score": "3 - 0"
               },
-              "actual_score": "1 - 0",
-              "points": 193,
+              "actual_score": "1 - 1",
+              "points": 130,
               "points_breakdown": {
                 "countries": 130,
-                "score": 63
+                "score": 0
               },
               "is_exact": false
             },
@@ -20294,8 +20294,8 @@
               "hidden": false,
               "match": {
                 "home": {
-                  "code": "ARG",
-                  "name": "Argentina",
+                  "code": null,
+                  "name": "W86",
                   "hidden": false
                 },
                 "away": {
@@ -20696,9 +20696,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247524/alejandro/stage/1196-grand-total?scroll=fixture",
       "flag": "BRA",
       "rank": 7,
-      "points": 6097,
+      "points": 6064,
       "exact": 6,
-      "grand_total": 6097,
+      "grand_total": 6064,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -22952,7 +22952,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 2164,
+          "subtotal": 2131,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -23471,11 +23471,11 @@
                 "hidden": false,
                 "score": "3 - 1"
               },
-              "actual_score": "1 - 0",
-              "points": 113,
+              "actual_score": "1 - 1",
+              "points": 80,
               "points_breakdown": {
                 "countries": 65,
-                "score": 48
+                "score": 15
               },
               "is_exact": false
             },
@@ -23742,8 +23742,8 @@
               "hidden": false,
               "match": {
                 "home": {
-                  "code": "ARG",
-                  "name": "Argentina",
+                  "code": null,
+                  "name": "W86",
                   "hidden": false
                 },
                 "away": {
@@ -24144,9 +24144,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247528/jj/stage/1196-grand-total?scroll=fixture",
       "flag": "FRA",
       "rank": 8,
-      "points": 6076,
+      "points": 6043,
       "exact": 11,
-      "grand_total": 6076,
+      "grand_total": 6043,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -26400,7 +26400,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 2247,
+          "subtotal": 2214,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -26919,11 +26919,11 @@
                 "hidden": false,
                 "score": "3 - 1"
               },
-              "actual_score": "1 - 0",
-              "points": 113,
+              "actual_score": "1 - 1",
+              "points": 80,
               "points_breakdown": {
                 "countries": 65,
-                "score": 48
+                "score": 15
               },
               "is_exact": false
             },
@@ -27190,8 +27190,8 @@
               "hidden": false,
               "match": {
                 "home": {
-                  "code": "ARG",
-                  "name": "Argentina",
+                  "code": null,
+                  "name": "W86",
                   "hidden": false
                 },
                 "away": {
@@ -27592,9 +27592,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247535/baronmark/stage/1196-grand-total?scroll=fixture",
       "flag": "FRA",
       "rank": 9,
-      "points": 5964,
+      "points": 5919,
       "exact": 14,
-      "grand_total": 5964,
+      "grand_total": 5919,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -29848,7 +29848,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 2117,
+          "subtotal": 2072,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -30367,11 +30367,11 @@
                 "hidden": false,
                 "score": "2 - 1"
               },
-              "actual_score": "1 - 0",
-              "points": 125,
+              "actual_score": "1 - 1",
+              "points": 80,
               "points_breakdown": {
                 "countries": 65,
-                "score": 60
+                "score": 15
               },
               "is_exact": false
             },
@@ -30638,8 +30638,8 @@
               "hidden": false,
               "match": {
                 "home": {
-                  "code": "ARG",
-                  "name": "Argentina",
+                  "code": null,
+                  "name": "W86",
                   "hidden": false
                 },
                 "away": {
@@ -31040,9 +31040,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247525/karenwj/stage/1196-grand-total?scroll=fixture",
       "flag": "NED",
       "rank": 10,
-      "points": 5868,
+      "points": 5835,
       "exact": 8,
-      "grand_total": 5868,
+      "grand_total": 5835,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -33296,7 +33296,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1966,
+          "subtotal": 1933,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -33815,11 +33815,11 @@
                 "hidden": false,
                 "score": "3 - 1"
               },
-              "actual_score": "1 - 0",
-              "points": 113,
+              "actual_score": "1 - 1",
+              "points": 80,
               "points_breakdown": {
                 "countries": 65,
-                "score": 48
+                "score": 15
               },
               "is_exact": false
             },
@@ -34086,8 +34086,8 @@
               "hidden": false,
               "match": {
                 "home": {
-                  "code": "ARG",
-                  "name": "Argentina",
+                  "code": null,
+                  "name": "W86",
                   "hidden": false
                 },
                 "away": {
@@ -34488,9 +34488,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247526/valewalle/stage/1196-grand-total?scroll=fixture",
       "flag": "ESP",
       "rank": 11,
-      "points": 5722,
+      "points": 5659,
       "exact": 13,
-      "grand_total": 5722,
+      "grand_total": 5659,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -36744,7 +36744,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 2188,
+          "subtotal": 2125,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -37263,11 +37263,11 @@
                 "hidden": false,
                 "score": "3 - 0"
               },
-              "actual_score": "1 - 0",
-              "points": 128,
+              "actual_score": "1 - 1",
+              "points": 65,
               "points_breakdown": {
                 "countries": 65,
-                "score": 63
+                "score": 0
               },
               "is_exact": false
             },
@@ -37534,8 +37534,8 @@
               "hidden": false,
               "match": {
                 "home": {
-                  "code": "ARG",
-                  "name": "Argentina",
+                  "code": null,
+                  "name": "W86",
                   "hidden": false
                 },
                 "away": {
@@ -37936,9 +37936,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247537/yo/stage/1196-grand-total?scroll=fixture",
       "flag": "MEX",
       "rank": 12,
-      "points": 5601,
+      "points": 5568,
       "exact": 7,
-      "grand_total": 5601,
+      "grand_total": 5568,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -40192,7 +40192,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 2018,
+          "subtotal": 1985,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -40711,11 +40711,11 @@
                 "hidden": false,
                 "score": "4 - 1"
               },
-              "actual_score": "1 - 0",
-              "points": 113,
+              "actual_score": "1 - 1",
+              "points": 80,
               "points_breakdown": {
                 "countries": 65,
-                "score": 48
+                "score": 15
               },
               "is_exact": false
             },
@@ -40982,8 +40982,8 @@
               "hidden": false,
               "match": {
                 "home": {
-                  "code": "ARG",
-                  "name": "Argentina",
+                  "code": null,
+                  "name": "W86",
                   "hidden": false
                 },
                 "away": {
@@ -41384,9 +41384,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/253790/remi/stage/1196-grand-total?scroll=fixture",
       "flag": "FRA",
       "rank": 13,
-      "points": 5587,
+      "points": 5524,
       "exact": 13,
-      "grand_total": 5587,
+      "grand_total": 5524,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -43640,7 +43640,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 2062,
+          "subtotal": 1999,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -44159,11 +44159,11 @@
                 "hidden": false,
                 "score": "4 - 0"
               },
-              "actual_score": "1 - 0",
-              "points": 98,
+              "actual_score": "1 - 1",
+              "points": 35,
               "points_breakdown": {
                 "countries": 35,
-                "score": 63
+                "score": 0
               },
               "is_exact": false
             },
@@ -44430,8 +44430,8 @@
               "hidden": false,
               "match": {
                 "home": {
-                  "code": "ARG",
-                  "name": "Argentina",
+                  "code": null,
+                  "name": "W86",
                   "hidden": false
                 },
                 "away": {
@@ -44832,9 +44832,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247729/maxs/stage/1196-grand-total?scroll=fixture",
       "flag": "ARG",
       "rank": 14,
-      "points": 5129,
+      "points": 5066,
       "exact": 6,
-      "grand_total": 5129,
+      "grand_total": 5066,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -47088,7 +47088,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1787,
+          "subtotal": 1724,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -47607,11 +47607,11 @@
                 "hidden": false,
                 "score": "2 - 0"
               },
-              "actual_score": "1 - 0",
-              "points": 128,
+              "actual_score": "1 - 1",
+              "points": 65,
               "points_breakdown": {
                 "countries": 65,
-                "score": 63
+                "score": 0
               },
               "is_exact": false
             },
@@ -47878,8 +47878,8 @@
               "hidden": false,
               "match": {
                 "home": {
-                  "code": "ARG",
-                  "name": "Argentina",
+                  "code": null,
+                  "name": "W86",
                   "hidden": false
                 },
                 "away": {
@@ -48280,9 +48280,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247533/beturompequinielas/stage/1196-grand-total?scroll=fixture",
       "flag": "ARG",
       "rank": 15,
-      "points": 4913,
+      "points": 4880,
       "exact": 6,
-      "grand_total": 4913,
+      "grand_total": 4880,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -50536,7 +50536,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1808,
+          "subtotal": 1775,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -51055,11 +51055,11 @@
                 "hidden": false,
                 "score": "3 - 1"
               },
-              "actual_score": "1 - 0",
-              "points": 113,
+              "actual_score": "1 - 1",
+              "points": 80,
               "points_breakdown": {
                 "countries": 65,
-                "score": 48
+                "score": 15
               },
               "is_exact": false
             },
@@ -51326,8 +51326,8 @@
               "hidden": false,
               "match": {
                 "home": {
-                  "code": "ARG",
-                  "name": "Argentina",
+                  "code": null,
+                  "name": "W86",
                   "hidden": false
                 },
                 "away": {
@@ -54503,7 +54503,7 @@
                 "hidden": false,
                 "score": "2 - 3"
               },
-              "actual_score": "1 - 0",
+              "actual_score": "1 - 1",
               "points": 35,
               "points_breakdown": {
                 "countries": 35,
@@ -54774,8 +54774,8 @@
               "hidden": false,
               "match": {
                 "home": {
-                  "code": "ARG",
-                  "name": "Argentina",
+                  "code": null,
+                  "name": "W86",
                   "hidden": false
                 },
                 "away": {
