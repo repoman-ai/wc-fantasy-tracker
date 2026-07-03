@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-03T20:43:36Z",
+  "updated": "2026-07-03T21:01:53Z",
   "pool": {
     "id": "34193",
     "slug": "bobby-and-friends",
@@ -18,7 +18,7 @@
       "name": "Daniel",
       "flag": "FRA",
       "rank": 1,
-      "points": 6557,
+      "points": 6649,
       "exact": 16
     },
     {
@@ -38,7 +38,7 @@
       "name": "bobby",
       "flag": "FRA",
       "rank": 3,
-      "points": 6279,
+      "points": 6371,
       "exact": 13
     },
     {
@@ -48,7 +48,7 @@
       "name": "El Capitan",
       "flag": "FRA",
       "rank": 4,
-      "points": 6047,
+      "points": 6139,
       "exact": 10
     },
     {
@@ -58,18 +58,8 @@
       "name": "Jazmin",
       "flag": "POR",
       "rank": 5,
-      "points": 6006,
+      "points": 6098,
       "exact": 11
-    },
-    {
-      "team_id": "247524",
-      "slug": "alejandro",
-      "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247524/alejandro/stage/1196-grand-total?scroll=fixture",
-      "name": "Alejandro",
-      "flag": "BRA",
-      "rank": 6,
-      "points": 5957,
-      "exact": 6
     },
     {
       "team_id": "247532",
@@ -77,9 +67,19 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247532/gabriela/stage/1196-grand-total?scroll=fixture",
       "name": "Gabriela",
       "flag": "NED",
-      "rank": 7,
-      "points": 5939,
+      "rank": 6,
+      "points": 6031,
       "exact": 13
+    },
+    {
+      "team_id": "247524",
+      "slug": "alejandro",
+      "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247524/alejandro/stage/1196-grand-total?scroll=fixture",
+      "name": "Alejandro",
+      "flag": "BRA",
+      "rank": 7,
+      "points": 5957,
+      "exact": 6
     },
     {
       "team_id": "247528",
@@ -108,7 +108,7 @@
       "name": "Karenwj",
       "flag": "NED",
       "rank": 10,
-      "points": 5636,
+      "points": 5728,
       "exact": 8
     },
     {
@@ -168,7 +168,7 @@
       "name": "Luisa",
       "flag": "POR",
       "rank": 16,
-      "points": 4538,
+      "points": 4630,
       "exact": 4
     }
   ]
