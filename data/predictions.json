@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-03T22:02:11Z",
+  "updated": "2026-07-03T22:07:51Z",
   "players": {
     "252653": {
       "team_id": "252653",
@@ -8,9 +8,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/252653/daniel/stage/1196-grand-total?scroll=fixture",
       "flag": "FRA",
       "rank": 1,
-      "points": 6649,
+      "points": 6664,
       "exact": 16,
-      "grand_total": 6649,
+      "grand_total": 6664,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -2264,7 +2264,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 2380,
+          "subtotal": 2395,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -2760,10 +2760,10 @@
               "fixture_number": 86,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-03T22:00:00Z",
-              "kickoff_local": "2026-07-04 00:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "Hard Rock Stadium, Miami Gardens",
               "hidden": false,
               "match": {
@@ -2783,11 +2783,11 @@
                 "hidden": false,
                 "score": "3 - 0"
               },
-              "actual_score": "NS",
-              "points": 65,
+              "actual_score": "0 - 0",
+              "points": 80,
               "points_breakdown": {
                 "countries": 65,
-                "score": null
+                "score": 15
               },
               "is_exact": false
             },
@@ -6208,10 +6208,10 @@
               "fixture_number": 86,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-03T22:00:00Z",
-              "kickoff_local": "2026-07-04 00:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "Hard Rock Stadium, Miami Gardens",
               "hidden": false,
               "match": {
@@ -6231,11 +6231,11 @@
                 "hidden": false,
                 "score": "2 - 1"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 65,
               "points_breakdown": {
                 "countries": 65,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             },
@@ -6904,9 +6904,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/246775/bobby/stage/1196-grand-total?scroll=fixture",
       "flag": "FRA",
       "rank": 3,
-      "points": 6371,
+      "points": 6386,
       "exact": 13,
-      "grand_total": 6371,
+      "grand_total": 6386,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -9160,7 +9160,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 2158,
+          "subtotal": 2173,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -9656,10 +9656,10 @@
               "fixture_number": 86,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-03T22:00:00Z",
-              "kickoff_local": "2026-07-04 00:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "Hard Rock Stadium, Miami Gardens",
               "hidden": false,
               "match": {
@@ -9679,11 +9679,11 @@
                 "hidden": false,
                 "score": "3 - 0"
               },
-              "actual_score": "NS",
-              "points": 65,
+              "actual_score": "0 - 0",
+              "points": 80,
               "points_breakdown": {
                 "countries": 65,
-                "score": null
+                "score": 15
               },
               "is_exact": false
             },
@@ -13104,10 +13104,10 @@
               "fixture_number": 86,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-03T22:00:00Z",
-              "kickoff_local": "2026-07-04 00:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "Hard Rock Stadium, Miami Gardens",
               "hidden": false,
               "match": {
@@ -13127,11 +13127,11 @@
                 "hidden": false,
                 "score": "3 - 1"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 65,
               "points_breakdown": {
                 "countries": 65,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             },
@@ -13800,9 +13800,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/253787/jazmin/stage/1196-grand-total?scroll=fixture",
       "flag": "POR",
       "rank": 5,
-      "points": 6098,
+      "points": 6113,
       "exact": 11,
-      "grand_total": 6098,
+      "grand_total": 6113,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -16056,7 +16056,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 2119,
+          "subtotal": 2134,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -16552,10 +16552,10 @@
               "fixture_number": 86,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-03T22:00:00Z",
-              "kickoff_local": "2026-07-04 00:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "Hard Rock Stadium, Miami Gardens",
               "hidden": false,
               "match": {
@@ -16575,11 +16575,11 @@
                 "hidden": false,
                 "score": "3 - 0"
               },
-              "actual_score": "NS",
-              "points": 65,
+              "actual_score": "0 - 0",
+              "points": 80,
               "points_breakdown": {
                 "countries": 65,
-                "score": null
+                "score": 15
               },
               "is_exact": false
             },
@@ -17248,9 +17248,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247532/gabriela/stage/1196-grand-total?scroll=fixture",
       "flag": "NED",
       "rank": 6,
-      "points": 6031,
+      "points": 6046,
       "exact": 13,
-      "grand_total": 6031,
+      "grand_total": 6046,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -19504,7 +19504,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 2127,
+          "subtotal": 2142,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -20000,10 +20000,10 @@
               "fixture_number": 86,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-03T22:00:00Z",
-              "kickoff_local": "2026-07-04 00:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "Hard Rock Stadium, Miami Gardens",
               "hidden": false,
               "match": {
@@ -20023,11 +20023,11 @@
                 "hidden": false,
                 "score": "3 - 0"
               },
-              "actual_score": "NS",
-              "points": 130,
+              "actual_score": "0 - 0",
+              "points": 145,
               "points_breakdown": {
                 "countries": 130,
-                "score": null
+                "score": 15
               },
               "is_exact": false
             },
@@ -23448,10 +23448,10 @@
               "fixture_number": 86,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-03T22:00:00Z",
-              "kickoff_local": "2026-07-04 00:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "Hard Rock Stadium, Miami Gardens",
               "hidden": false,
               "match": {
@@ -23471,11 +23471,11 @@
                 "hidden": false,
                 "score": "3 - 1"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 65,
               "points_breakdown": {
                 "countries": 65,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             },
@@ -26896,10 +26896,10 @@
               "fixture_number": 86,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-03T22:00:00Z",
-              "kickoff_local": "2026-07-04 00:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "Hard Rock Stadium, Miami Gardens",
               "hidden": false,
               "match": {
@@ -26919,11 +26919,11 @@
                 "hidden": false,
                 "score": "3 - 1"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 65,
               "points_breakdown": {
                 "countries": 65,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             },
@@ -30344,10 +30344,10 @@
               "fixture_number": 86,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-03T22:00:00Z",
-              "kickoff_local": "2026-07-04 00:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "Hard Rock Stadium, Miami Gardens",
               "hidden": false,
               "match": {
@@ -30367,11 +30367,11 @@
                 "hidden": false,
                 "score": "2 - 1"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 65,
               "points_breakdown": {
                 "countries": 65,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             },
@@ -33792,10 +33792,10 @@
               "fixture_number": 86,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-03T22:00:00Z",
-              "kickoff_local": "2026-07-04 00:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "Hard Rock Stadium, Miami Gardens",
               "hidden": false,
               "match": {
@@ -33815,11 +33815,11 @@
                 "hidden": false,
                 "score": "3 - 1"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 65,
               "points_breakdown": {
                 "countries": 65,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             },
@@ -34488,9 +34488,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247526/valewalle/stage/1196-grand-total?scroll=fixture",
       "flag": "ESP",
       "rank": 11,
-      "points": 5567,
+      "points": 5582,
       "exact": 13,
-      "grand_total": 5567,
+      "grand_total": 5582,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -36744,7 +36744,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 2125,
+          "subtotal": 2140,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -37240,10 +37240,10 @@
               "fixture_number": 86,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-03T22:00:00Z",
-              "kickoff_local": "2026-07-04 00:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "Hard Rock Stadium, Miami Gardens",
               "hidden": false,
               "match": {
@@ -37263,11 +37263,11 @@
                 "hidden": false,
                 "score": "3 - 0"
               },
-              "actual_score": "NS",
-              "points": 65,
+              "actual_score": "0 - 0",
+              "points": 80,
               "points_breakdown": {
                 "countries": 65,
-                "score": null
+                "score": 15
               },
               "is_exact": false
             },
@@ -40688,10 +40688,10 @@
               "fixture_number": 86,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-03T22:00:00Z",
-              "kickoff_local": "2026-07-04 00:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "Hard Rock Stadium, Miami Gardens",
               "hidden": false,
               "match": {
@@ -40711,11 +40711,11 @@
                 "hidden": false,
                 "score": "4 - 1"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 65,
               "points_breakdown": {
                 "countries": 65,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             },
@@ -41384,9 +41384,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/253790/remi/stage/1196-grand-total?scroll=fixture",
       "flag": "FRA",
       "rank": 13,
-      "points": 5432,
+      "points": 5447,
       "exact": 13,
-      "grand_total": 5432,
+      "grand_total": 5447,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -43640,7 +43640,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1999,
+          "subtotal": 2014,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -44136,10 +44136,10 @@
               "fixture_number": 86,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-03T22:00:00Z",
-              "kickoff_local": "2026-07-04 00:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "Hard Rock Stadium, Miami Gardens",
               "hidden": false,
               "match": {
@@ -44159,11 +44159,11 @@
                 "hidden": false,
                 "score": "4 - 0"
               },
-              "actual_score": "NS",
-              "points": 35,
+              "actual_score": "0 - 0",
+              "points": 50,
               "points_breakdown": {
                 "countries": 35,
-                "score": null
+                "score": 15
               },
               "is_exact": false
             },
@@ -44832,9 +44832,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247729/maxs/stage/1196-grand-total?scroll=fixture",
       "flag": "ARG",
       "rank": 14,
-      "points": 4974,
+      "points": 4989,
       "exact": 6,
-      "grand_total": 4974,
+      "grand_total": 4989,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -47088,7 +47088,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1724,
+          "subtotal": 1739,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -47584,10 +47584,10 @@
               "fixture_number": 86,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-03T22:00:00Z",
-              "kickoff_local": "2026-07-04 00:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "Hard Rock Stadium, Miami Gardens",
               "hidden": false,
               "match": {
@@ -47607,11 +47607,11 @@
                 "hidden": false,
                 "score": "2 - 0"
               },
-              "actual_score": "NS",
-              "points": 65,
+              "actual_score": "0 - 0",
+              "points": 80,
               "points_breakdown": {
                 "countries": 65,
-                "score": null
+                "score": 15
               },
               "is_exact": false
             },
@@ -50536,7 +50536,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1695,
+          "subtotal": 1760,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -51059,7 +51059,7 @@
               "points": 65,
               "points_breakdown": {
                 "countries": 65,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             },
@@ -53984,7 +53984,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1409,
+          "subtotal": 1479,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -54049,9 +54049,9 @@
                 "score": "1 - 2"
               },
               "actual_score": "2 - 1",
-              "points": 65,
+              "points": 100,
               "points_breakdown": {
-                "countries": 65,
+                "countries": 100,
                 "score": 0
               },
               "is_exact": false
@@ -54507,7 +54507,7 @@
               "points": 35,
               "points_breakdown": {
                 "countries": 35,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             },
