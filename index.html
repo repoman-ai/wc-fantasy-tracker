@@ -903,7 +903,9 @@ const DEBRIEF_RULES={
 };
 const DEBRIEF_MANUAL_HIGHLIGHTS=[
   // Recap date uses the same UTC cutoff day as the Debrief URL (?debrief=YYYY-MM-DD).
-  {date:'2026-07-03', playerId:'247525', note:'Karenwj'}
+  {date:'2026-07-02', playerId:'247525', note:'Karenwj',
+   headline:'Karenwj Cashes Every Card',
+   dek:'386 points across all 3 Round of 32 matches, and a climb into 10th overall.'}
 ];
 /* Secondary "official close" path: a snapshot the scraper already trusts as
    settled and that lands this long after the last whistle. The primary, safer
@@ -1255,7 +1257,7 @@ function debriefManualHighlightFor(ctx, featureIds){
   if(!entry) return null;
   const player=ctx.players.find(p=>debriefManualHighlightMatch(p,entry));
   if(!player || (featureIds&&featureIds.has(player.teamId))) return null;
-  return player;
+  return {...player, manualEntry:entry};
 }
 
 /* Collect every fixture across all players' prediction pages, deduped by
@@ -2684,15 +2686,16 @@ function debriefStories(ctx,opt){
         const aboveAvg=p.points>=Math.max(1,Math.round(ctx.avgDay*.82));
         const manualBoost=manual&&manual.teamId===p.teamId;
         const score=(enoughWait?wait*6:0)+(lowerBand?8:0)+(aboveAvg?7:0)+Math.min(10,Math.round(p.points/15));
-        return {...p,row,wait,rank,enoughWait,lowerBand,aboveAvg,manualBoost,spotScore:manualBoost?score+80:score};
+        return {...p,row,wait,rank,enoughWait,lowerBand,aboveAvg,manualBoost,
+          manualEntry:manualBoost?manual.manualEntry:null, spotScore:manualBoost?score+80:score};
       })
       .filter(p=>p.manualBoost || ((p.enoughWait||p.lowerBand) && p.aboveAvg))
       .sort((a,b)=>(b.manualBoost?1:0)-(a.manualBoost?1:0) || b.spotScore-a.spotScore || b.points-a.points || b.wait-a.wait || a.name.localeCompare(b.name))[0];
     if(under){
       add({id:'underradar',drama:under.manualBoost?120:25+Math.min(22,under.spotScore),icon:'🔎',
         manual:!!under.manualBoost,
-        headline:copy('underradar',under.teamId,{p:under,row:under.row,wait:under.wait}),
-        dek:copy('underradar-dek',under.teamId,{p:under,row:under.row,wait:under.wait}),
+        headline:under.manualEntry&&under.manualEntry.headline || copy('underradar',under.teamId,{p:under,row:under.row,wait:under.wait}),
+        dek:under.manualEntry&&under.manualEntry.dek || copy('underradar-dek',under.teamId,{p:under,row:under.row,wait:under.wait}),
         link:{playerId:under.teamId},
         players:[under.teamId]});
     }
