@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-03T00:21:37Z",
+  "updated": "2026-07-03T00:35:55Z",
   "pool": {
     "id": "34193",
     "slug": "bobby-and-friends",
@@ -48,18 +48,8 @@
       "name": "El Capitan",
       "flag": "FRA",
       "rank": 4,
-      "points": 5773,
+      "points": 5788,
       "exact": 10
-    },
-    {
-      "team_id": "253787",
-      "slug": "jazmin",
-      "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/253787/jazmin/stage/1196-grand-total?scroll=fixture",
-      "name": "Jazmin",
-      "flag": "POR",
-      "rank": 5,
-      "points": 5684,
-      "exact": 11
     },
     {
       "team_id": "247535",
@@ -67,9 +57,19 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247535/baronmark/stage/1196-grand-total?scroll=fixture",
       "name": "Baronmark",
       "flag": "FRA",
+      "rank": 5,
+      "points": 5734,
+      "exact": 14
+    },
+    {
+      "team_id": "253787",
+      "slug": "jazmin",
+      "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/253787/jazmin/stage/1196-grand-total?scroll=fixture",
+      "name": "Jazmin",
+      "flag": "POR",
       "rank": 6,
-      "points": 5659,
-      "exact": 13
+      "points": 5684,
+      "exact": 11
     },
     {
       "team_id": "247528",
@@ -98,7 +98,7 @@
       "name": "Valewalle",
       "flag": "ESP",
       "rank": 9,
-      "points": 5614,
+      "points": 5569,
       "exact": 12
     },
     {
@@ -168,8 +168,8 @@
       "name": "Luisa",
       "flag": "POR",
       "rank": 16,
-      "points": 4368,
-      "exact": 4
+      "points": 4443,
+      "exact": 5
     }
   ]
 }
