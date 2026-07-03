@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-03T03:07:28Z",
+  "updated": "2026-07-03T03:11:40Z",
   "players": {
     "252653": {
       "team_id": "252653",
@@ -22952,7 +22952,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 2053,
+          "subtotal": 1973,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -23401,11 +23401,11 @@
                 "hidden": false,
                 "score": "3 - 0"
               },
-              "actual_score": "0 - 0",
-              "points": 80,
+              "actual_score": "1 - 0",
+              "points": 65,
               "points_breakdown": {
                 "countries": 65,
-                "score": 15
+                "score": null
               },
               "is_exact": false
             },
@@ -23777,8 +23777,8 @@
               "hidden": false,
               "match": {
                 "home": {
-                  "code": null,
-                  "name": "W85",
+                  "code": "SUI",
+                  "name": "Switzerland",
                   "hidden": false
                 },
                 "away": {
@@ -26400,7 +26400,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1962,
+          "subtotal": 1877,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -26465,9 +26465,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "2 - 1",
-              "points": 190,
+              "points": 155,
               "points_breakdown": {
-                "countries": 100,
+                "countries": 65,
                 "score": 90
               },
               "is_exact": true
@@ -26849,11 +26849,11 @@
                 "hidden": false,
                 "score": "2 - 0"
               },
-              "actual_score": "0 - 0",
-              "points": 50,
+              "actual_score": "1 - 0",
+              "points": 35,
               "points_breakdown": {
                 "countries": 35,
-                "score": 15
+                "score": null
               },
               "is_exact": false
             },
@@ -27225,8 +27225,8 @@
               "hidden": false,
               "match": {
                 "home": {
-                  "code": null,
-                  "name": "W85",
+                  "code": "SUI",
+                  "name": "Switzerland",
                   "hidden": false
                 },
                 "away": {
@@ -29848,7 +29848,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1919,
+          "subtotal": 1834,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -30297,11 +30297,11 @@
                 "hidden": false,
                 "score": "1 - 0"
               },
-              "actual_score": "0 - 0",
-              "points": 85,
+              "actual_score": "1 - 0",
+              "points": 70,
               "points_breakdown": {
                 "countries": 70,
-                "score": 15
+                "score": null
               },
               "is_exact": false
             },
@@ -30673,8 +30673,8 @@
               "hidden": false,
               "match": {
                 "home": {
-                  "code": null,
-                  "name": "W85",
+                  "code": "SUI",
+                  "name": "Switzerland",
                   "hidden": false
                 },
                 "away": {
@@ -33296,7 +33296,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 2035,
+          "subtotal": 1985,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -33745,11 +33745,11 @@
                 "hidden": false,
                 "score": "2 - 0"
               },
-              "actual_score": "0 - 0",
-              "points": 50,
+              "actual_score": "1 - 0",
+              "points": 35,
               "points_breakdown": {
                 "countries": 35,
-                "score": 15
+                "score": null
               },
               "is_exact": false
             },
@@ -34121,8 +34121,8 @@
               "hidden": false,
               "match": {
                 "home": {
-                  "code": null,
-                  "name": "W85",
+                  "code": "SUI",
+                  "name": "Switzerland",
                   "hidden": false
                 },
                 "away": {
@@ -36744,7 +36744,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1840,
+          "subtotal": 1740,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -37019,9 +37019,9 @@
                 "score": "3 - 1"
               },
               "actual_score": "2 - 1",
-              "points": 128,
+              "points": 63,
               "points_breakdown": {
-                "countries": 65,
+                "countries": 0,
                 "score": 63
               },
               "is_exact": false
@@ -37193,11 +37193,11 @@
                 "hidden": false,
                 "score": "2 - 1"
               },
-              "actual_score": "0 - 0",
+              "actual_score": "1 - 0",
               "points": 35,
               "points_breakdown": {
                 "countries": 35,
-                "score": 0
+                "score": null
               },
               "is_exact": false
             },
@@ -37569,8 +37569,8 @@
               "hidden": false,
               "match": {
                 "home": {
-                  "code": null,
-                  "name": "W85",
+                  "code": "SUI",
+                  "name": "Switzerland",
                   "hidden": false
                 },
                 "away": {
@@ -40192,7 +40192,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1892,
+          "subtotal": 1762,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -40641,11 +40641,11 @@
                 "hidden": false,
                 "score": "2 - 1"
               },
-              "actual_score": "0 - 0",
+              "actual_score": "1 - 0",
               "points": 130,
               "points_breakdown": {
                 "countries": 130,
-                "score": 0
+                "score": null
               },
               "is_exact": false
             },
@@ -41017,8 +41017,8 @@
               "hidden": false,
               "match": {
                 "home": {
-                  "code": null,
-                  "name": "W85",
+                  "code": "SUI",
+                  "name": "Switzerland",
                   "hidden": false
                 },
                 "away": {
@@ -43640,7 +43640,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1909,
+          "subtotal": 1859,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -44089,11 +44089,11 @@
                 "hidden": false,
                 "score": "2 - 0"
               },
-              "actual_score": "0 - 0",
-              "points": 50,
+              "actual_score": "1 - 0",
+              "points": 35,
               "points_breakdown": {
                 "countries": 35,
-                "score": 15
+                "score": null
               },
               "is_exact": false
             },
@@ -44465,8 +44465,8 @@
               "hidden": false,
               "match": {
                 "home": {
-                  "code": null,
-                  "name": "W85",
+                  "code": "SUI",
+                  "name": "Switzerland",
                   "hidden": false
                 },
                 "away": {
@@ -47088,7 +47088,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1634,
+          "subtotal": 1519,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -47537,11 +47537,11 @@
                 "hidden": false,
                 "score": "2 - 0"
               },
-              "actual_score": "0 - 0",
-              "points": 115,
+              "actual_score": "1 - 0",
+              "points": 100,
               "points_breakdown": {
                 "countries": 100,
-                "score": 15
+                "score": null
               },
               "is_exact": false
             },
@@ -47913,8 +47913,8 @@
               "hidden": false,
               "match": {
                 "home": {
-                  "code": null,
-                  "name": "W85",
+                  "code": "SUI",
+                  "name": "Switzerland",
                   "hidden": false
                 },
                 "away": {
@@ -50536,7 +50536,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1700,
+          "subtotal": 1595,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -50916,9 +50916,9 @@
                 "score": "2 - 3"
               },
               "actual_score": "3 - 0",
-              "points": 100,
+              "points": 65,
               "points_breakdown": {
-                "countries": 100,
+                "countries": 65,
                 "score": 0
               },
               "is_exact": false
@@ -50985,11 +50985,11 @@
                 "hidden": false,
                 "score": "3 - 1"
               },
-              "actual_score": "0 - 0",
+              "actual_score": "1 - 0",
               "points": 70,
               "points_breakdown": {
                 "countries": 70,
-                "score": 0
+                "score": null
               },
               "is_exact": false
             },
@@ -51361,8 +51361,8 @@
               "hidden": false,
               "match": {
                 "home": {
-                  "code": null,
-                  "name": "W85",
+                  "code": "SUI",
+                  "name": "Switzerland",
                   "hidden": false
                 },
                 "away": {
@@ -53984,7 +53984,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1401,
+          "subtotal": 1336,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -54433,11 +54433,11 @@
                 "hidden": false,
                 "score": "2 - 1"
               },
-              "actual_score": "0 - 0",
+              "actual_score": "1 - 0",
               "points": 65,
               "points_breakdown": {
                 "countries": 65,
-                "score": 0
+                "score": null
               },
               "is_exact": false
             },
@@ -54809,8 +54809,8 @@
               "hidden": false,
               "match": {
                 "home": {
-                  "code": null,
-                  "name": "W85",
+                  "code": "SUI",
+                  "name": "Switzerland",
                   "hidden": false
                 },
                 "away": {
