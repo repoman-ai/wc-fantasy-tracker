@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-04T00:41:45Z",
+  "updated": "2026-07-04T00:51:44Z",
   "players": {
     "252653": {
       "team_id": "252653",
@@ -2760,10 +2760,10 @@
               "fixture_number": 86,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-03T22:00:00Z",
+              "kickoff_local": "2026-07-04 00:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "Hard Rock Stadium, Miami Gardens",
               "hidden": false,
               "match": {
@@ -3440,7 +3440,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Kylian Mbappé (France), Lionel Messi (Argentina)",
+              "text": "Lionel Messi (Argentina)",
               "flag": null
             },
             "points": null
@@ -6208,10 +6208,10 @@
               "fixture_number": 86,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-03T22:00:00Z",
+              "kickoff_local": "2026-07-04 00:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "Hard Rock Stadium, Miami Gardens",
               "hidden": false,
               "match": {
@@ -6888,7 +6888,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Kylian Mbappé (France), Lionel Messi (Argentina)",
+              "text": "Lionel Messi (Argentina)",
               "flag": null
             },
             "points": null
@@ -9656,10 +9656,10 @@
               "fixture_number": 86,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-03T22:00:00Z",
+              "kickoff_local": "2026-07-04 00:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "Hard Rock Stadium, Miami Gardens",
               "hidden": false,
               "match": {
@@ -10336,7 +10336,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Kylian Mbappé (France), Lionel Messi (Argentina)",
+              "text": "Lionel Messi (Argentina)",
               "flag": null
             },
             "points": null
@@ -13104,10 +13104,10 @@
               "fixture_number": 86,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-03T22:00:00Z",
+              "kickoff_local": "2026-07-04 00:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "Hard Rock Stadium, Miami Gardens",
               "hidden": false,
               "match": {
@@ -13784,7 +13784,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Kylian Mbappé (France), Lionel Messi (Argentina)",
+              "text": "Lionel Messi (Argentina)",
               "flag": null
             },
             "points": null
@@ -16552,10 +16552,10 @@
               "fixture_number": 86,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-03T22:00:00Z",
+              "kickoff_local": "2026-07-04 00:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "Hard Rock Stadium, Miami Gardens",
               "hidden": false,
               "match": {
@@ -17232,7 +17232,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Kylian Mbappé (France), Lionel Messi (Argentina)",
+              "text": "Lionel Messi (Argentina)",
               "flag": null
             },
             "points": null
@@ -20000,10 +20000,10 @@
               "fixture_number": 86,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-03T22:00:00Z",
+              "kickoff_local": "2026-07-04 00:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "Hard Rock Stadium, Miami Gardens",
               "hidden": false,
               "match": {
@@ -20680,7 +20680,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Kylian Mbappé (France), Lionel Messi (Argentina)",
+              "text": "Lionel Messi (Argentina)",
               "flag": null
             },
             "points": null
@@ -23448,10 +23448,10 @@
               "fixture_number": 86,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-03T22:00:00Z",
+              "kickoff_local": "2026-07-04 00:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "Hard Rock Stadium, Miami Gardens",
               "hidden": false,
               "match": {
@@ -24128,7 +24128,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Kylian Mbappé (France), Lionel Messi (Argentina)",
+              "text": "Lionel Messi (Argentina)",
               "flag": null
             },
             "points": null
@@ -26896,10 +26896,10 @@
               "fixture_number": 86,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-03T22:00:00Z",
+              "kickoff_local": "2026-07-04 00:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "Hard Rock Stadium, Miami Gardens",
               "hidden": false,
               "match": {
@@ -27576,7 +27576,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Kylian Mbappé (France), Lionel Messi (Argentina)",
+              "text": "Lionel Messi (Argentina)",
               "flag": null
             },
             "points": null
@@ -30344,10 +30344,10 @@
               "fixture_number": 86,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-03T22:00:00Z",
+              "kickoff_local": "2026-07-04 00:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "Hard Rock Stadium, Miami Gardens",
               "hidden": false,
               "match": {
@@ -31024,7 +31024,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Kylian Mbappé (France), Lionel Messi (Argentina)",
+              "text": "Lionel Messi (Argentina)",
               "flag": null
             },
             "points": null
@@ -33792,10 +33792,10 @@
               "fixture_number": 86,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-03T22:00:00Z",
+              "kickoff_local": "2026-07-04 00:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "Hard Rock Stadium, Miami Gardens",
               "hidden": false,
               "match": {
@@ -34472,7 +34472,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Kylian Mbappé (France), Lionel Messi (Argentina)",
+              "text": "Lionel Messi (Argentina)",
               "flag": null
             },
             "points": null
@@ -37240,10 +37240,10 @@
               "fixture_number": 86,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-03T22:00:00Z",
+              "kickoff_local": "2026-07-04 00:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "Hard Rock Stadium, Miami Gardens",
               "hidden": false,
               "match": {
@@ -37920,7 +37920,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Kylian Mbappé (France), Lionel Messi (Argentina)",
+              "text": "Lionel Messi (Argentina)",
               "flag": null
             },
             "points": null
@@ -40688,10 +40688,10 @@
               "fixture_number": 86,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-03T22:00:00Z",
+              "kickoff_local": "2026-07-04 00:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "Hard Rock Stadium, Miami Gardens",
               "hidden": false,
               "match": {
@@ -41368,7 +41368,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Kylian Mbappé (France), Lionel Messi (Argentina)",
+              "text": "Lionel Messi (Argentina)",
               "flag": null
             },
             "points": null
@@ -44136,10 +44136,10 @@
               "fixture_number": 86,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-03T22:00:00Z",
+              "kickoff_local": "2026-07-04 00:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "Hard Rock Stadium, Miami Gardens",
               "hidden": false,
               "match": {
@@ -44816,7 +44816,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Kylian Mbappé (France), Lionel Messi (Argentina)",
+              "text": "Lionel Messi (Argentina)",
               "flag": null
             },
             "points": null
@@ -47584,10 +47584,10 @@
               "fixture_number": 86,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-03T22:00:00Z",
+              "kickoff_local": "2026-07-04 00:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "Hard Rock Stadium, Miami Gardens",
               "hidden": false,
               "match": {
@@ -48264,7 +48264,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Kylian Mbappé (France), Lionel Messi (Argentina)",
+              "text": "Lionel Messi (Argentina)",
               "flag": null
             },
             "points": null
@@ -51032,10 +51032,10 @@
               "fixture_number": 86,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-03T22:00:00Z",
+              "kickoff_local": "2026-07-04 00:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "Hard Rock Stadium, Miami Gardens",
               "hidden": false,
               "match": {
@@ -51712,7 +51712,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Kylian Mbappé (France), Lionel Messi (Argentina)",
+              "text": "Lionel Messi (Argentina)",
               "flag": null
             },
             "points": null
@@ -54480,10 +54480,10 @@
               "fixture_number": 86,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-03T22:00:00Z",
+              "kickoff_local": "2026-07-04 00:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "Hard Rock Stadium, Miami Gardens",
               "hidden": false,
               "match": {
@@ -55160,7 +55160,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Kylian Mbappé (France), Lionel Messi (Argentina)",
+              "text": "Lionel Messi (Argentina)",
               "flag": null
             },
             "points": null
