@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-04T01:21:47Z",
+  "updated": "2026-07-04T01:31:44Z",
   "players": {
     "252653": {
       "team_id": "252653",
@@ -19504,7 +19504,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 2127,
+          "subtotal": 2092,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -20035,10 +20035,10 @@
               "fixture_number": 87,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-04T01:30:00Z",
-              "kickoff_local": "2026-07-04 03:30",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "Arrowhead Stadium, Kansas City",
               "hidden": false,
               "match": {
@@ -20058,7 +20058,7 @@
                 "hidden": false,
                 "score": "2 - 0"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 35,
               "points_breakdown": {
                 "countries": 35,
@@ -22952,7 +22952,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 2131,
+          "subtotal": 2031,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -23483,10 +23483,10 @@
               "fixture_number": 87,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-04T01:30:00Z",
-              "kickoff_local": "2026-07-04 03:30",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "Arrowhead Stadium, Kansas City",
               "hidden": false,
               "match": {
@@ -23506,7 +23506,7 @@
                 "hidden": false,
                 "score": "4 - 2"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 100,
               "points_breakdown": {
                 "countries": 100,
@@ -26400,7 +26400,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 2214,
+          "subtotal": 2114,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -26931,10 +26931,10 @@
               "fixture_number": 87,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-04T01:30:00Z",
-              "kickoff_local": "2026-07-04 03:30",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "Arrowhead Stadium, Kansas City",
               "hidden": false,
               "match": {
@@ -26954,7 +26954,7 @@
                 "hidden": false,
                 "score": "2 - 2"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 100,
               "points_breakdown": {
                 "countries": 100,
@@ -29848,7 +29848,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 2072,
+          "subtotal": 2037,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -30379,10 +30379,10 @@
               "fixture_number": 87,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-04T01:30:00Z",
-              "kickoff_local": "2026-07-04 03:30",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "Arrowhead Stadium, Kansas City",
               "hidden": false,
               "match": {
@@ -30402,7 +30402,7 @@
                 "hidden": false,
                 "score": "2 - 0"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 35,
               "points_breakdown": {
                 "countries": 35,
@@ -33296,7 +33296,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1933,
+          "subtotal": 1798,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -33431,9 +33431,9 @@
                 "score": "3 - 1"
               },
               "actual_score": "1 - 1",
-              "points": 145,
+              "points": 80,
               "points_breakdown": {
-                "countries": 130,
+                "countries": 65,
                 "score": 15
               },
               "is_exact": false
@@ -33827,10 +33827,10 @@
               "fixture_number": 87,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-04T01:30:00Z",
-              "kickoff_local": "2026-07-04 03:30",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "Arrowhead Stadium, Kansas City",
               "hidden": false,
               "match": {
@@ -33850,7 +33850,7 @@
                 "hidden": false,
                 "score": "2 - 1"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 70,
               "points_breakdown": {
                 "countries": 70,
@@ -36744,7 +36744,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 2125,
+          "subtotal": 2090,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -37275,10 +37275,10 @@
               "fixture_number": 87,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-04T01:30:00Z",
-              "kickoff_local": "2026-07-04 03:30",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "Arrowhead Stadium, Kansas City",
               "hidden": false,
               "match": {
@@ -37298,7 +37298,7 @@
                 "hidden": false,
                 "score": "2 - 0"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 35,
               "points_breakdown": {
                 "countries": 35,
@@ -40192,7 +40192,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1985,
+          "subtotal": 1850,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -40502,9 +40502,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "2 - 2",
-              "points": 115,
+              "points": 80,
               "points_breakdown": {
-                "countries": 100,
+                "countries": 65,
                 "score": 15
               },
               "is_exact": false
@@ -40723,10 +40723,10 @@
               "fixture_number": 87,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-04T01:30:00Z",
-              "kickoff_local": "2026-07-04 03:30",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "Arrowhead Stadium, Kansas City",
               "hidden": false,
               "match": {
@@ -40746,7 +40746,7 @@
                 "hidden": false,
                 "score": "3 - 1"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 100,
               "points_breakdown": {
                 "countries": 100,
@@ -43640,7 +43640,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1999,
+          "subtotal": 1899,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -44171,10 +44171,10 @@
               "fixture_number": 87,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-04T01:30:00Z",
-              "kickoff_local": "2026-07-04 03:30",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "Arrowhead Stadium, Kansas City",
               "hidden": false,
               "match": {
@@ -44194,7 +44194,7 @@
                 "hidden": false,
                 "score": "2 - 0"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 100,
               "points_breakdown": {
                 "countries": 100,
@@ -47088,7 +47088,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1724,
+          "subtotal": 1624,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -47468,9 +47468,9 @@
                 "score": "3 - 0"
               },
               "actual_score": "3 - 0",
-              "points": 220,
+              "points": 155,
               "points_breakdown": {
-                "countries": 130,
+                "countries": 65,
                 "score": 90
               },
               "is_exact": true
@@ -47619,10 +47619,10 @@
               "fixture_number": 87,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-04T01:30:00Z",
-              "kickoff_local": "2026-07-04 03:30",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "Arrowhead Stadium, Kansas City",
               "hidden": false,
               "match": {
@@ -47642,7 +47642,7 @@
                 "hidden": false,
                 "score": "2 - 1"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 35,
               "points_breakdown": {
                 "countries": 35,
@@ -50536,7 +50536,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1775,
+          "subtotal": 1640,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -50951,9 +50951,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "2 - 1",
-              "points": 160,
+              "points": 125,
               "points_breakdown": {
-                "countries": 70,
+                "countries": 35,
                 "score": 90
               },
               "is_exact": true
@@ -51067,10 +51067,10 @@
               "fixture_number": 87,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-04T01:30:00Z",
-              "kickoff_local": "2026-07-04 03:30",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "Arrowhead Stadium, Kansas City",
               "hidden": false,
               "match": {
@@ -51090,7 +51090,7 @@
                 "hidden": false,
                 "score": "4 - 1"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 100,
               "points_breakdown": {
                 "countries": 100,
@@ -53984,7 +53984,7 @@
         },
         {
           "round": "Round of 32",
-          "subtotal": 1479,
+          "subtotal": 1379,
           "fixtures": [
             {
               "fixture_number": 73,
@@ -54434,9 +54434,9 @@
                 "score": "2 - 1"
               },
               "actual_score": "2 - 0",
-              "points": 128,
+              "points": 63,
               "points_breakdown": {
-                "countries": 65,
+                "countries": 0,
                 "score": 63
               },
               "is_exact": false
@@ -54515,10 +54515,10 @@
               "fixture_number": 87,
               "round": "Round of 32",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-04T01:30:00Z",
-              "kickoff_local": "2026-07-04 03:30",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "Arrowhead Stadium, Kansas City",
               "hidden": false,
               "match": {
@@ -54538,7 +54538,7 @@
                 "hidden": false,
                 "score": "2 - 3"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 35,
               "points_breakdown": {
                 "countries": 35,
