@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-04T01:31:44Z",
+  "updated": "2026-07-04T01:41:56Z",
   "pool": {
     "id": "34193",
     "slug": "bobby-and-friends",
@@ -18,7 +18,7 @@
       "name": "Daniel",
       "flag": "FRA",
       "rank": 1,
-      "points": 6741,
+      "points": 6756,
       "exact": 16
     },
     {
@@ -28,7 +28,7 @@
       "name": "Alec",
       "flag": "ESP",
       "rank": 2,
-      "points": 6555,
+      "points": 6570,
       "exact": 13
     },
     {
@@ -48,7 +48,7 @@
       "name": "El Capitan",
       "flag": "FRA",
       "rank": 4,
-      "points": 6246,
+      "points": 6306,
       "exact": 10
     },
     {
@@ -58,7 +58,7 @@
       "name": "Jazmin",
       "flag": "POR",
       "rank": 5,
-      "points": 6190,
+      "points": 6205,
       "exact": 11
     },
     {
@@ -68,18 +68,8 @@
       "name": "Gabriela",
       "flag": "NED",
       "rank": 6,
-      "points": 6123,
+      "points": 6138,
       "exact": 13
-    },
-    {
-      "team_id": "247524",
-      "slug": "alejandro",
-      "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247524/alejandro/stage/1196-grand-total?scroll=fixture",
-      "name": "Alejandro",
-      "flag": "BRA",
-      "rank": 7,
-      "points": 6064,
-      "exact": 6
     },
     {
       "team_id": "247528",
@@ -87,9 +77,19 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247528/jj/stage/1196-grand-total?scroll=fixture",
       "name": "JJ",
       "flag": "FRA",
-      "rank": 8,
-      "points": 6043,
+      "rank": 7,
+      "points": 6103,
       "exact": 11
+    },
+    {
+      "team_id": "247524",
+      "slug": "alejandro",
+      "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247524/alejandro/stage/1196-grand-total?scroll=fixture",
+      "name": "Alejandro",
+      "flag": "BRA",
+      "rank": 8,
+      "points": 6064,
+      "exact": 6
     },
     {
       "team_id": "247535",
@@ -98,7 +98,7 @@
       "name": "Baronmark",
       "flag": "FRA",
       "rank": 9,
-      "points": 5919,
+      "points": 5934,
       "exact": 14
     },
     {
@@ -118,7 +118,7 @@
       "name": "Valewalle",
       "flag": "ESP",
       "rank": 11,
-      "points": 5659,
+      "points": 5674,
       "exact": 13
     },
     {
@@ -138,7 +138,7 @@
       "name": "remi",
       "flag": "FRA",
       "rank": 13,
-      "points": 5524,
+      "points": 5539,
       "exact": 13
     },
     {
