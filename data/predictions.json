@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-04T17:01:22Z",
+  "updated": "2026-07-04T17:06:48Z",
   "players": {
     "252653": {
       "team_id": "252653",
@@ -8,9 +8,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/252653/daniel/stage/1196-grand-total?scroll=fixture",
       "flag": "FRA",
       "rank": 1,
-      "points": 6896,
+      "points": 6911,
       "exact": 16,
-      "grand_total": 6896,
+      "grand_total": 6911,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -2830,16 +2830,16 @@
         },
         {
           "round": "Round of 16",
-          "subtotal": 1288,
+          "subtotal": 1303,
           "fixtures": [
             {
               "fixture_number": 90,
               "round": "Round of 16",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-04T17:00:00Z",
-              "kickoff_local": "2026-07-04 19:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "NRG Stadium, Houston",
               "hidden": false,
               "match": {
@@ -2859,11 +2859,11 @@
                 "hidden": false,
                 "score": "0 - 2"
               },
-              "actual_score": "NS",
-              "points": 92,
+              "actual_score": "0 - 0",
+              "points": 107,
               "points_breakdown": {
                 "countries": 92,
-                "score": null
+                "score": 15
               },
               "is_exact": false
             },
@@ -3456,9 +3456,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247930/alec/stage/1196-grand-total?scroll=fixture",
       "flag": "ESP",
       "rank": 2,
-      "points": 6710,
+      "points": 6725,
       "exact": 13,
-      "grand_total": 6710,
+      "grand_total": 6725,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -6278,16 +6278,16 @@
         },
         {
           "round": "Round of 16",
-          "subtotal": 1196,
+          "subtotal": 1211,
           "fixtures": [
             {
               "fixture_number": 90,
               "round": "Round of 16",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-04T17:00:00Z",
-              "kickoff_local": "2026-07-04 19:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "NRG Stadium, Houston",
               "hidden": false,
               "match": {
@@ -6307,11 +6307,11 @@
                 "hidden": false,
                 "score": "0 - 2"
               },
-              "actual_score": "NS",
-              "points": 92,
+              "actual_score": "0 - 0",
+              "points": 107,
               "points_breakdown": {
                 "countries": 92,
-                "score": null
+                "score": 15
               },
               "is_exact": false
             },
@@ -9732,10 +9732,10 @@
               "fixture_number": 90,
               "round": "Round of 16",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-04T17:00:00Z",
-              "kickoff_local": "2026-07-04 19:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "NRG Stadium, Houston",
               "hidden": false,
               "match": {
@@ -9755,11 +9755,11 @@
                 "hidden": false,
                 "score": "1 - 2"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 184,
               "points_breakdown": {
                 "countries": 184,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             },
@@ -13180,10 +13180,10 @@
               "fixture_number": 90,
               "round": "Round of 16",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-04T17:00:00Z",
-              "kickoff_local": "2026-07-04 19:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "NRG Stadium, Houston",
               "hidden": false,
               "match": {
@@ -13203,11 +13203,11 @@
                 "hidden": false,
                 "score": "1 - 2"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 184,
               "points_breakdown": {
                 "countries": 184,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             },
@@ -16628,10 +16628,10 @@
               "fixture_number": 90,
               "round": "Round of 16",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-04T17:00:00Z",
-              "kickoff_local": "2026-07-04 19:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "NRG Stadium, Houston",
               "hidden": false,
               "match": {
@@ -16651,11 +16651,11 @@
                 "hidden": false,
                 "score": "1 - 2"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 0,
               "points_breakdown": {
                 "countries": 0,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             },
@@ -20076,10 +20076,10 @@
               "fixture_number": 90,
               "round": "Round of 16",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-04T17:00:00Z",
-              "kickoff_local": "2026-07-04 19:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "NRG Stadium, Houston",
               "hidden": false,
               "match": {
@@ -20099,11 +20099,11 @@
                 "hidden": false,
                 "score": "1 - 3"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 92,
               "points_breakdown": {
                 "countries": 92,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             },
@@ -23524,10 +23524,10 @@
               "fixture_number": 90,
               "round": "Round of 16",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-04T17:00:00Z",
-              "kickoff_local": "2026-07-04 19:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "NRG Stadium, Houston",
               "hidden": false,
               "match": {
@@ -23547,11 +23547,11 @@
                 "hidden": false,
                 "score": "1 - 2"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 184,
               "points_breakdown": {
                 "countries": 184,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             },
@@ -24144,9 +24144,9 @@
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247535/baronmark/stage/1196-grand-total?scroll=fixture",
       "flag": "FRA",
       "rank": 8,
-      "points": 6074,
+      "points": 6089,
       "exact": 14,
-      "grand_total": 6074,
+      "grand_total": 6089,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -26966,16 +26966,16 @@
         },
         {
           "round": "Round of 16",
-          "subtotal": 1104,
+          "subtotal": 1119,
           "fixtures": [
             {
               "fixture_number": 90,
               "round": "Round of 16",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-04T17:00:00Z",
-              "kickoff_local": "2026-07-04 19:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "NRG Stadium, Houston",
               "hidden": false,
               "match": {
@@ -26995,11 +26995,11 @@
                 "hidden": false,
                 "score": "0 - 1"
               },
-              "actual_score": "NS",
-              "points": 92,
+              "actual_score": "0 - 0",
+              "points": 107,
               "points_breakdown": {
                 "countries": 92,
-                "score": null
+                "score": 15
               },
               "is_exact": false
             },
@@ -30420,10 +30420,10 @@
               "fixture_number": 90,
               "round": "Round of 16",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-04T17:00:00Z",
-              "kickoff_local": "2026-07-04 19:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "NRG Stadium, Houston",
               "hidden": false,
               "match": {
@@ -30443,11 +30443,11 @@
                 "hidden": false,
                 "score": "1 - 3"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 92,
               "points_breakdown": {
                 "countries": 92,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             },
@@ -33868,10 +33868,10 @@
               "fixture_number": 90,
               "round": "Round of 16",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-04T17:00:00Z",
-              "kickoff_local": "2026-07-04 19:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "NRG Stadium, Houston",
               "hidden": false,
               "match": {
@@ -33891,11 +33891,11 @@
                 "hidden": false,
                 "score": "1 - 3"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 92,
               "points_breakdown": {
                 "countries": 92,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             },
@@ -37316,10 +37316,10 @@
               "fixture_number": 90,
               "round": "Round of 16",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-04T17:00:00Z",
-              "kickoff_local": "2026-07-04 19:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "NRG Stadium, Houston",
               "hidden": false,
               "match": {
@@ -37339,11 +37339,11 @@
                 "hidden": false,
                 "score": "2 - 1"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 48,
               "points_breakdown": {
                 "countries": 48,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             },
@@ -40764,10 +40764,10 @@
               "fixture_number": 90,
               "round": "Round of 16",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-04T17:00:00Z",
-              "kickoff_local": "2026-07-04 19:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "NRG Stadium, Houston",
               "hidden": false,
               "match": {
@@ -40787,11 +40787,11 @@
                 "hidden": false,
                 "score": "1 - 3"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 92,
               "points_breakdown": {
                 "countries": 92,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             },
@@ -44212,10 +44212,10 @@
               "fixture_number": 90,
               "round": "Round of 16",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-04T17:00:00Z",
-              "kickoff_local": "2026-07-04 19:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "NRG Stadium, Houston",
               "hidden": false,
               "match": {
@@ -44235,11 +44235,11 @@
                 "hidden": false,
                 "score": "2 - 3"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 92,
               "points_breakdown": {
                 "countries": 92,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             },
@@ -47660,10 +47660,10 @@
               "fixture_number": 90,
               "round": "Round of 16",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-04T17:00:00Z",
-              "kickoff_local": "2026-07-04 19:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "NRG Stadium, Houston",
               "hidden": false,
               "match": {
@@ -47683,11 +47683,11 @@
                 "hidden": false,
                 "score": "1 - 3"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 92,
               "points_breakdown": {
                 "countries": 92,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             },
@@ -51108,10 +51108,10 @@
               "fixture_number": 90,
               "round": "Round of 16",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-04T17:00:00Z",
-              "kickoff_local": "2026-07-04 19:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "NRG Stadium, Houston",
               "hidden": false,
               "match": {
@@ -51131,11 +51131,11 @@
                 "hidden": false,
                 "score": "1 - 3"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 184,
               "points_breakdown": {
                 "countries": 184,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             },
@@ -54556,10 +54556,10 @@
               "fixture_number": 90,
               "round": "Round of 16",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-04T17:00:00Z",
-              "kickoff_local": "2026-07-04 19:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "NRG Stadium, Houston",
               "hidden": false,
               "match": {
@@ -54579,11 +54579,11 @@
                 "hidden": false,
                 "score": "2 - 4"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 0,
               "points_breakdown": {
                 "countries": 0,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             },
