@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-04T21:03:22Z",
+  "updated": "2026-07-04T21:11:55Z",
   "pool": {
     "id": "34193",
     "slug": "bobby-and-friends",
@@ -122,24 +122,24 @@
       "exact": 13
     },
     {
-      "team_id": "253790",
-      "slug": "remi",
-      "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/253790/remi/stage/1196-grand-total?scroll=fixture",
-      "name": "remi",
-      "flag": "FRA",
-      "rank": 12,
-      "points": 5742,
-      "exact": 13
-    },
-    {
       "team_id": "247537",
       "slug": "yo",
       "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/247537/yo/stage/1196-grand-total?scroll=fixture",
       "name": "Yo",
       "flag": "MEX",
-      "rank": 13,
-      "points": 5727,
+      "rank": 12,
+      "points": 5787,
       "exact": 7
+    },
+    {
+      "team_id": "253790",
+      "slug": "remi",
+      "player_url": "https://www.tournamentsoccer.us/fantasy-soccer-world-cup/2026/team/253790/remi/stage/1196-grand-total?scroll=fixture",
+      "name": "remi",
+      "flag": "FRA",
+      "rank": 13,
+      "points": 5742,
+      "exact": 13
     },
     {
       "team_id": "247729",
