@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-05T22:06:12Z",
+  "updated": "2026-07-05T22:11:51Z",
   "players": {
     "252653": {
       "team_id": "252653",
@@ -2830,7 +2830,7 @@
         },
         {
           "round": "Round of 16",
-          "subtotal": 1135,
+          "subtotal": 1411,
           "fixtures": [
             {
               "fixture_number": 90,
@@ -2895,9 +2895,9 @@
                 "score": "1 - 2"
               },
               "actual_score": "0 - 1",
-              "points": 60,
+              "points": 152,
               "points_breakdown": {
-                "countries": 0,
+                "countries": 92,
                 "score": 60
               },
               "is_exact": false
@@ -2933,7 +2933,7 @@
               "points": 184,
               "points_breakdown": {
                 "countries": 184,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             },
@@ -3440,7 +3440,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Kylian Mbappé (France), Lionel Messi (Argentina)",
+              "text": "Kylian Mbappé (France), Lionel Messi (Argentina), Erling Haaland (Norway)",
               "flag": null
             },
             "points": null
@@ -6278,7 +6278,7 @@
         },
         {
           "round": "Round of 16",
-          "subtotal": 1212,
+          "subtotal": 1304,
           "fixtures": [
             {
               "fixture_number": 90,
@@ -6381,7 +6381,7 @@
               "points": 92,
               "points_breakdown": {
                 "countries": 92,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             },
@@ -6888,7 +6888,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Kylian Mbappé (France), Lionel Messi (Argentina)",
+              "text": "Kylian Mbappé (France), Lionel Messi (Argentina), Erling Haaland (Norway)",
               "flag": null
             },
             "points": null
@@ -9726,7 +9726,7 @@
         },
         {
           "round": "Round of 16",
-          "subtotal": 1135,
+          "subtotal": 1319,
           "fixtures": [
             {
               "fixture_number": 90,
@@ -9829,7 +9829,7 @@
               "points": 184,
               "points_breakdown": {
                 "countries": 184,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             },
@@ -10336,7 +10336,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Kylian Mbappé (France), Lionel Messi (Argentina)",
+              "text": "Kylian Mbappé (France), Lionel Messi (Argentina), Erling Haaland (Norway)",
               "flag": null
             },
             "points": null
@@ -13174,7 +13174,7 @@
         },
         {
           "round": "Round of 16",
-          "subtotal": 1304,
+          "subtotal": 1488,
           "fixtures": [
             {
               "fixture_number": 90,
@@ -13277,7 +13277,7 @@
               "points": 184,
               "points_breakdown": {
                 "countries": 184,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             },
@@ -13784,7 +13784,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Kylian Mbappé (France), Lionel Messi (Argentina)",
+              "text": "Kylian Mbappé (France), Lionel Messi (Argentina), Erling Haaland (Norway)",
               "flag": null
             },
             "points": null
@@ -16622,7 +16622,7 @@
         },
         {
           "round": "Round of 16",
-          "subtotal": 939,
+          "subtotal": 1305,
           "fixtures": [
             {
               "fixture_number": 90,
@@ -16722,12 +16722,12 @@
                 "score": "1 - 2"
               },
               "actual_score": "1 - 2",
-              "points": 184,
+              "points": 274,
               "points_breakdown": {
                 "countries": 184,
-                "score": null
+                "score": 90
               },
-              "is_exact": false
+              "is_exact": true
             },
             {
               "fixture_number": 92,
@@ -16862,9 +16862,9 @@
                 "score": "1 - 3"
               },
               "actual_score": "NS",
-              "points": 92,
+              "points": 184,
               "points_breakdown": {
-                "countries": 92,
+                "countries": 184,
                 "score": null
               },
               "is_exact": false
@@ -17232,7 +17232,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Kylian Mbappé (France), Lionel Messi (Argentina)",
+              "text": "Kylian Mbappé (France), Lionel Messi (Argentina), Erling Haaland (Norway)",
               "flag": null
             },
             "points": null
@@ -20070,7 +20070,7 @@
         },
         {
           "round": "Round of 16",
-          "subtotal": 1123,
+          "subtotal": 1367,
           "fixtures": [
             {
               "fixture_number": 90,
@@ -20170,10 +20170,10 @@
                 "score": "2 - 3"
               },
               "actual_score": "1 - 2",
-              "points": 184,
+              "points": 244,
               "points_breakdown": {
                 "countries": 184,
-                "score": null
+                "score": 60
               },
               "is_exact": false
             },
@@ -20680,7 +20680,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Kylian Mbappé (France), Lionel Messi (Argentina)",
+              "text": "Kylian Mbappé (France), Lionel Messi (Argentina), Erling Haaland (Norway)",
               "flag": null
             },
             "points": null
@@ -23518,7 +23518,7 @@
         },
         {
           "round": "Round of 16",
-          "subtotal": 1108,
+          "subtotal": 1292,
           "fixtures": [
             {
               "fixture_number": 90,
@@ -23621,7 +23621,7 @@
               "points": 184,
               "points_breakdown": {
                 "countries": 184,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             },
@@ -24128,7 +24128,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Kylian Mbappé (France), Lionel Messi (Argentina)",
+              "text": "Kylian Mbappé (France), Lionel Messi (Argentina), Erling Haaland (Norway)",
               "flag": null
             },
             "points": null
@@ -26966,7 +26966,7 @@
         },
         {
           "round": "Round of 16",
-          "subtotal": 1043,
+          "subtotal": 1227,
           "fixtures": [
             {
               "fixture_number": 90,
@@ -27069,7 +27069,7 @@
               "points": 184,
               "points_breakdown": {
                 "countries": 184,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             },
@@ -27576,7 +27576,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Kylian Mbappé (France), Lionel Messi (Argentina)",
+              "text": "Kylian Mbappé (France), Lionel Messi (Argentina), Erling Haaland (Norway)",
               "flag": null
             },
             "points": null
@@ -30414,7 +30414,7 @@
         },
         {
           "round": "Round of 16",
-          "subtotal": 939,
+          "subtotal": 1138,
           "fixtures": [
             {
               "fixture_number": 90,
@@ -30514,10 +30514,10 @@
                 "score": "3 - 2"
               },
               "actual_score": "1 - 2",
-              "points": 184,
+              "points": 199,
               "points_breakdown": {
                 "countries": 184,
-                "score": null
+                "score": 15
               },
               "is_exact": false
             },
@@ -31024,7 +31024,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Kylian Mbappé (France), Lionel Messi (Argentina)",
+              "text": "Kylian Mbappé (France), Lionel Messi (Argentina), Erling Haaland (Norway)",
               "flag": null
             },
             "points": null
@@ -33862,7 +33862,7 @@
         },
         {
           "round": "Round of 16",
-          "subtotal": 1227,
+          "subtotal": 1411,
           "fixtures": [
             {
               "fixture_number": 90,
@@ -33965,7 +33965,7 @@
               "points": 184,
               "points_breakdown": {
                 "countries": 184,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             },
@@ -34472,7 +34472,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Kylian Mbappé (France), Lionel Messi (Argentina)",
+              "text": "Kylian Mbappé (France), Lionel Messi (Argentina), Erling Haaland (Norway)",
               "flag": null
             },
             "points": null
@@ -37310,7 +37310,7 @@
         },
         {
           "round": "Round of 16",
-          "subtotal": 800,
+          "subtotal": 848,
           "fixtures": [
             {
               "fixture_number": 90,
@@ -37413,7 +37413,7 @@
               "points": 48,
               "points_breakdown": {
                 "countries": 48,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             },
@@ -37920,7 +37920,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Kylian Mbappé (France), Lionel Messi (Argentina)",
+              "text": "Kylian Mbappé (France), Lionel Messi (Argentina), Erling Haaland (Norway)",
               "flag": null
             },
             "points": null
@@ -40758,7 +40758,7 @@
         },
         {
           "round": "Round of 16",
-          "subtotal": 1135,
+          "subtotal": 1319,
           "fixtures": [
             {
               "fixture_number": 90,
@@ -40861,7 +40861,7 @@
               "points": 184,
               "points_breakdown": {
                 "countries": 184,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             },
@@ -41368,7 +41368,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Kylian Mbappé (France), Lionel Messi (Argentina)",
+              "text": "Kylian Mbappé (France), Lionel Messi (Argentina), Erling Haaland (Norway)",
               "flag": null
             },
             "points": null
@@ -44206,7 +44206,7 @@
         },
         {
           "round": "Round of 16",
-          "subtotal": 711,
+          "subtotal": 910,
           "fixtures": [
             {
               "fixture_number": 90,
@@ -44306,10 +44306,10 @@
                 "score": "3 - 2"
               },
               "actual_score": "1 - 2",
-              "points": 184,
+              "points": 199,
               "points_breakdown": {
                 "countries": 184,
-                "score": null
+                "score": 15
               },
               "is_exact": false
             },
@@ -44816,7 +44816,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Kylian Mbappé (France), Lionel Messi (Argentina)",
+              "text": "Kylian Mbappé (France), Lionel Messi (Argentina), Erling Haaland (Norway)",
               "flag": null
             },
             "points": null
@@ -47654,7 +47654,7 @@
         },
         {
           "round": "Round of 16",
-          "subtotal": 867,
+          "subtotal": 1023,
           "fixtures": [
             {
               "fixture_number": 90,
@@ -47754,10 +47754,10 @@
                 "score": "2 - 3"
               },
               "actual_score": "1 - 2",
-              "points": 96,
+              "points": 156,
               "points_breakdown": {
                 "countries": 96,
-                "score": null
+                "score": 60
               },
               "is_exact": false
             },
@@ -48264,7 +48264,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Kylian Mbappé (France), Lionel Messi (Argentina)",
+              "text": "Kylian Mbappé (France), Lionel Messi (Argentina), Erling Haaland (Norway)",
               "flag": null
             },
             "points": null
@@ -51102,7 +51102,7 @@
         },
         {
           "round": "Round of 16",
-          "subtotal": 679,
+          "subtotal": 771,
           "fixtures": [
             {
               "fixture_number": 90,
@@ -51205,7 +51205,7 @@
               "points": 92,
               "points_breakdown": {
                 "countries": 92,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             },
@@ -51712,7 +51712,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Kylian Mbappé (France), Lionel Messi (Argentina)",
+              "text": "Kylian Mbappé (France), Lionel Messi (Argentina), Erling Haaland (Norway)",
               "flag": null
             },
             "points": null
@@ -54550,7 +54550,7 @@
         },
         {
           "round": "Round of 16",
-          "subtotal": 752,
+          "subtotal": 815,
           "fixtures": [
             {
               "fixture_number": 90,
@@ -54650,10 +54650,10 @@
                 "score": "3 - 2"
               },
               "actual_score": "1 - 2",
-              "points": 48,
+              "points": 63,
               "points_breakdown": {
                 "countries": 48,
-                "score": null
+                "score": 15
               },
               "is_exact": false
             },
@@ -55160,7 +55160,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Kylian Mbappé (France), Lionel Messi (Argentina)",
+              "text": "Kylian Mbappé (France), Lionel Messi (Argentina), Erling Haaland (Norway)",
               "flag": null
             },
             "points": null
