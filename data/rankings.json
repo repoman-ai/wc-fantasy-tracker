@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-05T22:03:05Z",
+  "updated": "2026-07-05T22:06:12Z",
   "pool": {
     "id": "34193",
     "slug": "bobby-and-friends",
@@ -58,8 +58,8 @@
       "name": "Gabriela",
       "flag": "NED",
       "rank": 5,
-      "points": 6611,
-      "exact": 13
+      "points": 6638,
+      "exact": 14
     },
     {
       "team_id": "247524",
@@ -68,7 +68,7 @@
       "name": "Alejandro",
       "flag": "BRA",
       "rank": 6,
-      "points": 6601,
+      "points": 6613,
       "exact": 6
     },
     {
@@ -148,7 +148,7 @@
       "name": "MaxS.",
       "flag": "ARG",
       "rank": 14,
-      "points": 5467,
+      "points": 5479,
       "exact": 6
     },
     {
