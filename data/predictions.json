@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-05T22:01:38Z",
+  "updated": "2026-07-05T22:03:05Z",
   "players": {
     "252653": {
       "team_id": "252653",
@@ -40857,7 +40857,7 @@
                 "hidden": false,
                 "score": "3 - 1"
               },
-              "actual_score": "0 - 2",
+              "actual_score": "1 - 2",
               "points": 184,
               "points_breakdown": {
                 "countries": 184,
@@ -44305,7 +44305,7 @@
                 "hidden": false,
                 "score": "3 - 2"
               },
-              "actual_score": "0 - 2",
+              "actual_score": "1 - 2",
               "points": 199,
               "points_breakdown": {
                 "countries": 184,
@@ -47654,7 +47654,7 @@
         },
         {
           "round": "Round of 16",
-          "subtotal": 1011,
+          "subtotal": 867,
           "fixtures": [
             {
               "fixture_number": 90,
@@ -47753,11 +47753,11 @@
                 "hidden": false,
                 "score": "2 - 3"
               },
-              "actual_score": "0 - 2",
-              "points": 144,
+              "actual_score": "1 - 2",
+              "points": 96,
               "points_breakdown": {
                 "countries": 96,
-                "score": 48
+                "score": null
               },
               "is_exact": false
             },
@@ -51102,7 +51102,7 @@
         },
         {
           "round": "Round of 16",
-          "subtotal": 771,
+          "subtotal": 679,
           "fixtures": [
             {
               "fixture_number": 90,
@@ -51201,11 +51201,11 @@
                 "hidden": false,
                 "score": "4 - 0"
               },
-              "actual_score": "0 - 2",
+              "actual_score": "1 - 2",
               "points": 92,
               "points_breakdown": {
                 "countries": 92,
-                "score": 0
+                "score": null
               },
               "is_exact": false
             },
@@ -54550,7 +54550,7 @@
         },
         {
           "round": "Round of 16",
-          "subtotal": 815,
+          "subtotal": 752,
           "fixtures": [
             {
               "fixture_number": 90,
@@ -54649,11 +54649,11 @@
                 "hidden": false,
                 "score": "3 - 2"
               },
-              "actual_score": "0 - 2",
-              "points": 63,
+              "actual_score": "1 - 2",
+              "points": 48,
               "points_breakdown": {
                 "countries": 48,
-                "score": 15
+                "score": null
               },
               "is_exact": false
             },
