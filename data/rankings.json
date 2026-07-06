@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-05T23:55:25Z",
+  "updated": "2026-07-06T00:05:46Z",
   "pool": {
     "id": "34193",
     "slug": "bobby-and-friends",
@@ -48,7 +48,7 @@
       "name": "El Capitan",
       "flag": "FRA",
       "rank": 4,
-      "points": 6699,
+      "points": 6714,
       "exact": 10
     },
     {
@@ -58,7 +58,7 @@
       "name": "Gabriela",
       "flag": "NED",
       "rank": 5,
-      "points": 6638,
+      "points": 6653,
       "exact": 14
     },
     {
@@ -98,7 +98,7 @@
       "name": "JJ",
       "flag": "FRA",
       "rank": 9,
-      "points": 6288,
+      "points": 6303,
       "exact": 11
     },
     {
@@ -148,7 +148,7 @@
       "name": "MaxS.",
       "flag": "ARG",
       "rank": 14,
-      "points": 5479,
+      "points": 5494,
       "exact": 6
     },
     {
