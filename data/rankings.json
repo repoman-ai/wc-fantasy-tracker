@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-06T01:42:00Z",
+  "updated": "2026-07-06T01:51:53Z",
   "pool": {
     "id": "34193",
     "slug": "bobby-and-friends",
@@ -18,8 +18,8 @@
       "name": "Daniel",
       "flag": "FRA",
       "rank": 1,
-      "points": 7320,
-      "exact": 16
+      "points": 7347,
+      "exact": 17
     },
     {
       "team_id": "247930",
@@ -28,8 +28,8 @@
       "name": "Alec",
       "flag": "ESP",
       "rank": 2,
-      "points": 7134,
-      "exact": 13
+      "points": 7161,
+      "exact": 14
     },
     {
       "team_id": "246775",
@@ -48,7 +48,7 @@
       "name": "Alejandro",
       "flag": "BRA",
       "rank": 4,
-      "points": 6780,
+      "points": 6792,
       "exact": 6
     },
     {
@@ -58,7 +58,7 @@
       "name": "El Capitan",
       "flag": "FRA",
       "rank": 5,
-      "points": 6699,
+      "points": 6714,
       "exact": 10
     },
     {
@@ -88,8 +88,8 @@
       "name": "Baronmark",
       "flag": "FRA",
       "rank": 8,
-      "points": 6498,
-      "exact": 14
+      "points": 6525,
+      "exact": 15
     },
     {
       "team_id": "247528",
@@ -98,7 +98,7 @@
       "name": "JJ",
       "flag": "FRA",
       "rank": 9,
-      "points": 6470,
+      "points": 6455,
       "exact": 11
     },
     {
@@ -108,8 +108,8 @@
       "name": "Karenwj",
       "flag": "NED",
       "rank": 10,
-      "points": 6411,
-      "exact": 8
+      "points": 6438,
+      "exact": 9
     },
     {
       "team_id": "247526",
@@ -148,8 +148,8 @@
       "name": "MaxS.",
       "flag": "ARG",
       "rank": 14,
-      "points": 5688,
-      "exact": 7
+      "points": 5661,
+      "exact": 6
     },
     {
       "team_id": "247533",
@@ -158,7 +158,7 @@
       "name": "Beturompequinielas",
       "flag": "ARG",
       "rank": 15,
-      "points": 5397,
+      "points": 5400,
       "exact": 6
     },
     {
