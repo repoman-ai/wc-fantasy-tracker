@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-07T16:01:37Z",
+  "updated": "2026-07-07T16:07:13Z",
   "players": {
     "252653": {
       "team_id": "252653",
@@ -8,9 +8,9 @@
       "player_url": "https://www.tournamentsoccer.us/en-us/fantasy-soccer-world-cup/2026/team/252653/daniel/stage/1196-grand-total?scroll=fixture",
       "flag": "FRA",
       "rank": 1,
-      "points": 7526,
+      "points": 7541,
       "exact": 17,
-      "grand_total": 7526,
+      "grand_total": 7541,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -2830,7 +2830,7 @@
         },
         {
           "round": "Round of 16",
-          "subtotal": 1561,
+          "subtotal": 1576,
           "fixtures": [
             {
               "fixture_number": 90,
@@ -3046,10 +3046,10 @@
               "fixture_number": 95,
               "round": "Round of 16",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-07T16:00:00Z",
-              "kickoff_local": "2026-07-07 18:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "Mercedes-Benz Stadium, Atlanta",
               "hidden": false,
               "match": {
@@ -3069,11 +3069,11 @@
                 "hidden": false,
                 "score": "2 - 0"
               },
-              "actual_score": "NS",
-              "points": 184,
+              "actual_score": "0 - 0",
+              "points": 199,
               "points_breakdown": {
                 "countries": 184,
-                "score": null
+                "score": 15
               },
               "is_exact": false
             },
@@ -3456,9 +3456,9 @@
       "player_url": "https://www.tournamentsoccer.us/en-us/fantasy-soccer-world-cup/2026/team/247930/alec/stage/1196-grand-total?scroll=fixture",
       "flag": "ESP",
       "rank": 2,
-      "points": 7310,
+      "points": 7325,
       "exact": 13,
-      "grand_total": 7310,
+      "grand_total": 7325,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -6278,7 +6278,7 @@
         },
         {
           "round": "Round of 16",
-          "subtotal": 1439,
+          "subtotal": 1454,
           "fixtures": [
             {
               "fixture_number": 90,
@@ -6494,10 +6494,10 @@
               "fixture_number": 95,
               "round": "Round of 16",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-07T16:00:00Z",
-              "kickoff_local": "2026-07-07 18:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "Mercedes-Benz Stadium, Atlanta",
               "hidden": false,
               "match": {
@@ -6517,11 +6517,11 @@
                 "hidden": false,
                 "score": "2 - 0"
               },
-              "actual_score": "NS",
-              "points": 92,
+              "actual_score": "0 - 0",
+              "points": 107,
               "points_breakdown": {
                 "countries": 92,
-                "score": null
+                "score": 15
               },
               "is_exact": false
             },
@@ -6904,9 +6904,9 @@
       "player_url": "https://www.tournamentsoccer.us/en-us/fantasy-soccer-world-cup/2026/team/247524/alejandro/stage/1196-grand-total?scroll=fixture",
       "flag": "BRA",
       "rank": 3,
-      "points": 7171,
+      "points": 7186,
       "exact": 7,
-      "grand_total": 7171,
+      "grand_total": 7186,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -9726,7 +9726,7 @@
         },
         {
           "round": "Round of 16",
-          "subtotal": 1568,
+          "subtotal": 1583,
           "fixtures": [
             {
               "fixture_number": 90,
@@ -9942,10 +9942,10 @@
               "fixture_number": 95,
               "round": "Round of 16",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-07T16:00:00Z",
-              "kickoff_local": "2026-07-07 18:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "Mercedes-Benz Stadium, Atlanta",
               "hidden": false,
               "match": {
@@ -9965,11 +9965,11 @@
                 "hidden": false,
                 "score": "3 - 0"
               },
-              "actual_score": "NS",
-              "points": 92,
+              "actual_score": "0 - 0",
+              "points": 107,
               "points_breakdown": {
                 "countries": 92,
-                "score": null
+                "score": 15
               },
               "is_exact": false
             },
@@ -13390,10 +13390,10 @@
               "fixture_number": 95,
               "round": "Round of 16",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-07T16:00:00Z",
-              "kickoff_local": "2026-07-07 18:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "Mercedes-Benz Stadium, Atlanta",
               "hidden": false,
               "match": {
@@ -13413,11 +13413,11 @@
                 "hidden": false,
                 "score": "3 - 1"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 184,
               "points_breakdown": {
                 "countries": 184,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             },
@@ -13800,9 +13800,9 @@
       "player_url": "https://www.tournamentsoccer.us/en-us/fantasy-soccer-world-cup/2026/team/252600/el-capitan/stage/1196-grand-total?scroll=fixture",
       "flag": "FRA",
       "rank": 5,
-      "points": 7048,
+      "points": 7063,
       "exact": 10,
-      "grand_total": 7048,
+      "grand_total": 7063,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -16622,7 +16622,7 @@
         },
         {
           "round": "Round of 16",
-          "subtotal": 1599,
+          "subtotal": 1614,
           "fixtures": [
             {
               "fixture_number": 90,
@@ -16838,10 +16838,10 @@
               "fixture_number": 95,
               "round": "Round of 16",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-07T16:00:00Z",
-              "kickoff_local": "2026-07-07 18:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "Mercedes-Benz Stadium, Atlanta",
               "hidden": false,
               "match": {
@@ -16861,11 +16861,11 @@
                 "hidden": false,
                 "score": "2 - 0"
               },
-              "actual_score": "NS",
-              "points": 184,
+              "actual_score": "0 - 0",
+              "points": 199,
               "points_breakdown": {
                 "countries": 184,
-                "score": null
+                "score": 15
               },
               "is_exact": false
             },
@@ -20286,10 +20286,10 @@
               "fixture_number": 95,
               "round": "Round of 16",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-07T16:00:00Z",
-              "kickoff_local": "2026-07-07 18:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "Mercedes-Benz Stadium, Atlanta",
               "hidden": false,
               "match": {
@@ -20309,11 +20309,11 @@
                 "hidden": false,
                 "score": "1 - 3"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 184,
               "points_breakdown": {
                 "countries": 184,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             },
@@ -23734,10 +23734,10 @@
               "fixture_number": 95,
               "round": "Round of 16",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-07T16:00:00Z",
-              "kickoff_local": "2026-07-07 18:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "Mercedes-Benz Stadium, Atlanta",
               "hidden": false,
               "match": {
@@ -23757,11 +23757,11 @@
                 "hidden": false,
                 "score": "3 - 1"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 184,
               "points_breakdown": {
                 "countries": 184,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             },
@@ -27182,10 +27182,10 @@
               "fixture_number": 95,
               "round": "Round of 16",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-07T16:00:00Z",
-              "kickoff_local": "2026-07-07 18:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "Mercedes-Benz Stadium, Atlanta",
               "hidden": false,
               "match": {
@@ -27205,11 +27205,11 @@
                 "hidden": false,
                 "score": "3 - 1"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 92,
               "points_breakdown": {
                 "countries": 92,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             },
@@ -30630,10 +30630,10 @@
               "fixture_number": 95,
               "round": "Round of 16",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-07T16:00:00Z",
-              "kickoff_local": "2026-07-07 18:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "Mercedes-Benz Stadium, Atlanta",
               "hidden": false,
               "match": {
@@ -30653,11 +30653,11 @@
                 "hidden": false,
                 "score": "3 - 1"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 184,
               "points_breakdown": {
                 "countries": 184,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             },
@@ -31040,9 +31040,9 @@
       "player_url": "https://www.tournamentsoccer.us/en-us/fantasy-soccer-world-cup/2026/team/247535/baronmark/stage/1196-grand-total?scroll=fixture",
       "flag": "FRA",
       "rank": 10,
-      "points": 6495,
+      "points": 6510,
       "exact": 14,
-      "grand_total": 6495,
+      "grand_total": 6510,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -33862,7 +33862,7 @@
         },
         {
           "round": "Round of 16",
-          "subtotal": 1287,
+          "subtotal": 1302,
           "fixtures": [
             {
               "fixture_number": 90,
@@ -34078,10 +34078,10 @@
               "fixture_number": 95,
               "round": "Round of 16",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-07T16:00:00Z",
-              "kickoff_local": "2026-07-07 18:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "Mercedes-Benz Stadium, Atlanta",
               "hidden": false,
               "match": {
@@ -34101,11 +34101,11 @@
                 "hidden": false,
                 "score": "3 - 0"
               },
-              "actual_score": "NS",
-              "points": 92,
+              "actual_score": "0 - 0",
+              "points": 107,
               "points_breakdown": {
                 "countries": 92,
-                "score": null
+                "score": 15
               },
               "is_exact": false
             },
@@ -34488,9 +34488,9 @@
       "player_url": "https://www.tournamentsoccer.us/en-us/fantasy-soccer-world-cup/2026/team/247526/valewalle/stage/1196-grand-total?scroll=fixture",
       "flag": "ESP",
       "rank": 11,
-      "points": 6296,
+      "points": 6311,
       "exact": 13,
-      "grand_total": 6296,
+      "grand_total": 6311,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -37310,7 +37310,7 @@
         },
         {
           "round": "Round of 16",
-          "subtotal": 971,
+          "subtotal": 986,
           "fixtures": [
             {
               "fixture_number": 90,
@@ -37526,10 +37526,10 @@
               "fixture_number": 95,
               "round": "Round of 16",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-07T16:00:00Z",
-              "kickoff_local": "2026-07-07 18:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "Mercedes-Benz Stadium, Atlanta",
               "hidden": false,
               "match": {
@@ -37549,11 +37549,11 @@
                 "hidden": false,
                 "score": "3 - 0"
               },
-              "actual_score": "NS",
-              "points": 92,
+              "actual_score": "0 - 0",
+              "points": 107,
               "points_breakdown": {
                 "countries": 92,
-                "score": null
+                "score": 15
               },
               "is_exact": false
             },
@@ -37936,9 +37936,9 @@
       "player_url": "https://www.tournamentsoccer.us/en-us/fantasy-soccer-world-cup/2026/team/253790/remi/stage/1196-grand-total?scroll=fixture",
       "flag": "FRA",
       "rank": 12,
-      "points": 6115,
+      "points": 6130,
       "exact": 13,
-      "grand_total": 6115,
+      "grand_total": 6130,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -40758,7 +40758,7 @@
         },
         {
           "round": "Round of 16",
-          "subtotal": 1394,
+          "subtotal": 1409,
           "fixtures": [
             {
               "fixture_number": 90,
@@ -40974,10 +40974,10 @@
               "fixture_number": 95,
               "round": "Round of 16",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-07T16:00:00Z",
-              "kickoff_local": "2026-07-07 18:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "Mercedes-Benz Stadium, Atlanta",
               "hidden": false,
               "match": {
@@ -40997,11 +40997,11 @@
                 "hidden": false,
                 "score": "3 - 0"
               },
-              "actual_score": "NS",
-              "points": 92,
+              "actual_score": "0 - 0",
+              "points": 107,
               "points_breakdown": {
                 "countries": 92,
-                "score": null
+                "score": 15
               },
               "is_exact": false
             },
@@ -41384,9 +41384,9 @@
       "player_url": "https://www.tournamentsoccer.us/en-us/fantasy-soccer-world-cup/2026/team/247537/yo/stage/1196-grand-total?scroll=fixture",
       "flag": "MEX",
       "rank": 13,
-      "points": 5921,
+      "points": 5936,
       "exact": 7,
-      "grand_total": 5921,
+      "grand_total": 5936,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -44206,7 +44206,7 @@
         },
         {
           "round": "Round of 16",
-          "subtotal": 970,
+          "subtotal": 985,
           "fixtures": [
             {
               "fixture_number": 90,
@@ -44422,10 +44422,10 @@
               "fixture_number": 95,
               "round": "Round of 16",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-07T16:00:00Z",
-              "kickoff_local": "2026-07-07 18:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "Mercedes-Benz Stadium, Atlanta",
               "hidden": false,
               "match": {
@@ -44445,11 +44445,11 @@
                 "hidden": false,
                 "score": "3 - 0"
               },
-              "actual_score": "NS",
-              "points": 92,
+              "actual_score": "0 - 0",
+              "points": 107,
               "points_breakdown": {
                 "countries": 92,
-                "score": null
+                "score": 15
               },
               "is_exact": false
             },
@@ -47870,10 +47870,10 @@
               "fixture_number": 95,
               "round": "Round of 16",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-07T16:00:00Z",
-              "kickoff_local": "2026-07-07 18:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "Mercedes-Benz Stadium, Atlanta",
               "hidden": false,
               "match": {
@@ -47893,11 +47893,11 @@
                 "hidden": false,
                 "score": "3 - 1"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 92,
               "points_breakdown": {
                 "countries": 92,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             },
@@ -51318,10 +51318,10 @@
               "fixture_number": 95,
               "round": "Round of 16",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-07T16:00:00Z",
-              "kickoff_local": "2026-07-07 18:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "Mercedes-Benz Stadium, Atlanta",
               "hidden": false,
               "match": {
@@ -51341,11 +51341,11 @@
                 "hidden": false,
                 "score": "3 - 1"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 92,
               "points_breakdown": {
                 "countries": 92,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             },
@@ -54766,10 +54766,10 @@
               "fixture_number": 95,
               "round": "Round of 16",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-07T16:00:00Z",
-              "kickoff_local": "2026-07-07 18:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "Mercedes-Benz Stadium, Atlanta",
               "hidden": false,
               "match": {
@@ -54789,11 +54789,11 @@
                 "hidden": false,
                 "score": "3 - 2"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 184,
               "points_breakdown": {
                 "countries": 184,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             },
