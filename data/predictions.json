@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-07T18:04:58Z",
+  "updated": "2026-07-07T18:11:49Z",
   "players": {
     "252653": {
       "team_id": "252653",
@@ -3046,10 +3046,10 @@
               "fixture_number": 95,
               "round": "Round of 16",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-07T16:00:00Z",
+              "kickoff_local": "2026-07-07 18:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "Mercedes-Benz Stadium, Atlanta",
               "hidden": false,
               "match": {
@@ -3440,7 +3440,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Kylian Mbappé (France), Lionel Messi (Argentina), Erling Haaland (Norway)",
+              "text": "Lionel Messi (Argentina)",
               "flag": null
             },
             "points": null
@@ -6494,10 +6494,10 @@
               "fixture_number": 95,
               "round": "Round of 16",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-07T16:00:00Z",
+              "kickoff_local": "2026-07-07 18:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "Mercedes-Benz Stadium, Atlanta",
               "hidden": false,
               "match": {
@@ -6888,7 +6888,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Kylian Mbappé (France), Lionel Messi (Argentina), Erling Haaland (Norway)",
+              "text": "Lionel Messi (Argentina)",
               "flag": null
             },
             "points": null
@@ -9942,10 +9942,10 @@
               "fixture_number": 95,
               "round": "Round of 16",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-07T16:00:00Z",
+              "kickoff_local": "2026-07-07 18:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "Mercedes-Benz Stadium, Atlanta",
               "hidden": false,
               "match": {
@@ -10336,7 +10336,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Kylian Mbappé (France), Lionel Messi (Argentina), Erling Haaland (Norway)",
+              "text": "Lionel Messi (Argentina)",
               "flag": null
             },
             "points": null
@@ -13390,10 +13390,10 @@
               "fixture_number": 95,
               "round": "Round of 16",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-07T16:00:00Z",
+              "kickoff_local": "2026-07-07 18:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "Mercedes-Benz Stadium, Atlanta",
               "hidden": false,
               "match": {
@@ -13784,7 +13784,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Kylian Mbappé (France), Lionel Messi (Argentina), Erling Haaland (Norway)",
+              "text": "Lionel Messi (Argentina)",
               "flag": null
             },
             "points": null
@@ -16838,10 +16838,10 @@
               "fixture_number": 95,
               "round": "Round of 16",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-07T16:00:00Z",
+              "kickoff_local": "2026-07-07 18:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "Mercedes-Benz Stadium, Atlanta",
               "hidden": false,
               "match": {
@@ -17232,7 +17232,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Kylian Mbappé (France), Lionel Messi (Argentina), Erling Haaland (Norway)",
+              "text": "Lionel Messi (Argentina)",
               "flag": null
             },
             "points": null
@@ -20286,10 +20286,10 @@
               "fixture_number": 95,
               "round": "Round of 16",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-07T16:00:00Z",
+              "kickoff_local": "2026-07-07 18:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "Mercedes-Benz Stadium, Atlanta",
               "hidden": false,
               "match": {
@@ -20680,7 +20680,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Kylian Mbappé (France), Lionel Messi (Argentina), Erling Haaland (Norway)",
+              "text": "Lionel Messi (Argentina)",
               "flag": null
             },
             "points": null
@@ -23734,10 +23734,10 @@
               "fixture_number": 95,
               "round": "Round of 16",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-07T16:00:00Z",
+              "kickoff_local": "2026-07-07 18:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "Mercedes-Benz Stadium, Atlanta",
               "hidden": false,
               "match": {
@@ -24128,7 +24128,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Kylian Mbappé (France), Lionel Messi (Argentina), Erling Haaland (Norway)",
+              "text": "Lionel Messi (Argentina)",
               "flag": null
             },
             "points": null
@@ -27182,10 +27182,10 @@
               "fixture_number": 95,
               "round": "Round of 16",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-07T16:00:00Z",
+              "kickoff_local": "2026-07-07 18:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "Mercedes-Benz Stadium, Atlanta",
               "hidden": false,
               "match": {
@@ -27576,7 +27576,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Kylian Mbappé (France), Lionel Messi (Argentina), Erling Haaland (Norway)",
+              "text": "Lionel Messi (Argentina)",
               "flag": null
             },
             "points": null
@@ -30630,10 +30630,10 @@
               "fixture_number": 95,
               "round": "Round of 16",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-07T16:00:00Z",
+              "kickoff_local": "2026-07-07 18:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "Mercedes-Benz Stadium, Atlanta",
               "hidden": false,
               "match": {
@@ -31024,7 +31024,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Kylian Mbappé (France), Lionel Messi (Argentina), Erling Haaland (Norway)",
+              "text": "Lionel Messi (Argentina)",
               "flag": null
             },
             "points": null
@@ -34078,10 +34078,10 @@
               "fixture_number": 95,
               "round": "Round of 16",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-07T16:00:00Z",
+              "kickoff_local": "2026-07-07 18:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "Mercedes-Benz Stadium, Atlanta",
               "hidden": false,
               "match": {
@@ -34472,7 +34472,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Kylian Mbappé (France), Lionel Messi (Argentina), Erling Haaland (Norway)",
+              "text": "Lionel Messi (Argentina)",
               "flag": null
             },
             "points": null
@@ -37526,10 +37526,10 @@
               "fixture_number": 95,
               "round": "Round of 16",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-07T16:00:00Z",
+              "kickoff_local": "2026-07-07 18:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "Mercedes-Benz Stadium, Atlanta",
               "hidden": false,
               "match": {
@@ -37920,7 +37920,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Kylian Mbappé (France), Lionel Messi (Argentina), Erling Haaland (Norway)",
+              "text": "Lionel Messi (Argentina)",
               "flag": null
             },
             "points": null
@@ -40974,10 +40974,10 @@
               "fixture_number": 95,
               "round": "Round of 16",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-07T16:00:00Z",
+              "kickoff_local": "2026-07-07 18:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "Mercedes-Benz Stadium, Atlanta",
               "hidden": false,
               "match": {
@@ -41368,7 +41368,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Kylian Mbappé (France), Lionel Messi (Argentina), Erling Haaland (Norway)",
+              "text": "Lionel Messi (Argentina)",
               "flag": null
             },
             "points": null
@@ -44422,10 +44422,10 @@
               "fixture_number": 95,
               "round": "Round of 16",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-07T16:00:00Z",
+              "kickoff_local": "2026-07-07 18:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "Mercedes-Benz Stadium, Atlanta",
               "hidden": false,
               "match": {
@@ -44816,7 +44816,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Kylian Mbappé (France), Lionel Messi (Argentina), Erling Haaland (Norway)",
+              "text": "Lionel Messi (Argentina)",
               "flag": null
             },
             "points": null
@@ -47870,10 +47870,10 @@
               "fixture_number": 95,
               "round": "Round of 16",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-07T16:00:00Z",
+              "kickoff_local": "2026-07-07 18:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "Mercedes-Benz Stadium, Atlanta",
               "hidden": false,
               "match": {
@@ -48264,7 +48264,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Kylian Mbappé (France), Lionel Messi (Argentina), Erling Haaland (Norway)",
+              "text": "Lionel Messi (Argentina)",
               "flag": null
             },
             "points": null
@@ -51318,10 +51318,10 @@
               "fixture_number": 95,
               "round": "Round of 16",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-07T16:00:00Z",
+              "kickoff_local": "2026-07-07 18:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "Mercedes-Benz Stadium, Atlanta",
               "hidden": false,
               "match": {
@@ -51712,7 +51712,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Kylian Mbappé (France), Lionel Messi (Argentina), Erling Haaland (Norway)",
+              "text": "Lionel Messi (Argentina)",
               "flag": null
             },
             "points": null
@@ -54766,10 +54766,10 @@
               "fixture_number": 95,
               "round": "Round of 16",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-07T16:00:00Z",
+              "kickoff_local": "2026-07-07 18:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "Mercedes-Benz Stadium, Atlanta",
               "hidden": false,
               "match": {
@@ -54795,7 +54795,7 @@
                 "countries": 184,
                 "score": 90
               },
-              "is_exact": false
+              "is_exact": true
             },
             {
               "fixture_number": 96,
@@ -55160,7 +55160,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Kylian Mbappé (France), Lionel Messi (Argentina), Erling Haaland (Norway)",
+              "text": "Lionel Messi (Argentina)",
               "flag": null
             },
             "points": null
