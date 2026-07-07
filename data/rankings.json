@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-07T01:21:50Z",
+  "updated": "2026-07-07T01:28:04Z",
   "pool": {
     "id": "34193",
     "slug": "bobby-and-friends",
@@ -38,8 +38,8 @@
       "name": "Alejandro",
       "flag": "BRA",
       "rank": 3,
-      "points": 7171,
-      "exact": 7
+      "points": 7198,
+      "exact": 8
     },
     {
       "team_id": "246775",
@@ -58,7 +58,7 @@
       "name": "El Capitan",
       "flag": "FRA",
       "rank": 5,
-      "points": 7060,
+      "points": 7048,
       "exact": 10
     },
     {
@@ -78,8 +78,8 @@
       "name": "Jazmin",
       "flag": "POR",
       "rank": 7,
-      "points": 6769,
-      "exact": 12
+      "points": 6742,
+      "exact": 11
     },
     {
       "team_id": "247528",
@@ -88,7 +88,7 @@
       "name": "JJ",
       "flag": "FRA",
       "rank": 8,
-      "points": 6664,
+      "points": 6649,
       "exact": 11
     },
     {
@@ -98,8 +98,8 @@
       "name": "Karenwj",
       "flag": "NED",
       "rank": 9,
-      "points": 6632,
-      "exact": 9
+      "points": 6605,
+      "exact": 8
     },
     {
       "team_id": "247535",
@@ -118,8 +118,8 @@
       "name": "Valewalle",
       "flag": "ESP",
       "rank": 11,
-      "points": 6323,
-      "exact": 14
+      "points": 6296,
+      "exact": 13
     },
     {
       "team_id": "253790",
@@ -138,7 +138,7 @@
       "name": "Yo",
       "flag": "MEX",
       "rank": 13,
-      "points": 5909,
+      "points": 5924,
       "exact": 7
     },
     {
@@ -148,8 +148,8 @@
       "name": "MaxS.",
       "flag": "ARG",
       "rank": 14,
-      "points": 5903,
-      "exact": 7
+      "points": 5876,
+      "exact": 6
     },
     {
       "team_id": "247533",
@@ -158,8 +158,8 @@
       "name": "Beturompequinielas",
       "flag": "ARG",
       "rank": 15,
-      "points": 5526,
-      "exact": 6
+      "points": 5553,
+      "exact": 7
     },
     {
       "team_id": "252610",
@@ -168,7 +168,7 @@
       "name": "Luisa",
       "flag": "POR",
       "rank": 16,
-      "points": 4997,
+      "points": 5000,
       "exact": 4
     }
   ]
