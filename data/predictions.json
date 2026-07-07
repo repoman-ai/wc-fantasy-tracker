@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-07T20:03:12Z",
+  "updated": "2026-07-07T20:09:25Z",
   "players": {
     "252653": {
       "team_id": "252653",
@@ -8,9 +8,9 @@
       "player_url": "https://www.tournamentsoccer.us/en-us/fantasy-soccer-world-cup/2026/team/252653/daniel/stage/1196-grand-total?scroll=fixture",
       "flag": "FRA",
       "rank": 1,
-      "points": 7693,
+      "points": 7708,
       "exact": 17,
-      "grand_total": 7693,
+      "grand_total": 7708,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -2830,7 +2830,7 @@
         },
         {
           "round": "Round of 16",
-          "subtotal": 1609,
+          "subtotal": 1624,
           "fixtures": [
             {
               "fixture_number": 90,
@@ -3081,10 +3081,10 @@
               "fixture_number": 96,
               "round": "Round of 16",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-07T20:00:00Z",
-              "kickoff_local": "2026-07-07 22:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "BC Place, Vancouver",
               "hidden": false,
               "match": {
@@ -3104,11 +3104,11 @@
                 "hidden": false,
                 "score": "0 - 2"
               },
-              "actual_score": "NS",
-              "points": 184,
+              "actual_score": "0 - 0",
+              "points": 199,
               "points_breakdown": {
                 "countries": 184,
-                "score": null
+                "score": 15
               },
               "is_exact": false
             }
@@ -6529,10 +6529,10 @@
               "fixture_number": 96,
               "round": "Round of 16",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-07T20:00:00Z",
-              "kickoff_local": "2026-07-07 22:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "BC Place, Vancouver",
               "hidden": false,
               "match": {
@@ -6552,11 +6552,11 @@
                 "hidden": false,
                 "score": "1 - 2"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 184,
               "points_breakdown": {
                 "countries": 184,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             }
@@ -9977,10 +9977,10 @@
               "fixture_number": 96,
               "round": "Round of 16",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-07T20:00:00Z",
-              "kickoff_local": "2026-07-07 22:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "BC Place, Vancouver",
               "hidden": false,
               "match": {
@@ -10000,11 +10000,11 @@
                 "hidden": false,
                 "score": "2 - 3"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 184,
               "points_breakdown": {
                 "countries": 184,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             }
@@ -13425,10 +13425,10 @@
               "fixture_number": 96,
               "round": "Round of 16",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-07T20:00:00Z",
-              "kickoff_local": "2026-07-07 22:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "BC Place, Vancouver",
               "hidden": false,
               "match": {
@@ -13448,11 +13448,11 @@
                 "hidden": false,
                 "score": "1 - 2"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 184,
               "points_breakdown": {
                 "countries": 184,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             }
@@ -13800,9 +13800,9 @@
       "player_url": "https://www.tournamentsoccer.us/en-us/fantasy-soccer-world-cup/2026/team/252600/el-capitan/stage/1196-grand-total?scroll=fixture",
       "flag": "FRA",
       "rank": 5,
-      "points": 7215,
+      "points": 7230,
       "exact": 10,
-      "grand_total": 7215,
+      "grand_total": 7230,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -16622,7 +16622,7 @@
         },
         {
           "round": "Round of 16",
-          "subtotal": 1647,
+          "subtotal": 1662,
           "fixtures": [
             {
               "fixture_number": 90,
@@ -16873,10 +16873,10 @@
               "fixture_number": 96,
               "round": "Round of 16",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-07T20:00:00Z",
-              "kickoff_local": "2026-07-07 22:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "BC Place, Vancouver",
               "hidden": false,
               "match": {
@@ -16896,11 +16896,11 @@
                 "hidden": false,
                 "score": "0 - 1"
               },
-              "actual_score": "NS",
-              "points": 184,
+              "actual_score": "0 - 0",
+              "points": 199,
               "points_breakdown": {
                 "countries": 184,
-                "score": null
+                "score": 15
               },
               "is_exact": false
             }
@@ -17248,9 +17248,9 @@
       "player_url": "https://www.tournamentsoccer.us/en-us/fantasy-soccer-world-cup/2026/team/247532/gabriela/stage/1196-grand-total?scroll=fixture",
       "flag": "NED",
       "rank": 6,
-      "points": 6954,
+      "points": 6969,
       "exact": 14,
-      "grand_total": 6954,
+      "grand_total": 6969,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -20070,7 +20070,7 @@
         },
         {
           "round": "Round of 16",
-          "subtotal": 1383,
+          "subtotal": 1398,
           "fixtures": [
             {
               "fixture_number": 90,
@@ -20321,10 +20321,10 @@
               "fixture_number": 96,
               "round": "Round of 16",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-07T20:00:00Z",
-              "kickoff_local": "2026-07-07 22:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "BC Place, Vancouver",
               "hidden": false,
               "match": {
@@ -20344,11 +20344,11 @@
                 "hidden": false,
                 "score": "0 - 2"
               },
-              "actual_score": "NS",
-              "points": 92,
+              "actual_score": "0 - 0",
+              "points": 107,
               "points_breakdown": {
                 "countries": 92,
-                "score": null
+                "score": 15
               },
               "is_exact": false
             }
@@ -23769,10 +23769,10 @@
               "fixture_number": 96,
               "round": "Round of 16",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-07T20:00:00Z",
-              "kickoff_local": "2026-07-07 22:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "BC Place, Vancouver",
               "hidden": false,
               "match": {
@@ -23792,11 +23792,11 @@
                 "hidden": false,
                 "score": "1 - 3"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 184,
               "points_breakdown": {
                 "countries": 184,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             }
@@ -27217,10 +27217,10 @@
               "fixture_number": 96,
               "round": "Round of 16",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-07T20:00:00Z",
-              "kickoff_local": "2026-07-07 22:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "BC Place, Vancouver",
               "hidden": false,
               "match": {
@@ -27240,11 +27240,11 @@
                 "hidden": false,
                 "score": "1 - 3"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 92,
               "points_breakdown": {
                 "countries": 92,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             }
@@ -30665,10 +30665,10 @@
               "fixture_number": 96,
               "round": "Round of 16",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-07T20:00:00Z",
-              "kickoff_local": "2026-07-07 22:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "BC Place, Vancouver",
               "hidden": false,
               "match": {
@@ -30688,11 +30688,11 @@
                 "hidden": false,
                 "score": "1 - 3"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 184,
               "points_breakdown": {
                 "countries": 184,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             }
@@ -34113,10 +34113,10 @@
               "fixture_number": 96,
               "round": "Round of 16",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-07T20:00:00Z",
-              "kickoff_local": "2026-07-07 22:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "BC Place, Vancouver",
               "hidden": false,
               "match": {
@@ -34136,11 +34136,11 @@
                 "hidden": false,
                 "score": "1 - 2"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 184,
               "points_breakdown": {
                 "countries": 184,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             }
@@ -34488,9 +34488,9 @@
       "player_url": "https://www.tournamentsoccer.us/en-us/fantasy-soccer-world-cup/2026/team/247526/valewalle/stage/1196-grand-total?scroll=fixture",
       "flag": "ESP",
       "rank": 11,
-      "points": 6478,
+      "points": 6493,
       "exact": 13,
-      "grand_total": 6478,
+      "grand_total": 6493,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -37310,7 +37310,7 @@
         },
         {
           "round": "Round of 16",
-          "subtotal": 1034,
+          "subtotal": 1049,
           "fixtures": [
             {
               "fixture_number": 90,
@@ -37561,10 +37561,10 @@
               "fixture_number": 96,
               "round": "Round of 16",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-07T20:00:00Z",
-              "kickoff_local": "2026-07-07 22:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "BC Place, Vancouver",
               "hidden": false,
               "match": {
@@ -37584,11 +37584,11 @@
                 "hidden": false,
                 "score": "0 - 3"
               },
-              "actual_score": "NS",
-              "points": 92,
+              "actual_score": "0 - 0",
+              "points": 107,
               "points_breakdown": {
                 "countries": 92,
-                "score": null
+                "score": 15
               },
               "is_exact": false
             }
@@ -41009,10 +41009,10 @@
               "fixture_number": 96,
               "round": "Round of 16",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-07T20:00:00Z",
-              "kickoff_local": "2026-07-07 22:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "BC Place, Vancouver",
               "hidden": false,
               "match": {
@@ -41032,11 +41032,11 @@
                 "hidden": false,
                 "score": "1 - 2"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 184,
               "points_breakdown": {
                 "countries": 184,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             }
@@ -44457,10 +44457,10 @@
               "fixture_number": 96,
               "round": "Round of 16",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-07T20:00:00Z",
-              "kickoff_local": "2026-07-07 22:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "BC Place, Vancouver",
               "hidden": false,
               "match": {
@@ -44480,11 +44480,11 @@
                 "hidden": false,
                 "score": "2 - 3"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 140,
               "points_breakdown": {
                 "countries": 140,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             }
@@ -51102,7 +51102,7 @@
         },
         {
           "round": "Round of 16",
-          "subtotal": 883,
+          "subtotal": 1023,
           "fixtures": [
             {
               "fixture_number": 90,
@@ -51132,9 +51132,9 @@
                 "score": "1 - 3"
               },
               "actual_score": "0 - 3",
-              "points": 155,
+              "points": 247,
               "points_breakdown": {
-                "countries": 92,
+                "countries": 184,
                 "score": 63
               },
               "is_exact": false
@@ -51380,7 +51380,7 @@
               "points": 48,
               "points_breakdown": {
                 "countries": 48,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             }
@@ -54550,7 +54550,7 @@
         },
         {
           "round": "Round of 16",
-          "subtotal": 861,
+          "subtotal": 953,
           "fixtures": [
             {
               "fixture_number": 90,
@@ -54828,7 +54828,7 @@
               "points": 92,
               "points_breakdown": {
                 "countries": 92,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             }
