@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-07T01:51:46Z",
+  "updated": "2026-07-07T02:05:23Z",
   "players": {
     "252653": {
       "team_id": "252653",
@@ -3011,10 +3011,10 @@
               "fixture_number": 94,
               "round": "Round of 16",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-07T00:00:00Z",
+              "kickoff_local": "2026-07-07 02:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "Lumen Field, Seattle",
               "hidden": false,
               "match": {
@@ -3034,7 +3034,7 @@
                 "hidden": false,
                 "score": "2 - 1"
               },
-              "actual_score": "1 - 3",
+              "actual_score": "1 - 4",
               "points": 184,
               "points_breakdown": {
                 "countries": 184,
@@ -6459,10 +6459,10 @@
               "fixture_number": 94,
               "round": "Round of 16",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-07T00:00:00Z",
+              "kickoff_local": "2026-07-07 02:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "Lumen Field, Seattle",
               "hidden": false,
               "match": {
@@ -6482,7 +6482,7 @@
                 "hidden": false,
                 "score": "2 - 1"
               },
-              "actual_score": "1 - 3",
+              "actual_score": "1 - 4",
               "points": 184,
               "points_breakdown": {
                 "countries": 184,
@@ -6904,9 +6904,9 @@
       "player_url": "https://www.tournamentsoccer.us/en-us/fantasy-soccer-world-cup/2026/team/247524/alejandro/stage/1196-grand-total?scroll=fixture",
       "flag": "BRA",
       "rank": 3,
-      "points": 7198,
-      "exact": 8,
-      "grand_total": 7198,
+      "points": 7171,
+      "exact": 7,
+      "grand_total": 7171,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -9726,7 +9726,7 @@
         },
         {
           "round": "Round of 16",
-          "subtotal": 1595,
+          "subtotal": 1568,
           "fixtures": [
             {
               "fixture_number": 90,
@@ -9907,10 +9907,10 @@
               "fixture_number": 94,
               "round": "Round of 16",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-07T00:00:00Z",
+              "kickoff_local": "2026-07-07 02:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "Lumen Field, Seattle",
               "hidden": false,
               "match": {
@@ -9930,11 +9930,11 @@
                 "hidden": false,
                 "score": "1 - 3"
               },
-              "actual_score": "1 - 3",
-              "points": 274,
+              "actual_score": "1 - 4",
+              "points": 247,
               "points_breakdown": {
                 "countries": 184,
-                "score": 90
+                "score": 63
               },
               "is_exact": false
             },
@@ -13355,10 +13355,10 @@
               "fixture_number": 94,
               "round": "Round of 16",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-07T00:00:00Z",
+              "kickoff_local": "2026-07-07 02:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "Lumen Field, Seattle",
               "hidden": false,
               "match": {
@@ -13378,7 +13378,7 @@
                 "hidden": false,
                 "score": "2 - 1"
               },
-              "actual_score": "1 - 3",
+              "actual_score": "1 - 4",
               "points": 92,
               "points_breakdown": {
                 "countries": 92,
@@ -16803,10 +16803,10 @@
               "fixture_number": 94,
               "round": "Round of 16",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-07T00:00:00Z",
+              "kickoff_local": "2026-07-07 02:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "Lumen Field, Seattle",
               "hidden": false,
               "match": {
@@ -16826,7 +16826,7 @@
                 "hidden": false,
                 "score": "0 - 1"
               },
-              "actual_score": "1 - 3",
+              "actual_score": "1 - 4",
               "points": 232,
               "points_breakdown": {
                 "countries": 184,
@@ -20251,10 +20251,10 @@
               "fixture_number": 94,
               "round": "Round of 16",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-07T00:00:00Z",
+              "kickoff_local": "2026-07-07 02:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "Lumen Field, Seattle",
               "hidden": false,
               "match": {
@@ -20274,7 +20274,7 @@
                 "hidden": false,
                 "score": "1 - 1"
               },
-              "actual_score": "1 - 3",
+              "actual_score": "1 - 4",
               "points": 199,
               "points_breakdown": {
                 "countries": 184,
@@ -23699,10 +23699,10 @@
               "fixture_number": 94,
               "round": "Round of 16",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-07T00:00:00Z",
+              "kickoff_local": "2026-07-07 02:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "Lumen Field, Seattle",
               "hidden": false,
               "match": {
@@ -23722,7 +23722,7 @@
                 "hidden": false,
                 "score": "1 - 2"
               },
-              "actual_score": "1 - 3",
+              "actual_score": "1 - 4",
               "points": 247,
               "points_breakdown": {
                 "countries": 184,
@@ -27147,10 +27147,10 @@
               "fixture_number": 94,
               "round": "Round of 16",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-07T00:00:00Z",
+              "kickoff_local": "2026-07-07 02:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "Lumen Field, Seattle",
               "hidden": false,
               "match": {
@@ -27170,7 +27170,7 @@
                 "hidden": false,
                 "score": "2 - 2"
               },
-              "actual_score": "1 - 3",
+              "actual_score": "1 - 4",
               "points": 92,
               "points_breakdown": {
                 "countries": 92,
@@ -30595,10 +30595,10 @@
               "fixture_number": 94,
               "round": "Round of 16",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-07T00:00:00Z",
+              "kickoff_local": "2026-07-07 02:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "Lumen Field, Seattle",
               "hidden": false,
               "match": {
@@ -30618,7 +30618,7 @@
                 "hidden": false,
                 "score": "1 - 2"
               },
-              "actual_score": "1 - 3",
+              "actual_score": "1 - 4",
               "points": 247,
               "points_breakdown": {
                 "countries": 184,
@@ -34043,10 +34043,10 @@
               "fixture_number": 94,
               "round": "Round of 16",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-07T00:00:00Z",
+              "kickoff_local": "2026-07-07 02:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "Lumen Field, Seattle",
               "hidden": false,
               "match": {
@@ -34066,7 +34066,7 @@
                 "hidden": false,
                 "score": "2 - 1"
               },
-              "actual_score": "1 - 3",
+              "actual_score": "1 - 4",
               "points": 184,
               "points_breakdown": {
                 "countries": 184,
@@ -37491,10 +37491,10 @@
               "fixture_number": 94,
               "round": "Round of 16",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-07T00:00:00Z",
+              "kickoff_local": "2026-07-07 02:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "Lumen Field, Seattle",
               "hidden": false,
               "match": {
@@ -37514,7 +37514,7 @@
                 "hidden": false,
                 "score": "1 - 2"
               },
-              "actual_score": "1 - 3",
+              "actual_score": "1 - 4",
               "points": 247,
               "points_breakdown": {
                 "countries": 184,
@@ -40939,10 +40939,10 @@
               "fixture_number": 94,
               "round": "Round of 16",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-07T00:00:00Z",
+              "kickoff_local": "2026-07-07 02:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "Lumen Field, Seattle",
               "hidden": false,
               "match": {
@@ -40962,7 +40962,7 @@
                 "hidden": false,
                 "score": "2 - 1"
               },
-              "actual_score": "1 - 3",
+              "actual_score": "1 - 4",
               "points": 184,
               "points_breakdown": {
                 "countries": 184,
@@ -41384,9 +41384,9 @@
       "player_url": "https://www.tournamentsoccer.us/en-us/fantasy-soccer-world-cup/2026/team/247537/yo/stage/1196-grand-total?scroll=fixture",
       "flag": "MEX",
       "rank": 13,
-      "points": 5924,
+      "points": 5921,
       "exact": 7,
-      "grand_total": 5924,
+      "grand_total": 5921,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -44206,7 +44206,7 @@
         },
         {
           "round": "Round of 16",
-          "subtotal": 973,
+          "subtotal": 970,
           "fixtures": [
             {
               "fixture_number": 90,
@@ -44387,10 +44387,10 @@
               "fixture_number": 94,
               "round": "Round of 16",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-07T00:00:00Z",
+              "kickoff_local": "2026-07-07 02:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "Lumen Field, Seattle",
               "hidden": false,
               "match": {
@@ -44410,11 +44410,11 @@
                 "hidden": false,
                 "score": "0 - 3"
               },
-              "actual_score": "1 - 3",
-              "points": 203,
+              "actual_score": "1 - 4",
+              "points": 200,
               "points_breakdown": {
                 "countries": 140,
-                "score": 63
+                "score": 60
               },
               "is_exact": false
             },
@@ -47835,10 +47835,10 @@
               "fixture_number": 94,
               "round": "Round of 16",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-07T00:00:00Z",
+              "kickoff_local": "2026-07-07 02:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "Lumen Field, Seattle",
               "hidden": false,
               "match": {
@@ -47858,7 +47858,7 @@
                 "hidden": false,
                 "score": "1 - 2"
               },
-              "actual_score": "1 - 3",
+              "actual_score": "1 - 4",
               "points": 155,
               "points_breakdown": {
                 "countries": 92,
@@ -48280,9 +48280,9 @@
       "player_url": "https://www.tournamentsoccer.us/en-us/fantasy-soccer-world-cup/2026/team/247533/beturompequinielas/stage/1196-grand-total?scroll=fixture",
       "flag": "ARG",
       "rank": 15,
-      "points": 5553,
-      "exact": 7,
-      "grand_total": 5553,
+      "points": 5526,
+      "exact": 6,
+      "grand_total": 5526,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -51102,7 +51102,7 @@
         },
         {
           "round": "Round of 16",
-          "subtotal": 987,
+          "subtotal": 960,
           "fixtures": [
             {
               "fixture_number": 90,
@@ -51283,10 +51283,10 @@
               "fixture_number": 94,
               "round": "Round of 16",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-07T00:00:00Z",
+              "kickoff_local": "2026-07-07 02:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "Lumen Field, Seattle",
               "hidden": false,
               "match": {
@@ -51306,11 +51306,11 @@
                 "hidden": false,
                 "score": "1 - 3"
               },
-              "actual_score": "1 - 3",
-              "points": 90,
+              "actual_score": "1 - 4",
+              "points": 63,
               "points_breakdown": {
                 "countries": 0,
-                "score": 90
+                "score": 63
               },
               "is_exact": false
             },
@@ -51728,9 +51728,9 @@
       "player_url": "https://www.tournamentsoccer.us/en-us/fantasy-soccer-world-cup/2026/team/252610/luisa/stage/1196-grand-total?scroll=fixture",
       "flag": "POR",
       "rank": 16,
-      "points": 5000,
+      "points": 4985,
       "exact": 4,
-      "grand_total": 5000,
+      "grand_total": 4985,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -54550,7 +54550,7 @@
         },
         {
           "round": "Round of 16",
-          "subtotal": 878,
+          "subtotal": 863,
           "fixtures": [
             {
               "fixture_number": 90,
@@ -54731,10 +54731,10 @@
               "fixture_number": 94,
               "round": "Round of 16",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-07T00:00:00Z",
+              "kickoff_local": "2026-07-07 02:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "Lumen Field, Seattle",
               "hidden": false,
               "match": {
@@ -54754,11 +54754,11 @@
                 "hidden": false,
                 "score": "2 - 3"
               },
-              "actual_score": "1 - 3",
-              "points": 155,
+              "actual_score": "1 - 4",
+              "points": 140,
               "points_breakdown": {
                 "countries": 92,
-                "score": 63
+                "score": 48
               },
               "is_exact": false
             },

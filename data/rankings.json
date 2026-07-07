@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-07T01:51:46Z",
+  "updated": "2026-07-07T02:05:23Z",
   "pool": {
     "id": "34193",
     "slug": "bobby-and-friends",
@@ -38,8 +38,8 @@
       "name": "Alejandro",
       "flag": "BRA",
       "rank": 3,
-      "points": 7198,
-      "exact": 8
+      "points": 7171,
+      "exact": 7
     },
     {
       "team_id": "246775",
@@ -138,7 +138,7 @@
       "name": "Yo",
       "flag": "MEX",
       "rank": 13,
-      "points": 5924,
+      "points": 5921,
       "exact": 7
     },
     {
@@ -158,8 +158,8 @@
       "name": "Beturompequinielas",
       "flag": "ARG",
       "rank": 15,
-      "points": 5553,
-      "exact": 7
+      "points": 5526,
+      "exact": 6
     },
     {
       "team_id": "252610",
@@ -168,7 +168,7 @@
       "name": "Luisa",
       "flag": "POR",
       "rank": 16,
-      "points": 5000,
+      "points": 4985,
       "exact": 4
     }
   ]
