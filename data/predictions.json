@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-07T01:12:24Z",
+  "updated": "2026-07-07T01:21:50Z",
   "players": {
     "252653": {
       "team_id": "252653",
@@ -6278,7 +6278,7 @@
         },
         {
           "round": "Round of 16",
-          "subtotal": 1439,
+          "subtotal": 1255,
           "fixtures": [
             {
               "fixture_number": 90,
@@ -6482,11 +6482,11 @@
                 "hidden": false,
                 "score": "2 - 1"
               },
-              "actual_score": "1 - 2",
+              "actual_score": "1 - 3",
               "points": 184,
               "points_breakdown": {
                 "countries": 184,
-                "score": 0
+                "score": null
               },
               "is_exact": false
             },
@@ -9726,7 +9726,7 @@
         },
         {
           "round": "Round of 16",
-          "subtotal": 1568,
+          "subtotal": 1321,
           "fixtures": [
             {
               "fixture_number": 90,
@@ -9930,11 +9930,11 @@
                 "hidden": false,
                 "score": "1 - 3"
               },
-              "actual_score": "1 - 2",
-              "points": 247,
+              "actual_score": "1 - 3",
+              "points": 184,
               "points_breakdown": {
                 "countries": 184,
-                "score": 63
+                "score": null
               },
               "is_exact": false
             },
@@ -13174,7 +13174,7 @@
         },
         {
           "round": "Round of 16",
-          "subtotal": 1352,
+          "subtotal": 1260,
           "fixtures": [
             {
               "fixture_number": 90,
@@ -13378,11 +13378,11 @@
                 "hidden": false,
                 "score": "2 - 1"
               },
-              "actual_score": "1 - 2",
+              "actual_score": "1 - 3",
               "points": 92,
               "points_breakdown": {
                 "countries": 92,
-                "score": 0
+                "score": null
               },
               "is_exact": false
             },
@@ -16622,7 +16622,7 @@
         },
         {
           "round": "Round of 16",
-          "subtotal": 1611,
+          "subtotal": 1367,
           "fixtures": [
             {
               "fixture_number": 90,
@@ -16826,11 +16826,11 @@
                 "hidden": false,
                 "score": "0 - 1"
               },
-              "actual_score": "1 - 2",
-              "points": 244,
+              "actual_score": "1 - 3",
+              "points": 184,
               "points_breakdown": {
                 "countries": 184,
-                "score": 60
+                "score": null
               },
               "is_exact": false
             },
@@ -20070,7 +20070,7 @@
         },
         {
           "round": "Round of 16",
-          "subtotal": 1383,
+          "subtotal": 1092,
           "fixtures": [
             {
               "fixture_number": 90,
@@ -20205,9 +20205,9 @@
                 "score": "2 - 0"
               },
               "actual_score": "2 - 3",
-              "points": 107,
+              "points": 15,
               "points_breakdown": {
-                "countries": 92,
+                "countries": 0,
                 "score": 15
               },
               "is_exact": false
@@ -20274,11 +20274,11 @@
                 "hidden": false,
                 "score": "1 - 1"
               },
-              "actual_score": "1 - 2",
-              "points": 199,
+              "actual_score": "1 - 3",
+              "points": 184,
               "points_breakdown": {
                 "countries": 184,
-                "score": 15
+                "score": null
               },
               "is_exact": false
             },
@@ -23518,7 +23518,7 @@
         },
         {
           "round": "Round of 16",
-          "subtotal": 1382,
+          "subtotal": 1016,
           "fixtures": [
             {
               "fixture_number": 90,
@@ -23688,9 +23688,9 @@
                 "score": "4 - 2"
               },
               "actual_score": "0 - 1",
-              "points": 184,
+              "points": 92,
               "points_breakdown": {
-                "countries": 184,
+                "countries": 92,
                 "score": 0
               },
               "is_exact": false
@@ -23722,11 +23722,11 @@
                 "hidden": false,
                 "score": "1 - 2"
               },
-              "actual_score": "1 - 2",
-              "points": 274,
+              "actual_score": "1 - 3",
+              "points": 184,
               "points_breakdown": {
                 "countries": 184,
-                "score": 90
+                "score": null
               },
               "is_exact": false
             },
@@ -26966,7 +26966,7 @@
         },
         {
           "round": "Round of 16",
-          "subtotal": 1276,
+          "subtotal": 1169,
           "fixtures": [
             {
               "fixture_number": 90,
@@ -27170,11 +27170,11 @@
                 "hidden": false,
                 "score": "2 - 2"
               },
-              "actual_score": "1 - 2",
-              "points": 107,
+              "actual_score": "1 - 3",
+              "points": 92,
               "points_breakdown": {
                 "countries": 92,
-                "score": 15
+                "score": null
               },
               "is_exact": false
             },
@@ -30414,7 +30414,7 @@
         },
         {
           "round": "Round of 16",
-          "subtotal": 1576,
+          "subtotal": 1302,
           "fixtures": [
             {
               "fixture_number": 90,
@@ -30618,11 +30618,11 @@
                 "hidden": false,
                 "score": "1 - 2"
               },
-              "actual_score": "1 - 2",
-              "points": 274,
+              "actual_score": "1 - 3",
+              "points": 184,
               "points_breakdown": {
                 "countries": 184,
-                "score": 90
+                "score": null
               },
               "is_exact": false
             },
@@ -33862,7 +33862,7 @@
         },
         {
           "round": "Round of 16",
-          "subtotal": 1287,
+          "subtotal": 1011,
           "fixtures": [
             {
               "fixture_number": 90,
@@ -34066,11 +34066,11 @@
                 "hidden": false,
                 "score": "2 - 1"
               },
-              "actual_score": "1 - 2",
+              "actual_score": "1 - 3",
               "points": 184,
               "points_breakdown": {
                 "countries": 184,
-                "score": 0
+                "score": null
               },
               "is_exact": false
             },
@@ -34137,9 +34137,9 @@
                 "score": "1 - 2"
               },
               "actual_score": "NS",
-              "points": 184,
+              "points": 92,
               "points_breakdown": {
-                "countries": 184,
+                "countries": 92,
                 "score": null
               },
               "is_exact": false
@@ -37310,7 +37310,7 @@
         },
         {
           "round": "Round of 16",
-          "subtotal": 998,
+          "subtotal": 724,
           "fixtures": [
             {
               "fixture_number": 90,
@@ -37514,11 +37514,11 @@
                 "hidden": false,
                 "score": "1 - 2"
               },
-              "actual_score": "1 - 2",
-              "points": 274,
+              "actual_score": "1 - 3",
+              "points": 184,
               "points_breakdown": {
                 "countries": 184,
-                "score": 90
+                "score": null
               },
               "is_exact": false
             },
@@ -40758,7 +40758,7 @@
         },
         {
           "round": "Round of 16",
-          "subtotal": 1394,
+          "subtotal": 1210,
           "fixtures": [
             {
               "fixture_number": 90,
@@ -40962,11 +40962,11 @@
                 "hidden": false,
                 "score": "2 - 1"
               },
-              "actual_score": "1 - 2",
+              "actual_score": "1 - 3",
               "points": 184,
               "points_breakdown": {
                 "countries": 184,
-                "score": 0
+                "score": null
               },
               "is_exact": false
             },
@@ -44206,7 +44206,7 @@
         },
         {
           "round": "Round of 16",
-          "subtotal": 958,
+          "subtotal": 770,
           "fixtures": [
             {
               "fixture_number": 90,
@@ -44410,11 +44410,11 @@
                 "hidden": false,
                 "score": "0 - 3"
               },
-              "actual_score": "1 - 2",
-              "points": 188,
+              "actual_score": "1 - 3",
+              "points": 140,
               "points_breakdown": {
                 "countries": 140,
-                "score": 48
+                "score": null
               },
               "is_exact": false
             },
@@ -47654,7 +47654,7 @@
         },
         {
           "round": "Round of 16",
-          "subtotal": 1209,
+          "subtotal": 1027,
           "fixtures": [
             {
               "fixture_number": 90,
@@ -47858,11 +47858,11 @@
                 "hidden": false,
                 "score": "1 - 2"
               },
-              "actual_score": "1 - 2",
-              "points": 182,
+              "actual_score": "1 - 3",
+              "points": 92,
               "points_breakdown": {
                 "countries": 92,
-                "score": 90
+                "score": null
               },
               "is_exact": false
             },
@@ -51102,7 +51102,7 @@
         },
         {
           "round": "Round of 16",
-          "subtotal": 960,
+          "subtotal": 897,
           "fixtures": [
             {
               "fixture_number": 90,
@@ -51306,11 +51306,11 @@
                 "hidden": false,
                 "score": "1 - 3"
               },
-              "actual_score": "1 - 2",
-              "points": 63,
+              "actual_score": "1 - 3",
+              "points": 0,
               "points_breakdown": {
                 "countries": 0,
-                "score": 63
+                "score": null
               },
               "is_exact": false
             },
@@ -54550,7 +54550,7 @@
         },
         {
           "round": "Round of 16",
-          "subtotal": 875,
+          "subtotal": 723,
           "fixtures": [
             {
               "fixture_number": 90,
@@ -54754,11 +54754,11 @@
                 "hidden": false,
                 "score": "2 - 3"
               },
-              "actual_score": "1 - 2",
-              "points": 152,
+              "actual_score": "1 - 3",
+              "points": 92,
               "points_breakdown": {
                 "countries": 92,
-                "score": 60
+                "score": null
               },
               "is_exact": false
             },
