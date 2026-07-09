@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-09T21:27:21Z",
+  "updated": "2026-07-09T21:35:28Z",
   "pool": {
     "id": "34193",
     "slug": "bobby-and-friends",
@@ -18,8 +18,8 @@
       "name": "Daniel",
       "flag": "FRA",
       "rank": 1,
-      "points": 7917,
-      "exact": 17
+      "points": 7944,
+      "exact": 18
     },
     {
       "team_id": "247930",
@@ -28,7 +28,7 @@
       "name": "Alec",
       "flag": "ESP",
       "rank": 2,
-      "points": 7683,
+      "points": 7686,
       "exact": 13
     },
     {
@@ -38,7 +38,7 @@
       "name": "Alejandro",
       "flag": "BRA",
       "rank": 3,
-      "points": 7547,
+      "points": 7559,
       "exact": 7
     },
     {
@@ -48,7 +48,7 @@
       "name": "bobby",
       "flag": "FRA",
       "rank": 4,
-      "points": 7504,
+      "points": 7516,
       "exact": 13
     },
     {
@@ -58,7 +58,7 @@
       "name": "El Capitan",
       "flag": "FRA",
       "rank": 5,
-      "points": 7436,
+      "points": 7439,
       "exact": 10
     },
     {
@@ -68,7 +68,7 @@
       "name": "Jazmin",
       "flag": "POR",
       "rank": 6,
-      "points": 7130,
+      "points": 7118,
       "exact": 11
     },
     {
@@ -78,7 +78,7 @@
       "name": "Gabriela",
       "flag": "NED",
       "rank": 7,
-      "points": 7058,
+      "points": 7043,
       "exact": 14
     },
     {
@@ -88,7 +88,7 @@
       "name": "JJ",
       "flag": "FRA",
       "rank": 8,
-      "points": 7037,
+      "points": 7025,
       "exact": 11
     },
     {
@@ -98,8 +98,8 @@
       "name": "Baronmark",
       "flag": "FRA",
       "rank": 9,
-      "points": 6886,
-      "exact": 14
+      "points": 6913,
+      "exact": 15
     },
     {
       "team_id": "247525",
@@ -108,7 +108,7 @@
       "name": "Karenwj",
       "flag": "NED",
       "rank": 10,
-      "points": 6802,
+      "points": 6787,
       "exact": 8
     },
     {
@@ -118,8 +118,8 @@
       "name": "Valewalle",
       "flag": "ESP",
       "rank": 11,
-      "points": 6702,
-      "exact": 13
+      "points": 6729,
+      "exact": 14
     },
     {
       "team_id": "253790",
@@ -148,7 +148,7 @@
       "name": "Yo",
       "flag": "MEX",
       "rank": 14,
-      "points": 6103,
+      "points": 6118,
       "exact": 7
     },
     {
@@ -158,7 +158,7 @@
       "name": "Beturompequinielas",
       "flag": "ARG",
       "rank": 15,
-      "points": 5902,
+      "points": 5914,
       "exact": 6
     },
     {
@@ -168,7 +168,7 @@
       "name": "Luisa",
       "flag": "POR",
       "rank": 16,
-      "points": 5268,
+      "points": 5283,
       "exact": 5
     }
   ]
