@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-09T22:01:38Z",
+  "updated": "2026-07-09T22:07:29Z",
   "players": {
     "252653": {
       "team_id": "252653",
@@ -3122,10 +3122,10 @@
               "fixture_number": 97,
               "round": "Quarter finals",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-09T20:00:00Z",
+              "kickoff_local": "2026-07-09 22:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "Gillette Stadium, Foxborough",
               "hidden": false,
               "match": {
@@ -3151,7 +3151,7 @@
                 "countries": 119,
                 "score": 90
               },
-              "is_exact": false
+              "is_exact": true
             },
             {
               "fixture_number": 98,
@@ -3440,7 +3440,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Lionel Messi (Argentina)",
+              "text": "Kylian Mbappé (France), Lionel Messi (Argentina)",
               "flag": null
             },
             "points": null
@@ -6570,10 +6570,10 @@
               "fixture_number": 97,
               "round": "Quarter finals",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-09T20:00:00Z",
+              "kickoff_local": "2026-07-09 22:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "Gillette Stadium, Foxborough",
               "hidden": false,
               "match": {
@@ -6888,7 +6888,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Lionel Messi (Argentina)",
+              "text": "Kylian Mbappé (France), Lionel Messi (Argentina)",
               "flag": null
             },
             "points": null
@@ -10018,10 +10018,10 @@
               "fixture_number": 97,
               "round": "Quarter finals",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-09T20:00:00Z",
+              "kickoff_local": "2026-07-09 22:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "Gillette Stadium, Foxborough",
               "hidden": false,
               "match": {
@@ -10336,7 +10336,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Lionel Messi (Argentina)",
+              "text": "Kylian Mbappé (France), Lionel Messi (Argentina)",
               "flag": null
             },
             "points": null
@@ -13466,10 +13466,10 @@
               "fixture_number": 97,
               "round": "Quarter finals",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-09T20:00:00Z",
+              "kickoff_local": "2026-07-09 22:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "Gillette Stadium, Foxborough",
               "hidden": false,
               "match": {
@@ -13784,7 +13784,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Lionel Messi (Argentina)",
+              "text": "Kylian Mbappé (France), Lionel Messi (Argentina)",
               "flag": null
             },
             "points": null
@@ -16914,10 +16914,10 @@
               "fixture_number": 97,
               "round": "Quarter finals",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-09T20:00:00Z",
+              "kickoff_local": "2026-07-09 22:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "Gillette Stadium, Foxborough",
               "hidden": false,
               "match": {
@@ -17232,7 +17232,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Lionel Messi (Argentina)",
+              "text": "Kylian Mbappé (France), Lionel Messi (Argentina)",
               "flag": null
             },
             "points": null
@@ -20362,10 +20362,10 @@
               "fixture_number": 97,
               "round": "Quarter finals",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-09T20:00:00Z",
+              "kickoff_local": "2026-07-09 22:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "Gillette Stadium, Foxborough",
               "hidden": false,
               "match": {
@@ -20680,7 +20680,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Lionel Messi (Argentina)",
+              "text": "Kylian Mbappé (France), Lionel Messi (Argentina)",
               "flag": null
             },
             "points": null
@@ -23810,10 +23810,10 @@
               "fixture_number": 97,
               "round": "Quarter finals",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-09T20:00:00Z",
+              "kickoff_local": "2026-07-09 22:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "Gillette Stadium, Foxborough",
               "hidden": false,
               "match": {
@@ -24128,7 +24128,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Lionel Messi (Argentina)",
+              "text": "Kylian Mbappé (France), Lionel Messi (Argentina)",
               "flag": null
             },
             "points": null
@@ -27258,10 +27258,10 @@
               "fixture_number": 97,
               "round": "Quarter finals",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-09T20:00:00Z",
+              "kickoff_local": "2026-07-09 22:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "Gillette Stadium, Foxborough",
               "hidden": false,
               "match": {
@@ -27576,7 +27576,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Lionel Messi (Argentina)",
+              "text": "Kylian Mbappé (France), Lionel Messi (Argentina)",
               "flag": null
             },
             "points": null
@@ -30706,10 +30706,10 @@
               "fixture_number": 97,
               "round": "Quarter finals",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-09T20:00:00Z",
+              "kickoff_local": "2026-07-09 22:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "Gillette Stadium, Foxborough",
               "hidden": false,
               "match": {
@@ -30735,7 +30735,7 @@
                 "countries": 119,
                 "score": 90
               },
-              "is_exact": false
+              "is_exact": true
             },
             {
               "fixture_number": 98,
@@ -31024,7 +31024,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Lionel Messi (Argentina)",
+              "text": "Kylian Mbappé (France), Lionel Messi (Argentina)",
               "flag": null
             },
             "points": null
@@ -34154,10 +34154,10 @@
               "fixture_number": 97,
               "round": "Quarter finals",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-09T20:00:00Z",
+              "kickoff_local": "2026-07-09 22:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "Gillette Stadium, Foxborough",
               "hidden": false,
               "match": {
@@ -34472,7 +34472,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Lionel Messi (Argentina)",
+              "text": "Kylian Mbappé (France), Lionel Messi (Argentina)",
               "flag": null
             },
             "points": null
@@ -37602,10 +37602,10 @@
               "fixture_number": 97,
               "round": "Quarter finals",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-09T20:00:00Z",
+              "kickoff_local": "2026-07-09 22:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "Gillette Stadium, Foxborough",
               "hidden": false,
               "match": {
@@ -37631,7 +37631,7 @@
                 "countries": 119,
                 "score": 90
               },
-              "is_exact": false
+              "is_exact": true
             },
             {
               "fixture_number": 98,
@@ -37920,7 +37920,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Lionel Messi (Argentina)",
+              "text": "Kylian Mbappé (France), Lionel Messi (Argentina)",
               "flag": null
             },
             "points": null
@@ -41050,10 +41050,10 @@
               "fixture_number": 97,
               "round": "Quarter finals",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-09T20:00:00Z",
+              "kickoff_local": "2026-07-09 22:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "Gillette Stadium, Foxborough",
               "hidden": false,
               "match": {
@@ -41368,7 +41368,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Lionel Messi (Argentina)",
+              "text": "Kylian Mbappé (France), Lionel Messi (Argentina)",
               "flag": null
             },
             "points": null
@@ -44498,10 +44498,10 @@
               "fixture_number": 97,
               "round": "Quarter finals",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-09T20:00:00Z",
+              "kickoff_local": "2026-07-09 22:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "Gillette Stadium, Foxborough",
               "hidden": false,
               "match": {
@@ -44816,7 +44816,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Lionel Messi (Argentina)",
+              "text": "Kylian Mbappé (France), Lionel Messi (Argentina)",
               "flag": null
             },
             "points": null
@@ -47946,10 +47946,10 @@
               "fixture_number": 97,
               "round": "Quarter finals",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-09T20:00:00Z",
+              "kickoff_local": "2026-07-09 22:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "Gillette Stadium, Foxborough",
               "hidden": false,
               "match": {
@@ -48264,7 +48264,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Lionel Messi (Argentina)",
+              "text": "Kylian Mbappé (France), Lionel Messi (Argentina)",
               "flag": null
             },
             "points": null
@@ -51394,10 +51394,10 @@
               "fixture_number": 97,
               "round": "Quarter finals",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-09T20:00:00Z",
+              "kickoff_local": "2026-07-09 22:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "Gillette Stadium, Foxborough",
               "hidden": false,
               "match": {
@@ -51712,7 +51712,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Lionel Messi (Argentina)",
+              "text": "Kylian Mbappé (France), Lionel Messi (Argentina)",
               "flag": null
             },
             "points": null
@@ -54842,10 +54842,10 @@
               "fixture_number": 97,
               "round": "Quarter finals",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-09T20:00:00Z",
+              "kickoff_local": "2026-07-09 22:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "Gillette Stadium, Foxborough",
               "hidden": false,
               "match": {
@@ -55160,7 +55160,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Lionel Messi (Argentina)",
+              "text": "Kylian Mbappé (France), Lionel Messi (Argentina)",
               "flag": null
             },
             "points": null
