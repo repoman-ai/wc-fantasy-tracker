@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-10T18:51:44Z",
+  "updated": "2026-07-10T19:01:23Z",
   "players": {
     "252653": {
       "team_id": "252653",
@@ -34148,7 +34148,7 @@
         },
         {
           "round": "Quarter finals",
-          "subtotal": 476,
+          "subtotal": 357,
           "fixtures": [
             {
               "fixture_number": 97,
@@ -34189,10 +34189,10 @@
               "fixture_number": 98,
               "round": "Quarter finals",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-10T19:00:00Z",
-              "kickoff_local": "2026-07-10 21:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "SoFi Stadium, Inglewood",
               "hidden": false,
               "match": {
@@ -34212,7 +34212,7 @@
                 "hidden": false,
                 "score": "2 - 1"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 119,
               "points_breakdown": {
                 "countries": 119,
@@ -37596,7 +37596,7 @@
         },
         {
           "round": "Quarter finals",
-          "subtotal": 508,
+          "subtotal": 389,
           "fixtures": [
             {
               "fixture_number": 97,
@@ -37626,9 +37626,9 @@
                 "score": "2 - 0"
               },
               "actual_score": "2 - 0",
-              "points": 209,
+              "points": 90,
               "points_breakdown": {
-                "countries": 119,
+                "countries": 0,
                 "score": 90
               },
               "is_exact": true
@@ -37637,10 +37637,10 @@
               "fixture_number": 98,
               "round": "Quarter finals",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-10T19:00:00Z",
-              "kickoff_local": "2026-07-10 21:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "SoFi Stadium, Inglewood",
               "hidden": false,
               "match": {
@@ -37660,7 +37660,7 @@
                 "hidden": false,
                 "score": "2 - 1"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 0,
               "points_breakdown": {
                 "countries": 0,
@@ -41044,7 +41044,7 @@
         },
         {
           "round": "Quarter finals",
-          "subtotal": 420,
+          "subtotal": 301,
           "fixtures": [
             {
               "fixture_number": 97,
@@ -41085,10 +41085,10 @@
               "fixture_number": 98,
               "round": "Quarter finals",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-10T19:00:00Z",
-              "kickoff_local": "2026-07-10 21:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "SoFi Stadium, Inglewood",
               "hidden": false,
               "match": {
@@ -41108,10 +41108,10 @@
                 "hidden": false,
                 "score": "4 - 2"
               },
-              "actual_score": "NS",
-              "points": 119,
+              "actual_score": "0 - 0",
+              "points": 0,
               "points_breakdown": {
-                "countries": 119,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -44492,7 +44492,7 @@
         },
         {
           "round": "Quarter finals",
-          "subtotal": 542,
+          "subtotal": 423,
           "fixtures": [
             {
               "fixture_number": 97,
@@ -44533,10 +44533,10 @@
               "fixture_number": 98,
               "round": "Quarter finals",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-10T19:00:00Z",
-              "kickoff_local": "2026-07-10 21:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "SoFi Stadium, Inglewood",
               "hidden": false,
               "match": {
@@ -44556,7 +44556,7 @@
                 "hidden": false,
                 "score": "1 - 0"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 119,
               "points_breakdown": {
                 "countries": 119,
@@ -47940,7 +47940,7 @@
         },
         {
           "round": "Quarter finals",
-          "subtotal": 253,
+          "subtotal": 15,
           "fixtures": [
             {
               "fixture_number": 97,
@@ -47981,10 +47981,10 @@
               "fixture_number": 98,
               "round": "Quarter finals",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-10T19:00:00Z",
-              "kickoff_local": "2026-07-10 21:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "SoFi Stadium, Inglewood",
               "hidden": false,
               "match": {
@@ -48004,7 +48004,7 @@
                 "hidden": false,
                 "score": "0 - 1"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 119,
               "points_breakdown": {
                 "countries": 119,
@@ -48075,9 +48075,9 @@
                 "score": "3 - 2"
               },
               "actual_score": "NS",
-              "points": 119,
+              "points": 0,
               "points_breakdown": {
-                "countries": 119,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -51429,10 +51429,10 @@
               "fixture_number": 98,
               "round": "Quarter finals",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-10T19:00:00Z",
-              "kickoff_local": "2026-07-10 21:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "SoFi Stadium, Inglewood",
               "hidden": false,
               "match": {
@@ -51452,7 +51452,7 @@
                 "hidden": false,
                 "score": "3 - 2"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 0,
               "points_breakdown": {
                 "countries": 0,
@@ -54877,10 +54877,10 @@
               "fixture_number": 98,
               "round": "Quarter finals",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-10T19:00:00Z",
-              "kickoff_local": "2026-07-10 21:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "SoFi Stadium, Inglewood",
               "hidden": false,
               "match": {
@@ -54900,7 +54900,7 @@
                 "hidden": false,
                 "score": "3 - 2"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 0,
               "points_breakdown": {
                 "countries": 0,
