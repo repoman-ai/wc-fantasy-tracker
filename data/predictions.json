@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-10T19:39:36Z",
+  "updated": "2026-07-10T19:41:40Z",
   "players": {
     "252653": {
       "team_id": "252653",
@@ -23868,7 +23868,7 @@
                 "hidden": false,
                 "score": "3 - 1"
               },
-              "actual_score": "1 - 0",
+              "actual_score": "1 - 1",
               "points": 167,
               "points_breakdown": {
                 "countries": 119,
@@ -27252,7 +27252,7 @@
         },
         {
           "round": "Quarter finals",
-          "subtotal": 537,
+          "subtotal": 238,
           "fixtures": [
             {
               "fixture_number": 97,
@@ -27282,9 +27282,9 @@
                 "score": "1 - 1"
               },
               "actual_score": "2 - 0",
-              "points": 180,
+              "points": 119,
               "points_breakdown": {
-                "countries": 180,
+                "countries": 119,
                 "score": 0
               },
               "is_exact": false
@@ -27316,11 +27316,11 @@
                 "hidden": false,
                 "score": "0 - 2"
               },
-              "actual_score": "1 - 0",
+              "actual_score": "1 - 1",
               "points": 238,
               "points_breakdown": {
                 "countries": 238,
-                "score": 0
+                "score": null
               },
               "is_exact": false
             },
@@ -27417,8 +27417,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": "ESP",
-                  "name": "Spain",
+                  "code": null,
+                  "name": "W98",
                   "hidden": false
                 }
               },
@@ -30700,7 +30700,7 @@
         },
         {
           "round": "Quarter finals",
-          "subtotal": 507,
+          "subtotal": 447,
           "fixtures": [
             {
               "fixture_number": 97,
@@ -30764,11 +30764,11 @@
                 "hidden": false,
                 "score": "2 - 1"
               },
-              "actual_score": "1 - 0",
-              "points": 60,
+              "actual_score": "1 - 1",
+              "points": 0,
               "points_breakdown": {
                 "countries": 0,
-                "score": 60
+                "score": null
               },
               "is_exact": false
             },
@@ -30865,8 +30865,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": "ESP",
-                  "name": "Spain",
+                  "code": null,
+                  "name": "W98",
                   "hidden": false
                 }
               },
@@ -34148,7 +34148,7 @@
         },
         {
           "round": "Quarter finals",
-          "subtotal": 536,
+          "subtotal": 357,
           "fixtures": [
             {
               "fixture_number": 97,
@@ -34212,11 +34212,11 @@
                 "hidden": false,
                 "score": "2 - 1"
               },
-              "actual_score": "1 - 0",
-              "points": 179,
+              "actual_score": "1 - 1",
+              "points": 119,
               "points_breakdown": {
                 "countries": 119,
-                "score": 60
+                "score": null
               },
               "is_exact": false
             },
@@ -34313,8 +34313,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": "ESP",
-                  "name": "Spain",
+                  "code": null,
+                  "name": "W98",
                   "hidden": false
                 }
               },
@@ -37596,7 +37596,7 @@
         },
         {
           "round": "Quarter finals",
-          "subtotal": 568,
+          "subtotal": 389,
           "fixtures": [
             {
               "fixture_number": 97,
@@ -37660,11 +37660,11 @@
                 "hidden": false,
                 "score": "2 - 1"
               },
-              "actual_score": "1 - 0",
-              "points": 60,
+              "actual_score": "1 - 1",
+              "points": 0,
               "points_breakdown": {
                 "countries": 0,
-                "score": 60
+                "score": null
               },
               "is_exact": false
             },
@@ -37731,9 +37731,9 @@
                 "score": "3 - 0"
               },
               "actual_score": "NS",
-              "points": 119,
+              "points": 0,
               "points_breakdown": {
-                "countries": 119,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -37761,8 +37761,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": "ESP",
-                  "name": "Spain",
+                  "code": null,
+                  "name": "W98",
                   "hidden": false
                 }
               },
@@ -41044,7 +41044,7 @@
         },
         {
           "round": "Quarter finals",
-          "subtotal": 468,
+          "subtotal": 301,
           "fixtures": [
             {
               "fixture_number": 97,
@@ -41108,11 +41108,11 @@
                 "hidden": false,
                 "score": "4 - 2"
               },
-              "actual_score": "1 - 0",
-              "points": 167,
+              "actual_score": "1 - 1",
+              "points": 119,
               "points_breakdown": {
                 "countries": 119,
-                "score": 48
+                "score": null
               },
               "is_exact": false
             },
@@ -41209,8 +41209,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": "ESP",
-                  "name": "Spain",
+                  "code": null,
+                  "name": "W98",
                   "hidden": false
                 }
               },
@@ -44492,7 +44492,7 @@
         },
         {
           "round": "Quarter finals",
-          "subtotal": 632,
+          "subtotal": 423,
           "fixtures": [
             {
               "fixture_number": 97,
@@ -44556,11 +44556,11 @@
                 "hidden": false,
                 "score": "1 - 0"
               },
-              "actual_score": "1 - 0",
-              "points": 209,
+              "actual_score": "1 - 1",
+              "points": 119,
               "points_breakdown": {
                 "countries": 119,
-                "score": 90
+                "score": null
               },
               "is_exact": false
             },
@@ -44657,8 +44657,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": "ESP",
-                  "name": "Spain",
+                  "code": null,
+                  "name": "W98",
                   "hidden": false
                 }
               },
@@ -47940,7 +47940,7 @@
         },
         {
           "round": "Quarter finals",
-          "subtotal": 477,
+          "subtotal": 417,
           "fixtures": [
             {
               "fixture_number": 97,
@@ -48004,11 +48004,11 @@
                 "hidden": false,
                 "score": "3 - 2"
               },
-              "actual_score": "1 - 0",
-              "points": 60,
+              "actual_score": "1 - 1",
+              "points": 0,
               "points_breakdown": {
                 "countries": 0,
-                "score": 60
+                "score": null
               },
               "is_exact": false
             },
@@ -48105,8 +48105,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": "ESP",
-                  "name": "Spain",
+                  "code": null,
+                  "name": "W98",
                   "hidden": false
                 }
               },
@@ -51388,7 +51388,7 @@
         },
         {
           "round": "Quarter finals",
-          "subtotal": 253,
+          "subtotal": 134,
           "fixtures": [
             {
               "fixture_number": 97,
@@ -51452,11 +51452,11 @@
                 "hidden": false,
                 "score": "0 - 1"
               },
-              "actual_score": "1 - 0",
+              "actual_score": "1 - 1",
               "points": 119,
               "points_breakdown": {
                 "countries": 119,
-                "score": 0
+                "score": null
               },
               "is_exact": false
             },
@@ -51553,8 +51553,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": "ESP",
-                  "name": "Spain",
+                  "code": null,
+                  "name": "W98",
                   "hidden": false
                 }
               },
@@ -54836,7 +54836,7 @@
         },
         {
           "round": "Quarter finals",
-          "subtotal": 194,
+          "subtotal": 134,
           "fixtures": [
             {
               "fixture_number": 97,
@@ -54900,11 +54900,11 @@
                 "hidden": false,
                 "score": "3 - 2"
               },
-              "actual_score": "1 - 0",
-              "points": 60,
+              "actual_score": "1 - 1",
+              "points": 0,
               "points_breakdown": {
                 "countries": 0,
-                "score": 60
+                "score": null
               },
               "is_exact": false
             },
@@ -55001,8 +55001,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": "ESP",
-                  "name": "Spain",
+                  "code": null,
+                  "name": "W98",
                   "hidden": false
                 }
               },
