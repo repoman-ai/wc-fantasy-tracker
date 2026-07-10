@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-10T20:58:45Z",
+  "updated": "2026-07-10T21:05:35Z",
   "players": {
     "252653": {
       "team_id": "252653",
@@ -3157,10 +3157,10 @@
               "fixture_number": 98,
               "round": "Quarter finals",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-10T19:00:00Z",
+              "kickoff_local": "2026-07-10 21:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "SoFi Stadium, Inglewood",
               "hidden": false,
               "match": {
@@ -6605,10 +6605,10 @@
               "fixture_number": 98,
               "round": "Quarter finals",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-10T19:00:00Z",
+              "kickoff_local": "2026-07-10 21:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "SoFi Stadium, Inglewood",
               "hidden": false,
               "match": {
@@ -6634,7 +6634,7 @@
                 "countries": 119,
                 "score": 90
               },
-              "is_exact": false
+              "is_exact": true
             },
             {
               "fixture_number": 99,
@@ -10053,10 +10053,10 @@
               "fixture_number": 98,
               "round": "Quarter finals",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-10T19:00:00Z",
+              "kickoff_local": "2026-07-10 21:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "SoFi Stadium, Inglewood",
               "hidden": false,
               "match": {
@@ -13501,10 +13501,10 @@
               "fixture_number": 98,
               "round": "Quarter finals",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-10T19:00:00Z",
+              "kickoff_local": "2026-07-10 21:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "SoFi Stadium, Inglewood",
               "hidden": false,
               "match": {
@@ -16949,10 +16949,10 @@
               "fixture_number": 98,
               "round": "Quarter finals",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-10T19:00:00Z",
+              "kickoff_local": "2026-07-10 21:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "SoFi Stadium, Inglewood",
               "hidden": false,
               "match": {
@@ -20397,10 +20397,10 @@
               "fixture_number": 98,
               "round": "Quarter finals",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-10T19:00:00Z",
+              "kickoff_local": "2026-07-10 21:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "SoFi Stadium, Inglewood",
               "hidden": false,
               "match": {
@@ -23845,10 +23845,10 @@
               "fixture_number": 98,
               "round": "Quarter finals",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-10T19:00:00Z",
+              "kickoff_local": "2026-07-10 21:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "SoFi Stadium, Inglewood",
               "hidden": false,
               "match": {
@@ -27293,10 +27293,10 @@
               "fixture_number": 98,
               "round": "Quarter finals",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-10T19:00:00Z",
+              "kickoff_local": "2026-07-10 21:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "SoFi Stadium, Inglewood",
               "hidden": false,
               "match": {
@@ -30741,10 +30741,10 @@
               "fixture_number": 98,
               "round": "Quarter finals",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-10T19:00:00Z",
+              "kickoff_local": "2026-07-10 21:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "SoFi Stadium, Inglewood",
               "hidden": false,
               "match": {
@@ -30770,7 +30770,7 @@
                 "countries": 0,
                 "score": 90
               },
-              "is_exact": false
+              "is_exact": true
             },
             {
               "fixture_number": 99,
@@ -34189,10 +34189,10 @@
               "fixture_number": 98,
               "round": "Quarter finals",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-10T19:00:00Z",
+              "kickoff_local": "2026-07-10 21:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "SoFi Stadium, Inglewood",
               "hidden": false,
               "match": {
@@ -34218,7 +34218,7 @@
                 "countries": 119,
                 "score": 90
               },
-              "is_exact": false
+              "is_exact": true
             },
             {
               "fixture_number": 99,
@@ -37637,10 +37637,10 @@
               "fixture_number": 98,
               "round": "Quarter finals",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-10T19:00:00Z",
+              "kickoff_local": "2026-07-10 21:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "SoFi Stadium, Inglewood",
               "hidden": false,
               "match": {
@@ -37666,7 +37666,7 @@
                 "countries": 0,
                 "score": 90
               },
-              "is_exact": false
+              "is_exact": true
             },
             {
               "fixture_number": 99,
@@ -41085,10 +41085,10 @@
               "fixture_number": 98,
               "round": "Quarter finals",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-10T19:00:00Z",
+              "kickoff_local": "2026-07-10 21:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "SoFi Stadium, Inglewood",
               "hidden": false,
               "match": {
@@ -44533,10 +44533,10 @@
               "fixture_number": 98,
               "round": "Quarter finals",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-10T19:00:00Z",
+              "kickoff_local": "2026-07-10 21:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "SoFi Stadium, Inglewood",
               "hidden": false,
               "match": {
@@ -47981,10 +47981,10 @@
               "fixture_number": 98,
               "round": "Quarter finals",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-10T19:00:00Z",
+              "kickoff_local": "2026-07-10 21:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "SoFi Stadium, Inglewood",
               "hidden": false,
               "match": {
@@ -51429,10 +51429,10 @@
               "fixture_number": 98,
               "round": "Quarter finals",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-10T19:00:00Z",
+              "kickoff_local": "2026-07-10 21:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "SoFi Stadium, Inglewood",
               "hidden": false,
               "match": {
@@ -54877,10 +54877,10 @@
               "fixture_number": 98,
               "round": "Quarter finals",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-10T19:00:00Z",
+              "kickoff_local": "2026-07-10 21:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "SoFi Stadium, Inglewood",
               "hidden": false,
               "match": {
