@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-11T23:02:59Z",
+  "updated": "2026-07-11T23:11:46Z",
   "players": {
     "252653": {
       "team_id": "252653",
@@ -37791,8 +37791,8 @@
               "hidden": false,
               "match": {
                 "home": {
-                  "code": null,
-                  "name": "W99",
+                  "code": "ENG",
+                  "name": "England",
                   "hidden": false
                 },
                 "away": {
@@ -41239,8 +41239,8 @@
               "hidden": false,
               "match": {
                 "home": {
-                  "code": null,
-                  "name": "W99",
+                  "code": "ENG",
+                  "name": "England",
                   "hidden": false
                 },
                 "away": {
@@ -44638,7 +44638,7 @@
         },
         {
           "round": "Semi finals",
-          "subtotal": 294,
+          "subtotal": 220,
           "fixtures": [
             {
               "fixture_number": 101,
@@ -44687,8 +44687,8 @@
               "hidden": false,
               "match": {
                 "home": {
-                  "code": null,
-                  "name": "W99",
+                  "code": "ENG",
+                  "name": "England",
                   "hidden": false
                 },
                 "away": {
@@ -44703,9 +44703,9 @@
                 "score": "1 - 2"
               },
               "actual_score": "NS",
-              "points": 74,
+              "points": 0,
               "points_breakdown": {
-                "countries": 74,
+                "countries": 0,
                 "score": null
               },
               "is_exact": false
@@ -48135,8 +48135,8 @@
               "hidden": false,
               "match": {
                 "home": {
-                  "code": null,
-                  "name": "W99",
+                  "code": "ENG",
+                  "name": "England",
                   "hidden": false
                 },
                 "away": {
@@ -51583,8 +51583,8 @@
               "hidden": false,
               "match": {
                 "home": {
-                  "code": null,
-                  "name": "W99",
+                  "code": "ENG",
+                  "name": "England",
                   "hidden": false
                 },
                 "away": {
@@ -55031,8 +55031,8 @@
               "hidden": false,
               "match": {
                 "home": {
-                  "code": null,
-                  "name": "W99",
+                  "code": "ENG",
+                  "name": "England",
                   "hidden": false
                 },
                 "away": {
