@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-12T01:01:32Z",
+  "updated": "2026-07-12T01:06:22Z",
   "players": {
     "252653": {
       "team_id": "252653",
@@ -8,9 +8,9 @@
       "player_url": "https://www.tournamentsoccer.us/en-us/fantasy-soccer-world-cup/2026/team/252653/daniel/stage/1196-grand-total?scroll=fixture",
       "flag": "FRA",
       "rank": 1,
-      "points": 8165,
+      "points": 8180,
       "exact": 18,
-      "grand_total": 8165,
+      "grand_total": 8180,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -3116,7 +3116,7 @@
         },
         {
           "round": "Quarter finals",
-          "subtotal": 641,
+          "subtotal": 656,
           "fixtures": [
             {
               "fixture_number": 97,
@@ -3227,10 +3227,10 @@
               "fixture_number": 100,
               "round": "Quarter finals",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-12T01:00:00Z",
-              "kickoff_local": "2026-07-12 03:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "Arrowhead Stadium, Kansas City",
               "hidden": false,
               "match": {
@@ -3250,11 +3250,11 @@
                 "hidden": false,
                 "score": "2 - 0"
               },
-              "actual_score": "NS",
-              "points": 119,
+              "actual_score": "0 - 0",
+              "points": 134,
               "points_breakdown": {
                 "countries": 119,
-                "score": null
+                "score": 15
               },
               "is_exact": false
             }
@@ -6675,10 +6675,10 @@
               "fixture_number": 100,
               "round": "Quarter finals",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-12T01:00:00Z",
-              "kickoff_local": "2026-07-12 03:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "Arrowhead Stadium, Kansas City",
               "hidden": false,
               "match": {
@@ -6698,11 +6698,11 @@
                 "hidden": false,
                 "score": "2 - 1"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 119,
               "points_breakdown": {
                 "countries": 119,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             }
@@ -10123,10 +10123,10 @@
               "fixture_number": 100,
               "round": "Quarter finals",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-12T01:00:00Z",
-              "kickoff_local": "2026-07-12 03:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "Arrowhead Stadium, Kansas City",
               "hidden": false,
               "match": {
@@ -10146,11 +10146,11 @@
                 "hidden": false,
                 "score": "2 - 1"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 119,
               "points_breakdown": {
                 "countries": 119,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             }
@@ -13571,10 +13571,10 @@
               "fixture_number": 100,
               "round": "Quarter finals",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-12T01:00:00Z",
-              "kickoff_local": "2026-07-12 03:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "Arrowhead Stadium, Kansas City",
               "hidden": false,
               "match": {
@@ -13594,11 +13594,11 @@
                 "hidden": false,
                 "score": "3 - 1"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 119,
               "points_breakdown": {
                 "countries": 119,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             }
@@ -13800,9 +13800,9 @@
       "player_url": "https://www.tournamentsoccer.us/en-us/fantasy-soccer-world-cup/2026/team/252600/el-capitan/stage/1196-grand-total?scroll=fixture",
       "flag": "FRA",
       "rank": 5,
-      "points": 7660,
+      "points": 7675,
       "exact": 10,
-      "grand_total": 7660,
+      "grand_total": 7675,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -16908,7 +16908,7 @@
         },
         {
           "round": "Quarter finals",
-          "subtotal": 733,
+          "subtotal": 748,
           "fixtures": [
             {
               "fixture_number": 97,
@@ -17019,10 +17019,10 @@
               "fixture_number": 100,
               "round": "Quarter finals",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-12T01:00:00Z",
-              "kickoff_local": "2026-07-12 03:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "Arrowhead Stadium, Kansas City",
               "hidden": false,
               "match": {
@@ -17042,11 +17042,11 @@
                 "hidden": false,
                 "score": "1 - 0"
               },
-              "actual_score": "NS",
-              "points": 119,
+              "actual_score": "0 - 0",
+              "points": 134,
               "points_breakdown": {
                 "countries": 119,
-                "score": null
+                "score": 15
               },
               "is_exact": false
             }
@@ -20356,7 +20356,7 @@
         },
         {
           "round": "Quarter finals",
-          "subtotal": 465,
+          "subtotal": 584,
           "fixtures": [
             {
               "fixture_number": 97,
@@ -20494,7 +20494,7 @@
               "points": 119,
               "points_breakdown": {
                 "countries": 119,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             }
@@ -23804,7 +23804,7 @@
         },
         {
           "round": "Quarter finals",
-          "subtotal": 245,
+          "subtotal": 483,
           "fixtures": [
             {
               "fixture_number": 97,
@@ -23834,9 +23834,9 @@
                 "score": "3 - 2"
               },
               "actual_score": "2 - 0",
-              "points": 48,
+              "points": 167,
               "points_breakdown": {
-                "countries": 0,
+                "countries": 119,
                 "score": 48
               },
               "is_exact": false
@@ -23942,7 +23942,7 @@
               "points": 119,
               "points_breakdown": {
                 "countries": 119,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             }
@@ -24144,9 +24144,9 @@
       "player_url": "https://www.tournamentsoccer.us/en-us/fantasy-soccer-world-cup/2026/team/247532/gabriela/stage/1196-grand-total?scroll=fixture",
       "flag": "NED",
       "rank": 8,
-      "points": 7133,
+      "points": 7148,
       "exact": 15,
-      "grand_total": 7133,
+      "grand_total": 7148,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -27252,7 +27252,7 @@
         },
         {
           "round": "Quarter finals",
-          "subtotal": 508,
+          "subtotal": 642,
           "fixtures": [
             {
               "fixture_number": 97,
@@ -27317,9 +27317,9 @@
                 "score": "0 - 2"
               },
               "actual_score": "2 - 1",
-              "points": 119,
+              "points": 238,
               "points_breakdown": {
-                "countries": 119,
+                "countries": 238,
                 "score": 0
               },
               "is_exact": false
@@ -27387,10 +27387,10 @@
                 "score": "0 - 2"
               },
               "actual_score": "0 - 0",
-              "points": 0,
+              "points": 15,
               "points_breakdown": {
                 "countries": 0,
-                "score": null
+                "score": 15
               },
               "is_exact": false
             }
@@ -30700,7 +30700,7 @@
         },
         {
           "round": "Quarter finals",
-          "subtotal": 462,
+          "subtotal": 581,
           "fixtures": [
             {
               "fixture_number": 97,
@@ -30838,7 +30838,7 @@
               "points": 119,
               "points_breakdown": {
                 "countries": 119,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             }
@@ -31040,9 +31040,9 @@
       "player_url": "https://www.tournamentsoccer.us/en-us/fantasy-soccer-world-cup/2026/team/247535/baronmark/stage/1196-grand-total?scroll=fixture",
       "flag": "FRA",
       "rank": 10,
-      "points": 7003,
+      "points": 7018,
       "exact": 16,
-      "grand_total": 7003,
+      "grand_total": 7018,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -34148,7 +34148,7 @@
         },
         {
           "round": "Quarter finals",
-          "subtotal": 418,
+          "subtotal": 552,
           "fixtures": [
             {
               "fixture_number": 97,
@@ -34283,10 +34283,10 @@
                 "score": "2 - 0"
               },
               "actual_score": "0 - 0",
-              "points": 119,
+              "points": 134,
               "points_breakdown": {
                 "countries": 119,
-                "score": null
+                "score": 15
               },
               "is_exact": false
             }
@@ -34488,9 +34488,9 @@
       "player_url": "https://www.tournamentsoccer.us/en-us/fantasy-soccer-world-cup/2026/team/247526/valewalle/stage/1196-grand-total?scroll=fixture",
       "flag": "ESP",
       "rank": 11,
-      "points": 6908,
+      "points": 6923,
       "exact": 15,
-      "grand_total": 6908,
+      "grand_total": 6923,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -37596,7 +37596,7 @@
         },
         {
           "round": "Quarter finals",
-          "subtotal": 494,
+          "subtotal": 628,
           "fixtures": [
             {
               "fixture_number": 97,
@@ -37731,10 +37731,10 @@
                 "score": "3 - 0"
               },
               "actual_score": "0 - 0",
-              "points": 119,
+              "points": 134,
               "points_breakdown": {
                 "countries": 119,
-                "score": null
+                "score": 15
               },
               "is_exact": false
             }
@@ -41044,7 +41044,7 @@
         },
         {
           "round": "Quarter finals",
-          "subtotal": 364,
+          "subtotal": 483,
           "fixtures": [
             {
               "fixture_number": 97,
@@ -41182,7 +41182,7 @@
               "points": 119,
               "points_breakdown": {
                 "countries": 119,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             }
@@ -41384,9 +41384,9 @@
       "player_url": "https://www.tournamentsoccer.us/en-us/fantasy-soccer-world-cup/2026/team/247729/maxs/stage/1196-grand-total?scroll=fixture",
       "flag": "ARG",
       "rank": 13,
-      "points": 6401,
+      "points": 6416,
       "exact": 6,
-      "grand_total": 6401,
+      "grand_total": 6416,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -44492,7 +44492,7 @@
         },
         {
           "round": "Quarter finals",
-          "subtotal": 483,
+          "subtotal": 617,
           "fixtures": [
             {
               "fixture_number": 97,
@@ -44627,10 +44627,10 @@
                 "score": "1 - 0"
               },
               "actual_score": "0 - 0",
-              "points": 119,
+              "points": 134,
               "points_breakdown": {
                 "countries": 119,
-                "score": null
+                "score": 15
               },
               "is_exact": false
             }
@@ -47940,7 +47940,7 @@
         },
         {
           "round": "Quarter finals",
-          "subtotal": 418,
+          "subtotal": 537,
           "fixtures": [
             {
               "fixture_number": 97,
@@ -48078,7 +48078,7 @@
               "points": 119,
               "points_breakdown": {
                 "countries": 119,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             }
@@ -51388,7 +51388,7 @@
         },
         {
           "round": "Quarter finals",
-          "subtotal": 164,
+          "subtotal": 283,
           "fixtures": [
             {
               "fixture_number": 97,
@@ -51526,7 +51526,7 @@
               "points": 119,
               "points_breakdown": {
                 "countries": 119,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             }
@@ -54836,7 +54836,7 @@
         },
         {
           "round": "Quarter finals",
-          "subtotal": 75,
+          "subtotal": 194,
           "fixtures": [
             {
               "fixture_number": 97,
@@ -54974,7 +54974,7 @@
               "points": 119,
               "points_breakdown": {
                 "countries": 119,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             }
