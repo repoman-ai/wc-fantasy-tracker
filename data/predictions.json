@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-12T01:07:56Z",
+  "updated": "2026-07-12T01:11:39Z",
   "players": {
     "252653": {
       "team_id": "252653",
@@ -13594,7 +13594,7 @@
                 "hidden": false,
                 "score": "3 - 1"
               },
-              "actual_score": "0 - 0",
+              "actual_score": "1 - 0",
               "points": 119,
               "points_breakdown": {
                 "countries": 119,
@@ -16908,7 +16908,7 @@
         },
         {
           "round": "Quarter finals",
-          "subtotal": 748,
+          "subtotal": 614,
           "fixtures": [
             {
               "fixture_number": 97,
@@ -17042,11 +17042,11 @@
                 "hidden": false,
                 "score": "1 - 0"
               },
-              "actual_score": "0 - 0",
-              "points": 134,
+              "actual_score": "1 - 0",
+              "points": 119,
               "points_breakdown": {
                 "countries": 119,
-                "score": 15
+                "score": null
               },
               "is_exact": false
             }
@@ -17108,8 +17108,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "W100",
+                  "code": "ARG",
+                  "name": "Argentina",
                   "hidden": false
                 }
               },
@@ -20356,7 +20356,7 @@
         },
         {
           "round": "Quarter finals",
-          "subtotal": 584,
+          "subtotal": 346,
           "fixtures": [
             {
               "fixture_number": 97,
@@ -20421,9 +20421,9 @@
                 "score": "3 - 2"
               },
               "actual_score": "2 - 1",
-              "points": 179,
+              "points": 60,
               "points_breakdown": {
-                "countries": 119,
+                "countries": 0,
                 "score": 60
               },
               "is_exact": false
@@ -20490,11 +20490,11 @@
                 "hidden": false,
                 "score": "2 - 3"
               },
-              "actual_score": "0 - 0",
+              "actual_score": "1 - 0",
               "points": 119,
               "points_breakdown": {
                 "countries": 119,
-                "score": 0
+                "score": null
               },
               "is_exact": false
             }
@@ -20556,8 +20556,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "W100",
+                  "code": "ARG",
+                  "name": "Argentina",
                   "hidden": false
                 }
               },
@@ -23804,7 +23804,7 @@
         },
         {
           "round": "Quarter finals",
-          "subtotal": 483,
+          "subtotal": 364,
           "fixtures": [
             {
               "fixture_number": 97,
@@ -23938,11 +23938,11 @@
                 "hidden": false,
                 "score": "3 - 1"
               },
-              "actual_score": "0 - 0",
+              "actual_score": "1 - 0",
               "points": 119,
               "points_breakdown": {
                 "countries": 119,
-                "score": 0
+                "score": null
               },
               "is_exact": false
             }
@@ -24004,8 +24004,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "W100",
+                  "code": "ARG",
+                  "name": "Argentina",
                   "hidden": false
                 }
               },
@@ -27252,7 +27252,7 @@
         },
         {
           "round": "Quarter finals",
-          "subtotal": 642,
+          "subtotal": 627,
           "fixtures": [
             {
               "fixture_number": 97,
@@ -27386,11 +27386,11 @@
                 "hidden": false,
                 "score": "0 - 2"
               },
-              "actual_score": "0 - 0",
-              "points": 15,
+              "actual_score": "1 - 0",
+              "points": 0,
               "points_breakdown": {
                 "countries": 0,
-                "score": 15
+                "score": null
               },
               "is_exact": false
             }
@@ -27452,8 +27452,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "W100",
+                  "code": "ARG",
+                  "name": "Argentina",
                   "hidden": false
                 }
               },
@@ -30700,7 +30700,7 @@
         },
         {
           "round": "Quarter finals",
-          "subtotal": 581,
+          "subtotal": 462,
           "fixtures": [
             {
               "fixture_number": 97,
@@ -30834,11 +30834,11 @@
                 "hidden": false,
                 "score": "2 - 1"
               },
-              "actual_score": "0 - 0",
+              "actual_score": "1 - 0",
               "points": 119,
               "points_breakdown": {
                 "countries": 119,
-                "score": 0
+                "score": null
               },
               "is_exact": false
             }
@@ -30900,8 +30900,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "W100",
+                  "code": "ARG",
+                  "name": "Argentina",
                   "hidden": false
                 }
               },
@@ -34148,7 +34148,7 @@
         },
         {
           "round": "Quarter finals",
-          "subtotal": 552,
+          "subtotal": 418,
           "fixtures": [
             {
               "fixture_number": 97,
@@ -34282,11 +34282,11 @@
                 "hidden": false,
                 "score": "2 - 0"
               },
-              "actual_score": "0 - 0",
-              "points": 134,
+              "actual_score": "1 - 0",
+              "points": 119,
               "points_breakdown": {
                 "countries": 119,
-                "score": 15
+                "score": null
               },
               "is_exact": false
             }
@@ -34348,8 +34348,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "W100",
+                  "code": "ARG",
+                  "name": "Argentina",
                   "hidden": false
                 }
               },
@@ -37596,7 +37596,7 @@
         },
         {
           "round": "Quarter finals",
-          "subtotal": 628,
+          "subtotal": 494,
           "fixtures": [
             {
               "fixture_number": 97,
@@ -37730,11 +37730,11 @@
                 "hidden": false,
                 "score": "3 - 0"
               },
-              "actual_score": "0 - 0",
-              "points": 134,
+              "actual_score": "1 - 0",
+              "points": 119,
               "points_breakdown": {
                 "countries": 119,
-                "score": 15
+                "score": null
               },
               "is_exact": false
             }
@@ -37796,8 +37796,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "W100",
+                  "code": "ARG",
+                  "name": "Argentina",
                   "hidden": false
                 }
               },
@@ -41044,7 +41044,7 @@
         },
         {
           "round": "Quarter finals",
-          "subtotal": 483,
+          "subtotal": 364,
           "fixtures": [
             {
               "fixture_number": 97,
@@ -41178,11 +41178,11 @@
                 "hidden": false,
                 "score": "3 - 1"
               },
-              "actual_score": "0 - 0",
+              "actual_score": "1 - 0",
               "points": 119,
               "points_breakdown": {
                 "countries": 119,
-                "score": 0
+                "score": null
               },
               "is_exact": false
             }
@@ -41244,8 +41244,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "W100",
+                  "code": "ARG",
+                  "name": "Argentina",
                   "hidden": false
                 }
               },
@@ -44492,7 +44492,7 @@
         },
         {
           "round": "Quarter finals",
-          "subtotal": 617,
+          "subtotal": 483,
           "fixtures": [
             {
               "fixture_number": 97,
@@ -44626,11 +44626,11 @@
                 "hidden": false,
                 "score": "1 - 0"
               },
-              "actual_score": "0 - 0",
-              "points": 134,
+              "actual_score": "1 - 0",
+              "points": 119,
               "points_breakdown": {
                 "countries": 119,
-                "score": 15
+                "score": null
               },
               "is_exact": false
             }
@@ -44692,8 +44692,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "W100",
+                  "code": "ARG",
+                  "name": "Argentina",
                   "hidden": false
                 }
               },
@@ -47940,7 +47940,7 @@
         },
         {
           "round": "Quarter finals",
-          "subtotal": 537,
+          "subtotal": 418,
           "fixtures": [
             {
               "fixture_number": 97,
@@ -48074,11 +48074,11 @@
                 "hidden": false,
                 "score": "2 - 1"
               },
-              "actual_score": "0 - 0",
+              "actual_score": "1 - 0",
               "points": 119,
               "points_breakdown": {
                 "countries": 119,
-                "score": 0
+                "score": null
               },
               "is_exact": false
             }
@@ -48140,8 +48140,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "W100",
+                  "code": "ARG",
+                  "name": "Argentina",
                   "hidden": false
                 }
               },
@@ -51388,7 +51388,7 @@
         },
         {
           "round": "Quarter finals",
-          "subtotal": 283,
+          "subtotal": 164,
           "fixtures": [
             {
               "fixture_number": 97,
@@ -51522,11 +51522,11 @@
                 "hidden": false,
                 "score": "3 - 2"
               },
-              "actual_score": "0 - 0",
+              "actual_score": "1 - 0",
               "points": 119,
               "points_breakdown": {
                 "countries": 119,
-                "score": 0
+                "score": null
               },
               "is_exact": false
             }
@@ -51588,8 +51588,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "W100",
+                  "code": "ARG",
+                  "name": "Argentina",
                   "hidden": false
                 }
               },
@@ -54836,7 +54836,7 @@
         },
         {
           "round": "Quarter finals",
-          "subtotal": 194,
+          "subtotal": 75,
           "fixtures": [
             {
               "fixture_number": 97,
@@ -54970,11 +54970,11 @@
                 "hidden": false,
                 "score": "1 - 2"
               },
-              "actual_score": "0 - 0",
+              "actual_score": "1 - 0",
               "points": 119,
               "points_breakdown": {
                 "countries": 119,
-                "score": 0
+                "score": null
               },
               "is_exact": false
             }
@@ -55036,8 +55036,8 @@
                   "hidden": false
                 },
                 "away": {
-                  "code": null,
-                  "name": "W100",
+                  "code": "ARG",
+                  "name": "Argentina",
                   "hidden": false
                 }
               },
