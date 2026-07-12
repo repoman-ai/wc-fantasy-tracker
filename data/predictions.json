@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-12T00:51:45Z",
+  "updated": "2026-07-12T01:01:32Z",
   "players": {
     "252653": {
       "team_id": "252653",
@@ -20356,7 +20356,7 @@
         },
         {
           "round": "Quarter finals",
-          "subtotal": 584,
+          "subtotal": 465,
           "fixtures": [
             {
               "fixture_number": 97,
@@ -20467,10 +20467,10 @@
               "fixture_number": 100,
               "round": "Quarter finals",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-12T01:00:00Z",
-              "kickoff_local": "2026-07-12 03:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "Arrowhead Stadium, Kansas City",
               "hidden": false,
               "match": {
@@ -20490,7 +20490,7 @@
                 "hidden": false,
                 "score": "2 - 3"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 119,
               "points_breakdown": {
                 "countries": 119,
@@ -23804,7 +23804,7 @@
         },
         {
           "round": "Quarter finals",
-          "subtotal": 483,
+          "subtotal": 245,
           "fixtures": [
             {
               "fixture_number": 97,
@@ -23834,9 +23834,9 @@
                 "score": "3 - 2"
               },
               "actual_score": "2 - 0",
-              "points": 167,
+              "points": 48,
               "points_breakdown": {
-                "countries": 119,
+                "countries": 0,
                 "score": 48
               },
               "is_exact": false
@@ -23915,10 +23915,10 @@
               "fixture_number": 100,
               "round": "Quarter finals",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-12T01:00:00Z",
-              "kickoff_local": "2026-07-12 03:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "Arrowhead Stadium, Kansas City",
               "hidden": false,
               "match": {
@@ -23938,7 +23938,7 @@
                 "hidden": false,
                 "score": "3 - 1"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 119,
               "points_breakdown": {
                 "countries": 119,
@@ -27252,7 +27252,7 @@
         },
         {
           "round": "Quarter finals",
-          "subtotal": 627,
+          "subtotal": 508,
           "fixtures": [
             {
               "fixture_number": 97,
@@ -27317,9 +27317,9 @@
                 "score": "0 - 2"
               },
               "actual_score": "2 - 1",
-              "points": 238,
+              "points": 119,
               "points_breakdown": {
-                "countries": 238,
+                "countries": 119,
                 "score": 0
               },
               "is_exact": false
@@ -27363,10 +27363,10 @@
               "fixture_number": 100,
               "round": "Quarter finals",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-12T01:00:00Z",
-              "kickoff_local": "2026-07-12 03:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "Arrowhead Stadium, Kansas City",
               "hidden": false,
               "match": {
@@ -27386,7 +27386,7 @@
                 "hidden": false,
                 "score": "0 - 2"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 0,
               "points_breakdown": {
                 "countries": 0,
@@ -30700,7 +30700,7 @@
         },
         {
           "round": "Quarter finals",
-          "subtotal": 581,
+          "subtotal": 462,
           "fixtures": [
             {
               "fixture_number": 97,
@@ -30811,10 +30811,10 @@
               "fixture_number": 100,
               "round": "Quarter finals",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-12T01:00:00Z",
-              "kickoff_local": "2026-07-12 03:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "Arrowhead Stadium, Kansas City",
               "hidden": false,
               "match": {
@@ -30834,7 +30834,7 @@
                 "hidden": false,
                 "score": "2 - 1"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 119,
               "points_breakdown": {
                 "countries": 119,
@@ -34148,7 +34148,7 @@
         },
         {
           "round": "Quarter finals",
-          "subtotal": 537,
+          "subtotal": 418,
           "fixtures": [
             {
               "fixture_number": 97,
@@ -34259,10 +34259,10 @@
               "fixture_number": 100,
               "round": "Quarter finals",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-12T01:00:00Z",
-              "kickoff_local": "2026-07-12 03:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "Arrowhead Stadium, Kansas City",
               "hidden": false,
               "match": {
@@ -34282,7 +34282,7 @@
                 "hidden": false,
                 "score": "2 - 0"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 119,
               "points_breakdown": {
                 "countries": 119,
@@ -37596,7 +37596,7 @@
         },
         {
           "round": "Quarter finals",
-          "subtotal": 613,
+          "subtotal": 494,
           "fixtures": [
             {
               "fixture_number": 97,
@@ -37707,10 +37707,10 @@
               "fixture_number": 100,
               "round": "Quarter finals",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-12T01:00:00Z",
-              "kickoff_local": "2026-07-12 03:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "Arrowhead Stadium, Kansas City",
               "hidden": false,
               "match": {
@@ -37730,7 +37730,7 @@
                 "hidden": false,
                 "score": "3 - 0"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 119,
               "points_breakdown": {
                 "countries": 119,
@@ -41044,7 +41044,7 @@
         },
         {
           "round": "Quarter finals",
-          "subtotal": 483,
+          "subtotal": 364,
           "fixtures": [
             {
               "fixture_number": 97,
@@ -41155,10 +41155,10 @@
               "fixture_number": 100,
               "round": "Quarter finals",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-12T01:00:00Z",
-              "kickoff_local": "2026-07-12 03:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "Arrowhead Stadium, Kansas City",
               "hidden": false,
               "match": {
@@ -41178,7 +41178,7 @@
                 "hidden": false,
                 "score": "3 - 1"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 119,
               "points_breakdown": {
                 "countries": 119,
@@ -44492,7 +44492,7 @@
         },
         {
           "round": "Quarter finals",
-          "subtotal": 602,
+          "subtotal": 483,
           "fixtures": [
             {
               "fixture_number": 97,
@@ -44603,10 +44603,10 @@
               "fixture_number": 100,
               "round": "Quarter finals",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-12T01:00:00Z",
-              "kickoff_local": "2026-07-12 03:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "Arrowhead Stadium, Kansas City",
               "hidden": false,
               "match": {
@@ -44626,7 +44626,7 @@
                 "hidden": false,
                 "score": "1 - 0"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 119,
               "points_breakdown": {
                 "countries": 119,
@@ -47940,7 +47940,7 @@
         },
         {
           "round": "Quarter finals",
-          "subtotal": 537,
+          "subtotal": 418,
           "fixtures": [
             {
               "fixture_number": 97,
@@ -48051,10 +48051,10 @@
               "fixture_number": 100,
               "round": "Quarter finals",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-12T01:00:00Z",
-              "kickoff_local": "2026-07-12 03:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "Arrowhead Stadium, Kansas City",
               "hidden": false,
               "match": {
@@ -48074,7 +48074,7 @@
                 "hidden": false,
                 "score": "2 - 1"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 119,
               "points_breakdown": {
                 "countries": 119,
@@ -51388,7 +51388,7 @@
         },
         {
           "round": "Quarter finals",
-          "subtotal": 283,
+          "subtotal": 164,
           "fixtures": [
             {
               "fixture_number": 97,
@@ -51499,10 +51499,10 @@
               "fixture_number": 100,
               "round": "Quarter finals",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-12T01:00:00Z",
-              "kickoff_local": "2026-07-12 03:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "Arrowhead Stadium, Kansas City",
               "hidden": false,
               "match": {
@@ -51522,7 +51522,7 @@
                 "hidden": false,
                 "score": "3 - 2"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 119,
               "points_breakdown": {
                 "countries": 119,
@@ -54836,7 +54836,7 @@
         },
         {
           "round": "Quarter finals",
-          "subtotal": 194,
+          "subtotal": 75,
           "fixtures": [
             {
               "fixture_number": 97,
@@ -54947,10 +54947,10 @@
               "fixture_number": 100,
               "round": "Quarter finals",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-12T01:00:00Z",
-              "kickoff_local": "2026-07-12 03:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "Arrowhead Stadium, Kansas City",
               "hidden": false,
               "match": {
@@ -54970,7 +54970,7 @@
                 "hidden": false,
                 "score": "1 - 2"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 119,
               "points_breakdown": {
                 "countries": 119,
