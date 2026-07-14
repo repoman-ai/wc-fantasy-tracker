@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-14T18:59:21Z",
+  "updated": "2026-07-14T19:05:21Z",
   "players": {
     "252653": {
       "team_id": "252653",
@@ -8,9 +8,9 @@
       "player_url": "https://www.tournamentsoccer.us/en-us/fantasy-soccer-world-cup/2026/team/252653/daniel/stage/1196-grand-total?scroll=fixture",
       "flag": "FRA",
       "rank": 1,
-      "points": 8311,
+      "points": 8326,
       "exact": 18,
-      "grand_total": 8311,
+      "grand_total": 8326,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -3262,16 +3262,16 @@
         },
         {
           "round": "Semi finals",
-          "subtotal": 438,
+          "subtotal": 453,
           "fixtures": [
             {
               "fixture_number": 101,
               "round": "Semi finals",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-14T19:00:00Z",
-              "kickoff_local": "2026-07-14 21:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "AT&T Stadium, Arlington",
               "hidden": false,
               "match": {
@@ -3291,11 +3291,11 @@
                 "hidden": false,
                 "score": "1 - 0"
               },
-              "actual_score": "NS",
-              "points": 292,
+              "actual_score": "0 - 0",
+              "points": 307,
               "points_breakdown": {
                 "countries": 292,
-                "score": null
+                "score": 15
               },
               "is_exact": false
             },
@@ -6716,10 +6716,10 @@
               "fixture_number": 101,
               "round": "Semi finals",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-14T19:00:00Z",
-              "kickoff_local": "2026-07-14 21:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "AT&T Stadium, Arlington",
               "hidden": false,
               "match": {
@@ -6739,11 +6739,11 @@
                 "hidden": false,
                 "score": "1 - 2"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 292,
               "points_breakdown": {
                 "countries": 292,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             },
@@ -10164,10 +10164,10 @@
               "fixture_number": 101,
               "round": "Semi finals",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-14T19:00:00Z",
-              "kickoff_local": "2026-07-14 21:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "AT&T Stadium, Arlington",
               "hidden": false,
               "match": {
@@ -10187,11 +10187,11 @@
                 "hidden": false,
                 "score": "3 - 2"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 292,
               "points_breakdown": {
                 "countries": 292,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             },
@@ -13612,10 +13612,10 @@
               "fixture_number": 101,
               "round": "Semi finals",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-14T19:00:00Z",
-              "kickoff_local": "2026-07-14 21:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "AT&T Stadium, Arlington",
               "hidden": false,
               "match": {
@@ -13635,11 +13635,11 @@
                 "hidden": false,
                 "score": "2 - 1"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 292,
               "points_breakdown": {
                 "countries": 292,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             },
@@ -13800,9 +13800,9 @@
       "player_url": "https://www.tournamentsoccer.us/en-us/fantasy-soccer-world-cup/2026/team/252600/el-capitan/stage/1196-grand-total?scroll=fixture",
       "flag": "FRA",
       "rank": 5,
-      "points": 7821,
+      "points": 7836,
       "exact": 10,
-      "grand_total": 7821,
+      "grand_total": 7836,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -17054,16 +17054,16 @@
         },
         {
           "round": "Semi finals",
-          "subtotal": 438,
+          "subtotal": 453,
           "fixtures": [
             {
               "fixture_number": 101,
               "round": "Semi finals",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-14T19:00:00Z",
-              "kickoff_local": "2026-07-14 21:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "AT&T Stadium, Arlington",
               "hidden": false,
               "match": {
@@ -17083,11 +17083,11 @@
                 "hidden": false,
                 "score": "2 - 0"
               },
-              "actual_score": "NS",
-              "points": 292,
+              "actual_score": "0 - 0",
+              "points": 307,
               "points_breakdown": {
                 "countries": 292,
-                "score": null
+                "score": 15
               },
               "is_exact": false
             },
@@ -20508,10 +20508,10 @@
               "fixture_number": 101,
               "round": "Semi finals",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-14T19:00:00Z",
-              "kickoff_local": "2026-07-14 21:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "AT&T Stadium, Arlington",
               "hidden": false,
               "match": {
@@ -20531,11 +20531,11 @@
                 "hidden": false,
                 "score": "2 - 3"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 146,
               "points_breakdown": {
                 "countries": 146,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             },
@@ -23956,10 +23956,10 @@
               "fixture_number": 101,
               "round": "Semi finals",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-14T19:00:00Z",
-              "kickoff_local": "2026-07-14 21:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "AT&T Stadium, Arlington",
               "hidden": false,
               "match": {
@@ -23979,11 +23979,11 @@
                 "hidden": false,
                 "score": "3 - 1"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 292,
               "points_breakdown": {
                 "countries": 292,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             },
@@ -24144,9 +24144,9 @@
       "player_url": "https://www.tournamentsoccer.us/en-us/fantasy-soccer-world-cup/2026/team/247532/gabriela/stage/1196-grand-total?scroll=fixture",
       "flag": "NED",
       "rank": 8,
-      "points": 7207,
+      "points": 7222,
       "exact": 15,
-      "grand_total": 7207,
+      "grand_total": 7222,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -27398,16 +27398,16 @@
         },
         {
           "round": "Semi finals",
-          "subtotal": 148,
+          "subtotal": 163,
           "fixtures": [
             {
               "fixture_number": 101,
               "round": "Semi finals",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-14T19:00:00Z",
-              "kickoff_local": "2026-07-14 21:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "AT&T Stadium, Arlington",
               "hidden": false,
               "match": {
@@ -27427,11 +27427,11 @@
                 "hidden": false,
                 "score": "0 - 2"
               },
-              "actual_score": "NS",
-              "points": 74,
+              "actual_score": "0 - 0",
+              "points": 89,
               "points_breakdown": {
                 "countries": 74,
-                "score": null
+                "score": 15
               },
               "is_exact": false
             },
@@ -30852,10 +30852,10 @@
               "fixture_number": 101,
               "round": "Semi finals",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-14T19:00:00Z",
-              "kickoff_local": "2026-07-14 21:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "AT&T Stadium, Arlington",
               "hidden": false,
               "match": {
@@ -30875,11 +30875,11 @@
                 "hidden": false,
                 "score": "2 - 1"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 0,
               "points_breakdown": {
                 "countries": 0,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             },
@@ -34300,10 +34300,10 @@
               "fixture_number": 101,
               "round": "Semi finals",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-14T19:00:00Z",
-              "kickoff_local": "2026-07-14 21:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "AT&T Stadium, Arlington",
               "hidden": false,
               "match": {
@@ -34323,11 +34323,11 @@
                 "hidden": false,
                 "score": "3 - 2"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 146,
               "points_breakdown": {
                 "countries": 146,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             },
@@ -37748,10 +37748,10 @@
               "fixture_number": 101,
               "round": "Semi finals",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-14T19:00:00Z",
-              "kickoff_local": "2026-07-14 21:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "AT&T Stadium, Arlington",
               "hidden": false,
               "match": {
@@ -37771,11 +37771,11 @@
                 "hidden": false,
                 "score": "2 - 1"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 146,
               "points_breakdown": {
                 "countries": 146,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             },
@@ -41196,10 +41196,10 @@
               "fixture_number": 101,
               "round": "Semi finals",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-14T19:00:00Z",
-              "kickoff_local": "2026-07-14 21:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "AT&T Stadium, Arlington",
               "hidden": false,
               "match": {
@@ -41219,11 +41219,11 @@
                 "hidden": false,
                 "score": "2 - 3"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 292,
               "points_breakdown": {
                 "countries": 292,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             },
@@ -44644,10 +44644,10 @@
               "fixture_number": 101,
               "round": "Semi finals",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-14T19:00:00Z",
-              "kickoff_local": "2026-07-14 21:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "AT&T Stadium, Arlington",
               "hidden": false,
               "match": {
@@ -44667,11 +44667,11 @@
                 "hidden": false,
                 "score": "1 - 2"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 220,
               "points_breakdown": {
                 "countries": 220,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             },
@@ -48092,10 +48092,10 @@
               "fixture_number": 101,
               "round": "Semi finals",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-14T19:00:00Z",
-              "kickoff_local": "2026-07-14 21:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "AT&T Stadium, Arlington",
               "hidden": false,
               "match": {
@@ -48115,11 +48115,11 @@
                 "hidden": false,
                 "score": "3 - 1"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 292,
               "points_breakdown": {
                 "countries": 292,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             },
@@ -51540,10 +51540,10 @@
               "fixture_number": 101,
               "round": "Semi finals",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-14T19:00:00Z",
-              "kickoff_local": "2026-07-14 21:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "AT&T Stadium, Arlington",
               "hidden": false,
               "match": {
@@ -51563,11 +51563,11 @@
                 "hidden": false,
                 "score": "3 - 1"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 0,
               "points_breakdown": {
                 "countries": 0,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             },
@@ -54988,10 +54988,10 @@
               "fixture_number": 101,
               "round": "Semi finals",
               "stage_type": "knockout",
-              "status": "NS",
-              "kickoff_utc": "2026-07-14T19:00:00Z",
-              "kickoff_local": "2026-07-14 21:00",
-              "kickoff_timezone": "Europe/Amsterdam",
+              "status": "· LIVE",
+              "kickoff_utc": null,
+              "kickoff_local": null,
+              "kickoff_timezone": null,
               "venue": "AT&T Stadium, Arlington",
               "hidden": false,
               "match": {
@@ -55011,11 +55011,11 @@
                 "hidden": false,
                 "score": "3 - 4"
               },
-              "actual_score": "NS",
+              "actual_score": "0 - 0",
               "points": 74,
               "points_breakdown": {
                 "countries": 74,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             },

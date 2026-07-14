@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-14T18:59:21Z",
+  "updated": "2026-07-14T19:05:21Z",
   "pool": {
     "id": "34193",
     "slug": "bobby-and-friends",
@@ -18,7 +18,7 @@
       "name": "Daniel",
       "flag": "FRA",
       "rank": 1,
-      "points": 8311,
+      "points": 8326,
       "exact": 18
     },
     {
@@ -58,7 +58,7 @@
       "name": "El Capitan",
       "flag": "FRA",
       "rank": 5,
-      "points": 7821,
+      "points": 7836,
       "exact": 10
     },
     {
@@ -88,7 +88,7 @@
       "name": "Gabriela",
       "flag": "NED",
       "rank": 8,
-      "points": 7207,
+      "points": 7222,
       "exact": 15
     },
     {
