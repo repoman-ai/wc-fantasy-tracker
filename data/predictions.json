@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-15T21:03:18Z",
+  "updated": "2026-07-15T21:08:50Z",
   "players": {
     "247930": {
       "team_id": "247930",
@@ -3303,10 +3303,10 @@
               "fixture_number": 102,
               "round": "Semi finals",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-15T19:00:00Z",
+              "kickoff_local": "2026-07-15 21:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "Mercedes-Benz Stadium, Atlanta",
               "hidden": false,
               "match": {
@@ -3332,7 +3332,7 @@
                 "countries": 146,
                 "score": 90
               },
-              "is_exact": false
+              "is_exact": true
             }
           ]
         },
@@ -3440,7 +3440,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Kylian Mbappé (France), Lionel Messi (Argentina)",
+              "text": "Lionel Messi (Argentina), Kylian Mbappé (France)",
               "flag": null
             },
             "points": null
@@ -6751,10 +6751,10 @@
               "fixture_number": 102,
               "round": "Semi finals",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-15T19:00:00Z",
+              "kickoff_local": "2026-07-15 21:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "Mercedes-Benz Stadium, Atlanta",
               "hidden": false,
               "match": {
@@ -6888,7 +6888,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Kylian Mbappé (France), Lionel Messi (Argentina)",
+              "text": "Lionel Messi (Argentina), Kylian Mbappé (France)",
               "flag": null
             },
             "points": null
@@ -10199,10 +10199,10 @@
               "fixture_number": 102,
               "round": "Semi finals",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-15T19:00:00Z",
+              "kickoff_local": "2026-07-15 21:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "Mercedes-Benz Stadium, Atlanta",
               "hidden": false,
               "match": {
@@ -10336,7 +10336,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Kylian Mbappé (France), Lionel Messi (Argentina)",
+              "text": "Lionel Messi (Argentina), Kylian Mbappé (France)",
               "flag": null
             },
             "points": null
@@ -13647,10 +13647,10 @@
               "fixture_number": 102,
               "round": "Semi finals",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-15T19:00:00Z",
+              "kickoff_local": "2026-07-15 21:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "Mercedes-Benz Stadium, Atlanta",
               "hidden": false,
               "match": {
@@ -13784,7 +13784,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Kylian Mbappé (France), Lionel Messi (Argentina)",
+              "text": "Lionel Messi (Argentina), Kylian Mbappé (France)",
               "flag": null
             },
             "points": null
@@ -17095,10 +17095,10 @@
               "fixture_number": 102,
               "round": "Semi finals",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-15T19:00:00Z",
+              "kickoff_local": "2026-07-15 21:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "Mercedes-Benz Stadium, Atlanta",
               "hidden": false,
               "match": {
@@ -17232,7 +17232,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Kylian Mbappé (France), Lionel Messi (Argentina)",
+              "text": "Lionel Messi (Argentina), Kylian Mbappé (France)",
               "flag": null
             },
             "points": null
@@ -20543,10 +20543,10 @@
               "fixture_number": 102,
               "round": "Semi finals",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-15T19:00:00Z",
+              "kickoff_local": "2026-07-15 21:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "Mercedes-Benz Stadium, Atlanta",
               "hidden": false,
               "match": {
@@ -20572,7 +20572,7 @@
                 "countries": 146,
                 "score": 90
               },
-              "is_exact": false
+              "is_exact": true
             }
           ]
         },
@@ -20680,7 +20680,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Kylian Mbappé (France), Lionel Messi (Argentina)",
+              "text": "Lionel Messi (Argentina), Kylian Mbappé (France)",
               "flag": null
             },
             "points": null
@@ -23991,10 +23991,10 @@
               "fixture_number": 102,
               "round": "Semi finals",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-15T19:00:00Z",
+              "kickoff_local": "2026-07-15 21:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "Mercedes-Benz Stadium, Atlanta",
               "hidden": false,
               "match": {
@@ -24020,7 +24020,7 @@
                 "countries": 292,
                 "score": 90
               },
-              "is_exact": false
+              "is_exact": true
             }
           ]
         },
@@ -24128,7 +24128,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Kylian Mbappé (France), Lionel Messi (Argentina)",
+              "text": "Lionel Messi (Argentina), Kylian Mbappé (France)",
               "flag": null
             },
             "points": null
@@ -27439,10 +27439,10 @@
               "fixture_number": 102,
               "round": "Semi finals",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-15T19:00:00Z",
+              "kickoff_local": "2026-07-15 21:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "Mercedes-Benz Stadium, Atlanta",
               "hidden": false,
               "match": {
@@ -27576,7 +27576,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Kylian Mbappé (France), Lionel Messi (Argentina)",
+              "text": "Lionel Messi (Argentina), Kylian Mbappé (France)",
               "flag": null
             },
             "points": null
@@ -30887,10 +30887,10 @@
               "fixture_number": 102,
               "round": "Semi finals",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-15T19:00:00Z",
+              "kickoff_local": "2026-07-15 21:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "Mercedes-Benz Stadium, Atlanta",
               "hidden": false,
               "match": {
@@ -31024,7 +31024,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Kylian Mbappé (France), Lionel Messi (Argentina)",
+              "text": "Lionel Messi (Argentina), Kylian Mbappé (France)",
               "flag": null
             },
             "points": null
@@ -34335,10 +34335,10 @@
               "fixture_number": 102,
               "round": "Semi finals",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-15T19:00:00Z",
+              "kickoff_local": "2026-07-15 21:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "Mercedes-Benz Stadium, Atlanta",
               "hidden": false,
               "match": {
@@ -34472,7 +34472,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Kylian Mbappé (France), Lionel Messi (Argentina)",
+              "text": "Lionel Messi (Argentina), Kylian Mbappé (France)",
               "flag": null
             },
             "points": null
@@ -37783,10 +37783,10 @@
               "fixture_number": 102,
               "round": "Semi finals",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-15T19:00:00Z",
+              "kickoff_local": "2026-07-15 21:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "Mercedes-Benz Stadium, Atlanta",
               "hidden": false,
               "match": {
@@ -37920,7 +37920,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Kylian Mbappé (France), Lionel Messi (Argentina)",
+              "text": "Lionel Messi (Argentina), Kylian Mbappé (France)",
               "flag": null
             },
             "points": null
@@ -41231,10 +41231,10 @@
               "fixture_number": 102,
               "round": "Semi finals",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-15T19:00:00Z",
+              "kickoff_local": "2026-07-15 21:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "Mercedes-Benz Stadium, Atlanta",
               "hidden": false,
               "match": {
@@ -41368,7 +41368,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Kylian Mbappé (France), Lionel Messi (Argentina)",
+              "text": "Lionel Messi (Argentina), Kylian Mbappé (France)",
               "flag": null
             },
             "points": null
@@ -44679,10 +44679,10 @@
               "fixture_number": 102,
               "round": "Semi finals",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-15T19:00:00Z",
+              "kickoff_local": "2026-07-15 21:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "Mercedes-Benz Stadium, Atlanta",
               "hidden": false,
               "match": {
@@ -44708,7 +44708,7 @@
                 "countries": 146,
                 "score": 90
               },
-              "is_exact": false
+              "is_exact": true
             }
           ]
         },
@@ -44816,7 +44816,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Kylian Mbappé (France), Lionel Messi (Argentina)",
+              "text": "Lionel Messi (Argentina), Kylian Mbappé (France)",
               "flag": null
             },
             "points": null
@@ -48127,10 +48127,10 @@
               "fixture_number": 102,
               "round": "Semi finals",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-15T19:00:00Z",
+              "kickoff_local": "2026-07-15 21:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "Mercedes-Benz Stadium, Atlanta",
               "hidden": false,
               "match": {
@@ -48264,7 +48264,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Kylian Mbappé (France), Lionel Messi (Argentina)",
+              "text": "Lionel Messi (Argentina), Kylian Mbappé (France)",
               "flag": null
             },
             "points": null
@@ -51712,7 +51712,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Kylian Mbappé (France), Lionel Messi (Argentina)",
+              "text": "Lionel Messi (Argentina), Kylian Mbappé (France)",
               "flag": null
             },
             "points": null
@@ -55160,7 +55160,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Kylian Mbappé (France), Lionel Messi (Argentina)",
+              "text": "Lionel Messi (Argentina), Kylian Mbappé (France)",
               "flag": null
             },
             "points": null
