@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-15T20:41:31Z",
+  "updated": "2026-07-15T20:51:47Z",
   "pool": {
     "id": "34193",
     "slug": "bobby-and-friends",
@@ -28,8 +28,8 @@
       "name": "Daniel",
       "flag": "FRA",
       "rank": 2,
-      "points": 8326,
-      "exact": 18
+      "points": 8401,
+      "exact": 19
     },
     {
       "team_id": "247524",
@@ -48,7 +48,7 @@
       "name": "bobby",
       "flag": "FRA",
       "rank": 4,
-      "points": 7946,
+      "points": 8006,
       "exact": 13
     },
     {
@@ -58,8 +58,8 @@
       "name": "El Capitan",
       "flag": "FRA",
       "rank": 5,
-      "points": 7836,
-      "exact": 10
+      "points": 7911,
+      "exact": 11
     },
     {
       "team_id": "253787",
@@ -78,7 +78,7 @@
       "name": "Gabriela",
       "flag": "NED",
       "rank": 7,
-      "points": 7360,
+      "points": 7297,
       "exact": 16
     },
     {
@@ -128,7 +128,7 @@
       "name": "Valewalle",
       "flag": "ESP",
       "rank": 12,
-      "points": 7054,
+      "points": 7114,
       "exact": 15
     },
     {
@@ -142,24 +142,24 @@
       "exact": 6
     },
     {
-      "team_id": "247537",
-      "slug": "yo",
-      "player_url": "https://www.tournamentsoccer.us/en-us/fantasy-soccer-world-cup/2026/team/247537/yo/stage/1196-grand-total?scroll=fixture",
-      "name": "Yo",
-      "flag": "MEX",
-      "rank": 14,
-      "points": 6342,
-      "exact": 7
-    },
-    {
       "team_id": "247533",
       "slug": "beturompequinielas",
       "player_url": "https://www.tournamentsoccer.us/en-us/fantasy-soccer-world-cup/2026/team/247533/beturompequinielas/stage/1196-grand-total?scroll=fixture",
       "name": "Beturompequinielas",
       "flag": "ARG",
-      "rank": 15,
+      "rank": 14,
       "points": 6341,
       "exact": 6
+    },
+    {
+      "team_id": "247537",
+      "slug": "yo",
+      "player_url": "https://www.tournamentsoccer.us/en-us/fantasy-soccer-world-cup/2026/team/247537/yo/stage/1196-grand-total?scroll=fixture",
+      "name": "Yo",
+      "flag": "MEX",
+      "rank": 15,
+      "points": 6309,
+      "exact": 7
     },
     {
       "team_id": "252610",
@@ -168,7 +168,7 @@
       "name": "Luisa",
       "flag": "POR",
       "rank": 16,
-      "points": 5466,
+      "points": 5406,
       "exact": 5
     }
   ]
