@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-18T22:41:30Z",
+  "updated": "2026-07-18T22:51:43Z",
   "players": {
     "247930": {
       "team_id": "247930",
@@ -13711,7 +13711,7 @@
                 "hidden": false,
                 "score": "2 - 1"
               },
-              "actual_score": "3 - 4",
+              "actual_score": "3 - 5",
               "points": 0,
               "points_breakdown": {
                 "countries": 0,
@@ -17130,7 +17130,7 @@
         },
         {
           "round": "3rd Place",
-          "subtotal": 60,
+          "subtotal": 0,
           "fixtures": [
             {
               "fixture_number": 103,
@@ -17159,11 +17159,11 @@
                 "hidden": false,
                 "score": "1 - 2"
               },
-              "actual_score": "3 - 4",
-              "points": 60,
+              "actual_score": "3 - 5",
+              "points": 0,
               "points_breakdown": {
                 "countries": 0,
-                "score": 60
+                "score": null
               },
               "is_exact": false
             }
@@ -20578,7 +20578,7 @@
         },
         {
           "round": "3rd Place",
-          "subtotal": 188,
+          "subtotal": 0,
           "fixtures": [
             {
               "fixture_number": 103,
@@ -20607,11 +20607,11 @@
                 "hidden": false,
                 "score": "3 - 1"
               },
-              "actual_score": "3 - 4",
-              "points": 188,
+              "actual_score": "3 - 5",
+              "points": 173,
               "points_breakdown": {
                 "countries": 173,
-                "score": 15
+                "score": null
               },
               "is_exact": false
             }
@@ -24026,7 +24026,7 @@
         },
         {
           "round": "3rd Place",
-          "subtotal": 188,
+          "subtotal": 0,
           "fixtures": [
             {
               "fixture_number": 103,
@@ -24055,11 +24055,11 @@
                 "hidden": false,
                 "score": "3 - 1"
               },
-              "actual_score": "3 - 4",
-              "points": 188,
+              "actual_score": "3 - 5",
+              "points": 173,
               "points_breakdown": {
                 "countries": 173,
-                "score": 15
+                "score": null
               },
               "is_exact": false
             }
@@ -27503,11 +27503,11 @@
                 "hidden": false,
                 "score": "2 - 2"
               },
-              "actual_score": "3 - 4",
+              "actual_score": "3 - 5",
               "points": 0,
               "points_breakdown": {
                 "countries": 0,
-                "score": 0
+                "score": null
               },
               "is_exact": false
             }
@@ -30922,7 +30922,7 @@
         },
         {
           "round": "3rd Place",
-          "subtotal": 147,
+          "subtotal": 0,
           "fixtures": [
             {
               "fixture_number": 103,
@@ -30951,11 +30951,11 @@
                 "hidden": false,
                 "score": "1 - 2"
               },
-              "actual_score": "3 - 4",
-              "points": 147,
+              "actual_score": "3 - 5",
+              "points": 87,
               "points_breakdown": {
                 "countries": 87,
-                "score": 60
+                "score": null
               },
               "is_exact": false
             }
@@ -34399,11 +34399,11 @@
                 "hidden": false,
                 "score": "1 - 0"
               },
-              "actual_score": "3 - 4",
+              "actual_score": "3 - 5",
               "points": 0,
               "points_breakdown": {
                 "countries": 0,
-                "score": 0
+                "score": null
               },
               "is_exact": false
             }
@@ -37818,7 +37818,7 @@
         },
         {
           "round": "3rd Place",
-          "subtotal": 15,
+          "subtotal": 0,
           "fixtures": [
             {
               "fixture_number": 103,
@@ -37847,11 +37847,11 @@
                 "hidden": false,
                 "score": "3 - 2"
               },
-              "actual_score": "3 - 4",
-              "points": 15,
+              "actual_score": "3 - 5",
+              "points": 0,
               "points_breakdown": {
                 "countries": 0,
-                "score": 15
+                "score": null
               },
               "is_exact": false
             }
@@ -41266,7 +41266,7 @@
         },
         {
           "round": "3rd Place",
-          "subtotal": 15,
+          "subtotal": 0,
           "fixtures": [
             {
               "fixture_number": 103,
@@ -41295,11 +41295,11 @@
                 "hidden": false,
                 "score": "3 - 2"
               },
-              "actual_score": "3 - 4",
-              "points": 15,
+              "actual_score": "3 - 5",
+              "points": 0,
               "points_breakdown": {
                 "countries": 0,
-                "score": 15
+                "score": null
               },
               "is_exact": false
             }
@@ -44714,7 +44714,7 @@
         },
         {
           "round": "3rd Place",
-          "subtotal": 87,
+          "subtotal": 0,
           "fixtures": [
             {
               "fixture_number": 103,
@@ -44743,11 +44743,11 @@
                 "hidden": false,
                 "score": "2 - 0"
               },
-              "actual_score": "3 - 4",
+              "actual_score": "3 - 5",
               "points": 87,
               "points_breakdown": {
                 "countries": 87,
-                "score": 0
+                "score": null
               },
               "is_exact": false
             }
@@ -48162,7 +48162,7 @@
         },
         {
           "round": "3rd Place",
-          "subtotal": 15,
+          "subtotal": 0,
           "fixtures": [
             {
               "fixture_number": 103,
@@ -48191,11 +48191,11 @@
                 "hidden": false,
                 "score": "3 - 2"
               },
-              "actual_score": "3 - 4",
-              "points": 15,
+              "actual_score": "3 - 5",
+              "points": 0,
               "points_breakdown": {
                 "countries": 0,
-                "score": 15
+                "score": null
               },
               "is_exact": false
             }
@@ -51610,7 +51610,7 @@
         },
         {
           "round": "3rd Place",
-          "subtotal": 60,
+          "subtotal": 0,
           "fixtures": [
             {
               "fixture_number": 103,
@@ -51639,11 +51639,11 @@
                 "hidden": false,
                 "score": "1 - 2"
               },
-              "actual_score": "3 - 4",
-              "points": 60,
+              "actual_score": "3 - 5",
+              "points": 0,
               "points_breakdown": {
                 "countries": 0,
-                "score": 60
+                "score": null
               },
               "is_exact": false
             }
@@ -55087,11 +55087,11 @@
                 "hidden": false,
                 "score": "4 - 2"
               },
-              "actual_score": "3 - 4",
+              "actual_score": "3 - 5",
               "points": 0,
               "points_breakdown": {
                 "countries": 0,
-                "score": 0
+                "score": null
               },
               "is_exact": false
             }
