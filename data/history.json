@@ -51224,7 +51224,7 @@
     ]
   },
   {
-    "timestamp": "2026-07-18T23:01:33Z",
+    "timestamp": "2026-07-18T23:03:00Z",
     "settled": false,
     "recap_day": "2026-07-18",
     "day_final_snapshot": false,
@@ -51276,7 +51276,7 @@
         "player_url": "https://www.tournamentsoccer.us/en-us/fantasy-soccer-world-cup/2026/team/252600/el-capitan/stage/1196-grand-total?scroll=fixture",
         "flag": "FRA",
         "rank": 5,
-        "points": 8096,
+        "points": 8084,
         "exact": 10
       },
       {
@@ -51316,7 +51316,7 @@
         "player_url": "https://www.tournamentsoccer.us/en-us/fantasy-soccer-world-cup/2026/team/247526/valewalle/stage/1196-grand-total?scroll=fixture",
         "flag": "ESP",
         "rank": 9,
-        "points": 7416,
+        "points": 7404,
         "exact": 15
       },
       {
@@ -51376,7 +51376,7 @@
         "player_url": "https://www.tournamentsoccer.us/en-us/fantasy-soccer-world-cup/2026/team/247537/yo/stage/1196-grand-total?scroll=fixture",
         "flag": "MEX",
         "rank": 15,
-        "points": 6354,
+        "points": 6342,
         "exact": 7
       },
       {
