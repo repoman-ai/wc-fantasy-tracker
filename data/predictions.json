@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-18T22:51:43Z",
+  "updated": "2026-07-18T22:55:40Z",
   "players": {
     "247930": {
       "team_id": "247930",
@@ -3367,7 +3367,7 @@
                 "hidden": false,
                 "score": "2 - 1"
               },
-              "actual_score": "3 - 4",
+              "actual_score": "3 - 5",
               "points": 173,
               "points_breakdown": {
                 "countries": 173,
@@ -6815,7 +6815,7 @@
                 "hidden": false,
                 "score": "3 - 2"
               },
-              "actual_score": "3 - 4",
+              "actual_score": "3 - 5",
               "points": 188,
               "points_breakdown": {
                 "countries": 173,
@@ -10263,7 +10263,7 @@
                 "hidden": false,
                 "score": "2 - 1"
               },
-              "actual_score": "3 - 4",
+              "actual_score": "3 - 5",
               "points": 0,
               "points_breakdown": {
                 "countries": 0,
@@ -13800,9 +13800,9 @@
       "player_url": "https://www.tournamentsoccer.us/en-us/fantasy-soccer-world-cup/2026/team/252600/el-capitan/stage/1196-grand-total?scroll=fixture",
       "flag": "FRA",
       "rank": 5,
-      "points": 8096,
+      "points": 8084,
       "exact": 10,
-      "grand_total": 8096,
+      "grand_total": 8084,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -17130,7 +17130,7 @@
         },
         {
           "round": "3rd Place",
-          "subtotal": 0,
+          "subtotal": 48,
           "fixtures": [
             {
               "fixture_number": 103,
@@ -17160,10 +17160,10 @@
                 "score": "1 - 2"
               },
               "actual_score": "3 - 5",
-              "points": 0,
+              "points": 48,
               "points_breakdown": {
                 "countries": 0,
-                "score": null
+                "score": 48
               },
               "is_exact": false
             }
@@ -20578,7 +20578,7 @@
         },
         {
           "round": "3rd Place",
-          "subtotal": 0,
+          "subtotal": 188,
           "fixtures": [
             {
               "fixture_number": 103,
@@ -20608,10 +20608,10 @@
                 "score": "3 - 1"
               },
               "actual_score": "3 - 5",
-              "points": 173,
+              "points": 188,
               "points_breakdown": {
                 "countries": 173,
-                "score": null
+                "score": 15
               },
               "is_exact": false
             }
@@ -24026,7 +24026,7 @@
         },
         {
           "round": "3rd Place",
-          "subtotal": 0,
+          "subtotal": 188,
           "fixtures": [
             {
               "fixture_number": 103,
@@ -24056,10 +24056,10 @@
                 "score": "3 - 1"
               },
               "actual_score": "3 - 5",
-              "points": 173,
+              "points": 188,
               "points_breakdown": {
                 "countries": 173,
-                "score": null
+                "score": 15
               },
               "is_exact": false
             }
@@ -27507,7 +27507,7 @@
               "points": 0,
               "points_breakdown": {
                 "countries": 0,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             }
@@ -27592,9 +27592,9 @@
       "player_url": "https://www.tournamentsoccer.us/en-us/fantasy-soccer-world-cup/2026/team/247526/valewalle/stage/1196-grand-total?scroll=fixture",
       "flag": "ESP",
       "rank": 9,
-      "points": 7416,
+      "points": 7404,
       "exact": 15,
-      "grand_total": 7416,
+      "grand_total": 7404,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -30922,7 +30922,7 @@
         },
         {
           "round": "3rd Place",
-          "subtotal": 0,
+          "subtotal": 135,
           "fixtures": [
             {
               "fixture_number": 103,
@@ -30952,10 +30952,10 @@
                 "score": "1 - 2"
               },
               "actual_score": "3 - 5",
-              "points": 87,
+              "points": 135,
               "points_breakdown": {
                 "countries": 87,
-                "score": null
+                "score": 48
               },
               "is_exact": false
             }
@@ -34403,7 +34403,7 @@
               "points": 0,
               "points_breakdown": {
                 "countries": 0,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             }
@@ -37818,7 +37818,7 @@
         },
         {
           "round": "3rd Place",
-          "subtotal": 0,
+          "subtotal": 15,
           "fixtures": [
             {
               "fixture_number": 103,
@@ -37848,10 +37848,10 @@
                 "score": "3 - 2"
               },
               "actual_score": "3 - 5",
-              "points": 0,
+              "points": 15,
               "points_breakdown": {
                 "countries": 0,
-                "score": null
+                "score": 15
               },
               "is_exact": false
             }
@@ -41266,7 +41266,7 @@
         },
         {
           "round": "3rd Place",
-          "subtotal": 0,
+          "subtotal": 15,
           "fixtures": [
             {
               "fixture_number": 103,
@@ -41296,10 +41296,10 @@
                 "score": "3 - 2"
               },
               "actual_score": "3 - 5",
-              "points": 0,
+              "points": 15,
               "points_breakdown": {
                 "countries": 0,
-                "score": null
+                "score": 15
               },
               "is_exact": false
             }
@@ -44714,7 +44714,7 @@
         },
         {
           "round": "3rd Place",
-          "subtotal": 0,
+          "subtotal": 87,
           "fixtures": [
             {
               "fixture_number": 103,
@@ -44747,7 +44747,7 @@
               "points": 87,
               "points_breakdown": {
                 "countries": 87,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             }
@@ -48162,7 +48162,7 @@
         },
         {
           "round": "3rd Place",
-          "subtotal": 0,
+          "subtotal": 15,
           "fixtures": [
             {
               "fixture_number": 103,
@@ -48192,10 +48192,10 @@
                 "score": "3 - 2"
               },
               "actual_score": "3 - 5",
-              "points": 0,
+              "points": 15,
               "points_breakdown": {
                 "countries": 0,
-                "score": null
+                "score": 15
               },
               "is_exact": false
             }
@@ -48280,9 +48280,9 @@
       "player_url": "https://www.tournamentsoccer.us/en-us/fantasy-soccer-world-cup/2026/team/247537/yo/stage/1196-grand-total?scroll=fixture",
       "flag": "MEX",
       "rank": 15,
-      "points": 6354,
+      "points": 6342,
       "exact": 7,
-      "grand_total": 6354,
+      "grand_total": 6342,
       "matchdays": [
         {
           "round": "Matchday 1",
@@ -51610,7 +51610,7 @@
         },
         {
           "round": "3rd Place",
-          "subtotal": 0,
+          "subtotal": 48,
           "fixtures": [
             {
               "fixture_number": 103,
@@ -51640,10 +51640,10 @@
                 "score": "1 - 2"
               },
               "actual_score": "3 - 5",
-              "points": 0,
+              "points": 48,
               "points_breakdown": {
                 "countries": 0,
-                "score": null
+                "score": 48
               },
               "is_exact": false
             }
@@ -55091,7 +55091,7 @@
               "points": 0,
               "points_breakdown": {
                 "countries": 0,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             }
