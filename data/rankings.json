@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-18T22:15:31Z",
+  "updated": "2026-07-18T22:21:31Z",
   "pool": {
     "id": "34193",
     "slug": "bobby-and-friends",
@@ -18,7 +18,7 @@
       "name": "Alec",
       "flag": "ESP",
       "rank": 1,
-      "points": 8824,
+      "points": 8839,
       "exact": 15
     },
     {
@@ -28,7 +28,7 @@
       "name": "Daniel",
       "flag": "FRA",
       "rank": 2,
-      "points": 8526,
+      "points": 8541,
       "exact": 18
     },
     {
@@ -48,7 +48,7 @@
       "name": "bobby",
       "flag": "FRA",
       "rank": 4,
-      "points": 8161,
+      "points": 8176,
       "exact": 13
     },
     {
@@ -58,7 +58,7 @@
       "name": "El Capitan",
       "flag": "FRA",
       "rank": 5,
-      "points": 8099,
+      "points": 8084,
       "exact": 10
     },
     {
@@ -88,7 +88,7 @@
       "name": "Baronmark",
       "flag": "FRA",
       "rank": 8,
-      "points": 7427,
+      "points": 7442,
       "exact": 16
     },
     {
@@ -98,7 +98,7 @@
       "name": "Valewalle",
       "flag": "ESP",
       "rank": 9,
-      "points": 7419,
+      "points": 7404,
       "exact": 15
     },
     {
@@ -108,7 +108,7 @@
       "name": "Gabriela",
       "flag": "NED",
       "rank": 10,
-      "points": 7412,
+      "points": 7397,
       "exact": 16
     },
     {
@@ -138,7 +138,7 @@
       "name": "MaxS.",
       "flag": "ARG",
       "rank": 13,
-      "points": 7202,
+      "points": 7217,
       "exact": 7
     },
     {
@@ -158,7 +158,7 @@
       "name": "Yo",
       "flag": "MEX",
       "rank": 15,
-      "points": 6357,
+      "points": 6342,
       "exact": 7
     },
     {
