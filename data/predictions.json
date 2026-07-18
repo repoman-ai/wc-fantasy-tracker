@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-18T23:03:00Z",
+  "updated": "2026-07-18T23:11:31Z",
   "players": {
     "247930": {
       "team_id": "247930",
@@ -3344,10 +3344,10 @@
               "fixture_number": 103,
               "round": "3rd Place",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-18T21:00:00Z",
+              "kickoff_local": "2026-07-18 23:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "Hard Rock Stadium, Miami Gardens",
               "hidden": false,
               "match": {
@@ -3440,7 +3440,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Lionel Messi (Argentina), Kylian Mbappé (France)",
+              "text": "Kylian Mbappé (France)",
               "flag": null
             },
             "points": null
@@ -6888,7 +6888,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Lionel Messi (Argentina), Kylian Mbappé (France)",
+              "text": "Kylian Mbappé (France)",
               "flag": null
             },
             "points": null
@@ -10336,7 +10336,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Lionel Messi (Argentina), Kylian Mbappé (France)",
+              "text": "Kylian Mbappé (France)",
               "flag": null
             },
             "points": null
@@ -13715,7 +13715,7 @@
               "points": 0,
               "points_breakdown": {
                 "countries": 0,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             }
@@ -13784,7 +13784,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Lionel Messi (Argentina), Kylian Mbappé (France)",
+              "text": "Kylian Mbappé (France)",
               "flag": null
             },
             "points": null
@@ -17130,7 +17130,7 @@
         },
         {
           "round": "3rd Place",
-          "subtotal": 0,
+          "subtotal": 48,
           "fixtures": [
             {
               "fixture_number": 103,
@@ -17160,10 +17160,10 @@
                 "score": "1 - 2"
               },
               "actual_score": "4 - 6",
-              "points": 0,
+              "points": 48,
               "points_breakdown": {
                 "countries": 0,
-                "score": null
+                "score": 48
               },
               "is_exact": false
             }
@@ -17232,7 +17232,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Lionel Messi (Argentina), Kylian Mbappé (France)",
+              "text": "Kylian Mbappé (France)",
               "flag": null
             },
             "points": null
@@ -20578,7 +20578,7 @@
         },
         {
           "round": "3rd Place",
-          "subtotal": 0,
+          "subtotal": 173,
           "fixtures": [
             {
               "fixture_number": 103,
@@ -20611,7 +20611,7 @@
               "points": 173,
               "points_breakdown": {
                 "countries": 173,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             }
@@ -20680,7 +20680,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Lionel Messi (Argentina), Kylian Mbappé (France)",
+              "text": "Kylian Mbappé (France)",
               "flag": null
             },
             "points": null
@@ -24026,7 +24026,7 @@
         },
         {
           "round": "3rd Place",
-          "subtotal": 0,
+          "subtotal": 173,
           "fixtures": [
             {
               "fixture_number": 103,
@@ -24059,7 +24059,7 @@
               "points": 173,
               "points_breakdown": {
                 "countries": 173,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             }
@@ -24128,7 +24128,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Lionel Messi (Argentina), Kylian Mbappé (France)",
+              "text": "Kylian Mbappé (France)",
               "flag": null
             },
             "points": null
@@ -27507,7 +27507,7 @@
               "points": 0,
               "points_breakdown": {
                 "countries": 0,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             }
@@ -27576,7 +27576,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Lionel Messi (Argentina), Kylian Mbappé (France)",
+              "text": "Kylian Mbappé (France)",
               "flag": null
             },
             "points": null
@@ -30922,7 +30922,7 @@
         },
         {
           "round": "3rd Place",
-          "subtotal": 0,
+          "subtotal": 135,
           "fixtures": [
             {
               "fixture_number": 103,
@@ -30952,10 +30952,10 @@
                 "score": "1 - 2"
               },
               "actual_score": "4 - 6",
-              "points": 87,
+              "points": 135,
               "points_breakdown": {
                 "countries": 87,
-                "score": null
+                "score": 48
               },
               "is_exact": false
             }
@@ -31024,7 +31024,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Lionel Messi (Argentina), Kylian Mbappé (France)",
+              "text": "Kylian Mbappé (France)",
               "flag": null
             },
             "points": null
@@ -34403,7 +34403,7 @@
               "points": 0,
               "points_breakdown": {
                 "countries": 0,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             }
@@ -34472,7 +34472,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Lionel Messi (Argentina), Kylian Mbappé (France)",
+              "text": "Kylian Mbappé (France)",
               "flag": null
             },
             "points": null
@@ -37851,7 +37851,7 @@
               "points": 0,
               "points_breakdown": {
                 "countries": 0,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             }
@@ -37920,7 +37920,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Lionel Messi (Argentina), Kylian Mbappé (France)",
+              "text": "Kylian Mbappé (France)",
               "flag": null
             },
             "points": null
@@ -41299,7 +41299,7 @@
               "points": 0,
               "points_breakdown": {
                 "countries": 0,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             }
@@ -41368,7 +41368,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Lionel Messi (Argentina), Kylian Mbappé (France)",
+              "text": "Kylian Mbappé (France)",
               "flag": null
             },
             "points": null
@@ -44714,7 +44714,7 @@
         },
         {
           "round": "3rd Place",
-          "subtotal": 0,
+          "subtotal": 87,
           "fixtures": [
             {
               "fixture_number": 103,
@@ -44747,7 +44747,7 @@
               "points": 87,
               "points_breakdown": {
                 "countries": 87,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             }
@@ -44816,7 +44816,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Lionel Messi (Argentina), Kylian Mbappé (France)",
+              "text": "Kylian Mbappé (France)",
               "flag": null
             },
             "points": null
@@ -48195,7 +48195,7 @@
               "points": 0,
               "points_breakdown": {
                 "countries": 0,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             }
@@ -48264,7 +48264,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Lionel Messi (Argentina), Kylian Mbappé (France)",
+              "text": "Kylian Mbappé (France)",
               "flag": null
             },
             "points": null
@@ -51610,7 +51610,7 @@
         },
         {
           "round": "3rd Place",
-          "subtotal": 0,
+          "subtotal": 48,
           "fixtures": [
             {
               "fixture_number": 103,
@@ -51640,10 +51640,10 @@
                 "score": "1 - 2"
               },
               "actual_score": "4 - 6",
-              "points": 0,
+              "points": 48,
               "points_breakdown": {
                 "countries": 0,
-                "score": null
+                "score": 48
               },
               "is_exact": false
             }
@@ -51712,7 +51712,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Lionel Messi (Argentina), Kylian Mbappé (France)",
+              "text": "Kylian Mbappé (France)",
               "flag": null
             },
             "points": null
@@ -55058,7 +55058,7 @@
         },
         {
           "round": "3rd Place",
-          "subtotal": 0,
+          "subtotal": 15,
           "fixtures": [
             {
               "fixture_number": 103,
@@ -55088,10 +55088,10 @@
                 "score": "4 - 2"
               },
               "actual_score": "4 - 6",
-              "points": 0,
+              "points": 15,
               "points_breakdown": {
                 "countries": 0,
-                "score": null
+                "score": 15
               },
               "is_exact": false
             }
@@ -55160,7 +55160,7 @@
               "flag": null
             },
             "actual": {
-              "text": "Lionel Messi (Argentina), Kylian Mbappé (France)",
+              "text": "Kylian Mbappé (France)",
               "flag": null
             },
             "points": null
