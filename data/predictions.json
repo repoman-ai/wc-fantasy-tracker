@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-19T22:01:30Z",
+  "updated": "2026-07-19T22:02:52Z",
   "players": {
     "247930": {
       "team_id": "247930",
@@ -20625,10 +20625,10 @@
               "fixture_number": 104,
               "round": "Final",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-19T19:00:00Z",
+              "kickoff_local": "2026-07-19 21:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "MetLife Stadium, East Rutherford",
               "hidden": false,
               "match": {
@@ -24067,16 +24067,16 @@
         },
         {
           "round": "Final",
-          "subtotal": 200,
+          "subtotal": 0,
           "fixtures": [
             {
               "fixture_number": 104,
               "round": "Final",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-19T19:00:00Z",
+              "kickoff_local": "2026-07-19 21:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "MetLife Stadium, East Rutherford",
               "hidden": false,
               "match": {
@@ -24100,7 +24100,7 @@
               "points": 200,
               "points_breakdown": {
                 "countries": 200,
-                "score": 0
+                "score": null
               },
               "is_exact": false
             }
@@ -27515,16 +27515,16 @@
         },
         {
           "round": "Final",
-          "subtotal": 260,
+          "subtotal": 0,
           "fixtures": [
             {
               "fixture_number": 104,
               "round": "Final",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-19T19:00:00Z",
+              "kickoff_local": "2026-07-19 21:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "MetLife Stadium, East Rutherford",
               "hidden": false,
               "match": {
@@ -27545,10 +27545,10 @@
                 "score": "2 - 2"
               },
               "actual_score": "0 - 0",
-              "points": 260,
+              "points": 200,
               "points_breakdown": {
                 "countries": 200,
-                "score": 60
+                "score": null
               },
               "is_exact": false
             }
@@ -30963,16 +30963,16 @@
         },
         {
           "round": "Final",
-          "subtotal": 215,
+          "subtotal": 0,
           "fixtures": [
             {
               "fixture_number": 104,
               "round": "Final",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-19T19:00:00Z",
+              "kickoff_local": "2026-07-19 21:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "MetLife Stadium, East Rutherford",
               "hidden": false,
               "match": {
@@ -30993,10 +30993,10 @@
                 "score": "0 - 2"
               },
               "actual_score": "0 - 0",
-              "points": 215,
+              "points": 200,
               "points_breakdown": {
                 "countries": 200,
-                "score": 15
+                "score": null
               },
               "is_exact": false
             }
@@ -34411,16 +34411,16 @@
         },
         {
           "round": "Final",
-          "subtotal": 100,
+          "subtotal": 0,
           "fixtures": [
             {
               "fixture_number": 104,
               "round": "Final",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-19T19:00:00Z",
+              "kickoff_local": "2026-07-19 21:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "MetLife Stadium, East Rutherford",
               "hidden": false,
               "match": {
@@ -34444,7 +34444,7 @@
               "points": 100,
               "points_breakdown": {
                 "countries": 100,
-                "score": 0
+                "score": null
               },
               "is_exact": false
             }
@@ -37859,16 +37859,16 @@
         },
         {
           "round": "Final",
-          "subtotal": 400,
+          "subtotal": 0,
           "fixtures": [
             {
               "fixture_number": 104,
               "round": "Final",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-19T19:00:00Z",
+              "kickoff_local": "2026-07-19 21:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "MetLife Stadium, East Rutherford",
               "hidden": false,
               "match": {
@@ -37892,7 +37892,7 @@
               "points": 400,
               "points_breakdown": {
                 "countries": 400,
-                "score": 0
+                "score": null
               },
               "is_exact": false
             }
@@ -41313,10 +41313,10 @@
               "fixture_number": 104,
               "round": "Final",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-19T19:00:00Z",
+              "kickoff_local": "2026-07-19 21:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "MetLife Stadium, East Rutherford",
               "hidden": false,
               "match": {
@@ -41340,7 +41340,7 @@
               "points": 0,
               "points_breakdown": {
                 "countries": 0,
-                "score": 0
+                "score": null
               },
               "is_exact": false
             }
@@ -44755,16 +44755,16 @@
         },
         {
           "round": "Final",
-          "subtotal": 400,
+          "subtotal": 0,
           "fixtures": [
             {
               "fixture_number": 104,
               "round": "Final",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-19T19:00:00Z",
+              "kickoff_local": "2026-07-19 21:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "MetLife Stadium, East Rutherford",
               "hidden": false,
               "match": {
@@ -44788,7 +44788,7 @@
               "points": 400,
               "points_breakdown": {
                 "countries": 400,
-                "score": 0
+                "score": null
               },
               "is_exact": false
             }
@@ -48203,16 +48203,16 @@
         },
         {
           "round": "Final",
-          "subtotal": 200,
+          "subtotal": 0,
           "fixtures": [
             {
               "fixture_number": 104,
               "round": "Final",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-19T19:00:00Z",
+              "kickoff_local": "2026-07-19 21:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "MetLife Stadium, East Rutherford",
               "hidden": false,
               "match": {
@@ -48236,7 +48236,7 @@
               "points": 200,
               "points_breakdown": {
                 "countries": 200,
-                "score": 0
+                "score": null
               },
               "is_exact": false
             }
@@ -51657,10 +51657,10 @@
               "fixture_number": 104,
               "round": "Final",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-19T19:00:00Z",
+              "kickoff_local": "2026-07-19 21:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "MetLife Stadium, East Rutherford",
               "hidden": false,
               "match": {
@@ -51684,7 +51684,7 @@
               "points": 0,
               "points_breakdown": {
                 "countries": 0,
-                "score": 0
+                "score": null
               },
               "is_exact": false
             }
@@ -55105,10 +55105,10 @@
               "fixture_number": 104,
               "round": "Final",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-19T19:00:00Z",
+              "kickoff_local": "2026-07-19 21:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "MetLife Stadium, East Rutherford",
               "hidden": false,
               "match": {
@@ -55132,7 +55132,7 @@
               "points": 0,
               "points_breakdown": {
                 "countries": 0,
-                "score": 0
+                "score": null
               },
               "is_exact": false
             }
