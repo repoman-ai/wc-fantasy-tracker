@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-19T22:25:33Z",
+  "updated": "2026-07-19T22:28:58Z",
   "players": {
     "247930": {
       "team_id": "247930",
@@ -55148,10 +55148,10 @@
               "flag": "POR"
             },
             "actual": {
-              "text": "-",
-              "flag": null
+              "text": "Spain",
+              "flag": "ESP"
             },
-            "points": null
+            "points": 0
           },
           {
             "question": "Topscorer",
@@ -55163,7 +55163,7 @@
               "text": "Kylian Mbappé (France)",
               "flag": null
             },
-            "points": null
+            "points": 0
           }
         ],
         "subtotal": 0
