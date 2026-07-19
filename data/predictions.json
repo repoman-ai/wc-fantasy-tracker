@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-19T22:02:52Z",
+  "updated": "2026-07-19T22:11:25Z",
   "players": {
     "247930": {
       "team_id": "247930",
@@ -3385,10 +3385,10 @@
               "fixture_number": 104,
               "round": "Final",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-19T19:00:00Z",
+              "kickoff_local": "2026-07-19 21:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "MetLife Stadium, East Rutherford",
               "hidden": false,
               "match": {
@@ -6833,10 +6833,10 @@
               "fixture_number": 104,
               "round": "Final",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-19T19:00:00Z",
+              "kickoff_local": "2026-07-19 21:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "MetLife Stadium, East Rutherford",
               "hidden": false,
               "match": {
@@ -10281,10 +10281,10 @@
               "fixture_number": 104,
               "round": "Final",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-19T19:00:00Z",
+              "kickoff_local": "2026-07-19 21:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "MetLife Stadium, East Rutherford",
               "hidden": false,
               "match": {
@@ -13729,10 +13729,10 @@
               "fixture_number": 104,
               "round": "Final",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-19T19:00:00Z",
+              "kickoff_local": "2026-07-19 21:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "MetLife Stadium, East Rutherford",
               "hidden": false,
               "match": {
@@ -17177,10 +17177,10 @@
               "fixture_number": 104,
               "round": "Final",
               "stage_type": "knockout",
-              "status": "· LIVE",
-              "kickoff_utc": null,
-              "kickoff_local": null,
-              "kickoff_timezone": null,
+              "status": "FT",
+              "kickoff_utc": "2026-07-19T19:00:00Z",
+              "kickoff_local": "2026-07-19 21:00",
+              "kickoff_timezone": "Europe/Amsterdam",
               "venue": "MetLife Stadium, East Rutherford",
               "hidden": false,
               "match": {
@@ -24067,7 +24067,7 @@
         },
         {
           "round": "Final",
-          "subtotal": 0,
+          "subtotal": 200,
           "fixtures": [
             {
               "fixture_number": 104,
@@ -24100,7 +24100,7 @@
               "points": 200,
               "points_breakdown": {
                 "countries": 200,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             }
@@ -27515,7 +27515,7 @@
         },
         {
           "round": "Final",
-          "subtotal": 0,
+          "subtotal": 260,
           "fixtures": [
             {
               "fixture_number": 104,
@@ -27545,10 +27545,10 @@
                 "score": "2 - 2"
               },
               "actual_score": "0 - 0",
-              "points": 200,
+              "points": 260,
               "points_breakdown": {
                 "countries": 200,
-                "score": null
+                "score": 60
               },
               "is_exact": false
             }
@@ -30963,7 +30963,7 @@
         },
         {
           "round": "Final",
-          "subtotal": 0,
+          "subtotal": 215,
           "fixtures": [
             {
               "fixture_number": 104,
@@ -30993,10 +30993,10 @@
                 "score": "0 - 2"
               },
               "actual_score": "0 - 0",
-              "points": 200,
+              "points": 215,
               "points_breakdown": {
                 "countries": 200,
-                "score": null
+                "score": 15
               },
               "is_exact": false
             }
@@ -34411,7 +34411,7 @@
         },
         {
           "round": "Final",
-          "subtotal": 0,
+          "subtotal": 100,
           "fixtures": [
             {
               "fixture_number": 104,
@@ -34444,7 +34444,7 @@
               "points": 100,
               "points_breakdown": {
                 "countries": 100,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             }
@@ -37859,7 +37859,7 @@
         },
         {
           "round": "Final",
-          "subtotal": 0,
+          "subtotal": 400,
           "fixtures": [
             {
               "fixture_number": 104,
@@ -37892,7 +37892,7 @@
               "points": 400,
               "points_breakdown": {
                 "countries": 400,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             }
@@ -41340,7 +41340,7 @@
               "points": 0,
               "points_breakdown": {
                 "countries": 0,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             }
@@ -44755,7 +44755,7 @@
         },
         {
           "round": "Final",
-          "subtotal": 0,
+          "subtotal": 400,
           "fixtures": [
             {
               "fixture_number": 104,
@@ -44788,7 +44788,7 @@
               "points": 400,
               "points_breakdown": {
                 "countries": 400,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             }
@@ -48203,7 +48203,7 @@
         },
         {
           "round": "Final",
-          "subtotal": 0,
+          "subtotal": 200,
           "fixtures": [
             {
               "fixture_number": 104,
@@ -48236,7 +48236,7 @@
               "points": 200,
               "points_breakdown": {
                 "countries": 200,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             }
@@ -51684,7 +51684,7 @@
               "points": 0,
               "points_breakdown": {
                 "countries": 0,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             }
@@ -55132,7 +55132,7 @@
               "points": 0,
               "points_breakdown": {
                 "countries": 0,
-                "score": null
+                "score": 0
               },
               "is_exact": false
             }
