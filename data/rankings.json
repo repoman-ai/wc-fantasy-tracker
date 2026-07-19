@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-19T22:28:58Z",
+  "updated": "2026-07-19T22:35:11Z",
   "pool": {
     "id": "34193",
     "slug": "bobby-and-friends",
@@ -18,7 +18,7 @@
       "name": "Alec",
       "flag": "ESP",
       "rank": 1,
-      "points": 8824,
+      "points": 9074,
       "exact": 15
     },
     {
@@ -72,24 +72,24 @@
       "exact": 12
     },
     {
-      "team_id": "247525",
-      "slug": "karenwj",
-      "player_url": "https://www.tournamentsoccer.us/en-us/fantasy-soccer-world-cup/2026/team/247525/karenwj/stage/1196-grand-total?scroll=fixture",
-      "name": "Karenwj",
-      "flag": "NED",
-      "rank": 7,
-      "points": 7662,
-      "exact": 10
-    },
-    {
       "team_id": "247526",
       "slug": "valewalle",
       "player_url": "https://www.tournamentsoccer.us/en-us/fantasy-soccer-world-cup/2026/team/247526/valewalle/stage/1196-grand-total?scroll=fixture",
       "name": "Valewalle",
       "flag": "ESP",
-      "rank": 8,
-      "points": 7464,
+      "rank": 7,
+      "points": 7714,
       "exact": 15
+    },
+    {
+      "team_id": "247525",
+      "slug": "karenwj",
+      "player_url": "https://www.tournamentsoccer.us/en-us/fantasy-soccer-world-cup/2026/team/247525/karenwj/stage/1196-grand-total?scroll=fixture",
+      "name": "Karenwj",
+      "flag": "NED",
+      "rank": 8,
+      "points": 7662,
+      "exact": 10
     },
     {
       "team_id": "247535",
