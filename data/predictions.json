@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-27T15:55:41Z",
+  "updated": "2026-07-27T17:46:22Z",
   "players": {
     "247930": {
       "team_id": "247930",
@@ -34294,7 +34294,7 @@
         },
         {
           "round": "Semi finals",
-          "subtotal": 164,
+          "subtotal": 238,
           "fixtures": [
             {
               "fixture_number": 101,
@@ -34359,9 +34359,9 @@
                 "score": "2 - 0"
               },
               "actual_score": "1 - 2",
-              "points": 0,
+              "points": 74,
               "points_breakdown": {
-                "countries": 0,
+                "countries": 74,
                 "score": 0
               },
               "is_exact": false
