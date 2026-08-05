@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-05T03:44:05Z",
+  "updated": "2026-08-05T03:45:18Z",
   "players": {
     "247930": {
       "team_id": "247930",
@@ -31027,10 +31027,10 @@
               "text": "Kylian Mbappé (France)",
               "flag": null
             },
-            "points": 0
+            "points": 40
           }
         ],
-        "subtotal": 0
+        "subtotal": 40
       }
     },
     "247532": {
